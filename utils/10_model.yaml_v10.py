@@ -128,7 +128,7 @@ def github_push_from_variable(contentVariable, repoName, fileTargetPath, message
 baseModelFileName = "model.yaml"
 schemaUrl='https://raw.githubusercontent.com/konstantinosGombakis/CIRCULOOS_Data_model/main/material/leather/schema.json'
 # # For local webserver 
-# customRepository="http://localhost:8085/material/leather/schema.json"
+# customRepository="http://localhost:8085/schema.json"
 
 #credentialsFile = "/home/aabella/transparentia/CLIENTES/EU/FIWARE/credentials.json"
 credentialsFile = "./credentials.json"
