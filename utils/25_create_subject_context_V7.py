@@ -321,6 +321,9 @@ coreContextDictUrl="fiware-context.jsonld"
 coreContextDict = open_json(coreContextDictUrl)
 ###       ALWAYS INSERT THE raw URL ie. https://raw.githubusercontent.com/konstantinosGombakis/CIRCULOOS_Data_model/main/material/leather/ 
 customRepository="https://raw.githubusercontent.com/konstantinosGombakis/CIRCULOOS_Data_model/main/material/leather/"
+# # For local webserver 
+# customRepository="http://localhost:8085/"
+
 # https://raw.githubusercontent.com/konstantinosGombakis/CIRCULOOS_data_model/main/schema.json
 # customRepository="https://konstantinosgombakis.github.io/CIRCULOOS_data_model/custom_data_model/"
 # customRepository="https://raw.githubusercontent.com/konstantinosGombakis/CIRCULOOS_data_model/main/custom_data_model/schema.json"

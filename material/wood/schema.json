@@ -1,0 +1,167 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "$schemaVersion": "0.0.1",
+    "modelTags": "",
+    "derivedFrom": "",
+    "license": "",
+    "$id": "https://raw.githubusercontent.com/TO_ADD_LATER/schema.json",
+    "title": "Data model for wood",
+    "description": "CIRCULOOS data model for wood",
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
+        },
+        {
+            "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
+        },
+        {
+            "properties": {
+                "type": {
+                    "description": "Property. NGSI Entity type. It has to be wood",
+                    "enum": [
+                        "wood"
+                    ]
+                },
+                "species": {
+                    "type": "string",
+                    "description": "Property. The type of wood (e.g., Oak, Pine, Birch). "
+                },
+                "density": {
+                    "type": "object",
+                    "properties": {
+                        "value": {
+                            "type": "number",
+                            "description": "Property. https://schema.org/Number.  Default: 0.0"
+                        }
+                    },
+                    "description": "Property. The mass per unit volume of the wood, critical for calculating weight and structural integrity. "
+                },
+                "moistureContent": {
+                    "type": "object",
+                    "properties": {
+                        "value": {
+                            "type": "number",
+                            "description": "Property. https://schema.org/Number.  Default: 0.0"
+                        }
+                    },
+                    "description": "Property. The amount of moisture in the wood, affecting its dimensional stability and strength. "
+                },
+                "tensileStrength": {
+                    "type": "object",
+                    "properties": {
+                        "value": {
+                            "type": "number",
+                            "description": "Property. https://schema.org/Number.  Default: 0.0"
+                        }
+                    },
+                    "description": "Property. he maximum stress that the wood can withstand while being stretched before breaking. "
+                },
+                "compressiveStrength": {
+                    "type": "object",
+                    "properties": {
+                        "value": {
+                            "type": "number",
+                            "description": "Property. https://schema.org/Number.  Default: 0.0"
+                        }
+                    },
+                    "description": "Property. The maximum compressive force that wood can withstand. "
+                },
+                "bendingStrength": {
+                    "type": "object",
+                    "properties": {
+                        "value": {
+                            "type": "number",
+                            "description": "Property. https://schema.org/Number.  Default: 0.0"
+                        }
+                    },
+                    "description": "Property. The maximum stress the wood can withstand before breaking when subjected to a bending force. "
+                },
+                "modulusOfElasticity": {
+                    "type": "object",
+                    "properties": {
+                        "value": {
+                            "type": "number",
+                            "description": "Property. https://schema.org/Number.  Default: 0.0"
+                        }
+                    },
+                    "description": "Property. The measure of the wood's stiffness, indicating how much it will deform under stress. "
+                },
+                "hardness": {
+                    "type": "object",
+                    "properties": {
+                        "value": {
+                            "type": "number",
+                            "description": "Property. https://schema.org/Number.  Default: 0.0"
+                        }
+                    },
+                    "description": "Property.  The resistance of the wood to indentation or scratching, important for wear and durability. "
+                },
+                "thermalConductivity": {
+                    "type": "object",
+                    "properties": {
+                        "value": {
+                            "type": "number",
+                            "description": "Property. https://schema.org/Number.  Default: 0.0"
+                        }
+                    },
+                    "description": "Property. The rate at which heat passes through the wood, important for thermal insulation applications. "
+                },
+                "thermalExpansionCoefficient": {
+                    "type": "object",
+                    "properties": {
+                        "value": {
+                            "type": "number",
+                            "description": "Property. https://schema.org/Number.  Default: 0.0"
+                        }
+                    },
+                    "description": "Property. The rate at which the wood expands with temperature, critical in applications involving temperature changes. "
+                },
+                "waterAbsorption": {
+                    "type": "object",
+                    "properties": {
+                        "value": {
+                            "type": "number",
+                            "description": "Property. https://schema.org/Number.  Default: 0.0"
+                        }
+                    },
+                    "description": "Property. The amount of water absorbed by the wood over a specified period, influencing dimensional stability and strength. "
+                },
+                "flameSpreadIndex": {
+                    "type": "object",
+                    "properties": {
+                        "value": {
+                            "type": "number",
+                            "description": "Property. https://schema.org/Number.  Default: 0.0"
+                        }
+                    },
+                    "description": "Property. A measure of the material’s propensity to burn and spread flames, important for fire safety considerations. ASTM E84 "
+                },
+                "opticalProperties-color": {
+                    "type": "object",
+                    "properties": {
+                        "value": {
+                            "type": "string",
+                            "description": "Property. https://schema.org/Number.  Default: 0.0"
+                        }
+                    },
+                    "description": "Property. Characteristics related to appearance. "
+                },
+                "opticalProperties-grainPattern": {
+                    "type": "object",
+                    "properties": {
+                        "value": {
+                            "type": "string",
+                            "description": "Property. https://schema.org/Number.  Default: 0.0"
+                        }
+                    },
+                    "description": "Property. Characteristics related to appearance. "
+                }
+            }
+        }
+    ],
+    "required": [
+        "id",
+        "type"
+    ]
+}

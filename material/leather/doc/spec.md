@@ -6,7 +6,7 @@ Entity: leather
 [document generated automatically](https://docs.google.com/presentation/d/e/2PACX-1vTs-Ng5dIAwkg91oTTUdt8ua7woBXhPnwavZ0FxgR8BsAI_Ek3C5q97Nd94HS8KhP-r_quD4H0fgyt3/pub?start=false&loop=false&delayms=3000#slide=id.gb715ace035_0_60)  
 <!-- /15-License -->  
 <!-- 20-Description -->  
-Global description: **Representing leather material for the CIRCILOOS project**  
+Global description: **CIRCULOOS data model for wood**  
 version: 0.0.1  
 <!-- /20-Description -->  
 <!-- 30-PropertiesList -->  
@@ -22,10 +22,36 @@ Entity: leather
 	- `postalCode[string]`: Property. The postal code. For example, 24004. Model:'https://schema.org/https://schema.org/postalCode'    
 	- `streetAddress[string]`: Property. The street address. Model:'https://schema.org/streetAddress'    
 	- `streetNr[string]`: Property. Number identifying a specific property on a public street    
-- `alternateName[string]`: An alternative name for this item  - `areaServed[string]`: The geographic area where a service or offered item is provided  . Model: [https://schema.org/Text](https://schema.org/Text)- `color[string]`: The final color of the leather  - `dataProvider[string]`: A sequence of characters identifying the provider of the harmonised data entity  - `dateCreated[date-time]`: Entity creation timestamp. This will usually be allocated by the storage platform  - `dateModified[date-time]`: Timestamp of the last modification of the entity. This will usually be allocated by the storage platform  - `description[string]`: A description of this item  - `hardness[string]`: Overall hardness of the leather  - `id[*]`: Unique identifier of the entity  - `origin[string]`: The source that the leather was originated  - `owner[array]`: A List containing a JSON encoded sequence of characters referencing the unique Ids of the owner(s)  - `recycledTimes[integer]`: The number of times that the leather have been recycled  - `seeAlso[*]`: list of uri pointing to additional resources about the item  - `source[string]`: A sequence of characters giving the original source of the entity data as a URL. Recommended to be the fully qualified domain name of the source provider, or the URL to the source object  - `surfaceFinishWithCovering[boolean]`: Leather finished (with covering) or not finished  - `surfaceSize[integer]`: The surface size of the leather. Unit palm ie humman palm  - `tannedProcess[string]`: The tanned used  - `thickness[float]`: The thickness of the leather  - `type[string]`: NGSI Entity type. It has to be Storey, leather  - `type1[string]`: The treatment used  <!-- /30-PropertiesList -->  
+- `alternateName[string]`: An alternative name for this item  - `areaServed[string]`: The geographic area where a service or offered item is provided  . Model: [https://schema.org/Text](https://schema.org/Text)- `bendingStrength[object]`: The maximum stress the wood can withstand before breaking when subjected to a bending force.   	  
+	- `value[number]`: Property. https://schema.org/Number.  Default: 0.0    
+- `compressiveStrength[object]`: The maximum compressive force that wood can withstand.   	  
+	- `value[number]`: Property. https://schema.org/Number.  Default: 0.0    
+- `dataProvider[string]`: A sequence of characters identifying the provider of the harmonised data entity  - `dateCreated[date-time]`: Entity creation timestamp. This will usually be allocated by the storage platform  - `dateModified[date-time]`: Timestamp of the last modification of the entity. This will usually be allocated by the storage platform  - `density[object]`: The mass per unit volume of the wood, critical for calculating weight and structural integrity.   	  
+	- `value[number]`: Property. https://schema.org/Number.  Default: 0.0    
+- `description[string]`: A description of this item  - `flameSpreadIndex[object]`: A measure of the material’s propensity to burn and spread flames, important for fire safety considerations. ASTM E84   	  
+	- `value[number]`: Property. https://schema.org/Number.  Default: 0.0    
+- `hardness[object]`:  The resistance of the wood to indentation or scratching, important for wear and durability.   	  
+	- `value[number]`: Property. https://schema.org/Number.  Default: 0.0    
+- `id[*]`: Unique identifier of the entity  - `location[*]`: GeoProperty. Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon  - `modulusOfElasticity[object]`: The measure of the wood's stiffness, indicating how much it will deform under stress.   	  
+	- `value[number]`: Property. https://schema.org/Number.  Default: 0.0    
+- `moistureContent[object]`: The amount of moisture in the wood, affecting its dimensional stability and strength.   	  
+	- `value[number]`: Property. https://schema.org/Number.  Default: 0.0    
+- `name[string]`: The name of this item  - `opticalProperties-color[object]`: Characteristics related to appearance.   	  
+	- `value[string]`: Property. https://schema.org/Number.  Default: 0.0    
+- `opticalProperties-grainPattern[object]`: Characteristics related to appearance.   	  
+	- `value[string]`: Property. https://schema.org/Number.  Default: 0.0    
+- `owner[array]`: A List containing a JSON encoded sequence of characters referencing the unique Ids of the owner(s)  - `seeAlso[*]`: list of uri pointing to additional resources about the item  - `source[string]`: A sequence of characters giving the original source of the entity data as a URL. Recommended to be the fully qualified domain name of the source provider, or the URL to the source object  - `species[string]`: The type of wood (e.g., Oak, Pine, Birch).   - `tensileStrength[object]`: he maximum stress that the wood can withstand while being stretched before breaking.   	  
+	- `value[number]`: Property. https://schema.org/Number.  Default: 0.0    
+- `thermalConductivity[object]`: The rate at which heat passes through the wood, important for thermal insulation applications.   	  
+	- `value[number]`: Property. https://schema.org/Number.  Default: 0.0    
+- `thermalExpansionCoefficient[object]`: The rate at which the wood expands with temperature, critical in applications involving temperature changes.   	  
+	- `value[number]`: Property. https://schema.org/Number.  Default: 0.0    
+- `type[*]`: NGSI Entity type. It has to be wood  - `waterAbsorption[object]`: The amount of water absorbed by the wood over a specified period, influencing dimensional stability and strength.   	  
+	- `value[number]`: Property. https://schema.org/Number.  Default: 0.0    
+<!-- /30-PropertiesList -->  
 <!-- 35-RequiredProperties -->  
 Required properties  
-- `color`  - `id`  - `surfaceSize`  - `type`  <!-- /35-RequiredProperties -->  
+- `id`  - `type`  <!-- /35-RequiredProperties -->  
 <!-- 40-RequiredProperties -->  
 <!-- /40-RequiredProperties -->  
 <!-- 50-DataModelHeader -->  
@@ -36,7 +62,7 @@ Entity: leather
 <details><summary><strong>full yaml details</strong></summary>    
 ```yaml  
 leather:    
-  description: Representing leather material for the CIRCILOOS project    
+  description: CIRCULOOS data model for wood    
   properties:    
     address:    
       description: The mailing address    
@@ -80,14 +106,22 @@ leather:
       x-ngsi:    
         model: https://schema.org/Text    
         type: Property    
-    color:    
-      description: The final color of the leather    
-      enum:    
-        - brown    
-        - black    
-        - '....'    
-        - rainbow    
-      type: string    
+    bendingStrength:    
+      description: 'The maximum stress the wood can withstand before breaking when subjected to a bending force. '    
+      properties:    
+        value:    
+          description: 'Property. https://schema.org/Number.  Default: 0.0'    
+          type: number    
+      type: object    
+      x-ngsi:    
+        type: Property    
+    compressiveStrength:    
+      description: 'The maximum compressive force that wood can withstand. '    
+      properties:    
+        value:    
+          description: 'Property. https://schema.org/Number.  Default: 0.0'    
+          type: number    
+      type: object    
       x-ngsi:    
         type: Property    
     dataProvider:    
@@ -107,18 +141,36 @@ leather:
       type: string    
       x-ngsi:    
         type: Property    
+    density:    
+      description: 'The mass per unit volume of the wood, critical for calculating weight and structural integrity. '    
+      properties:    
+        value:    
+          description: 'Property. https://schema.org/Number.  Default: 0.0'    
+          type: number    
+      type: object    
+      x-ngsi:    
+        type: Property    
     description:    
       description: A description of this item    
       type: string    
       x-ngsi:    
         type: Property    
+    flameSpreadIndex:    
+      description: 'A measure of the material’s propensity to burn and spread flames, important for fire safety considerations. ASTM E84 '    
+      properties:    
+        value:    
+          description: 'Property. https://schema.org/Number.  Default: 0.0'    
+          type: number    
+      type: object    
+      x-ngsi:    
+        type: Property    
     hardness:    
-      description: Overall hardness of the leather    
-      enum:    
-        - soft    
-        - medium    
-        - hard    
-      type: string    
+      description: ' The resistance of the wood to indentation or scratching, important for wear and durability. '    
+      properties:    
+        value:    
+          description: 'Property. https://schema.org/Number.  Default: 0.0'    
+          type: number    
+      type: object    
       x-ngsi:    
         type: Property    
     id:    
@@ -134,15 +186,196 @@ leather:
       description: Unique identifier of the entity    
       x-ngsi:    
         type: Property    
-    origin:    
-      description: The source that the leather was originated    
-      enum:    
-        - cow    
-        - pig    
-        - horse    
-        - other animals    
-        - vegan    
+    location:    
+      description: GeoProperty. Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon    
+      oneOf:    
+        - description: GeoProperty. Geojson reference to the item. Point    
+          properties:    
+            bbox:    
+              items:    
+                type: number    
+              minItems: 4    
+              type: array    
+            coordinates:    
+              items:    
+                type: number    
+              minItems: 2    
+              type: array    
+            type:    
+              enum:    
+                - Point    
+              type: string    
+          required:    
+            - type    
+            - coordinates    
+          title: GeoJSON Point    
+          type: object    
+        - description: GeoProperty. Geojson reference to the item. LineString    
+          properties:    
+            bbox:    
+              items:    
+                type: number    
+              minItems: 4    
+              type: array    
+            coordinates:    
+              items:    
+                items:    
+                  type: number    
+                minItems: 2    
+                type: array    
+              minItems: 2    
+              type: array    
+            type:    
+              enum:    
+                - LineString    
+              type: string    
+          required:    
+            - type    
+            - coordinates    
+          title: GeoJSON LineString    
+          type: object    
+        - description: GeoProperty. Geojson reference to the item. Polygon    
+          properties:    
+            bbox:    
+              items:    
+                type: number    
+              minItems: 4    
+              type: array    
+            coordinates:    
+              items:    
+                items:    
+                  items:    
+                    type: number    
+                  minItems: 2    
+                  type: array    
+                minItems: 4    
+                type: array    
+              type: array    
+            type:    
+              enum:    
+                - Polygon    
+              type: string    
+          required:    
+            - type    
+            - coordinates    
+          title: GeoJSON Polygon    
+          type: object    
+        - description: GeoProperty. Geojson reference to the item. MultiPoint    
+          properties:    
+            bbox:    
+              items:    
+                type: number    
+              minItems: 4    
+              type: array    
+            coordinates:    
+              items:    
+                items:    
+                  type: number    
+                minItems: 2    
+                type: array    
+              type: array    
+            type:    
+              enum:    
+                - MultiPoint    
+              type: string    
+          required:    
+            - type    
+            - coordinates    
+          title: GeoJSON MultiPoint    
+          type: object    
+        - description: GeoProperty. Geojson reference to the item. MultiLineString    
+          properties:    
+            bbox:    
+              items:    
+                type: number    
+              minItems: 4    
+              type: array    
+            coordinates:    
+              items:    
+                items:    
+                  items:    
+                    type: number    
+                  minItems: 2    
+                  type: array    
+                minItems: 2    
+                type: array    
+              type: array    
+            type:    
+              enum:    
+                - MultiLineString    
+              type: string    
+          required:    
+            - type    
+            - coordinates    
+          title: GeoJSON MultiLineString    
+          type: object    
+        - description: GeoProperty. Geojson reference to the item. MultiLineString    
+          properties:    
+            bbox:    
+              items:    
+                type: number    
+              minItems: 4    
+              type: array    
+            coordinates:    
+              items:    
+                items:    
+                  items:    
+                    items:    
+                      type: number    
+                    minItems: 2    
+                    type: array    
+                  minItems: 4    
+                  type: array    
+                type: array    
+              type: array    
+            type:    
+              enum:    
+                - MultiPolygon    
+              type: string    
+          required:    
+            - type    
+            - coordinates    
+          title: GeoJSON MultiPolygon    
+          type: object    
+    modulusOfElasticity:    
+      description: 'The measure of the wood''s stiffness, indicating how much it will deform under stress. '    
+      properties:    
+        value:    
+          description: 'Property. https://schema.org/Number.  Default: 0.0'    
+          type: number    
+      type: object    
+      x-ngsi:    
+        type: Property    
+    moistureContent:    
+      description: 'The amount of moisture in the wood, affecting its dimensional stability and strength. '    
+      properties:    
+        value:    
+          description: 'Property. https://schema.org/Number.  Default: 0.0'    
+          type: number    
+      type: object    
+      x-ngsi:    
+        type: Property    
+    name:    
+      description: The name of this item    
       type: string    
+      x-ngsi:    
+        type: Property    
+    opticalProperties-color:    
+      description: 'Characteristics related to appearance. '    
+      properties:    
+        value:    
+          description: 'Property. https://schema.org/Number.  Default: 0.0'    
+          type: string    
+      type: object    
+      x-ngsi:    
+        type: Property    
+    opticalProperties-grainPattern:    
+      description: 'Characteristics related to appearance. '    
+      properties:    
+        value:    
+          description: 'Property. https://schema.org/Number.  Default: 0.0'    
+          type: string    
+      type: object    
       x-ngsi:    
         type: Property    
     owner:    
@@ -159,12 +392,6 @@ leather:
             type: string    
         description: Property. Unique identifier of the entity    
       type: array    
-      x-ngsi:    
-        type: Property    
-    recycledTimes:    
-      description: The number of times that the leather have been recycled    
-      minimum: 0    
-      type: integer    
       x-ngsi:    
         type: Property    
     seeAlso:    
@@ -184,54 +411,56 @@ leather:
       type: string    
       x-ngsi:    
         type: Property    
-    surfaceFinishWithCovering:    
-      description: Leather finished (with covering) or not finished    
-      type: boolean    
-      x-ngsi:    
-        type: Property    
-    surfaceSize:    
-      description: The surface size of the leather. Unit palm ie humman palm    
-      minimum: 0    
-      type: integer    
-      x-ngsi:    
-        type: Property    
-    tannedProcess:    
-      description: The tanned used    
-      enum:    
-        - chrome    
-        - vegetable    
+    species:    
+      description: 'The type of wood (e.g., Oak, Pine, Birch). '    
       type: string    
       x-ngsi:    
         type: Property    
-    thickness:    
-      description: The thickness of the leather    
-      minimum: 0    
-      type: float    
+    tensileStrength:    
+      description: 'he maximum stress that the wood can withstand while being stretched before breaking. '    
+      properties:    
+        value:    
+          description: 'Property. https://schema.org/Number.  Default: 0.0'    
+          type: number    
+      type: object    
+      x-ngsi:    
+        type: Property    
+    thermalConductivity:    
+      description: 'The rate at which heat passes through the wood, important for thermal insulation applications. '    
+      properties:    
+        value:    
+          description: 'Property. https://schema.org/Number.  Default: 0.0'    
+          type: number    
+      type: object    
+      x-ngsi:    
+        type: Property    
+    thermalExpansionCoefficient:    
+      description: 'The rate at which the wood expands with temperature, critical in applications involving temperature changes. '    
+      properties:    
+        value:    
+          description: 'Property. https://schema.org/Number.  Default: 0.0'    
+          type: number    
+      type: object    
       x-ngsi:    
         type: Property    
     type:    
-      description: NGSI Entity type. It has to be Storey, leather    
+      description: NGSI Entity type. It has to be wood    
       enum:    
-        - leather    
-      type: string    
+        - wood    
       x-ngsi:    
         type: Property    
-    type1:    
-      description: The treatment used    
-      enum:    
-        - grainside    
-        - split    
-        - nubuck    
-        - suede    
-        - furs    
-      type: string    
+    waterAbsorption:    
+      description: 'The amount of water absorbed by the wood over a specified period, influencing dimensional stability and strength. '    
+      properties:    
+        value:    
+          description: 'Property. https://schema.org/Number.  Default: 0.0'    
+          type: number    
+      type: object    
       x-ngsi:    
         type: Property    
   required:    
     - id    
     - type    
-    - color    
-    - surfaceSize    
   type: object    
   x-derived-from: ''    
   x-disclaimer: Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program    
@@ -252,48 +481,71 @@ leather:
 <details><summary><strong>show/hide example</strong></summary>    
 ```json  
 {  
-    "id": "urn:ngsi-ld:leather:IDAS1313",  
-    "type": "leather",  
-    "origin": {  
-        "type": "Property",  
-        "value": "vegan"  
+    "id": "ngsi-ld:wood:wood1",  
+    "type": "wood",  
+    "species": "Oak",  
+    "density": {  
+        "type": "Number",  
+        "value": "0.75",  
+        "unitCode": "23"  
     },  
-    "color": {  
-        "type": "Property",  
-        "value": "black"  
+    "moistureContent": {  
+        "type": "Number",  
+        "value": "12",  
+        "unitCode": "P1"  
     },  
-    "surfaceSize": {  
-        "type": "Property",  
-        "value": "2"  
+    "tensileStrength": {  
+        "type": "Number",  
+        "value": "90",  
+        "unitCode": "MPA"  
     },  
-    "thickness": {  
-        "type": "Property",  
-        "value": "0.3",  
-        "unitCode": "MMT"  
+    "compressiveStrength": {  
+        "type": "Number",  
+        "value": "50",  
+        "unitCode": "MPA"  
     },  
-    "tannedProcess": {  
-        "type": "Property",  
-        "value": "vegetable"  
+    "bendingStrength": {  
+        "type": "Number",  
+        "value": "120",  
+        "unitCode": "MPA"  
     },  
-    "type1": {  
-        "type": "Property",  
-        "value": "split"  
-    },  
-    "surfaceFinishWithCovering": {  
-        "type": "Property",  
-        "value": "true"  
+    "modulusOfElasticity": {  
+        "type": "Number",  
+        "value": "11000",  
+        "unitCode": "MPA"  
     },  
     "hardness": {  
-        "type": "Property",  
-        "value": "medium"  
+        "type": "Number",  
+        "value": "670",  
+        "unitCode": "NEW"  
     },  
-    "recycledTimes": {  
-        "type": "Property",  
-        "value": "2"  
+    "thermalConductivity": {  
+        "type": "Number",  
+        "value": "0.16",  
+        "unitCode": "D53"  
     },  
-     "@context": [  
-        "https://TOBELater/context.jsonld"  
-    ]  
+    "thermalExpansionCoefficient": {  
+        "type": "Number",  
+        "value": "3.5",  
+        "unitCode": "F51"  
+    },  
+    "waterAbsorption": {  
+        "type": "Number",  
+        "value": "40",  
+        "unitCode": "P1"  
+    },  
+    "flameSpreadIndex": {  
+        "type": "Number",  
+        "value": "100"  
+    },  
+    "opticalProperties-color": {  
+        "type": "String",  
+        "value": "Light Brown"  
+    },  
+    "opticalProperties-grainPattern": {  
+        "type": "String",  
+        "value": "Straight"  
+    }  
 }  
 ```  
 </details><!-- /80-Examples -->  

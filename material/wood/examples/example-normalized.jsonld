@@ -1,0 +1,67 @@
+{
+    "id": "ngsi-ld:wood:wood1",
+    "type": "wood",
+    "species": "Oak",
+    "density": {
+        "type": "Number",
+        "value": "0.75",
+        "unitCode": "23"
+    },
+    "moistureContent": {
+        "type": "Number",
+        "value": "12",
+        "unitCode": "P1"
+    },
+    "tensileStrength": {
+        "type": "Number",
+        "value": "90",
+        "unitCode": "MPA"
+    },
+    "compressiveStrength": {
+        "type": "Number",
+        "value": "50",
+        "unitCode": "MPA"
+    },
+    "bendingStrength": {
+        "type": "Number",
+        "value": "120",
+        "unitCode": "MPA"
+    },
+    "modulusOfElasticity": {
+        "type": "Number",
+        "value": "11000",
+        "unitCode": "MPA"
+    },
+    "hardness": {
+        "type": "Number",
+        "value": "670",
+        "unitCode": "NEW"
+    },
+    "thermalConductivity": {
+        "type": "Number",
+        "value": "0.16",
+        "unitCode": "D53"
+    },
+    "thermalExpansionCoefficient": {
+        "type": "Number",
+        "value": "3.5",
+        "unitCode": "F51"
+    },
+    "waterAbsorption": {
+        "type": "Number",
+        "value": "40",
+        "unitCode": "P1"
+    },
+    "flameSpreadIndex": {
+        "type": "Number",
+        "value": "100"
+    },
+    "opticalProperties-color": {
+        "type": "String",
+        "value": "Light Brown"
+    },
+    "opticalProperties-grainPattern": {
+        "type": "String",
+        "value": "Straight"
+    }
+}
