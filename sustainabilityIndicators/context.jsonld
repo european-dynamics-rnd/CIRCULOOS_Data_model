@@ -1,0 +1,38 @@
+{
+    "@context": {
+        "acidificationAccumulatedExceedanceAE": "https://github.com/isteps-sps-lab/CIRCULOOS_Data_model/tree/main/sustainabilityIndicators/schema.json#acidificationAccumulatedExceedanceAE",
+        "climateChangeBiogenicGWP100": "https://github.com/isteps-sps-lab/CIRCULOOS_Data_model/tree/main/sustainabilityIndicatorsschema.json#climateChangeBiogenicGWP100",
+        "climateChangeFossilGWP100": "https://github.com/isteps-sps-lab/CIRCULOOS_Data_model/tree/main/sustainabilityIndicatorsschema.json#climateChangeFossilGWP100",
+        "climateChangeGlobalWarmingPotentialGWP": "https://github.com/isteps-sps-lab/CIRCULOOS_Data_model/tree/main/sustainabilityIndicatorsschema.json#climateChangeGlobalWarmingPotentialGWP",
+        "climateChangeLandUseAndLULUCGWP": "https://github.com/isteps-sps-lab/CIRCULOOS_Data_model/tree/main/sustainabilityIndicatorsschema.json#climateChangeLandUseAndLULUCGWP",
+        "ecotoxicityFreshwaterComparativeToxicCTU": "https://github.com/isteps-sps-lab/CIRCULOOS_Data_model/tree/main/sustainabilityIndicatorsschema.json#ecotoxicityFreshwaterComparativeToxicCTU",
+        "ecotoxicityFreshwaterInorganicsCTUe": "https://github.com/isteps-sps-lab/CIRCULOOS_Data_model/tree/main/sustainabilityIndicatorsschema.json#ecotoxicityFreshwaterInorganicsCTUe",
+        "ecotoxicityFreshwaterOrganicsCTUe": "https://github.com/isteps-sps-lab/CIRCULOOS_Data_model/tree/main/sustainabilityIndicatorsschema.json#ecotoxicityFreshwaterOrganicsCTUe",
+        "energyResourcesAbioticDepletionFossils": "https://github.com/isteps-sps-lab/CIRCULOOS_Data_model/tree/main/sustainabilityIndicatorsschema.json#energyResourcesAbioticDepletionFossils",
+        "eutrophicationFreshwaterNutrientsP": "https://github.com/isteps-sps-lab/CIRCULOOS_Data_model/tree/main/sustainabilityIndicatorsschema.json#eutrophicationFreshwaterNutrientsP",
+        "eutrophicationMarineNutrientsN": "https://github.com/isteps-sps-lab/CIRCULOOS_Data_model/tree/main/sustainabilityIndicatorsschema.json#eutrophicationMarineNutrientsN",
+        "eutrophicationTerrestrialAccumExceedance": "https://github.com/isteps-sps-lab/CIRCULOOS_Data_model/tree/main/sustainabilityIndicatorsschema.json#eutrophicationTerrestrialAccumExceedance",
+        "humanToxicityCarcinogenicCTUh": "https://github.com/isteps-sps-lab/CIRCULOOS_Data_model/tree/main/sustainabilityIndicatorsschema.json#humanToxicityCarcinogenicCTUh",
+        "humanToxicityCarcinogenicInorganicsCTU": "https://github.com/isteps-sps-lab/CIRCULOOS_Data_model/tree/main/sustainabilityIndicatorsschema.json#humanToxicityCarcinogenicInorganicsCTU",
+        "humanToxicityCarcinogenicOrganicsCTU": "https://github.com/isteps-sps-lab/CIRCULOOS_Data_model/tree/main/sustainabilityIndicatorsschema.json#humanToxicityCarcinogenicOrganicsCTU",
+        "humanToxicityNonCarcinogenicCTUh": "https://github.com/isteps-sps-lab/CIRCULOOS_Data_model/tree/main/sustainabilityIndicatorsschema.json#humanToxicityNonCarcinogenicCTUh",
+        "humanToxicityNonCarcinogenicInorganicsCTU": "https://github.com/isteps-sps-lab/CIRCULOOS_Data_model/tree/main/sustainabilityIndicatorsschema.json#humanToxicityNonCarcinogenicInorganicsCTU",
+        "humanToxicityNonCarcinogenicOrganicsCTU": "https://github.com/isteps-sps-lab/CIRCULOOS_Data_model/tree/main/sustainabilityIndicatorsschema.json#humanToxicityNonCarcinogenicOrganicsCTU",
+        "id": "@id",
+        "ionisingRadiationHumanHealthU235": "https://github.com/isteps-sps-lab/CIRCULOOS_Data_model/tree/main/sustainabilityIndicatorsschema.json#ionisingRadiationHumanHealthU235",
+        "landUseSoilQualityIndex": "https://github.com/isteps-sps-lab/CIRCULOOS_Data_model/tree/main/sustainabilityIndicatorsschema.json#landUseSoilQualityIndex",
+        "leather": "https://github.com/isteps-sps-lab/CIRCULOOS_Data_model/tree/main/sustainabilityIndicators",
+        "materialResourcesAbioticDepletionElements": "https://github.com/isteps-sps-lab/CIRCULOOS_Data_model/tree/main/sustainabilityIndicatorsschema.json#materialResourcesAbioticDepletionElements",
+        "observedAt": {
+            "@id": "https://uri.etsi.org/ngsi-ld/observedAt",
+            "@type": "DateTime"
+        },
+        "ozoneDepletionPotentialODP": "https://github.com/isteps-sps-lab/CIRCULOOS_Data_model/tree/main/sustainabilityIndicatorsschema.json#ozoneDepletionPotentialODP",
+        "particulateMatterFormationHealth": "https://github.com/isteps-sps-lab/CIRCULOOS_Data_model/tree/main/sustainabilityIndicatorsschema.json#particulateMatterFormationHealth",
+        "photochemicalOxidantFormationHealth": "https://github.com/isteps-sps-lab/CIRCULOOS_Data_model/tree/main/sustainabilityIndicatorsschema.json#photochemicalOxidantFormationHealth",
+        "type": "@type",
+        "unitCode": "https://uri.etsi.org/ngsi-ld/unitCode",
+        "value": "https://uri.etsi.org/ngsi-ld/hasValue",
+        "waterUseUserDeprivationPotential": "https://github.com/isteps-sps-lab/CIRCULOOS_Data_model/tree/main/sustainabilityIndicatorsschema.json#waterUseUserDeprivationPotential"
+    }
+}
