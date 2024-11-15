@@ -1,6 +1,6 @@
-environmental_footprint_indicator:
+leather:
 
-  description: Represents the environmental indicators calculated by GRETA using EF 3.1 methodology
+  description: Represents the environmental indicators calculated by GRETA using Environmental Footprint 3.1 methodology
 
   properties:
 
@@ -16,7 +16,7 @@ environmental_footprint_indicator:
           type: string
         value:
           description: acidificationAccumulatedExceedanceAE value
-          type: number
+          type: string
       required:
         - value
         - unitCode
@@ -34,7 +34,7 @@ environmental_footprint_indicator:
           type: string
         value:
           description: climateChangeBiogenicGWP100 value
-          type: number
+          type: string
       required:
         - value
         - unitCode
@@ -52,7 +52,7 @@ environmental_footprint_indicator:
           type: string
         value:
           description: climateChangeFossilGWP100 value
-          type: number
+          type: string
       required:
         - value
         - unitCode
@@ -70,7 +70,7 @@ environmental_footprint_indicator:
           type: string
         value:
           description: climateChangeGlobalWarmingPotentialGWP value
-          type: number
+          type: string
       required:
         - value
         - unitCode
@@ -88,7 +88,7 @@ environmental_footprint_indicator:
           type: string
         value:
           description: climateChangeLandUseAndLULUCGWP value
-          type: number
+          type: string
       required:
         - value
         - unitCode
@@ -106,7 +106,7 @@ environmental_footprint_indicator:
           type: string
         value:
           description: ecotoxicityFreshwaterComparativeToxicCTU value
-          type: number
+          type: string
       required:
         - value
         - unitCode
@@ -124,7 +124,7 @@ environmental_footprint_indicator:
           type: string
         value:
           description: ecotoxicityFreshwaterInorganicsCTUe value
-          type: number
+          type: string
       required:
         - value
         - unitCode
@@ -142,7 +142,7 @@ environmental_footprint_indicator:
           type: string
         value:
           description: ecotoxicityFreshwaterOrganicsCTUe value
-          type: number
+          type: string
       required:
         - value
         - unitCode
@@ -160,7 +160,7 @@ environmental_footprint_indicator:
           type: string
         value:
           description: energyResourcesAbioticDepletionFossils value
-          type: number
+          type: string
       required:
         - value
         - unitCode
@@ -178,7 +178,7 @@ environmental_footprint_indicator:
           type: string
         value:
           description: eutrophicationFreshwaterNutrientsP value
-          type: number
+          type: string
       required:
         - value
         - unitCode
@@ -196,7 +196,7 @@ environmental_footprint_indicator:
           type: string
         value:
           description: eutrophicationMarineNutrientsN value
-          type: number
+          type: string
       required:
         - value
         - unitCode
@@ -214,7 +214,7 @@ environmental_footprint_indicator:
           type: string
         value:
           description: eutrophicationTerrestrialAccumExceedance value
-          type: number
+          type: string
       required:
         - value
         - unitCode
@@ -232,7 +232,7 @@ environmental_footprint_indicator:
           type: string
         value:
           description: humanToxicityCarcinogenicCTUh value
-          type: number
+          type: string
       required:
         - value
         - unitCode
@@ -250,7 +250,7 @@ environmental_footprint_indicator:
           type: string
         value:
           description: humanToxicityCarcinogenicInorganicsCTU value
-          type: number
+          type: string
       required:
         - value
         - unitCode
@@ -268,7 +268,7 @@ environmental_footprint_indicator:
           type: string
         value:
           description: humanToxicityCarcinogenicOrganicsCTU value
-          type: number
+          type: string
       required:
         - value
         - unitCode
@@ -286,7 +286,7 @@ environmental_footprint_indicator:
           type: string
         value:
           description: humanToxicityNonCarcinogenicCTUh value
-          type: number
+          type: string
       required:
         - value
         - unitCode
@@ -304,7 +304,7 @@ environmental_footprint_indicator:
           type: string
         value:
           description: humanToxicityNonCarcinogenicInorganicsCTU value
-          type: number
+          type: string
       required:
         - value
         - unitCode
@@ -322,7 +322,7 @@ environmental_footprint_indicator:
           type: string
         value:
           description: humanToxicityNonCarcinogenicOrganicsCTU value
-          type: number
+          type: string
       required:
         - value
         - unitCode
@@ -344,7 +344,7 @@ environmental_footprint_indicator:
           type: string
         value:
           description: ionisingRadiationHumanHealthU235 value
-          type: number
+          type: string
       required:
         - value
         - unitCode
@@ -362,7 +362,7 @@ environmental_footprint_indicator:
           type: string
         value:
           description: landUseSoilQualityIndex value
-          type: number
+          type: string
       required:
         - value
         - unitCode
@@ -380,7 +380,7 @@ environmental_footprint_indicator:
           type: string
         value:
           description: materialResourcesAbioticDepletionElements value
-          type: number
+          type: string
       required:
         - value
         - unitCode
@@ -398,7 +398,7 @@ environmental_footprint_indicator:
           type: string
         value:
           description: ozoneDepletionPotentialODP value
-          type: number
+          type: string
       required:
         - value
         - unitCode
@@ -416,7 +416,7 @@ environmental_footprint_indicator:
           type: string
         value:
           description: particulateMatterFormationHealth value
-          type: number
+          type: string
       required:
         - value
         - unitCode
@@ -434,11 +434,17 @@ environmental_footprint_indicator:
           type: string
         value:
           description: photochemicalOxidantFormationHealth value
-          type: number
+          type: string
       required:
         - value
         - unitCode
       type: object
+
+    type:
+      description: Type of message published
+      enum:
+        - environmental_footprint_indicator
+      type: string
 
     waterUseUserDeprivationPotential:
       description: This indicator evaluates the potential for water consumption to lead to human water deprivation, considering local water scarcity and water use efficiency. It is expressed in cubic meters of world equivalents deprived (m³ world Eq. deprived).
@@ -452,7 +458,7 @@ environmental_footprint_indicator:
           type: string
         value:
           description: waterUseUserDeprivationPotential value
-          type: number
+          type: string
       required:
         - value
         - unitCode
@@ -460,6 +466,7 @@ environmental_footprint_indicator:
 
   required:
     - id
+    - type
     - acidificationAccumulatedExceedanceAE
     - climateChangeGlobalWarmingPotentialGWP
     - climateChangeBiogenicGWP100
