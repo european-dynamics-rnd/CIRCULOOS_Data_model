@@ -1,0 +1,63 @@
+{
+    "@context": {
+        "CountryCode": "https://raw.githubusercontent.com/konstantinosGombakis/CIRCULOOS_Data_model/main/intra-communication/schema.json#/CountryCode",
+        "address": "https://schema.org/address",
+        "addressCountry": "https://raw.githubusercontent.com/konstantinosGombakis/CIRCULOOS_Data_model/main/intra-communication/schema.json#/addressCountry",
+        "addressLocality": "https://raw.githubusercontent.com/konstantinosGombakis/CIRCULOOS_Data_model/main/intra-communication/schema.json#/addressLocality",
+        "addressRegion": "https://raw.githubusercontent.com/konstantinosGombakis/CIRCULOOS_Data_model/main/intra-communication/schema.json#/addressRegion",
+        "alternateName": "https://schema.org/alternateName",
+        "areaServed": "https://schema.org/areaServed",
+        "availableFrom": "https://raw.githubusercontent.com/konstantinosGombakis/CIRCULOOS_Data_model/main/intra-communication/schema.json#/availableFrom",
+        "bbox": {
+            "@container": "@list",
+            "@id": "geojson:bbox"
+        },
+        "coordinates": {
+            "@container": "@list",
+            "@id": "geojson:coordinates"
+        },
+        "dataProvider": "https://smart-data-models.github.io/data-models/terms.jsonld#/definitions/dataProvider",
+        "dateCreated": "https://smart-data-models.github.io/data-models/terms.jsonld#/definitions/dateCreated",
+        "dateModified": "https://smart-data-models.github.io/data-models/terms.jsonld#/definitions/dateModified",
+        "description": "https://uri.etsi.org/ngsi-ld/description",
+        "district": "https://raw.githubusercontent.com/konstantinosGombakis/CIRCULOOS_Data_model/main/intra-communication/schema.json#/district",
+        "id": "@id",
+        "imageURL": "https://raw.githubusercontent.com/konstantinosGombakis/CIRCULOOS_Data_model/main/intra-communication/schema.json#/imageURL",
+        "leather": "https://raw.githubusercontent.com/konstantinosGombakis/CIRCULOOS_Data_model/main/intra-communication/schema.json#/leather",
+        "location": "http://uri.etsi.org/ngsi-ld/location",
+        "materialAdStatus": "https://raw.githubusercontent.com/konstantinosGombakis/CIRCULOOS_Data_model/main/intra-communication/schema.json#/materialAdStatus",
+        "materialAdTitle": "https://raw.githubusercontent.com/konstantinosGombakis/CIRCULOOS_Data_model/main/intra-communication/schema.json#/materialAdTitle",
+        "materialAdType": "https://raw.githubusercontent.com/konstantinosGombakis/CIRCULOOS_Data_model/main/intra-communication/schema.json#/materialAdType",
+        "materialDescription": "https://raw.githubusercontent.com/konstantinosGombakis/CIRCULOOS_Data_model/main/intra-communication/schema.json#/materialDescription",
+        "materialPrice": "https://raw.githubusercontent.com/konstantinosGombakis/CIRCULOOS_Data_model/main/intra-communication/schema.json#/materialPrice",
+        "materialQuantity": "https://raw.githubusercontent.com/konstantinosGombakis/CIRCULOOS_Data_model/main/intra-communication/schema.json#/materialQuantity",
+        "materialToSellOrBuy": "https://raw.githubusercontent.com/konstantinosGombakis/CIRCULOOS_Data_model/main/intra-communication/schema.json#/materialToSellOrBuy",
+        "materialTypeL0": "https://raw.githubusercontent.com/konstantinosGombakis/CIRCULOOS_Data_model/main/intra-communication/schema.json#/materialTypeL0",
+        "materialTypeL1": "https://raw.githubusercontent.com/konstantinosGombakis/CIRCULOOS_Data_model/main/intra-communication/schema.json#/materialTypeL1",
+        "name": "https://uri.etsi.org/ngsi-ld/name",
+        "object": {
+            "@id": "https://uri.etsi.org/ngsi-ld/hasObject",
+            "@type": "@id"
+        },
+        "observedAt": {
+            "@id": "https://uri.etsi.org/ngsi-ld/observedAt",
+            "@type": "DateTime"
+        },
+        "ownedBy": {
+            "@id": "https://uri.fiware.org/ns/data-models#ownedBy",
+            "@type": "@id"
+        },
+        "owner": "https://smart-data-models.github.io/data-models/terms.jsonld#/definitions/owner",
+        "physicalFormCategory": "https://raw.githubusercontent.com/konstantinosGombakis/CIRCULOOS_Data_model/main/intra-communication/schema.json#/physicalFormCategory",
+        "postOfficeBoxNumber": "https://raw.githubusercontent.com/konstantinosGombakis/CIRCULOOS_Data_model/main/intra-communication/schema.json#/postOfficeBoxNumber",
+        "postalCode": "https://raw.githubusercontent.com/konstantinosGombakis/CIRCULOOS_Data_model/main/intra-communication/schema.json#/postalCode",
+        "productionFacility": "https://raw.githubusercontent.com/konstantinosGombakis/CIRCULOOS_Data_model/main/intra-communication/schema.json#/productionFacility",
+        "seeAlso": "https://uri.fiware.org/ns/data-models#seeAlso",
+        "source": "https://smart-data-models.github.io/data-models/terms.jsonld#/definitions/source",
+        "streetAddress": "https://raw.githubusercontent.com/konstantinosGombakis/CIRCULOOS_Data_model/main/intra-communication/schema.json#/streetAddress",
+        "streetNr": "https://raw.githubusercontent.com/konstantinosGombakis/CIRCULOOS_Data_model/main/intra-communication/schema.json#/streetNr",
+        "type": "@type",
+        "unitCode": "https://uri.etsi.org/ngsi-ld/unitCode",
+        "value": "https://uri.etsi.org/ngsi-ld/hasValue"
+    }
+}

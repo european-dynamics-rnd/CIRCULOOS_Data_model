@@ -1,0 +1,194 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "$schemaVersion": "0.0.1",
+    "modelTags": "",
+    "derivedFrom": "",
+    "license": "",
+    "$id": "https://raw.githubusercontent.com/TO_ADD_LATER/intra-communication/example/schema.json",
+    "title": "Data model for intra-communication example",
+    "description": "CIRCULOOS data model for intra-communication example-normalized.json",
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
+        },
+        {
+            "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
+        },
+        {
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier for the entity."
+                },
+                "type": {
+                    "type": "string",
+                    "description": "NGSI Entity type."
+                },
+                "materialAdTitle": {
+                    "type": "object",
+                    "properties": {
+                        "type": { "type": "string" },
+                        "value": { "type": "string" },
+                        "observedAt": { "type": "string", "format": "date-time" }
+                    },
+                    "description": "Title of the material advertisement."
+                },
+                "materialTypeL0": {
+                    "type": "object",
+                    "properties": {
+                        "type": { "type": "string" },
+                        "value": { "type": "string" },
+                        "observedAt": { "type": "string", "format": "date-time" }
+                    },
+                    "description": "Facility Input Categories, Level 0 material type."
+                },
+                "materialTypeL1": {
+                    "type": "object",
+                    "properties": {
+                        "type": { "type": "string" },
+                        "value": { "type": "string" },
+                        "observedAt": { "type": "string", "format": "date-time" }
+                    },
+                    "description": "Facility Output Categories, Level 1 material type."
+                },
+                "physicalFormCategory": {
+                    "type": "object",
+                    "properties": {
+                        "type": { "type": "string" },
+                        "value": {
+                            "type": "string",
+                            "enum": ["byWeight", "byDimensions", "bySurface"],
+                            "description": "Categorizes materials based on their physical form: byWeight, byDimensions, or bySurface."
+                        },
+                        "observedAt": { "type": "string", "format": "date-time" }
+                    },
+                    "description": "To categorize materials based on their physical form: byWeight, byDimensions, bySurface."
+                },
+                "imageURL": {
+                    "type": "object",
+                    "properties": {
+                        "type": { "type": "string" },
+                        "value": { "type": "string" },
+                        "observedAt": { "type": "string", "format": "date-time" }
+                    },
+                    "description": "URL of the material image."
+                },
+                "materialPrice": {
+                    "type": "object",
+                    "properties": {
+                        "type": { "type": "string" },
+                        "value": { "type": "number" },
+                        "observedAt": { "type": "string", "format": "date-time" }
+                    },
+                    "description": "Price of the material."
+                },
+                "availableFrom": {
+                    "type": "object",
+                    "properties": {
+                        "type": { "type": "string" },
+                        "value": { "type": "string", "format": "date" },
+                        "observedAt": { "type": "string", "format": "date-time" }
+                    },
+                    "description": "Date from which the material is available."
+                },
+                "materialAdType": {
+                    "type": "object",
+                    "properties": {
+                        "type": { "type": "string" },
+                        "value": {
+                            "type": "string",
+                            "enum": ["Sell", "Buy"],
+                            "description": "Type of advertisement: Sell or Buy."
+                        },
+                        "observedAt": { "type": "string", "format": "date-time" }
+                    },
+                    "description": "Type of advertisement: Sell or Buy."
+                },
+                "materialDescription": {
+                    "type": "object",
+                    "properties": {
+                        "type": { "type": "string" },
+                        "value": { "type": "string" },
+                        "observedAt": { "type": "string", "format": "date-time" }
+                    },
+                    "description": "Description of the material."
+                },
+                "materialAdStatus": {
+                    "type": "object",
+                    "properties": {
+                        "type": { "type": "string" },
+                        "value": { "type": "string" },
+                        "observedAt": { "type": "string", "format": "date-time" }
+                    },
+                    "description": "Status of the advertisement."
+                },
+                "materialQuantity": {
+                    "type": "object",
+                    "properties": {
+                        "type": { "type": "string" },
+                        "value": { "type": "number" },
+                        "unitCode": { "type": "string" },
+                        "observedAt": { "type": "string", "format": "date-time" }
+                    },
+                    "description": "Quantity of the material."
+                },
+                "ownedBy": {
+                    "type": "object",
+                    "properties": {
+                        "type": { "type": "string" },
+                        "object": { "type": "string" },
+                        "observedAt": { "type": "string", "format": "date-time" }
+                    },
+                    "description": "Reference relationship: owner of the material."
+                },
+                "productionFacility": {
+                    "type": "object",
+                    "properties": {
+                        "type": { "type": "string" },
+                        "object": { "type": "string" },
+                        "observedAt": { "type": "string", "format": "date-time" }
+                    },
+                    "description": "Reference relationship: production facility related to the material."
+                },
+                "materialToSellOrBuy": {
+                    "type": "object",
+                    "properties": {
+                        "type": { "type": "string" },
+                        "value": { "type": "string" },
+                        "observedAt": { "type": "string", "format": "date-time" }
+                    },
+                    "description": "Material to sell or buy."
+                },
+                "CountryCode": {
+                    "type": "object",
+                    "properties": {
+                        "type": { "type": "string" },
+                        "value": { "type": "string" },
+                        "observedAt": { "type": "string", "format": "date-time" }
+                    },
+                    "description": "Country code."
+                }
+            }
+        }
+    ],
+    "required": [
+        "id",
+        "type",
+        "materialAdTitle",
+        "materialTypeL0",
+        "materialTypeL1",
+        "physicalFormCategory",
+        "imageURL",
+        "materialPrice",
+        "availableFrom",
+        "materialAdType",
+        "materialDescription",
+        "materialAdStatus",
+        "materialQuantity",
+        "ownedBy",
+        "productionFacility",
+        "materialToSellOrBuy",
+        "CountryCode"
+    ]
+}
