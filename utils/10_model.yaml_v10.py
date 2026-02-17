@@ -126,7 +126,7 @@ def github_push_from_variable(contentVariable, repoName, fileTargetPath, message
 
 
 baseModelFileName = "model.yaml"
-# schemaUrl='https://raw.githubusercontent.com/konstantinosGombakis/CIRCULOOS_Data_model/main/material/leather/schema.json'
+# schemaUrl='https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/material/leather/schema.json'
 # # For local webserver 
 schemaUrl="http://localhost:8085/schema.json"
 
