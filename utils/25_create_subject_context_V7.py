@@ -150,25 +150,26 @@ def open_json(fileUrl):
 
 
 def open_yaml(fileUrl):
-    import ruamel.yaml as yaml
+    from ruamel.yaml import YAML
     import requests
     print("Opening yaml "+fileUrl)
+    yaml = YAML(typ='safe', pure=True)
     try:
         if fileUrl[0:4] == "http":
             # es URL
             pointer = requests.get(fileUrl,timeout=1)
-            return yaml.safe_load(pointer.content.decode('utf-8'))
-    except:
+            return yaml.load(pointer.content.decode('utf-8'))
+    except Exception as e:
         print ("Error opening "+fileUrl)
+        print(f"Exception: {type(e).__name__}: {str(e)}")
         return "exception"
     else:
         # es file
         try:
             with open(fileUrl, "r") as file:
                 return yaml.load(file)
-            # file = open(fileUrl, "r")
-            # return yaml.safe_load(file.read())
-        except:
+        except Exception as e:
+            print(f"Exception: {type(e).__name__}: {str(e)}")
             return "wrong file "+fileUrl
 
 
@@ -320,9 +321,9 @@ dataModelsToPublish = open_json(configFile)
 coreContextDictUrl="fiware-context.jsonld"
 coreContextDict = open_json(coreContextDictUrl)
 ###       ALWAYS INSERT THE raw URL ie. https://raw.githubusercontent.com/konstantinosGombakis/CIRCULOOS_Data_model/main/material/leather/ 
-customRepository="https://raw.githubusercontent.com/konstantinosGombakis/CIRCULOOS_Data_model/main/material/leather/"
+# customRepository="https://raw.githubusercontent.com/konstantinosGombakis/CIRCULOOS_Data_model/main/material/leather/"
 # # For local webserver 
-# customRepository="http://localhost:8085/"
+customRepository="http://localhost:8085/"
 
 # https://raw.githubusercontent.com/konstantinosGombakis/CIRCULOOS_data_model/main/schema.json
 # customRepository="https://konstantinosgombakis.github.io/CIRCULOOS_data_model/custom_data_model/"
