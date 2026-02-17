@@ -1,6 +1,8 @@
 # One context source per line (URL or local .json/.jsonld path)
 # Lines starting with # and blank lines are ignored
 
+combined_subjects_context.jsonld
 ../material/wood/context.jsonld
 ../material/leather/context.jsonld
 ../intra-communication/context.jsonld
+../sustainabilityIndicators/context.jsonld
