@@ -320,14 +320,14 @@ dataModelsToPublish = open_json(configFile)
 # coreContextDictUrl = "etsi_core_context.json"
 coreContextDictUrl="fiware-context.jsonld"
 coreContextDict = open_json(coreContextDictUrl)
-###       ALWAYS INSERT THE raw URL ie. https://raw.githubusercontent.com/konstantinosGombakis/CIRCULOOS_Data_model/main/material/leather/ 
-# customRepository="https://raw.githubusercontent.com/konstantinosGombakis/CIRCULOOS_Data_model/main/material/leather/"
+###       ALWAYS INSERT THE raw URL ie. https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/material/leather/ 
+# customRepository="https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/material/leather/"
 # # For local webserver 
 customRepository="http://localhost:8085/"
 
-# https://raw.githubusercontent.com/konstantinosGombakis/CIRCULOOS_data_model/main/schema.json
+# https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/schema.json
 # customRepository="https://konstantinosgombakis.github.io/CIRCULOOS_data_model/custom_data_model/"
-# customRepository="https://raw.githubusercontent.com/konstantinosGombakis/CIRCULOOS_data_model/main/custom_data_model/schema.json"
+# customRepository="https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/custom_data_model/schema.json"
 
 dataModelsListUrl = "https://raw.githubusercontent.com/smart-data-models/data-models/master/specs/AllSubjects/official_list_data_models.json"
 # dataModelsList = open_json(dataModelsListUrl)["officialList"]

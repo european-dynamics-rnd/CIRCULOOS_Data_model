@@ -227,7 +227,7 @@ licenseMessageEnd = "/LICENSE.md)"
 
 
 urlNotesRoot = "https://smart-data-models.github.io"
-# customRepository="https://raw.githubusercontent.com/konstantinosGombakis/CIRCULOOS_Data_model/main/material/leather/"
+# customRepository="https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/material/leather/"
 # # For local webserver 
 customRepository="http://localhost:8085/"
 
