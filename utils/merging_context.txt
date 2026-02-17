@@ -1,0 +1,6 @@
+# One context source per line (URL or local .json/.jsonld path)
+# Lines starting with # and blank lines are ignored
+
+../material/wood/context.jsonld
+../material/leather/context.jsonld
+../intra-communication/context.jsonld
