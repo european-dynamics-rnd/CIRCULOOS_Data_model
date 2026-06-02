@@ -1,0 +1,98 @@
+{
+  "id": "urn:ngsi-ld:reConcretePart:sicurta-001",
+  "type": "reConcretePart",
+  "partId": {
+    "type": "Property",
+    "value": "sicurta-001"
+  },
+  "fabricationTimestamp": {
+    "type": "Property",
+    "value": "2026-05-20T10:30:00Z"
+  },
+  "density": {
+    "type": "Property",
+    "value": 2150,
+    "unitCode": "KMQ"
+  },
+  "weight": {
+    "type": "Property",
+    "value": 135.0,
+    "unitCode": "KGM"
+  },
+  "overallDimensions": {
+    "type": "Property",
+    "value": {
+      "length": 0.8,
+      "width": 1.2,
+      "height": 0.6
+    },
+    "unitCode": "MTR"
+  },
+  "realTimeCoordinates": {
+    "type": "Property",
+    "value": {
+      "x": [0.0, 0.2, 0.4, 0.6],
+      "y": [0.0, 0.1, 0.1, 0.2],
+      "z": [0.0, 0.05, 0.1, 0.15]
+    },
+    "unitCode": "MTR"
+  },
+  "realTimePressureSensorData": {
+    "type": "Property",
+    "value": {
+      "values": [2.1, 2.2, 2.0, 2.3]
+    },
+    "unitCode": "BAR"
+  },
+  "realTimeTemperatureSensorData": {
+    "type": "Property",
+    "value": {
+      "values": [23.5, 23.8, 24.0, 24.1]
+    },
+    "unitCode": "CEL"
+  },
+  "torqueData": {
+    "type": "Property",
+    "value": {
+      "values": [14.1, 14.3, 14.0, 14.2]
+    },
+    "unitCode": "NU"
+  },
+  "printSpeed": {
+    "type": "Property",
+    "value": 100,
+    "unitCode": "C16"
+  },
+  "energyUsage": {
+    "type": "Property",
+    "value": 4.0,
+    "unitCode": "KWH"
+  },
+  "waterUsage": {
+    "type": "Property",
+    "value": 9.4,
+    "unitCode": "LTR"
+  },
+  "compressiveStrength": {
+    "type": "Property",
+    "value": 38.2,
+    "unitCode": "MPA"
+  },
+  "cementContent": {
+    "type": "Property",
+    "value": 20.0,
+    "unitCode": "P1"
+  },
+  "recycledContent": {
+    "type": "Property",
+    "value": 46.5,
+    "unitCode": "P1"
+  },
+  "color": {
+    "type": "Property",
+    "value": "light grey"
+  },
+  "@context": [
+    "https://TOBELater/context.jsonld"
+  ]
+}
