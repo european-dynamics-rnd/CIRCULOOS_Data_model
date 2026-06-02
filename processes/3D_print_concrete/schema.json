@@ -1,0 +1,325 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "$schemaVersion": "0.0.1",
+  "modelTags": "",
+  "derivedFrom": "",
+  "license": "",
+  "$id": "https://raw.githubusercontent.com/TO_ADD_LATER/schema.json",
+  "title": "Data model for 3D printed concrete parts",
+  "description": "CIRCULOOS data model for 3D printed concrete parts.",
+  "type": "object",
+  "definitions": {
+    "NumericProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Property"
+          ]
+        },
+        "value": {
+          "type": "number",
+          "minimum": 0
+        },
+        "unitCode": {
+          "type": "string"
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ],
+      "additionalProperties": false
+    },
+    "StringProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Property"
+          ]
+        },
+        "value": {
+          "type": "string"
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ],
+      "additionalProperties": false
+    },
+    "DateTimeProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Property"
+          ]
+        },
+        "value": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ],
+      "additionalProperties": false
+    },
+    "DimensionsProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Property"
+          ]
+        },
+        "value": {
+          "type": "object",
+          "properties": {
+            "length": {
+              "type": "number",
+              "minimum": 0,
+              "description": "Property. Overall length of the part."
+            },
+            "width": {
+              "type": "number",
+              "minimum": 0,
+              "description": "Property. Overall width of the part."
+            },
+            "height": {
+              "type": "number",
+              "minimum": 0,
+              "description": "Property. Overall height of the part."
+            }
+          },
+          "required": [
+            "length",
+            "width",
+            "height"
+          ],
+          "additionalProperties": false
+        },
+        "unitCode": {
+          "type": "string"
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ],
+      "additionalProperties": false
+    },
+    "CoordinatesProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Property"
+          ]
+        },
+        "value": {
+          "type": "object",
+          "properties": {
+            "x": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              },
+              "minItems": 1,
+              "description": "Property. X-axis coordinates captured during manufacturing."
+            },
+            "y": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              },
+              "minItems": 1,
+              "description": "Property. Y-axis coordinates captured during manufacturing."
+            },
+            "z": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              },
+              "minItems": 1,
+              "description": "Property. Z-axis coordinates captured during manufacturing."
+            }
+          },
+          "required": [
+            "x",
+            "y",
+            "z"
+          ],
+          "additionalProperties": false
+        },
+        "unitCode": {
+          "type": "string"
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ],
+      "additionalProperties": false
+    },
+    "NumericArrayValuesProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Property"
+          ]
+        },
+        "value": {
+          "type": "object",
+          "properties": {
+            "values": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              },
+              "minItems": 1,
+              "description": "Property. Sensor values captured during manufacturing."
+            }
+          },
+          "required": [
+            "values"
+          ],
+          "additionalProperties": false
+        },
+        "unitCode": {
+          "type": "string"
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+          "description": "Property. NGSI Entity type. It has to be reConcretePart",
+          "enum": [
+            "reConcretePart"
+          ]
+        },
+        "partId": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. Identifier of the printed concrete part within the manufacturing domain."
+        },
+        "fabricationTimestamp": {
+          "$ref": "#/definitions/DateTimeProperty",
+          "description": "Property. Timestamp when fabrication of the part was completed."
+        },
+        "density": {
+          "$ref": "#/definitions/NumericProperty",
+          "description": "Property. Density of the printed concrete part."
+        },
+        "weight": {
+          "$ref": "#/definitions/NumericProperty",
+          "description": "Property. Weight of the printed concrete part."
+        },
+        "overallDimensions": {
+          "$ref": "#/definitions/DimensionsProperty",
+          "description": "Property. Overall dimensions of the printed concrete part."
+        },
+        "realTimeCoordinates": {
+          "$ref": "#/definitions/CoordinatesProperty",
+          "description": "Property. Real time position coordinates recorded during printing."
+        },
+        "realTimePressureSensorData": {
+          "$ref": "#/definitions/NumericArrayValuesProperty",
+          "description": "Property. Real time pressure sensor data collected during printing."
+        },
+        "realTimeTemperatureSensorData": {
+          "$ref": "#/definitions/NumericArrayValuesProperty",
+          "description": "Property. Real time temperature sensor data collected during printing."
+        },
+        "torqueData": {
+          "$ref": "#/definitions/NumericArrayValuesProperty",
+          "description": "Property. Real time torque data collected during printing."
+        },
+        "printSpeed": {
+          "$ref": "#/definitions/NumericProperty",
+          "description": "Property. Average print speed used during manufacturing."
+        },
+        "energyUsage": {
+          "$ref": "#/definitions/NumericProperty",
+          "description": "Property. Energy usage associated with the fabrication of the part."
+        },
+        "waterUsage": {
+          "$ref": "#/definitions/NumericProperty",
+          "description": "Property. Water usage associated with the fabrication of the part."
+        },
+        "compressiveStrength": {
+          "$ref": "#/definitions/NumericProperty",
+          "description": "Property. Compressive strength of the printed concrete part."
+        },
+        "cementContent": {
+          "$ref": "#/definitions/NumericProperty",
+          "description": "Property. Cement content percentage of the material."
+        },
+        "recycledContent": {
+          "$ref": "#/definitions/NumericProperty",
+          "description": "Property. Recycled content percentage of the material."
+        },
+        "color": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. The final color of the printed concrete part."
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "partId",
+    "fabricationTimestamp",
+    "overallDimensions",
+    "weight"
+  ]
+}
