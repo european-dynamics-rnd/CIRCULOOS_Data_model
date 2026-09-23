@@ -1,0 +1,285 @@
+Product:
+
+  description: CIRCULOOS data model for a recorded quantity of material, energy, a consumable or a finished product used or produced in the ISLOPOL value chain, covering its quantity and unit, its supplier and destination, its physical dimensions and the process event it belongs to.
+
+  properties:
+
+    destination:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: Name or identifier of the intended recipient, facility or destination for the product or material. The schema allows a list of destinations.
+      x-ngsi:
+        type: Property
+
+    id:
+      description: Unique entity identifier, with the format urn:ngsi-ld:Product:<facility>:<material>:<date>.
+      type: string
+      x-ngsi:
+        type: Property
+
+    length:
+      allOf:
+        - additionalProperties: no
+          anyOf:
+            - required:
+                - value
+            - required:
+                - minValue
+            - required:
+                - maxValue
+          properties:
+            maxValue:
+              description: Upper bound of the value, when the source declares a range or a maximum.
+              type: number
+            minValue:
+              description: Lower bound of the value, when the source declares a range or a minimum.
+              type: number
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            unitCode:
+              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.
+              type: string
+            value:
+              description: Exact measured value, when a single figure is known.
+              type: number
+          required:
+            - type
+            - unitCode
+          type: object
+      description: 'Expected unitCode: CMT. Physical length of the product.'
+      x-ngsi:
+        type: Property
+
+    quantity:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            unitCode:
+              type: string
+            value:
+              type: number
+          required:
+            - type
+            - value
+          type: object
+      description: Amount of the product, material or resource represented by the record, expressed in the accompanying unitCode.
+      x-ngsi:
+        type: Property
+
+    refProcessEvent:
+      allOf:
+        - additionalProperties: no
+          properties:
+            object:
+              description: URN of the referenced entity.
+              pattern: ^urn:ngsi-ld:.+$
+              type: string
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Relationship
+              type: string
+          required:
+            - type
+            - object
+          type: object
+      description: Identifier of the ProcessEvent associated with this Product record, linking its material or resource to the corresponding operation.
+      x-ngsi:
+        type: Relationship
+
+    refProductModel:
+      allOf:
+        - additionalProperties: no
+          properties:
+            object:
+              description: URN of the referenced entity.
+              pattern: ^urn:ngsi-ld:.+$
+              type: string
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Relationship
+              type: string
+          required:
+            - type
+            - object
+          type: object
+      description: Identifier of the ProductModel defining the product's shared characteristics, such as its material, category and default unit of measurement.
+      x-ngsi:
+        type: Relationship
+
+    supplier:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: Name or identifier of the organisation or source supplying the product or material. The schema allows a list of suppliers.
+      x-ngsi:
+        type: Property
+
+    thickness:
+      allOf:
+        - additionalProperties: no
+          anyOf:
+            - required:
+                - value
+            - required:
+                - minValue
+            - required:
+                - maxValue
+          properties:
+            maxValue:
+              description: Upper bound of the value, when the source declares a range or a maximum.
+              type: number
+            minValue:
+              description: Lower bound of the value, when the source declares a range or a minimum.
+              type: number
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            unitCode:
+              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.
+              type: string
+            value:
+              description: Exact measured value, when a single figure is known.
+              type: number
+          required:
+            - type
+            - unitCode
+          type: object
+      description: 'Expected unitCode: CMT. Physical thickness of the product.'
+      x-ngsi:
+        type: Property
+
+    type:
+      description: NGSI Entity type. It has to be Product
+      enum:
+        - Product
+      type: string
+      x-ngsi:
+        type: Property
+
+    unitCode:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: Unit of measurement for quantity.
+      x-ngsi:
+        type: Property
+
+    width:
+      allOf:
+        - additionalProperties: no
+          anyOf:
+            - required:
+                - value
+            - required:
+                - minValue
+            - required:
+                - maxValue
+          properties:
+            maxValue:
+              description: Upper bound of the value, when the source declares a range or a maximum.
+              type: number
+            minValue:
+              description: Lower bound of the value, when the source declares a range or a minimum.
+              type: number
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            unitCode:
+              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.
+              type: string
+            value:
+              description: Exact measured value, when a single figure is known.
+              type: number
+          required:
+            - type
+            - unitCode
+          type: object
+      description: 'Expected unitCode: CMT. Physical width of the product.'
+      x-ngsi:
+        type: Property
+
+  required:
+    - id
+    - type
+    - quantity
+    - unitCode
+
+  type: object
+
+  x-derived-from: https://context.dataspace-arditi.com/islopol/entities/Product/v2/schema.json
+
+  x-disclaimer: Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program
+
+  x-license-url: https://github.com/smart-data-models/circuloos_data_model/blob/master/Product/LICENSE.md
+
+  x-model-schema: https://raw.githubusercontent.com/TO_ADD_LATER/schema.json
+
+  x-model-tags: ''
+
+  x-version: 0.0.1

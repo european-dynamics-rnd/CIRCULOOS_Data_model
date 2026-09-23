@@ -1,0 +1,168 @@
+ProductModel:
+
+  description: CIRCULOOS data model for a product or material model that defines shared characteristics for individual Product records in the ISLOPOL value chain, covering its name, constituents, material, available categories and default unit of measurement.
+
+  properties:
+
+    category:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              items:
+                type: string
+              minItems: 1
+              type: array
+          required:
+            - type
+            - value
+          type: object
+      description: List of product categories or grades available for the model. Given in the source as https://schema.org/category, the expanded JSON-LD form of availableCategories.
+      x-ngsi:
+        type: Property
+
+    constituents:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: Material or list of materials or components making up the product model. Given in the source as https://context.dataspace-arditi.com/islopol/terms/v2/constituents.
+      x-ngsi:
+        type: Property
+
+    description:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: Human-readable description of the product or material represented by the model.
+      x-ngsi:
+        type: Property
+
+    id:
+      description: ''
+      type: string
+      x-ngsi:
+        model: Unique entity identifier, with the format urn:ngsi-ld:Product<modelId>.
+        type: Property
+
+    material:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: Main material or composition associated with the product model. Given in the source as https://schema.org/material.
+      x-ngsi:
+        type: Property
+
+    name:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: Human-readable name of the product model, used to label products. Given in the source as https://schema.org/name.
+      x-ngsi:
+        type: Property
+
+    type:
+      description: NGSI Entity type. It has to be ProductModel
+      enum:
+        - ProductModel
+      type: string
+      x-ngsi:
+        type: Property
+
+    unitCode:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: Default unit of measurement for products of this model, such as kilograms, kilowatt-hours or individual units.
+      x-ngsi:
+        type: Property
+
+  required:
+    - id
+    - type
+    - name
+
+  type: object
+
+  x-derived-from: https://context.dataspace-arditi.com/islopol/entities/ProductModel/v2/schema.json
+
+  x-disclaimer: Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program
+
+  x-license-url: https://github.com/smart-data-models/circuloos_data_model/blob/master/ProductModel/LICENSE.md
+
+  x-model-schema: https://raw.githubusercontent.com/TO_ADD_LATER/schema.json
+
+  x-model-tags: ''
+
+  x-version: 0.0.1

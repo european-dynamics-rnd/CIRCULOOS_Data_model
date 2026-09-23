@@ -1,0 +1,313 @@
+Organization:
+
+  description: CIRCULOOS data model for an organization participating in the Biocorner supply chain, covering its legal identity, contact details and its functional role and tier within the supply chain.
+
+  properties:
+
+    address:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: The mailing address of the organization.
+      x-ngsi:
+        type: Property
+
+    city:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: The city in which the organization is located.
+      x-ngsi:
+        type: Property
+
+    contactEmail:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: Email address of the organization.
+      x-ngsi:
+        type: Property
+
+    contactPhone:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: Telephone number of the organization.
+      x-ngsi:
+        type: Property
+
+    country:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: The country in which the organization is located.
+      x-ngsi:
+        type: Property
+
+    id:
+      description: Unique entity identifier, with the format urn:ngsi-ld:Organization:<id>.
+      type: string
+      x-ngsi:
+        type: Property
+
+    legalForm:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: Legal entity classification (e.g. Limited Liability Company, Research Center, Public University). Relevant for consortium agreements and contractual arrangements.
+      x-ngsi:
+        type: Property
+
+    name:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: Full official name of the organization as registered in public records, including legal suffix where applicable.
+      x-ngsi:
+        type: Property
+
+    postalCode:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: The postal code of the organization address.
+      x-ngsi:
+        type: Property
+
+    region:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: Administrative region where the organization is headquartered. Used for regional supply chain mapping and geographic analysis.
+      x-ngsi:
+        type: Property
+
+    role:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: Functional role of the organization within the project supply chain (e.g. RTO, Manufacturer, Contract Manufacturer, SRM Supplier).
+      x-ngsi:
+        type: Property
+
+    supplyChainRole:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: 'High-level classification of the organization function: RTO for research and development, Manufacturer for production, or SRM Supplier for material sourcing.'
+      x-ngsi:
+        type: Property
+
+    tier:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: 'Supply chain tier relative to final product: Tier 0 for entities directly involved in product development or manufacturing, Tier 1 for raw material suppliers.'
+      x-ngsi:
+        type: Property
+
+    type:
+      description: NGSI Entity type. It has to be Organization
+      enum:
+        - Organization
+      type: string
+      x-ngsi:
+        type: Property
+
+    website:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: Website of the organization.
+      x-ngsi:
+        type: Property
+
+  required:
+    - id
+    - type
+    - name
+    - supplyChainRole
+    - tier
+
+  type: object
+
+  x-derived-from: ''
+
+  x-disclaimer: Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program
+
+  x-license-url: https://github.com/smart-data-models/circuloos_data_model/blob/master/Organization/LICENSE.md
+
+  x-model-schema: https://raw.githubusercontent.com/TO_ADD_LATER/schema.json
+
+  x-model-tags: ''
+
+  x-version: 0.0.1

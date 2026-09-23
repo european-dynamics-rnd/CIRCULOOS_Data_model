@@ -1,0 +1,101 @@
+Process:
+
+  description: CIRCULOOS data model for a reusable process definition in the ISLOPOL value chain, which can be referenced by multiple ProcessEvent or ProductionRun records, covering its name, purpose and triggering condition.
+
+  properties:
+
+    description:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: Human-readable explanation of the process, including its purpose and the main input materials, resources and outputs.
+      x-ngsi:
+        type: Property
+
+    id:
+      description: Unique entity identifier, with the format urn:ngsi-ld:Process:<facility>:<processId>.
+      type: string
+      x-ngsi:
+        type: Property
+
+    name:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: Human-readable name of the process. Given in the source as https://schema.org/name.
+      x-ngsi:
+        type: Property
+
+    triggeringCondition:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: Condition or operational requirement that causes the process to be started, such as the need to process accumulated waste. Given in the source as https://context.dataspace-arditi.com/islopol/terms/v2/triggeringCondition.
+      x-ngsi:
+        type: Property
+
+    type:
+      description: NGSI Entity type. It has to be Process
+      enum:
+        - Process
+      type: string
+      x-ngsi:
+        type: Property
+
+  required:
+    - id
+    - type
+    - name
+
+  type: object
+
+  x-derived-from: https://context.dataspace-arditi.com/islopol/entities/Process/v2/schema.json
+
+  x-disclaimer: Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program
+
+  x-license-url: https://github.com/smart-data-models/circuloos_data_model/blob/master/Process/LICENSE.md
+
+  x-model-schema: https://raw.githubusercontent.com/TO_ADD_LATER/schema.json
+
+  x-model-tags: ''
+
+  x-version: 0.0.1

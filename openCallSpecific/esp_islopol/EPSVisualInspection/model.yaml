@@ -1,0 +1,171 @@
+EPSVisualInspection:
+
+  description: CIRCULOOS data model for a visual inspection of EPS material received at a recycling facility in the ISLOPOL value chain, covering the inspection period, the mass rejected and the transport and output products it links to.
+
+  properties:
+
+    endDate:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              format: date-time
+              pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: Date and time when the visual inspection ended, expressed as an ISO 8601 timestamp.
+      x-ngsi:
+        type: Property
+
+    id:
+      description: Unique entity identifier, with the format urn:ngsi-ld:EPSVisualInspection:<facility>:<timestamp>.
+      type: string
+      x-ngsi:
+        type: Property
+
+    refEPSTransport:
+      allOf:
+        - additionalProperties: no
+          properties:
+            object:
+              description: URN of the referenced entity.
+              pattern: ^urn:ngsi-ld:.+$
+              type: string
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Relationship
+              type: string
+          required:
+            - type
+            - object
+          type: object
+      description: Identifier of the EPSTransport operation that delivered the EPS being inspected, linking the inspection to the shipment and its batches.
+      x-ngsi:
+        type: Relationship
+
+    refOutputProducts:
+      allOf:
+        - additionalProperties: no
+          properties:
+            object:
+              description: URNs of the referenced entities.
+              items:
+                pattern: ^urn:ngsi-ld:.+$
+                type: string
+              minItems: 1
+              type: array
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Relationship
+              type: string
+          required:
+            - type
+            - object
+          type: object
+      description: Identifiers of Product entities linked as outputs of the inspection, providing traceability to the material that proceeds through the recycling workflow.
+      x-ngsi:
+        type: Relationship
+
+    rejections:
+      allOf:
+        - additionalProperties: no
+          anyOf:
+            - required:
+                - value
+            - required:
+                - minValue
+            - required:
+                - maxValue
+          properties:
+            maxValue:
+              description: Upper bound of the value, when the source declares a range or a maximum.
+              type: number
+            minValue:
+              description: Lower bound of the value, when the source declares a range or a minimum.
+              type: number
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            unitCode:
+              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.
+              type: string
+            value:
+              description: Exact measured value, when a single figure is known.
+              type: number
+          required:
+            - type
+            - unitCode
+          type: object
+      description: 'Expected unitCode: KGM. Mass of material rejected during the visual inspection. This is an absolute mass, not a rejection percentage.'
+      x-ngsi:
+        type: Property
+
+    startDate:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              format: date-time
+              pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: Date and time when the visual inspection started, expressed as an ISO 8601 timestamp.
+      x-ngsi:
+        type: Property
+
+    type:
+      description: NGSI Entity type. It has to be EPSVisualInspection
+      enum:
+        - EPSVisualInspection
+      type: string
+      x-ngsi:
+        type: Property
+
+  required:
+    - id
+    - type
+    - startDate
+
+  type: object
+
+  x-derived-from: https://context.dataspace-arditi.com/islopol/entities/EPSVisualInspection/v2/schema.json
+
+  x-disclaimer: Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program
+
+  x-license-url: https://github.com/smart-data-models/circuloos_data_model/blob/master/EPSVisualInspection/LICENSE.md
+
+  x-model-schema: https://raw.githubusercontent.com/TO_ADD_LATER/schema.json
+
+  x-model-tags: ''
+
+  x-version: 0.0.1

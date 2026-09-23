@@ -1,0 +1,140 @@
+SEMImage:
+
+  description: CIRCULOOS data model for a scanning electron microscope (SEM) image of a material sample in the SEARCLE value chain, covering the instrument that produced it, the machine settings used, and the link to the stored image file.
+
+  properties:
+
+    acceleratingVoltage:
+      allOf:
+        - additionalProperties: no
+          anyOf:
+            - required:
+                - value
+            - required:
+                - minValue
+            - required:
+                - maxValue
+          properties:
+            maxValue:
+              description: Upper bound of the value, when the source declares a range or a maximum.
+              type: number
+            minValue:
+              description: Lower bound of the value, when the source declares a range or a minimum.
+              type: number
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            unitCode:
+              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.
+              type: string
+            value:
+              description: Exact measured value, when a single figure is known.
+              type: number
+          required:
+            - type
+            - unitCode
+          type: object
+      description: 'Expected unitCode: KVT. Accelerating voltage of the electron beam, another machine setting of the acquisition.'
+      x-ngsi:
+        type: Property
+
+    equipment:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: Equipment that generated the data.
+      x-ngsi:
+        type: Property
+
+    id:
+      description: Unique entity identifier, with the format urn:ngsi-ld:circuloos_searcle:sem:<imageId>.
+      type: string
+      x-ngsi:
+        type: Property
+
+    imageUrl:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: Internal link to the data if too big (requires authentication).
+      x-ngsi:
+        type: Property
+
+    magnification:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: Machine settings (e.g. microscope magnification), recorded as reported by the instrument (e.g. "x250").
+      x-ngsi:
+        type: Property
+
+    type:
+      description: NGSI Entity type. It has to be SEMImage
+      enum:
+        - SEMImage
+      type: string
+      x-ngsi:
+        type: Property
+
+  required:
+    - id
+    - type
+    - equipment
+    - imageUrl
+
+  type: object
+
+  x-derived-from: ''
+
+  x-disclaimer: Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program
+
+  x-license-url: https://github.com/smart-data-models/circuloos_data_model/blob/master/SEMImage/LICENSE.md
+
+  x-model-schema: https://raw.githubusercontent.com/TO_ADD_LATER/schema.json
+
+  x-model-tags: ''
+
+  x-version: 0.0.1

@@ -1,0 +1,25 @@
+{
+    "@context": {
+        "Organization": "https://smartdatamodels.org/dataModel.Organization/Organization",
+        "address": "https://smartdatamodels.org/address",
+        "city": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/city",
+        "contactEmail": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/contactEmail",
+        "contactPhone": "https://smartdatamodels.org/dataModel.CallComplaints/contactPhone",
+        "country": "https://smartdatamodels.org/dataModel.Transportation/country",
+        "id": "@id",
+        "legalForm": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/legalForm",
+        "name": "https://smartdatamodels.org/name",
+        "observedAt": {
+            "@id": "https://uri.etsi.org/ngsi-ld/observedAt",
+            "@type": "https://uri.etsi.org/ngsi-ld/DateTime"
+        },
+        "postalCode": "https://smartdatamodels.org/postalCode",
+        "region": "https://smartdatamodels.org/dataModel.Transportation/region",
+        "role": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/role",
+        "supplyChainRole": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/supplyChainRole",
+        "tier": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/tier",
+        "type": "@type",
+        "value": "https://uri.etsi.org/ngsi-ld/hasValue",
+        "website": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/website"
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "@context": {
+        "ProductModel": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/ProductModel",
+        "category": "https://smartdatamodels.org/dataModel.ZEB/category",
+        "constituents": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/constituents",
+        "description": "http://purl.org/dc/terms/description",
+        "id": "@id",
+        "material": "https://smartdatamodels.org/dataModel.ZEB/material",
+        "name": "https://smartdatamodels.org/name",
+        "observedAt": {
+            "@id": "https://uri.etsi.org/ngsi-ld/observedAt",
+            "@type": "https://uri.etsi.org/ngsi-ld/DateTime"
+        },
+        "type": "@type",
+        "unitCode": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/unitCode",
+        "value": "https://uri.etsi.org/ngsi-ld/hasValue"
+    }
+}

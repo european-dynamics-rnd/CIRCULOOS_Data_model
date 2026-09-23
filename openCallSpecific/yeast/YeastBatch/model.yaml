@@ -1,0 +1,467 @@
+YeastBatch:
+
+  description: CIRCULOOS data model for a batch of brewer's spent yeast (BSY) collected from a brewery in the Yeast2Value value chain, covering its origin and collection, its storage conditions before pick-up, and the cell count and dry matter measurements taken on receipt.
+
+  properties:
+
+    batchId:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: Laboratory code assigned to the yeast sample on receipt (e.g. PT_0149), used to trace the batch through analysis and processing.
+      x-ngsi:
+        type: Property
+
+    brewery:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: Name of the brewery (or source label) that supplied the brewer's spent yeast batch.
+      x-ngsi:
+        type: Property
+
+    dataSource:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: Name of the source file or dataset the record was taken from, for traceability.
+      x-ngsi:
+        type: Property
+
+    dryMassUnfiltered:
+      allOf:
+        - additionalProperties: no
+          anyOf:
+            - required:
+                - value
+            - required:
+                - minValue
+            - required:
+                - maxValue
+          properties:
+            maxValue:
+              description: Upper bound of the value, when the source declares a range or a maximum.
+              type: number
+            minValue:
+              description: Lower bound of the value, when the source declares a range or a minimum.
+              type: number
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            unitCode:
+              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.
+              type: string
+            value:
+              description: Exact measured value, when a single figure is known.
+              type: number
+          required:
+            - type
+            - unitCode
+          type: object
+      description: 'Expected unitCode: P1. Dry matter content of the unfiltered raw yeast slurry, in % (w/w). A key parameter for processing yield and transport efficiency.'
+      x-ngsi:
+        type: Property
+
+    feedstockSource:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: Type of feedstock the batch represents; in Yeast2Value this is brewer's spent yeast (BSY), a by-product of beer fermentation.
+      x-ngsi:
+        type: Property
+
+    id:
+      description: Unique entity identifier, with the format urn:ngsi-ld:circuloos-yeast2value:batch:<batchId>.
+      type: string
+      x-ngsi:
+        type: Property
+
+    livingCellsCount:
+      allOf:
+        - additionalProperties: no
+          anyOf:
+            - required:
+                - value
+            - required:
+                - minValue
+            - required:
+                - maxValue
+          properties:
+            maxValue:
+              description: Upper bound of the value, when the source declares a range or a maximum.
+              type: number
+            minValue:
+              description: Lower bound of the value, when the source declares a range or a minimum.
+              type: number
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            unitCode:
+              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.
+              type: string
+            value:
+              description: Exact measured value, when a single figure is known.
+              type: number
+          required:
+            - type
+            - unitCode
+          type: object
+      description: 'Expected unitCode: cells/mL. Number of viable (living) yeast cells per millilitre of sample.'
+      x-ngsi:
+        type: Property
+
+    livingCellsPercent:
+      allOf:
+        - additionalProperties: no
+          anyOf:
+            - required:
+                - value
+            - required:
+                - minValue
+            - required:
+                - maxValue
+          properties:
+            maxValue:
+              description: Upper bound of the value, when the source declares a range or a maximum.
+              type: number
+            minValue:
+              description: Lower bound of the value, when the source declares a range or a minimum.
+              type: number
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            unitCode:
+              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.
+              type: string
+            value:
+              description: Exact measured value, when a single figure is known.
+              type: number
+          required:
+            - type
+            - unitCode
+          type: object
+      description: 'Expected unitCode: P1. Viability of the batch: living cells as a percentage of the total cell count (livingCellsCount / totalCellCount x 100).'
+      x-ngsi:
+        type: Property
+
+    phValueRawYeast:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            unitCode:
+              type: string
+            value:
+              type: number
+          required:
+            - type
+            - value
+          type: object
+      description: Dimensionless. pH of the raw (untreated) spent yeast slurry, measured on receipt.
+      x-ngsi:
+        type: Property
+
+    pickUpDate:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              format: date
+              pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}$
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: Date on which the spent yeast was collected from the brewery (ISO 8601, YYYY-MM-DD).
+      x-ngsi:
+        type: Property
+
+    runId:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            unitCode:
+              type: string
+            value:
+              type: number
+          required:
+            - type
+            - value
+          type: object
+      description: Dimensionless. Sequential run number of the sampling/analysis entry in the Yeast2Value yeast log.
+      x-ngsi:
+        type: Property
+
+    storageDateBeforePickUp:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              format: date
+              pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}$
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: Date from which the yeast was stored at the brewery after harvesting, before collection (ISO 8601). Together with pickUpDate it gives the storage time before pick-up.
+      x-ngsi:
+        type: Property
+
+    storageTemperatureBeforePickUp:
+      allOf:
+        - additionalProperties: no
+          anyOf:
+            - required:
+                - value
+            - required:
+                - minValue
+            - required:
+                - maxValue
+          properties:
+            maxValue:
+              description: Upper bound of the value, when the source declares a range or a maximum.
+              type: number
+            minValue:
+              description: Lower bound of the value, when the source declares a range or a minimum.
+              type: number
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            unitCode:
+              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.
+              type: string
+            value:
+              description: Exact measured value, when a single figure is known.
+              type: number
+          required:
+            - type
+            - unitCode
+          type: object
+      description: 'Expected unitCode: CEL. Temperature at which the yeast was kept at the brewery before collection. Breweries report either a single value or a bound or range, so use value for an exact figure and minValue/maxValue for a bound (e.g. "<4") or a range (e.g. "10 to 20").'
+      x-ngsi:
+        type: Property
+
+    totalCellCount:
+      allOf:
+        - additionalProperties: no
+          anyOf:
+            - required:
+                - value
+            - required:
+                - minValue
+            - required:
+                - maxValue
+          properties:
+            maxValue:
+              description: Upper bound of the value, when the source declares a range or a maximum.
+              type: number
+            minValue:
+              description: Lower bound of the value, when the source declares a range or a minimum.
+              type: number
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            unitCode:
+              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.
+              type: string
+            value:
+              description: Exact measured value, when a single figure is known.
+              type: number
+          required:
+            - type
+            - unitCode
+          type: object
+      description: 'Expected unitCode: cells/mL. Total number of yeast cells (living and dead) per millilitre of sample, determined by counting-chamber microscopy.'
+      x-ngsi:
+        type: Property
+
+    type:
+      description: NGSI Entity type. It has to be YeastBatch
+      enum:
+        - YeastBatch
+      type: string
+      x-ngsi:
+        type: Property
+
+    valueChain:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: Identifier of the CIRCULOOS value chain the record belongs to (here "yeast2value").
+      x-ngsi:
+        type: Property
+
+    volumetricFraction:
+      allOf:
+        - additionalProperties: no
+          anyOf:
+            - required:
+                - value
+            - required:
+                - minValue
+            - required:
+                - maxValue
+          properties:
+            maxValue:
+              description: Upper bound of the value, when the source declares a range or a maximum.
+              type: number
+            minValue:
+              description: Lower bound of the value, when the source declares a range or a minimum.
+              type: number
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            unitCode:
+              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.
+              type: string
+            value:
+              description: Exact measured value, when a single figure is known.
+              type: number
+          required:
+            - type
+            - unitCode
+          type: object
+      description: 'Expected unitCode: P1. Mass of the yeast pellet after centrifugation relative to the total sample mass, in %. Indicates how much solid yeast biomass the slurry contains.'
+      x-ngsi:
+        type: Property
+
+  required:
+    - id
+    - type
+    - batchId
+    - brewery
+    - pickUpDate
+    - feedstockSource
+    - valueChain
+
+  type: object
+
+  x-derived-from: ''
+
+  x-disclaimer: Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program
+
+  x-license-url: https://github.com/smart-data-models/circuloos_data_model/blob/master/YeastBatch/LICENSE.md
+
+  x-model-schema: https://raw.githubusercontent.com/TO_ADD_LATER/schema.json
+
+  x-model-tags: ''
+
+  x-version: 0.0.1

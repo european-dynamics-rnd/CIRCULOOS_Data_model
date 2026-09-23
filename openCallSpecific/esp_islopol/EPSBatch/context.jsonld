@@ -1,0 +1,22 @@
+{
+    "@context": {
+        "EPSBatch": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/EPSBatch",
+        "avgContaminationScore": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/avgContaminationScore",
+        "dateCreated": "https://smartdatamodels.org/dateCreated",
+        "id": "@id",
+        "object": {
+            "@id": "https://uri.etsi.org/ngsi-ld/hasObject",
+            "@type": "@id"
+        },
+        "observedAt": {
+            "@id": "https://uri.etsi.org/ngsi-ld/observedAt",
+            "@type": "https://uri.etsi.org/ngsi-ld/DateTime"
+        },
+        "refEPSObservations": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/refEPSObservations",
+        "refProduct": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/refProduct",
+        "rejectionRate": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/rejectionRate",
+        "status": "https://uri.etsi.org/ngsi-ld/status",
+        "type": "@type",
+        "value": "https://uri.etsi.org/ngsi-ld/hasValue"
+    }
+}
