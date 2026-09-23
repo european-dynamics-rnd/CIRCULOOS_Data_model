@@ -1,0 +1,109 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "$schemaVersion": "0.0.1",
+  "modelTags": "",
+  "derivedFrom": "https://context.dataspace-arditi.com/islopol/entities/ProductModel/v2/schema.json",
+  "license": "",
+  "$id": "https://raw.githubusercontent.com/TO_ADD_LATER/schema.json",
+  "title": "Data model for an ISLOPOL product model",
+  "description": "CIRCULOOS data model for a product or material model that defines shared characteristics for individual Product records in the ISLOPOL value chain, covering its name, constituents, material, available categories and default unit of measurement.",
+  "type": "object",
+  "definitions": {
+    "StringArrayProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Property"
+          ]
+        },
+        "value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ],
+      "additionalProperties": false
+    },
+    "StringProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Property"
+          ]
+        },
+        "value": {
+          "type": "string"
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "allOf": [
+    {
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Property. Unique entity identifier, with the format urn:ngsi-ld:ProductModel:<modelId>."
+        },
+        "type": {
+          "type": "string",
+          "description": "Property. NGSI Entity type. It has to be ProductModel",
+          "enum": [
+            "ProductModel"
+          ]
+        },
+        "name": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. Human-readable name of the product model, used to label products. Given in the source as https://schema.org/name."
+        },
+        "description": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. Human-readable description of the product or material represented by the model."
+        },
+        "constituents": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. Material or list of materials or components making up the product model. Given in the source as https://context.dataspace-arditi.com/islopol/terms/v2/constituents."
+        },
+        "category": {
+          "$ref": "#/definitions/StringArrayProperty",
+          "description": "Property. List of product categories or grades available for the model. Given in the source as https://schema.org/category, the expanded JSON-LD form of availableCategories."
+        },
+        "material": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. Main material or composition associated with the product model. Given in the source as https://schema.org/material."
+        },
+        "unitCode": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. Default unit of measurement for products of this model, such as kilograms, kilowatt-hours or individual units."
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "name"
+  ]
+}

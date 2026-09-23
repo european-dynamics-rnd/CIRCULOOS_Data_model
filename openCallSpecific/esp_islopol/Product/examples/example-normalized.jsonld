@@ -1,0 +1,47 @@
+{
+  "@context": [
+    "http://circuloos-ld-context/circuloos-context.jsonld",
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"
+  ],
+  "id": "urn:ngsi-ld:Product:ARM:paper-cardboard-stream-waste:20260903",
+  "type": "Product",
+  "refProcessEvent": {
+    "type": "Relationship",
+    "object": "urn:ngsi-ld:ProcessEvent:ARM:blue-waste-stream-processing:20260903"
+  },
+  "refProductModel": {
+    "type": "Relationship",
+    "object": "urn:ngsi-ld:ProductModel:paper-cardboard-stream-waste"
+  },
+  "supplier": {
+    "type": "Property",
+    "value": "ARM Collection"
+  },
+  "destination": {
+    "type": "Property",
+    "value": "ARM ETZL/ET"
+  },
+  "quantity": {
+    "type": "Property",
+    "value": 6396.748215
+  },
+  "unitCode": {
+    "type": "Property",
+    "value": "kg"
+  },
+  "length": {
+    "type": "Property",
+    "value": 0,
+    "unitCode": "CMT"
+  },
+  "width": {
+    "type": "Property",
+    "value": 0,
+    "unitCode": "CMT"
+  },
+  "thickness": {
+    "type": "Property",
+    "value": 0,
+    "unitCode": "CMT"
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "$schemaVersion": "0.0.1",
+  "modelTags": "",
+  "derivedFrom": "",
+  "license": "",
+  "$id": "https://raw.githubusercontent.com/TO_ADD_LATER/schema.json",
+  "title": "Data model for a Biocorner supply chain organization",
+  "description": "CIRCULOOS data model for an organization participating in the Biocorner supply chain, covering its legal identity, contact details and its functional role and tier within the supply chain.",
+  "type": "object",
+  "definitions": {
+    "StringProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Property"
+          ]
+        },
+        "value": {
+          "type": "string"
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "allOf": [
+    {
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Property. Unique entity identifier, with the format urn:ngsi-ld:Organization:<id>."
+        },
+        "type": {
+          "type": "string",
+          "description": "Property. NGSI Entity type. It has to be Organization",
+          "enum": [
+            "Organization"
+          ]
+        },
+        "name": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. Full official name of the organization as registered in public records, including legal suffix where applicable."
+        },
+        "legalForm": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. Legal entity classification (e.g. Limited Liability Company, Research Center, Public University). Relevant for consortium agreements and contractual arrangements."
+        },
+        "role": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. Functional role of the organization within the project supply chain (e.g. RTO, Manufacturer, Contract Manufacturer, SRM Supplier)."
+        },
+        "supplyChainRole": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. High-level classification of the organization function: RTO for research and development, Manufacturer for production, or SRM Supplier for material sourcing."
+        },
+        "tier": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. Supply chain tier relative to final product: Tier 0 for entities directly involved in product development or manufacturing, Tier 1 for raw material suppliers."
+        },
+        "address": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. The mailing address of the organization."
+        },
+        "city": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. The city in which the organization is located."
+        },
+        "region": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. Administrative region where the organization is headquartered. Used for regional supply chain mapping and geographic analysis."
+        },
+        "postalCode": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. The postal code of the organization address."
+        },
+        "country": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. The country in which the organization is located."
+        },
+        "contactEmail": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. Email address of the organization."
+        },
+        "contactPhone": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. Telephone number of the organization."
+        },
+        "website": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. Website of the organization."
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "name",
+    "supplyChainRole",
+    "tier"
+  ]
+}

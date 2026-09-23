@@ -1,0 +1,157 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "$schemaVersion": "0.0.1",
+  "modelTags": "",
+  "derivedFrom": "",
+  "license": "",
+  "$id": "https://raw.githubusercontent.com/TO_ADD_LATER/schema.json",
+  "title": "Data model for the Declaration of Performance of a Biocorner mortar product",
+  "description": "CIRCULOOS data model for the Declaration of Performance (DoP) issued for a Biocorner bio-based mortar product, covering the certification body, the functional unit used for the declaration and the declared performance characteristics.",
+  "type": "object",
+  "definitions": {
+    "DateProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Property"
+          ]
+        },
+        "value": {
+          "type": "string",
+          "format": "date",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ],
+      "additionalProperties": false
+    },
+    "QuantityProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Property"
+          ]
+        },
+        "value": {
+          "type": "number",
+          "description": "Exact measured value, when a single figure is known."
+        },
+        "minValue": {
+          "type": "number",
+          "description": "Lower bound of the value, when the source declares a range or a minimum."
+        },
+        "maxValue": {
+          "type": "number",
+          "description": "Upper bound of the value, when the source declares a range or a maximum."
+        },
+        "unitCode": {
+          "type": "string",
+          "description": "UN/CEFACT code of the unit of measurement of the value."
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "unitCode"
+      ],
+      "anyOf": [
+        {
+          "required": [
+            "value"
+          ]
+        },
+        {
+          "required": [
+            "minValue"
+          ]
+        },
+        {
+          "required": [
+            "maxValue"
+          ]
+        }
+      ],
+      "additionalProperties": false
+    },
+    "StringProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Property"
+          ]
+        },
+        "value": {
+          "type": "string"
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "allOf": [
+    {
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Property. Unique entity identifier, with the format urn:ngsi-ld:DoP:<id>."
+        },
+        "type": {
+          "type": "string",
+          "description": "Property. NGSI Entity type. It has to be DoP",
+          "enum": [
+            "DoP"
+          ]
+        },
+        "name": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. Unique identifier name of the Declaration of Performance document, following an internal naming convention including product reference, year, and version."
+        },
+        "certificationBody": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. Notified body or laboratory responsible for product performance assessment under the relevant regulatory framework. Includes certification system reference."
+        },
+        "functionalUnit": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: KGM or MTQ. Reference unit for performance declaration, typically expressed as mass or volume. Used as the basis for comparing performance across different product formulations."
+        },
+        "performanceSummary": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. Aggregated summary of essential performance characteristics declared for the product, including relevant mechanical, thermal, and physical properties with their units."
+        },
+        "dateCreated": {
+          "$ref": "#/definitions/DateProperty",
+          "description": "Property. Date at which the entity was created."
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "name",
+    "certificationBody"
+  ]
+}

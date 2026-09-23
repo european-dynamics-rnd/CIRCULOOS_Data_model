@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "http://circuloos-ld-context/circuloos-context.jsonld",
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"
+  ],
+  "id": "urn:ngsi-ld:ProductionRun:Esferolight:EPSShredding:20260916T095306Z",
+  "type": "ProductionRun",
+  "startDate": {
+    "type": "Property",
+    "value": "2026-08-19T10:00:00.000Z"
+  },
+  "endDate": {
+    "type": "Property",
+    "value": "2026-08-19T10:35:00.000Z"
+  },
+  "refProcess": {
+    "type": "Relationship",
+    "object": "urn:ngsi-ld:Process:Esferolight:EPSShredding"
+  },
+  "refInputProducts": {
+    "type": "Relationship",
+    "object": [
+      "urn:ngsi-ld:Product:Esferolight:electricity:20260916T095306Z",
+      "urn:ngsi-ld:Product:Esferolight:PlasticBag:20260916T095306Z",
+      "urn:ngsi-ld:Product:Esferolight:UnprocessedRecycledEPS:20260916T083416Z"
+    ]
+  },
+  "refOutputProducts": {
+    "type": "Relationship",
+    "object": [
+      "urn:ngsi-ld:Product:Esferolight:ShreddedEPS:20260916T095306Z"
+    ]
+  }
+}

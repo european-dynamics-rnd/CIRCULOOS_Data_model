@@ -1,0 +1,226 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "$schemaVersion": "0.0.1",
+  "modelTags": "",
+  "derivedFrom": "",
+  "license": "",
+  "$id": "https://raw.githubusercontent.com/TO_ADD_LATER/schema.json",
+  "title": "Data model for a Yeast2Value brewer's spent yeast batch",
+  "description": "CIRCULOOS data model for a batch of brewer's spent yeast (BSY) collected from a brewery in the Yeast2Value value chain, covering its origin and collection, its storage conditions before pick-up, and the cell count and dry matter measurements taken on receipt.",
+  "type": "object",
+  "definitions": {
+    "DateProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Property"
+          ]
+        },
+        "value": {
+          "type": "string",
+          "format": "date",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ],
+      "additionalProperties": false
+    },
+    "NumericProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Property"
+          ]
+        },
+        "value": {
+          "type": "number"
+        },
+        "unitCode": {
+          "type": "string"
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ],
+      "additionalProperties": false
+    },
+    "QuantityProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Property"
+          ]
+        },
+        "value": {
+          "type": "number",
+          "description": "Exact measured value, when a single figure is known."
+        },
+        "minValue": {
+          "type": "number",
+          "description": "Lower bound of the value, when the source declares a range or a minimum."
+        },
+        "maxValue": {
+          "type": "number",
+          "description": "Upper bound of the value, when the source declares a range or a maximum."
+        },
+        "unitCode": {
+          "type": "string",
+          "description": "Unit of measurement of the value, given as a UN/CEFACT code where one exists."
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "unitCode"
+      ],
+      "anyOf": [
+        {
+          "required": [
+            "value"
+          ]
+        },
+        {
+          "required": [
+            "minValue"
+          ]
+        },
+        {
+          "required": [
+            "maxValue"
+          ]
+        }
+      ],
+      "additionalProperties": false
+    },
+    "StringProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Property"
+          ]
+        },
+        "value": {
+          "type": "string"
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "allOf": [
+    {
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Property. Unique entity identifier, with the format urn:ngsi-ld:circuloos-yeast2value:batch:<batchId>."
+        },
+        "type": {
+          "type": "string",
+          "description": "Property. NGSI Entity type. It has to be YeastBatch",
+          "enum": [
+            "YeastBatch"
+          ]
+        },
+        "runId": {
+          "$ref": "#/definitions/NumericProperty",
+          "description": "Property. Dimensionless. Sequential run number of the sampling/analysis entry in the Yeast2Value yeast log."
+        },
+        "batchId": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. Laboratory code assigned to the yeast sample on receipt (e.g. PT_0149), used to trace the batch through analysis and processing."
+        },
+        "brewery": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. Name of the brewery (or source label) that supplied the brewer's spent yeast batch."
+        },
+        "pickUpDate": {
+          "$ref": "#/definitions/DateProperty",
+          "description": "Property. Date on which the spent yeast was collected from the brewery (ISO 8601, YYYY-MM-DD)."
+        },
+        "storageDateBeforePickUp": {
+          "$ref": "#/definitions/DateProperty",
+          "description": "Property. Date from which the yeast was stored at the brewery after harvesting, before collection (ISO 8601). Together with pickUpDate it gives the storage time before pick-up."
+        },
+        "storageTemperatureBeforePickUp": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: CEL. Temperature at which the yeast was kept at the brewery before collection. Breweries report either a single value or a bound or range, so use value for an exact figure and minValue/maxValue for a bound (e.g. \"<4\") or a range (e.g. \"10 to 20\")."
+        },
+        "phValueRawYeast": {
+          "$ref": "#/definitions/NumericProperty",
+          "description": "Property. Dimensionless. pH of the raw (untreated) spent yeast slurry, measured on receipt."
+        },
+        "dryMassUnfiltered": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: P1. Dry matter content of the unfiltered raw yeast slurry, in % (w/w). A key parameter for processing yield and transport efficiency."
+        },
+        "volumetricFraction": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: P1. Mass of the yeast pellet after centrifugation relative to the total sample mass, in %. Indicates how much solid yeast biomass the slurry contains."
+        },
+        "totalCellCount": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: cells/mL. Total number of yeast cells (living and dead) per millilitre of sample, determined by counting-chamber microscopy."
+        },
+        "livingCellsCount": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: cells/mL. Number of viable (living) yeast cells per millilitre of sample."
+        },
+        "livingCellsPercent": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: P1. Viability of the batch: living cells as a percentage of the total cell count (livingCellsCount / totalCellCount x 100)."
+        },
+        "feedstockSource": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. Type of feedstock the batch represents; in Yeast2Value this is brewer's spent yeast (BSY), a by-product of beer fermentation."
+        },
+        "valueChain": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. Identifier of the CIRCULOOS value chain the record belongs to (here \"yeast2value\")."
+        },
+        "dataSource": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. Name of the source file or dataset the record was taken from, for traceability."
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "batchId",
+    "brewery",
+    "pickUpDate",
+    "feedstockSource",
+    "valueChain"
+  ]
+}

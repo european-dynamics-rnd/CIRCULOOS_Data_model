@@ -1,0 +1,37 @@
+{
+  "@context": [
+    "http://circuloos-ld-context/circuloos-context.jsonld",
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"
+  ],
+  "id": "urn:ngsi-ld:circuloos-yeast2value:Company:proteindistillery",
+  "type": "Company",
+  "name": {
+    "type": "Property",
+    "value": "ProteinDistillery"
+  },
+  "description": {
+    "type": "Property",
+    "value": "Converts brewer's spent yeast into food-grade protein, cell-wall fractions and low-molecular fractions."
+  },
+  "address": {
+    "type": "Property",
+    "value": {
+      "streetAddress": "Ostpreussenstrasse 2/2",
+      "addressLocality": "Ostfildern",
+      "addressRegion": "Baden-Wuerttemberg",
+      "addressCountry": "Germany",
+      "postalCode": "73760"
+    }
+  },
+  "category": {
+    "type": "Property",
+    "value": [
+      "Food ingredients",
+      "Biotechnology"
+    ]
+  },
+  "valueChainRole": {
+    "type": "Property",
+    "value": "Processor"
+  }
+}

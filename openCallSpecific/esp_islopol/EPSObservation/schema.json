@@ -1,0 +1,228 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "$schemaVersion": "0.0.1",
+  "modelTags": "",
+  "derivedFrom": "https://context.dataspace-arditi.com/islopol/entities/EPSObservation/v2/schema.json",
+  "license": "",
+  "$id": "https://raw.githubusercontent.com/TO_ADD_LATER/schema.json",
+  "title": "Data model for an ISLOPOL EPS contamination observation",
+  "description": "CIRCULOOS data model for an automated observation of EPS material and its contamination in the ISLOPOL value chain, covering the contamination score and category, the confidence and model used to produce them, and the device, process event and batch the assessment relates to.",
+  "type": "object",
+  "definitions": {
+    "DateTimeProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Property"
+          ]
+        },
+        "value": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$"
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ],
+      "additionalProperties": false
+    },
+    "FractionProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Property"
+          ]
+        },
+        "value": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ],
+      "additionalProperties": false
+    },
+    "RelationshipProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Relationship"
+          ]
+        },
+        "object": {
+          "type": "string",
+          "pattern": "^urn:ngsi-ld:.+$",
+          "description": "URN of the referenced entity."
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "object"
+      ],
+      "additionalProperties": false
+    },
+    "StringProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Property"
+          ]
+        },
+        "value": {
+          "type": "string"
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ],
+      "additionalProperties": false
+    },
+    "ThresholdsProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Property"
+          ]
+        },
+        "value": {
+          "type": "object",
+          "properties": {
+            "lowMax": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "description": "Upper limit of the low contamination category."
+            },
+            "medMax": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "description": "Upper limit of the medium contamination category."
+            },
+            "highMax": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "description": "Upper limit of the high contamination category."
+            },
+            "contaminationScoreFormula": {
+              "type": "string",
+              "description": "Formula used to calculate the contamination score."
+            }
+          },
+          "required": [
+            "lowMax",
+            "medMax",
+            "highMax"
+          ],
+          "additionalProperties": false
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "allOf": [
+    {
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Property. Unique entity identifier, with the format urn:ngsi-ld:EPSObservation:<facility>:<stream>:<date>."
+        },
+        "type": {
+          "type": "string",
+          "description": "Property. NGSI Entity type. It has to be EPSObservation",
+          "enum": [
+            "EPSObservation"
+          ]
+        },
+        "eventTime": {
+          "$ref": "#/definitions/DateTimeProperty",
+          "description": "Property. Date and time when the EPS observation took place, expressed as an ISO 8601 timestamp."
+        },
+        "contaminationScore": {
+          "$ref": "#/definitions/FractionProperty",
+          "description": "Property. Estimated contamination expressed as a fraction from 0 to 1, with higher values indicating more contamination. (Multiply by 100 to obtain the Contamination Score percentage.)"
+        },
+        "contaminationLevel": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. Contamination category assigned from the score using the thresholds recorded for the observation. The schema supports none, low, medium and high."
+        },
+        "confidence": {
+          "$ref": "#/definitions/FractionProperty",
+          "description": "Property. Confidence score reported by the model for the observation, expressed from 0 to 1. It describes confidence in the prediction, not the amount of contamination. (Multiply by 100 to obtain the Confidence percentage.)"
+        },
+        "modelUsed": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. Name or identifier of the machine-learning model or inference method used to analyse the EPS observation."
+        },
+        "modelVersion": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. Version or deployed model artefact used to produce the observation, allowing predictions to be traced to a specific model release."
+        },
+        "thresholds": {
+          "$ref": "#/definitions/ThresholdsProperty",
+          "description": "Property. Configuration used to convert contamination scores into categories, including the lowMax, medMax and highMax upper limits. The object may also record the formula used to calculate the score."
+        },
+        "refDevice": {
+          "$ref": "#/definitions/RelationshipProperty",
+          "description": "Relationship. Identifier of the Device entity representing the equipment that generated the observation, such as the camera and inference device installed at ARM."
+        },
+        "refProcessEvent": {
+          "$ref": "#/definitions/RelationshipProperty",
+          "description": "Relationship. Identifier of the ProcessEvent during which the observation was generated, linking the assessment to the corresponding sorting operation."
+        },
+        "refEPSBatch": {
+          "$ref": "#/definitions/RelationshipProperty",
+          "description": "Relationship. Identifier of the EPSBatch assessed by this observation, linking the model result to the tracked batch of material."
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "eventTime",
+    "contaminationScore",
+    "contaminationLevel"
+  ]
+}

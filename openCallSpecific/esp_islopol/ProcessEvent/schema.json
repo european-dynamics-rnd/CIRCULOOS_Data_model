@@ -1,0 +1,227 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "$schemaVersion": "0.0.1",
+  "modelTags": "",
+  "derivedFrom": "https://context.dataspace-arditi.com/islopol/entities/ProcessEvent/v2/schema.json",
+  "license": "",
+  "$id": "https://raw.githubusercontent.com/TO_ADD_LATER/schema.json",
+  "title": "Data model for an ISLOPOL process event",
+  "description": "CIRCULOOS data model for a specific execution of a process in the ISLOPOL value chain, covering the input and output products, the sorting line and waste stream handled, the throughput achieved and the period over which it ran.",
+  "type": "object",
+  "definitions": {
+    "DateTimeProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Property"
+          ]
+        },
+        "value": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$"
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ],
+      "additionalProperties": false
+    },
+    "QuantityProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Property"
+          ]
+        },
+        "value": {
+          "type": "number",
+          "description": "Exact measured value, when a single figure is known."
+        },
+        "minValue": {
+          "type": "number",
+          "description": "Lower bound of the value, when the source declares a range or a minimum."
+        },
+        "maxValue": {
+          "type": "number",
+          "description": "Upper bound of the value, when the source declares a range or a maximum."
+        },
+        "unitCode": {
+          "type": "string",
+          "description": "Unit of measurement of the value, given as a UN/CEFACT code where one exists."
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "unitCode"
+      ],
+      "anyOf": [
+        {
+          "required": [
+            "value"
+          ]
+        },
+        {
+          "required": [
+            "minValue"
+          ]
+        },
+        {
+          "required": [
+            "maxValue"
+          ]
+        }
+      ],
+      "additionalProperties": false
+    },
+    "RelationshipArrayProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Relationship"
+          ]
+        },
+        "object": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^urn:ngsi-ld:.+$"
+          },
+          "minItems": 1,
+          "description": "URNs of the referenced entities."
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "object"
+      ],
+      "additionalProperties": false
+    },
+    "RelationshipProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Relationship"
+          ]
+        },
+        "object": {
+          "type": "string",
+          "pattern": "^urn:ngsi-ld:.+$",
+          "description": "URN of the referenced entity."
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "object"
+      ],
+      "additionalProperties": false
+    },
+    "StringProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Property"
+          ]
+        },
+        "value": {
+          "type": "string"
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "allOf": [
+    {
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Property. Unique entity identifier, with the format urn:ngsi-ld:ProcessEvent:<facility>:<process>:<date>."
+        },
+        "type": {
+          "type": "string",
+          "description": "Property. NGSI Entity type. It has to be ProcessEvent",
+          "enum": [
+            "ProcessEvent"
+          ]
+        },
+        "refProcess": {
+          "$ref": "#/definitions/RelationshipProperty",
+          "description": "Relationship. Identifier of the Process entity that defines the operation executed by this event, linking the recorded execution to its process description."
+        },
+        "refInputProducts": {
+          "$ref": "#/definitions/RelationshipArrayProperty",
+          "description": "Relationship. Identifiers of the Product entities consumed or processed during the event."
+        },
+        "refOutputProducts": {
+          "$ref": "#/definitions/RelationshipArrayProperty",
+          "description": "Relationship. Identifiers of the Product entities produced by the event. Their quantities and units are stored in the referenced Product records."
+        },
+        "sortingLine": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. Name or identifier of the physical sorting line used for the event, such as ARM's paper and cardboard sorting line."
+        },
+        "sortingStream": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. Name or classification of the waste stream being processed, such as the blue-bin paper and cardboard stream. It describes the overall input stream, which may also contain recoverable EPS."
+        },
+        "throughput": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: KGM. Processing throughput for the event."
+        },
+        "startDate": {
+          "$ref": "#/definitions/DateTimeProperty",
+          "description": "Property. Date and time when the process execution started, expressed as an ISO 8601 timestamp. Together with endDate, it defines the recorded execution period."
+        },
+        "endDate": {
+          "$ref": "#/definitions/DateTimeProperty",
+          "description": "Property. Date and time when the process execution ended, expressed as an ISO 8601 timestamp."
+        },
+        "refLcaId": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. Reference identifier linking the process event to a life-cycle assessment (LCA) record or dataset."
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "refProcess",
+    "startDate"
+  ]
+}

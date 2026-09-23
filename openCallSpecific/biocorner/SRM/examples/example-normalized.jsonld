@@ -1,0 +1,45 @@
+{
+  "@context": [
+    "http://circuloos-ld-context/circuloos-context.jsonld",
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"
+  ],
+  "id": "urn:ngsi-ld:SRM:RiceHusk",
+  "type": "SRM",
+  "name": {
+    "type": "Property",
+    "value": "Rice Husk",
+    "observedAt": "2026-06-16T08:03:53.000Z"
+  },
+  "chemicalComposition": {
+    "type": "Property",
+    "value": "Lignocellulosic matrix with silica-rich ash; mainly cellulose, hemicellulose, lignin and SiO2",
+    "observedAt": "2026-06-16T08:03:53.000Z"
+  },
+  "pretreatmentRequired": {
+    "type": "Property",
+    "value": "Drying, grinding and sieving depending on target particle size",
+    "observedAt": "2026-06-16T08:03:53.000Z"
+  },
+  "storageConditions": {
+    "type": "Property",
+    "value": "Dry, covered, ventilated storage; protect from moisture and contamination",
+    "observedAt": "2026-06-16T08:03:53.000Z"
+  },
+  "category": {
+    "type": "Property",
+    "value": "Agricultural Biomass",
+    "observedAt": "2026-06-16T08:03:53.000Z"
+  },
+  "density": {
+    "type": "Property",
+    "minValue": 90,
+    "maxValue": 150,
+    "unitCode": "KMQ",
+    "observedAt": "2026-06-16T08:03:53.000Z"
+  },
+  "description": {
+    "type": "Property",
+    "value": "Rice milling by-product used as lightweight bio-based aggregate/filler",
+    "observedAt": "2026-06-16T08:03:53.000Z"
+  }
+}

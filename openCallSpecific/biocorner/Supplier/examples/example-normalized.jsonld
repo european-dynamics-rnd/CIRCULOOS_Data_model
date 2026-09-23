@@ -1,0 +1,49 @@
+{
+  "@context": [
+    "http://circuloos-ld-context/circuloos-context.jsonld",
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"
+  ],
+  "id": "urn:ngsi-ld:Supplier:Confidential01-Rice",
+  "type": "Supplier",
+  "operatedBy": {
+    "type": "Relationship",
+    "object": "urn:ngsi-ld:Organization:LITOKOL",
+    "observedAt": "2026-06-16T08:04:49.000Z"
+  },
+  "region": {
+    "type": "Property",
+    "value": "Emilia-Romagna",
+    "observedAt": "2026-06-16T08:04:49.000Z"
+  },
+  "suppliesSRM2": {
+    "type": "Relationship",
+    "object": "urn:ngsi-ld:SRM:RiceStraw",
+    "observedAt": "2026-06-16T08:04:49.000Z"
+  },
+  "suppliesSRM1": {
+    "type": "Relationship",
+    "object": "urn:ngsi-ld:SRM:RiceHusk",
+    "observedAt": "2026-06-16T08:04:49.000Z"
+  },
+  "country": {
+    "type": "Property",
+    "value": "Italy",
+    "observedAt": "2026-06-16T08:04:49.000Z"
+  },
+  "name": {
+    "type": "Property",
+    "value": "Confidential Supplier 01",
+    "observedAt": "2026-06-16T08:04:49.000Z"
+  },
+  "transportationMode": {
+    "type": "Property",
+    "value": "Road transport - Truck Euro 6",
+    "observedAt": "2026-06-16T08:04:49.000Z"
+  },
+  "distanceToManufacturer": {
+    "type": "Property",
+    "value": 50,
+    "unitCode": "KMT",
+    "observedAt": "2026-06-16T08:04:49.000Z"
+  }
+}

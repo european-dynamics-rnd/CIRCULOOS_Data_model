@@ -1,0 +1,353 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "$schemaVersion": "0.0.1",
+  "modelTags": "",
+  "derivedFrom": "",
+  "license": "",
+  "$id": "https://raw.githubusercontent.com/TO_ADD_LATER/schema.json",
+  "title": "Data model for an EVOP boiler test session",
+  "description": "CIRCULOOS data model for a biomass combustion test session on the EVOP boiler, covering the scenario and biomass batch tested, the fuel and energy figures recorded, the efficiency parameters reported by the measurement system, and the flue gas emission measurements.",
+  "type": "object",
+  "definitions": {
+    "DateProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Property"
+          ]
+        },
+        "value": {
+          "type": "string",
+          "format": "date",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ],
+      "additionalProperties": false
+    },
+    "NumericProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Property"
+          ]
+        },
+        "value": {
+          "type": "number"
+        },
+        "unitCode": {
+          "type": "string"
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ],
+      "additionalProperties": false
+    },
+    "QuantityProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Property"
+          ]
+        },
+        "value": {
+          "type": "number",
+          "description": "Exact measured value, when a single figure is known."
+        },
+        "minValue": {
+          "type": "number",
+          "description": "Lower bound of the value, when the source declares a range or a minimum."
+        },
+        "maxValue": {
+          "type": "number",
+          "description": "Upper bound of the value, when the source declares a range or a maximum."
+        },
+        "unitCode": {
+          "type": "string",
+          "description": "Unit of measurement of the value, given as a UN/CEFACT code where one exists."
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "unitCode"
+      ],
+      "anyOf": [
+        {
+          "required": [
+            "value"
+          ]
+        },
+        {
+          "required": [
+            "minValue"
+          ]
+        },
+        {
+          "required": [
+            "maxValue"
+          ]
+        }
+      ],
+      "additionalProperties": false
+    },
+    "RelationshipProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Relationship"
+          ]
+        },
+        "object": {
+          "type": "string",
+          "pattern": "^urn:ngsi-ld:.+$",
+          "description": "URN of the referenced entity."
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "object"
+      ],
+      "additionalProperties": false
+    },
+    "StringProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Property"
+          ]
+        },
+        "value": {
+          "type": "string"
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "allOf": [
+    {
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Property. Unique entity identifier, with the format urn:ngsi-ld:evop:boiler-session:<scenarioId>."
+        },
+        "type": {
+          "type": "string",
+          "description": "Property. NGSI Entity type. It has to be BoilerTestSession",
+          "enum": [
+            "BoilerTestSession"
+          ]
+        },
+        "scenarioName": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. Name of the biomass combustion scenario tested in the boiler, including the biomass type and relevant characteristics such as moisture content."
+        },
+        "boilerType": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. Identifies the boiler or heating system used during the test session."
+        },
+        "biomassBatch": {
+          "$ref": "#/definitions/RelationshipProperty",
+          "description": "Relationship. Identifier of the biomass batch used during the boiler test session."
+        },
+        "startDate": {
+          "$ref": "#/definitions/DateProperty",
+          "description": "Property. Date on which the boiler test session started."
+        },
+        "readingIndex": {
+          "$ref": "#/definitions/NumericProperty",
+          "description": "Property. Dimensionless. Index identifying the specific measurement or reading within the test dataset."
+        },
+        "sourceWorkbookFileName": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. Name of the source spreadsheet from which the boiler test measurement data were obtained."
+        },
+        "targetTemperature": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: CEL. Target temperature set for the boiler or heated system during the test."
+        },
+        "humidity": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: P1. Moisture content of the biomass used in the boiler test, expressed as a percentage."
+        },
+        "consumption7days": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: KGM. Biomass consumption recorded over a seven-day period during the test."
+        },
+        "pci": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: KWH/KGM. Lower heating value (LHV) of the biomass, representing the energy released per unit of biomass during combustion."
+        },
+        "thermalEnergy": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: KWH. Thermal energy generated by the biomass combustion process during the test."
+        },
+        "electricConsumption": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: KWH. Electricity consumed by the boiler or associated equipment during the test."
+        },
+        "biomassConsumption": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: KGM. Quantity of biomass consumed during the boiler test."
+        },
+        "actualConsumptionKg": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: KGM. Actual quantity of biomass consumed during the specific test measurement."
+        },
+        "ashPercent": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: P1. Percentage of ash remaining after biomass combustion."
+        },
+        "efficiency": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: P1. Overall efficiency recorded for the boiler test, expressed as a percentage."
+        },
+        "density": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: KMQ. Density of the biomass used in the test, expressed as mass per unit of volume."
+        },
+        "airTemperature": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: CEL. Temperature of the surrounding air measured during the boiler test."
+        },
+        "waterTemperature": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: CEL. Water temperature measured in the boiler or heating system during the test."
+        },
+        "pufferTemperature": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: CEL. Temperature measured in the buffer or puffer tank during the boiler test."
+        },
+        "deltaT": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: KEL. Temperature difference measured during the boiler test."
+        },
+        "flueGasTemperature": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: CEL. Flue gas temperature measured during the boiler test."
+        },
+        "flueGasTempAnalyzer": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: CEL. Flue gas temperature measured by the gas analyser."
+        },
+        "flueGasDepression": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: PAL. Depression or negative pressure measured in the flue gas system during the boiler test."
+        },
+        "gasPressure": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: MBR. Gas pressure measured during the boiler test."
+        },
+        "pressure": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: PAL. Pressure measured during the boiler test by the monitoring equipment."
+        },
+        "tiro": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: MBR. Draught parameter of the boiler or flue gas system measured during the test."
+        },
+        "lambda": {
+          "$ref": "#/definitions/NumericProperty",
+          "description": "Property. Dimensionless. Air-to-fuel ratio parameter (lambda) measured during biomass combustion."
+        },
+        "co": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: 59 (ppm). Measured concentration of carbon monoxide (CO) in the flue gas."
+        },
+        "coCorrected": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: 59 (ppm). Corrected carbon monoxide (CO) concentration in the flue gas, according to the measurement conditions."
+        },
+        "co2": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: P1. Measured concentration of carbon dioxide (CO2) in the flue gas."
+        },
+        "no": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: 59 (ppm). Measured concentration of nitrogen monoxide (NO) in the flue gas."
+        },
+        "noCorrected": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: 59 (ppm). Corrected nitrogen monoxide (NO) concentration according to the measurement conditions."
+        },
+        "nox": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: 59 (ppm). Measured concentration of nitrogen oxides (NOx) in the flue gas."
+        },
+        "noxCorrected": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: 59 (ppm). Corrected nitrogen oxides (NOx) concentration according to the measurement conditions."
+        },
+        "o2": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: P1. Measured oxygen (O2) concentration in the flue gas."
+        },
+        "o2Reference": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: P1. Reference oxygen concentration used for correcting flue gas emission measurements."
+        },
+        "etaC": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: P1. Combustion efficiency parameter recorded by the measurement system."
+        },
+        "etaS": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: P1. Efficiency parameter recorded by the measurement system for the test session."
+        },
+        "etaT": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: P1. Overall thermal efficiency parameter recorded by the measurement system."
+        },
+        "qs": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: P1. Heat-loss or combustion-related parameter recorded by the measurement system during the test."
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "scenarioName",
+    "boilerType",
+    "startDate"
+  ]
+}

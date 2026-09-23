@@ -1,0 +1,123 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "$schemaVersion": "0.0.1",
+  "modelTags": "",
+  "derivedFrom": "",
+  "license": "",
+  "$id": "https://raw.githubusercontent.com/TO_ADD_LATER/schema.json",
+  "title": "Data model for a granular 3D printing process reading",
+  "description": "CIRCULOOS data model for a sensor reading taken on the cartesian granular 3D printer, covering slurry and adjuvant flow, extrusion head temperatures, motor intensity and speed, and circuit pressure during a print run.",
+  "type": "object",
+  "definitions": {
+    "QuantityProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Property"
+          ]
+        },
+        "value": {
+          "type": "number",
+          "description": "Exact measured value, when a single figure is known."
+        },
+        "minValue": {
+          "type": "number",
+          "description": "Lower bound of the value, when the source declares a range or a minimum."
+        },
+        "maxValue": {
+          "type": "number",
+          "description": "Upper bound of the value, when the source declares a range or a maximum."
+        },
+        "unitCode": {
+          "type": "string",
+          "description": "Unit of measurement of the value, given as a UN/CEFACT code where one exists."
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "unitCode"
+      ],
+      "anyOf": [
+        {
+          "required": [
+            "value"
+          ]
+        },
+        {
+          "required": [
+            "minValue"
+          ]
+        },
+        {
+          "required": [
+            "maxValue"
+          ]
+        }
+      ],
+      "additionalProperties": false
+    }
+  },
+  "allOf": [
+    {
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Property. Unique entity identifier, with the format urn:ngsi-ld:3DPrintingProcess:cartesian-printer:<printRun>:<readingId>."
+        },
+        "type": {
+          "type": "string",
+          "description": "Property. NGSI Entity type. It has to be 3DPrintingProcess",
+          "enum": [
+            "3DPrintingProcess"
+          ]
+        },
+        "temperatureInput": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: CEL. Temperature of the slurry in the injection."
+        },
+        "temperatureOutput": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: CEL. Temperature of the slurry in the output of the extrusion head."
+        },
+        "additiveFlowRateSetPoint": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: P1. Theoretical percentage of adjuvant injected in the extrusion head."
+        },
+        "additiveFlowRate": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: LTR/HUR. Flow of adjuvant in the circuit."
+        },
+        "slurryFlowRate": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: LTR/HUR. Flow of slurry in the circuit."
+        },
+        "motorIntensity": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: AMP. Electrical intensity of the motor of the extrusion head."
+        },
+        "rotationSpeed": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: RPM. Speed of the motor of the extrusion head."
+        },
+        "pressure": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: BAR. Pressure of the slurry in the circuit."
+        },
+        "printingTime": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: MIN. Time to print a defined part."
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type"
+  ]
+}

@@ -1,0 +1,199 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "$schemaVersion": "0.0.1",
+  "modelTags": "",
+  "derivedFrom": "https://context.dataspace-arditi.com/islopol/entities/Product/v2/schema.json",
+  "license": "",
+  "$id": "https://raw.githubusercontent.com/TO_ADD_LATER/schema.json",
+  "title": "Data model for an ISLOPOL product record",
+  "description": "CIRCULOOS data model for a recorded quantity of material, energy, a consumable or a finished product used or produced in the ISLOPOL value chain, covering its quantity and unit, its supplier and destination, its physical dimensions and the process event it belongs to.",
+  "type": "object",
+  "definitions": {
+    "NumericProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Property"
+          ]
+        },
+        "value": {
+          "type": "number"
+        },
+        "unitCode": {
+          "type": "string"
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ],
+      "additionalProperties": false
+    },
+    "QuantityProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Property"
+          ]
+        },
+        "value": {
+          "type": "number",
+          "description": "Exact measured value, when a single figure is known."
+        },
+        "minValue": {
+          "type": "number",
+          "description": "Lower bound of the value, when the source declares a range or a minimum."
+        },
+        "maxValue": {
+          "type": "number",
+          "description": "Upper bound of the value, when the source declares a range or a maximum."
+        },
+        "unitCode": {
+          "type": "string",
+          "description": "Unit of measurement of the value, given as a UN/CEFACT code where one exists."
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "unitCode"
+      ],
+      "anyOf": [
+        {
+          "required": [
+            "value"
+          ]
+        },
+        {
+          "required": [
+            "minValue"
+          ]
+        },
+        {
+          "required": [
+            "maxValue"
+          ]
+        }
+      ],
+      "additionalProperties": false
+    },
+    "RelationshipProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Relationship"
+          ]
+        },
+        "object": {
+          "type": "string",
+          "pattern": "^urn:ngsi-ld:.+$",
+          "description": "URN of the referenced entity."
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "object"
+      ],
+      "additionalProperties": false
+    },
+    "StringProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Property"
+          ]
+        },
+        "value": {
+          "type": "string"
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "allOf": [
+    {
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Property. Unique entity identifier, with the format urn:ngsi-ld:Product:<facility>:<material>:<date>."
+        },
+        "type": {
+          "type": "string",
+          "description": "Property. NGSI Entity type. It has to be Product",
+          "enum": [
+            "Product"
+          ]
+        },
+        "refProcessEvent": {
+          "$ref": "#/definitions/RelationshipProperty",
+          "description": "Relationship. Identifier of the ProcessEvent associated with this Product record, linking its material or resource to the corresponding operation."
+        },
+        "refProductModel": {
+          "$ref": "#/definitions/RelationshipProperty",
+          "description": "Relationship. Identifier of the ProductModel defining the product's shared characteristics, such as its material, category and default unit of measurement."
+        },
+        "supplier": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. Name or identifier of the organisation or source supplying the product or material. The schema allows a list of suppliers."
+        },
+        "destination": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. Name or identifier of the intended recipient, facility or destination for the product or material. The schema allows a list of destinations."
+        },
+        "quantity": {
+          "$ref": "#/definitions/NumericProperty",
+          "description": "Property. Amount of the product, material or resource represented by the record, expressed in the accompanying unitCode."
+        },
+        "unitCode": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. Unit of measurement for quantity."
+        },
+        "length": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: CMT. Physical length of the product."
+        },
+        "width": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: CMT. Physical width of the product."
+        },
+        "thickness": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: CMT. Physical thickness of the product."
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "quantity",
+    "unitCode"
+  ]
+}

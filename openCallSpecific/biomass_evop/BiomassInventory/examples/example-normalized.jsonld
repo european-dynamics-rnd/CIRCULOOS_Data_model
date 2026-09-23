@@ -1,0 +1,55 @@
+{
+  "@context": [
+    "http://circuloos-ld-context/circuloos-context.jsonld",
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"
+  ],
+  "id": "urn:ngsi-ld:evop:biomass-inventory:olives",
+  "type": "BiomassInventory",
+  "material": {
+    "type": "Property",
+    "value": "olives"
+  },
+  "physicalStockKg": {
+    "type": "Property",
+    "value": 0,
+    "unitCode": "KGM"
+  },
+  "freeStockKg": {
+    "type": "Property",
+    "value": 0,
+    "unitCode": "KGM"
+  },
+  "safeAvailableKg": {
+    "type": "Property",
+    "value": 0,
+    "unitCode": "KGM"
+  },
+  "advertisedQuantityKg": {
+    "type": "Property",
+    "value": 0,
+    "unitCode": "KGM"
+  },
+  "reserveKg": {
+    "type": "Property",
+    "value": 0,
+    "unitCode": "KGM"
+  },
+  "safetyMarginPercent": {
+    "type": "Property",
+    "value": 10,
+    "unitCode": "P1"
+  },
+  "offerPercentage": {
+    "type": "Property",
+    "value": 100,
+    "unitCode": "P1"
+  },
+  "movementCount": {
+    "type": "Property",
+    "value": 0
+  },
+  "calculatedAt": {
+    "type": "Property",
+    "value": "2026-09-17T06:57:32.026Z"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "@context": [
+    "http://circuloos-ld-context/circuloos-context.jsonld",
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"
+  ],
+  "id": "urn:ngsi-ld:EPSObservation:ARM:reciclable-eps:20260903",
+  "type": "EPSObservation",
+  "eventTime": {
+    "type": "Property",
+    "value": "2026-09-03T20:44:12.000Z"
+  },
+  "contaminationScore": {
+    "type": "Property",
+    "value": 0.107308
+  },
+  "contaminationLevel": {
+    "type": "Property",
+    "value": "high"
+  },
+  "confidence": {
+    "type": "Property",
+    "value": 0.397136
+  },
+  "modelUsed": {
+    "type": "Property",
+    "value": "YOLO segmentation NCNN"
+  },
+  "modelVersion": {
+    "type": "Property",
+    "value": "best_ncnn_model"
+  },
+  "thresholds": {
+    "type": "Property",
+    "value": {
+      "lowMax": 0.03,
+      "medMax": 0.1,
+      "highMax": 1,
+      "contaminationScoreFormula": "contamination_pct / 100"
+    }
+  },
+  "refDevice": {
+    "type": "Relationship",
+    "object": "urn:ngsi-ld:Device:ARM:Mounted01"
+  },
+  "refProcessEvent": {
+    "type": "Relationship",
+    "object": "urn:ngsi-ld:ProcessEvent:ARM:blue-waste-stream-processing:20260903"
+  },
+  "refEPSBatch": {
+    "type": "Relationship",
+    "object": "urn:ngsi-ld:EPSBatch:ARM:20260903"
+  }
+}

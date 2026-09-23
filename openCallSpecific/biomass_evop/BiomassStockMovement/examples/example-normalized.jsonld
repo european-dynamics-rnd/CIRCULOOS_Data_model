@@ -1,0 +1,37 @@
+{
+  "@context": [
+    "http://circuloos-ld-context/circuloos-context.jsonld",
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"
+  ],
+  "id": "urn:ngsi-ld:evop:biomass-stock-movement:receipt-olive-pits-v6-hueso-certificado-10-humedad",
+  "type": "BiomassStockMovement",
+  "material": {
+    "type": "Property",
+    "value": "olive-pits"
+  },
+  "movementType": {
+    "type": "Property",
+    "value": "receipt"
+  },
+  "quantityKg": {
+    "type": "Property",
+    "value": 10,
+    "unitCode": "KGM"
+  },
+  "occurredAt": {
+    "type": "Property",
+    "value": "2026-05-03T22:00:00.000Z"
+  },
+  "sourceRef": {
+    "type": "Property",
+    "value": "initial-stock:olive-pits:V6-HUESO-CERTIFICADO-10-HUMEDAD"
+  },
+  "relatedEntityId": {
+    "type": "Relationship",
+    "object": "urn:ngsi-ld:evop:biomass-batch:olive-pits-receipt:v6-hueso-certificado-10-humedad"
+  },
+  "description": {
+    "type": "Property",
+    "value": "Entrada directa de hueso para prueba original v6: HUESO CERTIFICADO (10% HUMEDAD)"
+  }
+}

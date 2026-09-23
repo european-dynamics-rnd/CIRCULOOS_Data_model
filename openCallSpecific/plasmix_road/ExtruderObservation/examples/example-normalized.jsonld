@@ -1,0 +1,167 @@
+{
+  "@context": [
+    "http://circuloos-ld-context/circuloos-context.jsonld",
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"
+  ],
+  "id": "urn:ngsi-ld:extruder:observation:20260131T234401",
+  "type": "ExtruderObservation",
+  "zone1ActualTemperature": {
+    "type": "Property",
+    "value": 189.609,
+    "unitCode": "CEL"
+  },
+  "zone1SetTemperature": {
+    "type": "Property",
+    "value": 0.0019,
+    "unitCode": "CEL"
+  },
+  "zone2ActualTemperature": {
+    "type": "Property",
+    "value": 220.1775,
+    "unitCode": "CEL"
+  },
+  "zone2SetTemperature": {
+    "type": "Property",
+    "value": 0.0022,
+    "unitCode": "CEL"
+  },
+  "zone3ActualTemperature": {
+    "type": "Property",
+    "value": 219.7894,
+    "unitCode": "CEL"
+  },
+  "zone3SetTemperature": {
+    "type": "Property",
+    "value": 0.0022,
+    "unitCode": "CEL"
+  },
+  "zone4ActualTemperature": {
+    "type": "Property",
+    "value": 22.00941,
+    "unitCode": "CEL"
+  },
+  "zone4SetTemperature": {
+    "type": "Property",
+    "value": 220,
+    "unitCode": "CEL"
+  },
+  "zone5ActualTemperature": {
+    "type": "Property",
+    "value": 22.93826,
+    "unitCode": "CEL"
+  },
+  "zone5SetTemperature": {
+    "type": "Property",
+    "value": 0.0023,
+    "unitCode": "CEL"
+  },
+  "zone6ActualTemperature": {
+    "type": "Property",
+    "value": 24.51125,
+    "unitCode": "CEL"
+  },
+  "zone6SetTemperature": {
+    "type": "Property",
+    "value": 245,
+    "unitCode": "CEL"
+  },
+  "zone7ActualTemperature": {
+    "type": "Property",
+    "value": 22.50941,
+    "unitCode": "CEL"
+  },
+  "zone7SetTemperature": {
+    "type": "Property",
+    "value": 0.00225,
+    "unitCode": "CEL"
+  },
+  "zone8ActualTemperature": {
+    "type": "Property",
+    "value": 22.49059,
+    "unitCode": "CEL"
+  },
+  "zone8SetTemperature": {
+    "type": "Property",
+    "value": 0.00225,
+    "unitCode": "CEL"
+  },
+  "zone9ActualTemperature": {
+    "type": "Property",
+    "value": 22.99925,
+    "unitCode": "CEL"
+  },
+  "zone9SetTemperature": {
+    "type": "Property",
+    "value": 230,
+    "unitCode": "CEL"
+  },
+  "zone10ActualTemperature": {
+    "type": "Property",
+    "value": 24.00941,
+    "unitCode": "CEL"
+  },
+  "zone10SetTemperature": {
+    "type": "Property",
+    "value": 0.0024,
+    "unitCode": "CEL"
+  },
+  "extruderId": {
+    "type": "Property",
+    "value": "extruder_1"
+  },
+  "cuttingZoneActualTemperature": {
+    "type": "Property",
+    "value": 24.08102,
+    "unitCode": "CEL"
+  },
+  "cuttingZoneSetTemperature": {
+    "type": "Property",
+    "value": 0.0024,
+    "unitCode": "CEL"
+  },
+  "extruderWorkingSpeed": {
+    "type": "Property",
+    "value": 0,
+    "unitCode": "P1"
+  },
+  "extruderCurrent": {
+    "type": "Property",
+    "value": 0,
+    "unitCode": "AMP"
+  },
+  "cuttingSpeedCurrent": {
+    "type": "Property",
+    "value": 0,
+    "unitCode": "AMP"
+  },
+  "cuttingSpeed": {
+    "type": "Property",
+    "value": 0,
+    "unitCode": "RPM"
+  },
+  "feedSpeedWorking": {
+    "type": "Property",
+    "value": 0,
+    "unitCode": "P1"
+  },
+  "screwFeedCurrent": {
+    "type": "Property",
+    "value": 0,
+    "unitCode": "AMP"
+  },
+  "crusherTemperature": {
+    "type": "Property",
+    "value": 14.90131,
+    "unitCode": "CEL"
+  },
+  "crusherCurrent": {
+    "type": "Property",
+    "value": 0,
+    "unitCode": "AMP"
+  },
+  "crusherRotationSpeed": {
+    "type": "Property",
+    "value": 0,
+    "unitCode": "RPM"
+  }
+}

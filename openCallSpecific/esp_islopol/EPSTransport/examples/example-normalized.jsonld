@@ -1,0 +1,48 @@
+{
+  "@context": [
+    "http://circuloos-ld-context/circuloos-context.jsonld",
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"
+  ],
+  "id": "urn:ngsi-ld:EPSTransport:1789374097444",
+  "type": "EPSTransport",
+  "timestampDeparture": {
+    "type": "Property",
+    "value": "2026-08-18T09:50:00.000Z"
+  },
+  "timestampArrival": {
+    "type": "Property",
+    "value": "2026-08-18T10:15:00.000Z"
+  },
+  "origin": {
+    "type": "Relationship",
+    "object": "urn:ngsi-ld:Factory:ARM:TrasferStation"
+  },
+  "destination": {
+    "type": "Relationship",
+    "object": "urn:ngsi-ld:Factory:Esferolight:Canical"
+  },
+  "refVehicle": {
+    "type": "Relationship",
+    "object": "urn:ngsi-ld:Vehicle:vehicle:arm:86-ni-59"
+  },
+  "refEPSBatch": {
+    "type": "Relationship",
+    "object": [
+      "urn:ngsi-ld:EPSBatch:ARM:20260810",
+      "urn:ngsi-ld:EPSBatch:ARM:20260808",
+      "urn:ngsi-ld:EPSBatch:ARM:20260807",
+      "urn:ngsi-ld:EPSBatch:ARM:20260806",
+      "urn:ngsi-ld:EPSBatch:ARM:20260805",
+      "urn:ngsi-ld:EPSBatch:ARM:20260804",
+      "urn:ngsi-ld:EPSBatch:ARM:20260731",
+      "urn:ngsi-ld:EPSBatch:ARM:20260730",
+      "urn:ngsi-ld:EPSBatch:ARM:20260729",
+      "urn:ngsi-ld:EPSBatch:ARM:20260728",
+      "urn:ngsi-ld:EPSBatch:ARM:20260727",
+      "urn:ngsi-ld:EPSBatch:ARM:20260725",
+      "urn:ngsi-ld:EPSBatch:ARM:20260724",
+      "urn:ngsi-ld:EPSBatch:ARM:20260723",
+      "urn:ngsi-ld:EPSBatch:ARM:20260722"
+    ]
+  }
+}

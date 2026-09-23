@@ -1,0 +1,206 @@
+{
+  "@context": [
+    "http://circuloos-ld-context/circuloos-context.jsonld",
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"
+  ],
+  "id": "urn:ngsi-ld:evop:boiler-session:hueso-certificado-10-humedad",
+  "type": "BoilerTestSession",
+  "scenarioName": {
+    "type": "Property",
+    "value": "HUESO CERTIFICADO (10% HUMEDAD)"
+  },
+  "boilerType": {
+    "type": "Property",
+    "value": "EVOP Biomasa"
+  },
+  "biomassBatch": {
+    "type": "Relationship",
+    "object": "urn:ngsi-ld:evop:biomass-batch:olive-pits-receipt:v6-hueso-certificado-10-humedad"
+  },
+  "startDate": {
+    "type": "Property",
+    "value": "2026-06-18"
+  },
+  "readingIndex": {
+    "type": "Property",
+    "value": 4
+  },
+  "sourceWorkbookFileName": {
+    "type": "Property",
+    "value": "Datos de medicion hueso certificado TOMA 1_v6.xlsx"
+  },
+  "targetTemperature": {
+    "type": "Property",
+    "value": 80,
+    "unitCode": "CEL"
+  },
+  "humidity": {
+    "type": "Property",
+    "value": 10,
+    "unitCode": "P1"
+  },
+  "consumption7days": {
+    "type": "Property",
+    "value": 469,
+    "unitCode": "KGM"
+  },
+  "pci": {
+    "type": "Property",
+    "value": 4.41,
+    "unitCode": "KWH/KGM"
+  },
+  "thermalEnergy": {
+    "type": "Property",
+    "value": 2068,
+    "unitCode": "KWH"
+  },
+  "electricConsumption": {
+    "type": "Property",
+    "value": 14,
+    "unitCode": "KWH"
+  },
+  "biomassConsumption": {
+    "type": "Property",
+    "value": 10,
+    "unitCode": "KGM"
+  },
+  "actualConsumptionKg": {
+    "type": "Property",
+    "value": 10,
+    "unitCode": "KGM"
+  },
+  "ashPercent": {
+    "type": "Property",
+    "value": 0.9,
+    "unitCode": "P1"
+  },
+  "efficiency": {
+    "type": "Property",
+    "value": 84.9,
+    "unitCode": "P1"
+  },
+  "density": {
+    "type": "Property",
+    "value": 650,
+    "unitCode": "KMQ"
+  },
+  "airTemperature": {
+    "type": "Property",
+    "value": 28.1,
+    "unitCode": "CEL"
+  },
+  "waterTemperature": {
+    "type": "Property",
+    "value": 80,
+    "unitCode": "CEL"
+  },
+  "pufferTemperature": {
+    "type": "Property",
+    "value": 29,
+    "unitCode": "CEL"
+  },
+  "deltaT": {
+    "type": "Property",
+    "value": 125.2,
+    "unitCode": "KEL"
+  },
+  "flueGasTemperature": {
+    "type": "Property",
+    "value": 164,
+    "unitCode": "CEL"
+  },
+  "flueGasTempAnalyzer": {
+    "type": "Property",
+    "value": 153.3,
+    "unitCode": "CEL"
+  },
+  "flueGasDepression": {
+    "type": "Property",
+    "value": 27,
+    "unitCode": "PAL"
+  },
+  "gasPressure": {
+    "type": "Property",
+    "value": -0.04,
+    "unitCode": "MBR"
+  },
+  "pressure": {
+    "type": "Property",
+    "value": 2099,
+    "unitCode": "PAL"
+  },
+  "tiro": {
+    "type": "Property",
+    "value": 0.122,
+    "unitCode": "MBR"
+  },
+  "lambda": {
+    "type": "Property",
+    "value": 3.31
+  },
+  "co": {
+    "type": "Property",
+    "value": 541,
+    "unitCode": "59"
+  },
+  "coCorrected": {
+    "type": "Property",
+    "value": 678,
+    "unitCode": "59"
+  },
+  "co2": {
+    "type": "Property",
+    "value": 5.8,
+    "unitCode": "P1"
+  },
+  "no": {
+    "type": "Property",
+    "value": 58,
+    "unitCode": "59"
+  },
+  "noCorrected": {
+    "type": "Property",
+    "value": 73,
+    "unitCode": "59"
+  },
+  "nox": {
+    "type": "Property",
+    "value": 61,
+    "unitCode": "59"
+  },
+  "noxCorrected": {
+    "type": "Property",
+    "value": 76,
+    "unitCode": "59"
+  },
+  "o2": {
+    "type": "Property",
+    "value": 14.6,
+    "unitCode": "P1"
+  },
+  "o2Reference": {
+    "type": "Property",
+    "value": 13,
+    "unitCode": "P1"
+  },
+  "etaC": {
+    "type": "Property",
+    "value": 0,
+    "unitCode": "P1"
+  },
+  "etaS": {
+    "type": "Property",
+    "value": 84.4,
+    "unitCode": "P1"
+  },
+  "etaT": {
+    "type": "Property",
+    "value": 84.4,
+    "unitCode": "P1"
+  },
+  "qs": {
+    "type": "Property",
+    "value": 15.6,
+    "unitCode": "P1"
+  }
+}

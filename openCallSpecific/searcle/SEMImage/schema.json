@@ -1,0 +1,128 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "$schemaVersion": "0.0.1",
+  "modelTags": "",
+  "derivedFrom": "",
+  "license": "",
+  "$id": "https://raw.githubusercontent.com/TO_ADD_LATER/schema.json",
+  "title": "Data model for a SEARCLE scanning electron microscope image",
+  "description": "CIRCULOOS data model for a scanning electron microscope (SEM) image of a material sample in the SEARCLE value chain, covering the instrument that produced it, the machine settings used, and the link to the stored image file.",
+  "type": "object",
+  "definitions": {
+    "QuantityProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Property"
+          ]
+        },
+        "value": {
+          "type": "number",
+          "description": "Exact measured value, when a single figure is known."
+        },
+        "minValue": {
+          "type": "number",
+          "description": "Lower bound of the value, when the source declares a range or a minimum."
+        },
+        "maxValue": {
+          "type": "number",
+          "description": "Upper bound of the value, when the source declares a range or a maximum."
+        },
+        "unitCode": {
+          "type": "string",
+          "description": "Unit of measurement of the value, given as a UN/CEFACT code where one exists."
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "unitCode"
+      ],
+      "anyOf": [
+        {
+          "required": [
+            "value"
+          ]
+        },
+        {
+          "required": [
+            "minValue"
+          ]
+        },
+        {
+          "required": [
+            "maxValue"
+          ]
+        }
+      ],
+      "additionalProperties": false
+    },
+    "StringProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Property"
+          ]
+        },
+        "value": {
+          "type": "string"
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "allOf": [
+    {
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Property. Unique entity identifier, with the format urn:ngsi-ld:circuloos_searcle:sem:<imageId>."
+        },
+        "type": {
+          "type": "string",
+          "description": "Property. NGSI Entity type. It has to be SEMImage",
+          "enum": [
+            "SEMImage"
+          ]
+        },
+        "equipment": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. Equipment that generated the data."
+        },
+        "magnification": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. Machine settings (e.g. microscope magnification), recorded as reported by the instrument (e.g. \"x250\")."
+        },
+        "imageUrl": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. Internal link to the data if too big (requires authentication)."
+        },
+        "acceleratingVoltage": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: KVT. Accelerating voltage of the electron beam, another machine setting of the acquisition."
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "equipment",
+    "imageUrl"
+  ]
+}

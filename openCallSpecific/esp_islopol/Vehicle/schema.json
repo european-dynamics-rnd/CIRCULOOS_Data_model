@@ -1,0 +1,136 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "$schemaVersion": "0.0.1",
+  "modelTags": "",
+  "derivedFrom": "https://context.dataspace-arditi.com/islopol/entities/Vehicle/v2/schema.json",
+  "license": "",
+  "$id": "https://raw.githubusercontent.com/TO_ADD_LATER/schema.json",
+  "title": "Data model for an ISLOPOL vehicle",
+  "description": "CIRCULOOS data model for an individual vehicle used in material collection or EPS transport in the ISLOPOL value chain, covering its registration plate, first registration date, configuration, fuel type and the vehicle model it belongs to.",
+  "type": "object",
+  "definitions": {
+    "DateProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Property"
+          ]
+        },
+        "value": {
+          "type": "string",
+          "format": "date",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ],
+      "additionalProperties": false
+    },
+    "RelationshipProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Relationship"
+          ]
+        },
+        "object": {
+          "type": "string",
+          "pattern": "^urn:ngsi-ld:.+$",
+          "description": "URN of the referenced entity."
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "object"
+      ],
+      "additionalProperties": false
+    },
+    "StringProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Property"
+          ]
+        },
+        "value": {
+          "type": "string"
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "allOf": [
+    {
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Property. Unique entity identifier, with the format urn:ngsi-ld:Vehicle:<operator>:<plate>."
+        },
+        "type": {
+          "type": "string",
+          "description": "Property. NGSI Entity type. It has to be Vehicle",
+          "enum": [
+            "Vehicle"
+          ]
+        },
+        "name": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. Human-readable label for the individual vehicle. Given in the source as https://schema.org/name."
+        },
+        "description": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. Free-text description of the vehicle."
+        },
+        "vehiclePlateIdentifier": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. Official registration plate identifying the individual vehicle. Given in the source as https://smartdatamodels.org/vehiclePlateIdentifier."
+        },
+        "dateVehicleFirstRegistered": {
+          "$ref": "#/definitions/DateProperty",
+          "description": "Property. Date when the vehicle was first registered, normally expressed in ISO 8601 date format (YYYY-MM-DD). Given in the source as https://schema.org/dateVehicleFirstRegistered."
+        },
+        "vehicleConfiguration": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. Text describing the vehicle's configuration or carrying arrangement. Given in the source as https://schema.org/vehicleConfiguration."
+        },
+        "refVehicleModel": {
+          "$ref": "#/definitions/RelationshipProperty",
+          "description": "Relationship. Identifier of the VehicleModel entity describing the shared technical characteristics of this vehicle's make and model. Given in the source as https://smartdatamodels.org/refVehicleModel."
+        },
+        "fuelType": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. Fuel or energy type used by the individual vehicle. Given in the source as https://schema.org/fuelType."
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "name"
+  ]
+}
