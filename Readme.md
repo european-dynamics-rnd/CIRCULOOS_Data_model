@@ -2,6 +2,12 @@
 
 For CIRCULOOS data model we will utilize components of the [Smart Data Models](https://github.com/smart-data-models)
 
+## License
+
+Licensed under the EUPL, Version 1.2.
+
+This work has received funding from the European Union's Horizon Europe research and innovation programme under grant agreement No. 101092295 (CIRCULOOS).
+
 ## How to compine existing data models into one, @context file
 @context file is needed from Orion-LD to correctly link the data 
 
