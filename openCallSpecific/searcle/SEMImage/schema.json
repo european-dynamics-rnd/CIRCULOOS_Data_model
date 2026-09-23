@@ -101,19 +101,35 @@
           ]
         },
         "equipment": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Equipment that generated the data."
         },
         "magnification": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Machine settings (e.g. microscope magnification), recorded as reported by the instrument (e.g. \"x250\")."
         },
         "imageUrl": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Internal link to the data if too big (requires authentication)."
         },
         "acceleratingVoltage": {
-          "$ref": "#/definitions/QuantityProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/QuantityProperty"
+            }
+          ],
           "description": "Property. Expected unitCode: KVT. Accelerating voltage of the electron beam, another machine setting of the acquisition."
         }
       }

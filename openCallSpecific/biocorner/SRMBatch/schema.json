@@ -177,55 +177,107 @@
           ]
         },
         "batchCode": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Internal batch tracking code assigned upon material reception. Follows a structured convention for unique identification across the supply chain."
         },
         "description": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Free-text description including collection or harvest details, quality observations, and any deviations from expected material characteristics."
         },
         "derivedFromSRM": {
-          "$ref": "#/definitions/RelationshipProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/RelationshipProperty"
+            }
+          ],
           "description": "Relationship. Relationship to the parent SRM entity, identifying which type of secondary raw material this batch contains."
         },
         "suppliedBy": {
-          "$ref": "#/definitions/RelationshipProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/RelationshipProperty"
+            }
+          ],
           "description": "Relationship. Relationship to the Supplier entity that delivered this batch."
         },
         "arrivalDate": {
-          "$ref": "#/definitions/DateProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/DateProperty"
+            }
+          ],
           "description": "Property. Date when the material batch was received at the manufacturing or research facility. Recorded in ISO 8601 format (YYYY-MM-DD)."
         },
         "harvestSeason": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Season and year when the raw material was harvested or collected. Relevant for bio-based materials where properties vary with seasonal conditions."
         },
         "region": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Geographic region where the material was sourced. Used for regional supply chain analysis and transport distance calculation."
         },
         "country": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. The country where the material was sourced."
         },
         "density": {
-          "$ref": "#/definitions/QuantityProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/QuantityProperty"
+            }
+          ],
           "description": "Property. Expected unitCode: KMQ. Measured bulk density of this specific batch. May differ from the reference SRM density due to natural variability in biological materials."
         },
         "moistureContent": {
-          "$ref": "#/definitions/QuantityProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/QuantityProperty"
+            }
+          ],
           "description": "Property. Expected unitCode: P1. Measured moisture content of the batch at reception, as percentage by weight. Critical quality parameter for bio-based materials."
         },
         "weight": {
-          "$ref": "#/definitions/QuantityProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/QuantityProperty"
+            }
+          ],
           "description": "Property. Expected unitCode: KGM. Total weight of the batch as delivered. Primary quantity measure for material accounting."
         },
         "volume": {
-          "$ref": "#/definitions/QuantityProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/QuantityProperty"
+            }
+          ],
           "description": "Property. Expected unitCode: MTQ. Total volume of the batch as delivered. Complementary to weight for density verification."
         },
         "weightKg": {
-          "$ref": "#/definitions/NumericProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/NumericProperty"
+            }
+          ],
           "description": "Property. Unit: kilogram. Numeric weight value in kilograms without unit string. Used for automated aggregation and statistical calculations in the platform dashboard."
         }
       }

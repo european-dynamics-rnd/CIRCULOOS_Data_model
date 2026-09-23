@@ -139,23 +139,43 @@
           ]
         },
         "name": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Human-readable name of the facility, used to identify it in maps, forms and reports. Given in the source as https://schema.org/name."
         },
         "additionalType": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Description of the facility's type or principal activities. Given in the source as https://schema.org/additionalType, the expanded JSON-LD form of factoryType."
         },
         "provider": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Name of the organisation operating the facility. Given in the source as https://schema.org/provider, the expanded JSON-LD form of operatedBy."
         },
         "address": {
-          "$ref": "#/definitions/AddressProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/AddressProperty"
+            }
+          ],
           "description": "Property. Postal address of the facility, as a structured object containing fields such as street, postal code, locality, region and country."
         },
         "location": {
-          "$ref": "#/definitions/GeoProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/GeoProperty"
+            }
+          ],
           "description": "GeoProperty. Geographical position of the facility, represented as a GeoJSON Point. Coordinates are ordered as longitude followed by latitude."
         }
       }

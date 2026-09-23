@@ -128,43 +128,83 @@
           ]
         },
         "productName": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Commercial name of the product derived from brewer's spent yeast."
         },
         "processStream": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Yeast fraction or process stream the product comes from (e.g. yeast protein, cell walls, low-molecular fractions, or blends)."
         },
         "goToMarketStage": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Current commercial maturity of the product, from development through validation to an MVP ready for commercialisation."
         },
         "description": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Short description of the product, its composition and functional properties, and its target applications."
         },
         "priceRange": {
-          "$ref": "#/definitions/QuantityProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/QuantityProperty"
+            }
+          ],
           "description": "Property. Expected unitCode: EUR/KGM. Indicative selling price range of the product. Use minValue and maxValue for a range, or value for a single price."
         },
         "potentialCustomers": {
-          "$ref": "#/definitions/StringArrayProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringArrayProperty"
+            }
+          ],
           "description": "Property. Companies identified as potential buyers or application partners for the product, with the intended application."
         },
         "keyCollaborations": {
-          "$ref": "#/definitions/StringArrayProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringArrayProperty"
+            }
+          ],
           "description": "Property. Research or industry partners involved in developing, testing or validating the product."
         },
         "mainMarketOpportunities": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Main market needs the product addresses, i.e. its value proposition for customers."
         },
         "specifications": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Technical specifications or datasheet information for the product (e.g. composition)."
         },
         "valueChain": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Identifier of the CIRCULOOS value chain the record belongs to (here \"yeast2value\")."
         }
       }

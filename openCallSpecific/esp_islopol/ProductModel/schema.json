@@ -75,27 +75,51 @@
           ]
         },
         "name": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Human-readable name of the product model, used to label products. Given in the source as https://schema.org/name."
         },
         "description": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Human-readable description of the product or material represented by the model."
         },
         "constituents": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Material or list of materials or components making up the product model. Given in the source as https://context.dataspace-arditi.com/islopol/terms/v2/constituents."
         },
         "category": {
-          "$ref": "#/definitions/StringArrayProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringArrayProperty"
+            }
+          ],
           "description": "Property. List of product categories or grades available for the model. Given in the source as https://schema.org/category, the expanded JSON-LD form of availableCategories."
         },
         "material": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Main material or composition associated with the product model. Given in the source as https://schema.org/material."
         },
         "unitCode": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Default unit of measurement for products of this model, such as kilograms, kilowatt-hours or individual units."
         }
       }

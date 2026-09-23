@@ -152,27 +152,51 @@
           ]
         },
         "refProduct": {
-          "$ref": "#/definitions/RelationshipProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/RelationshipProperty"
+            }
+          ],
           "description": "Relationship. Identifier of the Product entity representing the EPS material in this batch, including its recorded quantity and unit of measurement."
         },
         "rejectionRate": {
-          "$ref": "#/definitions/FractionProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/FractionProperty"
+            }
+          ],
           "description": "Property. Fraction of material in the batch that was rejected, expressed on a scale from 0 to 1. (Multiply by 100 to obtain the rejection percentage.)"
         },
         "status": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Current stage of the batch in the operational workflow, such as awaiting transport. It describes the batch's handling status rather than its contamination level."
         },
         "avgContaminationScore": {
-          "$ref": "#/definitions/FractionProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/FractionProperty"
+            }
+          ],
           "description": "Property. Average contamination score associated with the batch, expressed from 0 to 1, where higher values indicate greater contamination. (Multiply by 100 to obtain the Contamination Score percentage.)"
         },
         "refEPSObservations": {
-          "$ref": "#/definitions/RelationshipArrayProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/RelationshipArrayProperty"
+            }
+          ],
           "description": "Relationship. Identifiers of the EPSObservation entities associated with this batch. These records provide the automated contamination assessments used to characterise it."
         },
         "dateCreated": {
-          "$ref": "#/definitions/DateTimeProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/DateTimeProperty"
+            }
+          ],
           "description": "Property. Date and time when the EPSBatch record was created, expressed as an ISO 8601 timestamp. This is the record creation time, which can differ from the time of the physical operation."
         }
       }

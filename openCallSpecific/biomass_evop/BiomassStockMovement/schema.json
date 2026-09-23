@@ -151,31 +151,59 @@
           ]
         },
         "material": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Identifies the biomass material involved in the stock movement, such as olive pits."
         },
         "movementType": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Indicates the type of stock movement recorded, such as receipt, consumption or transfer."
         },
         "quantityKg": {
-          "$ref": "#/definitions/QuantityProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/QuantityProperty"
+            }
+          ],
           "description": "Property. Expected unitCode: KGM. Quantity of biomass involved in the stock movement."
         },
         "occurredAt": {
-          "$ref": "#/definitions/DateTimeProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/DateTimeProperty"
+            }
+          ],
           "description": "Property. Date and time when the biomass stock movement occurred, recorded as a timestamp."
         },
         "sourceRef": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Reference identifying the source or origin of the stock movement, such as an initial stock record or measurement source."
         },
         "relatedEntityId": {
-          "$ref": "#/definitions/RelationshipProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/RelationshipProperty"
+            }
+          ],
           "description": "Relationship. Identifier of the biomass batch or other EVOP entity associated with the stock movement."
         },
         "description": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Free-text description providing additional information about the stock movement, including the biomass type or test context."
         }
       }

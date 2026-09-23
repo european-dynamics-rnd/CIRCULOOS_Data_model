@@ -152,47 +152,91 @@
           ]
         },
         "name": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Descriptive name of the recipe identifying the primary SRM and formulation variant for internal reference and traceability."
         },
         "formulation": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Quantitative composition summary listing each component with its percentage by weight, including both SRM components and conventional binders or additives."
         },
         "processingInstructions": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Step-by-step manufacturing procedure including mixing parameters, component addition sequence, timing, and environmental conditions for production."
         },
         "developedBy": {
-          "$ref": "#/definitions/RelationshipProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/RelationshipProperty"
+            }
+          ],
           "description": "Relationship. Relationship to the Organization entity that developed and validated this formulation through laboratory testing and characterisation."
         },
         "containsSRM1": {
-          "$ref": "#/definitions/RelationshipProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/RelationshipProperty"
+            }
+          ],
           "description": "Relationship. Relationship to the primary SRM entity used in this formulation. Identifies the main bio-based secondary raw material in the recipe."
         },
         "containsSRM2": {
-          "$ref": "#/definitions/RelationshipProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/RelationshipProperty"
+            }
+          ],
           "description": "Relationship. Relationship to the second SRM entity, when multiple secondary raw materials are combined in the formulation."
         },
         "containsSRM3": {
-          "$ref": "#/definitions/RelationshipProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/RelationshipProperty"
+            }
+          ],
           "description": "Relationship. Relationship to the third SRM entity, applicable for multi-source formulations combining different waste stream categories."
         },
         "containsSRM4": {
-          "$ref": "#/definitions/RelationshipProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/RelationshipProperty"
+            }
+          ],
           "description": "Relationship. Relationship to the fourth SRM entity, applicable for complex formulations requiring four or more secondary raw material types."
         },
         "mixingTime": {
-          "$ref": "#/definitions/QuantityProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/QuantityProperty"
+            }
+          ],
           "description": "Property. Expected unitCode: MIN. Total duration of the mixing process, from initial component blending to final homogeneous mixture ready for application or casting."
         },
         "curingDuration": {
-          "$ref": "#/definitions/QuantityProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/QuantityProperty"
+            }
+          ],
           "description": "Property. Expected unitCode: DAY. Required curing period before the product reaches its declared performance characteristics under standard reference conditions."
         },
         "waterBinderRatio": {
-          "$ref": "#/definitions/NumericProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/NumericProperty"
+            }
+          ],
           "description": "Property. Dimensionless. Mass ratio of water to binder content in the formulation. Critical parameter controlling workability, strength development, and porosity of the final product."
         }
       }

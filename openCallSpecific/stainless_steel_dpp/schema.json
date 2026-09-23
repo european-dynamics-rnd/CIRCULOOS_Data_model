@@ -152,27 +152,51 @@
           ]
         },
         "dppId": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Unique UUID of the Digital Product Passport of this product."
         },
         "factoryInternalBarcode": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Product unique identifier (barcode) assigned at the factory."
         },
         "productName": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Commercial product name."
         },
         "startTime": {
-          "$ref": "#/definitions/EpochTimeProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/EpochTimeProperty"
+            }
+          ],
           "description": "Property. Start time of the Digital Product Passport, as a Unix epoch timestamp in seconds."
         },
         "endTime": {
-          "$ref": "#/definitions/EpochTimeProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/EpochTimeProperty"
+            }
+          ],
           "description": "Property. End time of the Digital Product Passport, as a Unix epoch timestamp in seconds."
         },
         "route": {
-          "$ref": "#/definitions/RouteProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/RouteProperty"
+            }
+          ],
           "description": "Property. The processes the product goes through, each with its operation name, date, production status and energy consumption."
         }
       }

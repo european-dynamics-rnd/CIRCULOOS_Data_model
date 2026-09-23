@@ -176,43 +176,83 @@
           ]
         },
         "eventTime": {
-          "$ref": "#/definitions/DateTimeProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/DateTimeProperty"
+            }
+          ],
           "description": "Property. Date and time when the EPS observation took place, expressed as an ISO 8601 timestamp."
         },
         "contaminationScore": {
-          "$ref": "#/definitions/FractionProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/FractionProperty"
+            }
+          ],
           "description": "Property. Estimated contamination expressed as a fraction from 0 to 1, with higher values indicating more contamination. (Multiply by 100 to obtain the Contamination Score percentage.)"
         },
         "contaminationLevel": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Contamination category assigned from the score using the thresholds recorded for the observation. The schema supports none, low, medium and high."
         },
         "confidence": {
-          "$ref": "#/definitions/FractionProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/FractionProperty"
+            }
+          ],
           "description": "Property. Confidence score reported by the model for the observation, expressed from 0 to 1. It describes confidence in the prediction, not the amount of contamination. (Multiply by 100 to obtain the Confidence percentage.)"
         },
         "modelUsed": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Name or identifier of the machine-learning model or inference method used to analyse the EPS observation."
         },
         "modelVersion": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Version or deployed model artefact used to produce the observation, allowing predictions to be traced to a specific model release."
         },
         "thresholds": {
-          "$ref": "#/definitions/ThresholdsProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/ThresholdsProperty"
+            }
+          ],
           "description": "Property. Configuration used to convert contamination scores into categories, including the lowMax, medMax and highMax upper limits. The object may also record the formula used to calculate the score."
         },
         "refDevice": {
-          "$ref": "#/definitions/RelationshipProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/RelationshipProperty"
+            }
+          ],
           "description": "Relationship. Identifier of the Device entity representing the equipment that generated the observation, such as the camera and inference device installed at ARM."
         },
         "refProcessEvent": {
-          "$ref": "#/definitions/RelationshipProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/RelationshipProperty"
+            }
+          ],
           "description": "Relationship. Identifier of the ProcessEvent during which the observation was generated, linking the assessment to the corresponding sorting operation."
         },
         "refEPSBatch": {
-          "$ref": "#/definitions/RelationshipProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/RelationshipProperty"
+            }
+          ],
           "description": "Relationship. Identifier of the EPSBatch assessed by this observation, linking the model result to the tracked batch of material."
         }
       }

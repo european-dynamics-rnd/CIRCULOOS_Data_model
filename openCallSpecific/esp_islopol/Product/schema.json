@@ -152,39 +152,75 @@
           ]
         },
         "refProcessEvent": {
-          "$ref": "#/definitions/RelationshipProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/RelationshipProperty"
+            }
+          ],
           "description": "Relationship. Identifier of the ProcessEvent associated with this Product record, linking its material or resource to the corresponding operation."
         },
         "refProductModel": {
-          "$ref": "#/definitions/RelationshipProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/RelationshipProperty"
+            }
+          ],
           "description": "Relationship. Identifier of the ProductModel defining the product's shared characteristics, such as its material, category and default unit of measurement."
         },
         "supplier": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Name or identifier of the organisation or source supplying the product or material. The schema allows a list of suppliers."
         },
         "destination": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Name or identifier of the intended recipient, facility or destination for the product or material. The schema allows a list of destinations."
         },
         "quantity": {
-          "$ref": "#/definitions/NumericProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/NumericProperty"
+            }
+          ],
           "description": "Property. Amount of the product, material or resource represented by the record, expressed in the accompanying unitCode."
         },
         "unitCode": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Unit of measurement for quantity."
         },
         "length": {
-          "$ref": "#/definitions/QuantityProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/QuantityProperty"
+            }
+          ],
           "description": "Property. Expected unitCode: CMT. Physical length of the product."
         },
         "width": {
-          "$ref": "#/definitions/QuantityProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/QuantityProperty"
+            }
+          ],
           "description": "Property. Expected unitCode: CMT. Physical width of the product."
         },
         "thickness": {
-          "$ref": "#/definitions/QuantityProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/QuantityProperty"
+            }
+          ],
           "description": "Property. Expected unitCode: CMT. Physical thickness of the product."
         }
       }

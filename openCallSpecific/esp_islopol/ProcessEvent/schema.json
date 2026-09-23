@@ -180,39 +180,75 @@
           ]
         },
         "refProcess": {
-          "$ref": "#/definitions/RelationshipProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/RelationshipProperty"
+            }
+          ],
           "description": "Relationship. Identifier of the Process entity that defines the operation executed by this event, linking the recorded execution to its process description."
         },
         "refInputProducts": {
-          "$ref": "#/definitions/RelationshipArrayProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/RelationshipArrayProperty"
+            }
+          ],
           "description": "Relationship. Identifiers of the Product entities consumed or processed during the event."
         },
         "refOutputProducts": {
-          "$ref": "#/definitions/RelationshipArrayProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/RelationshipArrayProperty"
+            }
+          ],
           "description": "Relationship. Identifiers of the Product entities produced by the event. Their quantities and units are stored in the referenced Product records."
         },
         "sortingLine": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Name or identifier of the physical sorting line used for the event, such as ARM's paper and cardboard sorting line."
         },
         "sortingStream": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Name or classification of the waste stream being processed, such as the blue-bin paper and cardboard stream. It describes the overall input stream, which may also contain recoverable EPS."
         },
         "throughput": {
-          "$ref": "#/definitions/QuantityProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/QuantityProperty"
+            }
+          ],
           "description": "Property. Expected unitCode: KGM. Processing throughput for the event."
         },
         "startDate": {
-          "$ref": "#/definitions/DateTimeProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/DateTimeProperty"
+            }
+          ],
           "description": "Property. Date and time when the process execution started, expressed as an ISO 8601 timestamp. Together with endDate, it defines the recorded execution period."
         },
         "endDate": {
-          "$ref": "#/definitions/DateTimeProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/DateTimeProperty"
+            }
+          ],
           "description": "Property. Date and time when the process execution ended, expressed as an ISO 8601 timestamp."
         },
         "refLcaId": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Reference identifier linking the process event to a life-cycle assessment (LCA) record or dataset."
         }
       }

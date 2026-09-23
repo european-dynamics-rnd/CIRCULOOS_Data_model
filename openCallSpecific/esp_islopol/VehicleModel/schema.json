@@ -101,27 +101,51 @@
           ]
         },
         "name": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Human-readable name of the vehicle model, typically combining the brand and model designation. Given in the source as https://schema.org/name."
         },
         "brandName": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Brand or marque of the vehicle model."
         },
         "modelName": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Manufacturer's model designation."
         },
         "fuelType": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Fuel or energy type used by vehicles of this model. Given in the source as https://schema.org/fuelType."
         },
         "cargoVolume": {
-          "$ref": "#/definitions/QuantityProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/QuantityProperty"
+            }
+          ],
           "description": "Property. Expected unitCode: LTR. Cargo volume specified for the vehicle model."
         },
         "weight": {
-          "$ref": "#/definitions/QuantityProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/QuantityProperty"
+            }
+          ],
           "description": "Property. Expected unitCode: KGM. Vehicle weight recorded for the model. Given in the source as https://schema.org/weight."
         }
       }

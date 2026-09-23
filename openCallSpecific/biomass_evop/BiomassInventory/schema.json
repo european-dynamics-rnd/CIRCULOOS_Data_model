@@ -152,43 +152,83 @@
           ]
         },
         "material": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Identifies the biomass material represented in the inventory, such as olive pits."
         },
         "physicalStockKg": {
-          "$ref": "#/definitions/QuantityProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/QuantityProperty"
+            }
+          ],
           "description": "Property. Expected unitCode: KGM. Total physical quantity of the biomass currently recorded in stock."
         },
         "freeStockKg": {
-          "$ref": "#/definitions/QuantityProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/QuantityProperty"
+            }
+          ],
           "description": "Property. Expected unitCode: KGM. Quantity of biomass available after accounting for quantities already committed or reserved."
         },
         "safeAvailableKg": {
-          "$ref": "#/definitions/QuantityProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/QuantityProperty"
+            }
+          ],
           "description": "Property. Expected unitCode: KGM. Quantity of biomass considered safely available for offering or use after applying the defined safety margin."
         },
         "advertisedQuantityKg": {
-          "$ref": "#/definitions/QuantityProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/QuantityProperty"
+            }
+          ],
           "description": "Property. Expected unitCode: KGM. Quantity of biomass from the inventory currently advertised or made available to other users."
         },
         "reserveKg": {
-          "$ref": "#/definitions/QuantityProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/QuantityProperty"
+            }
+          ],
           "description": "Property. Expected unitCode: KGM. Quantity of biomass reserved and therefore excluded from the freely available stock."
         },
         "safetyMarginPercent": {
-          "$ref": "#/definitions/QuantityProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/QuantityProperty"
+            }
+          ],
           "description": "Property. Expected unitCode: P1. Percentage of inventory retained as a safety margin to avoid committing the full physical stock."
         },
         "offerPercentage": {
-          "$ref": "#/definitions/QuantityProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/QuantityProperty"
+            }
+          ],
           "description": "Property. Expected unitCode: P1. Percentage of the available inventory intended to be offered to other users."
         },
         "movementCount": {
-          "$ref": "#/definitions/NumericProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/NumericProperty"
+            }
+          ],
           "description": "Property. Dimensionless. Number of stock movements recorded for the corresponding biomass inventory."
         },
         "calculatedAt": {
-          "$ref": "#/definitions/DateTimeProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/DateTimeProperty"
+            }
+          ],
           "description": "Property. Date and time when the inventory values were last calculated or updated."
         }
       }
