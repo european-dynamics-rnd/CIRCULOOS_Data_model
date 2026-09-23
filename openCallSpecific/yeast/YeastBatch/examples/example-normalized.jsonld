@@ -1,0 +1,74 @@
+{
+  "@context": [
+    "http://circuloos-ld-context/circuloos-context.jsonld",
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"
+  ],
+  "id": "urn:ngsi-ld:circuloos-yeast2value:batch:PT_0149",
+  "type": "YeastBatch",
+  "runId": {
+    "type": "Property",
+    "value": 5
+  },
+  "batchId": {
+    "type": "Property",
+    "value": "PT_0149"
+  },
+  "brewery": {
+    "type": "Property",
+    "value": "Heineken Yeast 2"
+  },
+  "pickUpDate": {
+    "type": "Property",
+    "value": "2026-01-30"
+  },
+  "storageDateBeforePickUp": {
+    "type": "Property",
+    "value": "2026-01-30"
+  },
+  "storageTemperatureBeforePickUp": {
+    "type": "Property",
+    "maxValue": 4,
+    "unitCode": "CEL"
+  },
+  "phValueRawYeast": {
+    "type": "Property",
+    "value": 5.8
+  },
+  "dryMassUnfiltered": {
+    "type": "Property",
+    "value": 18.3,
+    "unitCode": "P1"
+  },
+  "volumetricFraction": {
+    "type": "Property",
+    "value": 58.72,
+    "unitCode": "P1"
+  },
+  "totalCellCount": {
+    "type": "Property",
+    "value": 933000000,
+    "unitCode": "cells/mL"
+  },
+  "livingCellsCount": {
+    "type": "Property",
+    "value": 830000000,
+    "unitCode": "cells/mL"
+  },
+  "livingCellsPercent": {
+    "type": "Property",
+    "value": 88.96,
+    "unitCode": "P1"
+  },
+  "feedstockSource": {
+    "type": "Property",
+    "value": "Brewer's spent yeast"
+  },
+  "valueChain": {
+    "type": "Property",
+    "value": "yeast2value"
+  },
+  "dataSource": {
+    "type": "Property",
+    "value": "Yeast_Log (1).xlsx"
+  }
+}

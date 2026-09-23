@@ -1,0 +1,50 @@
+{
+  "@context": [
+    "http://circuloos-ld-context/circuloos-context.jsonld",
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"
+  ],
+  "id": "urn:ngsi-ld:ProcessEvent:ARM:blue-waste-stream-processing:20260903",
+  "type": "ProcessEvent",
+  "refProcess": {
+    "type": "Relationship",
+    "object": "urn:ngsi-ld:Process:ARM:blue-waste-stream-processing"
+  },
+  "refInputProducts": {
+    "type": "Relationship",
+    "object": [
+      "urn:ngsi-ld:Product:ARM:paper-cardboard-stream-waste:20260903",
+      "urn:ngsi-ld:Product:ARM:electricity:20260903",
+      "urn:ngsi-ld:Product:ARM:baling-wire:20260903"
+    ]
+  },
+  "refOutputProducts": {
+    "type": "Relationship",
+    "object": [
+      "urn:ngsi-ld:Product:ARM:paper-cardboard-bales:20260903",
+      "urn:ngsi-ld:Product:ARM:rejected-waste:20260903",
+      "urn:ngsi-ld:Product:ARM:reciclable-eps:20260903",
+      "urn:ngsi-ld:Product:ARM:rejected-eps:20260903"
+    ]
+  },
+  "sortingLine": {
+    "type": "Property",
+    "value": "Linha de triagem de Papel e Cartao da ARM"
+  },
+  "sortingStream": {
+    "type": "Property",
+    "value": "Ecoponto Azul"
+  },
+  "throughput": {
+    "type": "Property",
+    "value": 6396.748215,
+    "unitCode": "KGM"
+  },
+  "startDate": {
+    "type": "Property",
+    "value": "2026-09-02T07:05:17.000Z"
+  },
+  "endDate": {
+    "type": "Property",
+    "value": "2026-09-03T20:44:12.000Z"
+  }
+}

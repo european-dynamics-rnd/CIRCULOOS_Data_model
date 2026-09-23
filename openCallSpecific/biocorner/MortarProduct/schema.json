@@ -1,0 +1,142 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "$schemaVersion": "0.0.1",
+  "modelTags": "",
+  "derivedFrom": "",
+  "license": "",
+  "$id": "https://raw.githubusercontent.com/TO_ADD_LATER/schema.json",
+  "title": "Data model for a Biocorner bio-based mortar product",
+  "description": "CIRCULOOS data model for a Biocorner bio-based mortar product formulation, covering its classification by secondary raw material source, its application guidelines and the Declaration of Performance that certifies it.",
+  "type": "object",
+  "definitions": {
+    "DateProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Property"
+          ]
+        },
+        "value": {
+          "type": "string",
+          "format": "date",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ],
+      "additionalProperties": false
+    },
+    "RelationshipProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Relationship"
+          ]
+        },
+        "object": {
+          "type": "string",
+          "pattern": "^urn:ngsi-ld:[A-Za-z0-9_]+:.+$",
+          "description": "URN of the referenced entity, with the format urn:ngsi-ld:<type>:<id>."
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "object"
+      ],
+      "additionalProperties": false
+    },
+    "StringProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Property"
+          ]
+        },
+        "value": {
+          "type": "string"
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "allOf": [
+    {
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Property. Unique entity identifier, with the format urn:ngsi-ld:MortarProduct:<id>."
+        },
+        "type": {
+          "type": "string",
+          "description": "Property. NGSI Entity type. It has to be MortarProduct",
+          "enum": [
+            "MortarProduct"
+          ]
+        },
+        "name": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. Commercial or project-internal product name used to identify this formulation within the product portfolio."
+        },
+        "description": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. Technical description of the product including primary bio-based components, key performance characteristics, and intended application domain."
+        },
+        "classification": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. Product classification based on the primary secondary raw material used in the formulation. Enables grouping and comparison by SRM source type."
+        },
+        "applicationGuidelines": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. Technical guidance for product application including suitable substrates, recommended application parameters, ambient conditions, and curing requirements."
+        },
+        "certifiedBy": {
+          "$ref": "#/definitions/RelationshipProperty",
+          "description": "Relationship. Relationship to the DoP entity containing the performance declaration for this product. Links the product to its regulatory compliance documentation."
+        },
+        "productionRegion": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. Geographic region where the product is manufactured. Used for regional supply chain analysis and local economic impact assessment."
+        },
+        "country": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. The country where the product is manufactured."
+        },
+        "dateCreated": {
+          "$ref": "#/definitions/DateProperty",
+          "description": "Property. Date at which the entity was created."
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "name",
+    "classification",
+    "certifiedBy"
+  ]
+}

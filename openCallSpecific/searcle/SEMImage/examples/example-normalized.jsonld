@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "http://circuloos-ld-context/circuloos-context.jsonld",
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"
+  ],
+  "id": "urn:ngsi-ld:circuloos_searcle:sem:20260717-KTRL65",
+  "type": "SEMImage",
+  "equipment": {
+    "type": "Property",
+    "value": "FEG Quanta450"
+  },
+  "magnification": {
+    "type": "Property",
+    "value": "x250"
+  },
+  "imageUrl": {
+    "type": "Property",
+    "value": "https://api.searcle.cloud/files/urn%3Angsi-ld%3Acirculoos_searcle%3Asample%3A20260717-6U2HBA/20260717-KTRL65__008.tif"
+  },
+  "acceleratingVoltage": {
+    "type": "Property",
+    "value": 15,
+    "unitCode": "KVT"
+  }
+}

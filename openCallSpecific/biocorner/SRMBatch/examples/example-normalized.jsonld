@@ -1,0 +1,54 @@
+{
+  "@context": [
+    "http://circuloos-ld-context/circuloos-context.jsonld",
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"
+  ],
+  "id": "urn:ngsi-ld:SRMBatch:RH-CONF01-2025",
+  "type": "SRMBatch",
+  "batchCode": {
+    "type": "Property",
+    "value": "RH-CONF01-2025",
+    "observedAt": "2026-06-16T08:05:27.000Z"
+  },
+  "derivedFromSRM": {
+    "type": "Relationship",
+    "object": "urn:ngsi-ld:SRM:RiceHusk",
+    "observedAt": "2026-06-16T08:05:27.000Z"
+  },
+  "density": {
+    "type": "Property",
+    "value": 115,
+    "unitCode": "KMQ",
+    "observedAt": "2026-06-16T08:05:27.000Z"
+  },
+  "region": {
+    "type": "Property",
+    "value": "Emilia-Romagna",
+    "observedAt": "2026-06-16T08:05:27.000Z"
+  },
+  "harvestSeason": {
+    "type": "Property",
+    "value": "Autumn 2025",
+    "observedAt": "2026-06-16T08:05:27.000Z"
+  },
+  "suppliedBy": {
+    "type": "Relationship",
+    "object": "urn:ngsi-ld:Supplier:Confidential01-Rice",
+    "observedAt": "2026-06-16T08:05:27.000Z"
+  },
+  "description": {
+    "type": "Property",
+    "value": "Autumn 2025 harvest, rice husk",
+    "observedAt": "2026-06-16T08:05:27.000Z"
+  },
+  "arrivalDate": {
+    "type": "Property",
+    "value": "2024-11-01",
+    "observedAt": "2026-06-16T08:05:27.000Z"
+  },
+  "country": {
+    "type": "Property",
+    "value": "Italy",
+    "observedAt": "2026-06-16T08:05:27.000Z"
+  }
+}

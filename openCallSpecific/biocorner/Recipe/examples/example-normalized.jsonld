@@ -1,0 +1,65 @@
+{
+  "@context": [
+    "http://circuloos-ld-context/circuloos-context.jsonld",
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"
+  ],
+  "id": "urn:ngsi-ld:Recipe:CementFreeMortar",
+  "type": "Recipe",
+  "containsSRM1": {
+    "type": "Relationship",
+    "object": "urn:ngsi-ld:SRM:RiceHusk",
+    "observedAt": "2026-06-16T08:05:08.000Z"
+  },
+  "name": {
+    "type": "Property",
+    "value": "Cement free-Mortar",
+    "observedAt": "2026-06-16T08:05:08.000Z"
+  },
+  "mixingTime": {
+    "type": "Property",
+    "value": 20,
+    "unitCode": "MIN",
+    "observedAt": "2026-06-16T08:05:08.000Z"
+  },
+  "containsSRM2": {
+    "type": "Relationship",
+    "object": "urn:ngsi-ld:SRM:RiceStraw",
+    "observedAt": "2026-06-16T08:05:08.000Z"
+  },
+  "containsSRM3": {
+    "type": "Relationship",
+    "object": "urn:ngsi-ld:SRM:RiceHuskAsh",
+    "observedAt": "2026-06-16T08:05:08.000Z"
+  },
+  "containsSRM4": {
+    "type": "Relationship",
+    "object": "urn:ngsi-ld:SRM:GGBS",
+    "observedAt": "2026-06-16T08:05:08.000Z"
+  },
+  "curingDuration": {
+    "type": "Property",
+    "value": 28,
+    "unitCode": "DAY",
+    "observedAt": "2026-06-16T08:05:08.000Z"
+  },
+  "developedBy": {
+    "type": "Relationship",
+    "object": "urn:ngsi-ld:Organization:CETMA",
+    "observedAt": "2026-06-16T08:05:08.000Z"
+  },
+  "processingInstructions": {
+    "type": "Property",
+    "value": "Binder preparation in concrete mixer until homogeneous consistency reached",
+    "observedAt": "2026-06-16T08:05:08.000Z"
+  },
+  "formulation": {
+    "type": "Property",
+    "value": "80% GGBS, 20% Rice Husk, alkaline activators, natural additives",
+    "observedAt": "2026-06-16T08:05:08.000Z"
+  },
+  "waterBinderRatio": {
+    "type": "Property",
+    "value": 0.32,
+    "observedAt": "2026-06-16T08:05:08.000Z"
+  }
+}

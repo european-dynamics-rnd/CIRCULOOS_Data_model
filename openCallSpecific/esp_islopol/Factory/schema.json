@@ -1,0 +1,169 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "$schemaVersion": "0.0.1",
+  "modelTags": "",
+  "derivedFrom": "https://context.dataspace-arditi.com/islopol/entities/Factory/v2/schema.json",
+  "license": "",
+  "$id": "https://raw.githubusercontent.com/TO_ADD_LATER/schema.json",
+  "title": "Data model for an ISLOPOL facility",
+  "description": "CIRCULOOS data model for a physical facility involved in the ISLOPOL value chain, covering its name, principal activities, operating organisation, postal address and geographical position.",
+  "type": "object",
+  "definitions": {
+    "AddressProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Property"
+          ]
+        },
+        "value": {
+          "type": "object",
+          "properties": {
+            "streetAddress": {
+              "type": "string",
+              "description": "The street address. Model:'https://schema.org/streetAddress'"
+            },
+            "addressLocality": {
+              "type": "string",
+              "description": "The locality in which the street address is. Model:'https://schema.org/addressLocality'"
+            },
+            "addressRegion": {
+              "type": "string",
+              "description": "The region in which the locality is. Model:'https://schema.org/addressRegion'"
+            },
+            "addressCountry": {
+              "type": "string",
+              "description": "The country. Model:'https://schema.org/addressCountry'"
+            },
+            "postalCode": {
+              "type": "string",
+              "description": "The postal code. Model:'https://schema.org/postalCode'"
+            }
+          },
+          "additionalProperties": false
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ],
+      "additionalProperties": false
+    },
+    "GeoProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "GeoProperty"
+          ]
+        },
+        "value": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "Point"
+              ]
+            },
+            "coordinates": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              },
+              "minItems": 2,
+              "maxItems": 2,
+              "description": "GeoJSON coordinates ordered as longitude followed by latitude."
+            }
+          },
+          "required": [
+            "type",
+            "coordinates"
+          ],
+          "additionalProperties": false
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ],
+      "additionalProperties": false
+    },
+    "StringProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Property"
+          ]
+        },
+        "value": {
+          "type": "string"
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "allOf": [
+    {
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Property. Unique entity identifier, with the format urn:ngsi-ld:Factory:<operator>:<facility>."
+        },
+        "type": {
+          "type": "string",
+          "description": "Property. NGSI Entity type. It has to be Factory",
+          "enum": [
+            "Factory"
+          ]
+        },
+        "name": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. Human-readable name of the facility, used to identify it in maps, forms and reports. Given in the source as https://schema.org/name."
+        },
+        "additionalType": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. Description of the facility's type or principal activities. Given in the source as https://schema.org/additionalType, the expanded JSON-LD form of factoryType."
+        },
+        "provider": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. Name of the organisation operating the facility. Given in the source as https://schema.org/provider, the expanded JSON-LD form of operatedBy."
+        },
+        "address": {
+          "$ref": "#/definitions/AddressProperty",
+          "description": "Property. Postal address of the facility, as a structured object containing fields such as street, postal code, locality, region and country."
+        },
+        "location": {
+          "$ref": "#/definitions/GeoProperty",
+          "description": "GeoProperty. Geographical position of the facility, represented as a GeoJSON Point. Coordinates are ordered as longitude followed by latitude."
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "name"
+  ]
+}

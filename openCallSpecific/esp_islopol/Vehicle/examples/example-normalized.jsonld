@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "http://circuloos-ld-context/circuloos-context.jsonld",
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"
+  ],
+  "id": "urn:ngsi-ld:Vehicle:ARM:13-57-OR",
+  "type": "Vehicle",
+  "name": {
+    "type": "Property",
+    "value": "13-57-OR"
+  },
+  "description": {
+    "type": "Property",
+    "value": "Mitsubishi Fuso Canter FE649C6SL-R; gross weight 6300 kg."
+  },
+  "vehiclePlateIdentifier": {
+    "type": "Property",
+    "value": "13-57-OR"
+  },
+  "dateVehicleFirstRegistered": {
+    "type": "Property",
+    "value": "1999-12-01"
+  },
+  "vehicleConfiguration": {
+    "type": "Property",
+    "value": "5 m3"
+  },
+  "refVehicleModel": {
+    "type": "Relationship",
+    "object": "urn:ngsi-ld:VehicleModel:mitsubishi_fuso-canter-fe649c6sl-r"
+  },
+  "fuelType": {
+    "type": "Property",
+    "value": "diesel"
+  }
+}

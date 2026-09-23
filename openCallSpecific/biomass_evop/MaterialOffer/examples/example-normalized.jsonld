@@ -1,0 +1,47 @@
+{
+  "@context": [
+    "http://circuloos-ld-context/circuloos-context.jsonld",
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"
+  ],
+  "id": "urn:ngsi-ld:evop:material-offer:olive-pits",
+  "type": "MaterialOffer",
+  "material": {
+    "type": "Property",
+    "value": "olive-pits"
+  },
+  "availableForOthers": {
+    "type": "Property",
+    "value": true
+  },
+  "availableQuantityKg": {
+    "type": "Property",
+    "value": 4500,
+    "unitCode": "KGM"
+  },
+  "quantityUnit": {
+    "type": "Property",
+    "value": "kg"
+  },
+  "offerPercentage": {
+    "type": "Property",
+    "value": 100,
+    "unitCode": "P1"
+  },
+  "safetyMarginPercent": {
+    "type": "Property",
+    "value": 10,
+    "unitCode": "P1"
+  },
+  "status": {
+    "type": "Property",
+    "value": "available"
+  },
+  "sourceInventory": {
+    "type": "Relationship",
+    "object": "urn:ngsi-ld:evop:biomass-inventory:olive-pits"
+  },
+  "updatedAt": {
+    "type": "Property",
+    "value": "2026-09-17T06:57:32.026Z"
+  }
+}

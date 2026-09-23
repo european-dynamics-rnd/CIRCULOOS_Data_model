@@ -1,0 +1,70 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "$schemaVersion": "0.0.1",
+  "modelTags": "",
+  "derivedFrom": "https://context.dataspace-arditi.com/islopol/entities/Process/v2/schema.json",
+  "license": "",
+  "$id": "https://raw.githubusercontent.com/TO_ADD_LATER/schema.json",
+  "title": "Data model for an ISLOPOL process definition",
+  "description": "CIRCULOOS data model for a reusable process definition in the ISLOPOL value chain, which can be referenced by multiple ProcessEvent or ProductionRun records, covering its name, purpose and triggering condition.",
+  "type": "object",
+  "definitions": {
+    "StringProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Property"
+          ]
+        },
+        "value": {
+          "type": "string"
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "allOf": [
+    {
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Property. Unique entity identifier, with the format urn:ngsi-ld:Process:<facility>:<processId>."
+        },
+        "type": {
+          "type": "string",
+          "description": "Property. NGSI Entity type. It has to be Process",
+          "enum": [
+            "Process"
+          ]
+        },
+        "name": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. Human-readable name of the process. Given in the source as https://schema.org/name."
+        },
+        "description": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. Human-readable explanation of the process, including its purpose and the main input materials, resources and outputs."
+        },
+        "triggeringCondition": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. Condition or operational requirement that causes the process to be started, such as the need to process accumulated waste. Given in the source as https://context.dataspace-arditi.com/islopol/terms/v2/triggeringCondition."
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "name"
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "@context": [
+    "http://circuloos-ld-context/circuloos-context.jsonld",
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"
+  ],
+  "id": "urn:ngsi-ld:Organization:CESTHA",
+  "type": "Organization",
+  "name": {
+    "type": "Property",
+    "value": "CESTHA - Centro Sperimentale per la Tutela degli Habitat",
+    "observedAt": "2026-06-16T08:04:28.000Z"
+  },
+  "region": {
+    "type": "Property",
+    "value": "Emilia-Romagna",
+    "observedAt": "2026-06-16T08:04:28.000Z"
+  },
+  "supplyChainRole": {
+    "type": "Property",
+    "value": "SRM Supplier",
+    "observedAt": "2026-06-16T08:04:28.000Z"
+  },
+  "postalCode": {
+    "type": "Property",
+    "value": "47042",
+    "observedAt": "2026-06-16T08:04:28.000Z"
+  },
+  "legalForm": {
+    "type": "Property",
+    "value": "Research Center",
+    "observedAt": "2026-06-16T08:04:28.000Z"
+  },
+  "role": {
+    "type": "Property",
+    "value": "SRM Supplier - Marine Biomass",
+    "observedAt": "2026-06-16T08:04:28.000Z"
+  },
+  "city": {
+    "type": "Property",
+    "value": "Cesenatico",
+    "observedAt": "2026-06-16T08:04:28.000Z"
+  },
+  "tier": {
+    "type": "Property",
+    "value": "Tier 1",
+    "observedAt": "2026-06-16T08:04:28.000Z"
+  },
+  "country": {
+    "type": "Property",
+    "value": "Italy",
+    "observedAt": "2026-06-16T08:04:28.000Z"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "@context": [
+    "http://circuloos-ld-context/circuloos-context.jsonld",
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"
+  ],
+  "id": "urn:ngsi-ld:MortarProduct:M16BioThermalMortar",
+  "type": "MortarProduct",
+  "productionRegion": {
+    "type": "Property",
+    "value": "Puglia",
+    "observedAt": "2026-06-16T08:05:47.000Z"
+  },
+  "name": {
+    "type": "Property",
+    "value": "M16 Bio-Thermal Mortar",
+    "observedAt": "2026-06-16T08:05:47.000Z"
+  },
+  "classification": {
+    "type": "Property",
+    "value": "Rice-based",
+    "observedAt": "2026-06-16T08:05:47.000Z"
+  },
+  "applicationGuidelines": {
+    "type": "Property",
+    "value": "Suitable for interior/exterior insulation, thickness 15-40mm, apply at 10-30C ambient temperature",
+    "observedAt": "2026-06-16T08:05:47.000Z"
+  },
+  "dateCreated": {
+    "type": "Property",
+    "value": "2026-04-13",
+    "observedAt": "2026-06-16T08:05:47.000Z"
+  },
+  "certifiedBy": {
+    "type": "Relationship",
+    "object": "urn:ngsi-ld:DoP:DoP-CementFreeMortar",
+    "observedAt": "2026-06-16T08:05:47.000Z"
+  },
+  "description": {
+    "type": "Property",
+    "value": "Lightweight thermal bio-mortar based on rice husk and straw with GGBS binder",
+    "observedAt": "2026-06-16T08:05:47.000Z"
+  },
+  "country": {
+    "type": "Property",
+    "value": "Italy",
+    "observedAt": "2026-06-16T08:05:47.000Z"
+  }
+}

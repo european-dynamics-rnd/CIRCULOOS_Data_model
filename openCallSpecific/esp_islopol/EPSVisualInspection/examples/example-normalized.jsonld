@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "http://circuloos-ld-context/circuloos-context.jsonld",
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"
+  ],
+  "id": "urn:ngsi-ld:EPSVisualInspection:Esferolight:20260702T145010Z",
+  "type": "EPSVisualInspection",
+  "startDate": {
+    "type": "Property",
+    "value": "2026-06-02T13:00:00.000Z"
+  },
+  "endDate": {
+    "type": "Property",
+    "value": "2026-06-02T16:00:00.000Z"
+  },
+  "rejections": {
+    "type": "Property",
+    "value": 10,
+    "unitCode": "KGM"
+  },
+  "refOutputProducts": {
+    "type": "Relationship",
+    "object": [
+      "urn:ngsi-ld:Product:Esferolight:ShreddedEPS:20260702T153321Z"
+    ]
+  },
+  "refEPSTransport": {
+    "type": "Relationship",
+    "object": "urn:ngsi-ld:EPSTransport:13082026"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "http://circuloos-ld-context/circuloos-context.jsonld",
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"
+  ],
+  "id": "urn:ngsi-ld:VehicleModel:daf_85-cf-380",
+  "type": "VehicleModel",
+  "name": {
+    "type": "Property",
+    "value": "DAF 85 CF 380"
+  },
+  "brandName": {
+    "type": "Property",
+    "value": "DAF"
+  },
+  "modelName": {
+    "type": "Property",
+    "value": "85 CF 380"
+  },
+  "fuelType": {
+    "type": "Property",
+    "value": "diesel"
+  },
+  "cargoVolume": {
+    "type": "Property",
+    "value": 12000,
+    "unitCode": "LTR"
+  },
+  "weight": {
+    "type": "Property",
+    "value": 26000,
+    "unitCode": "KGM"
+  }
+}

@@ -1,0 +1,187 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "$schemaVersion": "0.0.1",
+  "modelTags": "",
+  "derivedFrom": "https://context.dataspace-arditi.com/islopol/entities/EPSVisualInspection/v2/schema.json",
+  "license": "",
+  "$id": "https://raw.githubusercontent.com/TO_ADD_LATER/schema.json",
+  "title": "Data model for an ISLOPOL EPS visual inspection",
+  "description": "CIRCULOOS data model for a visual inspection of EPS material received at a recycling facility in the ISLOPOL value chain, covering the inspection period, the mass rejected and the transport and output products it links to.",
+  "type": "object",
+  "definitions": {
+    "DateTimeProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Property"
+          ]
+        },
+        "value": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$"
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ],
+      "additionalProperties": false
+    },
+    "QuantityProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Property"
+          ]
+        },
+        "value": {
+          "type": "number",
+          "description": "Exact measured value, when a single figure is known."
+        },
+        "minValue": {
+          "type": "number",
+          "description": "Lower bound of the value, when the source declares a range or a minimum."
+        },
+        "maxValue": {
+          "type": "number",
+          "description": "Upper bound of the value, when the source declares a range or a maximum."
+        },
+        "unitCode": {
+          "type": "string",
+          "description": "Unit of measurement of the value, given as a UN/CEFACT code where one exists."
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "unitCode"
+      ],
+      "anyOf": [
+        {
+          "required": [
+            "value"
+          ]
+        },
+        {
+          "required": [
+            "minValue"
+          ]
+        },
+        {
+          "required": [
+            "maxValue"
+          ]
+        }
+      ],
+      "additionalProperties": false
+    },
+    "RelationshipArrayProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Relationship"
+          ]
+        },
+        "object": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^urn:ngsi-ld:.+$"
+          },
+          "minItems": 1,
+          "description": "URNs of the referenced entities."
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "object"
+      ],
+      "additionalProperties": false
+    },
+    "RelationshipProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Relationship"
+          ]
+        },
+        "object": {
+          "type": "string",
+          "pattern": "^urn:ngsi-ld:.+$",
+          "description": "URN of the referenced entity."
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "object"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "allOf": [
+    {
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Property. Unique entity identifier, with the format urn:ngsi-ld:EPSVisualInspection:<facility>:<timestamp>."
+        },
+        "type": {
+          "type": "string",
+          "description": "Property. NGSI Entity type. It has to be EPSVisualInspection",
+          "enum": [
+            "EPSVisualInspection"
+          ]
+        },
+        "startDate": {
+          "$ref": "#/definitions/DateTimeProperty",
+          "description": "Property. Date and time when the visual inspection started, expressed as an ISO 8601 timestamp."
+        },
+        "endDate": {
+          "$ref": "#/definitions/DateTimeProperty",
+          "description": "Property. Date and time when the visual inspection ended, expressed as an ISO 8601 timestamp."
+        },
+        "rejections": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: KGM. Mass of material rejected during the visual inspection. This is an absolute mass, not a rejection percentage."
+        },
+        "refOutputProducts": {
+          "$ref": "#/definitions/RelationshipArrayProperty",
+          "description": "Relationship. Identifiers of Product entities linked as outputs of the inspection, providing traceability to the material that proceeds through the recycling workflow."
+        },
+        "refEPSTransport": {
+          "$ref": "#/definitions/RelationshipProperty",
+          "description": "Relationship. Identifier of the EPSTransport operation that delivered the EPS being inspected, linking the inspection to the shipment and its batches."
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "startDate"
+  ]
+}

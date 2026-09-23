@@ -1,0 +1,48 @@
+{
+  "@context": [
+    "http://circuloos-ld-context/circuloos-context.jsonld",
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"
+  ],
+  "id": "urn:ngsi-ld:MortarBatch:MB-M1-2026-001",
+  "type": "MortarBatch",
+  "instanceOf": {
+    "type": "Relationship",
+    "object": "urn:ngsi-ld:MortarProduct:SuperThermoblock",
+    "observedAt": "2026-06-16T08:06:08.000Z"
+  },
+  "batchCode": {
+    "type": "Property",
+    "value": "MB-M1-2026-001",
+    "observedAt": "2026-06-16T08:06:08.000Z"
+  },
+  "usedProcess": {
+    "type": "Relationship",
+    "object": "urn:ngsi-ld:Process:DryMixing-Mortar1",
+    "observedAt": "2026-06-16T08:06:08.000Z"
+  },
+  "producedFromRecipe": {
+    "type": "Relationship",
+    "object": "urn:ngsi-ld:Recipe:MortarSuperThermoblock",
+    "observedAt": "2026-06-16T08:06:08.000Z"
+  },
+  "producedBy": {
+    "type": "Relationship",
+    "object": "urn:ngsi-ld:Organization:LITOKOL",
+    "observedAt": "2026-06-16T08:06:08.000Z"
+  },
+  "usedSRMBatches1": {
+    "type": "Relationship",
+    "object": "urn:ngsi-ld:SRMBatch:POS-2025-DEC",
+    "observedAt": "2026-06-16T08:06:08.000Z"
+  },
+  "dateCreated": {
+    "type": "Property",
+    "value": "2026-04-15",
+    "observedAt": "2026-06-16T08:06:08.000Z"
+  },
+  "description": {
+    "type": "Property",
+    "value": "First production batch MORTAR 1, pilot scale 25 litres",
+    "observedAt": "2026-06-16T08:06:08.000Z"
+  }
+}

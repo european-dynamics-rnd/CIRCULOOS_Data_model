@@ -1,0 +1,61 @@
+{
+  "@context": [
+    "http://circuloos-ld-context/circuloos-context.jsonld",
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"
+  ],
+  "id": "urn:ngsi-ld:RecyclingMaterialCollection:ARM:Import:20260827T102839Z",
+  "type": "RecyclingMaterialCollection",
+  "movementKind": {
+    "type": "Property",
+    "value": "D - Entrada"
+  },
+  "client": {
+    "type": "Property",
+    "value": "C.M. de Santa Cruz"
+  },
+  "clientType": {
+    "type": "Property",
+    "value": "AUT"
+  },
+  "transporter": {
+    "type": "Property",
+    "value": "C.M. de Santa Cruz"
+  },
+  "vehiclePlateIdentifier": {
+    "type": "Property",
+    "value": "BZ-21-JT"
+  },
+  "refVehicle": {
+    "type": "Relationship",
+    "object": "urn:ngsi-ld:Vehicle:external:BZ-21-JT"
+  },
+  "lerCode": {
+    "type": "Property",
+    "value": "LER150101"
+  },
+  "product": {
+    "type": "Property",
+    "value": "EMBALAGENS PAPEL/CARTAO"
+  },
+  "origin": {
+    "type": "Property",
+    "value": "Santa Cruz"
+  },
+  "destination": {
+    "type": "Property",
+    "value": "TPC - TRIAGEM PAPEL/CARTAO"
+  },
+  "timestampArrival": {
+    "type": "Property",
+    "value": "2026-08-27T10:28:39.000Z"
+  },
+  "weight": {
+    "type": "Property",
+    "value": 740,
+    "unitCode": "KGM"
+  },
+  "wasteStream": {
+    "type": "Property",
+    "value": "Paper/Cardboard Stream"
+  }
+}

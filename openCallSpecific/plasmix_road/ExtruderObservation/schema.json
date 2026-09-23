@@ -1,0 +1,239 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "$schemaVersion": "0.0.1",
+  "modelTags": "",
+  "derivedFrom": "",
+  "license": "",
+  "$id": "https://raw.githubusercontent.com/TO_ADD_LATER/schema.json",
+  "title": "Data model for a Plasmix Road extruder observation",
+  "description": "CIRCULOOS data model for a monitoring observation of the Plasmix Road recycled-plastic extrusion line, covering the actual and set temperatures of the ten extruder zones and the cutting zone, together with the speeds and currents of the extruder, cutter, feeder and shredder.",
+  "type": "object",
+  "definitions": {
+    "QuantityProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Property"
+          ]
+        },
+        "value": {
+          "type": "number",
+          "description": "Exact measured value, when a single figure is known."
+        },
+        "minValue": {
+          "type": "number",
+          "description": "Lower bound of the value, when the source declares a range or a minimum."
+        },
+        "maxValue": {
+          "type": "number",
+          "description": "Upper bound of the value, when the source declares a range or a maximum."
+        },
+        "unitCode": {
+          "type": "string",
+          "description": "Unit of measurement of the value, given as a UN/CEFACT code where one exists."
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "unitCode"
+      ],
+      "anyOf": [
+        {
+          "required": [
+            "value"
+          ]
+        },
+        {
+          "required": [
+            "minValue"
+          ]
+        },
+        {
+          "required": [
+            "maxValue"
+          ]
+        }
+      ],
+      "additionalProperties": false
+    },
+    "StringProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Property"
+          ]
+        },
+        "value": {
+          "type": "string"
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "allOf": [
+    {
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Property. Unique entity identifier, with the format urn:ngsi-ld:extruder:observation:<timestamp>."
+        },
+        "type": {
+          "type": "string",
+          "description": "Property. NGSI Entity type. It has to be ExtruderObservation",
+          "enum": [
+            "ExtruderObservation"
+          ]
+        },
+        "zone1ActualTemperature": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: CEL. Extruder Zone 1 temperature (current value). Source tag: t_zone1_extr_act_c."
+        },
+        "zone1SetTemperature": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: CEL. Extruder Zone 1 set temperature (target value). Source tag: t_zone1_extr_sp_c."
+        },
+        "zone2ActualTemperature": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: CEL. Extruder Zone 2 temperature (current value). Source tag: t_zone2_extr_act_c."
+        },
+        "zone2SetTemperature": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: CEL. Extruder Zone 2 set temperature (target value). Source tag: t_zone2_extr_sp_c."
+        },
+        "zone3ActualTemperature": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: CEL. Extruder Zone 3 temperature (current value). Source tag: t_zone3_extr_act_c."
+        },
+        "zone3SetTemperature": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: CEL. Extruder Zone 3 set temperature (target value). Source tag: t_zone3_extr_sp_c."
+        },
+        "zone4ActualTemperature": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: CEL. Extruder Zone 4 temperature (current value). Source tag: t_zone4_extr_act_c."
+        },
+        "zone4SetTemperature": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: CEL. Extruder Zone 4 set temperature (target value). Source tag: t_zone4_extr_sp_c."
+        },
+        "zone5ActualTemperature": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: CEL. Extruder Zone 5 temperature (current value). Source tag: t_zone5_extr_act_c."
+        },
+        "zone5SetTemperature": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: CEL. Extruder Zone 5 set temperature (target value). Source tag: t_zone5_extr_sp_c."
+        },
+        "zone6ActualTemperature": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: CEL. Extruder Zone 6 temperature (current value). Source tag: t_zone6_extr_act_c."
+        },
+        "zone6SetTemperature": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: CEL. Extruder Zone 6 set temperature (target value). Source tag: t_zone6_extr_sp_c."
+        },
+        "zone7ActualTemperature": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: CEL. Extruder Zone 7 temperature (current value). Source tag: t_zone7_extr_act_c."
+        },
+        "zone7SetTemperature": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: CEL. Extruder Zone 7 set temperature (target value). Source tag: t_zone7_extr_sp_c."
+        },
+        "zone8ActualTemperature": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: CEL. Extruder Zone 8 temperature (current value). Source tag: t_zone8_extr_act_c."
+        },
+        "zone8SetTemperature": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: CEL. Extruder Zone 8 set temperature (target value). Source tag: t_zone8_extr_sp_c."
+        },
+        "zone9ActualTemperature": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: CEL. Extruder Zone 9 temperature (current value). Source tag: t_zone9_extr_act_c."
+        },
+        "zone9SetTemperature": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: CEL. Extruder Zone 9 set temperature (target value). Source tag: t_zone9_extr_sp_c."
+        },
+        "zone10ActualTemperature": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: CEL. Extruder Zone 10 temperature (current value). Source tag: t_zone10_extr_act_c."
+        },
+        "zone10SetTemperature": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: CEL. Extruder Zone 10 set temperature (target value). Source tag: t_zone10_extr_sp_c."
+        },
+        "extruderId": {
+          "$ref": "#/definitions/StringProperty",
+          "description": "Property. Identifier of the extruder the observation belongs to (recorded in the source as the user session)."
+        },
+        "cuttingZoneActualTemperature": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: CEL. Cutting zone temperature (current value). Source tag: t_cutting_zone_act_c."
+        },
+        "cuttingZoneSetTemperature": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: CEL. Cutting zone temperature (target value). Source tag: t_cutting_zone_sp_c."
+        },
+        "extruderWorkingSpeed": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: P1. Extruder speed, as a percentage of its maximum."
+        },
+        "extruderCurrent": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: AMP. Extruder motor current. Source tag: extr_corr_amp."
+        },
+        "cuttingSpeedCurrent": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: AMP. Cutting motor amperage. Source tag: cutting_speed_amp."
+        },
+        "cuttingSpeed": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: RPM. Cutting motor speed. Source tag: cut_speed_rpm."
+        },
+        "feedSpeedWorking": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: P1. Feeder auger speed, as a percentage of its maximum."
+        },
+        "screwFeedCurrent": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: AMP. Feeder screw amperage."
+        },
+        "crusherTemperature": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: CEL. Shredder temperature."
+        },
+        "crusherCurrent": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: AMP. Shredder current."
+        },
+        "crusherRotationSpeed": {
+          "$ref": "#/definitions/QuantityProperty",
+          "description": "Property. Expected unitCode: RPM. Speed of the shredder motor."
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "extruderId"
+  ]
+}
