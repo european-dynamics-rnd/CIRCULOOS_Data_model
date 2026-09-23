@@ -121,23 +121,43 @@
           ]
         },
         "name": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Legal or trading name of the company."
         },
         "description": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Short description of the company's activities and its role in valorising brewer's spent yeast."
         },
         "address": {
-          "$ref": "#/definitions/AddressProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/AddressProperty"
+            }
+          ],
           "description": "Property. Postal address of the company as a structured object (street, locality, region, country, postal code), following the schema.org PostalAddress format."
         },
         "category": {
-          "$ref": "#/definitions/StringArrayProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringArrayProperty"
+            }
+          ],
           "description": "Property. List of sectors or industry categories the company operates in."
         },
         "valueChainRole": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Role of the company in the Yeast2Value value chain (e.g. feedstock supplier, processor, customer/off-taker)."
         }
       }

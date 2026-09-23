@@ -157,23 +157,43 @@
           ]
         },
         "startDate": {
-          "$ref": "#/definitions/DateTimeProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/DateTimeProperty"
+            }
+          ],
           "description": "Property. Date and time when the visual inspection started, expressed as an ISO 8601 timestamp."
         },
         "endDate": {
-          "$ref": "#/definitions/DateTimeProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/DateTimeProperty"
+            }
+          ],
           "description": "Property. Date and time when the visual inspection ended, expressed as an ISO 8601 timestamp."
         },
         "rejections": {
-          "$ref": "#/definitions/QuantityProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/QuantityProperty"
+            }
+          ],
           "description": "Property. Expected unitCode: KGM. Mass of material rejected during the visual inspection. This is an absolute mass, not a rejection percentage."
         },
         "refOutputProducts": {
-          "$ref": "#/definitions/RelationshipArrayProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/RelationshipArrayProperty"
+            }
+          ],
           "description": "Relationship. Identifiers of Product entities linked as outputs of the inspection, providing traceability to the material that proceeds through the recycling workflow."
         },
         "refEPSTransport": {
-          "$ref": "#/definitions/RelationshipProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/RelationshipProperty"
+            }
+          ],
           "description": "Relationship. Identifier of the EPSTransport operation that delivered the EPS being inspected, linking the inspection to the shipment and its batches."
         }
       }

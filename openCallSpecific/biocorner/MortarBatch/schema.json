@@ -98,47 +98,91 @@
           ]
         },
         "batchCode": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Internal production batch identifier assigned by the manufacturer for traceability. Follows a structured naming convention including product code, year, and sequence number."
         },
         "description": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Free-text description of the production batch including production scale, total quantity produced, and any notable quality observations."
         },
         "instanceOf": {
-          "$ref": "#/definitions/RelationshipProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/RelationshipProperty"
+            }
+          ],
           "description": "Relationship. Relationship linking this production batch to its parent MortarProduct entity. Establishes which product line this specific batch belongs to."
         },
         "producedBy": {
-          "$ref": "#/definitions/RelationshipProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/RelationshipProperty"
+            }
+          ],
           "description": "Relationship. Relationship to the Organization entity responsible for manufacturing this batch. Identifies the production facility and legal entity."
         },
         "producedFromRecipe": {
-          "$ref": "#/definitions/RelationshipProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/RelationshipProperty"
+            }
+          ],
           "description": "Relationship. Relationship to the Recipe entity whose formulation was followed during production. Enables traceability from final product back to formulation specifications."
         },
         "usedProcess": {
-          "$ref": "#/definitions/RelationshipProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/RelationshipProperty"
+            }
+          ],
           "description": "Relationship. Relationship to the Process entity describing the manufacturing procedure applied. Links the batch to specific energy, water, and waste generation data."
         },
         "usedSRMBatches1": {
-          "$ref": "#/definitions/RelationshipProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/RelationshipProperty"
+            }
+          ],
           "description": "Relationship. Relationship to the first SRMBatch entity used as input material. Enables full upstream traceability to raw material origin and supplier."
         },
         "usedSRMBatches2": {
-          "$ref": "#/definitions/RelationshipProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/RelationshipProperty"
+            }
+          ],
           "description": "Relationship. Relationship to the second SRMBatch entity used as input material, when the formulation requires multiple secondary raw materials."
         },
         "usedSRMBatches3": {
-          "$ref": "#/definitions/RelationshipProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/RelationshipProperty"
+            }
+          ],
           "description": "Relationship. Relationship to the third SRMBatch entity used as input material, applicable for multi-component formulations."
         },
         "usedSRMBatches4": {
-          "$ref": "#/definitions/RelationshipProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/RelationshipProperty"
+            }
+          ],
           "description": "Relationship. Relationship to the fourth SRMBatch entity used as input material, applicable for complex hybrid formulations."
         },
         "dateCreated": {
-          "$ref": "#/definitions/DateProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/DateProperty"
+            }
+          ],
           "description": "Property. Date at which the entity was created."
         }
       }

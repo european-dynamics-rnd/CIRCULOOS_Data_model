@@ -174,39 +174,75 @@
           ]
         },
         "material": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Identifies the biomass material being offered, such as olive pits."
         },
         "availableForOthers": {
-          "$ref": "#/definitions/BooleanProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/BooleanProperty"
+            }
+          ],
           "description": "Property. Indicates whether the material is available for use or purchase by other organisations through the circular supply chain."
         },
         "availableQuantityKg": {
-          "$ref": "#/definitions/QuantityProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/QuantityProperty"
+            }
+          ],
           "description": "Property. Expected unitCode: KGM. Quantity of the material currently available for other users."
         },
         "quantityUnit": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Unit used to express the available material quantity, e.g. kg."
         },
         "offerPercentage": {
-          "$ref": "#/definitions/QuantityProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/QuantityProperty"
+            }
+          ],
           "description": "Property. Expected unitCode: P1. Percentage of the available inventory quantity that is intended to be offered to other users."
         },
         "safetyMarginPercent": {
-          "$ref": "#/definitions/QuantityProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/QuantityProperty"
+            }
+          ],
           "description": "Property. Expected unitCode: P1. Percentage of stock reserved as a safety margin and therefore not intended to be offered."
         },
         "status": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Current status of the material offer, indicating whether it is available or otherwise unavailable."
         },
         "sourceInventory": {
-          "$ref": "#/definitions/RelationshipProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/RelationshipProperty"
+            }
+          ],
           "description": "Relationship. Identifier of the inventory record from which the material offer quantity is derived."
         },
         "updatedAt": {
-          "$ref": "#/definitions/DateTimeProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/DateTimeProperty"
+            }
+          ],
           "description": "Property. Date and time when the material offer information was last updated."
         }
       }

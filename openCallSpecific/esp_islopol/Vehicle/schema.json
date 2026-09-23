@@ -98,31 +98,59 @@
           ]
         },
         "name": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Human-readable label for the individual vehicle. Given in the source as https://schema.org/name."
         },
         "description": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Free-text description of the vehicle."
         },
         "vehiclePlateIdentifier": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Official registration plate identifying the individual vehicle. Given in the source as https://smartdatamodels.org/vehiclePlateIdentifier."
         },
         "dateVehicleFirstRegistered": {
-          "$ref": "#/definitions/DateProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/DateProperty"
+            }
+          ],
           "description": "Property. Date when the vehicle was first registered, normally expressed in ISO 8601 date format (YYYY-MM-DD). Given in the source as https://schema.org/dateVehicleFirstRegistered."
         },
         "vehicleConfiguration": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Text describing the vehicle's configuration or carrying arrangement. Given in the source as https://schema.org/vehicleConfiguration."
         },
         "refVehicleModel": {
-          "$ref": "#/definitions/RelationshipProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/RelationshipProperty"
+            }
+          ],
           "description": "Relationship. Identifier of the VehicleModel entity describing the shared technical characteristics of this vehicle's make and model. Given in the source as https://smartdatamodels.org/refVehicleModel."
         },
         "fuelType": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Fuel or energy type used by the individual vehicle. Given in the source as https://schema.org/fuelType."
         }
       }

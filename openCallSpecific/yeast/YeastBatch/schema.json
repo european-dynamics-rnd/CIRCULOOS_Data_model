@@ -152,63 +152,123 @@
           ]
         },
         "runId": {
-          "$ref": "#/definitions/NumericProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/NumericProperty"
+            }
+          ],
           "description": "Property. Dimensionless. Sequential run number of the sampling/analysis entry in the Yeast2Value yeast log."
         },
         "batchId": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Laboratory code assigned to the yeast sample on receipt (e.g. PT_0149), used to trace the batch through analysis and processing."
         },
         "brewery": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Name of the brewery (or source label) that supplied the brewer's spent yeast batch."
         },
         "pickUpDate": {
-          "$ref": "#/definitions/DateProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/DateProperty"
+            }
+          ],
           "description": "Property. Date on which the spent yeast was collected from the brewery (ISO 8601, YYYY-MM-DD)."
         },
         "storageDateBeforePickUp": {
-          "$ref": "#/definitions/DateProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/DateProperty"
+            }
+          ],
           "description": "Property. Date from which the yeast was stored at the brewery after harvesting, before collection (ISO 8601). Together with pickUpDate it gives the storage time before pick-up."
         },
         "storageTemperatureBeforePickUp": {
-          "$ref": "#/definitions/QuantityProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/QuantityProperty"
+            }
+          ],
           "description": "Property. Expected unitCode: CEL. Temperature at which the yeast was kept at the brewery before collection. Breweries report either a single value or a bound or range, so use value for an exact figure and minValue/maxValue for a bound (e.g. \"<4\") or a range (e.g. \"10 to 20\")."
         },
         "phValueRawYeast": {
-          "$ref": "#/definitions/NumericProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/NumericProperty"
+            }
+          ],
           "description": "Property. Dimensionless. pH of the raw (untreated) spent yeast slurry, measured on receipt."
         },
         "dryMassUnfiltered": {
-          "$ref": "#/definitions/QuantityProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/QuantityProperty"
+            }
+          ],
           "description": "Property. Expected unitCode: P1. Dry matter content of the unfiltered raw yeast slurry, in % (w/w). A key parameter for processing yield and transport efficiency."
         },
         "volumetricFraction": {
-          "$ref": "#/definitions/QuantityProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/QuantityProperty"
+            }
+          ],
           "description": "Property. Expected unitCode: P1. Mass of the yeast pellet after centrifugation relative to the total sample mass, in %. Indicates how much solid yeast biomass the slurry contains."
         },
         "totalCellCount": {
-          "$ref": "#/definitions/QuantityProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/QuantityProperty"
+            }
+          ],
           "description": "Property. Expected unitCode: cells/mL. Total number of yeast cells (living and dead) per millilitre of sample, determined by counting-chamber microscopy."
         },
         "livingCellsCount": {
-          "$ref": "#/definitions/QuantityProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/QuantityProperty"
+            }
+          ],
           "description": "Property. Expected unitCode: cells/mL. Number of viable (living) yeast cells per millilitre of sample."
         },
         "livingCellsPercent": {
-          "$ref": "#/definitions/QuantityProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/QuantityProperty"
+            }
+          ],
           "description": "Property. Expected unitCode: P1. Viability of the batch: living cells as a percentage of the total cell count (livingCellsCount / totalCellCount x 100)."
         },
         "feedstockSource": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Type of feedstock the batch represents; in Yeast2Value this is brewer's spent yeast (BSY), a by-product of beer fermentation."
         },
         "valueChain": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Identifier of the CIRCULOOS value chain the record belongs to (here \"yeast2value\")."
         },
         "dataSource": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Name of the source file or dataset the record was taken from, for traceability."
         }
       }

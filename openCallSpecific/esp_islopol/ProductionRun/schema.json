@@ -104,23 +104,43 @@
           ]
         },
         "startDate": {
-          "$ref": "#/definitions/DateTimeProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/DateTimeProperty"
+            }
+          ],
           "description": "Property. Date and time when the production run actually started, expressed as an ISO 8601 timestamp. This can differ from the date embedded in the record identifier."
         },
         "endDate": {
-          "$ref": "#/definitions/DateTimeProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/DateTimeProperty"
+            }
+          ],
           "description": "Property. Date and time when the production run actually ended, expressed as an ISO 8601 timestamp. Together with startDate, it defines the recorded duration of the run."
         },
         "refProcess": {
-          "$ref": "#/definitions/RelationshipProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/RelationshipProperty"
+            }
+          ],
           "description": "Relationship. Identifier of the Process entity defining the production or transformation operation performed during the run."
         },
         "refInputProducts": {
-          "$ref": "#/definitions/RelationshipArrayProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/RelationshipArrayProperty"
+            }
+          ],
           "description": "Relationship. Identifiers of the Product entities used during the production run. The referenced Product records specify input quantities and units."
         },
         "refOutputProducts": {
-          "$ref": "#/definitions/RelationshipArrayProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/RelationshipArrayProperty"
+            }
+          ],
           "description": "Relationship. Identifiers of the Product entities produced by the run. The referenced Product records specify output quantities and units."
         }
       }

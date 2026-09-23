@@ -126,23 +126,43 @@
           ]
         },
         "name": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Unique identifier name of the Declaration of Performance document, following an internal naming convention including product reference, year, and version."
         },
         "certificationBody": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Notified body or laboratory responsible for product performance assessment under the relevant regulatory framework. Includes certification system reference."
         },
         "functionalUnit": {
-          "$ref": "#/definitions/QuantityProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/QuantityProperty"
+            }
+          ],
           "description": "Property. Expected unitCode: KGM or MTQ. Reference unit for performance declaration, typically expressed as mass or volume. Used as the basis for comparing performance across different product formulations."
         },
         "performanceSummary": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Aggregated summary of essential performance characteristics declared for the product, including relevant mechanical, thermal, and physical properties with their units."
         },
         "dateCreated": {
-          "$ref": "#/definitions/DateProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/DateProperty"
+            }
+          ],
           "description": "Property. Date at which the entity was created."
         }
       }

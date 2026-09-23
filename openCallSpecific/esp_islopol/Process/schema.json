@@ -48,15 +48,27 @@
           ]
         },
         "name": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Human-readable name of the process. Given in the source as https://schema.org/name."
         },
         "description": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Human-readable explanation of the process, including its purpose and the main input materials, resources and outputs."
         },
         "triggeringCondition": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Condition or operational requirement that causes the process to be started, such as the need to process accumulated waste. Given in the source as https://context.dataspace-arditi.com/islopol/terms/v2/triggeringCondition."
         }
       }

@@ -98,35 +98,67 @@
           ]
         },
         "name": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Commercial or project-internal product name used to identify this formulation within the product portfolio."
         },
         "description": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Technical description of the product including primary bio-based components, key performance characteristics, and intended application domain."
         },
         "classification": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Product classification based on the primary secondary raw material used in the formulation. Enables grouping and comparison by SRM source type."
         },
         "applicationGuidelines": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Technical guidance for product application including suitable substrates, recommended application parameters, ambient conditions, and curing requirements."
         },
         "certifiedBy": {
-          "$ref": "#/definitions/RelationshipProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/RelationshipProperty"
+            }
+          ],
           "description": "Relationship. Relationship to the DoP entity containing the performance declaration for this product. Links the product to its regulatory compliance documentation."
         },
         "productionRegion": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Geographic region where the product is manufactured. Used for regional supply chain analysis and local economic impact assessment."
         },
         "country": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. The country where the product is manufactured."
         },
         "dateCreated": {
-          "$ref": "#/definitions/DateProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/DateProperty"
+            }
+          ],
           "description": "Property. Date at which the entity was created."
         }
       }

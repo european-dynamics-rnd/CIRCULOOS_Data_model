@@ -126,55 +126,107 @@
           ]
         },
         "name": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Name of the supplier facility or collection point. May differ from the parent organization name when multiple supply facilities exist."
         },
         "operatedBy": {
-          "$ref": "#/definitions/RelationshipProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/RelationshipProperty"
+            }
+          ],
           "description": "Relationship. Relationship to the Organization entity that operates this supplier facility."
         },
         "suppliesSRM1": {
-          "$ref": "#/definitions/RelationshipProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/RelationshipProperty"
+            }
+          ],
           "description": "Relationship. Relationship to the first SRM entity type supplied by this facility. Establishes which secondary raw materials originate from this point in the supply chain."
         },
         "suppliesSRM2": {
-          "$ref": "#/definitions/RelationshipProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/RelationshipProperty"
+            }
+          ],
           "description": "Relationship. Relationship to the second SRM entity type supplied by this facility, when the supplier provides multiple material types."
         },
         "contactPerson": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Name of the designated contact person responsible for material supply coordination at this facility."
         },
         "contactEmail": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Email address of the primary contact person at the supplier facility. Used for supply chain communication and batch tracing inquiries."
         },
         "address": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. The mailing address of the supplier facility."
         },
         "city": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. The city in which the supplier facility is located."
         },
         "region": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Administrative region where the supplier facility is located. Key parameter for regional circular economy indicators."
         },
         "postalCode": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. The postal code of the supplier facility address."
         },
         "country": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. The country in which the supplier facility is located."
         },
         "transportationMode": {
-          "$ref": "#/definitions/StringProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
           "description": "Property. Primary transport method and vehicle type used for material delivery, including emission standard classification where applicable."
         },
         "distanceToManufacturer": {
-          "$ref": "#/definitions/QuantityProperty",
+          "allOf": [
+            {
+              "$ref": "#/definitions/QuantityProperty"
+            }
+          ],
           "description": "Property. Expected unitCode: KMT. Road distance from the supplier facility to the manufacturer. Used for transport emission estimation and regional sourcing analysis."
         }
       }
