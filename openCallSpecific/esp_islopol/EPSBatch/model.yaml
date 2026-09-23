@@ -1,0 +1,178 @@
+EPSBatch:
+
+  description: CIRCULOOS data model for a batch of expanded polystyrene (EPS) tracked through collection, transport and recycling in the ISLOPOL value chain, covering its handling status, its rejection and contamination figures, and the observations that characterise it.
+
+  properties:
+
+    avgContaminationScore:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              maximum: 1
+              minimum: 0
+              type: number
+          required:
+            - type
+            - value
+          type: object
+      description: Average contamination score associated with the batch, expressed from 0 to 1, where higher values indicate greater contamination. (Multiply by 100 to obtain the Contamination Score percentage.)
+      x-ngsi:
+        type: Property
+
+    dateCreated:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              format: date-time
+              pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: Date and time when the EPSBatch record was created, expressed as an ISO 8601 timestamp. This is the record creation time, which can differ from the time of the physical operation.
+      x-ngsi:
+        type: Property
+
+    id:
+      description: Unique entity identifier, with the format urn:ngsi-ld:EPSBatch:<facility>:<date>.
+      type: string
+      x-ngsi:
+        type: Property
+
+    refEPSObservations:
+      allOf:
+        - additionalProperties: no
+          properties:
+            object:
+              description: URNs of the referenced entities.
+              items:
+                pattern: ^urn:ngsi-ld:.+$
+                type: string
+              minItems: 1
+              type: array
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Relationship
+              type: string
+          required:
+            - type
+            - object
+          type: object
+      description: Identifiers of the EPSObservation entities associated with this batch. These records provide the automated contamination assessments used to characterise it.
+      x-ngsi:
+        type: Relationship
+
+    refProduct:
+      allOf:
+        - additionalProperties: no
+          properties:
+            object:
+              description: URN of the referenced entity.
+              pattern: ^urn:ngsi-ld:.+$
+              type: string
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Relationship
+              type: string
+          required:
+            - type
+            - object
+          type: object
+      description: Identifier of the Product entity representing the EPS material in this batch, including its recorded quantity and unit of measurement.
+      x-ngsi:
+        type: Relationship
+
+    rejectionRate:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              maximum: 1
+              minimum: 0
+              type: number
+          required:
+            - type
+            - value
+          type: object
+      description: Fraction of material in the batch that was rejected, expressed on a scale from 0 to 1. (Multiply by 100 to obtain the rejection percentage.)
+      x-ngsi:
+        type: Property
+
+    status:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: Current stage of the batch in the operational workflow, such as awaiting transport. It describes the batch's handling status rather than its contamination level.
+      x-ngsi:
+        type: Property
+
+    type:
+      description: NGSI Entity type. It has to be EPSBatch
+      enum:
+        - EPSBatch
+      type: string
+      x-ngsi:
+        type: Property
+
+  required:
+    - id
+    - type
+    - refProduct
+    - status
+
+  type: object
+
+  x-derived-from: https://context.dataspace-arditi.com/islopol/entities/EPSBatch/v2/schema.json
+
+  x-disclaimer: Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program
+
+  x-license-url: https://github.com/smart-data-models/circuloos_data_model/blob/master/EPSBatch/LICENSE.md
+
+  x-model-schema: https://raw.githubusercontent.com/TO_ADD_LATER/schema.json
+
+  x-model-tags: ''
+
+  x-version: 0.0.1

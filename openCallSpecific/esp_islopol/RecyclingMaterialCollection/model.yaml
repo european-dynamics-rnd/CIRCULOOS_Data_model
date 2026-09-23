@@ -1,0 +1,334 @@
+RecyclingMaterialCollection:
+
+  description: CIRCULOOS data model for a material collection or reception movement in the ISLOPOL value chain, covering the client and transporter involved, the vehicle used, the waste code and stream, the origin and destination, and the mass received.
+
+  properties:
+
+    client:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: Name of the client associated with the material movement.
+      x-ngsi:
+        type: Property
+
+    clientType:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: Client classification code.
+      x-ngsi:
+        type: Property
+
+    destination:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: Receiving site, treatment route or sorting destination recorded for the material movement.
+      x-ngsi:
+        type: Property
+
+    id:
+      description: Unique entity identifier, with the format urn:ngsi-ld:RecyclingMaterialCollection:<facility>:<kind>:<timestamp>.
+      type: string
+      x-ngsi:
+        type: Property
+
+    lerCode:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: European List of Waste code.
+      x-ngsi:
+        type: Property
+
+    movementKind:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: Type of material movement or operation.
+      x-ngsi:
+        type: Property
+
+    origin:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: Place, municipality or source site from which the collected material originated.
+      x-ngsi:
+        type: Property
+
+    product:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: Material or waste description.
+      x-ngsi:
+        type: Property
+
+    refVehicle:
+      allOf:
+        - additionalProperties: no
+          properties:
+            object:
+              description: URN of the referenced entity.
+              pattern: ^urn:ngsi-ld:.+$
+              type: string
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Relationship
+              type: string
+          required:
+            - type
+            - object
+          type: object
+      description: Identifier of the Vehicle entity associated with the material movement.
+      x-ngsi:
+        type: Relationship
+
+    timestampArrival:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              format: date-time
+              pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: Date and time of the recorded arrival or reception of the material, expressed as an ISO 8601 timestamp.
+      x-ngsi:
+        type: Property
+
+    transporter:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: Name of the organisation responsible for transporting the material in the recorded movement.
+      x-ngsi:
+        type: Property
+
+    type:
+      description: NGSI Entity type. It has to be RecyclingMaterialCollection
+      enum:
+        - RecyclingMaterialCollection
+      type: string
+      x-ngsi:
+        type: Property
+
+    vehiclePlateIdentifier:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: Vehicle registration plate or other vehicle identifier recorded in the source document.
+      x-ngsi:
+        type: Property
+
+    wasteStream:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: Classification of the collected material stream.
+      x-ngsi:
+        type: Property
+
+    weight:
+      allOf:
+        - additionalProperties: no
+          anyOf:
+            - required:
+                - value
+            - required:
+                - minValue
+            - required:
+                - maxValue
+          properties:
+            maxValue:
+              description: Upper bound of the value, when the source declares a range or a maximum.
+              type: number
+            minValue:
+              description: Lower bound of the value, when the source declares a range or a minimum.
+              type: number
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            unitCode:
+              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.
+              type: string
+            value:
+              description: Exact measured value, when a single figure is known.
+              type: number
+          required:
+            - type
+            - unitCode
+          type: object
+      description: 'Expected unitCode: KGM. Mass of material recorded for the movement.'
+      x-ngsi:
+        type: Property
+
+  required:
+    - id
+    - type
+    - movementKind
+    - timestampArrival
+    - weight
+
+  type: object
+
+  x-derived-from: https://context.dataspace-arditi.com/islopol/entities/RecyclingMaterialCollection/v2/schema.json
+
+  x-disclaimer: Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program
+
+  x-license-url: https://github.com/smart-data-models/circuloos_data_model/blob/master/RecyclingMaterialCollection/LICENSE.md
+
+  x-model-schema: https://raw.githubusercontent.com/TO_ADD_LATER/schema.json
+
+  x-model-tags: ''
+
+  x-version: 0.0.1

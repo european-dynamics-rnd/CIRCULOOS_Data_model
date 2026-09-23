@@ -1,0 +1,21 @@
+{
+    "@context": {
+        "VehicleModel": "https://smartdatamodels.org/dataModel.Transportation/VehicleModel",
+        "brandName": "https://smartdatamodels.org/dataModel.UrbanMobility/brandName",
+        "cargoVolume": "https://smartdatamodels.org/dataModel.Transportation/cargoVolume",
+        "fuelType": "https://smartdatamodels.org/dataModel.Transportation/fuelType",
+        "id": "@id",
+        "maxValue": "https://smartdatamodels.org/dataModel.EnergyCIM/maxValue",
+        "minValue": "https://smartdatamodels.org/dataModel.EnergyCIM/minValue",
+        "modelName": "https://smartdatamodels.org/dataModel.UrbanMobility/modelName",
+        "name": "https://smartdatamodels.org/name",
+        "observedAt": {
+            "@id": "https://uri.etsi.org/ngsi-ld/observedAt",
+            "@type": "https://uri.etsi.org/ngsi-ld/DateTime"
+        },
+        "type": "@type",
+        "unitCode": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/unitCode",
+        "value": "https://uri.etsi.org/ngsi-ld/hasValue",
+        "weight": "https://smartdatamodels.org/dataModel.Transportation/weight"
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "@context": {
+        "Supplier": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/Supplier",
+        "address": "https://smartdatamodels.org/address",
+        "city": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/city",
+        "contactEmail": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/contactEmail",
+        "contactPerson": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/contactPerson",
+        "country": "https://smartdatamodels.org/dataModel.Transportation/country",
+        "distanceToManufacturer": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/distanceToManufacturer",
+        "id": "@id",
+        "maxValue": "https://smartdatamodels.org/dataModel.EnergyCIM/maxValue",
+        "minValue": "https://smartdatamodels.org/dataModel.EnergyCIM/minValue",
+        "name": "https://smartdatamodels.org/name",
+        "object": {
+            "@id": "https://uri.etsi.org/ngsi-ld/hasObject",
+            "@type": "@id"
+        },
+        "observedAt": {
+            "@id": "https://uri.etsi.org/ngsi-ld/observedAt",
+            "@type": "https://uri.etsi.org/ngsi-ld/DateTime"
+        },
+        "operatedBy": "https://smartdatamodels.org/dataModel.UrbanMobility/operatedBy",
+        "postalCode": "https://smartdatamodels.org/postalCode",
+        "region": "https://smartdatamodels.org/dataModel.Transportation/region",
+        "suppliesSRM1": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/suppliesSRM1",
+        "suppliesSRM2": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/suppliesSRM2",
+        "transportationMode": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/transportationMode",
+        "type": "@type",
+        "unitCode": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/unitCode",
+        "value": "https://uri.etsi.org/ngsi-ld/hasValue"
+    }
+}

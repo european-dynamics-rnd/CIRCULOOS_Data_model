@@ -1,0 +1,174 @@
+Factory:
+
+  description: CIRCULOOS data model for a physical facility involved in the ISLOPOL value chain, covering its name, principal activities, operating organisation, postal address and geographical position.
+
+  properties:
+
+    additionalType:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: Description of the facility's type or principal activities. Given in the source as https://schema.org/additionalType, the expanded JSON-LD form of factoryType.
+      x-ngsi:
+        type: Property
+
+    address:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              additionalProperties: no
+              properties:
+                addressCountry:
+                  description: The country. Model:'https://schema.org/addressCountry'
+                  type: string
+                addressLocality:
+                  description: The locality in which the street address is. Model:'https://schema.org/addressLocality'
+                  type: string
+                addressRegion:
+                  description: The region in which the locality is. Model:'https://schema.org/addressRegion'
+                  type: string
+                postalCode:
+                  description: The postal code. Model:'https://schema.org/postalCode'
+                  type: string
+                streetAddress:
+                  description: The street address. Model:'https://schema.org/streetAddress'
+                  type: string
+              type: object
+          required:
+            - type
+            - value
+          type: object
+      description: Postal address of the facility, as a structured object containing fields such as street, postal code, locality, region and country.
+      x-ngsi:
+        type: Property
+
+    id:
+      description: Unique entity identifier, with the format urn:ngsi-ld:Factory:<operator>:<facility>.
+      type: string
+      x-ngsi:
+        type: Property
+
+    location:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - GeoProperty
+              type: string
+            value:
+              additionalProperties: no
+              properties:
+                coordinates:
+                  description: GeoJSON coordinates ordered as longitude followed by latitude.
+                  items:
+                    type: number
+                  maxItems: 2
+                  minItems: 2
+                  type: array
+                type:
+                  enum:
+                    - Point
+                  type: string
+              required:
+                - type
+                - coordinates
+              type: object
+          required:
+            - type
+            - value
+          type: object
+      description: GeoProperty. Geographical position of the facility, represented as a GeoJSON Point. Coordinates are ordered as longitude followed by latitude.
+
+    name:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: Human-readable name of the facility, used to identify it in maps, forms and reports. Given in the source as https://schema.org/name.
+      x-ngsi:
+        type: Property
+
+    provider:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: Name of the organisation operating the facility. Given in the source as https://schema.org/provider, the expanded JSON-LD form of operatedBy.
+      x-ngsi:
+        type: Property
+
+    type:
+      description: NGSI Entity type. It has to be Factory
+      enum:
+        - Factory
+      type: string
+      x-ngsi:
+        type: Property
+
+  required:
+    - id
+    - type
+    - name
+
+  type: object
+
+  x-derived-from: https://context.dataspace-arditi.com/islopol/entities/Factory/v2/schema.json
+
+  x-disclaimer: Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program
+
+  x-license-url: https://github.com/smart-data-models/circuloos_data_model/blob/master/Factory/LICENSE.md
+
+  x-model-schema: https://raw.githubusercontent.com/TO_ADD_LATER/schema.json
+
+  x-model-tags: ''
+
+  x-version: 0.0.1

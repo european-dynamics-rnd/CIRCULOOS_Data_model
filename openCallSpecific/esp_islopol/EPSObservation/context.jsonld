@@ -1,0 +1,30 @@
+{
+    "@context": {
+        "EPSObservation": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/EPSObservation",
+        "confidence": "https://smartdatamodels.org/dataModel.Transportation/confidence",
+        "contaminationLevel": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/contaminationLevel",
+        "contaminationScore": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/contaminationScore",
+        "contaminationScoreFormula": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/contaminationScoreFormula",
+        "eventTime": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/eventTime",
+        "highMax": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/highMax",
+        "id": "@id",
+        "lowMax": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/lowMax",
+        "medMax": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/medMax",
+        "modelUsed": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/modelUsed",
+        "modelVersion": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/modelVersion",
+        "object": {
+            "@id": "https://uri.etsi.org/ngsi-ld/hasObject",
+            "@type": "@id"
+        },
+        "observedAt": {
+            "@id": "https://uri.etsi.org/ngsi-ld/observedAt",
+            "@type": "https://uri.etsi.org/ngsi-ld/DateTime"
+        },
+        "refDevice": "https://smartdatamodels.org/dataModel.ZEB/refDevice",
+        "refEPSBatch": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/refEPSBatch",
+        "refProcessEvent": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/refProcessEvent",
+        "thresholds": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/thresholds",
+        "type": "@type",
+        "value": "https://uri.etsi.org/ngsi-ld/hasValue"
+    }
+}

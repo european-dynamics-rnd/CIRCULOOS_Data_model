@@ -1,0 +1,23 @@
+{
+    "@context": {
+        "Vehicle": "https://smartdatamodels.org/dataModel.Transportation/Vehicle",
+        "dateVehicleFirstRegistered": "https://smartdatamodels.org/dataModel.Transportation/dateVehicleFirstRegistered",
+        "description": "http://purl.org/dc/terms/description",
+        "fuelType": "https://smartdatamodels.org/dataModel.Transportation/fuelType",
+        "id": "@id",
+        "name": "https://smartdatamodels.org/name",
+        "object": {
+            "@id": "https://uri.etsi.org/ngsi-ld/hasObject",
+            "@type": "@id"
+        },
+        "observedAt": {
+            "@id": "https://uri.etsi.org/ngsi-ld/observedAt",
+            "@type": "https://uri.etsi.org/ngsi-ld/DateTime"
+        },
+        "refVehicleModel": "https://smartdatamodels.org/dataModel.Transportation/refVehicleModel",
+        "type": "@type",
+        "value": "https://uri.etsi.org/ngsi-ld/hasValue",
+        "vehicleConfiguration": "https://smartdatamodels.org/dataModel.Transportation/vehicleConfiguration",
+        "vehiclePlateIdentifier": "https://smartdatamodels.org/dataModel.Transportation/vehiclePlateIdentifier"
+    }
+}

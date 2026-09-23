@@ -1,0 +1,21 @@
+{
+    "@context": {
+        "ProductionRun": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/ProductionRun",
+        "endDate": "https://smartdatamodels.org/endDate",
+        "id": "@id",
+        "object": {
+            "@id": "https://uri.etsi.org/ngsi-ld/hasObject",
+            "@type": "@id"
+        },
+        "observedAt": {
+            "@id": "https://uri.etsi.org/ngsi-ld/observedAt",
+            "@type": "https://uri.etsi.org/ngsi-ld/DateTime"
+        },
+        "refInputProducts": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/refInputProducts",
+        "refOutputProducts": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/refOutputProducts",
+        "refProcess": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/refProcess",
+        "startDate": "https://smartdatamodels.org/startDate",
+        "type": "@type",
+        "value": "https://uri.etsi.org/ngsi-ld/hasValue"
+    }
+}
