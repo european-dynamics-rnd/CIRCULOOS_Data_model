@@ -1,0 +1,28 @@
+{
+    "@context": {
+        "Date": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/Date",
+        "End_location": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/End_location",
+        "Energy_use_kWh": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/Energy_use_kWh",
+        "KM": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/KM",
+        "MaterialRecord": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/MaterialRecord",
+        "Material_Loop": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/Material_Loop",
+        "Material_in_kg": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/Material_in_kg",
+        "Material_out_kg": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/Material_out_kg",
+        "Notes": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/Notes",
+        "Partner": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/Partner",
+        "Proces_step": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/Proces_step",
+        "Start_location": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/Start_location",
+        "Type_of_transport": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/Type_of_transport",
+        "dateCreated": "https://smartdatamodels.org/dateCreated",
+        "id": "@id",
+        "maxValue": "https://smartdatamodels.org/dataModel.EnergyCIM/maxValue",
+        "minValue": "https://smartdatamodels.org/dataModel.EnergyCIM/minValue",
+        "observedAt": {
+            "@id": "https://uri.etsi.org/ngsi-ld/observedAt",
+            "@type": "https://uri.etsi.org/ngsi-ld/DateTime"
+        },
+        "type": "@type",
+        "unitCode": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/unitCode",
+        "value": "https://uri.etsi.org/ngsi-ld/hasValue"
+    }
+}
