@@ -13,10 +13,10 @@ Entity: ProductModel
 ## List of properties  
 
 <sup><sub>[*] If there is not a type in an attribute is because it could have several types or different formats/patterns</sub></sup>  
-- `category[*]`: List of product categories or grades available for the model. Given in the source as https://schema.org/category, the expanded JSON-LD form of availableCategories.  - `constituents[*]`: Material or list of materials or components making up the product model. Given in the source as https://context.dataspace-arditi.com/islopol/terms/v2/constituents.  - `description[*]`: Human-readable description of the product or material represented by the model.  - `id[string]`:   . Model: [Unique entity identifier, with the format urn:ngsi-ld:Product<modelId>.](Unique entity identifier, with the format urn:ngsi-ld:Product<modelId>.)- `material[*]`: Main material or composition associated with the product model. Given in the source as https://schema.org/material.  - `name[*]`: Human-readable name of the product model, used to label products. Given in the source as https://schema.org/name.  - `type[string]`: NGSI Entity type. It has to be ProductModel  - `unitCode[*]`: Default unit of measurement for products of this model, such as kilograms, kilowatt-hours or individual units.  <!-- /30-PropertiesList -->  
+- `availableCategories[*]`: List of product categories or grades available for the model. Simple hierarchies are allowed, e.g. 'Waste > EPS'.  - `constituents[*]`: Materials or components making up the product model.  - `description[*]`: Human-readable description of the product or material represented by the model.  - `id[string]`:   . Model: [Unique entity identifier, with the format urn:ngsi-ld:Product<modelId>.](Unique entity identifier, with the format urn:ngsi-ld:Product<modelId>.)- `material[*]`: Main material or composition associated with the product model. Given in the source as https://schema.org/material.  - `name[*]`: Human-readable name of the product model, used to label products. Given in the source as https://schema.org/name.  - `quantityUnit[*]`: UN/CEFACT code of the default unit of measurement for products of this model, e.g. KGM (kilogram), KWH (kilowatt hour) or EA (each).  - `refLcaId[*]`: Reference identifier used for LCA traceability.  - `type[string]`: NGSI Entity type. It has to be ProductModel  <!-- /30-PropertiesList -->  
 <!-- 35-RequiredProperties -->  
 Required properties  
-- `id`  - `name`  - `type`  <!-- /35-RequiredProperties -->  
+- `id`  - `material`  - `name`  - `quantityUnit`  - `type`  <!-- /35-RequiredProperties -->  
 <!-- 40-RequiredProperties -->  
 <!-- /40-RequiredProperties -->  
 <!-- 50-DataModelHeader -->  
@@ -29,7 +29,7 @@ Entity: ProductModel
 ProductModel:    
   description: CIRCULOOS data model for a product or material model that defines shared characteristics for individual Product records in the ISLOPOL value chain, covering its name, constituents, material, available categories and default unit of measurement.    
   properties:    
-    category:    
+    availableCategories:    
       allOf:    
         - additionalProperties: no    
           properties:    
@@ -49,7 +49,7 @@ ProductModel:
             - type    
             - value    
           type: object    
-      description: List of product categories or grades available for the model. Given in the source as https://schema.org/category, the expanded JSON-LD form of availableCategories.    
+      description: List of product categories or grades available for the model. Simple hierarchies are allowed, e.g. 'Waste > EPS'.    
       x-ngsi:    
         type: Property    
     constituents:    
@@ -64,12 +64,15 @@ ProductModel:
                 - Property    
               type: string    
             value:    
-              type: string    
+              items:    
+                type: string    
+              minItems: 1    
+              type: array    
           required:    
             - type    
             - value    
           type: object    
-      description: Material or list of materials or components making up the product model. Given in the source as https://context.dataspace-arditi.com/islopol/terms/v2/constituents.    
+      description: Materials or components making up the product model.    
       x-ngsi:    
         type: Property    
     description:    
@@ -138,14 +141,7 @@ ProductModel:
       description: Human-readable name of the product model, used to label products. Given in the source as https://schema.org/name.    
       x-ngsi:    
         type: Property    
-    type:    
-      description: NGSI Entity type. It has to be ProductModel    
-      enum:    
-        - ProductModel    
-      type: string    
-      x-ngsi:    
-        type: Property    
-    unitCode:    
+    quantityUnit:    
       allOf:    
         - additionalProperties: no    
           properties:    
@@ -162,19 +158,48 @@ ProductModel:
             - type    
             - value    
           type: object    
-      description: Default unit of measurement for products of this model, such as kilograms, kilowatt-hours or individual units.    
+      description: UN/CEFACT code of the default unit of measurement for products of this model, e.g. KGM (kilogram), KWH (kilowatt hour) or EA (each).    
+      x-ngsi:    
+        type: Property    
+    refLcaId:    
+      allOf:    
+        - additionalProperties: no    
+          properties:    
+            observedAt:    
+              format: date-time    
+              type: string    
+            type:    
+              enum:    
+                - Property    
+              type: string    
+            value:    
+              type: string    
+          required:    
+            - type    
+            - value    
+          type: object    
+      description: Reference identifier used for LCA traceability.    
+      x-ngsi:    
+        type: Property    
+    type:    
+      description: NGSI Entity type. It has to be ProductModel    
+      enum:    
+        - ProductModel    
+      type: string    
       x-ngsi:    
         type: Property    
   required:    
     - id    
     - type    
     - name    
+    - quantityUnit    
+    - material    
   type: object    
   x-derived-from: https://context.dataspace-arditi.com/islopol/entities/ProductModel/v2/schema.json    
   x-disclaimer: Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program    
   x-license-url: https://github.com/smart-data-models/circuloos_data_model/blob/master/ProductModel/LICENSE.md    
-  x-model-schema: https://raw.githubusercontent.com/TO_ADD_LATER/schema.json    
-  x-model-tags: ''    
+  x-model-schema: https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/openCallSpecific/esp_islopol/ProductModel/schema.json    
+  x-model-tags: esp_islopol    
   x-version: 0.0.1    
 ```  
 </details>    
@@ -205,9 +230,11 @@ ProductModel:
   },  
   "constituents": {  
     "type": "Property",  
-    "value": "EPS"  
+    "value": [  
+      "EPS"  
+    ]  
   },  
-  "category": {  
+  "availableCategories": {  
     "type": "Property",  
     "value": [  
       "EPS150",  
@@ -220,9 +247,9 @@ ProductModel:
     "type": "Property",  
     "value": "EPS"  
   },  
-  "unitCode": {  
+  "quantityUnit": {  
     "type": "Property",  
-    "value": "unidades"  
+    "value": "EA"  
   }  
 }  
 ```  

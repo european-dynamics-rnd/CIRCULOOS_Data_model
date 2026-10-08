@@ -38,12 +38,15 @@ ProcessEvent:
         - additionalProperties: no
           properties:
             object:
-              description: URNs of the referenced entities.
-              items:
-                pattern: ^urn:ngsi-ld:.+$
-                type: string
-              minItems: 1
-              type: array
+              description: URN of the referenced entity, or a list of URNs.
+              oneOf:
+                - pattern: ^urn:ngsi-ld:.+$
+                  type: string
+                - items:
+                    pattern: ^urn:ngsi-ld:.+$
+                    type: string
+                  minItems: 1
+                  type: array
             observedAt:
               format: date-time
               type: string
@@ -85,12 +88,15 @@ ProcessEvent:
         - additionalProperties: no
           properties:
             object:
-              description: URNs of the referenced entities.
-              items:
-                pattern: ^urn:ngsi-ld:.+$
-                type: string
-              minItems: 1
-              type: array
+              description: URN of the referenced entity, or a list of URNs.
+              oneOf:
+                - pattern: ^urn:ngsi-ld:.+$
+                  type: string
+                - items:
+                    pattern: ^urn:ngsi-ld:.+$
+                    type: string
+                  minItems: 1
+                  type: array
             observedAt:
               format: date-time
               type: string
@@ -243,8 +249,9 @@ ProcessEvent:
   required:
     - id
     - type
-    - refProcess
     - startDate
+    - endDate
+    - refProcess
 
   type: object
 
@@ -254,8 +261,8 @@ ProcessEvent:
 
   x-license-url: https://github.com/smart-data-models/circuloos_data_model/blob/master/ProcessEvent/LICENSE.md
 
-  x-model-schema: https://raw.githubusercontent.com/TO_ADD_LATER/schema.json
+  x-model-schema: https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/openCallSpecific/esp_islopol/ProcessEvent/schema.json
 
-  x-model-tags: ''
+  x-model-tags: esp_islopol
 
   x-version: 0.0.1

@@ -1,10 +1,10 @@
 {
   "$schema": "http://json-schema.org/schema#",
   "$schemaVersion": "0.0.1",
-  "modelTags": "",
+  "modelTags": "esp_islopol",
   "derivedFrom": "https://context.dataspace-arditi.com/islopol/entities/EPSTransport/v2/schema.json",
-  "license": "",
-  "$id": "https://raw.githubusercontent.com/TO_ADD_LATER/schema.json",
+  "license": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/refs/heads/main/LICENSE",
+  "$id": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/openCallSpecific/esp_islopol/EPSTransport/schema.json",
   "title": "Data model for an ISLOPOL EPS transport operation",
   "description": "CIRCULOOS data model for a transport operation carrying one or more EPS batches between facilities in the ISLOPOL value chain, covering departure and arrival times, the origin and destination facilities, the vehicle used and the batches shipped.",
   "type": "object",
@@ -44,13 +44,21 @@
           ]
         },
         "object": {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "pattern": "^urn:ngsi-ld:.+$"
-          },
-          "minItems": 1,
-          "description": "URNs of the referenced entities."
+          "oneOf": [
+            {
+              "type": "string",
+              "pattern": "^urn:ngsi-ld:.+$"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^urn:ngsi-ld:.+$"
+              },
+              "minItems": 1
+            }
+          ],
+          "description": "URN of the referenced entity, or a list of URNs."
         },
         "observedAt": {
           "type": "string",
@@ -103,21 +111,21 @@
             "EPSTransport"
           ]
         },
-        "timestampDeparture": {
+        "departureTime": {
           "allOf": [
             {
               "$ref": "#/definitions/DateTimeProperty"
             }
           ],
-          "description": "Property. Date and time when the EPS shipment departed from the origin facility, expressed as an ISO 8601 timestamp. This attribute maps to the same JSON-LD term as departureTime in the transport schema."
+          "description": "Property. Date and time when the EPS shipment departed from the origin facility, expressed as an ISO 8601 timestamp."
         },
-        "timestampArrival": {
+        "arrivalTime": {
           "allOf": [
             {
               "$ref": "#/definitions/DateTimeProperty"
             }
           ],
-          "description": "Property. Date and time when the EPS shipment arrived at the destination facility, expressed as an ISO 8601 timestamp. This attribute maps to the same JSON-LD term as arrivalTime in the transport schema."
+          "description": "Property. Date and time when the EPS shipment arrived at the destination facility, expressed as an ISO 8601 timestamp."
         },
         "origin": {
           "allOf": [
@@ -157,8 +165,8 @@
   "required": [
     "id",
     "type",
-    "timestampDeparture",
-    "origin",
-    "destination"
+    "refEPSBatch",
+    "departureTime",
+    "refVehicle"
   ]
 }

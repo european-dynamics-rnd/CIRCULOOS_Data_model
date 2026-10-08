@@ -94,8 +94,8 @@ Process:
 
   x-license-url: https://github.com/smart-data-models/circuloos_data_model/blob/master/Process/LICENSE.md
 
-  x-model-schema: https://raw.githubusercontent.com/TO_ADD_LATER/schema.json
+  x-model-schema: https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/openCallSpecific/esp_islopol/Process/schema.json
 
-  x-model-tags: ''
+  x-model-tags: esp_islopol
 
   x-version: 0.0.1

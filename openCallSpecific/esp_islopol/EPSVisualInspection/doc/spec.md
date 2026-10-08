@@ -16,7 +16,7 @@ Entity: EPSVisualInspection
 - `endDate[*]`: Date and time when the visual inspection ended, expressed as an ISO 8601 timestamp.  - `id[string]`: Unique entity identifier, with the format urn:ngsi-ld:EPSVisualInspection:<facility>:<timestamp>.  - `refEPSTransport[*]`: Identifier of the EPSTransport operation that delivered the EPS being inspected, linking the inspection to the shipment and its batches.  - `refOutputProducts[*]`: Identifiers of Product entities linked as outputs of the inspection, providing traceability to the material that proceeds through the recycling workflow.  - `rejections[*]`: Expected unitCode: KGM. Mass of material rejected during the visual inspection. This is an absolute mass, not a rejection percentage.  - `startDate[*]`: Date and time when the visual inspection started, expressed as an ISO 8601 timestamp.  - `type[string]`: NGSI Entity type. It has to be EPSVisualInspection  <!-- /30-PropertiesList -->  
 <!-- 35-RequiredProperties -->  
 Required properties  
-- `id`  - `startDate`  - `type`  <!-- /35-RequiredProperties -->  
+- `endDate`  - `id`  - `refEPSTransport`  - `startDate`  - `type`  <!-- /35-RequiredProperties -->  
 <!-- 40-RequiredProperties -->  
 <!-- /40-RequiredProperties -->  
 <!-- 50-DataModelHeader -->  
@@ -83,12 +83,15 @@ EPSVisualInspection:
         - additionalProperties: no    
           properties:    
             object:    
-              description: URNs of the referenced entities.    
-              items:    
-                pattern: ^urn:ngsi-ld:.+$    
-                type: string    
-              minItems: 1    
-              type: array    
+              description: URN of the referenced entity, or a list of URNs.    
+              oneOf:    
+                - pattern: ^urn:ngsi-ld:.+$    
+                  type: string    
+                - items:    
+                    pattern: ^urn:ngsi-ld:.+$    
+                    type: string    
+                  minItems: 1    
+                  type: array    
             observedAt:    
               format: date-time    
               type: string    
@@ -172,13 +175,15 @@ EPSVisualInspection:
   required:    
     - id    
     - type    
+    - refEPSTransport    
     - startDate    
+    - endDate    
   type: object    
   x-derived-from: https://context.dataspace-arditi.com/islopol/entities/EPSVisualInspection/v2/schema.json    
   x-disclaimer: Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program    
   x-license-url: https://github.com/smart-data-models/circuloos_data_model/blob/master/EPSVisualInspection/LICENSE.md    
-  x-model-schema: https://raw.githubusercontent.com/TO_ADD_LATER/schema.json    
-  x-model-tags: ''    
+  x-model-schema: https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/openCallSpecific/esp_islopol/EPSVisualInspection/schema.json    
+  x-model-tags: esp_islopol    
   x-version: 0.0.1    
 ```  
 </details>    

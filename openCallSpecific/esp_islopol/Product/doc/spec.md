@@ -13,10 +13,10 @@ Entity: Product
 ## List of properties  
 
 <sup><sub>[*] If there is not a type in an attribute is because it could have several types or different formats/patterns</sub></sup>  
-- `destination[*]`: Name or identifier of the intended recipient, facility or destination for the product or material. The schema allows a list of destinations.  - `id[string]`: Unique entity identifier, with the format urn:ngsi-ld:Product:<facility>:<material>:<date>.  - `length[*]`: Expected unitCode: CMT. Physical length of the product.  - `quantity[*]`: Amount of the product, material or resource represented by the record, expressed in the accompanying unitCode.  - `refProcessEvent[*]`: Identifier of the ProcessEvent associated with this Product record, linking its material or resource to the corresponding operation.  - `refProductModel[*]`: Identifier of the ProductModel defining the product's shared characteristics, such as its material, category and default unit of measurement.  - `supplier[*]`: Name or identifier of the organisation or source supplying the product or material. The schema allows a list of suppliers.  - `thickness[*]`: Expected unitCode: CMT. Physical thickness of the product.  - `type[string]`: NGSI Entity type. It has to be Product  - `unitCode[*]`: Unit of measurement for quantity.  - `width[*]`: Expected unitCode: CMT. Physical width of the product.  <!-- /30-PropertiesList -->  
+- `destination[*]`: Names or identifiers of the intended recipients, facilities or destinations for the product or material.  - `id[string]`: Unique entity identifier, with the format urn:ngsi-ld:Product:<facility>:<material>:<date>.  - `length[*]`: Expected unitCode: CMT. Physical length of the product.  - `quantity[*]`: Expected unitCode: KGM, KWH, HUR or EA. Amount of the product, material or resource represented by the record.  - `refProcessEvent[*]`: Identifier of the ProcessEvent associated with this Product record, linking its material or resource to the corresponding operation.  - `refProductModel[*]`: Identifier of the ProductModel defining the product's shared characteristics, such as its material, category and default unit of measurement.  - `supplier[*]`: Names or identifiers of the organisations or sources supplying the product or material.  - `thickness[*]`: Expected unitCode: CMT. Physical thickness of the product.  - `type[string]`: NGSI Entity type. It has to be Product  - `width[*]`: Expected unitCode: CMT. Physical width of the product.  <!-- /30-PropertiesList -->  
 <!-- 35-RequiredProperties -->  
 Required properties  
-- `id`  - `quantity`  - `type`  - `unitCode`  <!-- /35-RequiredProperties -->  
+- `id`  - `quantity`  - `refProductModel`  - `type`  <!-- /35-RequiredProperties -->  
 <!-- 40-RequiredProperties -->  
 <!-- /40-RequiredProperties -->  
 <!-- 50-DataModelHeader -->  
@@ -41,12 +41,15 @@ Product:
                 - Property    
               type: string    
             value:    
-              type: string    
+              items:    
+                type: string    
+              minItems: 1    
+              type: array    
           required:    
             - type    
             - value    
           type: object    
-      description: Name or identifier of the intended recipient, facility or destination for the product or material. The schema allows a list of destinations.    
+      description: Names or identifiers of the intended recipients, facilities or destinations for the product or material.    
       x-ngsi:    
         type: Property    
     id:    
@@ -94,7 +97,20 @@ Product:
     quantity:    
       allOf:    
         - additionalProperties: no    
+          anyOf:    
+            - required:    
+                - value    
+            - required:    
+                - minValue    
+            - required:    
+                - maxValue    
           properties:    
+            maxValue:    
+              description: Upper bound of the value, when the source declares a range or a maximum.    
+              type: number    
+            minValue:    
+              description: Lower bound of the value, when the source declares a range or a minimum.    
+              type: number    
             observedAt:    
               format: date-time    
               type: string    
@@ -103,14 +119,16 @@ Product:
                 - Property    
               type: string    
             unitCode:    
+              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
               type: string    
             value:    
+              description: Exact measured value, when a single figure is known.    
               type: number    
           required:    
             - type    
-            - value    
+            - unitCode    
           type: object    
-      description: Amount of the product, material or resource represented by the record, expressed in the accompanying unitCode.    
+      description: 'Expected unitCode: KGM, KWH, HUR or EA. Amount of the product, material or resource represented by the record.'    
       x-ngsi:    
         type: Property    
     refProcessEvent:    
@@ -169,12 +187,15 @@ Product:
                 - Property    
               type: string    
             value:    
-              type: string    
+              items:    
+                type: string    
+              minItems: 1    
+              type: array    
           required:    
             - type    
             - value    
           type: object    
-      description: Name or identifier of the organisation or source supplying the product or material. The schema allows a list of suppliers.    
+      description: Names or identifiers of the organisations or sources supplying the product or material.    
       x-ngsi:    
         type: Property    
     thickness:    
@@ -221,26 +242,6 @@ Product:
       type: string    
       x-ngsi:    
         type: Property    
-    unitCode:    
-      allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
-      description: Unit of measurement for quantity.    
-      x-ngsi:    
-        type: Property    
     width:    
       allOf:    
         - additionalProperties: no    
@@ -281,14 +282,14 @@ Product:
   required:    
     - id    
     - type    
+    - refProductModel    
     - quantity    
-    - unitCode    
   type: object    
   x-derived-from: https://context.dataspace-arditi.com/islopol/entities/Product/v2/schema.json    
   x-disclaimer: Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program    
   x-license-url: https://github.com/smart-data-models/circuloos_data_model/blob/master/Product/LICENSE.md    
-  x-model-schema: https://raw.githubusercontent.com/TO_ADD_LATER/schema.json    
-  x-model-tags: ''    
+  x-model-schema: https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/openCallSpecific/esp_islopol/Product/schema.json    
+  x-model-tags: esp_islopol    
   x-version: 0.0.1    
 ```  
 </details>    
@@ -319,19 +320,20 @@ Product:
   },  
   "supplier": {  
     "type": "Property",  
-    "value": "ARM Collection"  
+    "value": [  
+      "ARM Collection"  
+    ]  
   },  
   "destination": {  
     "type": "Property",  
-    "value": "ARM ETZL/ET"  
+    "value": [  
+      "ARM ETZL/ET"  
+    ]  
   },  
   "quantity": {  
     "type": "Property",  
-    "value": 6396.748215  
-  },  
-  "unitCode": {  
-    "type": "Property",  
-    "value": "kg"  
+    "value": 6396.748215,  
+    "unitCode": "KGM"  
   },  
   "length": {  
     "type": "Property",  

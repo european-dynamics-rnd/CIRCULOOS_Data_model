@@ -16,7 +16,7 @@ Entity: EPSBatch
 - `avgContaminationScore[*]`: Average contamination score associated with the batch, expressed from 0 to 1, where higher values indicate greater contamination. (Multiply by 100 to obtain the Contamination Score percentage.)  - `dateCreated[*]`: Date and time when the EPSBatch record was created, expressed as an ISO 8601 timestamp. This is the record creation time, which can differ from the time of the physical operation.  - `id[string]`: Unique entity identifier, with the format urn:ngsi-ld:EPSBatch:<facility>:<date>.  - `refEPSObservations[*]`: Identifiers of the EPSObservation entities associated with this batch. These records provide the automated contamination assessments used to characterise it.  - `refProduct[*]`: Identifier of the Product entity representing the EPS material in this batch, including its recorded quantity and unit of measurement.  - `rejectionRate[*]`: Fraction of material in the batch that was rejected, expressed on a scale from 0 to 1. (Multiply by 100 to obtain the rejection percentage.)  - `status[*]`: Current stage of the batch in the operational workflow, such as awaiting transport. It describes the batch's handling status rather than its contamination level.  - `type[string]`: NGSI Entity type. It has to be EPSBatch  <!-- /30-PropertiesList -->  
 <!-- 35-RequiredProperties -->  
 Required properties  
-- `id`  - `refProduct`  - `status`  - `type`  <!-- /35-RequiredProperties -->  
+- `dateCreated`  - `id`  - `refProduct`  - `type`  <!-- /35-RequiredProperties -->  
 <!-- 40-RequiredProperties -->  
 <!-- /40-RequiredProperties -->  
 <!-- 50-DataModelHeader -->  
@@ -83,12 +83,15 @@ EPSBatch:
         - additionalProperties: no    
           properties:    
             object:    
-              description: URNs of the referenced entities.    
-              items:    
-                pattern: ^urn:ngsi-ld:.+$    
-                type: string    
-              minItems: 1    
-              type: array    
+              description: URN of the referenced entity, or a list of URNs.    
+              oneOf:    
+                - pattern: ^urn:ngsi-ld:.+$    
+                  type: string    
+                - items:    
+                    pattern: ^urn:ngsi-ld:.+$    
+                    type: string    
+                  minItems: 1    
+                  type: array    
             observedAt:    
               format: date-time    
               type: string    
@@ -178,13 +181,13 @@ EPSBatch:
     - id    
     - type    
     - refProduct    
-    - status    
+    - dateCreated    
   type: object    
   x-derived-from: https://context.dataspace-arditi.com/islopol/entities/EPSBatch/v2/schema.json    
   x-disclaimer: Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program    
   x-license-url: https://github.com/smart-data-models/circuloos_data_model/blob/master/EPSBatch/LICENSE.md    
-  x-model-schema: https://raw.githubusercontent.com/TO_ADD_LATER/schema.json    
-  x-model-tags: ''    
+  x-model-schema: https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/openCallSpecific/esp_islopol/EPSBatch/schema.json    
+  x-model-tags: esp_islopol    
   x-version: 0.0.1    
 ```  
 </details>    

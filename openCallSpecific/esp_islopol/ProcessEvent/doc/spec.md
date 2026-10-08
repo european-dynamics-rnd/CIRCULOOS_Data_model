@@ -16,7 +16,7 @@ Entity: ProcessEvent
 - `endDate[*]`: Date and time when the process execution ended, expressed as an ISO 8601 timestamp.  - `id[string]`: Unique entity identifier, with the format urn:ngsi-ld:ProcessEvent:<facility>:<process>:<date>.  - `refInputProducts[*]`: Identifiers of the Product entities consumed or processed during the event.  - `refLcaId[*]`: Reference identifier linking the process event to a life-cycle assessment (LCA) record or dataset.  - `refOutputProducts[*]`: Identifiers of the Product entities produced by the event. Their quantities and units are stored in the referenced Product records.  - `refProcess[*]`: Identifier of the Process entity that defines the operation executed by this event, linking the recorded execution to its process description.  - `sortingLine[*]`: Name or identifier of the physical sorting line used for the event, such as ARM's paper and cardboard sorting line.  - `sortingStream[*]`: Name or classification of the waste stream being processed, such as the blue-bin paper and cardboard stream. It describes the overall input stream, which may also contain recoverable EPS.  - `startDate[*]`: Date and time when the process execution started, expressed as an ISO 8601 timestamp. Together with endDate, it defines the recorded execution period.  - `throughput[*]`: Expected unitCode: KGM. Processing throughput for the event.  - `type[string]`: NGSI Entity type. It has to be ProcessEvent  <!-- /30-PropertiesList -->  
 <!-- 35-RequiredProperties -->  
 Required properties  
-- `id`  - `refProcess`  - `startDate`  - `type`  <!-- /35-RequiredProperties -->  
+- `endDate`  - `id`  - `refProcess`  - `startDate`  - `type`  <!-- /35-RequiredProperties -->  
 <!-- 40-RequiredProperties -->  
 <!-- /40-RequiredProperties -->  
 <!-- 50-DataModelHeader -->  
@@ -61,12 +61,15 @@ ProcessEvent:
         - additionalProperties: no    
           properties:    
             object:    
-              description: URNs of the referenced entities.    
-              items:    
-                pattern: ^urn:ngsi-ld:.+$    
-                type: string    
-              minItems: 1    
-              type: array    
+              description: URN of the referenced entity, or a list of URNs.    
+              oneOf:    
+                - pattern: ^urn:ngsi-ld:.+$    
+                  type: string    
+                - items:    
+                    pattern: ^urn:ngsi-ld:.+$    
+                    type: string    
+                  minItems: 1    
+                  type: array    
             observedAt:    
               format: date-time    
               type: string    
@@ -106,12 +109,15 @@ ProcessEvent:
         - additionalProperties: no    
           properties:    
             object:    
-              description: URNs of the referenced entities.    
-              items:    
-                pattern: ^urn:ngsi-ld:.+$    
-                type: string    
-              minItems: 1    
-              type: array    
+              description: URN of the referenced entity, or a list of URNs.    
+              oneOf:    
+                - pattern: ^urn:ngsi-ld:.+$    
+                  type: string    
+                - items:    
+                    pattern: ^urn:ngsi-ld:.+$    
+                    type: string    
+                  minItems: 1    
+                  type: array    
             observedAt:    
               format: date-time    
               type: string    
@@ -257,14 +263,15 @@ ProcessEvent:
   required:    
     - id    
     - type    
-    - refProcess    
     - startDate    
+    - endDate    
+    - refProcess    
   type: object    
   x-derived-from: https://context.dataspace-arditi.com/islopol/entities/ProcessEvent/v2/schema.json    
   x-disclaimer: Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program    
   x-license-url: https://github.com/smart-data-models/circuloos_data_model/blob/master/ProcessEvent/LICENSE.md    
-  x-model-schema: https://raw.githubusercontent.com/TO_ADD_LATER/schema.json    
-  x-model-tags: ''    
+  x-model-schema: https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/openCallSpecific/esp_islopol/ProcessEvent/schema.json    
+  x-model-tags: esp_islopol    
   x-version: 0.0.1    
 ```  
 </details>    

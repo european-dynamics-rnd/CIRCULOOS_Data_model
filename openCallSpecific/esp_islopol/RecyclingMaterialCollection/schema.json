@@ -1,10 +1,10 @@
 {
   "$schema": "http://json-schema.org/schema#",
   "$schemaVersion": "0.0.1",
-  "modelTags": "",
+  "modelTags": "esp_islopol",
   "derivedFrom": "https://context.dataspace-arditi.com/islopol/entities/RecyclingMaterialCollection/v2/schema.json",
-  "license": "",
-  "$id": "https://raw.githubusercontent.com/TO_ADD_LATER/schema.json",
+  "license": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/refs/heads/main/LICENSE",
+  "$id": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/openCallSpecific/esp_islopol/RecyclingMaterialCollection/schema.json",
   "title": "Data model for an ISLOPOL recycling material collection",
   "description": "CIRCULOOS data model for a material collection or reception movement in the ISLOPOL value chain, covering the client and transporter involved, the vehicle used, the waste code and stream, the origin and destination, and the mass received.",
   "type": "object",
@@ -134,6 +134,37 @@
         "value"
       ],
       "additionalProperties": false
+    },
+    "WasteStreamProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Property"
+          ]
+        },
+        "value": {
+          "type": "string",
+          "enum": [
+            "Blue Stream",
+            "Yellow Stream",
+            "EPS Stream",
+            "Rejected EPS Stream",
+            "Paper/Cardboard Stream",
+            "Other"
+          ]
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ],
+      "additionalProperties": false
     }
   },
   "allOf": [
@@ -230,6 +261,14 @@
           ],
           "description": "Property. Receiving site, treatment route or sorting destination recorded for the material movement."
         },
+        "timestampDeparture": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/DateTimeProperty"
+            }
+          ],
+          "description": "Property. Date and time when the material movement departed, expressed as an ISO 8601 timestamp."
+        },
         "timestampArrival": {
           "allOf": [
             {
@@ -237,6 +276,14 @@
             }
           ],
           "description": "Property. Date and time of the recorded arrival or reception of the material, expressed as an ISO 8601 timestamp."
+        },
+        "distance": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/QuantityProperty"
+            }
+          ],
+          "description": "Property. Expected unitCode: KMT. Distance travelled by the collection movement."
         },
         "weight": {
           "allOf": [
@@ -249,10 +296,26 @@
         "wasteStream": {
           "allOf": [
             {
-              "$ref": "#/definitions/StringProperty"
+              "$ref": "#/definitions/WasteStreamProperty"
             }
           ],
-          "description": "Property. Classification of the collected material stream."
+          "description": "Property. Classification of the collected material stream: Blue Stream, Yellow Stream, EPS Stream, Rejected EPS Stream, Paper/Cardboard Stream, Other."
+        },
+        "refFactoryOrigin": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/RelationshipProperty"
+            }
+          ],
+          "description": "Relationship. ARM Factory the collection movement departs from, when it departs from an ARM facility."
+        },
+        "refFactoryDestination": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/RelationshipProperty"
+            }
+          ],
+          "description": "Relationship. ARM Factory the collection movement arrives at, when it arrives at an ARM facility."
         }
       }
     }
@@ -260,8 +323,6 @@
   "required": [
     "id",
     "type",
-    "movementKind",
-    "timestampArrival",
     "weight"
   ]
 }

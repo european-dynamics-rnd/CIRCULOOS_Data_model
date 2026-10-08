@@ -16,12 +16,15 @@ Product:
                 - Property
               type: string
             value:
-              type: string
+              items:
+                type: string
+              minItems: 1
+              type: array
           required:
             - type
             - value
           type: object
-      description: Name or identifier of the intended recipient, facility or destination for the product or material. The schema allows a list of destinations.
+      description: Names or identifiers of the intended recipients, facilities or destinations for the product or material.
       x-ngsi:
         type: Property
 
@@ -72,7 +75,20 @@ Product:
     quantity:
       allOf:
         - additionalProperties: no
+          anyOf:
+            - required:
+                - value
+            - required:
+                - minValue
+            - required:
+                - maxValue
           properties:
+            maxValue:
+              description: Upper bound of the value, when the source declares a range or a maximum.
+              type: number
+            minValue:
+              description: Lower bound of the value, when the source declares a range or a minimum.
+              type: number
             observedAt:
               format: date-time
               type: string
@@ -81,14 +97,16 @@ Product:
                 - Property
               type: string
             unitCode:
+              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.
               type: string
             value:
+              description: Exact measured value, when a single figure is known.
               type: number
           required:
             - type
-            - value
+            - unitCode
           type: object
-      description: Amount of the product, material or resource represented by the record, expressed in the accompanying unitCode.
+      description: 'Expected unitCode: KGM, KWH, HUR or EA. Amount of the product, material or resource represented by the record.'
       x-ngsi:
         type: Property
 
@@ -150,12 +168,15 @@ Product:
                 - Property
               type: string
             value:
-              type: string
+              items:
+                type: string
+              minItems: 1
+              type: array
           required:
             - type
             - value
           type: object
-      description: Name or identifier of the organisation or source supplying the product or material. The schema allows a list of suppliers.
+      description: Names or identifiers of the organisations or sources supplying the product or material.
       x-ngsi:
         type: Property
 
@@ -205,27 +226,6 @@ Product:
       x-ngsi:
         type: Property
 
-    unitCode:
-      allOf:
-        - additionalProperties: no
-          properties:
-            observedAt:
-              format: date-time
-              type: string
-            type:
-              enum:
-                - Property
-              type: string
-            value:
-              type: string
-          required:
-            - type
-            - value
-          type: object
-      description: Unit of measurement for quantity.
-      x-ngsi:
-        type: Property
-
     width:
       allOf:
         - additionalProperties: no
@@ -267,8 +267,8 @@ Product:
   required:
     - id
     - type
+    - refProductModel
     - quantity
-    - unitCode
 
   type: object
 
@@ -278,8 +278,8 @@ Product:
 
   x-license-url: https://github.com/smart-data-models/circuloos_data_model/blob/master/Product/LICENSE.md
 
-  x-model-schema: https://raw.githubusercontent.com/TO_ADD_LATER/schema.json
+  x-model-schema: https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/openCallSpecific/esp_islopol/Product/schema.json
 
-  x-model-tags: ''
+  x-model-tags: esp_islopol
 
   x-version: 0.0.1

@@ -1,6 +1,6 @@
 <!-- 10-Header -->  
-Entity: stainless_steels  
-========================<!-- /10-Header -->  
+Entity: StainlessSteelDPP  
+=========================<!-- /10-Header -->  
 <!-- 15-License -->  
 [Open License](https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/refs/heads/main/LICENSE)  
 <!-- /15-License -->  
@@ -21,7 +21,7 @@ Entity: stainless_steels
 	- `postalCode[string]`: Property. The postal code. For example, 24004. Model:'https://schema.org/https://schema.org/postalCode'    
 	- `streetAddress[string]`: Property. The street address. Model:'https://schema.org/streetAddress'    
 	- `streetNr[string]`: Property. Number identifying a specific property on a public street    
-- `alternateName[string]`: An alternative name for this item  - `areaServed[string]`: The geographic area where a service or offered item is provided  . Model: [https://schema.org/Text](https://schema.org/Text)- `dataProvider[string]`: A sequence of characters identifying the provider of the harmonised data entity  - `dateCreated[date-time]`: Entity creation timestamp. This will usually be allocated by the storage platform  - `dateModified[date-time]`: Timestamp of the last modification of the entity. This will usually be allocated by the storage platform  - `description[string]`: A description of this item  - `dppId[*]`: Unique UUID of the Digital Product Passport of this product.  - `endTime[*]`: End time of the Digital Product Passport, as a Unix epoch timestamp in seconds.  - `factoryInternalBarcode[*]`: Product unique identifier (barcode) assigned at the factory.  - `id[string]`: Unique entity identifier, with the format urn:ngsi-ld:<type>:<uuid>.  - `location[*]`: GeoProperty. Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon  - `name[string]`: The name of this item  - `owner[array]`: A List containing a JSON encoded sequence of characters referencing the unique Ids of the owner(s)  - `productName[*]`: Commercial product name.  - `route[*]`: The processes the product goes through, each with its operation name, date, production status and energy consumption.  - `seeAlso[*]`: list of uri pointing to additional resources about the item  - `source[string]`: A sequence of characters giving the original source of the entity data as a URL. Recommended to be the fully qualified domain name of the source provider, or the URL to the source object  - `startTime[*]`: Start time of the Digital Product Passport, as a Unix epoch timestamp in seconds.  - `type[string]`: NGSI Entity type. It has to be stainless_steels  <!-- /30-PropertiesList -->  
+- `alternateName[string]`: An alternative name for this item  - `areaServed[string]`: The geographic area where a service or offered item is provided  . Model: [https://schema.org/Text](https://schema.org/Text)- `dataProvider[string]`: A sequence of characters identifying the provider of the harmonised data entity  - `dateCreated[date-time]`: Entity creation timestamp. This will usually be allocated by the storage platform  - `dateModified[date-time]`: Timestamp of the last modification of the entity. This will usually be allocated by the storage platform  - `description[string]`: A description of this item  - `dppId[*]`: Unique UUID of the Digital Product Passport of this product.  - `endTime[*]`: End time of the Digital Product Passport (ISO 8601 date-time, UTC).  - `factoryInternalBarcode[*]`: Product unique identifier (barcode) assigned at the factory.  - `id[string]`: Unique entity identifier, with the format urn:ngsi-ld:StainlessSteelDPP:<dppId>.  - `location[*]`: GeoProperty. Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon  - `name[string]`: The name of this item  - `owner[array]`: A List containing a JSON encoded sequence of characters referencing the unique Ids of the owner(s)  - `productName[*]`: Commercial product name.  - `route[*]`: The processes the product goes through, each with its operation name, date, production status and energy consumption.  - `seeAlso[*]`: list of uri pointing to additional resources about the item  - `source[string]`: A sequence of characters giving the original source of the entity data as a URL. Recommended to be the fully qualified domain name of the source provider, or the URL to the source object  - `startTime[*]`: Start time of the Digital Product Passport (ISO 8601 date-time, UTC).  - `type[string]`: NGSI Entity type. It has to be StainlessSteelDPP  <!-- /30-PropertiesList -->  
 <!-- 35-RequiredProperties -->  
 Required properties  
 - `dppId`  - `factoryInternalBarcode`  - `id`  - `productName`  - `route`  - `startTime`  - `type`  <!-- /35-RequiredProperties -->  
@@ -34,7 +34,7 @@ Entity: stainless_steels
 <!-- 60-ModelYaml -->  
 <details><summary><strong>full yaml details</strong></summary>    
 ```yaml  
-stainless_steels:    
+StainlessSteelDPP:    
   description: CIRCULOOS data model for the Digital Product Passport of a stainless steel product, covering product identification, production time window and the manufacturing route the product goes through.    
   properties:    
     address:    
@@ -132,16 +132,15 @@ stainless_steels:
               enum:    
                 - Property    
               type: string    
-            unitCode:    
-              type: string    
             value:    
-              description: Property. Unix epoch timestamp in seconds.    
-              type: number    
+              format: date-time    
+              pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$    
+              type: string    
           required:    
             - type    
             - value    
           type: object    
-      description: End time of the Digital Product Passport, as a Unix epoch timestamp in seconds.    
+      description: End time of the Digital Product Passport (ISO 8601 date-time, UTC).    
       x-ngsi:    
         type: Property    
     factoryInternalBarcode:    
@@ -165,7 +164,7 @@ stainless_steels:
       x-ngsi:    
         type: Property    
     id:    
-      description: Unique entity identifier, with the format urn:ngsi-ld:<type>:<uuid>.    
+      description: Unique entity identifier, with the format urn:ngsi-ld:StainlessSteelDPP:<dppId>.    
       type: string    
       x-ngsi:    
         type: Property    
@@ -389,14 +388,15 @@ stainless_steels:
                 additionalProperties: no    
                 properties:    
                   date:    
-                    description: Property. Unix epoch timestamp in seconds at which the operation was performed.    
-                    type: number    
+                    description: Property. Date and time (ISO 8601, UTC) at which the operation was performed.    
+                    format: date-time    
+                    type: string    
                   energyConsumption:    
                     additionalProperties: no    
                     description: Property. Energy consumed for this route step.    
                     properties:    
-                      unit:    
-                        description: Property. Unit of measurement of the consumed energy, for example Wh.    
+                      unitCode:    
+                        description: Property. UN/CEFACT code of the unit of the consumed energy, for example WHR (watt hour).    
                         type: string    
                       value:    
                         description: Property. Energy consumed by this route step.    
@@ -404,7 +404,7 @@ stainless_steels:
                         type: number    
                     required:    
                       - value    
-                      - unit    
+                      - unitCode    
                     type: object    
                   operation:    
                     description: Property. Name of the manufacturing operation performed in this route step, for example Plastic Injection Molding, Metal Cutting or Assembly.    
@@ -454,22 +454,21 @@ stainless_steels:
               enum:    
                 - Property    
               type: string    
-            unitCode:    
-              type: string    
             value:    
-              description: Property. Unix epoch timestamp in seconds.    
-              type: number    
+              format: date-time    
+              pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$    
+              type: string    
           required:    
             - type    
             - value    
           type: object    
-      description: Start time of the Digital Product Passport, as a Unix epoch timestamp in seconds.    
+      description: Start time of the Digital Product Passport (ISO 8601 date-time, UTC).    
       x-ngsi:    
         type: Property    
     type:    
-      description: NGSI Entity type. It has to be stainless_steels    
+      description: NGSI Entity type. It has to be StainlessSteelDPP    
       enum:    
-        - stainless_steels    
+        - StainlessSteelDPP    
       type: string    
       x-ngsi:    
         type: Property    
@@ -484,9 +483,9 @@ stainless_steels:
   type: object    
   x-derived-from: ''    
   x-disclaimer: Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program    
-  x-license-url: https://github.com/smart-data-models/circuloos_data_model/blob/master/stainless_steels/LICENSE.md    
-  x-model-schema: https://raw.githubusercontent.com/TO_ADD_LATER/schema.json    
-  x-model-tags: ''    
+  x-license-url: https://github.com/smart-data-models/circuloos_data_model/blob/master/StainlessSteelDPP/LICENSE.md    
+  x-model-schema: https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/openCallSpecific/stainless_steel_dpp/StainlessSteelDPP/schema.json    
+  x-model-tags: stainless_steel_dpp    
   x-version: 0.0.1    
 ```  
 </details>    
@@ -495,9 +494,9 @@ stainless_steels:
 <!-- /70-MiddleNotes -->  
 <!-- 80-Examples -->  
 ## Example payloads    
-Not available the example of a stainless_steels in JSON-LD format as key-values. This is compatible with NGSI-LD when  using `options=keyValues` and returns the context data of an individual entity.  
-#### stainless_steels NGSI-LD normalized Example    
-Here is an example of a stainless_steels in JSON-LD format as normalized. This is compatible with NGSI-LD when not using options and returns the context data of an individual entity.  
+Not available the example of a StainlessSteelDPP in JSON-LD format as key-values. This is compatible with NGSI-LD when  using `options=keyValues` and returns the context data of an individual entity.  
+#### StainlessSteelDPP NGSI-LD normalized Example    
+Here is an example of a StainlessSteelDPP in JSON-LD format as normalized. This is compatible with NGSI-LD when not using options and returns the context data of an individual entity.  
 <details><summary><strong>show/hide example</strong></summary>    
 ```json  
 {  
@@ -505,65 +504,65 @@ stainless_steels:
     "http://circuloos-ld-context/circuloos-context.jsonld",  
     "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"  
   ],  
-  "id": "urn:ngsi-ld:stainless_steels:e45ceb17-0ea0-4c61-9c12-ab5e0195eb76",  
-  "type": "stainless_steels",  
+  "id": "urn:ngsi-ld:StainlessSteelDPP:6705c58b-dd1d-4087-b520-4ee3c3f71dc7",  
+  "type": "StainlessSteelDPP",  
+  "dppId": {  
+    "type": "Property",  
+    "value": "6705c58b-dd1d-4087-b520-4ee3c3f71dc7",  
+    "observedAt": "2026-03-25T10:04:03.000Z"  
+  },  
   "factoryInternalBarcode": {  
     "type": "Property",  
-    "value": "139770200001",  
-    "observedAt": "2026-08-19T12:11:56.582Z"  
+    "value": "100023659",  
+    "observedAt": "2026-03-25T10:04:03.000Z"  
+  },  
+  "productName": {  
+    "type": "Property",  
+    "value": "MICRO VR N/A - 12(4) (90 CN) T150",  
+    "observedAt": "2026-03-25T10:04:03.000Z"  
   },  
   "startTime": {  
     "type": "Property",  
-    "value": 1768788569,  
-    "observedAt": "2026-08-19T12:11:56.582Z"  
+    "value": "2025-03-13T14:50:00Z",  
+    "observedAt": "2026-03-25T10:04:04.000Z"  
   },  
-  "dppId": {  
+  "endTime": {  
     "type": "Property",  
-    "value": "e45ceb17-0ea0-4c61-9c12-ab5e0195eb76",  
-    "observedAt": "2026-08-19T12:11:56.582Z"  
+    "value": "2025-03-13T14:55:00Z",  
+    "observedAt": "2026-03-25T12:04:04.000Z"  
   },  
   "route": {  
     "type": "Property",  
     "value": [  
       {  
-        "date": -737956952,  
         "operation": "Plastic Injection Molding",  
+        "date": "2025-03-13T14:50:00Z",  
         "productionStatus": "OK",  
         "energyConsumption": {  
-          "unit": "Wh",  
-          "value": 35.03  
+          "value": 18.76,  
+          "unitCode": "WHR"  
         }  
       },  
       {  
-        "date": -734356952,  
         "operation": "Metal Cutting",  
+        "date": "2025-03-13T14:55:00Z",  
         "productionStatus": "OK",  
         "energyConsumption": {  
-          "unit": "Wh",  
-          "value": 3.5  
+          "value": 1.87,  
+          "unitCode": "WHR"  
         }  
       },  
       {  
-        "date": -456813952,  
         "operation": "Assembly",  
+        "date": "2025-03-13T15:00:00Z",  
         "productionStatus": "OK",  
         "energyConsumption": {  
-          "unit": "Wh",  
-          "value": 1.75  
+          "value": 0.93,  
+          "unitCode": "WHR"  
         }  
       }  
     ],  
-    "observedAt": "2026-08-19T12:11:56.582Z"  
-  },  
-  "productName": {  
-    "type": "Property",  
-    "value": "MICRO VR N/A - 12(4) (90 CN) T150",  
-    "observedAt": "2026-08-19T12:11:56.582Z"  
-  },  
-  "endTime": {  
-    "type": "Property",  
-    "value": 1768788586,  
-    "observedAt": "2026-08-19T12:11:56.582Z"  
+    "observedAt": "2026-03-25T12:04:04.000Z"  
   }  
 }  
 ```  

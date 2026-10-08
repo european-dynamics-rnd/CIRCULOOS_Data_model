@@ -3,56 +3,66 @@
     "http://circuloos-ld-context/circuloos-context.jsonld",
     "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"
   ],
-  "id": "urn:ngsi-ld:circuloos:Reclaim:iot-001",
-  "type": "Iot_UV5",
-  "T1": {
-    "type": "Property",
-    "value": 43.234649,
-    "observedAt": "2026-06-30T17:50:00.000Z"
-  },
-  "VS": {
-    "type": "Property",
-    "value": 10254,
-    "observedAt": "2026-06-30T17:50:00.000Z"
-  },
-  "IX": {
-    "type": "Property",
-    "value": 1.435287,
-    "observedAt": "2026-06-30T17:50:00.000Z"
-  },
-  "IS": {
-    "type": "Property",
-    "value": 3.677316,
-    "observedAt": "2026-06-30T17:50:00.000Z"
-  },
-  "VZ": {
-    "type": "Property",
-    "value": 40.608215,
-    "observedAt": "2026-06-30T17:50:00.000Z"
-  },
-  "Te": {
+  "id": "urn:ngsi-ld:ElectrospindleObservation:Reclaim:iot-001",
+  "type": "ElectrospindleObservation",
+  "spindleMotorTemperature": {
     "type": "Property",
     "value": 46.172063,
+    "unitCode": "CEL",
     "observedAt": "2026-06-30T17:50:00.000Z"
   },
-  "IZ": {
+  "spindleBearingTemperature": {
     "type": "Property",
-    "value": 2.208068,
+    "value": 43.234649,
+    "unitCode": "CEL",
     "observedAt": "2026-06-30T17:50:00.000Z"
   },
-  "IY": {
+  "xAxisMotorCurrent": {
+    "type": "Property",
+    "value": 1.435287,
+    "unitCode": "AMP",
+    "observedAt": "2026-06-30T17:50:00.000Z"
+  },
+  "yAxisMotorCurrent": {
     "type": "Property",
     "value": 1.706294,
+    "unitCode": "AMP",
     "observedAt": "2026-06-30T17:50:00.000Z"
   },
-  "VY": {
+  "zAxisMotorCurrent": {
     "type": "Property",
-    "value": 1.117344,
+    "value": 2.208068,
+    "unitCode": "AMP",
     "observedAt": "2026-06-30T17:50:00.000Z"
   },
-  "VX": {
+  "spindleMotorCurrent": {
+    "type": "Property",
+    "value": 3.677316,
+    "unitCode": "AMP",
+    "observedAt": "2026-06-30T17:50:00.000Z"
+  },
+  "xAxisMotorSpeed": {
     "type": "Property",
     "value": 10.542505,
+    "unitCode": "RPM",
+    "observedAt": "2026-06-30T17:50:00.000Z"
+  },
+  "yAxisMotorSpeed": {
+    "type": "Property",
+    "value": 1.117344,
+    "unitCode": "RPM",
+    "observedAt": "2026-06-30T17:50:00.000Z"
+  },
+  "zAxisMotorSpeed": {
+    "type": "Property",
+    "value": 40.608215,
+    "unitCode": "RPM",
+    "observedAt": "2026-06-30T17:50:00.000Z"
+  },
+  "spindleSpeed": {
+    "type": "Property",
+    "value": 10254,
+    "unitCode": "RPM",
     "observedAt": "2026-06-30T17:50:00.000Z"
   }
 }

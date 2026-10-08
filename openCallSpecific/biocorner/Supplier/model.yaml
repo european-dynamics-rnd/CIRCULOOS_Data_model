@@ -16,33 +16,29 @@ Supplier:
                 - Property
               type: string
             value:
-              type: string
+              additionalProperties: no
+              properties:
+                addressCountry:
+                  description: The country. Model:'https://schema.org/addressCountry'
+                  type: string
+                addressLocality:
+                  description: The locality in which the street address is. Model:'https://schema.org/addressLocality'
+                  type: string
+                addressRegion:
+                  description: The region in which the locality is. Model:'https://schema.org/addressRegion'
+                  type: string
+                postalCode:
+                  description: The postal code. Model:'https://schema.org/postalCode'
+                  type: string
+                streetAddress:
+                  description: The street address. Model:'https://schema.org/streetAddress'
+                  type: string
+              type: object
           required:
             - type
             - value
           type: object
-      description: The mailing address of the supplier facility.
-      x-ngsi:
-        type: Property
-
-    city:
-      allOf:
-        - additionalProperties: no
-          properties:
-            observedAt:
-              format: date-time
-              type: string
-            type:
-              enum:
-                - Property
-              type: string
-            value:
-              type: string
-          required:
-            - type
-            - value
-          type: object
-      description: The city in which the supplier facility is located.
+      description: Postal address of the supplier facility as a structured object (street, locality, region, country, postal code), following the schema.org PostalAddress format. addressRegion holds the administrative region where the facility is located, a key parameter for regional circular economy indicators.
       x-ngsi:
         type: Property
 
@@ -85,27 +81,6 @@ Supplier:
             - value
           type: object
       description: Name of the designated contact person responsible for material supply coordination at this facility.
-      x-ngsi:
-        type: Property
-
-    country:
-      allOf:
-        - additionalProperties: no
-          properties:
-            observedAt:
-              format: date-time
-              type: string
-            type:
-              enum:
-                - Property
-              type: string
-            value:
-              type: string
-          required:
-            - type
-            - value
-          type: object
-      description: The country in which the supplier facility is located.
       x-ngsi:
         type: Property
 
@@ -197,56 +172,17 @@ Supplier:
       x-ngsi:
         type: Relationship
 
-    postalCode:
-      allOf:
-        - additionalProperties: no
-          properties:
-            observedAt:
-              format: date-time
-              type: string
-            type:
-              enum:
-                - Property
-              type: string
-            value:
-              type: string
-          required:
-            - type
-            - value
-          type: object
-      description: The postal code of the supplier facility address.
-      x-ngsi:
-        type: Property
-
-    region:
-      allOf:
-        - additionalProperties: no
-          properties:
-            observedAt:
-              format: date-time
-              type: string
-            type:
-              enum:
-                - Property
-              type: string
-            value:
-              type: string
-          required:
-            - type
-            - value
-          type: object
-      description: Administrative region where the supplier facility is located. Key parameter for regional circular economy indicators.
-      x-ngsi:
-        type: Property
-
-    suppliesSRM1:
+    suppliesSRM:
       allOf:
         - additionalProperties: no
           properties:
             object:
-              description: URN of the referenced entity, with the format urn:ngsi-ld:<type>:<id>.
-              pattern: ^urn:ngsi-ld:[A-Za-z0-9_]+:.+$
-              type: string
+              description: URNs of the referenced entities, each with the format urn:ngsi-ld:<type>:<id>.
+              items:
+                pattern: ^urn:ngsi-ld:[A-Za-z0-9_]+:.+$
+                type: string
+              minItems: 1
+              type: array
             observedAt:
               format: date-time
               type: string
@@ -258,30 +194,7 @@ Supplier:
             - type
             - object
           type: object
-      description: Relationship to the first SRM entity type supplied by this facility. Establishes which secondary raw materials originate from this point in the supply chain.
-      x-ngsi:
-        type: Relationship
-
-    suppliesSRM2:
-      allOf:
-        - additionalProperties: no
-          properties:
-            object:
-              description: URN of the referenced entity, with the format urn:ngsi-ld:<type>:<id>.
-              pattern: ^urn:ngsi-ld:[A-Za-z0-9_]+:.+$
-              type: string
-            observedAt:
-              format: date-time
-              type: string
-            type:
-              enum:
-                - Relationship
-              type: string
-          required:
-            - type
-            - object
-          type: object
-      description: Relationship to the second SRM entity type supplied by this facility, when the supplier provides multiple material types.
+      description: SRM entity types supplied by this facility. Establishes which secondary raw materials originate from this point in the supply chain.
       x-ngsi:
         type: Relationship
 
@@ -319,7 +232,7 @@ Supplier:
     - type
     - name
     - operatedBy
-    - suppliesSRM1
+    - suppliesSRM
 
   type: object
 
@@ -329,8 +242,8 @@ Supplier:
 
   x-license-url: https://github.com/smart-data-models/circuloos_data_model/blob/master/Supplier/LICENSE.md
 
-  x-model-schema: https://raw.githubusercontent.com/TO_ADD_LATER/schema.json
+  x-model-schema: https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/openCallSpecific/biocorner/Supplier/schema.json
 
-  x-model-tags: ''
+  x-model-tags: biocorner
 
   x-version: 0.0.1

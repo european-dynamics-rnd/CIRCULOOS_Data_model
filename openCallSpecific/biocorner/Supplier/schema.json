@@ -1,14 +1,60 @@
 {
   "$schema": "http://json-schema.org/schema#",
   "$schemaVersion": "0.0.1",
-  "modelTags": "",
+  "modelTags": "biocorner",
   "derivedFrom": "",
-  "license": "",
-  "$id": "https://raw.githubusercontent.com/TO_ADD_LATER/schema.json",
+  "license": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/refs/heads/main/LICENSE",
+  "$id": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/openCallSpecific/biocorner/Supplier/schema.json",
   "title": "Data model for a Biocorner secondary raw material supplier",
   "description": "CIRCULOOS data model for a supplier facility or collection point delivering secondary raw materials to Biocorner mortar production, covering its location, contact details, transport mode and distance to the manufacturer.",
   "type": "object",
   "definitions": {
+    "AddressProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Property"
+          ]
+        },
+        "value": {
+          "type": "object",
+          "properties": {
+            "streetAddress": {
+              "type": "string",
+              "description": "The street address. Model:'https://schema.org/streetAddress'"
+            },
+            "addressLocality": {
+              "type": "string",
+              "description": "The locality in which the street address is. Model:'https://schema.org/addressLocality'"
+            },
+            "addressRegion": {
+              "type": "string",
+              "description": "The region in which the locality is. Model:'https://schema.org/addressRegion'"
+            },
+            "addressCountry": {
+              "type": "string",
+              "description": "The country. Model:'https://schema.org/addressCountry'"
+            },
+            "postalCode": {
+              "type": "string",
+              "description": "The postal code. Model:'https://schema.org/postalCode'"
+            }
+          },
+          "additionalProperties": false
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ],
+      "additionalProperties": false
+    },
     "QuantityProperty": {
       "type": "object",
       "properties": {
@@ -59,6 +105,35 @@
             "maxValue"
           ]
         }
+      ],
+      "additionalProperties": false
+    },
+    "RelationshipArrayProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Relationship"
+          ]
+        },
+        "object": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^urn:ngsi-ld:[A-Za-z0-9_]+:.+$"
+          },
+          "minItems": 1,
+          "description": "URNs of the referenced entities, each with the format urn:ngsi-ld:<type>:<id>."
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "object"
       ],
       "additionalProperties": false
     },
@@ -141,21 +216,13 @@
           ],
           "description": "Relationship. Relationship to the Organization entity that operates this supplier facility."
         },
-        "suppliesSRM1": {
+        "suppliesSRM": {
           "allOf": [
             {
-              "$ref": "#/definitions/RelationshipProperty"
+              "$ref": "#/definitions/RelationshipArrayProperty"
             }
           ],
-          "description": "Relationship. Relationship to the first SRM entity type supplied by this facility. Establishes which secondary raw materials originate from this point in the supply chain."
-        },
-        "suppliesSRM2": {
-          "allOf": [
-            {
-              "$ref": "#/definitions/RelationshipProperty"
-            }
-          ],
-          "description": "Relationship. Relationship to the second SRM entity type supplied by this facility, when the supplier provides multiple material types."
+          "description": "Relationship. SRM entity types supplied by this facility. Establishes which secondary raw materials originate from this point in the supply chain."
         },
         "contactPerson": {
           "allOf": [
@@ -176,42 +243,10 @@
         "address": {
           "allOf": [
             {
-              "$ref": "#/definitions/StringProperty"
+              "$ref": "#/definitions/AddressProperty"
             }
           ],
-          "description": "Property. The mailing address of the supplier facility."
-        },
-        "city": {
-          "allOf": [
-            {
-              "$ref": "#/definitions/StringProperty"
-            }
-          ],
-          "description": "Property. The city in which the supplier facility is located."
-        },
-        "region": {
-          "allOf": [
-            {
-              "$ref": "#/definitions/StringProperty"
-            }
-          ],
-          "description": "Property. Administrative region where the supplier facility is located. Key parameter for regional circular economy indicators."
-        },
-        "postalCode": {
-          "allOf": [
-            {
-              "$ref": "#/definitions/StringProperty"
-            }
-          ],
-          "description": "Property. The postal code of the supplier facility address."
-        },
-        "country": {
-          "allOf": [
-            {
-              "$ref": "#/definitions/StringProperty"
-            }
-          ],
-          "description": "Property. The country in which the supplier facility is located."
+          "description": "Property. Postal address of the supplier facility as a structured object (street, locality, region, country, postal code), following the schema.org PostalAddress format. addressRegion holds the administrative region where the facility is located, a key parameter for regional circular economy indicators."
         },
         "transportationMode": {
           "allOf": [
@@ -237,6 +272,6 @@
     "type",
     "name",
     "operatedBy",
-    "suppliesSRM1"
+    "suppliesSRM"
   ]
 }

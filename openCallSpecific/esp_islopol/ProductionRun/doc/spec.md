@@ -13,10 +13,10 @@ Entity: ProductionRun
 ## List of properties  
 
 <sup><sub>[*] If there is not a type in an attribute is because it could have several types or different formats/patterns</sub></sup>  
-- `endDate[*]`: Date and time when the production run actually ended, expressed as an ISO 8601 timestamp. Together with startDate, it defines the recorded duration of the run.  - `id[string]`: Unique entity identifier, with the format urn:ngsi-ld:ProductionRun:<facility>:<process>:<timestamp>.  - `refInputProducts[*]`: Identifiers of the Product entities used during the production run. The referenced Product records specify input quantities and units.  - `refOutputProducts[*]`: Identifiers of the Product entities produced by the run. The referenced Product records specify output quantities and units.  - `refProcess[*]`: Identifier of the Process entity defining the production or transformation operation performed during the run.  - `startDate[*]`: Date and time when the production run actually started, expressed as an ISO 8601 timestamp. This can differ from the date embedded in the record identifier.  - `type[string]`: NGSI Entity type. It has to be ProductionRun  <!-- /30-PropertiesList -->  
+- `description[*]`: Human-readable description of the production run or operator notes.  - `endDate[*]`: Date and time when the production run actually ended, expressed as an ISO 8601 timestamp. Together with startDate, it defines the recorded duration of the run.  - `id[string]`: Unique entity identifier, with the format urn:ngsi-ld:ProductionRun:<facility>:<process>:<timestamp>.  - `refInputProducts[*]`: Identifiers of the Product entities used during the production run. The referenced Product records specify input quantities and units.  - `refLcaId[*]`: Reference identifier used for LCA traceability.  - `refOutputProducts[*]`: Identifiers of the Product entities produced by the run. The referenced Product records specify output quantities and units.  - `refProcess[*]`: Identifier of the Process entity defining the production or transformation operation performed during the run.  - `startDate[*]`: Date and time when the production run actually started, expressed as an ISO 8601 timestamp. This can differ from the date embedded in the record identifier.  - `type[string]`: NGSI Entity type. It has to be ProductionRun  <!-- /30-PropertiesList -->  
 <!-- 35-RequiredProperties -->  
 Required properties  
-- `id`  - `refProcess`  - `startDate`  - `type`  <!-- /35-RequiredProperties -->  
+- `endDate`  - `id`  - `startDate`  - `type`  <!-- /35-RequiredProperties -->  
 <!-- 40-RequiredProperties -->  
 <!-- /40-RequiredProperties -->  
 <!-- 50-DataModelHeader -->  
@@ -29,6 +29,26 @@ Entity: ProductionRun
 ProductionRun:    
   description: CIRCULOOS data model for a specific production or transformation run in the ISLOPOL value chain, covering the period over which it ran, the process performed and the input and output products involved.    
   properties:    
+    description:    
+      allOf:    
+        - additionalProperties: no    
+          properties:    
+            observedAt:    
+              format: date-time    
+              type: string    
+            type:    
+              enum:    
+                - Property    
+              type: string    
+            value:    
+              type: string    
+          required:    
+            - type    
+            - value    
+          type: object    
+      description: Human-readable description of the production run or operator notes.    
+      x-ngsi:    
+        type: Property    
     endDate:    
       allOf:    
         - additionalProperties: no    
@@ -61,12 +81,15 @@ ProductionRun:
         - additionalProperties: no    
           properties:    
             object:    
-              description: URNs of the referenced entities.    
-              items:    
-                pattern: ^urn:ngsi-ld:.+$    
-                type: string    
-              minItems: 1    
-              type: array    
+              description: URN of the referenced entity, or a list of URNs.    
+              oneOf:    
+                - pattern: ^urn:ngsi-ld:.+$    
+                  type: string    
+                - items:    
+                    pattern: ^urn:ngsi-ld:.+$    
+                    type: string    
+                  minItems: 1    
+                  type: array    
             observedAt:    
               format: date-time    
               type: string    
@@ -81,17 +104,40 @@ ProductionRun:
       description: Identifiers of the Product entities used during the production run. The referenced Product records specify input quantities and units.    
       x-ngsi:    
         type: Relationship    
+    refLcaId:    
+      allOf:    
+        - additionalProperties: no    
+          properties:    
+            observedAt:    
+              format: date-time    
+              type: string    
+            type:    
+              enum:    
+                - Property    
+              type: string    
+            value:    
+              type: string    
+          required:    
+            - type    
+            - value    
+          type: object    
+      description: Reference identifier used for LCA traceability.    
+      x-ngsi:    
+        type: Property    
     refOutputProducts:    
       allOf:    
         - additionalProperties: no    
           properties:    
             object:    
-              description: URNs of the referenced entities.    
-              items:    
-                pattern: ^urn:ngsi-ld:.+$    
-                type: string    
-              minItems: 1    
-              type: array    
+              description: URN of the referenced entity, or a list of URNs.    
+              oneOf:    
+                - pattern: ^urn:ngsi-ld:.+$    
+                  type: string    
+                - items:    
+                    pattern: ^urn:ngsi-ld:.+$    
+                    type: string    
+                  minItems: 1    
+                  type: array    
             observedAt:    
               format: date-time    
               type: string    
@@ -160,14 +206,14 @@ ProductionRun:
   required:    
     - id    
     - type    
-    - refProcess    
     - startDate    
+    - endDate    
   type: object    
   x-derived-from: https://context.dataspace-arditi.com/islopol/entities/ProductionRun/v2/schema.json    
   x-disclaimer: Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program    
   x-license-url: https://github.com/smart-data-models/circuloos_data_model/blob/master/ProductionRun/LICENSE.md    
-  x-model-schema: https://raw.githubusercontent.com/TO_ADD_LATER/schema.json    
-  x-model-tags: ''    
+  x-model-schema: https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/openCallSpecific/esp_islopol/ProductionRun/schema.json    
+  x-model-tags: esp_islopol    
   x-version: 0.0.1    
 ```  
 </details>    

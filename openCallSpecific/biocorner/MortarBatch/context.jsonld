@@ -18,10 +18,7 @@
         "producedFromRecipe": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/producedFromRecipe",
         "type": "@type",
         "usedProcess": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/usedProcess",
-        "usedSRMBatches1": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/usedSRMBatches1",
-        "usedSRMBatches2": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/usedSRMBatches2",
-        "usedSRMBatches3": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/usedSRMBatches3",
-        "usedSRMBatches4": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/usedSRMBatches4",
+        "usedSRMBatches": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/usedSRMBatches",
         "value": "https://uri.etsi.org/ngsi-ld/hasValue"
     }
 }

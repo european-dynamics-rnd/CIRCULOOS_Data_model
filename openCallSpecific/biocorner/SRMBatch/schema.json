@@ -1,10 +1,10 @@
 {
   "$schema": "http://json-schema.org/schema#",
   "$schemaVersion": "0.0.1",
-  "modelTags": "",
+  "modelTags": "biocorner",
   "derivedFrom": "",
-  "license": "",
-  "$id": "https://raw.githubusercontent.com/TO_ADD_LATER/schema.json",
+  "license": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/refs/heads/main/LICENSE",
+  "$id": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/openCallSpecific/biocorner/SRMBatch/schema.json",
   "title": "Data model for a Biocorner secondary raw material batch",
   "description": "CIRCULOOS data model for a delivered batch of a secondary raw material used in Biocorner bio-based mortar production, covering its origin, supplier, reception date and the measured quantity and quality parameters of the delivery.",
   "type": "object",

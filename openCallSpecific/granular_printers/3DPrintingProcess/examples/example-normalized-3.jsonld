@@ -1,0 +1,63 @@
+{
+  "@context": [
+    "http://circuloos-ld-context/circuloos-context.jsonld",
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"
+  ],
+  "id": "urn:ngsi-ld:3DPrintingProcess:cartesian-printer:print-2026-02-06-001:data-1",
+  "type": "3DPrintingProcess",
+  "temperatureInput": {
+    "type": "Property",
+    "value": 18.417245,
+    "unitCode": "CEL"
+  },
+  "temperatureOutput": {
+    "type": "Property",
+    "value": 23.58941,
+    "unitCode": "CEL"
+  },
+  "additiveFlowRateSetPoint": {
+    "type": "Property",
+    "value": 0.006872,
+    "unitCode": "P1"
+  },
+  "additiveFlowRate": {
+    "type": "Property",
+    "value": 0.24,
+    "unitCode": "LTR/HUR"
+  },
+  "slurryFlowRate": {
+    "type": "Property",
+    "value": 6.0,
+    "unitCode": "LTR/HUR"
+  },
+  "motorIntensity": {
+    "type": "Property",
+    "value": 0.014829,
+    "unitCode": "AMP"
+  },
+  "rotationSpeed": {
+    "type": "Property",
+    "value": 100.0,
+    "unitCode": "RPM"
+  },
+  "pressure": {
+    "type": "Property",
+    "value": 8.471499,
+    "unitCode": "BAR"
+  },
+  "printingTime": {
+    "type": "Property",
+    "value": 0.016667,
+    "unitCode": "MIN"
+  },
+  "printingSpeed": {
+    "type": "Property",
+    "value": 900.0,
+    "unitCode": "H81"
+  },
+  "zPosition": {
+    "type": "Property",
+    "value": 189.25625,
+    "unitCode": "MMT"
+  }
+}

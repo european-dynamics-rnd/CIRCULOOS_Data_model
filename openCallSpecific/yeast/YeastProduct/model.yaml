@@ -266,8 +266,8 @@ YeastProduct:
 
   x-license-url: https://github.com/smart-data-models/circuloos_data_model/blob/master/YeastProduct/LICENSE.md
 
-  x-model-schema: https://raw.githubusercontent.com/TO_ADD_LATER/schema.json
+  x-model-schema: https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/openCallSpecific/yeast/YeastProduct/schema.json
 
-  x-model-tags: ''
+  x-model-tags: yeast
 
   x-version: 0.0.1

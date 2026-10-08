@@ -1,15 +1,15 @@
 {
   "$schema": "http://json-schema.org/schema#",
   "$schemaVersion": "0.0.1",
-  "modelTags": "",
+  "modelTags": "biocorner",
   "derivedFrom": "",
-  "license": "",
-  "$id": "https://raw.githubusercontent.com/TO_ADD_LATER/schema.json",
+  "license": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/refs/heads/main/LICENSE",
+  "$id": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/openCallSpecific/biocorner/MortarProcess/schema.json",
   "title": "Data model for a Biocorner mortar manufacturing process",
   "description": "CIRCULOOS data model for a Biocorner mortar manufacturing process, covering the energy, water, waste and carbon dioxide figures recorded per functional unit of production at the manufacturing facility boundary.",
   "type": "object",
   "definitions": {
-    "DateProperty": {
+    "DateTimeProperty": {
       "type": "object",
       "properties": {
         "type": {
@@ -20,8 +20,8 @@
         },
         "value": {
           "type": "string",
-          "format": "date",
-          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+          "format": "date-time",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$"
         },
         "observedAt": {
           "type": "string",
@@ -116,13 +116,13 @@
       "properties": {
         "id": {
           "type": "string",
-          "description": "Property. Unique entity identifier, with the format urn:ngsi-ld:Process:<id>."
+          "description": "Property. Unique entity identifier, with the format urn:ngsi-ld:MortarProcess:<id>."
         },
         "type": {
           "type": "string",
-          "description": "Property. NGSI Entity type. It has to be Process",
+          "description": "Property. NGSI Entity type. It has to be MortarProcess",
           "enum": [
-            "Process"
+            "MortarProcess"
           ]
         },
         "name": {
@@ -184,7 +184,7 @@
         "dateCreated": {
           "allOf": [
             {
-              "$ref": "#/definitions/DateProperty"
+              "$ref": "#/definitions/DateTimeProperty"
             }
           ],
           "description": "Property. Date at which the entity was created."

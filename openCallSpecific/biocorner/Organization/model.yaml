@@ -16,33 +16,29 @@ Organization:
                 - Property
               type: string
             value:
-              type: string
+              additionalProperties: no
+              properties:
+                addressCountry:
+                  description: The country. Model:'https://schema.org/addressCountry'
+                  type: string
+                addressLocality:
+                  description: The locality in which the street address is. Model:'https://schema.org/addressLocality'
+                  type: string
+                addressRegion:
+                  description: The region in which the locality is. Model:'https://schema.org/addressRegion'
+                  type: string
+                postalCode:
+                  description: The postal code. Model:'https://schema.org/postalCode'
+                  type: string
+                streetAddress:
+                  description: The street address. Model:'https://schema.org/streetAddress'
+                  type: string
+              type: object
           required:
             - type
             - value
           type: object
-      description: The mailing address of the organization.
-      x-ngsi:
-        type: Property
-
-    city:
-      allOf:
-        - additionalProperties: no
-          properties:
-            observedAt:
-              format: date-time
-              type: string
-            type:
-              enum:
-                - Property
-              type: string
-            value:
-              type: string
-          required:
-            - type
-            - value
-          type: object
-      description: The city in which the organization is located.
+      description: Postal address of the organization as a structured object (street, locality, region, country, postal code), following the schema.org PostalAddress format. addressRegion holds the administrative region where the organization is headquartered, used for regional supply chain mapping and geographic analysis.
       x-ngsi:
         type: Property
 
@@ -85,27 +81,6 @@ Organization:
             - value
           type: object
       description: Telephone number of the organization.
-      x-ngsi:
-        type: Property
-
-    country:
-      allOf:
-        - additionalProperties: no
-          properties:
-            observedAt:
-              format: date-time
-              type: string
-            type:
-              enum:
-                - Property
-              type: string
-            value:
-              type: string
-          required:
-            - type
-            - value
-          type: object
-      description: The country in which the organization is located.
       x-ngsi:
         type: Property
 
@@ -154,48 +129,6 @@ Organization:
             - value
           type: object
       description: Full official name of the organization as registered in public records, including legal suffix where applicable.
-      x-ngsi:
-        type: Property
-
-    postalCode:
-      allOf:
-        - additionalProperties: no
-          properties:
-            observedAt:
-              format: date-time
-              type: string
-            type:
-              enum:
-                - Property
-              type: string
-            value:
-              type: string
-          required:
-            - type
-            - value
-          type: object
-      description: The postal code of the organization address.
-      x-ngsi:
-        type: Property
-
-    region:
-      allOf:
-        - additionalProperties: no
-          properties:
-            observedAt:
-              format: date-time
-              type: string
-            type:
-              enum:
-                - Property
-              type: string
-            value:
-              type: string
-          required:
-            - type
-            - value
-          type: object
-      description: Administrative region where the organization is headquartered. Used for regional supply chain mapping and geographic analysis.
       x-ngsi:
         type: Property
 
@@ -306,8 +239,8 @@ Organization:
 
   x-license-url: https://github.com/smart-data-models/circuloos_data_model/blob/master/Organization/LICENSE.md
 
-  x-model-schema: https://raw.githubusercontent.com/TO_ADD_LATER/schema.json
+  x-model-schema: https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/openCallSpecific/biocorner/Organization/schema.json
 
-  x-model-tags: ''
+  x-model-tags: biocorner
 
   x-version: 0.0.1

@@ -12,6 +12,7 @@
             "@type": "https://uri.etsi.org/ngsi-ld/DateTime"
         },
         "pressure": "https://smartdatamodels.org/dataModel.Environment/pressure",
+        "printingSpeed": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/printingSpeed",
         "printingTime": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/printingTime",
         "rotationSpeed": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/rotationSpeed",
         "slurryFlowRate": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/slurryFlowRate",
@@ -19,6 +20,7 @@
         "temperatureOutput": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/temperatureOutput",
         "type": "@type",
         "unitCode": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/unitCode",
-        "value": "https://uri.etsi.org/ngsi-ld/hasValue"
+        "value": "https://uri.etsi.org/ngsi-ld/hasValue",
+        "zPosition": "https://smartdatamodels.org/dataModel.EnergyCIM/zPosition"
     }
 }

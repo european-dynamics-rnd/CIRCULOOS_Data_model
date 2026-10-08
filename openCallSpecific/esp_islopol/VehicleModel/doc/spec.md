@@ -16,7 +16,7 @@ Entity: VehicleModel
 - `brandName[*]`: Brand or marque of the vehicle model.  - `cargoVolume[*]`: Expected unitCode: LTR. Cargo volume specified for the vehicle model.  - `fuelType[*]`: Fuel or energy type used by vehicles of this model. Given in the source as https://schema.org/fuelType.  - `id[string]`:   . Model: [Unique entity identifier, with the format urn:ngsi-ld:Vehicle<brand>_<model>.](Unique entity identifier, with the format urn:ngsi-ld:Vehicle<brand>_<model>.)- `modelName[*]`: Manufacturer's model designation.  - `name[*]`: Human-readable name of the vehicle model, typically combining the brand and model designation. Given in the source as https://schema.org/name.  - `type[string]`: NGSI Entity type. It has to be VehicleModel  - `weight[*]`: Expected unitCode: KGM. Vehicle weight recorded for the model. Given in the source as https://schema.org/weight.  <!-- /30-PropertiesList -->  
 <!-- 35-RequiredProperties -->  
 Required properties  
-- `id`  - `name`  - `type`  <!-- /35-RequiredProperties -->  
+- `id`  - `type`  <!-- /35-RequiredProperties -->  
 <!-- 40-RequiredProperties -->  
 <!-- /40-RequiredProperties -->  
 <!-- 50-DataModelHeader -->  
@@ -98,6 +98,22 @@ VehicleModel:
                 - Property    
               type: string    
             value:    
+              enum:    
+                - autogas    
+                - biodiesel    
+                - cng    
+                - diesel    
+                - electric    
+                - ethanol    
+                - gasoline    
+                - hybrid_electric_diesel    
+                - hybrid_electric_petrol    
+                - hydrogen    
+                - lpg    
+                - petrol    
+                - petrol(unleaded)    
+                - petrol(leaded)    
+                - other    
               type: string    
           required:    
             - type    
@@ -199,13 +215,12 @@ VehicleModel:
   required:    
     - id    
     - type    
-    - name    
   type: object    
   x-derived-from: https://context.dataspace-arditi.com/islopol/entities/VehicleModel/v2/schema.json    
   x-disclaimer: Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program    
   x-license-url: https://github.com/smart-data-models/circuloos_data_model/blob/master/VehicleModel/LICENSE.md    
-  x-model-schema: https://raw.githubusercontent.com/TO_ADD_LATER/schema.json    
-  x-model-tags: ''    
+  x-model-schema: https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/openCallSpecific/esp_islopol/VehicleModel/schema.json    
+  x-model-tags: esp_islopol    
   x-version: 0.0.1    
 ```  
 </details>    

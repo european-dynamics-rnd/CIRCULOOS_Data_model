@@ -1,10 +1,10 @@
 {
   "$schema": "http://json-schema.org/schema#",
   "$schemaVersion": "0.0.1",
-  "modelTags": "",
+  "modelTags": "esp_islopol",
   "derivedFrom": "https://context.dataspace-arditi.com/islopol/entities/Process/v2/schema.json",
-  "license": "",
-  "$id": "https://raw.githubusercontent.com/TO_ADD_LATER/schema.json",
+  "license": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/refs/heads/main/LICENSE",
+  "$id": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/openCallSpecific/esp_islopol/Process/schema.json",
   "title": "Data model for an ISLOPOL process definition",
   "description": "CIRCULOOS data model for a reusable process definition in the ISLOPOL value chain, which can be referenced by multiple ProcessEvent or ProductionRun records, covering its name, purpose and triggering condition.",
   "type": "object",

@@ -1,6 +1,6 @@
 <!-- 10-Header -->  
-Entity: Process  
-===============<!-- /10-Header -->  
+Entity: MortarProcess  
+=====================<!-- /10-Header -->  
 <!-- 15-License -->  
 [Open License](https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/refs/heads/main/LICENSE)  
 <!-- /15-License -->  
@@ -13,7 +13,7 @@ Entity: Process
 ## List of properties  
 
 <sup><sub>[*] If there is not a type in an attribute is because it could have several types or different formats/patterns</sub></sup>  
-- `CO2emission[*]`: Expected unitCode: KGM/TNE. Carbon dioxide equivalent emissions per functional unit of production. Covers direct process emissions at the manufacturing facility boundary.  - `dateCreated[*]`: Date at which the entity was created.  - `description[*]`: Technical description of the manufacturing process including equipment type, automation level, and key control parameters.  - `energyConsumption[*]`: Expected unitCode: KWH/TNE. Electrical and thermal energy consumed per functional unit of production. Measured at the manufacturing facility boundary.  - `id[string]`: Unique entity identifier, with the format urn:ngsi-ld:Process:<id>.  - `name[*]`: Descriptive name identifying the process variant, including the product type and version number for traceability across process iterations.  - `recyclingProcess[*]`: Description of how production waste and off-spec material can be recirculated or recovered within the manufacturing process or downstream.  - `type[string]`: NGSI Entity type. It has to be Process  - `wasteGeneration[*]`: Expected unitCode: KGM/TNE. Total solid waste generated per functional unit of production. Includes off-spec material, cleaning residues, and packaging waste.  - `waterConsumption[*]`: Expected unitCode: LTR/TNE. Total water consumed per functional unit of production. Includes process water and cleaning water at the manufacturing facility.  <!-- /30-PropertiesList -->  
+- `CO2emission[*]`: Expected unitCode: KGM/TNE. Carbon dioxide equivalent emissions per functional unit of production. Covers direct process emissions at the manufacturing facility boundary.  - `dateCreated[*]`: Date at which the entity was created.  - `description[*]`: Technical description of the manufacturing process including equipment type, automation level, and key control parameters.  - `energyConsumption[*]`: Expected unitCode: KWH/TNE. Electrical and thermal energy consumed per functional unit of production. Measured at the manufacturing facility boundary.  - `id[string]`: Unique entity identifier, with the format urn:ngsi-ld:MortarProcess:<id>.  - `name[*]`: Descriptive name identifying the process variant, including the product type and version number for traceability across process iterations.  - `recyclingProcess[*]`: Description of how production waste and off-spec material can be recirculated or recovered within the manufacturing process or downstream.  - `type[string]`: NGSI Entity type. It has to be MortarProcess  - `wasteGeneration[*]`: Expected unitCode: KGM/TNE. Total solid waste generated per functional unit of production. Includes off-spec material, cleaning residues, and packaging waste.  - `waterConsumption[*]`: Expected unitCode: LTR/TNE. Total water consumed per functional unit of production. Includes process water and cleaning water at the manufacturing facility.  <!-- /30-PropertiesList -->  
 <!-- 35-RequiredProperties -->  
 Required properties  
 - `id`  - `name`  - `type`  <!-- /35-RequiredProperties -->  
@@ -26,7 +26,7 @@ Entity: Process
 <!-- 60-ModelYaml -->  
 <details><summary><strong>full yaml details</strong></summary>    
 ```yaml  
-Process:    
+MortarProcess:    
   description: CIRCULOOS data model for a Biocorner mortar manufacturing process, covering the energy, water, waste and carbon dioxide figures recorded per functional unit of production at the manufacturing facility boundary.    
   properties:    
     CO2emission:    
@@ -78,8 +78,8 @@ Process:
                 - Property    
               type: string    
             value:    
-              format: date    
-              pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}$    
+              format: date-time    
+              pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$    
               type: string    
           required:    
             - type    
@@ -146,7 +146,7 @@ Process:
       x-ngsi:    
         type: Property    
     id:    
-      description: Unique entity identifier, with the format urn:ngsi-ld:Process:<id>.    
+      description: Unique entity identifier, with the format urn:ngsi-ld:MortarProcess:<id>.    
       type: string    
       x-ngsi:    
         type: Property    
@@ -191,9 +191,9 @@ Process:
       x-ngsi:    
         type: Property    
     type:    
-      description: NGSI Entity type. It has to be Process    
+      description: NGSI Entity type. It has to be MortarProcess    
       enum:    
-        - Process    
+        - MortarProcess    
       type: string    
       x-ngsi:    
         type: Property    
@@ -278,9 +278,9 @@ Process:
   type: object    
   x-derived-from: ''    
   x-disclaimer: Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program    
-  x-license-url: https://github.com/smart-data-models/circuloos_data_model/blob/master/Process/LICENSE.md    
-  x-model-schema: https://raw.githubusercontent.com/TO_ADD_LATER/schema.json    
-  x-model-tags: ''    
+  x-license-url: https://github.com/smart-data-models/circuloos_data_model/blob/master/MortarProcess/LICENSE.md    
+  x-model-schema: https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/openCallSpecific/biocorner/MortarProcess/schema.json    
+  x-model-tags: biocorner    
   x-version: 0.0.1    
 ```  
 </details>    
@@ -289,9 +289,9 @@ Process:
 <!-- /70-MiddleNotes -->  
 <!-- 80-Examples -->  
 ## Example payloads    
-Not available the example of a Process in JSON-LD format as key-values. This is compatible with NGSI-LD when  using `options=keyValues` and returns the context data of an individual entity.  
-#### Process NGSI-LD normalized Example    
-Here is an example of a Process in JSON-LD format as normalized. This is compatible with NGSI-LD when not using options and returns the context data of an individual entity.  
+Not available the example of a MortarProcess in JSON-LD format as key-values. This is compatible with NGSI-LD when  using `options=keyValues` and returns the context data of an individual entity.  
+#### MortarProcess NGSI-LD normalized Example    
+Here is an example of a MortarProcess in JSON-LD format as normalized. This is compatible with NGSI-LD when not using options and returns the context data of an individual entity.  
 <details><summary><strong>show/hide example</strong></summary>    
 ```json  
 {  
@@ -299,8 +299,8 @@ Process:
     "http://circuloos-ld-context/circuloos-context.jsonld",  
     "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"  
   ],  
-  "id": "urn:ngsi-ld:Process:DryMixing-Mortar1",  
-  "type": "Process",  
+  "id": "urn:ngsi-ld:MortarProcess:DryMixing-Mortar1",  
+  "type": "MortarProcess",  
   "name": {  
     "type": "Property",  
     "value": "Industrial Dry Mixing Process - MORTAR 1 Posidonia",  
@@ -320,7 +320,7 @@ Process:
   },  
   "dateCreated": {  
     "type": "Property",  
-    "value": "2018-01-06",  
+    "value": "2018-01-06T00:00:00Z",  
     "observedAt": "2026-06-15T15:16:02.000Z"  
   },  
   "waterConsumption": {  

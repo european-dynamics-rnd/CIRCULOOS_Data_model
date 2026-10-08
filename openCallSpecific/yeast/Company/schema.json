@@ -1,10 +1,10 @@
 {
   "$schema": "http://json-schema.org/schema#",
   "$schemaVersion": "0.0.1",
-  "modelTags": "",
+  "modelTags": "yeast",
   "derivedFrom": "",
-  "license": "",
-  "$id": "https://raw.githubusercontent.com/TO_ADD_LATER/schema.json",
+  "license": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/refs/heads/main/LICENSE",
+  "$id": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/openCallSpecific/yeast/Company/schema.json",
   "title": "Data model for a Yeast2Value company",
   "description": "CIRCULOOS data model for a company taking part in the Yeast2Value value chain, covering its identity, postal address, industry sectors and the role it plays in valorising brewer's spent yeast.",
   "type": "object",

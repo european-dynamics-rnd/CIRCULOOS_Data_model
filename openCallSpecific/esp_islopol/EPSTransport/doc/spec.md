@@ -13,10 +13,10 @@ Entity: EPSTransport
 ## List of properties  
 
 <sup><sub>[*] If there is not a type in an attribute is because it could have several types or different formats/patterns</sub></sup>  
-- `destination[*]`: Identifier of the Factory entity representing the facility receiving the EPS shipment, such as Esferolight.  - `id[string]`: Unique entity identifier, with the format urn:ngsi-ld:EPSTransport:<transportId>.  - `origin[*]`: Identifier of the Factory entity representing the facility from which the EPS shipment departs.  - `refEPSBatch[*]`: Identifiers of the EPSBatch entities included in the shipment. A single transport operation can therefore carry material from several batches.  - `refVehicle[*]`: Identifier of the Vehicle entity used to carry the EPS shipment.  - `timestampArrival[*]`: Date and time when the EPS shipment arrived at the destination facility, expressed as an ISO 8601 timestamp. This attribute maps to the same JSON-LD term as arrivalTime in the transport schema.  - `timestampDeparture[*]`: Date and time when the EPS shipment departed from the origin facility, expressed as an ISO 8601 timestamp. This attribute maps to the same JSON-LD term as departureTime in the transport schema.  - `type[string]`: NGSI Entity type. It has to be EPSTransport  <!-- /30-PropertiesList -->  
+- `arrivalTime[*]`: Date and time when the EPS shipment arrived at the destination facility, expressed as an ISO 8601 timestamp.  - `departureTime[*]`: Date and time when the EPS shipment departed from the origin facility, expressed as an ISO 8601 timestamp.  - `destination[*]`: Identifier of the Factory entity representing the facility receiving the EPS shipment, such as Esferolight.  - `id[string]`: Unique entity identifier, with the format urn:ngsi-ld:EPSTransport:<transportId>.  - `origin[*]`: Identifier of the Factory entity representing the facility from which the EPS shipment departs.  - `refEPSBatch[*]`: Identifiers of the EPSBatch entities included in the shipment. A single transport operation can therefore carry material from several batches.  - `refVehicle[*]`: Identifier of the Vehicle entity used to carry the EPS shipment.  - `type[string]`: NGSI Entity type. It has to be EPSTransport  <!-- /30-PropertiesList -->  
 <!-- 35-RequiredProperties -->  
 Required properties  
-- `destination`  - `id`  - `origin`  - `timestampDeparture`  - `type`  <!-- /35-RequiredProperties -->  
+- `departureTime`  - `id`  - `refEPSBatch`  - `refVehicle`  - `type`  <!-- /35-RequiredProperties -->  
 <!-- 40-RequiredProperties -->  
 <!-- /40-RequiredProperties -->  
 <!-- 50-DataModelHeader -->  
@@ -29,6 +29,50 @@ Entity: EPSTransport
 EPSTransport:    
   description: CIRCULOOS data model for a transport operation carrying one or more EPS batches between facilities in the ISLOPOL value chain, covering departure and arrival times, the origin and destination facilities, the vehicle used and the batches shipped.    
   properties:    
+    arrivalTime:    
+      allOf:    
+        - additionalProperties: no    
+          properties:    
+            observedAt:    
+              format: date-time    
+              type: string    
+            type:    
+              enum:    
+                - Property    
+              type: string    
+            value:    
+              format: date-time    
+              pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$    
+              type: string    
+          required:    
+            - type    
+            - value    
+          type: object    
+      description: Date and time when the EPS shipment arrived at the destination facility, expressed as an ISO 8601 timestamp.    
+      x-ngsi:    
+        type: Property    
+    departureTime:    
+      allOf:    
+        - additionalProperties: no    
+          properties:    
+            observedAt:    
+              format: date-time    
+              type: string    
+            type:    
+              enum:    
+                - Property    
+              type: string    
+            value:    
+              format: date-time    
+              pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$    
+              type: string    
+          required:    
+            - type    
+            - value    
+          type: object    
+      description: Date and time when the EPS shipment departed from the origin facility, expressed as an ISO 8601 timestamp.    
+      x-ngsi:    
+        type: Property    
     destination:    
       allOf:    
         - additionalProperties: no    
@@ -83,12 +127,15 @@ EPSTransport:
         - additionalProperties: no    
           properties:    
             object:    
-              description: URNs of the referenced entities.    
-              items:    
-                pattern: ^urn:ngsi-ld:.+$    
-                type: string    
-              minItems: 1    
-              type: array    
+              description: URN of the referenced entity, or a list of URNs.    
+              oneOf:    
+                - pattern: ^urn:ngsi-ld:.+$    
+                  type: string    
+                - items:    
+                    pattern: ^urn:ngsi-ld:.+$    
+                    type: string    
+                  minItems: 1    
+                  type: array    
             observedAt:    
               format: date-time    
               type: string    
@@ -125,50 +172,6 @@ EPSTransport:
       description: Identifier of the Vehicle entity used to carry the EPS shipment.    
       x-ngsi:    
         type: Relationship    
-    timestampArrival:    
-      allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              format: date-time    
-              pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$    
-              type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
-      description: Date and time when the EPS shipment arrived at the destination facility, expressed as an ISO 8601 timestamp. This attribute maps to the same JSON-LD term as arrivalTime in the transport schema.    
-      x-ngsi:    
-        type: Property    
-    timestampDeparture:    
-      allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              format: date-time    
-              pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$    
-              type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
-      description: Date and time when the EPS shipment departed from the origin facility, expressed as an ISO 8601 timestamp. This attribute maps to the same JSON-LD term as departureTime in the transport schema.    
-      x-ngsi:    
-        type: Property    
     type:    
       description: NGSI Entity type. It has to be EPSTransport    
       enum:    
@@ -179,15 +182,15 @@ EPSTransport:
   required:    
     - id    
     - type    
-    - timestampDeparture    
-    - origin    
-    - destination    
+    - refEPSBatch    
+    - departureTime    
+    - refVehicle    
   type: object    
   x-derived-from: https://context.dataspace-arditi.com/islopol/entities/EPSTransport/v2/schema.json    
   x-disclaimer: Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program    
   x-license-url: https://github.com/smart-data-models/circuloos_data_model/blob/master/EPSTransport/LICENSE.md    
-  x-model-schema: https://raw.githubusercontent.com/TO_ADD_LATER/schema.json    
-  x-model-tags: ''    
+  x-model-schema: https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/openCallSpecific/esp_islopol/EPSTransport/schema.json    
+  x-model-tags: esp_islopol    
   x-version: 0.0.1    
 ```  
 </details>    
@@ -208,11 +211,11 @@ EPSTransport:
   ],  
   "id": "urn:ngsi-ld:EPSTransport:1789374097444",  
   "type": "EPSTransport",  
-  "timestampDeparture": {  
+  "departureTime": {  
     "type": "Property",  
     "value": "2026-08-18T09:50:00.000Z"  
   },  
-  "timestampArrival": {  
+  "arrivalTime": {  
     "type": "Property",  
     "value": "2026-08-18T10:15:00.000Z"  
   },  
@@ -226,7 +229,7 @@ EPSTransport:
   },  
   "refVehicle": {  
     "type": "Relationship",  
-    "object": "urn:ngsi-ld:Vehicle:vehicle:arm:86-ni-59"  
+    "object": "urn:ngsi-ld:Vehicle:ARM:86-NI-59"  
   },  
   "refEPSBatch": {  
     "type": "Relationship",  

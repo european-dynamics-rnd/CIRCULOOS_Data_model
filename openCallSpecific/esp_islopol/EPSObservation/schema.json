@@ -1,14 +1,43 @@
 {
   "$schema": "http://json-schema.org/schema#",
   "$schemaVersion": "0.0.1",
-  "modelTags": "",
+  "modelTags": "esp_islopol",
   "derivedFrom": "https://context.dataspace-arditi.com/islopol/entities/EPSObservation/v2/schema.json",
-  "license": "",
-  "$id": "https://raw.githubusercontent.com/TO_ADD_LATER/schema.json",
+  "license": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/refs/heads/main/LICENSE",
+  "$id": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/openCallSpecific/esp_islopol/EPSObservation/schema.json",
   "title": "Data model for an ISLOPOL EPS contamination observation",
   "description": "CIRCULOOS data model for an automated observation of EPS material and its contamination in the ISLOPOL value chain, covering the contamination score and category, the confidence and model used to produce them, and the device, process event and batch the assessment relates to.",
   "type": "object",
   "definitions": {
+    "ContaminationLevelProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Property"
+          ]
+        },
+        "value": {
+          "type": "string",
+          "enum": [
+            "none",
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ],
+      "additionalProperties": false
+    },
     "DateTimeProperty": {
       "type": "object",
       "properties": {
@@ -194,7 +223,7 @@
         "contaminationLevel": {
           "allOf": [
             {
-              "$ref": "#/definitions/StringProperty"
+              "$ref": "#/definitions/ContaminationLevelProperty"
             }
           ],
           "description": "Property. Contamination category assigned from the score using the thresholds recorded for the observation. The schema supports none, low, medium and high."
@@ -263,6 +292,10 @@
     "type",
     "eventTime",
     "contaminationScore",
-    "contaminationLevel"
+    "confidence",
+    "modelUsed",
+    "modelVersion",
+    "refDevice",
+    "refProcessEvent"
   ]
 }

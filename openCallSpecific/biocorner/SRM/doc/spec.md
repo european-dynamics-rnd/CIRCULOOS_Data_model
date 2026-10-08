@@ -41,7 +41,10 @@ SRM:
                 - Property    
               type: string    
             value:    
-              type: string    
+              items:    
+                type: string    
+              minItems: 1    
+              type: array    
           required:    
             - type    
             - value    
@@ -207,8 +210,8 @@ SRM:
   x-derived-from: ''    
   x-disclaimer: Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program    
   x-license-url: https://github.com/smart-data-models/circuloos_data_model/blob/master/SRM/LICENSE.md    
-  x-model-schema: https://raw.githubusercontent.com/TO_ADD_LATER/schema.json    
-  x-model-tags: ''    
+  x-model-schema: https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/openCallSpecific/biocorner/SRM/schema.json    
+  x-model-tags: biocorner    
   x-version: 0.0.1    
 ```  
 </details>    
@@ -251,7 +254,9 @@ SRM:
   },  
   "category": {  
     "type": "Property",  
-    "value": "Agricultural Biomass",  
+    "value": [  
+      "Agricultural Biomass"  
+    ],  
     "observedAt": "2026-06-16T08:03:53.000Z"  
   },  
   "density": {  

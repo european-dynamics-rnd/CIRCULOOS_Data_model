@@ -366,8 +366,8 @@ BiomassInventory:
 
   x-license-url: https://github.com/smart-data-models/circuloos_data_model/blob/master/BiomassInventory/LICENSE.md
 
-  x-model-schema: https://raw.githubusercontent.com/TO_ADD_LATER/schema.json
+  x-model-schema: https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/openCallSpecific/biomass_evop/BiomassInventory/schema.json
 
-  x-model-tags: ''
+  x-model-tags: biomass_evop
 
   x-version: 0.0.1
