@@ -15,9 +15,11 @@
   },
   "constituents": {
     "type": "Property",
-    "value": "EPS"
+    "value": [
+      "EPS"
+    ]
   },
-  "category": {
+  "availableCategories": {
     "type": "Property",
     "value": [
       "EPS150",
@@ -30,8 +32,8 @@
     "type": "Property",
     "value": "EPS"
   },
-  "unitCode": {
+  "quantityUnit": {
     "type": "Property",
-    "value": "unidades"
+    "value": "EA"
   }
 }

@@ -1,15 +1,15 @@
 {
   "$schema": "http://json-schema.org/schema#",
   "$schemaVersion": "0.0.1",
-  "modelTags": "",
+  "modelTags": "stainless_steel_dpp",
   "derivedFrom": "",
-  "license": "",
-  "$id": "https://raw.githubusercontent.com/TO_ADD_LATER/schema.json",
+  "license": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/refs/heads/main/LICENSE",
+  "$id": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/openCallSpecific/stainless_steel_dpp/StainlessSteelDPP/schema.json",
   "title": "Data model for stainless steel Digital Product Passport",
   "description": "CIRCULOOS data model for the Digital Product Passport of a stainless steel product, covering product identification, production time window and the manufacturing route the product goes through.",
   "type": "object",
   "definitions": {
-    "StringProperty": {
+    "DateTimeProperty": {
       "type": "object",
       "properties": {
         "type": {
@@ -19,34 +19,9 @@
           ]
         },
         "value": {
-          "type": "string"
-        },
-        "observedAt": {
           "type": "string",
-          "format": "date-time"
-        }
-      },
-      "required": [
-        "type",
-        "value"
-      ],
-      "additionalProperties": false
-    },
-    "EpochTimeProperty": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "type": "string",
-          "enum": [
-            "Property"
-          ]
-        },
-        "value": {
-          "type": "number",
-          "description": "Property. Unix epoch timestamp in seconds."
-        },
-        "unitCode": {
-          "type": "string"
+          "format": "date-time",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$"
         },
         "observedAt": {
           "type": "string",
@@ -95,8 +70,9 @@
           "description": "Property. Name of the manufacturing operation performed in this route step, for example Plastic Injection Molding, Metal Cutting or Assembly."
         },
         "date": {
-          "type": "number",
-          "description": "Property. Unix epoch timestamp in seconds at which the operation was performed."
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Date and time (ISO 8601, UTC) at which the operation was performed."
         },
         "productionStatus": {
           "type": "string",
@@ -110,14 +86,14 @@
               "minimum": 0,
               "description": "Property. Energy consumed by this route step."
             },
-            "unit": {
+            "unitCode": {
               "type": "string",
-              "description": "Property. Unit of measurement of the consumed energy, for example Wh."
+              "description": "Property. UN/CEFACT code of the unit of the consumed energy, for example WHR (watt hour)."
             }
           },
           "required": [
             "value",
-            "unit"
+            "unitCode"
           ],
           "additionalProperties": false,
           "description": "Property. Energy consumed for this route step."
@@ -127,6 +103,29 @@
         "operation",
         "date",
         "productionStatus"
+      ],
+      "additionalProperties": false
+    },
+    "StringProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Property"
+          ]
+        },
+        "value": {
+          "type": "string"
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "value"
       ],
       "additionalProperties": false
     }
@@ -142,13 +141,13 @@
       "properties": {
         "id": {
           "type": "string",
-          "description": "Property. Unique entity identifier, with the format urn:ngsi-ld:<type>:<uuid>."
+          "description": "Property. Unique entity identifier, with the format urn:ngsi-ld:StainlessSteelDPP:<dppId>."
         },
         "type": {
           "type": "string",
-          "description": "Property. NGSI Entity type. It has to be stainless_steels",
+          "description": "Property. NGSI Entity type. It has to be StainlessSteelDPP",
           "enum": [
-            "stainless_steels"
+            "StainlessSteelDPP"
           ]
         },
         "dppId": {
@@ -178,18 +177,18 @@
         "startTime": {
           "allOf": [
             {
-              "$ref": "#/definitions/EpochTimeProperty"
+              "$ref": "#/definitions/DateTimeProperty"
             }
           ],
-          "description": "Property. Start time of the Digital Product Passport, as a Unix epoch timestamp in seconds."
+          "description": "Property. Start time of the Digital Product Passport (ISO 8601 date-time, UTC)."
         },
         "endTime": {
           "allOf": [
             {
-              "$ref": "#/definitions/EpochTimeProperty"
+              "$ref": "#/definitions/DateTimeProperty"
             }
           ],
-          "description": "Property. End time of the Digital Product Passport, as a Unix epoch timestamp in seconds."
+          "description": "Property. End time of the Digital Product Passport (ISO 8601 date-time, UTC)."
         },
         "route": {
           "allOf": [

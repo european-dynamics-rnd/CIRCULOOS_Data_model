@@ -4,7 +4,7 @@ ProductModel:
 
   properties:
 
-    category:
+    availableCategories:
       allOf:
         - additionalProperties: no
           properties:
@@ -24,7 +24,7 @@ ProductModel:
             - type
             - value
           type: object
-      description: List of product categories or grades available for the model. Given in the source as https://schema.org/category, the expanded JSON-LD form of availableCategories.
+      description: List of product categories or grades available for the model. Simple hierarchies are allowed, e.g. 'Waste > EPS'.
       x-ngsi:
         type: Property
 
@@ -40,12 +40,15 @@ ProductModel:
                 - Property
               type: string
             value:
-              type: string
+              items:
+                type: string
+              minItems: 1
+              type: array
           required:
             - type
             - value
           type: object
-      description: Material or list of materials or components making up the product model. Given in the source as https://context.dataspace-arditi.com/islopol/terms/v2/constituents.
+      description: Materials or components making up the product model.
       x-ngsi:
         type: Property
 
@@ -119,15 +122,7 @@ ProductModel:
       x-ngsi:
         type: Property
 
-    type:
-      description: NGSI Entity type. It has to be ProductModel
-      enum:
-        - ProductModel
-      type: string
-      x-ngsi:
-        type: Property
-
-    unitCode:
+    quantityUnit:
       allOf:
         - additionalProperties: no
           properties:
@@ -144,7 +139,36 @@ ProductModel:
             - type
             - value
           type: object
-      description: Default unit of measurement for products of this model, such as kilograms, kilowatt-hours or individual units.
+      description: UN/CEFACT code of the default unit of measurement for products of this model, e.g. KGM (kilogram), KWH (kilowatt hour) or EA (each).
+      x-ngsi:
+        type: Property
+
+    refLcaId:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: Reference identifier used for LCA traceability.
+      x-ngsi:
+        type: Property
+
+    type:
+      description: NGSI Entity type. It has to be ProductModel
+      enum:
+        - ProductModel
+      type: string
       x-ngsi:
         type: Property
 
@@ -152,6 +176,8 @@ ProductModel:
     - id
     - type
     - name
+    - quantityUnit
+    - material
 
   type: object
 
@@ -161,8 +187,8 @@ ProductModel:
 
   x-license-url: https://github.com/smart-data-models/circuloos_data_model/blob/master/ProductModel/LICENSE.md
 
-  x-model-schema: https://raw.githubusercontent.com/TO_ADD_LATER/schema.json
+  x-model-schema: https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/openCallSpecific/esp_islopol/ProductModel/schema.json
 
-  x-model-tags: ''
+  x-model-tags: esp_islopol
 
   x-version: 0.0.1

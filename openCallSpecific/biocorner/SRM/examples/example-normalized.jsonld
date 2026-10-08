@@ -27,7 +27,9 @@
   },
   "category": {
     "type": "Property",
-    "value": "Agricultural Biomass",
+    "value": [
+      "Agricultural Biomass"
+    ],
     "observedAt": "2026-06-16T08:03:53.000Z"
   },
   "density": {

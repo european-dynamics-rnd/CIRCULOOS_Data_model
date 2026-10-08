@@ -1,10 +1,10 @@
 {
   "$schema": "http://json-schema.org/schema#",
   "$schemaVersion": "0.0.1",
-  "modelTags": "",
+  "modelTags": "shineagain",
   "derivedFrom": "",
-  "license": "",
-  "$id": "https://raw.githubusercontent.com/TO_ADD_LATER/schema.json",
+  "license": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/refs/heads/main/LICENSE",
+  "$id": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/openCallSpecific/shineagain/MaterialRecord/schema.json",
   "title": "Data model for a ShineAgain material record",
   "description": "CIRCULOOS data model for a single record in the ShineAgain data log, describing either a processing step (e.g. Shredding, Sorting, Pressing, CNC milling) or a transport operation performed on a material in a recycling loop, including mass in/out, energy use, locations and the partner that performed the step.",
   "type": "object",
@@ -22,6 +22,31 @@
           "type": "string",
           "format": "date",
           "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ],
+      "additionalProperties": false
+    },
+    "DateTimeProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Property"
+          ]
+        },
+        "value": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$"
         },
         "observedAt": {
           "type": "string",
@@ -125,106 +150,106 @@
             "MaterialRecord"
           ]
         },
-        "Proces_step": {
+        "processStep": {
           "allOf": [
             {
               "$ref": "#/definitions/StringProperty"
             }
           ],
-          "description": "Property. Processing step this record describes, e.g. Shredding, Sorting, Pressing or CNC milling. Empty for transport records."
+          "description": "Property. Processing step this record describes, e.g. Shredding, Sorting, Pressing or CNC milling. Empty for transport records. Source field: Proces_step."
         },
-        "Date": {
+        "date": {
           "allOf": [
             {
               "$ref": "#/definitions/DateProperty"
             }
           ],
-          "description": "Property. Date on which the process step or transport took place."
+          "description": "Property. Date on which the process step or transport took place. Source field: Date."
         },
-        "Material_Loop": {
+        "materialLoop": {
           "allOf": [
             {
               "$ref": "#/definitions/QuantityProperty"
             }
           ],
-          "description": "Property. Expected unitCode: C62 (unit). Number of the material loop (recycling cycle) the record belongs to, so the same material can be followed through successive reuse cycles; 1 is the first loop."
+          "description": "Property. Expected unitCode: C62 (unit). Number of the material loop (recycling cycle) the record belongs to, so the same material can be followed through successive reuse cycles; 1 is the first loop. Source field: Material_Loop."
         },
-        "Material_in_kg": {
+        "materialIn": {
           "allOf": [
             {
               "$ref": "#/definitions/QuantityProperty"
             }
           ],
-          "description": "Property. Expected unitCode: KGM. Mass of material going into this step, in kilograms, as weighed before the step."
+          "description": "Property. Expected unitCode: KGM. Mass of material going into this step, in kilograms, as weighed before the step. Source field: Material_in_kg."
         },
-        "Material_out_kg": {
+        "materialOut": {
           "allOf": [
             {
               "$ref": "#/definitions/QuantityProperty"
             }
           ],
-          "description": "Property. Expected unitCode: KGM. Mass of material coming out of this step, in kilograms, as weighed afterwards. The difference with Material_in_kg is the loss or waste of this step."
+          "description": "Property. Expected unitCode: KGM. Mass of material coming out of this step, in kilograms, as weighed afterwards. The difference with materialIn is the loss or waste of this step. Source field: Material_out_kg."
         },
-        "Energy_use_kWh": {
+        "energyConsumption": {
           "allOf": [
             {
               "$ref": "#/definitions/QuantityProperty"
             }
           ],
-          "description": "Property. Expected unitCode: KWH. Electricity used by the machine(s) during this process step, as measured with an energy meter. If multiple machines are used the value is the calculated total of the measured values. Empty if not measured."
+          "description": "Property. Expected unitCode: KWH. Electricity used by the machine(s) during this process step, as measured with an energy meter. If multiple machines are used the value is the calculated total of the measured values. Empty if not measured. Source field: Energy_use_kWh."
         },
-        "Partner": {
+        "partner": {
           "allOf": [
             {
               "$ref": "#/definitions/StringProperty"
             }
           ],
-          "description": "Property. ShineAgain partner (or external supplier) that performed this step, e.g. Better_Future_Factory, The_New_Raw or Vacumetal."
+          "description": "Property. ShineAgain partner (or external supplier) that performed this step, e.g. Better_Future_Factory, The_New_Raw or Vacumetal. Source field: Partner."
         },
-        "Start_location": {
+        "origin": {
           "allOf": [
             {
               "$ref": "#/definitions/StringProperty"
             }
           ],
-          "description": "Property. For transport records, location where the transport starts."
+          "description": "Property. For transport records, location where the transport starts. Source field: Start_location."
         },
-        "End_location": {
+        "destination": {
           "allOf": [
             {
               "$ref": "#/definitions/StringProperty"
             }
           ],
-          "description": "Property. Location where the material ends up after the step. Mainly used for transport records; usually empty for on-site processing steps."
+          "description": "Property. Location where the material ends up after the step. Mainly used for transport records; usually empty for on-site processing steps. Source field: End_location."
         },
-        "Type_of_transport": {
+        "transportationMode": {
           "allOf": [
             {
               "$ref": "#/definitions/StringProperty"
             }
           ],
-          "description": "Property. Vehicle used to move the material. Only used for transport records; empty for processing steps."
+          "description": "Property. Vehicle used to move the material. Only used for transport records; empty for processing steps. Source field: Type_of_transport."
         },
-        "KM": {
+        "distance": {
           "allOf": [
             {
               "$ref": "#/definitions/QuantityProperty"
             }
           ],
-          "description": "Property. Expected unitCode: KMT. Distance travelled in kilometres. Only used for transport records; empty for processing steps."
+          "description": "Property. Expected unitCode: KMT. Distance travelled in kilometres. Only used for transport records; empty for processing steps. Source field: KM."
         },
-        "Notes": {
+        "notes": {
           "allOf": [
             {
               "$ref": "#/definitions/StringProperty"
             }
           ],
-          "description": "Property. Free-text remarks on the record, e.g. settings used, issues encountered etc."
+          "description": "Property. Free-text remarks on the record, e.g. settings used, issues encountered etc. Source field: Notes."
         },
         "dateCreated": {
           "allOf": [
             {
-              "$ref": "#/definitions/DateProperty"
+              "$ref": "#/definitions/DateTimeProperty"
             }
           ],
           "description": "Property. Date at which the entity was created."
@@ -235,6 +260,6 @@
   "required": [
     "id",
     "type",
-    "Date"
+    "date"
   ]
 }

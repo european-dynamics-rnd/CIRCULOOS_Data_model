@@ -1,6 +1,7 @@
 {
     "@context": {
         "ProductionRun": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/ProductionRun",
+        "description": "http://purl.org/dc/terms/description",
         "endDate": "https://smartdatamodels.org/endDate",
         "id": "@id",
         "object": {
@@ -12,6 +13,7 @@
             "@type": "https://uri.etsi.org/ngsi-ld/DateTime"
         },
         "refInputProducts": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/refInputProducts",
+        "refLcaId": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/refLcaId",
         "refOutputProducts": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/refOutputProducts",
         "refProcess": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/refProcess",
         "startDate": "https://smartdatamodels.org/startDate",

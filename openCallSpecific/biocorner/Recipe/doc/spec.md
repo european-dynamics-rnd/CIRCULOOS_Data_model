@@ -13,10 +13,10 @@ Entity: Recipe
 ## List of properties  
 
 <sup><sub>[*] If there is not a type in an attribute is because it could have several types or different formats/patterns</sub></sup>  
-- `containsSRM1[*]`: Relationship to the primary SRM entity used in this formulation. Identifies the main bio-based secondary raw material in the recipe.  - `containsSRM2[*]`: Relationship to the second SRM entity, when multiple secondary raw materials are combined in the formulation.  - `containsSRM3[*]`: Relationship to the third SRM entity, applicable for multi-source formulations combining different waste stream categories.  - `containsSRM4[*]`: Relationship to the fourth SRM entity, applicable for complex formulations requiring four or more secondary raw material types.  - `curingDuration[*]`: Expected unitCode: DAY. Required curing period before the product reaches its declared performance characteristics under standard reference conditions.  - `developedBy[*]`: Relationship to the Organization entity that developed and validated this formulation through laboratory testing and characterisation.  - `formulation[*]`: Quantitative composition summary listing each component with its percentage by weight, including both SRM components and conventional binders or additives.  - `id[string]`: Unique entity identifier, with the format urn:ngsi-ld:Recipe:<id>.  - `mixingTime[*]`: Expected unitCode: MIN. Total duration of the mixing process, from initial component blending to final homogeneous mixture ready for application or casting.  - `name[*]`: Descriptive name of the recipe identifying the primary SRM and formulation variant for internal reference and traceability.  - `processingInstructions[*]`: Step-by-step manufacturing procedure including mixing parameters, component addition sequence, timing, and environmental conditions for production.  - `type[string]`: NGSI Entity type. It has to be Recipe  - `waterBinderRatio[*]`: Dimensionless. Mass ratio of water to binder content in the formulation. Critical parameter controlling workability, strength development, and porosity of the final product.  <!-- /30-PropertiesList -->  
+- `containsSRM[*]`: SRM entities combined in this formulation, listed with the primary (main bio-based) secondary raw material first.  - `curingDuration[*]`: Expected unitCode: DAY. Required curing period before the product reaches its declared performance characteristics under standard reference conditions.  - `developedBy[*]`: Relationship to the Organization entity that developed and validated this formulation through laboratory testing and characterisation.  - `formulation[*]`: Quantitative composition summary listing each component with its percentage by weight, including both SRM components and conventional binders or additives.  - `id[string]`: Unique entity identifier, with the format urn:ngsi-ld:Recipe:<id>.  - `mixingTime[*]`: Expected unitCode: MIN. Total duration of the mixing process, from initial component blending to final homogeneous mixture ready for application or casting.  - `name[*]`: Descriptive name of the recipe identifying the primary SRM and formulation variant for internal reference and traceability.  - `processingInstructions[*]`: Step-by-step manufacturing procedure including mixing parameters, component addition sequence, timing, and environmental conditions for production.  - `type[string]`: NGSI Entity type. It has to be Recipe  - `waterBinderRatio[*]`: Dimensionless. Mass ratio of water to binder content in the formulation. Critical parameter controlling workability, strength development, and porosity of the final product.  <!-- /30-PropertiesList -->  
 <!-- 35-RequiredProperties -->  
 Required properties  
-- `containsSRM1`  - `developedBy`  - `formulation`  - `id`  - `name`  - `type`  <!-- /35-RequiredProperties -->  
+- `containsSRM`  - `developedBy`  - `formulation`  - `id`  - `name`  - `type`  <!-- /35-RequiredProperties -->  
 <!-- 40-RequiredProperties -->  
 <!-- /40-RequiredProperties -->  
 <!-- 50-DataModelHeader -->  
@@ -29,14 +29,17 @@ Entity: Recipe
 Recipe:    
   description: CIRCULOOS data model for a Biocorner bio-based mortar formulation, covering the secondary raw materials it combines, its mixing and curing parameters and the organization that developed it.    
   properties:    
-    containsSRM1:    
+    containsSRM:    
       allOf:    
         - additionalProperties: no    
           properties:    
             object:    
-              description: URN of the referenced entity, with the format urn:ngsi-ld:<type>:<id>.    
-              pattern: ^urn:ngsi-ld:[A-Za-z0-9_]+:.+$    
-              type: string    
+              description: URNs of the referenced entities, each with the format urn:ngsi-ld:<type>:<id>.    
+              items:    
+                pattern: ^urn:ngsi-ld:[A-Za-z0-9_]+:.+$    
+                type: string    
+              minItems: 1    
+              type: array    
             observedAt:    
               format: date-time    
               type: string    
@@ -48,73 +51,7 @@ Recipe:
             - type    
             - object    
           type: object    
-      description: Relationship to the primary SRM entity used in this formulation. Identifies the main bio-based secondary raw material in the recipe.    
-      x-ngsi:    
-        type: Relationship    
-    containsSRM2:    
-      allOf:    
-        - additionalProperties: no    
-          properties:    
-            object:    
-              description: URN of the referenced entity, with the format urn:ngsi-ld:<type>:<id>.    
-              pattern: ^urn:ngsi-ld:[A-Za-z0-9_]+:.+$    
-              type: string    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Relationship    
-              type: string    
-          required:    
-            - type    
-            - object    
-          type: object    
-      description: Relationship to the second SRM entity, when multiple secondary raw materials are combined in the formulation.    
-      x-ngsi:    
-        type: Relationship    
-    containsSRM3:    
-      allOf:    
-        - additionalProperties: no    
-          properties:    
-            object:    
-              description: URN of the referenced entity, with the format urn:ngsi-ld:<type>:<id>.    
-              pattern: ^urn:ngsi-ld:[A-Za-z0-9_]+:.+$    
-              type: string    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Relationship    
-              type: string    
-          required:    
-            - type    
-            - object    
-          type: object    
-      description: Relationship to the third SRM entity, applicable for multi-source formulations combining different waste stream categories.    
-      x-ngsi:    
-        type: Relationship    
-    containsSRM4:    
-      allOf:    
-        - additionalProperties: no    
-          properties:    
-            object:    
-              description: URN of the referenced entity, with the format urn:ngsi-ld:<type>:<id>.    
-              pattern: ^urn:ngsi-ld:[A-Za-z0-9_]+:.+$    
-              type: string    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Relationship    
-              type: string    
-          required:    
-            - type    
-            - object    
-          type: object    
-      description: Relationship to the fourth SRM entity, applicable for complex formulations requiring four or more secondary raw material types.    
+      description: SRM entities combined in this formulation, listed with the primary (main bio-based) secondary raw material first.    
       x-ngsi:    
         type: Relationship    
     curingDuration:    
@@ -313,13 +250,13 @@ Recipe:
     - name    
     - formulation    
     - developedBy    
-    - containsSRM1    
+    - containsSRM    
   type: object    
   x-derived-from: ''    
   x-disclaimer: Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program    
   x-license-url: https://github.com/smart-data-models/circuloos_data_model/blob/master/Recipe/LICENSE.md    
-  x-model-schema: https://raw.githubusercontent.com/TO_ADD_LATER/schema.json    
-  x-model-tags: ''    
+  x-model-schema: https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/openCallSpecific/biocorner/Recipe/schema.json    
+  x-model-tags: biocorner    
   x-version: 0.0.1    
 ```  
 </details>    
@@ -340,9 +277,14 @@ Recipe:
   ],  
   "id": "urn:ngsi-ld:Recipe:CementFreeMortar",  
   "type": "Recipe",  
-  "containsSRM1": {  
+  "containsSRM": {  
     "type": "Relationship",  
-    "object": "urn:ngsi-ld:SRM:RiceHusk",  
+    "object": [  
+      "urn:ngsi-ld:SRM:RiceHusk",  
+      "urn:ngsi-ld:SRM:RiceStraw",  
+      "urn:ngsi-ld:SRM:RiceHuskAsh",  
+      "urn:ngsi-ld:SRM:GGBS"  
+    ],  
     "observedAt": "2026-06-16T08:05:08.000Z"  
   },  
   "name": {  
@@ -354,21 +296,6 @@ Recipe:
     "type": "Property",  
     "value": 20,  
     "unitCode": "MIN",  
-    "observedAt": "2026-06-16T08:05:08.000Z"  
-  },  
-  "containsSRM2": {  
-    "type": "Relationship",  
-    "object": "urn:ngsi-ld:SRM:RiceStraw",  
-    "observedAt": "2026-06-16T08:05:08.000Z"  
-  },  
-  "containsSRM3": {  
-    "type": "Relationship",  
-    "object": "urn:ngsi-ld:SRM:RiceHuskAsh",  
-    "observedAt": "2026-06-16T08:05:08.000Z"  
-  },  
-  "containsSRM4": {  
-    "type": "Relationship",  
-    "object": "urn:ngsi-ld:SRM:GGBS",  
     "observedAt": "2026-06-16T08:05:08.000Z"  
   },  
   "curingDuration": {  

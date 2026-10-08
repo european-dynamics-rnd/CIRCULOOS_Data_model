@@ -13,10 +13,10 @@ Entity: Factory
 ## List of properties  
 
 <sup><sub>[*] If there is not a type in an attribute is because it could have several types or different formats/patterns</sub></sup>  
-- `additionalType[*]`: Description of the facility's type or principal activities. Given in the source as https://schema.org/additionalType, the expanded JSON-LD form of factoryType.  - `address[*]`: Postal address of the facility, as a structured object containing fields such as street, postal code, locality, region and country.  - `id[string]`: Unique entity identifier, with the format urn:ngsi-ld:Factory:<operator>:<facility>.  - `location[*]`: GeoProperty. Geographical position of the facility, represented as a GeoJSON Point. Coordinates are ordered as longitude followed by latitude.  - `name[*]`: Human-readable name of the facility, used to identify it in maps, forms and reports. Given in the source as https://schema.org/name.  - `provider[*]`: Name of the organisation operating the facility. Given in the source as https://schema.org/provider, the expanded JSON-LD form of operatedBy.  - `type[string]`: NGSI Entity type. It has to be Factory  <!-- /30-PropertiesList -->  
+- `address[*]`: Postal address of the facility, as a structured object containing fields such as street, postal code, locality, region and country.  - `factoryType[*]`: Type or category of the facility, or a description of its principal activities (e.g. sorting, recycling, production).  - `id[string]`: Unique entity identifier, with the format urn:ngsi-ld:Factory:<operator>:<facility>.  - `location[*]`: GeoProperty. Geographical position of the facility, represented as a GeoJSON Point. Coordinates are ordered as longitude followed by latitude.  - `name[*]`: Human-readable name of the facility, used to identify it in maps, forms and reports. Given in the source as https://schema.org/name.  - `operatedBy[*]`: Name of the organisation that operates the facility.  - `type[string]`: NGSI Entity type. It has to be Factory  <!-- /30-PropertiesList -->  
 <!-- 35-RequiredProperties -->  
 Required properties  
-- `id`  - `name`  - `type`  <!-- /35-RequiredProperties -->  
+- `id`  - `type`  <!-- /35-RequiredProperties -->  
 <!-- 40-RequiredProperties -->  
 <!-- /40-RequiredProperties -->  
 <!-- 50-DataModelHeader -->  
@@ -29,26 +29,6 @@ Entity: Factory
 Factory:    
   description: CIRCULOOS data model for a physical facility involved in the ISLOPOL value chain, covering its name, principal activities, operating organisation, postal address and geographical position.    
   properties:    
-    additionalType:    
-      allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
-      description: Description of the facility's type or principal activities. Given in the source as https://schema.org/additionalType, the expanded JSON-LD form of factoryType.    
-      x-ngsi:    
-        type: Property    
     address:    
       allOf:    
         - additionalProperties: no    
@@ -84,6 +64,26 @@ Factory:
             - value    
           type: object    
       description: Postal address of the facility, as a structured object containing fields such as street, postal code, locality, region and country.    
+      x-ngsi:    
+        type: Property    
+    factoryType:    
+      allOf:    
+        - additionalProperties: no    
+          properties:    
+            observedAt:    
+              format: date-time    
+              type: string    
+            type:    
+              enum:    
+                - Property    
+              type: string    
+            value:    
+              type: string    
+          required:    
+            - type    
+            - value    
+          type: object    
+      description: Type or category of the facility, or a description of its principal activities (e.g. sorting, recycling, production).    
       x-ngsi:    
         type: Property    
     id:    
@@ -145,7 +145,7 @@ Factory:
       description: Human-readable name of the facility, used to identify it in maps, forms and reports. Given in the source as https://schema.org/name.    
       x-ngsi:    
         type: Property    
-    provider:    
+    operatedBy:    
       allOf:    
         - additionalProperties: no    
           properties:    
@@ -162,7 +162,7 @@ Factory:
             - type    
             - value    
           type: object    
-      description: Name of the organisation operating the facility. Given in the source as https://schema.org/provider, the expanded JSON-LD form of operatedBy.    
+      description: Name of the organisation that operates the facility.    
       x-ngsi:    
         type: Property    
     type:    
@@ -175,13 +175,12 @@ Factory:
   required:    
     - id    
     - type    
-    - name    
   type: object    
   x-derived-from: https://context.dataspace-arditi.com/islopol/entities/Factory/v2/schema.json    
   x-disclaimer: Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program    
   x-license-url: https://github.com/smart-data-models/circuloos_data_model/blob/master/Factory/LICENSE.md    
-  x-model-schema: https://raw.githubusercontent.com/TO_ADD_LATER/schema.json    
-  x-model-tags: ''    
+  x-model-schema: https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/openCallSpecific/esp_islopol/Factory/schema.json    
+  x-model-tags: esp_islopol    
   x-version: 0.0.1    
 ```  
 </details>    
@@ -206,11 +205,11 @@ Factory:
     "type": "Property",  
     "value": "ETRS - Estacao de Tratamento de Residuos Solidos da Meia Serra"  
   },  
-  "additionalType": {  
+  "factoryType": {  
     "type": "Property",  
     "value": "Tratamento, valorizacao e eliminacao de residuos solidos urbanos."  
   },  
-  "provider": {  
+  "operatedBy": {  
     "type": "Property",  
     "value": "ARM - Aguas e Residuos da Madeira S.A."  
   },  

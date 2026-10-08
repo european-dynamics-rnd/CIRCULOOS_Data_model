@@ -1,0 +1,66 @@
+{
+  "@context": [
+    "http://circuloos-ld-context/circuloos-context.jsonld",
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"
+  ],
+  "id": "urn:ngsi-ld:StainlessSteelDPP:6705c58b-dd1d-4087-b520-4ee3c3f71dc7",
+  "type": "StainlessSteelDPP",
+  "dppId": {
+    "type": "Property",
+    "value": "6705c58b-dd1d-4087-b520-4ee3c3f71dc7",
+    "observedAt": "2026-03-25T10:04:03.000Z"
+  },
+  "factoryInternalBarcode": {
+    "type": "Property",
+    "value": "100023659",
+    "observedAt": "2026-03-25T10:04:03.000Z"
+  },
+  "productName": {
+    "type": "Property",
+    "value": "MICRO VR N/A - 12(4) (90 CN) T150",
+    "observedAt": "2026-03-25T10:04:03.000Z"
+  },
+  "startTime": {
+    "type": "Property",
+    "value": "2025-03-13T14:50:00Z",
+    "observedAt": "2026-03-25T10:04:04.000Z"
+  },
+  "endTime": {
+    "type": "Property",
+    "value": "2025-03-13T14:55:00Z",
+    "observedAt": "2026-03-25T12:04:04.000Z"
+  },
+  "route": {
+    "type": "Property",
+    "value": [
+      {
+        "operation": "Plastic Injection Molding",
+        "date": "2025-03-13T14:50:00Z",
+        "productionStatus": "OK",
+        "energyConsumption": {
+          "value": 18.76,
+          "unitCode": "WHR"
+        }
+      },
+      {
+        "operation": "Metal Cutting",
+        "date": "2025-03-13T14:55:00Z",
+        "productionStatus": "OK",
+        "energyConsumption": {
+          "value": 1.87,
+          "unitCode": "WHR"
+        }
+      },
+      {
+        "operation": "Assembly",
+        "date": "2025-03-13T15:00:00Z",
+        "productionStatus": "OK",
+        "energyConsumption": {
+          "value": 0.93,
+          "unitCode": "WHR"
+        }
+      }
+    ],
+    "observedAt": "2026-03-25T12:04:04.000Z"
+  }
+}

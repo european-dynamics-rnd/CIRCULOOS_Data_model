@@ -1,6 +1,8 @@
 {
     "@context": {
         "EPSTransport": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/EPSTransport",
+        "arrivalTime": "https://smartdatamodels.org/dataModel.UrbanMobility/arrivalTime",
+        "departureTime": "https://smartdatamodels.org/dataModel.UrbanMobility/departureTime",
         "destination": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/destination",
         "id": "@id",
         "object": {
@@ -14,8 +16,6 @@
         "origin": "https://smartdatamodels.org/dataModel.IndustrialProcess/origin",
         "refEPSBatch": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/refEPSBatch",
         "refVehicle": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/refVehicle",
-        "timestampArrival": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/timestampArrival",
-        "timestampDeparture": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/timestampDeparture",
         "type": "@type",
         "value": "https://uri.etsi.org/ngsi-ld/hasValue"
     }

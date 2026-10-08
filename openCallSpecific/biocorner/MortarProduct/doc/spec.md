@@ -123,8 +123,8 @@ MortarProduct:
                 - Property    
               type: string    
             value:    
-              format: date    
-              pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}$    
+              format: date-time    
+              pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$    
               type: string    
           required:    
             - type    
@@ -215,8 +215,8 @@ MortarProduct:
   x-derived-from: ''    
   x-disclaimer: Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program    
   x-license-url: https://github.com/smart-data-models/circuloos_data_model/blob/master/MortarProduct/LICENSE.md    
-  x-model-schema: https://raw.githubusercontent.com/TO_ADD_LATER/schema.json    
-  x-model-tags: ''    
+  x-model-schema: https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/openCallSpecific/biocorner/MortarProduct/schema.json    
+  x-model-tags: biocorner    
   x-version: 0.0.1    
 ```  
 </details>    
@@ -259,7 +259,7 @@ MortarProduct:
   },  
   "dateCreated": {  
     "type": "Property",  
-    "value": "2026-04-13",  
+    "value": "2026-04-13T00:00:00Z",  
     "observedAt": "2026-06-16T08:05:47.000Z"  
   },  
   "certifiedBy": {  

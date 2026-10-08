@@ -1,7 +1,6 @@
 {
     "@context": {
         "Factory": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/Factory",
-        "additionalType": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/additionalType",
         "address": "https://smartdatamodels.org/address",
         "addressCountry": "https://smartdatamodels.org/addressCountry",
         "addressLocality": "https://smartdatamodels.org/addressLocality",
@@ -10,6 +9,7 @@
             "@container": "@list",
             "@id": "https://purl.org/geojson/vocab#coordinates"
         },
+        "factoryType": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/factoryType",
         "id": "@id",
         "location": "https://uri.etsi.org/ngsi-ld/location",
         "name": "https://smartdatamodels.org/name",
@@ -17,8 +17,8 @@
             "@id": "https://uri.etsi.org/ngsi-ld/observedAt",
             "@type": "https://uri.etsi.org/ngsi-ld/DateTime"
         },
+        "operatedBy": "https://smartdatamodels.org/dataModel.UrbanMobility/operatedBy",
         "postalCode": "https://smartdatamodels.org/postalCode",
-        "provider": "https://smartdatamodels.org/dataModel.Transportation/provider",
         "streetAddress": "https://smartdatamodels.org/streetAddress",
         "type": "@type",
         "value": "https://uri.etsi.org/ngsi-ld/hasValue"

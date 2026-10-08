@@ -16,7 +16,7 @@ Entity: Vehicle
 - `dateVehicleFirstRegistered[*]`: Date when the vehicle was first registered, normally expressed in ISO 8601 date format (YYYY-MM-DD). Given in the source as https://schema.org/dateVehicleFirstRegistered.  - `description[*]`: Free-text description of the vehicle.  - `fuelType[*]`: Fuel or energy type used by the individual vehicle. Given in the source as https://schema.org/fuelType.  - `id[string]`: Unique entity identifier, with the format urn:ngsi-ld:Vehicle:<operator>:<plate>.  - `name[*]`: Human-readable label for the individual vehicle. Given in the source as https://schema.org/name.  - `refVehicleModel[*]`: Identifier of the VehicleModel entity describing the shared technical characteristics of this vehicle's make and model. Given in the source as https://smartdatamodels.org/refVehicleModel.  - `type[string]`: NGSI Entity type. It has to be Vehicle  - `vehicleConfiguration[*]`: Text describing the vehicle's configuration or carrying arrangement. Given in the source as https://schema.org/vehicleConfiguration.  - `vehiclePlateIdentifier[*]`: Official registration plate identifying the individual vehicle. Given in the source as https://smartdatamodels.org/vehiclePlateIdentifier.  <!-- /30-PropertiesList -->  
 <!-- 35-RequiredProperties -->  
 Required properties  
-- `id`  - `name`  - `type`  <!-- /35-RequiredProperties -->  
+- `id`  - `type`  <!-- /35-RequiredProperties -->  
 <!-- 40-RequiredProperties -->  
 <!-- /40-RequiredProperties -->  
 <!-- 50-DataModelHeader -->  
@@ -188,13 +188,12 @@ Vehicle:
   required:    
     - id    
     - type    
-    - name    
   type: object    
   x-derived-from: https://context.dataspace-arditi.com/islopol/entities/Vehicle/v2/schema.json    
   x-disclaimer: Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program    
   x-license-url: https://github.com/smart-data-models/circuloos_data_model/blob/master/Vehicle/LICENSE.md    
-  x-model-schema: https://raw.githubusercontent.com/TO_ADD_LATER/schema.json    
-  x-model-tags: ''    
+  x-model-schema: https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/openCallSpecific/esp_islopol/Vehicle/schema.json    
+  x-model-tags: esp_islopol    
   x-version: 0.0.1    
 ```  
 </details>    

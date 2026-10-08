@@ -16,7 +16,7 @@ Entity: EPSObservation
 - `confidence[*]`: Confidence score reported by the model for the observation, expressed from 0 to 1. It describes confidence in the prediction, not the amount of contamination. (Multiply by 100 to obtain the Confidence percentage.)  - `contaminationLevel[*]`: Contamination category assigned from the score using the thresholds recorded for the observation. The schema supports none, low, medium and high.  - `contaminationScore[*]`: Estimated contamination expressed as a fraction from 0 to 1, with higher values indicating more contamination. (Multiply by 100 to obtain the Contamination Score percentage.)  - `eventTime[*]`: Date and time when the EPS observation took place, expressed as an ISO 8601 timestamp.  - `id[string]`: Unique entity identifier, with the format urn:ngsi-ld:EPSObservation:<facility>:<stream>:<date>.  - `modelUsed[*]`: Name or identifier of the machine-learning model or inference method used to analyse the EPS observation.  - `modelVersion[*]`: Version or deployed model artefact used to produce the observation, allowing predictions to be traced to a specific model release.  - `refDevice[*]`: Identifier of the Device entity representing the equipment that generated the observation, such as the camera and inference device installed at ARM.  - `refEPSBatch[*]`: Identifier of the EPSBatch assessed by this observation, linking the model result to the tracked batch of material.  - `refProcessEvent[*]`: Identifier of the ProcessEvent during which the observation was generated, linking the assessment to the corresponding sorting operation.  - `thresholds[*]`: Configuration used to convert contamination scores into categories, including the lowMax, medMax and highMax upper limits. The object may also record the formula used to calculate the score.  - `type[string]`: NGSI Entity type. It has to be EPSObservation  <!-- /30-PropertiesList -->  
 <!-- 35-RequiredProperties -->  
 Required properties  
-- `contaminationLevel`  - `contaminationScore`  - `eventTime`  - `id`  - `type`  <!-- /35-RequiredProperties -->  
+- `confidence`  - `contaminationScore`  - `eventTime`  - `id`  - `modelUsed`  - `modelVersion`  - `refDevice`  - `refProcessEvent`  - `type`  <!-- /35-RequiredProperties -->  
 <!-- 40-RequiredProperties -->  
 <!-- /40-RequiredProperties -->  
 <!-- 50-DataModelHeader -->  
@@ -63,6 +63,11 @@ EPSObservation:
                 - Property    
               type: string    
             value:    
+              enum:    
+                - none    
+                - low    
+                - medium    
+                - high    
               type: string    
           required:    
             - type    
@@ -282,13 +287,17 @@ EPSObservation:
     - type    
     - eventTime    
     - contaminationScore    
-    - contaminationLevel    
+    - confidence    
+    - modelUsed    
+    - modelVersion    
+    - refDevice    
+    - refProcessEvent    
   type: object    
   x-derived-from: https://context.dataspace-arditi.com/islopol/entities/EPSObservation/v2/schema.json    
   x-disclaimer: Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program    
   x-license-url: https://github.com/smart-data-models/circuloos_data_model/blob/master/EPSObservation/LICENSE.md    
-  x-model-schema: https://raw.githubusercontent.com/TO_ADD_LATER/schema.json    
-  x-model-tags: ''    
+  x-model-schema: https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/openCallSpecific/esp_islopol/EPSObservation/schema.json    
+  x-model-tags: esp_islopol    
   x-version: 0.0.1    
 ```  
 </details>    

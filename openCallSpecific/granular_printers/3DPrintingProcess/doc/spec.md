@@ -13,7 +13,7 @@ Entity: 3DPrintingProcess
 ## List of properties  
 
 <sup><sub>[*] If there is not a type in an attribute is because it could have several types or different formats/patterns</sub></sup>  
-- `additiveFlowRate[*]`: Expected unitCode: LTR/HUR. Flow of adjuvant in the circuit.  - `additiveFlowRateSetPoint[*]`: Expected unitCode: P1. Theoretical percentage of adjuvant injected in the extrusion head.  - `id[string]`: Unique entity identifier, with the format urn:ngsi-ld:3DPrintingProcess:cartesian-printer:<printRun>:<readingId>.  - `motorIntensity[*]`: Expected unitCode: AMP. Electrical intensity of the motor of the extrusion head.  - `pressure[*]`: Expected unitCode: BAR. Pressure of the slurry in the circuit.  - `printingTime[*]`: Expected unitCode: MIN. Time to print a defined part.  - `rotationSpeed[*]`: Expected unitCode: RPM. Speed of the motor of the extrusion head.  - `slurryFlowRate[*]`: Expected unitCode: LTR/HUR. Flow of slurry in the circuit.  - `temperatureInput[*]`: Expected unitCode: CEL. Temperature of the slurry in the injection.  - `temperatureOutput[*]`: Expected unitCode: CEL. Temperature of the slurry in the output of the extrusion head.  - `type[string]`: NGSI Entity type. It has to be 3DPrintingProcess  <!-- /30-PropertiesList -->  
+- `additiveFlowRate[*]`: Expected unitCode: LTR/HUR. Flow of adjuvant in the circuit.  - `additiveFlowRateSetPoint[*]`: Expected unitCode: P1. Theoretical percentage of adjuvant injected in the extrusion head.  - `id[string]`: Unique entity identifier, with the format urn:ngsi-ld:3DPrintingProcess:cartesian-printer:<printRun>:<readingId>.  - `motorIntensity[*]`: Expected unitCode: AMP. Electrical intensity of the motor of the extrusion head.  - `pressure[*]`: Expected unitCode: BAR. Pressure of the slurry in the circuit.  - `printingSpeed[*]`: Expected unitCode: H81. Printing speed of the extrusion head along the print path, in millimetres per minute. Source field: V_mm_min.  - `printingTime[*]`: Expected unitCode: MIN. Time to print a defined part.  - `rotationSpeed[*]`: Expected unitCode: RPM. Speed of the motor of the extrusion head.  - `slurryFlowRate[*]`: Expected unitCode: LTR/HUR. Flow of slurry in the circuit.  - `temperatureInput[*]`: Expected unitCode: CEL. Temperature of the slurry in the injection.  - `temperatureOutput[*]`: Expected unitCode: CEL. Temperature of the slurry in the output of the extrusion head.  - `type[string]`: NGSI Entity type. It has to be 3DPrintingProcess  - `zPosition[*]`: Expected unitCode: MMT. Vertical (Z axis) position of the extrusion head, which follows the height reached by the deposited layers. Source field: Z_mm.  <!-- /30-PropertiesList -->  
 <!-- 35-RequiredProperties -->  
 Required properties  
 - `id`  - `type`  <!-- /35-RequiredProperties -->  
@@ -180,6 +180,43 @@ Entity: 3DPrintingProcess
             - unitCode    
           type: object    
       description: 'Expected unitCode: BAR. Pressure of the slurry in the circuit.'    
+      x-ngsi:    
+        type: Property    
+    printingSpeed:    
+      allOf:    
+        - additionalProperties: no    
+          anyOf:    
+            - required:    
+                - value    
+            - required:    
+                - minValue    
+            - required:    
+                - maxValue    
+          properties:    
+            maxValue:    
+              description: Upper bound of the value, when the source declares a range or a maximum.    
+              type: number    
+            minValue:    
+              description: Lower bound of the value, when the source declares a range or a minimum.    
+              type: number    
+            observedAt:    
+              format: date-time    
+              type: string    
+            type:    
+              enum:    
+                - Property    
+              type: string    
+            unitCode:    
+              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
+              type: string    
+            value:    
+              description: Exact measured value, when a single figure is known.    
+              type: number    
+          required:    
+            - type    
+            - unitCode    
+          type: object    
+      description: 'Expected unitCode: H81. Printing speed of the extrusion head along the print path, in millimetres per minute. Source field: V_mm_min.'    
       x-ngsi:    
         type: Property    
     printingTime:    
@@ -374,6 +411,43 @@ Entity: 3DPrintingProcess
       type: string    
       x-ngsi:    
         type: Property    
+    zPosition:    
+      allOf:    
+        - additionalProperties: no    
+          anyOf:    
+            - required:    
+                - value    
+            - required:    
+                - minValue    
+            - required:    
+                - maxValue    
+          properties:    
+            maxValue:    
+              description: Upper bound of the value, when the source declares a range or a maximum.    
+              type: number    
+            minValue:    
+              description: Lower bound of the value, when the source declares a range or a minimum.    
+              type: number    
+            observedAt:    
+              format: date-time    
+              type: string    
+            type:    
+              enum:    
+                - Property    
+              type: string    
+            unitCode:    
+              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
+              type: string    
+            value:    
+              description: Exact measured value, when a single figure is known.    
+              type: number    
+          required:    
+            - type    
+            - unitCode    
+          type: object    
+      description: 'Expected unitCode: MMT. Vertical (Z axis) position of the extrusion head, which follows the height reached by the deposited layers. Source field: Z_mm.'    
+      x-ngsi:    
+        type: Property    
   required:    
     - id    
     - type    
@@ -381,8 +455,8 @@ Entity: 3DPrintingProcess
   x-derived-from: ''    
   x-disclaimer: Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program    
   x-license-url: https://github.com/smart-data-models/circuloos_data_model/blob/master/3DPrintingProcess/LICENSE.md    
-  x-model-schema: https://raw.githubusercontent.com/TO_ADD_LATER/schema.json    
-  x-model-tags: ''    
+  x-model-schema: https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/openCallSpecific/granular_printers/3DPrintingProcess/schema.json    
+  x-model-tags: granular_printers    
   x-version: 0.0.1    
 ```  
 </details>    

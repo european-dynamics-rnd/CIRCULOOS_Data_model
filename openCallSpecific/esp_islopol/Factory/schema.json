@@ -1,10 +1,10 @@
 {
   "$schema": "http://json-schema.org/schema#",
   "$schemaVersion": "0.0.1",
-  "modelTags": "",
+  "modelTags": "esp_islopol",
   "derivedFrom": "https://context.dataspace-arditi.com/islopol/entities/Factory/v2/schema.json",
-  "license": "",
-  "$id": "https://raw.githubusercontent.com/TO_ADD_LATER/schema.json",
+  "license": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/refs/heads/main/LICENSE",
+  "$id": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/openCallSpecific/esp_islopol/Factory/schema.json",
   "title": "Data model for an ISLOPOL facility",
   "description": "CIRCULOOS data model for a physical facility involved in the ISLOPOL value chain, covering its name, principal activities, operating organisation, postal address and geographical position.",
   "type": "object",
@@ -146,21 +146,21 @@
           ],
           "description": "Property. Human-readable name of the facility, used to identify it in maps, forms and reports. Given in the source as https://schema.org/name."
         },
-        "additionalType": {
+        "factoryType": {
           "allOf": [
             {
               "$ref": "#/definitions/StringProperty"
             }
           ],
-          "description": "Property. Description of the facility's type or principal activities. Given in the source as https://schema.org/additionalType, the expanded JSON-LD form of factoryType."
+          "description": "Property. Type or category of the facility, or a description of its principal activities (e.g. sorting, recycling, production)."
         },
-        "provider": {
+        "operatedBy": {
           "allOf": [
             {
               "$ref": "#/definitions/StringProperty"
             }
           ],
-          "description": "Property. Name of the organisation operating the facility. Given in the source as https://schema.org/provider, the expanded JSON-LD form of operatedBy."
+          "description": "Property. Name of the organisation that operates the facility."
         },
         "address": {
           "allOf": [
@@ -183,7 +183,6 @@
   ],
   "required": [
     "id",
-    "type",
-    "name"
+    "type"
   ]
 }

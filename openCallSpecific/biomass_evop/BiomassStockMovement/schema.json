@@ -1,10 +1,10 @@
 {
   "$schema": "http://json-schema.org/schema#",
   "$schemaVersion": "0.0.1",
-  "modelTags": "",
+  "modelTags": "biomass_evop",
   "derivedFrom": "",
-  "license": "",
-  "$id": "https://raw.githubusercontent.com/TO_ADD_LATER/schema.json",
+  "license": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/refs/heads/main/LICENSE",
+  "$id": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/openCallSpecific/biomass_evop/BiomassStockMovement/schema.json",
   "title": "Data model for an EVOP biomass stock movement",
   "description": "CIRCULOOS data model for a single stock movement of biomass in the EVOP value chain, recording the material, the kind of movement, the quantity moved and the batch or source record it relates to.",
   "type": "object",

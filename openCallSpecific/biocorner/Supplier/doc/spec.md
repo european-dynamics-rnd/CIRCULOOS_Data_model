@@ -13,10 +13,10 @@ Entity: Supplier
 ## List of properties  
 
 <sup><sub>[*] If there is not a type in an attribute is because it could have several types or different formats/patterns</sub></sup>  
-- `address[*]`: The mailing address of the supplier facility.  - `city[*]`: The city in which the supplier facility is located.  - `contactEmail[*]`: Email address of the primary contact person at the supplier facility. Used for supply chain communication and batch tracing inquiries.  - `contactPerson[*]`: Name of the designated contact person responsible for material supply coordination at this facility.  - `country[*]`: The country in which the supplier facility is located.  - `distanceToManufacturer[*]`: Expected unitCode: KMT. Road distance from the supplier facility to the manufacturer. Used for transport emission estimation and regional sourcing analysis.  - `id[string]`: Unique entity identifier, with the format urn:ngsi-ld:Supplier:<id>.  - `name[*]`: Name of the supplier facility or collection point. May differ from the parent organization name when multiple supply facilities exist.  - `operatedBy[*]`: Relationship to the Organization entity that operates this supplier facility.  - `postalCode[*]`: The postal code of the supplier facility address.  - `region[*]`: Administrative region where the supplier facility is located. Key parameter for regional circular economy indicators.  - `suppliesSRM1[*]`: Relationship to the first SRM entity type supplied by this facility. Establishes which secondary raw materials originate from this point in the supply chain.  - `suppliesSRM2[*]`: Relationship to the second SRM entity type supplied by this facility, when the supplier provides multiple material types.  - `transportationMode[*]`: Primary transport method and vehicle type used for material delivery, including emission standard classification where applicable.  - `type[string]`: NGSI Entity type. It has to be Supplier  <!-- /30-PropertiesList -->  
+- `address[*]`: Postal address of the supplier facility as a structured object (street, locality, region, country, postal code), following the schema.org PostalAddress format. addressRegion holds the administrative region where the facility is located, a key parameter for regional circular economy indicators.  - `contactEmail[*]`: Email address of the primary contact person at the supplier facility. Used for supply chain communication and batch tracing inquiries.  - `contactPerson[*]`: Name of the designated contact person responsible for material supply coordination at this facility.  - `distanceToManufacturer[*]`: Expected unitCode: KMT. Road distance from the supplier facility to the manufacturer. Used for transport emission estimation and regional sourcing analysis.  - `id[string]`: Unique entity identifier, with the format urn:ngsi-ld:Supplier:<id>.  - `name[*]`: Name of the supplier facility or collection point. May differ from the parent organization name when multiple supply facilities exist.  - `operatedBy[*]`: Relationship to the Organization entity that operates this supplier facility.  - `suppliesSRM[*]`: SRM entity types supplied by this facility. Establishes which secondary raw materials originate from this point in the supply chain.  - `transportationMode[*]`: Primary transport method and vehicle type used for material delivery, including emission standard classification where applicable.  - `type[string]`: NGSI Entity type. It has to be Supplier  <!-- /30-PropertiesList -->  
 <!-- 35-RequiredProperties -->  
 Required properties  
-- `id`  - `name`  - `operatedBy`  - `suppliesSRM1`  - `type`  <!-- /35-RequiredProperties -->  
+- `id`  - `name`  - `operatedBy`  - `suppliesSRM`  - `type`  <!-- /35-RequiredProperties -->  
 <!-- 40-RequiredProperties -->  
 <!-- /40-RequiredProperties -->  
 <!-- 50-DataModelHeader -->  
@@ -41,32 +41,29 @@ Supplier:
                 - Property    
               type: string    
             value:    
-              type: string    
+              additionalProperties: no    
+              properties:    
+                addressCountry:    
+                  description: The country. Model:'https://schema.org/addressCountry'    
+                  type: string    
+                addressLocality:    
+                  description: The locality in which the street address is. Model:'https://schema.org/addressLocality'    
+                  type: string    
+                addressRegion:    
+                  description: The region in which the locality is. Model:'https://schema.org/addressRegion'    
+                  type: string    
+                postalCode:    
+                  description: The postal code. Model:'https://schema.org/postalCode'    
+                  type: string    
+                streetAddress:    
+                  description: The street address. Model:'https://schema.org/streetAddress'    
+                  type: string    
+              type: object    
           required:    
             - type    
             - value    
           type: object    
-      description: The mailing address of the supplier facility.    
-      x-ngsi:    
-        type: Property    
-    city:    
-      allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
-      description: The city in which the supplier facility is located.    
+      description: Postal address of the supplier facility as a structured object (street, locality, region, country, postal code), following the schema.org PostalAddress format. addressRegion holds the administrative region where the facility is located, a key parameter for regional circular economy indicators.    
       x-ngsi:    
         type: Property    
     contactEmail:    
@@ -107,26 +104,6 @@ Supplier:
             - value    
           type: object    
       description: Name of the designated contact person responsible for material supply coordination at this facility.    
-      x-ngsi:    
-        type: Property    
-    country:    
-      allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
-      description: The country in which the supplier facility is located.    
       x-ngsi:    
         type: Property    
     distanceToManufacturer:    
@@ -213,54 +190,17 @@ Supplier:
       description: Relationship to the Organization entity that operates this supplier facility.    
       x-ngsi:    
         type: Relationship    
-    postalCode:    
-      allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
-      description: The postal code of the supplier facility address.    
-      x-ngsi:    
-        type: Property    
-    region:    
-      allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
-      description: Administrative region where the supplier facility is located. Key parameter for regional circular economy indicators.    
-      x-ngsi:    
-        type: Property    
-    suppliesSRM1:    
+    suppliesSRM:    
       allOf:    
         - additionalProperties: no    
           properties:    
             object:    
-              description: URN of the referenced entity, with the format urn:ngsi-ld:<type>:<id>.    
-              pattern: ^urn:ngsi-ld:[A-Za-z0-9_]+:.+$    
-              type: string    
+              description: URNs of the referenced entities, each with the format urn:ngsi-ld:<type>:<id>.    
+              items:    
+                pattern: ^urn:ngsi-ld:[A-Za-z0-9_]+:.+$    
+                type: string    
+              minItems: 1    
+              type: array    
             observedAt:    
               format: date-time    
               type: string    
@@ -272,29 +212,7 @@ Supplier:
             - type    
             - object    
           type: object    
-      description: Relationship to the first SRM entity type supplied by this facility. Establishes which secondary raw materials originate from this point in the supply chain.    
-      x-ngsi:    
-        type: Relationship    
-    suppliesSRM2:    
-      allOf:    
-        - additionalProperties: no    
-          properties:    
-            object:    
-              description: URN of the referenced entity, with the format urn:ngsi-ld:<type>:<id>.    
-              pattern: ^urn:ngsi-ld:[A-Za-z0-9_]+:.+$    
-              type: string    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Relationship    
-              type: string    
-          required:    
-            - type    
-            - object    
-          type: object    
-      description: Relationship to the second SRM entity type supplied by this facility, when the supplier provides multiple material types.    
+      description: SRM entity types supplied by this facility. Establishes which secondary raw materials originate from this point in the supply chain.    
       x-ngsi:    
         type: Relationship    
     transportationMode:    
@@ -329,13 +247,13 @@ Supplier:
     - type    
     - name    
     - operatedBy    
-    - suppliesSRM1    
+    - suppliesSRM    
   type: object    
   x-derived-from: ''    
   x-disclaimer: Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program    
   x-license-url: https://github.com/smart-data-models/circuloos_data_model/blob/master/Supplier/LICENSE.md    
-  x-model-schema: https://raw.githubusercontent.com/TO_ADD_LATER/schema.json    
-  x-model-tags: ''    
+  x-model-schema: https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/openCallSpecific/biocorner/Supplier/schema.json    
+  x-model-tags: biocorner    
   x-version: 0.0.1    
 ```  
 </details>    
@@ -361,24 +279,20 @@ Supplier:
     "object": "urn:ngsi-ld:Organization:LITOKOL",  
     "observedAt": "2026-06-16T08:04:49.000Z"  
   },  
-  "region": {  
+  "address": {  
     "type": "Property",  
-    "value": "Emilia-Romagna",  
+    "value": {  
+      "addressRegion": "Emilia-Romagna",  
+      "addressCountry": "Italy"  
+    },  
     "observedAt": "2026-06-16T08:04:49.000Z"  
   },  
-  "suppliesSRM2": {  
+  "suppliesSRM": {  
     "type": "Relationship",  
-    "object": "urn:ngsi-ld:SRM:RiceStraw",  
-    "observedAt": "2026-06-16T08:04:49.000Z"  
-  },  
-  "suppliesSRM1": {  
-    "type": "Relationship",  
-    "object": "urn:ngsi-ld:SRM:RiceHusk",  
-    "observedAt": "2026-06-16T08:04:49.000Z"  
-  },  
-  "country": {  
-    "type": "Property",  
-    "value": "Italy",  
+    "object": [  
+      "urn:ngsi-ld:SRM:RiceHusk",  
+      "urn:ngsi-ld:SRM:RiceStraw"  
+    ],  
     "observedAt": "2026-06-16T08:04:49.000Z"  
   },  
   "name": {  

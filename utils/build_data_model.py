@@ -22,7 +22,7 @@ Usage:
     python3 build_data_model.py ../openCallSpecific/yeast/YeastBatch
     python3 build_data_model.py ../material/leather --steps yaml,context
     python3 build_data_model.py ../material/leather --base-url https://raw.githubusercontent.com/<org>/<repo>/main/material/leather/
-    python3 build_data_model.py --all ../openCallSpecific/islopol
+    python3 build_data_model.py --all ../openCallSpecific/esp_islopol
 
 Run from the utils directory (the scripts resolve ./credentials.json and
 ./datamodels_to_publish.json relative to the working directory).

@@ -4,14 +4,17 @@ Recipe:
 
   properties:
 
-    containsSRM1:
+    containsSRM:
       allOf:
         - additionalProperties: no
           properties:
             object:
-              description: URN of the referenced entity, with the format urn:ngsi-ld:<type>:<id>.
-              pattern: ^urn:ngsi-ld:[A-Za-z0-9_]+:.+$
-              type: string
+              description: URNs of the referenced entities, each with the format urn:ngsi-ld:<type>:<id>.
+              items:
+                pattern: ^urn:ngsi-ld:[A-Za-z0-9_]+:.+$
+                type: string
+              minItems: 1
+              type: array
             observedAt:
               format: date-time
               type: string
@@ -23,76 +26,7 @@ Recipe:
             - type
             - object
           type: object
-      description: Relationship to the primary SRM entity used in this formulation. Identifies the main bio-based secondary raw material in the recipe.
-      x-ngsi:
-        type: Relationship
-
-    containsSRM2:
-      allOf:
-        - additionalProperties: no
-          properties:
-            object:
-              description: URN of the referenced entity, with the format urn:ngsi-ld:<type>:<id>.
-              pattern: ^urn:ngsi-ld:[A-Za-z0-9_]+:.+$
-              type: string
-            observedAt:
-              format: date-time
-              type: string
-            type:
-              enum:
-                - Relationship
-              type: string
-          required:
-            - type
-            - object
-          type: object
-      description: Relationship to the second SRM entity, when multiple secondary raw materials are combined in the formulation.
-      x-ngsi:
-        type: Relationship
-
-    containsSRM3:
-      allOf:
-        - additionalProperties: no
-          properties:
-            object:
-              description: URN of the referenced entity, with the format urn:ngsi-ld:<type>:<id>.
-              pattern: ^urn:ngsi-ld:[A-Za-z0-9_]+:.+$
-              type: string
-            observedAt:
-              format: date-time
-              type: string
-            type:
-              enum:
-                - Relationship
-              type: string
-          required:
-            - type
-            - object
-          type: object
-      description: Relationship to the third SRM entity, applicable for multi-source formulations combining different waste stream categories.
-      x-ngsi:
-        type: Relationship
-
-    containsSRM4:
-      allOf:
-        - additionalProperties: no
-          properties:
-            object:
-              description: URN of the referenced entity, with the format urn:ngsi-ld:<type>:<id>.
-              pattern: ^urn:ngsi-ld:[A-Za-z0-9_]+:.+$
-              type: string
-            observedAt:
-              format: date-time
-              type: string
-            type:
-              enum:
-                - Relationship
-              type: string
-          required:
-            - type
-            - object
-          type: object
-      description: Relationship to the fourth SRM entity, applicable for complex formulations requiring four or more secondary raw material types.
+      description: SRM entities combined in this formulation, listed with the primary (main bio-based) secondary raw material first.
       x-ngsi:
         type: Relationship
 
@@ -301,7 +235,7 @@ Recipe:
     - name
     - formulation
     - developedBy
-    - containsSRM1
+    - containsSRM
 
   type: object
 
@@ -311,8 +245,8 @@ Recipe:
 
   x-license-url: https://github.com/smart-data-models/circuloos_data_model/blob/master/Recipe/LICENSE.md
 
-  x-model-schema: https://raw.githubusercontent.com/TO_ADD_LATER/schema.json
+  x-model-schema: https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/openCallSpecific/biocorner/Recipe/schema.json
 
-  x-model-tags: ''
+  x-model-tags: biocorner
 
   x-version: 0.0.1

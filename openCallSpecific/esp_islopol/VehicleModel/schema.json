@@ -1,14 +1,54 @@
 {
   "$schema": "http://json-schema.org/schema#",
   "$schemaVersion": "0.0.1",
-  "modelTags": "",
+  "modelTags": "esp_islopol",
   "derivedFrom": "https://context.dataspace-arditi.com/islopol/entities/VehicleModel/v2/schema.json",
-  "license": "",
-  "$id": "https://raw.githubusercontent.com/TO_ADD_LATER/schema.json",
+  "license": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/refs/heads/main/LICENSE",
+  "$id": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/openCallSpecific/esp_islopol/VehicleModel/schema.json",
   "title": "Data model for an ISLOPOL vehicle model",
   "description": "CIRCULOOS data model for a vehicle model in the ISLOPOL value chain, grouping the technical characteristics shared by vehicles of that model, including brand, fuel type, cargo volume and weight.",
   "type": "object",
   "definitions": {
+    "FuelTypeProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Property"
+          ]
+        },
+        "value": {
+          "type": "string",
+          "enum": [
+            "autogas",
+            "biodiesel",
+            "cng",
+            "diesel",
+            "electric",
+            "ethanol",
+            "gasoline",
+            "hybrid_electric_diesel",
+            "hybrid_electric_petrol",
+            "hydrogen",
+            "lpg",
+            "petrol",
+            "petrol(unleaded)",
+            "petrol(leaded)",
+            "other"
+          ]
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ],
+      "additionalProperties": false
+    },
     "QuantityProperty": {
       "type": "object",
       "properties": {
@@ -127,7 +167,7 @@
         "fuelType": {
           "allOf": [
             {
-              "$ref": "#/definitions/StringProperty"
+              "$ref": "#/definitions/FuelTypeProperty"
             }
           ],
           "description": "Property. Fuel or energy type used by vehicles of this model. Given in the source as https://schema.org/fuelType."
@@ -153,7 +193,6 @@
   ],
   "required": [
     "id",
-    "type",
-    "name"
+    "type"
   ]
 }

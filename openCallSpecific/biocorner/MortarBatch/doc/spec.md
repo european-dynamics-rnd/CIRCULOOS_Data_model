@@ -13,10 +13,10 @@ Entity: MortarBatch
 ## List of properties  
 
 <sup><sub>[*] If there is not a type in an attribute is because it could have several types or different formats/patterns</sub></sup>  
-- `batchCode[*]`: Internal production batch identifier assigned by the manufacturer for traceability. Follows a structured naming convention including product code, year, and sequence number.  - `dateCreated[*]`: Date at which the entity was created.  - `description[*]`: Free-text description of the production batch including production scale, total quantity produced, and any notable quality observations.  - `id[string]`: Unique entity identifier, with the format urn:ngsi-ld:MortarBatch:<id>.  - `instanceOf[*]`: Relationship linking this production batch to its parent MortarProduct entity. Establishes which product line this specific batch belongs to.  - `producedBy[*]`: Relationship to the Organization entity responsible for manufacturing this batch. Identifies the production facility and legal entity.  - `producedFromRecipe[*]`: Relationship to the Recipe entity whose formulation was followed during production. Enables traceability from final product back to formulation specifications.  - `type[string]`: NGSI Entity type. It has to be MortarBatch  - `usedProcess[*]`: Relationship to the Process entity describing the manufacturing procedure applied. Links the batch to specific energy, water, and waste generation data.  - `usedSRMBatches1[*]`: Relationship to the first SRMBatch entity used as input material. Enables full upstream traceability to raw material origin and supplier.  - `usedSRMBatches2[*]`: Relationship to the second SRMBatch entity used as input material, when the formulation requires multiple secondary raw materials.  - `usedSRMBatches3[*]`: Relationship to the third SRMBatch entity used as input material, applicable for multi-component formulations.  - `usedSRMBatches4[*]`: Relationship to the fourth SRMBatch entity used as input material, applicable for complex hybrid formulations.  <!-- /30-PropertiesList -->  
+- `batchCode[*]`: Internal production batch identifier assigned by the manufacturer for traceability. Follows a structured naming convention including product code, year, and sequence number.  - `dateCreated[*]`: Date at which the entity was created.  - `description[*]`: Free-text description of the production batch including production scale, total quantity produced, and any notable quality observations.  - `id[string]`: Unique entity identifier, with the format urn:ngsi-ld:MortarBatch:<id>.  - `instanceOf[*]`: Relationship linking this production batch to its parent MortarProduct entity. Establishes which product line this specific batch belongs to.  - `producedBy[*]`: Relationship to the Organization entity responsible for manufacturing this batch. Identifies the production facility and legal entity.  - `producedFromRecipe[*]`: Relationship to the Recipe entity whose formulation was followed during production. Enables traceability from final product back to formulation specifications.  - `type[string]`: NGSI Entity type. It has to be MortarBatch  - `usedProcess[*]`: Relationship to the MortarProcess entity describing the manufacturing procedure applied. Links the batch to specific energy, water, and waste generation data.  - `usedSRMBatches[*]`: SRMBatch entities used as input material, listed with the batch of the primary SRM first. Enables full upstream traceability to raw material origin and supplier.  <!-- /30-PropertiesList -->  
 <!-- 35-RequiredProperties -->  
 Required properties  
-- `batchCode`  - `id`  - `instanceOf`  - `producedBy`  - `producedFromRecipe`  - `type`  - `usedProcess`  - `usedSRMBatches1`  <!-- /35-RequiredProperties -->  
+- `batchCode`  - `id`  - `instanceOf`  - `producedBy`  - `producedFromRecipe`  - `type`  - `usedProcess`  - `usedSRMBatches`  <!-- /35-RequiredProperties -->  
 <!-- 40-RequiredProperties -->  
 <!-- /40-RequiredProperties -->  
 <!-- 50-DataModelHeader -->  
@@ -61,8 +61,8 @@ MortarBatch:
                 - Property    
               type: string    
             value:    
-              format: date    
-              pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}$    
+              format: date-time    
+              pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$    
               type: string    
           required:    
             - type    
@@ -188,17 +188,20 @@ MortarBatch:
             - type    
             - object    
           type: object    
-      description: Relationship to the Process entity describing the manufacturing procedure applied. Links the batch to specific energy, water, and waste generation data.    
+      description: Relationship to the MortarProcess entity describing the manufacturing procedure applied. Links the batch to specific energy, water, and waste generation data.    
       x-ngsi:    
         type: Relationship    
-    usedSRMBatches1:    
+    usedSRMBatches:    
       allOf:    
         - additionalProperties: no    
           properties:    
             object:    
-              description: URN of the referenced entity, with the format urn:ngsi-ld:<type>:<id>.    
-              pattern: ^urn:ngsi-ld:[A-Za-z0-9_]+:.+$    
-              type: string    
+              description: URNs of the referenced entities, each with the format urn:ngsi-ld:<type>:<id>.    
+              items:    
+                pattern: ^urn:ngsi-ld:[A-Za-z0-9_]+:.+$    
+                type: string    
+              minItems: 1    
+              type: array    
             observedAt:    
               format: date-time    
               type: string    
@@ -210,73 +213,7 @@ MortarBatch:
             - type    
             - object    
           type: object    
-      description: Relationship to the first SRMBatch entity used as input material. Enables full upstream traceability to raw material origin and supplier.    
-      x-ngsi:    
-        type: Relationship    
-    usedSRMBatches2:    
-      allOf:    
-        - additionalProperties: no    
-          properties:    
-            object:    
-              description: URN of the referenced entity, with the format urn:ngsi-ld:<type>:<id>.    
-              pattern: ^urn:ngsi-ld:[A-Za-z0-9_]+:.+$    
-              type: string    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Relationship    
-              type: string    
-          required:    
-            - type    
-            - object    
-          type: object    
-      description: Relationship to the second SRMBatch entity used as input material, when the formulation requires multiple secondary raw materials.    
-      x-ngsi:    
-        type: Relationship    
-    usedSRMBatches3:    
-      allOf:    
-        - additionalProperties: no    
-          properties:    
-            object:    
-              description: URN of the referenced entity, with the format urn:ngsi-ld:<type>:<id>.    
-              pattern: ^urn:ngsi-ld:[A-Za-z0-9_]+:.+$    
-              type: string    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Relationship    
-              type: string    
-          required:    
-            - type    
-            - object    
-          type: object    
-      description: Relationship to the third SRMBatch entity used as input material, applicable for multi-component formulations.    
-      x-ngsi:    
-        type: Relationship    
-    usedSRMBatches4:    
-      allOf:    
-        - additionalProperties: no    
-          properties:    
-            object:    
-              description: URN of the referenced entity, with the format urn:ngsi-ld:<type>:<id>.    
-              pattern: ^urn:ngsi-ld:[A-Za-z0-9_]+:.+$    
-              type: string    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Relationship    
-              type: string    
-          required:    
-            - type    
-            - object    
-          type: object    
-      description: Relationship to the fourth SRMBatch entity used as input material, applicable for complex hybrid formulations.    
+      description: SRMBatch entities used as input material, listed with the batch of the primary SRM first. Enables full upstream traceability to raw material origin and supplier.    
       x-ngsi:    
         type: Relationship    
   required:    
@@ -287,13 +224,13 @@ MortarBatch:
     - producedFromRecipe    
     - producedBy    
     - usedProcess    
-    - usedSRMBatches1    
+    - usedSRMBatches    
   type: object    
   x-derived-from: ''    
   x-disclaimer: Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program    
   x-license-url: https://github.com/smart-data-models/circuloos_data_model/blob/master/MortarBatch/LICENSE.md    
-  x-model-schema: https://raw.githubusercontent.com/TO_ADD_LATER/schema.json    
-  x-model-tags: ''    
+  x-model-schema: https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/openCallSpecific/biocorner/MortarBatch/schema.json    
+  x-model-tags: biocorner    
   x-version: 0.0.1    
 ```  
 </details>    
@@ -326,7 +263,7 @@ MortarBatch:
   },  
   "usedProcess": {  
     "type": "Relationship",  
-    "object": "urn:ngsi-ld:Process:DryMixing-Mortar1",  
+    "object": "urn:ngsi-ld:MortarProcess:DryMixing-Mortar1",  
     "observedAt": "2026-06-16T08:06:08.000Z"  
   },  
   "producedFromRecipe": {  
@@ -339,14 +276,16 @@ MortarBatch:
     "object": "urn:ngsi-ld:Organization:LITOKOL",  
     "observedAt": "2026-06-16T08:06:08.000Z"  
   },  
-  "usedSRMBatches1": {  
+  "usedSRMBatches": {  
     "type": "Relationship",  
-    "object": "urn:ngsi-ld:SRMBatch:POS-2025-DEC",  
+    "object": [  
+      "urn:ngsi-ld:SRMBatch:POS-2025-DEC"  
+    ],  
     "observedAt": "2026-06-16T08:06:08.000Z"  
   },  
   "dateCreated": {  
     "type": "Property",  
-    "value": "2026-04-15",  
+    "value": "2026-04-15T00:00:00Z",  
     "observedAt": "2026-06-16T08:06:08.000Z"  
   },  
   "description": {  

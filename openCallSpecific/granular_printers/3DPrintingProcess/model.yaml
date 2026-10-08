@@ -162,6 +162,44 @@
       x-ngsi:
         type: Property
 
+    printingSpeed:
+      allOf:
+        - additionalProperties: no
+          anyOf:
+            - required:
+                - value
+            - required:
+                - minValue
+            - required:
+                - maxValue
+          properties:
+            maxValue:
+              description: Upper bound of the value, when the source declares a range or a maximum.
+              type: number
+            minValue:
+              description: Lower bound of the value, when the source declares a range or a minimum.
+              type: number
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            unitCode:
+              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.
+              type: string
+            value:
+              description: Exact measured value, when a single figure is known.
+              type: number
+          required:
+            - type
+            - unitCode
+          type: object
+      description: 'Expected unitCode: H81. Printing speed of the extrusion head along the print path, in millimetres per minute. Source field: V_mm_min.'
+      x-ngsi:
+        type: Property
+
     printingTime:
       allOf:
         - additionalProperties: no
@@ -360,6 +398,44 @@
       x-ngsi:
         type: Property
 
+    zPosition:
+      allOf:
+        - additionalProperties: no
+          anyOf:
+            - required:
+                - value
+            - required:
+                - minValue
+            - required:
+                - maxValue
+          properties:
+            maxValue:
+              description: Upper bound of the value, when the source declares a range or a maximum.
+              type: number
+            minValue:
+              description: Lower bound of the value, when the source declares a range or a minimum.
+              type: number
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            unitCode:
+              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.
+              type: string
+            value:
+              description: Exact measured value, when a single figure is known.
+              type: number
+          required:
+            - type
+            - unitCode
+          type: object
+      description: 'Expected unitCode: MMT. Vertical (Z axis) position of the extrusion head, which follows the height reached by the deposited layers. Source field: Z_mm.'
+      x-ngsi:
+        type: Property
+
   required:
     - id
     - type
@@ -372,8 +448,8 @@
 
   x-license-url: https://github.com/smart-data-models/circuloos_data_model/blob/master/3DPrintingProcess/LICENSE.md
 
-  x-model-schema: https://raw.githubusercontent.com/TO_ADD_LATER/schema.json
+  x-model-schema: https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/openCallSpecific/granular_printers/3DPrintingProcess/schema.json
 
-  x-model-tags: ''
+  x-model-tags: granular_printers
 
   x-version: 0.0.1

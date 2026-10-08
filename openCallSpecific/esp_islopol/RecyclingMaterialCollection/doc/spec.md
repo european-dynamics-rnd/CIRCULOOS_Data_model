@@ -13,10 +13,10 @@ Entity: RecyclingMaterialCollection
 ## List of properties  
 
 <sup><sub>[*] If there is not a type in an attribute is because it could have several types or different formats/patterns</sub></sup>  
-- `client[*]`: Name of the client associated with the material movement.  - `clientType[*]`: Client classification code.  - `destination[*]`: Receiving site, treatment route or sorting destination recorded for the material movement.  - `id[string]`: Unique entity identifier, with the format urn:ngsi-ld:RecyclingMaterialCollection:<facility>:<kind>:<timestamp>.  - `lerCode[*]`: European List of Waste code.  - `movementKind[*]`: Type of material movement or operation.  - `origin[*]`: Place, municipality or source site from which the collected material originated.  - `product[*]`: Material or waste description.  - `refVehicle[*]`: Identifier of the Vehicle entity associated with the material movement.  - `timestampArrival[*]`: Date and time of the recorded arrival or reception of the material, expressed as an ISO 8601 timestamp.  - `transporter[*]`: Name of the organisation responsible for transporting the material in the recorded movement.  - `type[string]`: NGSI Entity type. It has to be RecyclingMaterialCollection  - `vehiclePlateIdentifier[*]`: Vehicle registration plate or other vehicle identifier recorded in the source document.  - `wasteStream[*]`: Classification of the collected material stream.  - `weight[*]`: Expected unitCode: KGM. Mass of material recorded for the movement.  <!-- /30-PropertiesList -->  
+- `client[*]`: Name of the client associated with the material movement.  - `clientType[*]`: Client classification code.  - `destination[*]`: Receiving site, treatment route or sorting destination recorded for the material movement.  - `distance[*]`: Expected unitCode: KMT. Distance travelled by the collection movement.  - `id[string]`: Unique entity identifier, with the format urn:ngsi-ld:RecyclingMaterialCollection:<facility>:<kind>:<timestamp>.  - `lerCode[*]`: European List of Waste code.  - `movementKind[*]`: Type of material movement or operation.  - `origin[*]`: Place, municipality or source site from which the collected material originated.  - `product[*]`: Material or waste description.  - `refFactoryDestination[*]`: ARM Factory the collection movement arrives at, when it arrives at an ARM facility.  - `refFactoryOrigin[*]`: ARM Factory the collection movement departs from, when it departs from an ARM facility.  - `refVehicle[*]`: Identifier of the Vehicle entity associated with the material movement.  - `timestampArrival[*]`: Date and time of the recorded arrival or reception of the material, expressed as an ISO 8601 timestamp.  - `timestampDeparture[*]`: Date and time when the material movement departed, expressed as an ISO 8601 timestamp.  - `transporter[*]`: Name of the organisation responsible for transporting the material in the recorded movement.  - `type[string]`: NGSI Entity type. It has to be RecyclingMaterialCollection  - `vehiclePlateIdentifier[*]`: Vehicle registration plate or other vehicle identifier recorded in the source document.  - `wasteStream[*]`: Classification of the collected material stream: Blue Stream, Yellow Stream, EPS Stream, Rejected EPS Stream, Paper/Cardboard Stream, Other.  - `weight[*]`: Expected unitCode: KGM. Mass of material recorded for the movement.  <!-- /30-PropertiesList -->  
 <!-- 35-RequiredProperties -->  
 Required properties  
-- `id`  - `movementKind`  - `timestampArrival`  - `type`  - `weight`  <!-- /35-RequiredProperties -->  
+- `id`  - `type`  - `weight`  <!-- /35-RequiredProperties -->  
 <!-- 40-RequiredProperties -->  
 <!-- /40-RequiredProperties -->  
 <!-- 50-DataModelHeader -->  
@@ -87,6 +87,43 @@ RecyclingMaterialCollection:
             - value    
           type: object    
       description: Receiving site, treatment route or sorting destination recorded for the material movement.    
+      x-ngsi:    
+        type: Property    
+    distance:    
+      allOf:    
+        - additionalProperties: no    
+          anyOf:    
+            - required:    
+                - value    
+            - required:    
+                - minValue    
+            - required:    
+                - maxValue    
+          properties:    
+            maxValue:    
+              description: Upper bound of the value, when the source declares a range or a maximum.    
+              type: number    
+            minValue:    
+              description: Lower bound of the value, when the source declares a range or a minimum.    
+              type: number    
+            observedAt:    
+              format: date-time    
+              type: string    
+            type:    
+              enum:    
+                - Property    
+              type: string    
+            unitCode:    
+              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
+              type: string    
+            value:    
+              description: Exact measured value, when a single figure is known.    
+              type: number    
+          required:    
+            - type    
+            - unitCode    
+          type: object    
+      description: 'Expected unitCode: KMT. Distance travelled by the collection movement.'    
       x-ngsi:    
         type: Property    
     id:    
@@ -174,6 +211,50 @@ RecyclingMaterialCollection:
       description: Material or waste description.    
       x-ngsi:    
         type: Property    
+    refFactoryDestination:    
+      allOf:    
+        - additionalProperties: no    
+          properties:    
+            object:    
+              description: URN of the referenced entity.    
+              pattern: ^urn:ngsi-ld:.+$    
+              type: string    
+            observedAt:    
+              format: date-time    
+              type: string    
+            type:    
+              enum:    
+                - Relationship    
+              type: string    
+          required:    
+            - type    
+            - object    
+          type: object    
+      description: ARM Factory the collection movement arrives at, when it arrives at an ARM facility.    
+      x-ngsi:    
+        type: Relationship    
+    refFactoryOrigin:    
+      allOf:    
+        - additionalProperties: no    
+          properties:    
+            object:    
+              description: URN of the referenced entity.    
+              pattern: ^urn:ngsi-ld:.+$    
+              type: string    
+            observedAt:    
+              format: date-time    
+              type: string    
+            type:    
+              enum:    
+                - Relationship    
+              type: string    
+          required:    
+            - type    
+            - object    
+          type: object    
+      description: ARM Factory the collection movement departs from, when it departs from an ARM facility.    
+      x-ngsi:    
+        type: Relationship    
     refVehicle:    
       allOf:    
         - additionalProperties: no    
@@ -216,6 +297,28 @@ RecyclingMaterialCollection:
             - value    
           type: object    
       description: Date and time of the recorded arrival or reception of the material, expressed as an ISO 8601 timestamp.    
+      x-ngsi:    
+        type: Property    
+    timestampDeparture:    
+      allOf:    
+        - additionalProperties: no    
+          properties:    
+            observedAt:    
+              format: date-time    
+              type: string    
+            type:    
+              enum:    
+                - Property    
+              type: string    
+            value:    
+              format: date-time    
+              pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$    
+              type: string    
+          required:    
+            - type    
+            - value    
+          type: object    
+      description: Date and time when the material movement departed, expressed as an ISO 8601 timestamp.    
       x-ngsi:    
         type: Property    
     transporter:    
@@ -277,12 +380,19 @@ RecyclingMaterialCollection:
                 - Property    
               type: string    
             value:    
+              enum:    
+                - Blue Stream    
+                - Yellow Stream    
+                - EPS Stream    
+                - Rejected EPS Stream    
+                - Paper/Cardboard Stream    
+                - Other    
               type: string    
           required:    
             - type    
             - value    
           type: object    
-      description: Classification of the collected material stream.    
+      description: 'Classification of the collected material stream: Blue Stream, Yellow Stream, EPS Stream, Rejected EPS Stream, Paper/Cardboard Stream, Other.'    
       x-ngsi:    
         type: Property    
     weight:    
@@ -325,15 +435,13 @@ RecyclingMaterialCollection:
   required:    
     - id    
     - type    
-    - movementKind    
-    - timestampArrival    
     - weight    
   type: object    
   x-derived-from: https://context.dataspace-arditi.com/islopol/entities/RecyclingMaterialCollection/v2/schema.json    
   x-disclaimer: Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program    
   x-license-url: https://github.com/smart-data-models/circuloos_data_model/blob/master/RecyclingMaterialCollection/LICENSE.md    
-  x-model-schema: https://raw.githubusercontent.com/TO_ADD_LATER/schema.json    
-  x-model-tags: ''    
+  x-model-schema: https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/openCallSpecific/esp_islopol/RecyclingMaterialCollection/schema.json    
+  x-model-tags: esp_islopol    
   x-version: 0.0.1    
 ```  
 </details>    
