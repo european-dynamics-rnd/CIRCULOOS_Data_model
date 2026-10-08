@@ -15,19 +15,20 @@
   },
   "supplier": {
     "type": "Property",
-    "value": "ARM Collection"
+    "value": [
+      "ARM Collection"
+    ]
   },
   "destination": {
     "type": "Property",
-    "value": "ARM ETZL/ET"
+    "value": [
+      "ARM ETZL/ET"
+    ]
   },
   "quantity": {
     "type": "Property",
-    "value": 6396.748215
-  },
-  "unitCode": {
-    "type": "Property",
-    "value": "kg"
+    "value": 6396.748215,
+    "unitCode": "KGM"
   },
   "length": {
     "type": "Property",

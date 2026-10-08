@@ -220,10 +220,8 @@ modelYaml = "model.yaml"
 listOfPropertiesText = "## List of properties"
 warningTypes = "<sup><sub>[*] If there is not a type in an attribute is because it could have several types or different formats/patterns</sub></sup>"
 techDescriptionOfPropertiesText = "Data Model description of properties"
-uselessPRText = "[document generated automatically](https://docs.google.com/presentation/d/e/2PACX-1vTs-Ng5dIAwkg91oTTUdt8ua7woBXhPnwavZ0FxgR8BsAI_Ek3C5q97Nd94HS8KhP-r_quD4H0fgyt3/pub?start=false&loop=false&delayms=3000#slide=id.gb715ace035_0_60)"
 
-licenseMessageStart = "[Open License](https://github.com/smart-data-models//"
-licenseMessageEnd = "/LICENSE.md)"
+licenseMessage = "[Open License](https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/refs/heads/main/LICENSE)"
 
 
 urlNotesRoot = "https://smart-data-models.github.io"
@@ -291,10 +289,9 @@ for dataModel in dataModels:
             ######################################################
 
             specContent += comment_spec("15-License", True)
-            licenseMessage = licenseMessageStart + repoName + "/blob/master/" + dataModel + licenseMessageEnd
+            licenseMessage = licenseMessage
             print(licenseMessage)
             specContent += make_paragraph(translation(licenseMessage, english, lang, authKey))
-            specContent += make_paragraph(translation(uselessPRText, english, lang, authKey))
             specContent += comment_spec("15-License", False)
 
             #########################################

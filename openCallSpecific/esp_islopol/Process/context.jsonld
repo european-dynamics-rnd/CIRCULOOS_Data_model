@@ -1,0 +1,15 @@
+{
+    "@context": {
+        "Process": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/Process",
+        "description": "http://purl.org/dc/terms/description",
+        "id": "@id",
+        "name": "https://smartdatamodels.org/name",
+        "observedAt": {
+            "@id": "https://uri.etsi.org/ngsi-ld/observedAt",
+            "@type": "https://uri.etsi.org/ngsi-ld/DateTime"
+        },
+        "triggeringCondition": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/triggeringCondition",
+        "type": "@type",
+        "value": "https://uri.etsi.org/ngsi-ld/hasValue"
+    }
+}

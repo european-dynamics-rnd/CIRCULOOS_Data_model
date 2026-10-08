@@ -1,10 +1,10 @@
 {
   "$schema": "http://json-schema.org/schema#",
   "$schemaVersion": "0.0.1",
-  "modelTags": "",
+  "modelTags": "esp_islopol",
   "derivedFrom": "https://context.dataspace-arditi.com/islopol/entities/ProductionRun/v2/schema.json",
-  "license": "",
-  "$id": "https://raw.githubusercontent.com/TO_ADD_LATER/schema.json",
+  "license": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/refs/heads/main/LICENSE",
+  "$id": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/openCallSpecific/esp_islopol/ProductionRun/schema.json",
   "title": "Data model for an ISLOPOL production run",
   "description": "CIRCULOOS data model for a specific production or transformation run in the ISLOPOL value chain, covering the period over which it ran, the process performed and the input and output products involved.",
   "type": "object",
@@ -44,13 +44,21 @@
           ]
         },
         "object": {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "pattern": "^urn:ngsi-ld:.+$"
-          },
-          "minItems": 1,
-          "description": "URNs of the referenced entities."
+          "oneOf": [
+            {
+              "type": "string",
+              "pattern": "^urn:ngsi-ld:.+$"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^urn:ngsi-ld:.+$"
+              },
+              "minItems": 1
+            }
+          ],
+          "description": "URN of the referenced entity, or a list of URNs."
         },
         "observedAt": {
           "type": "string",
@@ -87,6 +95,29 @@
         "object"
       ],
       "additionalProperties": false
+    },
+    "StringProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Property"
+          ]
+        },
+        "value": {
+          "type": "string"
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ],
+      "additionalProperties": false
     }
   },
   "allOf": [
@@ -119,6 +150,14 @@
           ],
           "description": "Property. Date and time when the production run actually ended, expressed as an ISO 8601 timestamp. Together with startDate, it defines the recorded duration of the run."
         },
+        "description": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
+          "description": "Property. Human-readable description of the production run or operator notes."
+        },
         "refProcess": {
           "allOf": [
             {
@@ -142,6 +181,14 @@
             }
           ],
           "description": "Relationship. Identifiers of the Product entities produced by the run. The referenced Product records specify output quantities and units."
+        },
+        "refLcaId": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
+          "description": "Property. Reference identifier used for LCA traceability."
         }
       }
     }
@@ -149,7 +196,7 @@
   "required": [
     "id",
     "type",
-    "refProcess",
-    "startDate"
+    "startDate",
+    "endDate"
   ]
 }

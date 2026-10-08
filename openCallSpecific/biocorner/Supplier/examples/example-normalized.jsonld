@@ -10,24 +10,20 @@
     "object": "urn:ngsi-ld:Organization:LITOKOL",
     "observedAt": "2026-06-16T08:04:49.000Z"
   },
-  "region": {
+  "address": {
     "type": "Property",
-    "value": "Emilia-Romagna",
+    "value": {
+      "addressRegion": "Emilia-Romagna",
+      "addressCountry": "Italy"
+    },
     "observedAt": "2026-06-16T08:04:49.000Z"
   },
-  "suppliesSRM2": {
+  "suppliesSRM": {
     "type": "Relationship",
-    "object": "urn:ngsi-ld:SRM:RiceStraw",
-    "observedAt": "2026-06-16T08:04:49.000Z"
-  },
-  "suppliesSRM1": {
-    "type": "Relationship",
-    "object": "urn:ngsi-ld:SRM:RiceHusk",
-    "observedAt": "2026-06-16T08:04:49.000Z"
-  },
-  "country": {
-    "type": "Property",
-    "value": "Italy",
+    "object": [
+      "urn:ngsi-ld:SRM:RiceHusk",
+      "urn:ngsi-ld:SRM:RiceStraw"
+    ],
     "observedAt": "2026-06-16T08:04:49.000Z"
   },
   "name": {

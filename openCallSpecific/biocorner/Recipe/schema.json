@@ -1,10 +1,10 @@
 {
   "$schema": "http://json-schema.org/schema#",
   "$schemaVersion": "0.0.1",
-  "modelTags": "",
+  "modelTags": "biocorner",
   "derivedFrom": "",
-  "license": "",
-  "$id": "https://raw.githubusercontent.com/TO_ADD_LATER/schema.json",
+  "license": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/refs/heads/main/LICENSE",
+  "$id": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/openCallSpecific/biocorner/Recipe/schema.json",
   "title": "Data model for a Biocorner mortar recipe",
   "description": "CIRCULOOS data model for a Biocorner bio-based mortar formulation, covering the secondary raw materials it combines, its mixing and curing parameters and the organization that developed it.",
   "type": "object",
@@ -85,6 +85,35 @@
             "maxValue"
           ]
         }
+      ],
+      "additionalProperties": false
+    },
+    "RelationshipArrayProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Relationship"
+          ]
+        },
+        "object": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^urn:ngsi-ld:[A-Za-z0-9_]+:.+$"
+          },
+          "minItems": 1,
+          "description": "URNs of the referenced entities, each with the format urn:ngsi-ld:<type>:<id>."
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "object"
       ],
       "additionalProperties": false
     },
@@ -183,37 +212,13 @@
           ],
           "description": "Relationship. Relationship to the Organization entity that developed and validated this formulation through laboratory testing and characterisation."
         },
-        "containsSRM1": {
+        "containsSRM": {
           "allOf": [
             {
-              "$ref": "#/definitions/RelationshipProperty"
+              "$ref": "#/definitions/RelationshipArrayProperty"
             }
           ],
-          "description": "Relationship. Relationship to the primary SRM entity used in this formulation. Identifies the main bio-based secondary raw material in the recipe."
-        },
-        "containsSRM2": {
-          "allOf": [
-            {
-              "$ref": "#/definitions/RelationshipProperty"
-            }
-          ],
-          "description": "Relationship. Relationship to the second SRM entity, when multiple secondary raw materials are combined in the formulation."
-        },
-        "containsSRM3": {
-          "allOf": [
-            {
-              "$ref": "#/definitions/RelationshipProperty"
-            }
-          ],
-          "description": "Relationship. Relationship to the third SRM entity, applicable for multi-source formulations combining different waste stream categories."
-        },
-        "containsSRM4": {
-          "allOf": [
-            {
-              "$ref": "#/definitions/RelationshipProperty"
-            }
-          ],
-          "description": "Relationship. Relationship to the fourth SRM entity, applicable for complex formulations requiring four or more secondary raw material types."
+          "description": "Relationship. SRM entities combined in this formulation, listed with the primary (main bio-based) secondary raw material first."
         },
         "mixingTime": {
           "allOf": [
@@ -248,6 +253,6 @@
     "name",
     "formulation",
     "developedBy",
-    "containsSRM1"
+    "containsSRM"
   ]
 }

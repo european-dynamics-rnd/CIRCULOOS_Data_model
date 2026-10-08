@@ -1,10 +1,10 @@
 {
   "$schema": "http://json-schema.org/schema#",
   "$schemaVersion": "0.0.1",
-  "modelTags": "",
+  "modelTags": "biomass_evop",
   "derivedFrom": "",
-  "license": "",
-  "$id": "https://raw.githubusercontent.com/TO_ADD_LATER/schema.json",
+  "license": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/refs/heads/main/LICENSE",
+  "$id": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/openCallSpecific/biomass_evop/MaterialOffer/schema.json",
   "title": "Data model for an EVOP material offer",
   "description": "CIRCULOOS data model for an offer of surplus biomass made available to other organisations in the EVOP circular supply chain, covering the quantity offered, the safety margin retained and the inventory the offer derives from.",
   "type": "object",

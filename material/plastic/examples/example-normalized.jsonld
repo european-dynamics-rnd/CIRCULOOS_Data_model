@@ -1,0 +1,122 @@
+{
+    "id": "urn:ngsi-ld:plastic:PPR2044",
+    "type": "plastic",
+    "polymerType": {
+        "type": "Property",
+        "value": "PP"
+    },
+    "materialForm": {
+        "type": "Property",
+        "value": "pellet"
+    },
+    "origin": {
+        "type": "Property",
+        "value": "post-industrial recycled"
+    },
+    "recycledContent": {
+        "type": "Property",
+        "value": "85",
+        "unitCode": "P1"
+    },
+    "recycledTimes": {
+        "type": "Property",
+        "value": "2"
+    },
+    "color": {
+        "type": "Property",
+        "value": "natural"
+    },
+    "density": {
+        "type": "Property",
+        "value": "0.91",
+        "unitCode": "23"
+    },
+    "bulkDensity": {
+        "type": "Property",
+        "value": "550",
+        "unitCode": "KMQ"
+    },
+    "meltFlowIndex": {
+        "type": "Property",
+        "value": "12"
+    },
+    "moistureContent": {
+        "type": "Property",
+        "value": "0.08",
+        "unitCode": "P1"
+    },
+    "dryingRequired": {
+        "type": "Property",
+        "value": "true"
+    },
+    "recommendedDryingTemperature": {
+        "type": "Property",
+        "value": "80",
+        "unitCode": "CEL"
+    },
+    "recommendedDryingTime": {
+        "type": "Property",
+        "value": "2",
+        "unitCode": "HUR"
+    },
+    "meltingTemperature": {
+        "type": "Property",
+        "value": "165",
+        "unitCode": "CEL"
+    },
+    "recommendedBarrelTemperature": {
+        "type": "Property",
+        "value": "220",
+        "unitCode": "CEL"
+    },
+    "recommendedMoldTemperature": {
+        "type": "Property",
+        "value": "40",
+        "unitCode": "CEL"
+    },
+    "shrinkageRate": {
+        "type": "Property",
+        "value": "1.5",
+        "unitCode": "P1"
+    },
+    "tensileStrength": {
+        "type": "Property",
+        "value": "28",
+        "unitCode": "MPA"
+    },
+    "flexuralModulus": {
+        "type": "Property",
+        "value": "1350",
+        "unitCode": "MPA"
+    },
+    "impactStrength": {
+        "type": "Property",
+        "value": "5.5"
+    },
+    "heatDeflectionTemperature": {
+        "type": "Property",
+        "value": "85",
+        "unitCode": "CEL"
+    },
+    "ashContent": {
+        "type": "Property",
+        "value": "0.4",
+        "unitCode": "P1"
+    },
+    "contaminationLevel": {
+        "type": "Property",
+        "value": "low"
+    },
+    "additives": {
+        "type": "Property",
+        "value": "UV stabilizer, antioxidant masterbatch"
+    },
+    "batchNumber": {
+        "type": "Property",
+        "value": "LOT-2026-0417"
+    },
+
+    "@context": [
+        "https://TOBELater/context.jsonld"
+    ]
+}

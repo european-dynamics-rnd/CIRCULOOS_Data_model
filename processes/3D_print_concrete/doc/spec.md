@@ -1,20 +1,34 @@
-<!-- 10-Header -->  
+<!-- 10-Header -->
+  
 Entity: leather  
-===============<!-- /10-Header -->  
-<!-- 15-License -->  
-[Open License](https://github.com/smart-data-models//circuloos_data_model/blob/master/leather/LICENSE.md)  
-[document generated automatically](https://docs.google.com/presentation/d/e/2PACX-1vTs-Ng5dIAwkg91oTTUdt8ua7woBXhPnwavZ0FxgR8BsAI_Ek3C5q97Nd94HS8KhP-r_quD4H0fgyt3/pub?start=false&loop=false&delayms=3000#slide=id.gb715ace035_0_60)  
-<!-- /15-License -->  
-<!-- 20-Description -->  
-Global description: **CIRCULOOS data model for 3D printed concrete parts.**  
-version: 0.0.1  
-<!-- /20-Description -->  
-<!-- 30-PropertiesList -->  
+===============
+<!-- /10-Header -->
+  
+<!-- 15-License -->
+  
 
-## List of properties  
+[Open License](https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/refs/heads/main/LICENSE)
 
-<sup><sub>[*] If there is not a type in an attribute is because it could have several types or different formats/patterns</sub></sup>  
-- `address[object]`: The mailing address  . Model: [https://schema.org/address](https://schema.org/address)	- `addressCountry[string]`: Property. The country. For example, Spain. Model:'https://schema.org/addressCountry'    
+<!-- /15-License -->
+  
+<!-- 20-Description -->
+  
+
+Global description: **CIRCULOOS data model for 3D printed concrete parts.**  
+
+version: 0.0.1  
+<!-- /20-Description -->
+  
+<!-- 30-PropertiesList -->
+  
+
+
+## List of properties  
+
+
+<sup><sub>[*] If there is not a type in an attribute is because it could have several types or different formats/patterns</sub></sup>  
+- `address[object]`: The mailing address  . Model: [https://schema.org/address](https://schema.org/address)
+	- `addressCountry[string]`: Property. The country. For example, Spain. Model:'https://schema.org/addressCountry'    
 	- `addressLocality[string]`: Property. The locality in which the street address is, and which is in the region. Model:'https://schema.org/addressLocality'    
 	- `addressRegion[string]`: Property. The region in which the locality is, and which is in the country. Model:'https://schema.org/addressRegion'    
 	- `district[string]`: Property. A district is a type of administrative division that, in some countries, is managed by the local government    
@@ -22,80 +36,127 @@ Entity: leather
 	- `postalCode[string]`: Property. The postal code. For example, 24004. Model:'https://schema.org/https://schema.org/postalCode'    
 	- `streetAddress[string]`: Property. The street address. Model:'https://schema.org/streetAddress'    
 	- `streetNr[string]`: Property. Number identifying a specific property on a public street    
-- `alternateName[string]`: An alternative name for this item  - `areaServed[string]`: The geographic area where a service or offered item is provided  . Model: [https://schema.org/Text](https://schema.org/Text)- `cementContent`:   	- `observedAt`:     
+- `alternateName[string]`: An alternative name for this item  
+- `areaServed[string]`: The geographic area where a service or offered item is provided  . Model: [https://schema.org/Text](https://schema.org/Text)
+- `cementContent`:   
+	- `observedAt`:     
 	- `type`:     
 	- `unitCode`:     
 	- `value`:     
-- `color`:   	- `observedAt`:     
+- `color`:   
+	- `observedAt`:     
 	- `type`:     
 	- `value`:     
-- `compressiveStrength`:   	- `observedAt`:     
-	- `type`:     
-	- `unitCode`:     
-	- `value`:     
-- `dataProvider[string]`: A sequence of characters identifying the provider of the harmonised data entity  - `dateCreated[date-time]`: Entity creation timestamp. This will usually be allocated by the storage platform  - `dateModified[date-time]`: Timestamp of the last modification of the entity. This will usually be allocated by the storage platform  - `density`:   	- `observedAt`:     
+- `compressiveStrength`:   
+	- `observedAt`:     
 	- `type`:     
 	- `unitCode`:     
 	- `value`:     
-- `description[string]`: A description of this item  - `energyUsage`:   	- `observedAt`:     
+- `dataProvider[string]`: A sequence of characters identifying the provider of the harmonised data entity  
+- `dateCreated[date-time]`: Entity creation timestamp. This will usually be allocated by the storage platform  
+- `dateModified[date-time]`: Timestamp of the last modification of the entity. This will usually be allocated by the storage platform  
+- `density`:   
+	- `observedAt`:     
 	- `type`:     
 	- `unitCode`:     
 	- `value`:     
-- `fabricationTimestamp`:   	- `observedAt`:     
-	- `type`:     
-	- `value`:     
-- `id[*]`: Unique identifier of the entity  - `location[*]`: GeoProperty. Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon  - `name[string]`: The name of this item  - `overallDimensions`:   	- `observedAt`:     
-	- `type`:     
-	- `unitCode`:     
-	- `value`:     
-- `owner[array]`: A List containing a JSON encoded sequence of characters referencing the unique Ids of the owner(s)  - `partId`:   	- `observedAt`:     
-	- `type`:     
-	- `value`:     
-- `printSpeed`:   	- `observedAt`:     
+- `description[string]`: A description of this item  
+- `energyUsage`:   
+	- `observedAt`:     
 	- `type`:     
 	- `unitCode`:     
 	- `value`:     
-- `realTimeCoordinates`:   	- `observedAt`:     
+- `fabricationTimestamp`:   
+	- `observedAt`:     
+	- `type`:     
+	- `value`:     
+- `id[*]`: Unique identifier of the entity  
+- `location[*]`: GeoProperty. Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon  
+- `name[string]`: The name of this item  
+- `overallDimensions`:   
+	- `observedAt`:     
 	- `type`:     
 	- `unitCode`:     
 	- `value`:     
-- `realTimePressureSensorData`:   	- `observedAt`:     
+- `owner[array]`: A List containing a JSON encoded sequence of characters referencing the unique Ids of the owner(s)  
+- `partId`:   
+	- `observedAt`:     
+	- `type`:     
+	- `value`:     
+- `printSpeed`:   
+	- `observedAt`:     
 	- `type`:     
 	- `unitCode`:     
 	- `value`:     
-- `realTimeTemperatureSensorData`:   	- `observedAt`:     
+- `realTimeCoordinates`:   
+	- `observedAt`:     
 	- `type`:     
 	- `unitCode`:     
 	- `value`:     
-- `recycledContent`:   	- `observedAt`:     
+- `realTimePressureSensorData`:   
+	- `observedAt`:     
 	- `type`:     
 	- `unitCode`:     
 	- `value`:     
-- `seeAlso[*]`: list of uri pointing to additional resources about the item  - `source[string]`: A sequence of characters giving the original source of the entity data as a URL. Recommended to be the fully qualified domain name of the source provider, or the URL to the source object  - `torqueData`:   	- `observedAt`:     
+- `realTimeTemperatureSensorData`:   
+	- `observedAt`:     
 	- `type`:     
 	- `unitCode`:     
 	- `value`:     
-- `type[string]`: NGSI Entity type. It has to be reConcretePart  - `waterUsage`:   	- `observedAt`:     
+- `recycledContent`:   
+	- `observedAt`:     
 	- `type`:     
 	- `unitCode`:     
 	- `value`:     
-- `weight`:   	- `observedAt`:     
+- `seeAlso[*]`: list of uri pointing to additional resources about the item  
+- `source[string]`: A sequence of characters giving the original source of the entity data as a URL. Recommended to be the fully qualified domain name of the source provider, or the URL to the source object  
+- `torqueData`:   
+	- `observedAt`:     
 	- `type`:     
 	- `unitCode`:     
 	- `value`:     
-<!-- /30-PropertiesList -->  
-<!-- 35-RequiredProperties -->  
-Required properties  
-- `fabricationTimestamp`  - `id`  - `overallDimensions`  - `partId`  - `type`  - `weight`  <!-- /35-RequiredProperties -->  
-<!-- 40-RequiredProperties -->  
-<!-- /40-RequiredProperties -->  
-<!-- 50-DataModelHeader -->  
-## Data Model description of properties  
-Sorted alphabetically (click for details)  
-<!-- /50-DataModelHeader -->  
-<!-- 60-ModelYaml -->  
+- `type[string]`: NGSI Entity type. It has to be reConcretePart  
+- `waterUsage`:   
+	- `observedAt`:     
+	- `type`:     
+	- `unitCode`:     
+	- `value`:     
+- `weight`:   
+	- `observedAt`:     
+	- `type`:     
+	- `unitCode`:     
+	- `value`:     
+<!-- /30-PropertiesList -->
+  
+<!-- 35-RequiredProperties -->
+  
+
+Required properties  
+- `fabricationTimestamp`  
+- `id`  
+- `overallDimensions`  
+- `partId`  
+- `type`  
+- `weight`  
+<!-- /35-RequiredProperties -->
+  
+<!-- 40-RequiredProperties -->
+  
+<!-- /40-RequiredProperties -->
+  
+<!-- 50-DataModelHeader -->
+  
+
+## Data Model description of properties  
+
+Sorted alphabetically (click for details)  
+<!-- /50-DataModelHeader -->
+  
+<!-- 60-ModelYaml -->
+  
 <details><summary><strong>full yaml details</strong></summary>    
-```yaml  
+
+```yaml  
 leather:    
   description: CIRCULOOS data model for 3D printed concrete parts.    
   properties:    
@@ -762,113 +823,222 @@ leather:
   x-version: 0.0.1    
 ```  
 </details>    
-<!-- /60-ModelYaml -->  
-<!-- 70-MiddleNotes -->  
-<!-- /70-MiddleNotes -->  
-<!-- 80-Examples -->  
-## Example payloads    
-Not available the example of a leather in JSON-LD format as key-values. This is compatible with NGSI-LD when  using `options=keyValues` and returns the context data of an individual entity.  
-#### leather NGSI-LD normalized Example    
-Here is an example of a leather in JSON-LD format as normalized. This is compatible with NGSI-LD when not using options and returns the context data of an individual entity.  
+<!-- /60-ModelYaml -->
+  
+<!-- 70-MiddleNotes -->
+  
+<!-- /70-MiddleNotes -->
+  
+<!-- 80-Examples -->
+  
+
+## Example payloads    
+
+Not available the example of a leather in JSON-LD format as key-values. This is compatible with NGSI-LD when  using `options=keyValues` and returns the context data of an individual entity.  
+
+#### leather NGSI-LD normalized Example    
+
+Here is an example of a leather in JSON-LD format as normalized. This is compatible with NGSI-LD when not using options and returns the context data of an individual entity.  
 <details><summary><strong>show/hide example</strong></summary>    
-```json  
-{  
-  "id": "urn:ngsi-ld:reConcretePart:sicurta-001",  
-  "type": "reConcretePart",  
-  "partId": {  
-    "type": "Property",  
-    "value": "sicurta-001"  
-  },  
-  "fabricationTimestamp": {  
-    "type": "Property",  
-    "value": "2026-05-20T10:30:00Z"  
-  },  
-  "density": {  
-    "type": "Property",  
-    "value": 2150,  
-    "unitCode": "KMQ"  
-  },  
-  "weight": {  
-    "type": "Property",  
-    "value": 135.0,  
-    "unitCode": "KGM"  
-  },  
-  "overallDimensions": {  
-    "type": "Property",  
-    "value": {  
-      "length": 0.8,  
-      "width": 1.2,  
-      "height": 0.6  
-    },  
-    "unitCode": "MTR"  
-  },  
-  "realTimeCoordinates": {  
-    "type": "Property",  
-    "value": {  
-      "x": [0.0, 0.2, 0.4, 0.6],  
-      "y": [0.0, 0.1, 0.1, 0.2],  
-      "z": [0.0, 0.05, 0.1, 0.15]  
-    },  
-    "unitCode": "MTR"  
-  },  
-  "realTimePressureSensorData": {  
-    "type": "Property",  
-    "value": {  
-      "values": [2.1, 2.2, 2.0, 2.3]  
-    },  
-    "unitCode": "BAR"  
-  },  
-  "realTimeTemperatureSensorData": {  
-    "type": "Property",  
-    "value": {  
-      "values": [23.5, 23.8, 24.0, 24.1]  
-    },  
-    "unitCode": "CEL"  
-  },  
-  "torqueData": {  
-    "type": "Property",  
-    "value": {  
-      "values": [14.1, 14.3, 14.0, 14.2]  
-    },  
-    "unitCode": "NU"  
-  },  
-  "printSpeed": {  
-    "type": "Property",  
-    "value": 100,  
-    "unitCode": "C16"  
-  },  
-  "energyUsage": {  
-    "type": "Property",  
-    "value": 4.0,  
-    "unitCode": "KWH"  
-  },  
-  "waterUsage": {  
-    "type": "Property",  
-    "value": 9.4,  
-    "unitCode": "LTR"  
-  },  
-  "compressiveStrength": {  
-    "type": "Property",  
-    "value": 38.2,  
-    "unitCode": "MPA"  
-  },  
-  "cementContent": {  
-    "type": "Property",  
-    "value": 20.0,  
-    "unitCode": "P1"  
-  },  
-  "recycledContent": {  
-    "type": "Property",  
-    "value": 46.5,  
-    "unitCode": "P1"  
-  },  
-  "color": {  
-    "type": "Property",  
-    "value": "light grey"  
-  },  
-  "@context": [  
-    "https://TOBELater/context.jsonld"  
-  ]  
-}  
+
+```json  
+
+{
+  
+  "id": "urn:ngsi-ld:reConcretePart:sicurta-001",
+  
+  "type": "reConcretePart",
+  
+  "partId": {
+  
+    "type": "Property",
+  
+    "value": "sicurta-001"
+  
+  },
+  
+  "fabricationTimestamp": {
+  
+    "type": "Property",
+  
+    "value": "2026-05-20T10:30:00Z"
+  
+  },
+  
+  "density": {
+  
+    "type": "Property",
+  
+    "value": 2150,
+  
+    "unitCode": "KMQ"
+  
+  },
+  
+  "weight": {
+  
+    "type": "Property",
+  
+    "value": 135.0,
+  
+    "unitCode": "KGM"
+  
+  },
+  
+  "overallDimensions": {
+  
+    "type": "Property",
+  
+    "value": {
+  
+      "length": 0.8,
+  
+      "width": 1.2,
+  
+      "height": 0.6
+  
+    },
+  
+    "unitCode": "MTR"
+  
+  },
+  
+  "realTimeCoordinates": {
+  
+    "type": "Property",
+  
+    "value": {
+  
+      "x": [0.0, 0.2, 0.4, 0.6],
+  
+      "y": [0.0, 0.1, 0.1, 0.2],
+  
+      "z": [0.0, 0.05, 0.1, 0.15]
+  
+    },
+  
+    "unitCode": "MTR"
+  
+  },
+  
+  "realTimePressureSensorData": {
+  
+    "type": "Property",
+  
+    "value": {
+  
+      "values": [2.1, 2.2, 2.0, 2.3]
+  
+    },
+  
+    "unitCode": "BAR"
+  
+  },
+  
+  "realTimeTemperatureSensorData": {
+  
+    "type": "Property",
+  
+    "value": {
+  
+      "values": [23.5, 23.8, 24.0, 24.1]
+  
+    },
+  
+    "unitCode": "CEL"
+  
+  },
+  
+  "torqueData": {
+  
+    "type": "Property",
+  
+    "value": {
+  
+      "values": [14.1, 14.3, 14.0, 14.2]
+  
+    },
+  
+    "unitCode": "NU"
+  
+  },
+  
+  "printSpeed": {
+  
+    "type": "Property",
+  
+    "value": 100,
+  
+    "unitCode": "C16"
+  
+  },
+  
+  "energyUsage": {
+  
+    "type": "Property",
+  
+    "value": 4.0,
+  
+    "unitCode": "KWH"
+  
+  },
+  
+  "waterUsage": {
+  
+    "type": "Property",
+  
+    "value": 9.4,
+  
+    "unitCode": "LTR"
+  
+  },
+  
+  "compressiveStrength": {
+  
+    "type": "Property",
+  
+    "value": 38.2,
+  
+    "unitCode": "MPA"
+  
+  },
+  
+  "cementContent": {
+  
+    "type": "Property",
+  
+    "value": 20.0,
+  
+    "unitCode": "P1"
+  
+  },
+  
+  "recycledContent": {
+  
+    "type": "Property",
+  
+    "value": 46.5,
+  
+    "unitCode": "P1"
+  
+  },
+  
+  "color": {
+  
+    "type": "Property",
+  
+    "value": "light grey"
+  
+  },
+  
+  "@context": [
+  
+    "https://TOBELater/context.jsonld"
+  
+  ]
+  
+}
+  
 ```  
-</details><!-- /80-Examples -->  
+</details><!-- /80-Examples -->
+  

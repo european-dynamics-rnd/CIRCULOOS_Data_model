@@ -1,0 +1,22 @@
+{
+    "@context": {
+        "Company": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/Company",
+        "address": "https://smartdatamodels.org/address",
+        "addressCountry": "https://smartdatamodels.org/addressCountry",
+        "addressLocality": "https://smartdatamodels.org/addressLocality",
+        "addressRegion": "https://smartdatamodels.org/addressRegion",
+        "category": "https://smartdatamodels.org/dataModel.ZEB/category",
+        "description": "http://purl.org/dc/terms/description",
+        "id": "@id",
+        "name": "https://smartdatamodels.org/name",
+        "observedAt": {
+            "@id": "https://uri.etsi.org/ngsi-ld/observedAt",
+            "@type": "https://uri.etsi.org/ngsi-ld/DateTime"
+        },
+        "postalCode": "https://smartdatamodels.org/postalCode",
+        "streetAddress": "https://smartdatamodels.org/streetAddress",
+        "type": "@type",
+        "value": "https://uri.etsi.org/ngsi-ld/hasValue",
+        "valueChainRole": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/valueChainRole"
+    }
+}

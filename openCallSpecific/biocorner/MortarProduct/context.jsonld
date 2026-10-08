@@ -1,0 +1,24 @@
+{
+    "@context": {
+        "MortarProduct": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/MortarProduct",
+        "applicationGuidelines": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/applicationGuidelines",
+        "certifiedBy": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/certifiedBy",
+        "classification": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/classification",
+        "country": "https://smartdatamodels.org/dataModel.Transportation/country",
+        "dateCreated": "https://smartdatamodels.org/dateCreated",
+        "description": "http://purl.org/dc/terms/description",
+        "id": "@id",
+        "name": "https://smartdatamodels.org/name",
+        "object": {
+            "@id": "https://uri.etsi.org/ngsi-ld/hasObject",
+            "@type": "@id"
+        },
+        "observedAt": {
+            "@id": "https://uri.etsi.org/ngsi-ld/observedAt",
+            "@type": "https://uri.etsi.org/ngsi-ld/DateTime"
+        },
+        "productionRegion": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/productionRegion",
+        "type": "@type",
+        "value": "https://uri.etsi.org/ngsi-ld/hasValue"
+    }
+}

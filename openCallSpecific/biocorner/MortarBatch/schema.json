@@ -1,15 +1,15 @@
 {
   "$schema": "http://json-schema.org/schema#",
   "$schemaVersion": "0.0.1",
-  "modelTags": "",
+  "modelTags": "biocorner",
   "derivedFrom": "",
-  "license": "",
-  "$id": "https://raw.githubusercontent.com/TO_ADD_LATER/schema.json",
+  "license": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/refs/heads/main/LICENSE",
+  "$id": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/openCallSpecific/biocorner/MortarBatch/schema.json",
   "title": "Data model for a Biocorner mortar production batch",
   "description": "CIRCULOOS data model for a single production batch of a Biocorner bio-based mortar, providing full traceability from the finished batch back to its product, recipe, manufacturing process, producer and secondary raw material batches.",
   "type": "object",
   "definitions": {
-    "DateProperty": {
+    "DateTimeProperty": {
       "type": "object",
       "properties": {
         "type": {
@@ -20,8 +20,8 @@
         },
         "value": {
           "type": "string",
-          "format": "date",
-          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+          "format": "date-time",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$"
         },
         "observedAt": {
           "type": "string",
@@ -31,6 +31,35 @@
       "required": [
         "type",
         "value"
+      ],
+      "additionalProperties": false
+    },
+    "RelationshipArrayProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Relationship"
+          ]
+        },
+        "object": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^urn:ngsi-ld:[A-Za-z0-9_]+:.+$"
+          },
+          "minItems": 1,
+          "description": "URNs of the referenced entities, each with the format urn:ngsi-ld:<type>:<id>."
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "object"
       ],
       "additionalProperties": false
     },
@@ -143,44 +172,20 @@
               "$ref": "#/definitions/RelationshipProperty"
             }
           ],
-          "description": "Relationship. Relationship to the Process entity describing the manufacturing procedure applied. Links the batch to specific energy, water, and waste generation data."
+          "description": "Relationship. Relationship to the MortarProcess entity describing the manufacturing procedure applied. Links the batch to specific energy, water, and waste generation data."
         },
-        "usedSRMBatches1": {
+        "usedSRMBatches": {
           "allOf": [
             {
-              "$ref": "#/definitions/RelationshipProperty"
+              "$ref": "#/definitions/RelationshipArrayProperty"
             }
           ],
-          "description": "Relationship. Relationship to the first SRMBatch entity used as input material. Enables full upstream traceability to raw material origin and supplier."
-        },
-        "usedSRMBatches2": {
-          "allOf": [
-            {
-              "$ref": "#/definitions/RelationshipProperty"
-            }
-          ],
-          "description": "Relationship. Relationship to the second SRMBatch entity used as input material, when the formulation requires multiple secondary raw materials."
-        },
-        "usedSRMBatches3": {
-          "allOf": [
-            {
-              "$ref": "#/definitions/RelationshipProperty"
-            }
-          ],
-          "description": "Relationship. Relationship to the third SRMBatch entity used as input material, applicable for multi-component formulations."
-        },
-        "usedSRMBatches4": {
-          "allOf": [
-            {
-              "$ref": "#/definitions/RelationshipProperty"
-            }
-          ],
-          "description": "Relationship. Relationship to the fourth SRMBatch entity used as input material, applicable for complex hybrid formulations."
+          "description": "Relationship. SRMBatch entities used as input material, listed with the batch of the primary SRM first. Enables full upstream traceability to raw material origin and supplier."
         },
         "dateCreated": {
           "allOf": [
             {
-              "$ref": "#/definitions/DateProperty"
+              "$ref": "#/definitions/DateTimeProperty"
             }
           ],
           "description": "Property. Date at which the entity was created."
@@ -196,6 +201,6 @@
     "producedFromRecipe",
     "producedBy",
     "usedProcess",
-    "usedSRMBatches1"
+    "usedSRMBatches"
   ]
 }

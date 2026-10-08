@@ -1,0 +1,200 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "$schemaVersion": "0.0.1",
+  "modelTags": "biocorner",
+  "derivedFrom": "",
+  "license": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/refs/heads/main/LICENSE",
+  "$id": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/openCallSpecific/biocorner/MortarProcess/schema.json",
+  "title": "Data model for a Biocorner mortar manufacturing process",
+  "description": "CIRCULOOS data model for a Biocorner mortar manufacturing process, covering the energy, water, waste and carbon dioxide figures recorded per functional unit of production at the manufacturing facility boundary.",
+  "type": "object",
+  "definitions": {
+    "DateTimeProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Property"
+          ]
+        },
+        "value": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$"
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ],
+      "additionalProperties": false
+    },
+    "QuantityProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Property"
+          ]
+        },
+        "value": {
+          "type": "number",
+          "description": "Exact measured value, when a single figure is known."
+        },
+        "minValue": {
+          "type": "number",
+          "description": "Lower bound of the value, when the source declares a range or a minimum."
+        },
+        "maxValue": {
+          "type": "number",
+          "description": "Upper bound of the value, when the source declares a range or a maximum."
+        },
+        "unitCode": {
+          "type": "string",
+          "description": "UN/CEFACT code of the unit of measurement of the value."
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "unitCode"
+      ],
+      "anyOf": [
+        {
+          "required": [
+            "value"
+          ]
+        },
+        {
+          "required": [
+            "minValue"
+          ]
+        },
+        {
+          "required": [
+            "maxValue"
+          ]
+        }
+      ],
+      "additionalProperties": false
+    },
+    "StringProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Property"
+          ]
+        },
+        "value": {
+          "type": "string"
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "allOf": [
+    {
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Property. Unique entity identifier, with the format urn:ngsi-ld:MortarProcess:<id>."
+        },
+        "type": {
+          "type": "string",
+          "description": "Property. NGSI Entity type. It has to be MortarProcess",
+          "enum": [
+            "MortarProcess"
+          ]
+        },
+        "name": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
+          "description": "Property. Descriptive name identifying the process variant, including the product type and version number for traceability across process iterations."
+        },
+        "description": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
+          "description": "Property. Technical description of the manufacturing process including equipment type, automation level, and key control parameters."
+        },
+        "energyConsumption": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/QuantityProperty"
+            }
+          ],
+          "description": "Property. Expected unitCode: KWH/TNE. Electrical and thermal energy consumed per functional unit of production. Measured at the manufacturing facility boundary."
+        },
+        "waterConsumption": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/QuantityProperty"
+            }
+          ],
+          "description": "Property. Expected unitCode: LTR/TNE. Total water consumed per functional unit of production. Includes process water and cleaning water at the manufacturing facility."
+        },
+        "wasteGeneration": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/QuantityProperty"
+            }
+          ],
+          "description": "Property. Expected unitCode: KGM/TNE. Total solid waste generated per functional unit of production. Includes off-spec material, cleaning residues, and packaging waste."
+        },
+        "CO2emission": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/QuantityProperty"
+            }
+          ],
+          "description": "Property. Expected unitCode: KGM/TNE. Carbon dioxide equivalent emissions per functional unit of production. Covers direct process emissions at the manufacturing facility boundary."
+        },
+        "recyclingProcess": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
+          "description": "Property. Description of how production waste and off-spec material can be recirculated or recovered within the manufacturing process or downstream."
+        },
+        "dateCreated": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/DateTimeProperty"
+            }
+          ],
+          "description": "Property. Date at which the entity was created."
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "name"
+  ]
+}

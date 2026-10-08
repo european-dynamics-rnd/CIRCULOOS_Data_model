@@ -1,0 +1,551 @@
+ElectrospindleObservation:
+
+  description: CIRCULOOS data model for the IoT data acquired from a electrospindle machine tool. The monitored temperatures, motor currents and rotational speeds define the duty cycle of the electrospindle, the spindle bearings and the X, Y and Z axis ballscrew/nut assemblies, and support the estimation of their residual lifetime and the prediction of suitable end-of-life R-strategies.
+
+  properties:
+
+    address:
+      description: The mailing address
+      properties:
+        addressCountry:
+          description: Property. The country. For example, Spain. Model:'https://schema.org/addressCountry'
+          type: string
+        addressLocality:
+          description: Property. The locality in which the street address is, and which is in the region. Model:'https://schema.org/addressLocality'
+          type: string
+        addressRegion:
+          description: Property. The region in which the locality is, and which is in the country. Model:'https://schema.org/addressRegion'
+          type: string
+        district:
+          description: Property. A district is a type of administrative division that, in some countries, is managed by the local government
+          type: string
+        postOfficeBoxNumber:
+          description: Property. The post office box number for PO box addresses. For example, 03578. Model:'https://schema.org/postOfficeBoxNumber'
+          type: string
+        postalCode:
+          description: Property. The postal code. For example, 24004. Model:'https://schema.org/https://schema.org/postalCode'
+          type: string
+        streetAddress:
+          description: Property. The street address. Model:'https://schema.org/streetAddress'
+          type: string
+        streetNr:
+          description: Property. Number identifying a specific property on a public street
+          type: string
+      type: object
+      x-ngsi:
+        model: https://schema.org/address
+        type: Property
+
+    alternateName:
+      description: An alternative name for this item
+      type: string
+      x-ngsi:
+        type: Property
+
+    areaServed:
+      description: The geographic area where a service or offered item is provided
+      type: string
+      x-ngsi:
+        model: https://schema.org/Text
+        type: Property
+
+    dataProvider:
+      description: A sequence of characters identifying the provider of the harmonised data entity
+      type: string
+      x-ngsi:
+        type: Property
+
+    dateCreated:
+      description: Entity creation timestamp. This will usually be allocated by the storage platform
+      format: date-time
+      type: string
+      x-ngsi:
+        type: Property
+
+    dateModified:
+      description: Timestamp of the last modification of the entity. This will usually be allocated by the storage platform
+      format: date-time
+      type: string
+      x-ngsi:
+        type: Property
+
+    description:
+      description: A description of this item
+      type: string
+      x-ngsi:
+        type: Property
+
+    id:
+      description: Unique entity identifier of the monitored machine tool, with the format urn:ngsi-ld:ElectrospindleObservation:<machineId>.
+      type: string
+      x-ngsi:
+        type: Property
+
+    location:
+
+      description: GeoProperty. Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon
+
+      oneOf:
+
+        - description: GeoProperty. Geojson reference to the item. Point
+          properties:
+            bbox:
+              description: Property. BBox of the  Point
+              items:
+                type: number
+              minItems: 4
+              type: array
+            coordinates:
+              description: Property. Coordinates of the Point
+              items:
+                type: number
+              minItems: 2
+              type: array
+            type:
+              enum:
+                - Point
+              type: string
+          required:
+            - type
+            - coordinates
+          title: GeoJSON Point
+          type: object
+
+        - description: GeoProperty. Geojson reference to the item. LineString
+          properties:
+            bbox:
+              description: Property. BBox coordinates of the LineString
+              items:
+                type: number
+              minItems: 4
+              type: array
+            coordinates:
+              description: Property. Coordinates of the LineString
+              items:
+                items:
+                  type: number
+                minItems: 2
+                type: array
+              minItems: 2
+              type: array
+            type:
+              enum:
+                - LineString
+              type: string
+          required:
+            - type
+            - coordinates
+          title: GeoJSON LineString
+          type: object
+
+        - description: GeoProperty. Geojson reference to the item. Polygon
+          properties:
+            bbox:
+              description: Property. BBox coordinates of the Polygon
+              items:
+                type: number
+              minItems: 4
+              type: array
+            coordinates:
+              description: Property. Coordinates of the Polygon
+              items:
+                items:
+                  items:
+                    type: number
+                  minItems: 2
+                  type: array
+                minItems: 4
+                type: array
+              type: array
+            type:
+              enum:
+                - Polygon
+              type: string
+          required:
+            - type
+            - coordinates
+          title: GeoJSON Polygon
+          type: object
+
+        - description: GeoProperty. Geojson reference to the item. MultiPoint
+          properties:
+            bbox:
+              description: Property. BBox coordinates of the LineString
+              items:
+                type: number
+              minItems: 4
+              type: array
+            coordinates:
+              description: Property. Coordinates of the MulitPoint
+              items:
+                items:
+                  type: number
+                minItems: 2
+                type: array
+              type: array
+            type:
+              enum:
+                - MultiPoint
+              type: string
+          required:
+            - type
+            - coordinates
+          title: GeoJSON MultiPoint
+          type: object
+
+        - description: GeoProperty. Geojson reference to the item. MultiLineString
+          properties:
+            bbox:
+              description: Property. BBox coordinates of the LineString
+              items:
+                type: number
+              minItems: 4
+              type: array
+            coordinates:
+              description: Property. Coordinates of the MultiLineString
+              items:
+                items:
+                  items:
+                    type: number
+                  minItems: 2
+                  type: array
+                minItems: 2
+                type: array
+              type: array
+            type:
+              enum:
+                - MultiLineString
+              type: string
+          required:
+            - type
+            - coordinates
+          title: GeoJSON MultiLineString
+          type: object
+
+        - description: GeoProperty. Geojson reference to the item. MultiLineString
+          properties:
+            bbox:
+              items:
+                type: number
+              minItems: 4
+              type: array
+            coordinates:
+              description: Property. Coordinates of the MultiPolygon
+              items:
+                items:
+                  items:
+                    items:
+                      type: number
+                    minItems: 2
+                    type: array
+                  minItems: 4
+                  type: array
+                type: array
+              type: array
+            type:
+              enum:
+                - MultiPolygon
+              type: string
+          required:
+            - type
+            - coordinates
+          title: GeoJSON MultiPolygon
+          type: object
+
+    name:
+      description: The name of this item
+      type: string
+      x-ngsi:
+        type: Property
+
+    owner:
+      description: A List containing a JSON encoded sequence of characters referencing the unique Ids of the owner(s)
+      items:
+        anyOf:
+          - description: Property. Identifier format of any NGSI entity
+            maxLength: 256
+            minLength: 1
+            pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+            type: string
+          - description: Property. Identifier format of any NGSI entity
+            format: uri
+            type: string
+        description: Relationship. Unique identifier of the entity
+      type: array
+      x-ngsi:
+        type: Property
+
+    seeAlso:
+      description: list of uri pointing to additional resources about the item
+      oneOf:
+        - items:
+            format: uri
+            type: string
+          minItems: 1
+          type: array
+        - format: uri
+          type: string
+      x-ngsi:
+        type: Property
+
+    source:
+      description: A sequence of characters giving the original source of the entity data as a URL. Recommended to be the fully qualified domain name of the source provider, or the URL to the source object
+      type: string
+      x-ngsi:
+        type: Property
+
+    spindleBearingTemperature:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            unitCode:
+              type: string
+            value:
+              type: number
+          required:
+            - type
+            - value
+          type: object
+      description: 'Expected unitCode: CEL. Temperature of the spindle bearings. This parameter is used to monitor the thermal load affecting the spindle bearing system and contributes to the definition of the bearing duty cycle. It supports the calculation of the residual lifetime of the spindle bearings and the prediction of suitable end-of-life R-strategies. Source field: T1.'
+      x-ngsi:
+        type: Property
+
+    spindleMotorCurrent:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            unitCode:
+              type: string
+            value:
+              type: number
+          required:
+            - type
+            - value
+          type: object
+      description: 'Expected unitCode: AMP. Motor current of the spindle drive. This attribute is used to estimate the spindle motor torque and, consequently, the mechanical loads acting on the spindle bearings. These data contribute to the duty-cycle calculation of the spindle bearing system, supporting residual lifetime estimation and the prediction of suitable end-of-life R-strategies. Source field: IS.'
+      x-ngsi:
+        type: Property
+
+    spindleMotorTemperature:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            unitCode:
+              type: string
+            value:
+              type: number
+          required:
+            - type
+            - value
+          type: object
+      description: 'Expected unitCode: CEL. Temperature of the electrospindle motor. This parameter is used to characterise the thermal operating conditions of the electrospindle and contributes to the definition of the component duty cycle. It supports the estimation of the residual lifetime of the electrospindle motor and the prediction of suitable end-of-life R-strategies. Source field: Te.'
+      x-ngsi:
+        type: Property
+
+    spindleSpeed:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            unitCode:
+              type: string
+            value:
+              type: number
+          required:
+            - type
+            - value
+          type: object
+      description: 'Expected unitCode: RPM. Electrospindle rotational speed. This attribute is used to characterise the operating profile of the spindle and to determine the duty cycle of the spindle bearing system. Together with load-related and thermal information, it supports residual lifetime calculation and the prediction of suitable end-of-life R-strategies. Source field: VS.'
+      x-ngsi:
+        type: Property
+
+    type:
+      description: NGSI Entity type. It has to be ElectrospindleObservation
+      enum:
+        - ElectrospindleObservation
+      type: string
+      x-ngsi:
+        type: Property
+
+    xAxisMotorCurrent:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            unitCode:
+              type: string
+            value:
+              type: number
+          required:
+            - type
+            - value
+          type: object
+      description: 'Expected unitCode: AMP. Motor current of the X-axis drive. This attribute is used to estimate the motor torque of the X-axis and, consequently, the mechanical forces transmitted to the X-axis ballscrew/nut system. These data contribute to the duty-cycle calculation of the X-axis ballscrew/nut assembly, supporting residual lifetime estimation and the prediction of suitable end-of-life R-strategies. Source field: IX.'
+      x-ngsi:
+        type: Property
+
+    xAxisMotorSpeed:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            unitCode:
+              type: string
+            value:
+              type: number
+          required:
+            - type
+            - value
+          type: object
+      description: 'Expected unitCode: RPM. Motor rotational speed of the X-axis drive. This attribute is used to characterise the operating profile of the X-axis and to determine the duty cycle of the X-axis ballscrew/nut system. Together with load-related information, it supports residual lifetime calculation and the prediction of suitable end-of-life R-strategies. Source field: VX.'
+      x-ngsi:
+        type: Property
+
+    yAxisMotorCurrent:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            unitCode:
+              type: string
+            value:
+              type: number
+          required:
+            - type
+            - value
+          type: object
+      description: 'Expected unitCode: AMP. Motor current of the Y-axis drive. This attribute is used to estimate the motor torque of the Y-axis and, consequently, the mechanical forces transmitted to the Y-axis ballscrew/nut system. These data contribute to the duty-cycle calculation of the Y-axis ballscrew/nut assembly, supporting residual lifetime estimation and the prediction of suitable end-of-life R-strategies. Source field: IY.'
+      x-ngsi:
+        type: Property
+
+    yAxisMotorSpeed:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            unitCode:
+              type: string
+            value:
+              type: number
+          required:
+            - type
+            - value
+          type: object
+      description: 'Expected unitCode: RPM. Motor rotational speed of the Y-axis drive. This attribute is used to characterise the operating profile of the Y-axis and to determine the duty cycle of the Y-axis ballscrew/nut system. Together with load-related information, it supports residual lifetime calculation and the prediction of suitable end-of-life R-strategies. Source field: VY.'
+      x-ngsi:
+        type: Property
+
+    zAxisMotorCurrent:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            unitCode:
+              type: string
+            value:
+              type: number
+          required:
+            - type
+            - value
+          type: object
+      description: 'Expected unitCode: AMP. Motor current of the Z-axis drive. This attribute is used to estimate the motor torque of the Z-axis and, consequently, the mechanical forces transmitted to the Z-axis ballscrew/nut system. These data contribute to the duty-cycle calculation of the Z-axis ballscrew/nut assembly, supporting residual lifetime estimation and the prediction of suitable end-of-life R-strategies. Source field: IZ.'
+      x-ngsi:
+        type: Property
+
+    zAxisMotorSpeed:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            unitCode:
+              type: string
+            value:
+              type: number
+          required:
+            - type
+            - value
+          type: object
+      description: 'Expected unitCode: RPM. Motor rotational speed of the Z-axis drive. This attribute is used to characterise the operating profile of the Z-axis and to determine the duty cycle of the Z-axis ballscrew/nut system. Together with load-related information, it supports residual lifetime calculation and the prediction of suitable end-of-life R-strategies. Source field: VZ.'
+      x-ngsi:
+        type: Property
+
+  required:
+    - id
+    - type
+
+  type: object
+
+  x-derived-from: ''
+
+  x-disclaimer: Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program
+
+  x-license-url: https://github.com/smart-data-models/circuloos_data_model/blob/master/ElectrospindleObservation/LICENSE.md
+
+  x-model-schema: https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/openCallSpecific/electrospindle_machine_iot/ElectrospindleObservation/schema.json
+
+  x-model-tags: electrospindle_machine_iot
+
+  x-version: 0.0.1
