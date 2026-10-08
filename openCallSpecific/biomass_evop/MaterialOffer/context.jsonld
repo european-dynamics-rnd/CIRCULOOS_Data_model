@@ -1,0 +1,28 @@
+{
+    "@context": {
+        "MaterialOffer": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/MaterialOffer",
+        "availableForOthers": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/availableForOthers",
+        "availableQuantityKg": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/availableQuantityKg",
+        "id": "@id",
+        "material": "https://smartdatamodels.org/dataModel.ZEB/material",
+        "maxValue": "https://smartdatamodels.org/dataModel.EnergyCIM/maxValue",
+        "minValue": "https://smartdatamodels.org/dataModel.EnergyCIM/minValue",
+        "object": {
+            "@id": "https://uri.etsi.org/ngsi-ld/hasObject",
+            "@type": "@id"
+        },
+        "observedAt": {
+            "@id": "https://uri.etsi.org/ngsi-ld/observedAt",
+            "@type": "https://uri.etsi.org/ngsi-ld/DateTime"
+        },
+        "offerPercentage": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/offerPercentage",
+        "quantityUnit": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/quantityUnit",
+        "safetyMarginPercent": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/safetyMarginPercent",
+        "sourceInventory": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/sourceInventory",
+        "status": "https://uri.etsi.org/ngsi-ld/status",
+        "type": "@type",
+        "unitCode": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/unitCode",
+        "updatedAt": "https://smartdatamodels.org/dataModel.KeyPerformanceIndicator/updatedAt",
+        "value": "https://uri.etsi.org/ngsi-ld/hasValue"
+    }
+}

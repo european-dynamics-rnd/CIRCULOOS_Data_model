@@ -1,0 +1,27 @@
+{
+    "@context": {
+        "Recipe": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/Recipe",
+        "containsSRM": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/containsSRM",
+        "curingDuration": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/curingDuration",
+        "developedBy": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/developedBy",
+        "formulation": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/formulation",
+        "id": "@id",
+        "maxValue": "https://smartdatamodels.org/dataModel.EnergyCIM/maxValue",
+        "minValue": "https://smartdatamodels.org/dataModel.EnergyCIM/minValue",
+        "mixingTime": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/mixingTime",
+        "name": "https://smartdatamodels.org/name",
+        "object": {
+            "@id": "https://uri.etsi.org/ngsi-ld/hasObject",
+            "@type": "@id"
+        },
+        "observedAt": {
+            "@id": "https://uri.etsi.org/ngsi-ld/observedAt",
+            "@type": "https://uri.etsi.org/ngsi-ld/DateTime"
+        },
+        "processingInstructions": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/processingInstructions",
+        "type": "@type",
+        "unitCode": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/unitCode",
+        "value": "https://uri.etsi.org/ngsi-ld/hasValue",
+        "waterBinderRatio": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/waterBinderRatio"
+    }
+}

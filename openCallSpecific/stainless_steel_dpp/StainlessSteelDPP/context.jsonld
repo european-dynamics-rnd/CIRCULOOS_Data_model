@@ -1,0 +1,51 @@
+{
+    "@context": {
+        "StainlessSteelDPP": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/StainlessSteelDPP",
+        "address": "https://smartdatamodels.org/address",
+        "addressCountry": "https://smartdatamodels.org/addressCountry",
+        "addressLocality": "https://smartdatamodels.org/addressLocality",
+        "addressRegion": "https://smartdatamodels.org/addressRegion",
+        "alternateName": "https://smartdatamodels.org/alternateName",
+        "areaServed": "https://smartdatamodels.org/areaServed",
+        "bbox": {
+            "@container": "@list",
+            "@id": "https://purl.org/geojson/vocab#bbox"
+        },
+        "coordinates": {
+            "@container": "@list",
+            "@id": "https://purl.org/geojson/vocab#coordinates"
+        },
+        "dataProvider": "https://smartdatamodels.org/dataProvider",
+        "date": "https://smartdatamodels.org/dataModel.Transportation/date",
+        "dateCreated": "https://smartdatamodels.org/dateCreated",
+        "dateModified": "https://smartdatamodels.org/dateModified",
+        "description": "http://purl.org/dc/terms/description",
+        "district": "https://smartdatamodels.org/district",
+        "dppId": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/dppId",
+        "endTime": "https://smartdatamodels.org/dataModel.UrbanMobility/endTime",
+        "energyConsumption": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/energyConsumption",
+        "factoryInternalBarcode": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/factoryInternalBarcode",
+        "id": "@id",
+        "location": "https://uri.etsi.org/ngsi-ld/location",
+        "name": "https://smartdatamodels.org/name",
+        "observedAt": {
+            "@id": "https://uri.etsi.org/ngsi-ld/observedAt",
+            "@type": "https://uri.etsi.org/ngsi-ld/DateTime"
+        },
+        "operation": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/operation",
+        "owner": "https://smartdatamodels.org/owner",
+        "postOfficeBoxNumber": "https://smartdatamodels.org/postOfficeBoxNumber",
+        "postalCode": "https://smartdatamodels.org/postalCode",
+        "productName": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/productName",
+        "productionStatus": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/productionStatus",
+        "route": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/route",
+        "seeAlso": "https://smartdatamodels.org/seeAlso",
+        "source": "https://smartdatamodels.org/source",
+        "startTime": "https://smartdatamodels.org/dataModel.UrbanMobility/startTime",
+        "streetAddress": "https://smartdatamodels.org/streetAddress",
+        "streetNr": "https://smartdatamodels.org/streetNr",
+        "type": "@type",
+        "unitCode": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/unitCode",
+        "value": "https://uri.etsi.org/ngsi-ld/hasValue"
+    }
+}

@@ -7,9 +7,8 @@ Entity: leather
 <!-- 15-License -->
   
 
-[Open License](https://github.com/smart-data-models//circuloos_data_model/blob/master/leather/LICENSE.md)  
+[Open License](https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/refs/heads/main/LICENSE)
 
-[document generated automatically](https://docs.google.com/presentation/d/e/2PACX-1vTs-Ng5dIAwkg91oTTUdt8ua7woBXhPnwavZ0FxgR8BsAI_Ek3C5q97Nd94HS8KhP-r_quD4H0fgyt3/pub?start=false&loop=false&delayms=3000#slide=id.gb715ace035_0_60)  
 <!-- /15-License -->
   
 <!-- 20-Description -->

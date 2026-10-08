@@ -1,0 +1,263 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "$schemaVersion": "0.0.1",
+    "modelTags": "",
+    "derivedFrom": "",
+    "license": "",
+    "$id": "https://raw.githubusercontent.com/TO_ADD_LATER/schema.json",
+    "title": "Data model for plastic",
+    "description": "CIRCULOOS data model for raw plastic feedstock, covering the properties an injection molding factory needs to assess a batch before it goes into the hopper.",
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
+        },
+        {
+            "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
+        },
+        {
+            "properties": {
+                "type": {
+                    "description": "Property. NGSI Entity type. It has to be plastic",
+                    "enum": [
+                        "plastic"
+                    ]
+                },
+                "polymerType": {
+                    "type": "string",
+                    "description": "Property. The polymer resin the material is made of.",
+                    "enum": [
+                        "PP",
+                        "HDPE",
+                        "LDPE",
+                        "PET",
+                        "PS",
+                        "ABS",
+                        "PVC",
+                        "PC",
+                        "PA",
+                        "PLA",
+                        "other"
+                    ]
+                },
+                "materialForm": {
+                    "type": "string",
+                    "description": "Property. The physical form the raw material is delivered in, which determines how it can be fed into the hopper.",
+                    "enum": [
+                        "pellet",
+                        "granulate",
+                        "regrind",
+                        "flake",
+                        "powder"
+                    ]
+                },
+                "origin": {
+                    "type": "string",
+                    "description": "Property. The source of the resin.",
+                    "enum": [
+                        "virgin",
+                        "post-industrial recycled",
+                        "post-consumer recycled",
+                        "mixed"
+                    ]
+                },
+                "recycledContent": {
+                    "type": "object",
+                    "properties": {
+                        "value": {
+                            "type": "number",
+                            "description": "Property. https://schema.org/Number. Default: 0.0"
+                        }
+                    },
+                    "description": "Property. Unit: %. Share of recycled material in the batch. "
+                },
+                "recycledTimes": {
+                    "type": "integer",
+                    "description": "Property. The number of times this material has already been through a recycling loop.",
+                    "minimum": 0
+                },
+                "color": {
+                    "type": "string",
+                    "description": "Property. The color of the raw material."
+                },
+                "density": {
+                    "type": "object",
+                    "properties": {
+                        "value": {
+                            "type": "number",
+                            "description": "Property. https://schema.org/Number.  Default: 0.0"
+                        }
+                    },
+                    "description": "Property. Unit: g/cm3. The mass per unit volume of the solid resin. "
+                },
+                "bulkDensity": {
+                    "type": "object",
+                    "properties": {
+                        "value": {
+                            "type": "number",
+                            "description": "Property. https://schema.org/Number.  Default: 0.0"
+                        }
+                    },
+                    "description": "Property. Unit: kg/m3. The density of the loose pellets/flakes as poured, needed to size the hopper and dosing. "
+                },
+                "meltFlowIndex": {
+                    "type": "object",
+                    "properties": {
+                        "value": {
+                            "type": "number",
+                            "description": "Property. https://schema.org/Number.  Default: 0.0"
+                        }
+                    },
+                    "description": "Property. Unit: g/10min. Melt flow index (MFI/MFR), the key indicator of how easily the material flows into the mold cavity. "
+                },
+                "moistureContent": {
+                    "type": "object",
+                    "properties": {
+                        "value": {
+                            "type": "number",
+                            "description": "Property. https://schema.org/Number.  Default: 0.0"
+                        }
+                    },
+                    "description": "Property. Unit: %. Residual moisture in the material; too high a value causes hydrolysis and surface defects if not dried before molding. "
+                },
+                "dryingRequired": {
+                    "type": "boolean",
+                    "description": "Property. Whether the material must be pre-dried before injection molding."
+                },
+                "recommendedDryingTemperature": {
+                    "type": "object",
+                    "properties": {
+                        "value": {
+                            "type": "number",
+                            "description": "Property. https://schema.org/Number.  Default: 0.0"
+                        }
+                    },
+                    "description": "Property. Unit: °C. Recommended drying temperature before processing. "
+                },
+                "recommendedDryingTime": {
+                    "type": "object",
+                    "properties": {
+                        "value": {
+                            "type": "number",
+                            "description": "Property. https://schema.org/Number.  Default: 0.0"
+                        }
+                    },
+                    "description": "Property. Unit: h. Recommended drying duration before processing. "
+                },
+                "meltingTemperature": {
+                    "type": "object",
+                    "properties": {
+                        "value": {
+                            "type": "number",
+                            "description": "Property. https://schema.org/Number.  Default: 0.0"
+                        }
+                    },
+                    "description": "Property. Unit: °C. Melting (or processing) temperature of the resin. "
+                },
+                "recommendedBarrelTemperature": {
+                    "type": "object",
+                    "properties": {
+                        "value": {
+                            "type": "number",
+                            "description": "Property. https://schema.org/Number.  Default: 0.0"
+                        }
+                    },
+                    "description": "Property. Unit: °C. Recommended injection molding barrel temperature for this material. "
+                },
+                "recommendedMoldTemperature": {
+                    "type": "object",
+                    "properties": {
+                        "value": {
+                            "type": "number",
+                            "description": "Property. https://schema.org/Number.  Default: 0.0"
+                        }
+                    },
+                    "description": "Property. Unit: °C. Recommended mold (tool) temperature for this material. "
+                },
+                "shrinkageRate": {
+                    "type": "object",
+                    "properties": {
+                        "value": {
+                            "type": "number",
+                            "description": "Property. https://schema.org/Number.  Default: 0.0"
+                        }
+                    },
+                    "description": "Property. Unit: %. Mold shrinkage of the material after cooling, needed to size the mold cavity. "
+                },
+                "tensileStrength": {
+                    "type": "object",
+                    "properties": {
+                        "value": {
+                            "type": "number",
+                            "description": "Property. https://schema.org/Number.  Default: 0.0"
+                        }
+                    },
+                    "description": "Property. Unit: MPa. The maximum stress the molded material can withstand while being stretched before breaking. "
+                },
+                "flexuralModulus": {
+                    "type": "object",
+                    "properties": {
+                        "value": {
+                            "type": "number",
+                            "description": "Property. https://schema.org/Number.  Default: 0.0"
+                        }
+                    },
+                    "description": "Property. Unit: MPa. Stiffness of the molded material under bending. "
+                },
+                "impactStrength": {
+                    "type": "object",
+                    "properties": {
+                        "value": {
+                            "type": "number",
+                            "description": "Property. https://schema.org/Number.  Default: 0.0"
+                        }
+                    },
+                    "description": "Property. Unit: kJ/m2. Notched Izod impact strength of the molded material. "
+                },
+                "heatDeflectionTemperature": {
+                    "type": "object",
+                    "properties": {
+                        "value": {
+                            "type": "number",
+                            "description": "Property. https://schema.org/Number.  Default: 0.0"
+                        }
+                    },
+                    "description": "Property. Unit: °C. Temperature at which the molded material deforms under a given load (HDT). "
+                },
+                "ashContent": {
+                    "type": "object",
+                    "properties": {
+                        "value": {
+                            "type": "number",
+                            "description": "Property. https://schema.org/Number.  Default: 0.0"
+                        }
+                    },
+                    "description": "Property. Unit: %. Inorganic filler/ash content left after incineration, an indicator of filler load and purity. "
+                },
+                "contaminationLevel": {
+                    "type": "string",
+                    "description": "Property. Overall contamination level of the batch (foreign polymers, dirt, labels, etc.).",
+                    "enum": [
+                        "low",
+                        "medium",
+                        "high"
+                    ]
+                },
+                "additives": {
+                    "type": "string",
+                    "description": "Property. Free text list of additives present in the compound, e.g. UV stabilizer, flame retardant, colorant masterbatch."
+                },
+                "batchNumber": {
+                    "type": "string",
+                    "description": "Property. Supplier's lot/batch number, for traceability back to the source material."
+                }
+            }
+        }
+    ],
+    "required": [
+        "id",
+        "type",
+        "polymerType",
+        "materialForm"
+    ]
+}

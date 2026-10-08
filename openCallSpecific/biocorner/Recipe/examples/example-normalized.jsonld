@@ -5,9 +5,14 @@
   ],
   "id": "urn:ngsi-ld:Recipe:CementFreeMortar",
   "type": "Recipe",
-  "containsSRM1": {
+  "containsSRM": {
     "type": "Relationship",
-    "object": "urn:ngsi-ld:SRM:RiceHusk",
+    "object": [
+      "urn:ngsi-ld:SRM:RiceHusk",
+      "urn:ngsi-ld:SRM:RiceStraw",
+      "urn:ngsi-ld:SRM:RiceHuskAsh",
+      "urn:ngsi-ld:SRM:GGBS"
+    ],
     "observedAt": "2026-06-16T08:05:08.000Z"
   },
   "name": {
@@ -19,21 +24,6 @@
     "type": "Property",
     "value": 20,
     "unitCode": "MIN",
-    "observedAt": "2026-06-16T08:05:08.000Z"
-  },
-  "containsSRM2": {
-    "type": "Relationship",
-    "object": "urn:ngsi-ld:SRM:RiceStraw",
-    "observedAt": "2026-06-16T08:05:08.000Z"
-  },
-  "containsSRM3": {
-    "type": "Relationship",
-    "object": "urn:ngsi-ld:SRM:RiceHuskAsh",
-    "observedAt": "2026-06-16T08:05:08.000Z"
-  },
-  "containsSRM4": {
-    "type": "Relationship",
-    "object": "urn:ngsi-ld:SRM:GGBS",
     "observedAt": "2026-06-16T08:05:08.000Z"
   },
   "curingDuration": {

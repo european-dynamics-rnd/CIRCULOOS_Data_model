@@ -1,0 +1,226 @@
+MortarBatch:
+
+  description: CIRCULOOS data model for a single production batch of a Biocorner bio-based mortar, providing full traceability from the finished batch back to its product, recipe, manufacturing process, producer and secondary raw material batches.
+
+  properties:
+
+    batchCode:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: Internal production batch identifier assigned by the manufacturer for traceability. Follows a structured naming convention including product code, year, and sequence number.
+      x-ngsi:
+        type: Property
+
+    dateCreated:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              format: date-time
+              pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: Date at which the entity was created.
+      x-ngsi:
+        type: Property
+
+    description:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: Free-text description of the production batch including production scale, total quantity produced, and any notable quality observations.
+      x-ngsi:
+        type: Property
+
+    id:
+      description: Unique entity identifier, with the format urn:ngsi-ld:MortarBatch:<id>.
+      type: string
+      x-ngsi:
+        type: Property
+
+    instanceOf:
+      allOf:
+        - additionalProperties: no
+          properties:
+            object:
+              description: URN of the referenced entity, with the format urn:ngsi-ld:<type>:<id>.
+              pattern: ^urn:ngsi-ld:[A-Za-z0-9_]+:.+$
+              type: string
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Relationship
+              type: string
+          required:
+            - type
+            - object
+          type: object
+      description: Relationship linking this production batch to its parent MortarProduct entity. Establishes which product line this specific batch belongs to.
+      x-ngsi:
+        type: Relationship
+
+    producedBy:
+      allOf:
+        - additionalProperties: no
+          properties:
+            object:
+              description: URN of the referenced entity, with the format urn:ngsi-ld:<type>:<id>.
+              pattern: ^urn:ngsi-ld:[A-Za-z0-9_]+:.+$
+              type: string
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Relationship
+              type: string
+          required:
+            - type
+            - object
+          type: object
+      description: Relationship to the Organization entity responsible for manufacturing this batch. Identifies the production facility and legal entity.
+      x-ngsi:
+        type: Relationship
+
+    producedFromRecipe:
+      allOf:
+        - additionalProperties: no
+          properties:
+            object:
+              description: URN of the referenced entity, with the format urn:ngsi-ld:<type>:<id>.
+              pattern: ^urn:ngsi-ld:[A-Za-z0-9_]+:.+$
+              type: string
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Relationship
+              type: string
+          required:
+            - type
+            - object
+          type: object
+      description: Relationship to the Recipe entity whose formulation was followed during production. Enables traceability from final product back to formulation specifications.
+      x-ngsi:
+        type: Relationship
+
+    type:
+      description: NGSI Entity type. It has to be MortarBatch
+      enum:
+        - MortarBatch
+      type: string
+      x-ngsi:
+        type: Property
+
+    usedProcess:
+      allOf:
+        - additionalProperties: no
+          properties:
+            object:
+              description: URN of the referenced entity, with the format urn:ngsi-ld:<type>:<id>.
+              pattern: ^urn:ngsi-ld:[A-Za-z0-9_]+:.+$
+              type: string
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Relationship
+              type: string
+          required:
+            - type
+            - object
+          type: object
+      description: Relationship to the MortarProcess entity describing the manufacturing procedure applied. Links the batch to specific energy, water, and waste generation data.
+      x-ngsi:
+        type: Relationship
+
+    usedSRMBatches:
+      allOf:
+        - additionalProperties: no
+          properties:
+            object:
+              description: URNs of the referenced entities, each with the format urn:ngsi-ld:<type>:<id>.
+              items:
+                pattern: ^urn:ngsi-ld:[A-Za-z0-9_]+:.+$
+                type: string
+              minItems: 1
+              type: array
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Relationship
+              type: string
+          required:
+            - type
+            - object
+          type: object
+      description: SRMBatch entities used as input material, listed with the batch of the primary SRM first. Enables full upstream traceability to raw material origin and supplier.
+      x-ngsi:
+        type: Relationship
+
+  required:
+    - id
+    - type
+    - batchCode
+    - instanceOf
+    - producedFromRecipe
+    - producedBy
+    - usedProcess
+    - usedSRMBatches
+
+  type: object
+
+  x-derived-from: ''
+
+  x-disclaimer: Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program
+
+  x-license-url: https://github.com/smart-data-models/circuloos_data_model/blob/master/MortarBatch/LICENSE.md
+
+  x-model-schema: https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/openCallSpecific/biocorner/MortarBatch/schema.json
+
+  x-model-tags: biocorner
+
+  x-version: 0.0.1

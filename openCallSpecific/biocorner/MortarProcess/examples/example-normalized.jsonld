@@ -1,0 +1,52 @@
+{
+  "@context": [
+    "http://circuloos-ld-context/circuloos-context.jsonld",
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"
+  ],
+  "id": "urn:ngsi-ld:MortarProcess:DryMixing-Mortar1",
+  "type": "MortarProcess",
+  "name": {
+    "type": "Property",
+    "value": "Industrial Dry Mixing Process - MORTAR 1 Posidonia",
+    "observedAt": "2026-06-15T15:16:02.000Z"
+  },
+  "energyConsumption": {
+    "type": "Property",
+    "value": 60,
+    "unitCode": "KWH/TNE",
+    "observedAt": "2026-06-15T15:16:02.000Z"
+  },
+  "CO2emission": {
+    "type": "Property",
+    "value": 70,
+    "unitCode": "KGM/TNE",
+    "observedAt": "2026-06-15T15:16:02.000Z"
+  },
+  "dateCreated": {
+    "type": "Property",
+    "value": "2018-01-06T00:00:00Z",
+    "observedAt": "2026-06-15T15:16:02.000Z"
+  },
+  "waterConsumption": {
+    "type": "Property",
+    "maxValue": 100,
+    "unitCode": "LTR/TNE",
+    "observedAt": "2026-06-15T15:16:02.000Z"
+  },
+  "wasteGeneration": {
+    "type": "Property",
+    "maxValue": 10,
+    "unitCode": "KGM/TNE",
+    "observedAt": "2026-06-15T15:16:02.000Z"
+  },
+  "description": {
+    "type": "Property",
+    "value": "Automated powder mixing system with controlled temperature and humidity",
+    "observedAt": "2026-06-15T15:16:02.000Z"
+  },
+  "recyclingProcess": {
+    "type": "Property",
+    "value": "100% powders produced recyclable",
+    "observedAt": "2026-06-15T15:16:02.000Z"
+  }
+}

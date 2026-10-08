@@ -1,40 +1,14 @@
 {
   "$schema": "http://json-schema.org/schema#",
   "$schemaVersion": "0.0.1",
-  "modelTags": "",
+  "modelTags": "esp_islopol",
   "derivedFrom": "https://context.dataspace-arditi.com/islopol/entities/Product/v2/schema.json",
-  "license": "",
-  "$id": "https://raw.githubusercontent.com/TO_ADD_LATER/schema.json",
+  "license": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/refs/heads/main/LICENSE",
+  "$id": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/openCallSpecific/esp_islopol/Product/schema.json",
   "title": "Data model for an ISLOPOL product record",
   "description": "CIRCULOOS data model for a recorded quantity of material, energy, a consumable or a finished product used or produced in the ISLOPOL value chain, covering its quantity and unit, its supplier and destination, its physical dimensions and the process event it belongs to.",
   "type": "object",
   "definitions": {
-    "NumericProperty": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "type": "string",
-          "enum": [
-            "Property"
-          ]
-        },
-        "value": {
-          "type": "number"
-        },
-        "unitCode": {
-          "type": "string"
-        },
-        "observedAt": {
-          "type": "string",
-          "format": "date-time"
-        }
-      },
-      "required": [
-        "type",
-        "value"
-      ],
-      "additionalProperties": false
-    },
     "QuantityProperty": {
       "type": "object",
       "properties": {
@@ -113,6 +87,33 @@
       ],
       "additionalProperties": false
     },
+    "StringArrayProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Property"
+          ]
+        },
+        "value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ],
+      "additionalProperties": false
+    },
     "StringProperty": {
       "type": "object",
       "properties": {
@@ -170,34 +171,26 @@
         "supplier": {
           "allOf": [
             {
-              "$ref": "#/definitions/StringProperty"
+              "$ref": "#/definitions/StringArrayProperty"
             }
           ],
-          "description": "Property. Name or identifier of the organisation or source supplying the product or material. The schema allows a list of suppliers."
+          "description": "Property. Names or identifiers of the organisations or sources supplying the product or material."
         },
         "destination": {
           "allOf": [
             {
-              "$ref": "#/definitions/StringProperty"
+              "$ref": "#/definitions/StringArrayProperty"
             }
           ],
-          "description": "Property. Name or identifier of the intended recipient, facility or destination for the product or material. The schema allows a list of destinations."
+          "description": "Property. Names or identifiers of the intended recipients, facilities or destinations for the product or material."
         },
         "quantity": {
           "allOf": [
             {
-              "$ref": "#/definitions/NumericProperty"
+              "$ref": "#/definitions/QuantityProperty"
             }
           ],
-          "description": "Property. Amount of the product, material or resource represented by the record, expressed in the accompanying unitCode."
-        },
-        "unitCode": {
-          "allOf": [
-            {
-              "$ref": "#/definitions/StringProperty"
-            }
-          ],
-          "description": "Property. Unit of measurement for quantity."
+          "description": "Property. Expected unitCode: KGM, KWH, HUR or EA. Amount of the product, material or resource represented by the record."
         },
         "length": {
           "allOf": [
@@ -229,7 +222,7 @@
   "required": [
     "id",
     "type",
-    "quantity",
-    "unitCode"
+    "refProductModel",
+    "quantity"
   ]
 }

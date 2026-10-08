@@ -1,0 +1,214 @@
+VehicleModel:
+
+  description: CIRCULOOS data model for a vehicle model in the ISLOPOL value chain, grouping the technical characteristics shared by vehicles of that model, including brand, fuel type, cargo volume and weight.
+
+  properties:
+
+    brandName:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: Brand or marque of the vehicle model.
+      x-ngsi:
+        type: Property
+
+    cargoVolume:
+      allOf:
+        - additionalProperties: no
+          anyOf:
+            - required:
+                - value
+            - required:
+                - minValue
+            - required:
+                - maxValue
+          properties:
+            maxValue:
+              description: Upper bound of the value, when the source declares a range or a maximum.
+              type: number
+            minValue:
+              description: Lower bound of the value, when the source declares a range or a minimum.
+              type: number
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            unitCode:
+              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.
+              type: string
+            value:
+              description: Exact measured value, when a single figure is known.
+              type: number
+          required:
+            - type
+            - unitCode
+          type: object
+      description: 'Expected unitCode: LTR. Cargo volume specified for the vehicle model.'
+      x-ngsi:
+        type: Property
+
+    fuelType:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              enum:
+                - autogas
+                - biodiesel
+                - cng
+                - diesel
+                - electric
+                - ethanol
+                - gasoline
+                - hybrid_electric_diesel
+                - hybrid_electric_petrol
+                - hydrogen
+                - lpg
+                - petrol
+                - petrol(unleaded)
+                - petrol(leaded)
+                - other
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: Fuel or energy type used by vehicles of this model. Given in the source as https://schema.org/fuelType.
+      x-ngsi:
+        type: Property
+
+    id:
+      description: ''
+      type: string
+      x-ngsi:
+        model: Unique entity identifier, with the format urn:ngsi-ld:Vehicle<brand>_<model>.
+        type: Property
+
+    modelName:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: Manufacturer's model designation.
+      x-ngsi:
+        type: Property
+
+    name:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: Human-readable name of the vehicle model, typically combining the brand and model designation. Given in the source as https://schema.org/name.
+      x-ngsi:
+        type: Property
+
+    type:
+      description: NGSI Entity type. It has to be VehicleModel
+      enum:
+        - VehicleModel
+      type: string
+      x-ngsi:
+        type: Property
+
+    weight:
+      allOf:
+        - additionalProperties: no
+          anyOf:
+            - required:
+                - value
+            - required:
+                - minValue
+            - required:
+                - maxValue
+          properties:
+            maxValue:
+              description: Upper bound of the value, when the source declares a range or a maximum.
+              type: number
+            minValue:
+              description: Lower bound of the value, when the source declares a range or a minimum.
+              type: number
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            unitCode:
+              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.
+              type: string
+            value:
+              description: Exact measured value, when a single figure is known.
+              type: number
+          required:
+            - type
+            - unitCode
+          type: object
+      description: 'Expected unitCode: KGM. Vehicle weight recorded for the model. Given in the source as https://schema.org/weight.'
+      x-ngsi:
+        type: Property
+
+  required:
+    - id
+    - type
+
+  type: object
+
+  x-derived-from: https://context.dataspace-arditi.com/islopol/entities/VehicleModel/v2/schema.json
+
+  x-disclaimer: Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program
+
+  x-license-url: https://github.com/smart-data-models/circuloos_data_model/blob/master/VehicleModel/LICENSE.md
+
+  x-model-schema: https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/openCallSpecific/esp_islopol/VehicleModel/schema.json
+
+  x-model-tags: esp_islopol
+
+  x-version: 0.0.1

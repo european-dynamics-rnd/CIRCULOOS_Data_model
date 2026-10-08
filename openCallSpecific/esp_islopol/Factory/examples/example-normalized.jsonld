@@ -9,11 +9,11 @@
     "type": "Property",
     "value": "ETRS - Estacao de Tratamento de Residuos Solidos da Meia Serra"
   },
-  "additionalType": {
+  "factoryType": {
     "type": "Property",
     "value": "Tratamento, valorizacao e eliminacao de residuos solidos urbanos."
   },
-  "provider": {
+  "operatedBy": {
     "type": "Property",
     "value": "ARM - Aguas e Residuos da Madeira S.A."
   },

@@ -1,10 +1,10 @@
 {
   "$schema": "http://json-schema.org/schema#",
   "$schemaVersion": "0.0.1",
-  "modelTags": "",
+  "modelTags": "granular_printers",
   "derivedFrom": "",
-  "license": "",
-  "$id": "https://raw.githubusercontent.com/TO_ADD_LATER/schema.json",
+  "license": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/refs/heads/main/LICENSE",
+  "$id": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/openCallSpecific/granular_printers/3DPrintingProcess/schema.json",
   "title": "Data model for a granular 3D printing process reading",
   "description": "CIRCULOOS data model for a sensor reading taken on the cartesian granular 3D printer, covering slurry and adjuvant flow, extrusion head temperatures, motor intensity and speed, and circuit pressure during a print run.",
   "type": "object",
@@ -148,6 +148,22 @@
             }
           ],
           "description": "Property. Expected unitCode: MIN. Time to print a defined part."
+        },
+        "printingSpeed": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/QuantityProperty"
+            }
+          ],
+          "description": "Property. Expected unitCode: H81. Printing speed of the extrusion head along the print path, in millimetres per minute. Source field: V_mm_min."
+        },
+        "zPosition": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/QuantityProperty"
+            }
+          ],
+          "description": "Property. Expected unitCode: MMT. Vertical (Z axis) position of the extrusion head, which follows the height reached by the deposited layers. Source field: Z_mm."
         }
       }
     }

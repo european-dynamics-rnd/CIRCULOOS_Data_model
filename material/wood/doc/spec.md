@@ -1,20 +1,34 @@
-<!-- 10-Header -->  
+<!-- 10-Header -->
+  
 Entity: leather  
-===============<!-- /10-Header -->  
-<!-- 15-License -->  
-[Open License](https://github.com/smart-data-models//circuloos_data_model/blob/master/leather/LICENSE.md)  
-[document generated automatically](https://docs.google.com/presentation/d/e/2PACX-1vTs-Ng5dIAwkg91oTTUdt8ua7woBXhPnwavZ0FxgR8BsAI_Ek3C5q97Nd94HS8KhP-r_quD4H0fgyt3/pub?start=false&loop=false&delayms=3000#slide=id.gb715ace035_0_60)  
-<!-- /15-License -->  
-<!-- 20-Description -->  
-Global description: **CIRCULOOS data model for wood**  
-version: 0.0.1  
-<!-- /20-Description -->  
-<!-- 30-PropertiesList -->  
+===============
+<!-- /10-Header -->
+  
+<!-- 15-License -->
+  
 
-## List of properties  
+[Open License](https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/refs/heads/main/LICENSE)
 
-<sup><sub>[*] If there is not a type in an attribute is because it could have several types or different formats/patterns</sub></sup>  
-- `address[object]`: The mailing address  . Model: [https://schema.org/address](https://schema.org/address)	- `addressCountry[string]`: Property. The country. For example, Spain. Model:'https://schema.org/addressCountry'    
+<!-- /15-License -->
+  
+<!-- 20-Description -->
+  
+
+Global description: **CIRCULOOS data model for wood**  
+
+version: 0.0.1  
+<!-- /20-Description -->
+  
+<!-- 30-PropertiesList -->
+  
+
+
+## List of properties  
+
+
+<sup><sub>[*] If there is not a type in an attribute is because it could have several types or different formats/patterns</sub></sup>  
+- `address[object]`: The mailing address  . Model: [https://schema.org/address](https://schema.org/address)
+	- `addressCountry[string]`: Property. The country. For example, Spain. Model:'https://schema.org/addressCountry'    
 	- `addressLocality[string]`: Property. The locality in which the street address is, and which is in the region. Model:'https://schema.org/addressLocality'    
 	- `addressRegion[string]`: Property. The region in which the locality is, and which is in the country. Model:'https://schema.org/addressRegion'    
 	- `district[string]`: Property. A district is a type of administrative division that, in some countries, is managed by the local government    
@@ -22,45 +36,86 @@ Entity: leather
 	- `postalCode[string]`: Property. The postal code. For example, 24004. Model:'https://schema.org/https://schema.org/postalCode'    
 	- `streetAddress[string]`: Property. The street address. Model:'https://schema.org/streetAddress'    
 	- `streetNr[string]`: Property. Number identifying a specific property on a public street    
-- `alternateName[string]`: An alternative name for this item  - `areaServed[string]`: The geographic area where a service or offered item is provided  . Model: [https://schema.org/Text](https://schema.org/Text)- `bendingStrength[object]`: The maximum stress the wood can withstand before breaking when subjected to a bending force.   	  
+- `alternateName[string]`: An alternative name for this item  
+- `areaServed[string]`: The geographic area where a service or offered item is provided  . Model: [https://schema.org/Text](https://schema.org/Text)
+- `bendingStrength[object]`: The maximum stress the wood can withstand before breaking when subjected to a bending force.   
+	  
 	- `value[number]`: Property. https://schema.org/Number.  Default: 0.0    
-- `compressiveStrength[object]`: The maximum compressive force that wood can withstand.   	  
+- `compressiveStrength[object]`: The maximum compressive force that wood can withstand.   
+	  
 	- `value[number]`: Property. https://schema.org/Number.  Default: 0.0    
-- `dataProvider[string]`: A sequence of characters identifying the provider of the harmonised data entity  - `dateCreated[date-time]`: Entity creation timestamp. This will usually be allocated by the storage platform  - `dateModified[date-time]`: Timestamp of the last modification of the entity. This will usually be allocated by the storage platform  - `density[object]`: The mass per unit volume of the wood, critical for calculating weight and structural integrity.   	  
+- `dataProvider[string]`: A sequence of characters identifying the provider of the harmonised data entity  
+- `dateCreated[date-time]`: Entity creation timestamp. This will usually be allocated by the storage platform  
+- `dateModified[date-time]`: Timestamp of the last modification of the entity. This will usually be allocated by the storage platform  
+- `density[object]`: The mass per unit volume of the wood, critical for calculating weight and structural integrity.   
+	  
 	- `value[number]`: Property. https://schema.org/Number.  Default: 0.0    
-- `description[string]`: A description of this item  - `flameSpreadIndex[object]`: A measure of the material’s propensity to burn and spread flames, important for fire safety considerations. ASTM E84   	  
+- `description[string]`: A description of this item  
+- `flameSpreadIndex[object]`: A measure of the material’s propensity to burn and spread flames, important for fire safety considerations. ASTM E84   
+	  
 	- `value[number]`: Property. https://schema.org/Number.  Default: 0.0    
-- `hardness[object]`:  The resistance of the wood to indentation or scratching, important for wear and durability.   	  
+- `hardness[object]`:  The resistance of the wood to indentation or scratching, important for wear and durability.   
+	  
 	- `value[number]`: Property. https://schema.org/Number.  Default: 0.0    
-- `id[*]`: Unique identifier of the entity  - `location[*]`: GeoProperty. Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon  - `modulusOfElasticity[object]`: The measure of the wood's stiffness, indicating how much it will deform under stress.   	  
+- `id[*]`: Unique identifier of the entity  
+- `location[*]`: GeoProperty. Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon  
+- `modulusOfElasticity[object]`: The measure of the wood's stiffness, indicating how much it will deform under stress.   
+	  
 	- `value[number]`: Property. https://schema.org/Number.  Default: 0.0    
-- `moistureContent[object]`: The amount of moisture in the wood, affecting its dimensional stability and strength.   	  
+- `moistureContent[object]`: The amount of moisture in the wood, affecting its dimensional stability and strength.   
+	  
 	- `value[number]`: Property. https://schema.org/Number.  Default: 0.0    
-- `name[string]`: The name of this item  - `opticalProperties-color[object]`: Characteristics related to appearance.   	  
+- `name[string]`: The name of this item  
+- `opticalProperties-color[object]`: Characteristics related to appearance.   
+	  
 	- `value[string]`: Property. https://schema.org/Number.  Default: 0.0    
-- `opticalProperties-grainPattern[object]`: Characteristics related to appearance.   	  
+- `opticalProperties-grainPattern[object]`: Characteristics related to appearance.   
+	  
 	- `value[string]`: Property. https://schema.org/Number.  Default: 0.0    
-- `owner[array]`: A List containing a JSON encoded sequence of characters referencing the unique Ids of the owner(s)  - `seeAlso[*]`: list of uri pointing to additional resources about the item  - `source[string]`: A sequence of characters giving the original source of the entity data as a URL. Recommended to be the fully qualified domain name of the source provider, or the URL to the source object  - `species[string]`: The type of wood (e.g., Oak, Pine, Birch).   - `tensileStrength[object]`: he maximum stress that the wood can withstand while being stretched before breaking.   	  
+- `owner[array]`: A List containing a JSON encoded sequence of characters referencing the unique Ids of the owner(s)  
+- `seeAlso[*]`: list of uri pointing to additional resources about the item  
+- `source[string]`: A sequence of characters giving the original source of the entity data as a URL. Recommended to be the fully qualified domain name of the source provider, or the URL to the source object  
+- `species[string]`: The type of wood (e.g., Oak, Pine, Birch).   
+- `tensileStrength[object]`: he maximum stress that the wood can withstand while being stretched before breaking.   
+	  
 	- `value[number]`: Property. https://schema.org/Number.  Default: 0.0    
-- `thermalConductivity[object]`: The rate at which heat passes through the wood, important for thermal insulation applications.   	  
+- `thermalConductivity[object]`: The rate at which heat passes through the wood, important for thermal insulation applications.   
+	  
 	- `value[number]`: Property. https://schema.org/Number.  Default: 0.0    
-- `thermalExpansionCoefficient[object]`: The rate at which the wood expands with temperature, critical in applications involving temperature changes.   	  
+- `thermalExpansionCoefficient[object]`: The rate at which the wood expands with temperature, critical in applications involving temperature changes.   
+	  
 	- `value[number]`: Property. https://schema.org/Number.  Default: 0.0    
-- `type[*]`: NGSI Entity type. It has to be wood  - `waterAbsorption[object]`: The amount of water absorbed by the wood over a specified period, influencing dimensional stability and strength.   	  
+- `type[*]`: NGSI Entity type. It has to be wood  
+- `waterAbsorption[object]`: The amount of water absorbed by the wood over a specified period, influencing dimensional stability and strength.   
+	  
 	- `value[number]`: Property. https://schema.org/Number.  Default: 0.0    
-<!-- /30-PropertiesList -->  
-<!-- 35-RequiredProperties -->  
-Required properties  
-- `id`  - `type`  <!-- /35-RequiredProperties -->  
-<!-- 40-RequiredProperties -->  
-<!-- /40-RequiredProperties -->  
-<!-- 50-DataModelHeader -->  
-## Data Model description of properties  
-Sorted alphabetically (click for details)  
-<!-- /50-DataModelHeader -->  
-<!-- 60-ModelYaml -->  
+<!-- /30-PropertiesList -->
+  
+<!-- 35-RequiredProperties -->
+  
+
+Required properties  
+- `id`  
+- `type`  
+<!-- /35-RequiredProperties -->
+  
+<!-- 40-RequiredProperties -->
+  
+<!-- /40-RequiredProperties -->
+  
+<!-- 50-DataModelHeader -->
+  
+
+## Data Model description of properties  
+
+Sorted alphabetically (click for details)  
+<!-- /50-DataModelHeader -->
+  
+<!-- 60-ModelYaml -->
+  
 <details><summary><strong>full yaml details</strong></summary>    
-```yaml  
+
+```yaml  
 leather:    
   description: CIRCULOOS data model for wood    
   properties:    
@@ -470,17 +525,27 @@ leather:
   x-version: 0.0.1    
 ```  
 </details>    
-<!-- /60-ModelYaml -->  
-<!-- 70-MiddleNotes -->  
-<!-- /70-MiddleNotes -->  
-<!-- 80-Examples -->  
-## Example payloads    
-Not available the example of a leather in JSON-LD format as key-values. This is compatible with NGSI-LD when  using `options=keyValues` and returns the context data of an individual entity.  
-#### leather NGSI-LD normalized Example    
-Here is an example of a leather in JSON-LD format as normalized. This is compatible with NGSI-LD when not using options and returns the context data of an individual entity.  
+<!-- /60-ModelYaml -->
+  
+<!-- 70-MiddleNotes -->
+  
+<!-- /70-MiddleNotes -->
+  
+<!-- 80-Examples -->
+  
+
+## Example payloads    
+
+Not available the example of a leather in JSON-LD format as key-values. This is compatible with NGSI-LD when  using `options=keyValues` and returns the context data of an individual entity.  
+
+#### leather NGSI-LD normalized Example    
+
+Here is an example of a leather in JSON-LD format as normalized. This is compatible with NGSI-LD when not using options and returns the context data of an individual entity.  
 <details><summary><strong>show/hide example</strong></summary>    
-```json  
-{  
+
+```json  
+
+{  
     "id": "ngsi-ld:wood:wood1",  
     "type": "wood",  
     "species": "Oak",  
@@ -548,4 +613,5 @@ leather:
     }  
 }  
 ```  
-</details><!-- /80-Examples -->  
+</details><!-- /80-Examples -->
+  

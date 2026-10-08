@@ -1,10 +1,10 @@
 {
   "$schema": "http://json-schema.org/schema#",
   "$schemaVersion": "0.0.1",
-  "modelTags": "",
+  "modelTags": "esp_islopol",
   "derivedFrom": "https://context.dataspace-arditi.com/islopol/entities/ProductModel/v2/schema.json",
-  "license": "",
-  "$id": "https://raw.githubusercontent.com/TO_ADD_LATER/schema.json",
+  "license": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/refs/heads/main/LICENSE",
+  "$id": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/openCallSpecific/esp_islopol/ProductModel/schema.json",
   "title": "Data model for an ISLOPOL product model",
   "description": "CIRCULOOS data model for a product or material model that defines shared characteristics for individual Product records in the ISLOPOL value chain, covering its name, constituents, material, available categories and default unit of measurement.",
   "type": "object",
@@ -82,6 +82,14 @@
           ],
           "description": "Property. Human-readable name of the product model, used to label products. Given in the source as https://schema.org/name."
         },
+        "refLcaId": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/StringProperty"
+            }
+          ],
+          "description": "Property. Reference identifier used for LCA traceability."
+        },
         "description": {
           "allOf": [
             {
@@ -93,18 +101,18 @@
         "constituents": {
           "allOf": [
             {
-              "$ref": "#/definitions/StringProperty"
+              "$ref": "#/definitions/StringArrayProperty"
             }
           ],
-          "description": "Property. Material or list of materials or components making up the product model. Given in the source as https://context.dataspace-arditi.com/islopol/terms/v2/constituents."
+          "description": "Property. Materials or components making up the product model."
         },
-        "category": {
+        "availableCategories": {
           "allOf": [
             {
               "$ref": "#/definitions/StringArrayProperty"
             }
           ],
-          "description": "Property. List of product categories or grades available for the model. Given in the source as https://schema.org/category, the expanded JSON-LD form of availableCategories."
+          "description": "Property. List of product categories or grades available for the model. Simple hierarchies are allowed, e.g. 'Waste > EPS'."
         },
         "material": {
           "allOf": [
@@ -114,13 +122,13 @@
           ],
           "description": "Property. Main material or composition associated with the product model. Given in the source as https://schema.org/material."
         },
-        "unitCode": {
+        "quantityUnit": {
           "allOf": [
             {
               "$ref": "#/definitions/StringProperty"
             }
           ],
-          "description": "Property. Default unit of measurement for products of this model, such as kilograms, kilowatt-hours or individual units."
+          "description": "Property. UN/CEFACT code of the default unit of measurement for products of this model, e.g. KGM (kilogram), KWH (kilowatt hour) or EA (each)."
         }
       }
     }
@@ -128,6 +136,8 @@
   "required": [
     "id",
     "type",
-    "name"
+    "name",
+    "quantityUnit",
+    "material"
   ]
 }

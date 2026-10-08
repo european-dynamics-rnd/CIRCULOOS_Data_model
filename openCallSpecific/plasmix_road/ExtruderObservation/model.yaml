@@ -1,0 +1,1237 @@
+ExtruderObservation:
+
+  description: CIRCULOOS data model for a monitoring observation of the Plasmix Road recycled-plastic extrusion line, covering the actual and set temperatures of the ten extruder zones and the cutting zone, together with the speeds and currents of the extruder, cutter, feeder and shredder.
+
+  properties:
+
+    crusherCurrent:
+      allOf:
+        - additionalProperties: no
+          anyOf:
+            - required:
+                - value
+            - required:
+                - minValue
+            - required:
+                - maxValue
+          properties:
+            maxValue:
+              description: Upper bound of the value, when the source declares a range or a maximum.
+              type: number
+            minValue:
+              description: Lower bound of the value, when the source declares a range or a minimum.
+              type: number
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            unitCode:
+              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.
+              type: string
+            value:
+              description: Exact measured value, when a single figure is known.
+              type: number
+          required:
+            - type
+            - unitCode
+          type: object
+      description: 'Expected unitCode: AMP. Shredder current.'
+      x-ngsi:
+        type: Property
+
+    crusherRotationSpeed:
+      allOf:
+        - additionalProperties: no
+          anyOf:
+            - required:
+                - value
+            - required:
+                - minValue
+            - required:
+                - maxValue
+          properties:
+            maxValue:
+              description: Upper bound of the value, when the source declares a range or a maximum.
+              type: number
+            minValue:
+              description: Lower bound of the value, when the source declares a range or a minimum.
+              type: number
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            unitCode:
+              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.
+              type: string
+            value:
+              description: Exact measured value, when a single figure is known.
+              type: number
+          required:
+            - type
+            - unitCode
+          type: object
+      description: 'Expected unitCode: RPM. Speed of the shredder motor.'
+      x-ngsi:
+        type: Property
+
+    crusherTemperature:
+      allOf:
+        - additionalProperties: no
+          anyOf:
+            - required:
+                - value
+            - required:
+                - minValue
+            - required:
+                - maxValue
+          properties:
+            maxValue:
+              description: Upper bound of the value, when the source declares a range or a maximum.
+              type: number
+            minValue:
+              description: Lower bound of the value, when the source declares a range or a minimum.
+              type: number
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            unitCode:
+              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.
+              type: string
+            value:
+              description: Exact measured value, when a single figure is known.
+              type: number
+          required:
+            - type
+            - unitCode
+          type: object
+      description: 'Expected unitCode: CEL. Shredder temperature.'
+      x-ngsi:
+        type: Property
+
+    cuttingSpeed:
+      allOf:
+        - additionalProperties: no
+          anyOf:
+            - required:
+                - value
+            - required:
+                - minValue
+            - required:
+                - maxValue
+          properties:
+            maxValue:
+              description: Upper bound of the value, when the source declares a range or a maximum.
+              type: number
+            minValue:
+              description: Lower bound of the value, when the source declares a range or a minimum.
+              type: number
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            unitCode:
+              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.
+              type: string
+            value:
+              description: Exact measured value, when a single figure is known.
+              type: number
+          required:
+            - type
+            - unitCode
+          type: object
+      description: 'Expected unitCode: RPM. Cutting motor speed. Source tag: cut_speed_rpm.'
+      x-ngsi:
+        type: Property
+
+    cuttingSpeedCurrent:
+      allOf:
+        - additionalProperties: no
+          anyOf:
+            - required:
+                - value
+            - required:
+                - minValue
+            - required:
+                - maxValue
+          properties:
+            maxValue:
+              description: Upper bound of the value, when the source declares a range or a maximum.
+              type: number
+            minValue:
+              description: Lower bound of the value, when the source declares a range or a minimum.
+              type: number
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            unitCode:
+              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.
+              type: string
+            value:
+              description: Exact measured value, when a single figure is known.
+              type: number
+          required:
+            - type
+            - unitCode
+          type: object
+      description: 'Expected unitCode: AMP. Cutting motor amperage. Source tag: cutting_speed_amp.'
+      x-ngsi:
+        type: Property
+
+    cuttingZoneActualTemperature:
+      allOf:
+        - additionalProperties: no
+          anyOf:
+            - required:
+                - value
+            - required:
+                - minValue
+            - required:
+                - maxValue
+          properties:
+            maxValue:
+              description: Upper bound of the value, when the source declares a range or a maximum.
+              type: number
+            minValue:
+              description: Lower bound of the value, when the source declares a range or a minimum.
+              type: number
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            unitCode:
+              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.
+              type: string
+            value:
+              description: Exact measured value, when a single figure is known.
+              type: number
+          required:
+            - type
+            - unitCode
+          type: object
+      description: 'Expected unitCode: CEL. Cutting zone temperature (current value). Source tag: t_cutting_zone_act_c.'
+      x-ngsi:
+        type: Property
+
+    cuttingZoneSetTemperature:
+      allOf:
+        - additionalProperties: no
+          anyOf:
+            - required:
+                - value
+            - required:
+                - minValue
+            - required:
+                - maxValue
+          properties:
+            maxValue:
+              description: Upper bound of the value, when the source declares a range or a maximum.
+              type: number
+            minValue:
+              description: Lower bound of the value, when the source declares a range or a minimum.
+              type: number
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            unitCode:
+              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.
+              type: string
+            value:
+              description: Exact measured value, when a single figure is known.
+              type: number
+          required:
+            - type
+            - unitCode
+          type: object
+      description: 'Expected unitCode: CEL. Cutting zone temperature (target value). Source tag: t_cutting_zone_sp_c.'
+      x-ngsi:
+        type: Property
+
+    extruderCurrent:
+      allOf:
+        - additionalProperties: no
+          anyOf:
+            - required:
+                - value
+            - required:
+                - minValue
+            - required:
+                - maxValue
+          properties:
+            maxValue:
+              description: Upper bound of the value, when the source declares a range or a maximum.
+              type: number
+            minValue:
+              description: Lower bound of the value, when the source declares a range or a minimum.
+              type: number
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            unitCode:
+              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.
+              type: string
+            value:
+              description: Exact measured value, when a single figure is known.
+              type: number
+          required:
+            - type
+            - unitCode
+          type: object
+      description: 'Expected unitCode: AMP. Extruder motor current. Source tag: extr_corr_amp.'
+      x-ngsi:
+        type: Property
+
+    extruderId:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: Identifier of the extruder the observation belongs to (recorded in the source as the user session).
+      x-ngsi:
+        type: Property
+
+    extruderWorkingSpeed:
+      allOf:
+        - additionalProperties: no
+          anyOf:
+            - required:
+                - value
+            - required:
+                - minValue
+            - required:
+                - maxValue
+          properties:
+            maxValue:
+              description: Upper bound of the value, when the source declares a range or a maximum.
+              type: number
+            minValue:
+              description: Lower bound of the value, when the source declares a range or a minimum.
+              type: number
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            unitCode:
+              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.
+              type: string
+            value:
+              description: Exact measured value, when a single figure is known.
+              type: number
+          required:
+            - type
+            - unitCode
+          type: object
+      description: 'Expected unitCode: P1. Extruder speed, as a percentage of its maximum.'
+      x-ngsi:
+        type: Property
+
+    feedSpeedWorking:
+      allOf:
+        - additionalProperties: no
+          anyOf:
+            - required:
+                - value
+            - required:
+                - minValue
+            - required:
+                - maxValue
+          properties:
+            maxValue:
+              description: Upper bound of the value, when the source declares a range or a maximum.
+              type: number
+            minValue:
+              description: Lower bound of the value, when the source declares a range or a minimum.
+              type: number
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            unitCode:
+              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.
+              type: string
+            value:
+              description: Exact measured value, when a single figure is known.
+              type: number
+          required:
+            - type
+            - unitCode
+          type: object
+      description: 'Expected unitCode: P1. Feeder auger speed, as a percentage of its maximum.'
+      x-ngsi:
+        type: Property
+
+    id:
+      description: Unique entity identifier, with the format urn:ngsi-ld:extruder:observation:<timestamp>.
+      type: string
+      x-ngsi:
+        type: Property
+
+    screwFeedCurrent:
+      allOf:
+        - additionalProperties: no
+          anyOf:
+            - required:
+                - value
+            - required:
+                - minValue
+            - required:
+                - maxValue
+          properties:
+            maxValue:
+              description: Upper bound of the value, when the source declares a range or a maximum.
+              type: number
+            minValue:
+              description: Lower bound of the value, when the source declares a range or a minimum.
+              type: number
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            unitCode:
+              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.
+              type: string
+            value:
+              description: Exact measured value, when a single figure is known.
+              type: number
+          required:
+            - type
+            - unitCode
+          type: object
+      description: 'Expected unitCode: AMP. Feeder screw amperage.'
+      x-ngsi:
+        type: Property
+
+    type:
+      description: NGSI Entity type. It has to be ExtruderObservation
+      enum:
+        - ExtruderObservation
+      type: string
+      x-ngsi:
+        type: Property
+
+    zone10ActualTemperature:
+      allOf:
+        - additionalProperties: no
+          anyOf:
+            - required:
+                - value
+            - required:
+                - minValue
+            - required:
+                - maxValue
+          properties:
+            maxValue:
+              description: Upper bound of the value, when the source declares a range or a maximum.
+              type: number
+            minValue:
+              description: Lower bound of the value, when the source declares a range or a minimum.
+              type: number
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            unitCode:
+              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.
+              type: string
+            value:
+              description: Exact measured value, when a single figure is known.
+              type: number
+          required:
+            - type
+            - unitCode
+          type: object
+      description: 'Expected unitCode: CEL. Extruder Zone 10 temperature (current value). Source tag: t_zone10_extr_act_c.'
+      x-ngsi:
+        type: Property
+
+    zone10SetTemperature:
+      allOf:
+        - additionalProperties: no
+          anyOf:
+            - required:
+                - value
+            - required:
+                - minValue
+            - required:
+                - maxValue
+          properties:
+            maxValue:
+              description: Upper bound of the value, when the source declares a range or a maximum.
+              type: number
+            minValue:
+              description: Lower bound of the value, when the source declares a range or a minimum.
+              type: number
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            unitCode:
+              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.
+              type: string
+            value:
+              description: Exact measured value, when a single figure is known.
+              type: number
+          required:
+            - type
+            - unitCode
+          type: object
+      description: 'Expected unitCode: CEL. Extruder Zone 10 set temperature (target value). Source tag: t_zone10_extr_sp_c.'
+      x-ngsi:
+        type: Property
+
+    zone1ActualTemperature:
+      allOf:
+        - additionalProperties: no
+          anyOf:
+            - required:
+                - value
+            - required:
+                - minValue
+            - required:
+                - maxValue
+          properties:
+            maxValue:
+              description: Upper bound of the value, when the source declares a range or a maximum.
+              type: number
+            minValue:
+              description: Lower bound of the value, when the source declares a range or a minimum.
+              type: number
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            unitCode:
+              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.
+              type: string
+            value:
+              description: Exact measured value, when a single figure is known.
+              type: number
+          required:
+            - type
+            - unitCode
+          type: object
+      description: 'Expected unitCode: CEL. Extruder Zone 1 temperature (current value). Source tag: t_zone1_extr_act_c.'
+      x-ngsi:
+        type: Property
+
+    zone1SetTemperature:
+      allOf:
+        - additionalProperties: no
+          anyOf:
+            - required:
+                - value
+            - required:
+                - minValue
+            - required:
+                - maxValue
+          properties:
+            maxValue:
+              description: Upper bound of the value, when the source declares a range or a maximum.
+              type: number
+            minValue:
+              description: Lower bound of the value, when the source declares a range or a minimum.
+              type: number
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            unitCode:
+              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.
+              type: string
+            value:
+              description: Exact measured value, when a single figure is known.
+              type: number
+          required:
+            - type
+            - unitCode
+          type: object
+      description: 'Expected unitCode: CEL. Extruder Zone 1 set temperature (target value). Source tag: t_zone1_extr_sp_c.'
+      x-ngsi:
+        type: Property
+
+    zone2ActualTemperature:
+      allOf:
+        - additionalProperties: no
+          anyOf:
+            - required:
+                - value
+            - required:
+                - minValue
+            - required:
+                - maxValue
+          properties:
+            maxValue:
+              description: Upper bound of the value, when the source declares a range or a maximum.
+              type: number
+            minValue:
+              description: Lower bound of the value, when the source declares a range or a minimum.
+              type: number
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            unitCode:
+              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.
+              type: string
+            value:
+              description: Exact measured value, when a single figure is known.
+              type: number
+          required:
+            - type
+            - unitCode
+          type: object
+      description: 'Expected unitCode: CEL. Extruder Zone 2 temperature (current value). Source tag: t_zone2_extr_act_c.'
+      x-ngsi:
+        type: Property
+
+    zone2SetTemperature:
+      allOf:
+        - additionalProperties: no
+          anyOf:
+            - required:
+                - value
+            - required:
+                - minValue
+            - required:
+                - maxValue
+          properties:
+            maxValue:
+              description: Upper bound of the value, when the source declares a range or a maximum.
+              type: number
+            minValue:
+              description: Lower bound of the value, when the source declares a range or a minimum.
+              type: number
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            unitCode:
+              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.
+              type: string
+            value:
+              description: Exact measured value, when a single figure is known.
+              type: number
+          required:
+            - type
+            - unitCode
+          type: object
+      description: 'Expected unitCode: CEL. Extruder Zone 2 set temperature (target value). Source tag: t_zone2_extr_sp_c.'
+      x-ngsi:
+        type: Property
+
+    zone3ActualTemperature:
+      allOf:
+        - additionalProperties: no
+          anyOf:
+            - required:
+                - value
+            - required:
+                - minValue
+            - required:
+                - maxValue
+          properties:
+            maxValue:
+              description: Upper bound of the value, when the source declares a range or a maximum.
+              type: number
+            minValue:
+              description: Lower bound of the value, when the source declares a range or a minimum.
+              type: number
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            unitCode:
+              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.
+              type: string
+            value:
+              description: Exact measured value, when a single figure is known.
+              type: number
+          required:
+            - type
+            - unitCode
+          type: object
+      description: 'Expected unitCode: CEL. Extruder Zone 3 temperature (current value). Source tag: t_zone3_extr_act_c.'
+      x-ngsi:
+        type: Property
+
+    zone3SetTemperature:
+      allOf:
+        - additionalProperties: no
+          anyOf:
+            - required:
+                - value
+            - required:
+                - minValue
+            - required:
+                - maxValue
+          properties:
+            maxValue:
+              description: Upper bound of the value, when the source declares a range or a maximum.
+              type: number
+            minValue:
+              description: Lower bound of the value, when the source declares a range or a minimum.
+              type: number
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            unitCode:
+              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.
+              type: string
+            value:
+              description: Exact measured value, when a single figure is known.
+              type: number
+          required:
+            - type
+            - unitCode
+          type: object
+      description: 'Expected unitCode: CEL. Extruder Zone 3 set temperature (target value). Source tag: t_zone3_extr_sp_c.'
+      x-ngsi:
+        type: Property
+
+    zone4ActualTemperature:
+      allOf:
+        - additionalProperties: no
+          anyOf:
+            - required:
+                - value
+            - required:
+                - minValue
+            - required:
+                - maxValue
+          properties:
+            maxValue:
+              description: Upper bound of the value, when the source declares a range or a maximum.
+              type: number
+            minValue:
+              description: Lower bound of the value, when the source declares a range or a minimum.
+              type: number
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            unitCode:
+              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.
+              type: string
+            value:
+              description: Exact measured value, when a single figure is known.
+              type: number
+          required:
+            - type
+            - unitCode
+          type: object
+      description: 'Expected unitCode: CEL. Extruder Zone 4 temperature (current value). Source tag: t_zone4_extr_act_c.'
+      x-ngsi:
+        type: Property
+
+    zone4SetTemperature:
+      allOf:
+        - additionalProperties: no
+          anyOf:
+            - required:
+                - value
+            - required:
+                - minValue
+            - required:
+                - maxValue
+          properties:
+            maxValue:
+              description: Upper bound of the value, when the source declares a range or a maximum.
+              type: number
+            minValue:
+              description: Lower bound of the value, when the source declares a range or a minimum.
+              type: number
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            unitCode:
+              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.
+              type: string
+            value:
+              description: Exact measured value, when a single figure is known.
+              type: number
+          required:
+            - type
+            - unitCode
+          type: object
+      description: 'Expected unitCode: CEL. Extruder Zone 4 set temperature (target value). Source tag: t_zone4_extr_sp_c.'
+      x-ngsi:
+        type: Property
+
+    zone5ActualTemperature:
+      allOf:
+        - additionalProperties: no
+          anyOf:
+            - required:
+                - value
+            - required:
+                - minValue
+            - required:
+                - maxValue
+          properties:
+            maxValue:
+              description: Upper bound of the value, when the source declares a range or a maximum.
+              type: number
+            minValue:
+              description: Lower bound of the value, when the source declares a range or a minimum.
+              type: number
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            unitCode:
+              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.
+              type: string
+            value:
+              description: Exact measured value, when a single figure is known.
+              type: number
+          required:
+            - type
+            - unitCode
+          type: object
+      description: 'Expected unitCode: CEL. Extruder Zone 5 temperature (current value). Source tag: t_zone5_extr_act_c.'
+      x-ngsi:
+        type: Property
+
+    zone5SetTemperature:
+      allOf:
+        - additionalProperties: no
+          anyOf:
+            - required:
+                - value
+            - required:
+                - minValue
+            - required:
+                - maxValue
+          properties:
+            maxValue:
+              description: Upper bound of the value, when the source declares a range or a maximum.
+              type: number
+            minValue:
+              description: Lower bound of the value, when the source declares a range or a minimum.
+              type: number
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            unitCode:
+              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.
+              type: string
+            value:
+              description: Exact measured value, when a single figure is known.
+              type: number
+          required:
+            - type
+            - unitCode
+          type: object
+      description: 'Expected unitCode: CEL. Extruder Zone 5 set temperature (target value). Source tag: t_zone5_extr_sp_c.'
+      x-ngsi:
+        type: Property
+
+    zone6ActualTemperature:
+      allOf:
+        - additionalProperties: no
+          anyOf:
+            - required:
+                - value
+            - required:
+                - minValue
+            - required:
+                - maxValue
+          properties:
+            maxValue:
+              description: Upper bound of the value, when the source declares a range or a maximum.
+              type: number
+            minValue:
+              description: Lower bound of the value, when the source declares a range or a minimum.
+              type: number
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            unitCode:
+              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.
+              type: string
+            value:
+              description: Exact measured value, when a single figure is known.
+              type: number
+          required:
+            - type
+            - unitCode
+          type: object
+      description: 'Expected unitCode: CEL. Extruder Zone 6 temperature (current value). Source tag: t_zone6_extr_act_c.'
+      x-ngsi:
+        type: Property
+
+    zone6SetTemperature:
+      allOf:
+        - additionalProperties: no
+          anyOf:
+            - required:
+                - value
+            - required:
+                - minValue
+            - required:
+                - maxValue
+          properties:
+            maxValue:
+              description: Upper bound of the value, when the source declares a range or a maximum.
+              type: number
+            minValue:
+              description: Lower bound of the value, when the source declares a range or a minimum.
+              type: number
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            unitCode:
+              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.
+              type: string
+            value:
+              description: Exact measured value, when a single figure is known.
+              type: number
+          required:
+            - type
+            - unitCode
+          type: object
+      description: 'Expected unitCode: CEL. Extruder Zone 6 set temperature (target value). Source tag: t_zone6_extr_sp_c.'
+      x-ngsi:
+        type: Property
+
+    zone7ActualTemperature:
+      allOf:
+        - additionalProperties: no
+          anyOf:
+            - required:
+                - value
+            - required:
+                - minValue
+            - required:
+                - maxValue
+          properties:
+            maxValue:
+              description: Upper bound of the value, when the source declares a range or a maximum.
+              type: number
+            minValue:
+              description: Lower bound of the value, when the source declares a range or a minimum.
+              type: number
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            unitCode:
+              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.
+              type: string
+            value:
+              description: Exact measured value, when a single figure is known.
+              type: number
+          required:
+            - type
+            - unitCode
+          type: object
+      description: 'Expected unitCode: CEL. Extruder Zone 7 temperature (current value). Source tag: t_zone7_extr_act_c.'
+      x-ngsi:
+        type: Property
+
+    zone7SetTemperature:
+      allOf:
+        - additionalProperties: no
+          anyOf:
+            - required:
+                - value
+            - required:
+                - minValue
+            - required:
+                - maxValue
+          properties:
+            maxValue:
+              description: Upper bound of the value, when the source declares a range or a maximum.
+              type: number
+            minValue:
+              description: Lower bound of the value, when the source declares a range or a minimum.
+              type: number
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            unitCode:
+              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.
+              type: string
+            value:
+              description: Exact measured value, when a single figure is known.
+              type: number
+          required:
+            - type
+            - unitCode
+          type: object
+      description: 'Expected unitCode: CEL. Extruder Zone 7 set temperature (target value). Source tag: t_zone7_extr_sp_c.'
+      x-ngsi:
+        type: Property
+
+    zone8ActualTemperature:
+      allOf:
+        - additionalProperties: no
+          anyOf:
+            - required:
+                - value
+            - required:
+                - minValue
+            - required:
+                - maxValue
+          properties:
+            maxValue:
+              description: Upper bound of the value, when the source declares a range or a maximum.
+              type: number
+            minValue:
+              description: Lower bound of the value, when the source declares a range or a minimum.
+              type: number
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            unitCode:
+              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.
+              type: string
+            value:
+              description: Exact measured value, when a single figure is known.
+              type: number
+          required:
+            - type
+            - unitCode
+          type: object
+      description: 'Expected unitCode: CEL. Extruder Zone 8 temperature (current value). Source tag: t_zone8_extr_act_c.'
+      x-ngsi:
+        type: Property
+
+    zone8SetTemperature:
+      allOf:
+        - additionalProperties: no
+          anyOf:
+            - required:
+                - value
+            - required:
+                - minValue
+            - required:
+                - maxValue
+          properties:
+            maxValue:
+              description: Upper bound of the value, when the source declares a range or a maximum.
+              type: number
+            minValue:
+              description: Lower bound of the value, when the source declares a range or a minimum.
+              type: number
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            unitCode:
+              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.
+              type: string
+            value:
+              description: Exact measured value, when a single figure is known.
+              type: number
+          required:
+            - type
+            - unitCode
+          type: object
+      description: 'Expected unitCode: CEL. Extruder Zone 8 set temperature (target value). Source tag: t_zone8_extr_sp_c.'
+      x-ngsi:
+        type: Property
+
+    zone9ActualTemperature:
+      allOf:
+        - additionalProperties: no
+          anyOf:
+            - required:
+                - value
+            - required:
+                - minValue
+            - required:
+                - maxValue
+          properties:
+            maxValue:
+              description: Upper bound of the value, when the source declares a range or a maximum.
+              type: number
+            minValue:
+              description: Lower bound of the value, when the source declares a range or a minimum.
+              type: number
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            unitCode:
+              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.
+              type: string
+            value:
+              description: Exact measured value, when a single figure is known.
+              type: number
+          required:
+            - type
+            - unitCode
+          type: object
+      description: 'Expected unitCode: CEL. Extruder Zone 9 temperature (current value). Source tag: t_zone9_extr_act_c.'
+      x-ngsi:
+        type: Property
+
+    zone9SetTemperature:
+      allOf:
+        - additionalProperties: no
+          anyOf:
+            - required:
+                - value
+            - required:
+                - minValue
+            - required:
+                - maxValue
+          properties:
+            maxValue:
+              description: Upper bound of the value, when the source declares a range or a maximum.
+              type: number
+            minValue:
+              description: Lower bound of the value, when the source declares a range or a minimum.
+              type: number
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            unitCode:
+              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.
+              type: string
+            value:
+              description: Exact measured value, when a single figure is known.
+              type: number
+          required:
+            - type
+            - unitCode
+          type: object
+      description: 'Expected unitCode: CEL. Extruder Zone 9 set temperature (target value). Source tag: t_zone9_extr_sp_c.'
+      x-ngsi:
+        type: Property
+
+  required:
+    - id
+    - type
+    - extruderId
+
+  type: object
+
+  x-derived-from: ''
+
+  x-disclaimer: Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program
+
+  x-license-url: https://github.com/smart-data-models/circuloos_data_model/blob/master/ExtruderObservation/LICENSE.md
+
+  x-model-schema: https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/openCallSpecific/plasmix_road/ExtruderObservation/schema.json
+
+  x-model-tags: plasmix_road
+
+  x-version: 0.0.1

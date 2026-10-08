@@ -5,11 +5,11 @@
   ],
   "id": "urn:ngsi-ld:EPSTransport:1789374097444",
   "type": "EPSTransport",
-  "timestampDeparture": {
+  "departureTime": {
     "type": "Property",
     "value": "2026-08-18T09:50:00.000Z"
   },
-  "timestampArrival": {
+  "arrivalTime": {
     "type": "Property",
     "value": "2026-08-18T10:15:00.000Z"
   },
@@ -23,7 +23,7 @@
   },
   "refVehicle": {
     "type": "Relationship",
-    "object": "urn:ngsi-ld:Vehicle:vehicle:arm:86-ni-59"
+    "object": "urn:ngsi-ld:Vehicle:ARM:86-NI-59"
   },
   "refEPSBatch": {
     "type": "Relationship",

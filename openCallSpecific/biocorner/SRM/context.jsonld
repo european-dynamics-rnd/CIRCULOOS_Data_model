@@ -1,0 +1,22 @@
+{
+    "@context": {
+        "SRM": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/SRM",
+        "category": "https://smartdatamodels.org/dataModel.ZEB/category",
+        "chemicalComposition": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/chemicalComposition",
+        "density": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/density",
+        "description": "http://purl.org/dc/terms/description",
+        "id": "@id",
+        "maxValue": "https://smartdatamodels.org/dataModel.EnergyCIM/maxValue",
+        "minValue": "https://smartdatamodels.org/dataModel.EnergyCIM/minValue",
+        "name": "https://smartdatamodels.org/name",
+        "observedAt": {
+            "@id": "https://uri.etsi.org/ngsi-ld/observedAt",
+            "@type": "https://uri.etsi.org/ngsi-ld/DateTime"
+        },
+        "pretreatmentRequired": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/pretreatmentRequired",
+        "storageConditions": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/storageConditions",
+        "type": "@type",
+        "unitCode": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/unitCode",
+        "value": "https://uri.etsi.org/ngsi-ld/hasValue"
+    }
+}

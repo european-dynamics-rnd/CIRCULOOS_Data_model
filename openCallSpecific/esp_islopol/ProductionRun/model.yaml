@@ -1,0 +1,208 @@
+ProductionRun:
+
+  description: CIRCULOOS data model for a specific production or transformation run in the ISLOPOL value chain, covering the period over which it ran, the process performed and the input and output products involved.
+
+  properties:
+
+    description:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: Human-readable description of the production run or operator notes.
+      x-ngsi:
+        type: Property
+
+    endDate:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              format: date-time
+              pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: Date and time when the production run actually ended, expressed as an ISO 8601 timestamp. Together with startDate, it defines the recorded duration of the run.
+      x-ngsi:
+        type: Property
+
+    id:
+      description: Unique entity identifier, with the format urn:ngsi-ld:ProductionRun:<facility>:<process>:<timestamp>.
+      type: string
+      x-ngsi:
+        type: Property
+
+    refInputProducts:
+      allOf:
+        - additionalProperties: no
+          properties:
+            object:
+              description: URN of the referenced entity, or a list of URNs.
+              oneOf:
+                - pattern: ^urn:ngsi-ld:.+$
+                  type: string
+                - items:
+                    pattern: ^urn:ngsi-ld:.+$
+                    type: string
+                  minItems: 1
+                  type: array
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Relationship
+              type: string
+          required:
+            - type
+            - object
+          type: object
+      description: Identifiers of the Product entities used during the production run. The referenced Product records specify input quantities and units.
+      x-ngsi:
+        type: Relationship
+
+    refLcaId:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: Reference identifier used for LCA traceability.
+      x-ngsi:
+        type: Property
+
+    refOutputProducts:
+      allOf:
+        - additionalProperties: no
+          properties:
+            object:
+              description: URN of the referenced entity, or a list of URNs.
+              oneOf:
+                - pattern: ^urn:ngsi-ld:.+$
+                  type: string
+                - items:
+                    pattern: ^urn:ngsi-ld:.+$
+                    type: string
+                  minItems: 1
+                  type: array
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Relationship
+              type: string
+          required:
+            - type
+            - object
+          type: object
+      description: Identifiers of the Product entities produced by the run. The referenced Product records specify output quantities and units.
+      x-ngsi:
+        type: Relationship
+
+    refProcess:
+      allOf:
+        - additionalProperties: no
+          properties:
+            object:
+              description: URN of the referenced entity.
+              pattern: ^urn:ngsi-ld:.+$
+              type: string
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Relationship
+              type: string
+          required:
+            - type
+            - object
+          type: object
+      description: Identifier of the Process entity defining the production or transformation operation performed during the run.
+      x-ngsi:
+        type: Relationship
+
+    startDate:
+      allOf:
+        - additionalProperties: no
+          properties:
+            observedAt:
+              format: date-time
+              type: string
+            type:
+              enum:
+                - Property
+              type: string
+            value:
+              format: date-time
+              pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$
+              type: string
+          required:
+            - type
+            - value
+          type: object
+      description: Date and time when the production run actually started, expressed as an ISO 8601 timestamp. This can differ from the date embedded in the record identifier.
+      x-ngsi:
+        type: Property
+
+    type:
+      description: NGSI Entity type. It has to be ProductionRun
+      enum:
+        - ProductionRun
+      type: string
+      x-ngsi:
+        type: Property
+
+  required:
+    - id
+    - type
+    - startDate
+    - endDate
+
+  type: object
+
+  x-derived-from: https://context.dataspace-arditi.com/islopol/entities/ProductionRun/v2/schema.json
+
+  x-disclaimer: Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program
+
+  x-license-url: https://github.com/smart-data-models/circuloos_data_model/blob/master/ProductionRun/LICENSE.md
+
+  x-model-schema: https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/openCallSpecific/esp_islopol/ProductionRun/schema.json
+
+  x-model-tags: esp_islopol
+
+  x-version: 0.0.1

@@ -1,0 +1,276 @@
+<!-- 10-Header -->  
+Entity: SRM  
+===========<!-- /10-Header -->  
+<!-- 15-License -->  
+[Open License](https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/refs/heads/main/LICENSE)  
+<!-- /15-License -->  
+<!-- 20-Description -->  
+Global description: **CIRCULOOS data model for a secondary raw material (SRM) used in Biocorner bio-based mortar formulations, covering its origin category, chemical composition, density and the pretreatment and storage it requires.**  
+version: 0.0.1  
+<!-- /20-Description -->  
+<!-- 30-PropertiesList -->  
+
+## List of properties  
+
+<sup><sub>[*] If there is not a type in an attribute is because it could have several types or different formats/patterns</sub></sup>  
+- `category[*]`: Classification of the secondary raw material by origin: Marine Biomass, Agricultural Biomass, or Industrial By-product. Enables supply chain analysis by waste stream type.  - `chemicalComposition[*]`: Primary chemical constituents and their typical percentage ranges. Includes key oxides, organic fractions, and trace elements relevant to product performance.  - `density[*]`: Expected unitCode: KMQ. Bulk density of the material in its delivery condition. Critical parameter for mix design calculations and storage dimensioning.  - `description[*]`: General description of the material including biological or industrial origin, geographic provenance, and primary intended use in construction applications.  - `id[string]`: Unique entity identifier, with the format urn:ngsi-ld:SRM:<id>.  - `name[*]`: Common name of the secondary raw material as used in the construction and bio-materials research community.  - `pretreatmentRequired[*]`: Physical, thermal, or chemical processing steps required before the material can be incorporated into a product formulation. Includes target parameters for each step.  - `storageConditions[*]`: Required storage environment to preserve material quality, including temperature, humidity, ventilation, and contamination prevention requirements.  - `type[string]`: NGSI Entity type. It has to be SRM  <!-- /30-PropertiesList -->  
+<!-- 35-RequiredProperties -->  
+Required properties  
+- `category`  - `id`  - `name`  - `type`  <!-- /35-RequiredProperties -->  
+<!-- 40-RequiredProperties -->  
+<!-- /40-RequiredProperties -->  
+<!-- 50-DataModelHeader -->  
+## Data Model description of properties  
+Sorted alphabetically (click for details)  
+<!-- /50-DataModelHeader -->  
+<!-- 60-ModelYaml -->  
+<details><summary><strong>full yaml details</strong></summary>    
+```yaml  
+SRM:    
+  description: CIRCULOOS data model for a secondary raw material (SRM) used in Biocorner bio-based mortar formulations, covering its origin category, chemical composition, density and the pretreatment and storage it requires.    
+  properties:    
+    category:    
+      allOf:    
+        - additionalProperties: no    
+          properties:    
+            observedAt:    
+              format: date-time    
+              type: string    
+            type:    
+              enum:    
+                - Property    
+              type: string    
+            value:    
+              items:    
+                type: string    
+              minItems: 1    
+              type: array    
+          required:    
+            - type    
+            - value    
+          type: object    
+      description: 'Classification of the secondary raw material by origin: Marine Biomass, Agricultural Biomass, or Industrial By-product. Enables supply chain analysis by waste stream type.'    
+      x-ngsi:    
+        type: Property    
+    chemicalComposition:    
+      allOf:    
+        - additionalProperties: no    
+          properties:    
+            observedAt:    
+              format: date-time    
+              type: string    
+            type:    
+              enum:    
+                - Property    
+              type: string    
+            value:    
+              type: string    
+          required:    
+            - type    
+            - value    
+          type: object    
+      description: Primary chemical constituents and their typical percentage ranges. Includes key oxides, organic fractions, and trace elements relevant to product performance.    
+      x-ngsi:    
+        type: Property    
+    density:    
+      allOf:    
+        - additionalProperties: no    
+          anyOf:    
+            - required:    
+                - value    
+            - required:    
+                - minValue    
+            - required:    
+                - maxValue    
+          properties:    
+            maxValue:    
+              description: Upper bound of the value, when the source declares a range or a maximum.    
+              type: number    
+            minValue:    
+              description: Lower bound of the value, when the source declares a range or a minimum.    
+              type: number    
+            observedAt:    
+              format: date-time    
+              type: string    
+            type:    
+              enum:    
+                - Property    
+              type: string    
+            unitCode:    
+              description: UN/CEFACT code of the unit of measurement of the value.    
+              type: string    
+            value:    
+              description: Exact measured value, when a single figure is known.    
+              type: number    
+          required:    
+            - type    
+            - unitCode    
+          type: object    
+      description: 'Expected unitCode: KMQ. Bulk density of the material in its delivery condition. Critical parameter for mix design calculations and storage dimensioning.'    
+      x-ngsi:    
+        type: Property    
+    description:    
+      allOf:    
+        - additionalProperties: no    
+          properties:    
+            observedAt:    
+              format: date-time    
+              type: string    
+            type:    
+              enum:    
+                - Property    
+              type: string    
+            value:    
+              type: string    
+          required:    
+            - type    
+            - value    
+          type: object    
+      description: General description of the material including biological or industrial origin, geographic provenance, and primary intended use in construction applications.    
+      x-ngsi:    
+        type: Property    
+    id:    
+      description: Unique entity identifier, with the format urn:ngsi-ld:SRM:<id>.    
+      type: string    
+      x-ngsi:    
+        type: Property    
+    name:    
+      allOf:    
+        - additionalProperties: no    
+          properties:    
+            observedAt:    
+              format: date-time    
+              type: string    
+            type:    
+              enum:    
+                - Property    
+              type: string    
+            value:    
+              type: string    
+          required:    
+            - type    
+            - value    
+          type: object    
+      description: Common name of the secondary raw material as used in the construction and bio-materials research community.    
+      x-ngsi:    
+        type: Property    
+    pretreatmentRequired:    
+      allOf:    
+        - additionalProperties: no    
+          properties:    
+            observedAt:    
+              format: date-time    
+              type: string    
+            type:    
+              enum:    
+                - Property    
+              type: string    
+            value:    
+              type: string    
+          required:    
+            - type    
+            - value    
+          type: object    
+      description: Physical, thermal, or chemical processing steps required before the material can be incorporated into a product formulation. Includes target parameters for each step.    
+      x-ngsi:    
+        type: Property    
+    storageConditions:    
+      allOf:    
+        - additionalProperties: no    
+          properties:    
+            observedAt:    
+              format: date-time    
+              type: string    
+            type:    
+              enum:    
+                - Property    
+              type: string    
+            value:    
+              type: string    
+          required:    
+            - type    
+            - value    
+          type: object    
+      description: Required storage environment to preserve material quality, including temperature, humidity, ventilation, and contamination prevention requirements.    
+      x-ngsi:    
+        type: Property    
+    type:    
+      description: NGSI Entity type. It has to be SRM    
+      enum:    
+        - SRM    
+      type: string    
+      x-ngsi:    
+        type: Property    
+  required:    
+    - id    
+    - type    
+    - name    
+    - category    
+  type: object    
+  x-derived-from: ''    
+  x-disclaimer: Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program    
+  x-license-url: https://github.com/smart-data-models/circuloos_data_model/blob/master/SRM/LICENSE.md    
+  x-model-schema: https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/openCallSpecific/biocorner/SRM/schema.json    
+  x-model-tags: biocorner    
+  x-version: 0.0.1    
+```  
+</details>    
+<!-- /60-ModelYaml -->  
+<!-- 70-MiddleNotes -->  
+<!-- /70-MiddleNotes -->  
+<!-- 80-Examples -->  
+## Example payloads    
+Not available the example of a SRM in JSON-LD format as key-values. This is compatible with NGSI-LD when  using `options=keyValues` and returns the context data of an individual entity.  
+#### SRM NGSI-LD normalized Example    
+Here is an example of a SRM in JSON-LD format as normalized. This is compatible with NGSI-LD when not using options and returns the context data of an individual entity.  
+<details><summary><strong>show/hide example</strong></summary>    
+```json  
+{  
+  "@context": [  
+    "http://circuloos-ld-context/circuloos-context.jsonld",  
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"  
+  ],  
+  "id": "urn:ngsi-ld:SRM:RiceHusk",  
+  "type": "SRM",  
+  "name": {  
+    "type": "Property",  
+    "value": "Rice Husk",  
+    "observedAt": "2026-06-16T08:03:53.000Z"  
+  },  
+  "chemicalComposition": {  
+    "type": "Property",  
+    "value": "Lignocellulosic matrix with silica-rich ash; mainly cellulose, hemicellulose, lignin and SiO2",  
+    "observedAt": "2026-06-16T08:03:53.000Z"  
+  },  
+  "pretreatmentRequired": {  
+    "type": "Property",  
+    "value": "Drying, grinding and sieving depending on target particle size",  
+    "observedAt": "2026-06-16T08:03:53.000Z"  
+  },  
+  "storageConditions": {  
+    "type": "Property",  
+    "value": "Dry, covered, ventilated storage; protect from moisture and contamination",  
+    "observedAt": "2026-06-16T08:03:53.000Z"  
+  },  
+  "category": {  
+    "type": "Property",  
+    "value": [  
+      "Agricultural Biomass"  
+    ],  
+    "observedAt": "2026-06-16T08:03:53.000Z"  
+  },  
+  "density": {  
+    "type": "Property",  
+    "minValue": 90,  
+    "maxValue": 150,  
+    "unitCode": "KMQ",  
+    "observedAt": "2026-06-16T08:03:53.000Z"  
+  },  
+  "description": {  
+    "type": "Property",  
+    "value": "Rice milling by-product used as lightweight bio-based aggregate/filler",  
+    "observedAt": "2026-06-16T08:03:53.000Z"  
+  }  
+}  
+```  
+</details><!-- /80-Examples -->  
