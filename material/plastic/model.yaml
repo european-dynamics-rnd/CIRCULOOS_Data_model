@@ -66,8 +66,20 @@ plastic:
         type: Property
 
     batchNumber:
-      description: Supplier's lot/batch number, for traceability back to the source material.
+      description: Lot/batch number of this quantity of material, for traceability back to its source.
       type: string
+      x-ngsi:
+        type: Property
+
+    biobasedContent:
+      description: 'Unit: %. Share of the material derived from biomass (EN 16785-1).'
+      properties:
+        value:
+          description: Property. https://schema.org/Number.
+          maximum: 100
+          minimum: 0
+          type: number
+      type: object
       x-ngsi:
         type: Property
 
@@ -81,14 +93,72 @@ plastic:
       x-ngsi:
         type: Property
 
+    certifications:
+      description: Certificates covering this material.
+      items:
+        properties:
+          certificateId:
+            description: Property. Certificate number.
+            type: string
+          issuer:
+            description: Property. Certification body that issued the certificate.
+            type: string
+          scheme:
+            description: Property. Certification scheme, e.g. ISCC PLUS, EuCertPlast, RecyClass, GRS, FSC, PEFC, LWG.
+            type: string
+          validUntil:
+            description: Property. Expiry date of the certificate.
+            format: date
+            type: string
+        required:
+          - scheme
+        type: object
+      type: array
+      x-ngsi:
+        type: Property
+
+    chainOfCustodyModel:
+      description: Chain of custody model (ISO 22095) behind the recycled or bio-based content claims of this material.
+      enum:
+        - identityPreserved
+        - segregated
+        - controlledBlending
+        - massBalance
+        - bookAndClaim
+      type: string
+      x-ngsi:
+        type: Property
+
     color:
       description: The color of the raw material.
       type: string
       x-ngsi:
         type: Property
 
+    composition:
+      description: Main components of the material and their mass shares.
+      items:
+        properties:
+          casNumber:
+            description: Property. CAS registry number of the component, when it has one.
+            type: string
+          name:
+            description: Property. Name of the component.
+            type: string
+          share:
+            description: 'Property. Unit: %. Mass share of the component in the material.'
+            maximum: 100
+            minimum: 0
+            type: number
+        required:
+          - name
+        type: object
+      type: array
+      x-ngsi:
+        type: Property
+
     contaminationLevel:
-      description: Overall contamination level of the batch (foreign polymers, dirt, labels, etc.).
+      description: Overall contamination level of the lot (foreign materials, dirt, labels, etc.).
       enum:
         - low
         - medium
@@ -139,6 +209,12 @@ plastic:
       x-ngsi:
         type: Property
 
+    endOfWasteReference:
+      description: The end-of-waste criteria (EU or national regulation, permit) under which the material stopped being waste.
+      type: string
+      x-ngsi:
+        type: Property
+
     flexuralModulus:
       description: 'Unit: MPa. Stiffness of the molded material under bending. '
       properties:
@@ -146,6 +222,24 @@ plastic:
           description: 'Property. https://schema.org/Number.  Default: 0.0'
           type: number
       type: object
+      x-ngsi:
+        type: Property
+
+    foodContactAuthorisation:
+      description: Registration number of the recycling process or decontamination technology authorised under Regulation (EU) 2022/1616.
+      type: string
+      x-ngsi:
+        type: Property
+
+    foodContactSuitable:
+      description: Whether the recycled material may be used in food contact articles under Regulation (EU) 2022/1616.
+      type: boolean
+      x-ngsi:
+        type: Property
+
+    hazardous:
+      description: Whether the material is classified as hazardous.
+      type: boolean
       x-ngsi:
         type: Property
 
@@ -366,6 +460,17 @@ plastic:
       x-ngsi:
         type: Property
 
+    materialStatus:
+      description: 'Legal status of the material under the EU Waste Framework Directive 2008/98/EC: primary (virgin) material, by-product (Art. 5), waste, or material that has reached end-of-waste status (Art. 6). Receiving waste needs a waste permit.'
+      enum:
+        - primary
+        - byProduct
+        - waste
+        - endOfWaste
+      type: string
+      x-ngsi:
+        type: Property
+
     meltFlowIndex:
       description: 'Unit: g/10min. Melt flow index (MFI/MFR), the key indicator of how easily the material flows into the mold cavity. '
       properties:
@@ -373,6 +478,12 @@ plastic:
           description: 'Property. https://schema.org/Number.  Default: 0.0'
           type: number
       type: object
+      x-ngsi:
+        type: Property
+
+    meltFlowIndexTestCondition:
+      description: Test temperature and load the meltFlowIndex was measured at (ISO 1133), e.g. 230 °C / 2.16 kg. MFI values are not comparable without it.
+      type: string
       x-ngsi:
         type: Property
 
@@ -430,21 +541,80 @@ plastic:
       x-ngsi:
         type: Property
 
+    polymerPurity:
+      description: 'Unit: %. Share of the target polymer in the material; the rest is other polymers and contaminants. '
+      properties:
+        value:
+          description: Property. https://schema.org/Number.
+          maximum: 100
+          minimum: 0
+          type: number
+      type: object
+      x-ngsi:
+        type: Property
+
     polymerType:
-      description: The polymer resin the material is made of.
+      description: The polymer resin the material is made of. PO is a mixed polyolefin (PE/PP) fraction.
       enum:
         - PP
         - HDPE
         - LDPE
+        - PO
         - PET
         - PS
+        - EPS
+        - XPS
         - ABS
         - PVC
         - PC
         - PA
+        - PBT
+        - POM
+        - PU
         - PLA
         - other
       type: string
+      x-ngsi:
+        type: Property
+
+    postConsumerRecycledContent:
+      description: 'Unit: %. Share of recycled material recovered from products after their use (ISO 14021). The share counted by recycled content targets such as the PPWR, Regulation (EU) 2025/40.'
+      properties:
+        value:
+          description: Property. https://schema.org/Number.
+          maximum: 100
+          minimum: 0
+          type: number
+      type: object
+      x-ngsi:
+        type: Property
+
+    preConsumerRecycledContent:
+      description: 'Unit: %. Share of recycled material recovered from manufacturing scrap, before reaching a consumer (ISO 14021).'
+      properties:
+        value:
+          description: Property. https://schema.org/Number.
+          maximum: 100
+          minimum: 0
+          type: number
+      type: object
+      x-ngsi:
+        type: Property
+
+    qualityStandard:
+      description: Standard the material is characterised or traced against, e.g. EN 15343 (traceability of recycled plastics) or EN 15345 (PP recyclates).
+      type: string
+      x-ngsi:
+        type: Property
+
+    quantity:
+      description: 'Unit: given by unitCode, e.g. KGM (kg), TNE (t), MTQ (m3), MTK (m2), C62 (pieces). Quantity of material in this lot.'
+      properties:
+        value:
+          description: Property. https://schema.org/Number.
+          minimum: 0
+          type: number
+      type: object
       x-ngsi:
         type: Property
 
@@ -488,11 +658,25 @@ plastic:
       x-ngsi:
         type: Property
 
+    recyclabilityGrade:
+      description: Design-for-recycling performance grade of the packaging the material comes from or goes into, PPWR, Regulation (EU) 2025/40.
+      enum:
+        - A
+        - B
+        - C
+        - D
+        - E
+      type: string
+      x-ngsi:
+        type: Property
+
     recycledContent:
-      description: 'Unit: %. Share of recycled material in the batch. '
+      description: 'Unit: %. Total share of recycled material (ISO 14021).'
       properties:
         value:
-          description: 'Property. https://schema.org/Number. Default: 0.0'
+          description: Property. https://schema.org/Number.
+          maximum: 100
+          minimum: 0
           type: number
       type: object
       x-ngsi:
@@ -504,6 +688,36 @@ plastic:
       type: integer
       x-ngsi:
         type: Property
+
+    refDigitalProductPassport:
+      description: Digital Product Passport (EU ESPR, Regulation (EU) 2024/1781) of the product this material comes from or belongs to.
+      format: uri
+      type: string
+      x-ngsi:
+        type: Relationship
+
+    refEnvironmentalFootprint:
+      description: environmental_footprint_indicator entity holding the environmental footprint (LCA indicators) of this material.
+      format: uri
+      type: string
+      x-ngsi:
+        type: Relationship
+
+    refParentMaterial:
+      description: Material entities (lots) this material was produced from. Following the links back gives the material loop history.
+      items:
+        format: uri
+        type: string
+      type: array
+      x-ngsi:
+        type: Relationship
+
+    refProcess:
+      description: Process or process event entity that produced this material.
+      format: uri
+      type: string
+      x-ngsi:
+        type: Relationship
 
     seeAlso:
       description: list of uri pointing to additional resources about the item
@@ -534,6 +748,54 @@ plastic:
       x-ngsi:
         type: Property
 
+    substancesOfConcern:
+      description: Substances of concern present in the material, as required by the EU ESPR Digital Product Passport.
+      items:
+        properties:
+          casNumber:
+            description: Property. CAS registry number of the substance.
+            type: string
+          concentration:
+            description: 'Property. Unit: mg/kg. Measured concentration of the substance in the material.'
+            minimum: 0
+            type: number
+          ecNumber:
+            description: Property. EC number of the substance.
+            type: string
+          name:
+            description: Property. Name of the substance.
+            type: string
+          regulation:
+            description: 'Property. Regulation listing the substance: REACH candidate list (SVHC), REACH Annex XVII restriction (e.g. Cr(VI) in leather), EU POPs Regulation 2019/1021 (e.g. brominated flame retardants), or other.'
+            enum:
+              - REACH-SVHC
+              - REACH-AnnexXVII
+              - POP
+              - other
+            type: string
+        required:
+          - name
+        type: object
+      type: array
+      x-ngsi:
+        type: Property
+
+    suitableRecoveryRoutes:
+      description: Circular strategies (R-ladder) the material is suitable for. Used to match offers with demand.
+      items:
+        enum:
+          - reuse
+          - repair
+          - refurbish
+          - remanufacture
+          - repurpose
+          - recycle
+          - energyRecovery
+        type: string
+      type: array
+      x-ngsi:
+        type: Property
+
     tensileStrength:
       description: 'Unit: MPa. The maximum stress the molded material can withstand while being stretched before breaking. '
       properties:
@@ -551,6 +813,27 @@ plastic:
       x-ngsi:
         type: Property
 
+    wasteCode:
+      description: European List of Waste code (Commission Decision 2000/532/EC), e.g. 07 02 13 for waste plastic. A trailing * marks hazardous waste. Only when materialStatus is waste.
+      pattern: ^[0-9]{2} [0-9]{2} [0-9]{2}\*?$
+      type: string
+      x-ngsi:
+        type: Property
+
+    wasteSource:
+      description: Waste stream the recycled material was collected from. WEEE (electronics) and ELV (end-of-life vehicles) streams may carry legacy brominated flame retardants.
+      enum:
+        - packaging
+        - WEEE
+        - ELV
+        - construction
+        - agriculture
+        - industrialScrap
+        - other
+      type: string
+      x-ngsi:
+        type: Property
+
   required:
     - id
     - type
@@ -565,7 +848,7 @@ plastic:
 
   x-license-url: https://github.com/smart-data-models/circuloos_data_model/blob/master/plastic/LICENSE.md
 
-  x-model-schema: https://raw.githubusercontent.com/TO_ADD_LATER/schema.json
+  x-model-schema: https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/material/plastic/schema.json
 
   x-model-tags: ''
 

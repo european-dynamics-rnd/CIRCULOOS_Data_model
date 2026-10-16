@@ -15,12 +15,12 @@
     },
     "recycledContent": {
         "type": "Property",
-        "value": "85",
+        "value": 85,
         "unitCode": "P1"
     },
     "recycledTimes": {
         "type": "Property",
-        "value": "2"
+        "value": 2
     },
     "color": {
         "type": "Property",
@@ -28,79 +28,79 @@
     },
     "density": {
         "type": "Property",
-        "value": "0.91",
+        "value": 0.91,
         "unitCode": "23"
     },
     "bulkDensity": {
         "type": "Property",
-        "value": "550",
+        "value": 550,
         "unitCode": "KMQ"
     },
     "meltFlowIndex": {
         "type": "Property",
-        "value": "12"
+        "value": 12
     },
     "moistureContent": {
         "type": "Property",
-        "value": "0.08",
+        "value": 0.08,
         "unitCode": "P1"
     },
     "dryingRequired": {
         "type": "Property",
-        "value": "true"
+        "value": true
     },
     "recommendedDryingTemperature": {
         "type": "Property",
-        "value": "80",
+        "value": 80,
         "unitCode": "CEL"
     },
     "recommendedDryingTime": {
         "type": "Property",
-        "value": "2",
+        "value": 2,
         "unitCode": "HUR"
     },
     "meltingTemperature": {
         "type": "Property",
-        "value": "165",
+        "value": 165,
         "unitCode": "CEL"
     },
     "recommendedBarrelTemperature": {
         "type": "Property",
-        "value": "220",
+        "value": 220,
         "unitCode": "CEL"
     },
     "recommendedMoldTemperature": {
         "type": "Property",
-        "value": "40",
+        "value": 40,
         "unitCode": "CEL"
     },
     "shrinkageRate": {
         "type": "Property",
-        "value": "1.5",
+        "value": 1.5,
         "unitCode": "P1"
     },
     "tensileStrength": {
         "type": "Property",
-        "value": "28",
+        "value": 28,
         "unitCode": "MPA"
     },
     "flexuralModulus": {
         "type": "Property",
-        "value": "1350",
+        "value": 1350,
         "unitCode": "MPA"
     },
     "impactStrength": {
         "type": "Property",
-        "value": "5.5"
+        "value": 5.5
     },
     "heatDeflectionTemperature": {
         "type": "Property",
-        "value": "85",
+        "value": 85,
         "unitCode": "CEL"
     },
     "ashContent": {
         "type": "Property",
-        "value": "0.4",
+        "value": 0.4,
         "unitCode": "P1"
     },
     "contaminationLevel": {
@@ -115,8 +115,89 @@
         "type": "Property",
         "value": "LOT-2026-0417"
     },
-
+    "polymerPurity": {
+        "type": "Property",
+        "value": 97,
+        "unitCode": "P1"
+    },
+    "meltFlowIndexTestCondition": {
+        "type": "Property",
+        "value": "230 °C / 2.16 kg"
+    },
+    "wasteSource": {
+        "type": "Property",
+        "value": "industrialScrap"
+    },
+    "foodContactSuitable": {
+        "type": "Property",
+        "value": false
+    },
+    "materialStatus": {
+        "type": "Property",
+        "value": "endOfWaste"
+    },
+    "endOfWasteReference": {
+        "type": "Property",
+        "value": "Permit EL-ATT-2025-118, Attica regional authority"
+    },
+    "quantity": {
+        "type": "Property",
+        "value": 1200,
+        "unitCode": "KGM"
+    },
+    "preConsumerRecycledContent": {
+        "type": "Property",
+        "value": 85,
+        "unitCode": "P1"
+    },
+    "postConsumerRecycledContent": {
+        "type": "Property",
+        "value": 0,
+        "unitCode": "P1"
+    },
+    "chainOfCustodyModel": {
+        "type": "Property",
+        "value": "segregated"
+    },
+    "refParentMaterial": {
+        "type": "Relationship",
+        "object": [
+            "urn:ngsi-ld:plastic:PPR1990"
+        ]
+    },
+    "owner": {
+        "type": "Property",
+        "value": [
+            "urn:ngsi-ld:Organization:plasticRecycler01"
+        ]
+    },
+    "suitableRecoveryRoutes": {
+        "type": "Property",
+        "value": [
+            "recycle"
+        ]
+    },
+    "qualityStandard": {
+        "type": "Property",
+        "value": "EN 15345"
+    },
+    "certifications": {
+        "type": "Property",
+        "value": [
+            {
+                "scheme": "EuCertPlast",
+                "certificateId": "ECP-2026-0412",
+                "issuer": "EuCertPlast",
+                "validUntil": "2027-06-30"
+            }
+        ]
+    },
+    "refEnvironmentalFootprint": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:efi:entity-001"
+    },
     "@context": [
-        "https://TOBELater/context.jsonld"
+        "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/material/plastic/context.jsonld",
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"
     ]
 }

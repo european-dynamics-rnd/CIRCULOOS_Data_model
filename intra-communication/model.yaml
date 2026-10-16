@@ -1,4 +1,4 @@
-leather:
+intra-communication:
 
   description: CIRCULOOS data model for intra-communication example-normalized.json
 
@@ -465,6 +465,21 @@ leather:
           type: string
       type: object
 
+    refMaterial:
+      description: 'Reference relationship: material entity (e.g. plastic, wood, leather) describing the offered or requested lot, with its circularity data.'
+      properties:
+        object:
+          format: uri
+          type: string
+        observedAt:
+          format: date-time
+          type: string
+        type:
+          enum:
+            - Relationship
+          type: string
+      type: object
+
     seeAlso:
       description: list of uri pointing to additional resources about the item
       oneOf:
@@ -513,7 +528,7 @@ leather:
 
   x-disclaimer: Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program
 
-  x-license-url: https://github.com/smart-data-models/circuloos_data_model/blob/master/leather/LICENSE.md
+  x-license-url: https://github.com/smart-data-models/circuloos_data_model/blob/master/intra-communication/LICENSE.md
 
   x-model-schema: https://raw.githubusercontent.com/TO_ADD_LATER/intra-communication/example/schema.json
 
