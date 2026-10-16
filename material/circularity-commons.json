@@ -1,0 +1,264 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "$schemaVersion": "0.0.1",
+    "modelTags": "",
+    "license": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/refs/heads/main/LICENSE",
+    "$id": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/material/circularity-commons.json",
+    "title": "CIRCULOOS circularity commons",
+    "description": "Circular economy properties shared by every material data model under material/. Pull it into a material schema through allOf, the same way as GSMA-Commons.",
+    "definitions": {
+        "Circularity-Commons": {
+            "type": "object",
+            "properties": {
+                "batchNumber": {
+                    "type": "string",
+                    "description": "Property. Lot/batch number of this quantity of material, for traceability back to its source."
+                },
+                "quantity": {
+                    "type": "object",
+                    "properties": {
+                        "value": {
+                            "type": "number",
+                            "minimum": 0,
+                            "description": "Property. https://schema.org/Number."
+                        }
+                    },
+                    "description": "Property. Unit: given by unitCode, e.g. KGM (kg), TNE (t), MTQ (m3), MTK (m2), C62 (pieces). Quantity of material in this lot."
+                },
+                "refParentMaterial": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "format": "uri"
+                    },
+                    "description": "Relationship. Material entities (lots) this material was produced from. Following the links back gives the material loop history."
+                },
+                "refProcess": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Relationship. Process or process event entity that produced this material."
+                },
+                "refDigitalProductPassport": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Relationship. Digital Product Passport (EU ESPR, Regulation (EU) 2024/1781) of the product this material comes from or belongs to."
+                },
+                "refEnvironmentalFootprint": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Relationship. environmental_footprint_indicator entity holding the environmental footprint (LCA indicators) of this material."
+                },
+                "chainOfCustodyModel": {
+                    "type": "string",
+                    "enum": [
+                        "identityPreserved",
+                        "segregated",
+                        "controlledBlending",
+                        "massBalance",
+                        "bookAndClaim"
+                    ],
+                    "description": "Property. Chain of custody model (ISO 22095) behind the recycled or bio-based content claims of this material."
+                },
+                "materialStatus": {
+                    "type": "string",
+                    "enum": [
+                        "primary",
+                        "byProduct",
+                        "waste",
+                        "endOfWaste"
+                    ],
+                    "description": "Property. Legal status of the material under the EU Waste Framework Directive 2008/98/EC: primary (virgin) material, by-product (Art. 5), waste, or material that has reached end-of-waste status (Art. 6). Receiving waste needs a waste permit."
+                },
+                "wasteCode": {
+                    "type": "string",
+                    "pattern": "^[0-9]{2} [0-9]{2} [0-9]{2}\\*?$",
+                    "description": "Property. European List of Waste code (Commission Decision 2000/532/EC), e.g. 07 02 13 for waste plastic. A trailing * marks hazardous waste. Only when materialStatus is waste."
+                },
+                "hazardous": {
+                    "type": "boolean",
+                    "description": "Property. Whether the material is classified as hazardous."
+                },
+                "endOfWasteReference": {
+                    "type": "string",
+                    "description": "Property. The end-of-waste criteria (EU or national regulation, permit) under which the material stopped being waste."
+                },
+                "recycledContent": {
+                    "type": "object",
+                    "properties": {
+                        "value": {
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 100,
+                            "description": "Property. https://schema.org/Number."
+                        }
+                    },
+                    "description": "Property. Unit: %. Total share of recycled material (ISO 14021)."
+                },
+                "preConsumerRecycledContent": {
+                    "type": "object",
+                    "properties": {
+                        "value": {
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 100,
+                            "description": "Property. https://schema.org/Number."
+                        }
+                    },
+                    "description": "Property. Unit: %. Share of recycled material recovered from manufacturing scrap, before reaching a consumer (ISO 14021)."
+                },
+                "postConsumerRecycledContent": {
+                    "type": "object",
+                    "properties": {
+                        "value": {
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 100,
+                            "description": "Property. https://schema.org/Number."
+                        }
+                    },
+                    "description": "Property. Unit: %. Share of recycled material recovered from products after their use (ISO 14021). The share counted by recycled content targets such as the PPWR, Regulation (EU) 2025/40."
+                },
+                "biobasedContent": {
+                    "type": "object",
+                    "properties": {
+                        "value": {
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 100,
+                            "description": "Property. https://schema.org/Number."
+                        }
+                    },
+                    "description": "Property. Unit: %. Share of the material derived from biomass (EN 16785-1)."
+                },
+                "recycledTimes": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "description": "Property. The number of times this material has already been through a recycling loop."
+                },
+                "composition": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "description": "Property. Name of the component."
+                            },
+                            "casNumber": {
+                                "type": "string",
+                                "description": "Property. CAS registry number of the component, when it has one."
+                            },
+                            "share": {
+                                "type": "number",
+                                "minimum": 0,
+                                "maximum": 100,
+                                "description": "Property. Unit: %. Mass share of the component in the material."
+                            }
+                        },
+                        "required": [
+                            "name"
+                        ]
+                    },
+                    "description": "Property. Main components of the material and their mass shares."
+                },
+                "substancesOfConcern": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "description": "Property. Name of the substance."
+                            },
+                            "casNumber": {
+                                "type": "string",
+                                "description": "Property. CAS registry number of the substance."
+                            },
+                            "ecNumber": {
+                                "type": "string",
+                                "description": "Property. EC number of the substance."
+                            },
+                            "concentration": {
+                                "type": "number",
+                                "minimum": 0,
+                                "description": "Property. Unit: mg/kg. Measured concentration of the substance in the material."
+                            },
+                            "regulation": {
+                                "type": "string",
+                                "enum": [
+                                    "REACH-SVHC",
+                                    "REACH-AnnexXVII",
+                                    "POP",
+                                    "other"
+                                ],
+                                "description": "Property. Regulation listing the substance: REACH candidate list (SVHC), REACH Annex XVII restriction (e.g. Cr(VI) in leather), EU POPs Regulation 2019/1021 (e.g. brominated flame retardants), or other."
+                            }
+                        },
+                        "required": [
+                            "name"
+                        ]
+                    },
+                    "description": "Property. Substances of concern present in the material, as required by the EU ESPR Digital Product Passport."
+                },
+                "contaminationLevel": {
+                    "type": "string",
+                    "enum": [
+                        "low",
+                        "medium",
+                        "high"
+                    ],
+                    "description": "Property. Overall contamination level of the lot (foreign materials, dirt, labels, etc.)."
+                },
+                "qualityStandard": {
+                    "type": "string",
+                    "description": "Property. Standard the material is characterised or traced against, e.g. EN 15343 (traceability of recycled plastics) or EN 15345 (PP recyclates)."
+                },
+                "suitableRecoveryRoutes": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "enum": [
+                            "reuse",
+                            "repair",
+                            "refurbish",
+                            "remanufacture",
+                            "repurpose",
+                            "recycle",
+                            "energyRecovery"
+                        ]
+                    },
+                    "description": "Property. Circular strategies (R-ladder) the material is suitable for. Used to match offers with demand."
+                },
+                "certifications": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "scheme": {
+                                "type": "string",
+                                "description": "Property. Certification scheme, e.g. ISCC PLUS, EuCertPlast, RecyClass, GRS, FSC, PEFC, LWG."
+                            },
+                            "certificateId": {
+                                "type": "string",
+                                "description": "Property. Certificate number."
+                            },
+                            "issuer": {
+                                "type": "string",
+                                "description": "Property. Certification body that issued the certificate."
+                            },
+                            "validUntil": {
+                                "type": "string",
+                                "format": "date",
+                                "description": "Property. Expiry date of the certificate."
+                            }
+                        },
+                        "required": [
+                            "scheme"
+                        ]
+                    },
+                    "description": "Property. Certificates covering this material."
+                }
+            }
+        }
+    }
+}

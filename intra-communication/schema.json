@@ -160,6 +160,15 @@
                     },
                     "description": "Material to sell or buy."
                 },
+                "refMaterial": {
+                    "type": "object",
+                    "properties": {
+                        "type": { "type": "string", "enum": ["Relationship"] },
+                        "object": { "type": "string", "format": "uri" },
+                        "observedAt": { "type": "string", "format": "date-time" }
+                    },
+                    "description": "Reference relationship: material entity (e.g. plastic, wood, leather) describing the offered or requested lot, with its circularity data."
+                },
                 "CountryCode": {
                     "type": "object",
                     "properties": {

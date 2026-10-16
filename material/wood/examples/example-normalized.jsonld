@@ -1,67 +1,153 @@
 {
-    "id": "ngsi-ld:wood:wood1",
+    "id": "urn:ngsi-ld:wood:wood1",
     "type": "wood",
-    "species": "Oak",
+    "species": {
+        "type": "Property",
+        "value": "Oak"
+    },
     "density": {
         "type": "Property",
-        "value": "0.75",
+        "value": 0.75,
         "unitCode": "23"
     },
     "moistureContent": {
         "type": "Property",
-        "value": "12",
+        "value": 12,
         "unitCode": "P1"
     },
     "tensileStrength": {
         "type": "Property",
-        "value": "90",
+        "value": 90,
         "unitCode": "MPA"
     },
     "compressiveStrength": {
         "type": "Property",
-        "value": "50",
+        "value": 50,
         "unitCode": "MPA"
     },
     "bendingStrength": {
         "type": "Property",
-        "value": "120",
+        "value": 120,
         "unitCode": "MPA"
     },
     "modulusOfElasticity": {
         "type": "Property",
-        "value": "11000",
+        "value": 11000,
         "unitCode": "MPA"
     },
     "hardness": {
         "type": "Property",
-        "value": "670",
+        "value": 670,
         "unitCode": "NEW"
     },
     "thermalConductivity": {
         "type": "Property",
-        "value": "0.16",
+        "value": 0.16,
         "unitCode": "D53"
     },
     "thermalExpansionCoefficient": {
         "type": "Property",
-        "value": "3.5",
+        "value": 3.5,
         "unitCode": "F51"
     },
     "waterAbsorption": {
         "type": "Property",
-        "value": "40",
+        "value": 40,
         "unitCode": "P1"
     },
     "flameSpreadIndex": {
         "type": "Property",
-        "value": "100"
+        "value": 100
     },
-    "opticalProperties-color": {
+    "color": {
         "type": "Property",
         "value": "Light Brown"
     },
-    "opticalProperties-grainPattern": {
+    "grainPattern": {
         "type": "Property",
         "value": "Straight"
-    }
+    },
+    "productForm": {
+        "type": "Property",
+        "value": "solidTimber"
+    },
+    "previousUse": {
+        "type": "Property",
+        "value": "structuralBeam"
+    },
+    "chemicalTreatment": {
+        "type": "Property",
+        "value": "untreated"
+    },
+    "wasteWoodClass": {
+        "type": "Property",
+        "value": "AI"
+    },
+    "fastenersPresent": {
+        "type": "Property",
+        "value": true
+    },
+    "length": {
+        "type": "Property",
+        "value": 4200,
+        "unitCode": "MMT"
+    },
+    "width": {
+        "type": "Property",
+        "value": 200,
+        "unitCode": "MMT"
+    },
+    "thickness": {
+        "type": "Property",
+        "value": 100,
+        "unitCode": "MMT"
+    },
+    "strengthClass": {
+        "type": "Property",
+        "value": "D30"
+    },
+    "materialStatus": {
+        "type": "Property",
+        "value": "waste"
+    },
+    "wasteCode": {
+        "type": "Property",
+        "value": "17 02 01"
+    },
+    "hazardous": {
+        "type": "Property",
+        "value": false
+    },
+    "quantity": {
+        "type": "Property",
+        "value": 24,
+        "unitCode": "C62"
+    },
+    "recycledTimes": {
+        "type": "Property",
+        "value": 0
+    },
+    "suitableRecoveryRoutes": {
+        "type": "Property",
+        "value": [
+            "reuse",
+            "repurpose",
+            "recycle"
+        ]
+    },
+    "certifications": {
+        "type": "Property",
+        "value": [
+            {
+                "scheme": "FSC",
+                "certificateId": "FSC-C123456",
+                "issuer": "Soil Association",
+                "validUntil": "2028-03-31"
+            }
+        ]
+    },
+    "@context": [
+        "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/material/wood/context.jsonld",
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"
+    ]
 }

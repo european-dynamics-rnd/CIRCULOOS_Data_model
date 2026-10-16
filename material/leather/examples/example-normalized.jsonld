@@ -3,32 +3,24 @@
     "type": "leather",
     "origin": {
         "type": "Property",
-        "value": "vegan"
+        "value": "cow"
     },
     "color": {
         "type": "Property",
         "value": "black"
     },
-    "surfaceSize": {
-        "type": "Property",
-        "value": "2"
-    },
     "thickness": {
         "type": "Property",
-        "value": "0.3",
+        "value": 0.3,
         "unitCode": "MMT"
     },
     "tannedProcess": {
         "type": "Property",
-        "value": "vegetable"
-    },
-    "type1": {
-        "type": "Property",
-        "value": "split"
+        "value": "chrome"
     },
     "surfaceFinishWithCovering": {
         "type": "Property",
-        "value": "true"
+        "value": true
     },
     "hardness": {
         "type": "Property",
@@ -36,10 +28,97 @@
     },
     "recycledTimes": {
         "type": "Property",
-        "value": "2"
+        "value": 2
     },
-
-     "@context": [
-        "https://TOBELater/context.jsonld"
+    "materialSource": {
+        "type": "Property",
+        "value": "preConsumerOffcut"
+    },
+    "area": {
+        "type": "Property",
+        "value": 0.35,
+        "unitCode": "MTK"
+    },
+    "pieceFormat": {
+        "type": "Property",
+        "value": "offcut"
+    },
+    "leatherCut": {
+        "type": "Property",
+        "value": "split"
+    },
+    "materialStatus": {
+        "type": "Property",
+        "value": "waste"
+    },
+    "wasteCode": {
+        "type": "Property",
+        "value": "04 01 08"
+    },
+    "hazardous": {
+        "type": "Property",
+        "value": false
+    },
+    "quantity": {
+        "type": "Property",
+        "value": 85,
+        "unitCode": "KGM"
+    },
+    "substancesOfConcern": {
+        "type": "Property",
+        "value": [
+            {
+                "name": "Chromium(VI)",
+                "casNumber": "18540-29-9",
+                "concentration": 1.2,
+                "regulation": "REACH-AnnexXVII"
+            }
+        ]
+    },
+    "composition": {
+        "type": "Property",
+        "value": [
+            {
+                "name": "Collagen",
+                "share": 80
+            },
+            {
+                "name": "Chromium(III) oxide",
+                "casNumber": "1308-38-9",
+                "share": 4
+            }
+        ]
+    },
+    "suitableRecoveryRoutes": {
+        "type": "Property",
+        "value": [
+            "repurpose",
+            "recycle"
+        ]
+    },
+    "certifications": {
+        "type": "Property",
+        "value": [
+            {
+                "scheme": "LWG",
+                "certificateId": "LWG-GR-0042",
+                "issuer": "Leather Working Group",
+                "validUntil": "2027-01-31"
+            }
+        ]
+    },
+    "location": {
+        "type": "GeoProperty",
+        "value": {
+            "type": "Point",
+            "coordinates": [
+                23.7275,
+                37.9838
+            ]
+        }
+    },
+    "@context": [
+        "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/material/leather/context.jsonld",
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"
     ]
 }
