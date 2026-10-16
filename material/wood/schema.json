@@ -3,8 +3,8 @@
     "$schemaVersion": "0.0.1",
     "modelTags": "",
     "derivedFrom": "",
-    "license": "",
-    "$id": "https://raw.githubusercontent.com/TO_ADD_LATER/schema.json",
+    "license": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/refs/heads/main/LICENSE",
+    "$id": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/material/wood/schema.json",
     "title": "Data model for wood",
     "description": "CIRCULOOS data model for wood",
     "type": "object",
@@ -14,6 +14,9 @@
         },
         {
             "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
+        },
+        {
+            "$ref": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/material/circularity-commons.json#/definitions/Circularity-Commons"
         },
         {
             "properties": {
@@ -32,130 +35,219 @@
                     "properties": {
                         "value": {
                             "type": "number",
-                            "description": "Property. https://schema.org/Number.  Default: 0.0"
+                            "description": "Property. https://schema.org/Number."
                         }
                     },
-                    "description": "Property. The mass per unit volume of the wood, critical for calculating weight and structural integrity. "
+                    "description": "Property. Unit: g/cm3. The mass per unit volume of the wood, critical for calculating weight and structural integrity. "
                 },
                 "moistureContent": {
                     "type": "object",
                     "properties": {
                         "value": {
                             "type": "number",
-                            "description": "Property. https://schema.org/Number.  Default: 0.0"
+                            "description": "Property. https://schema.org/Number."
                         }
                     },
-                    "description": "Property. The amount of moisture in the wood, affecting its dimensional stability and strength. "
+                    "description": "Property. Unit: %. The amount of moisture in the wood, affecting its dimensional stability and strength. "
                 },
                 "tensileStrength": {
                     "type": "object",
                     "properties": {
                         "value": {
                             "type": "number",
-                            "description": "Property. https://schema.org/Number.  Default: 0.0"
+                            "description": "Property. https://schema.org/Number."
                         }
                     },
-                    "description": "Property. he maximum stress that the wood can withstand while being stretched before breaking. "
+                    "description": "Property. Unit: MPa. The maximum stress that the wood can withstand while being stretched before breaking. "
                 },
                 "compressiveStrength": {
                     "type": "object",
                     "properties": {
                         "value": {
                             "type": "number",
-                            "description": "Property. https://schema.org/Number.  Default: 0.0"
+                            "description": "Property. https://schema.org/Number."
                         }
                     },
-                    "description": "Property. The maximum compressive force that wood can withstand. "
+                    "description": "Property. Unit: MPa. TThe maximum compressive force that wood can withstand. "
                 },
                 "bendingStrength": {
                     "type": "object",
                     "properties": {
                         "value": {
                             "type": "number",
-                            "description": "Property. https://schema.org/Number.  Default: 0.0"
+                            "description": "Property. https://schema.org/Number."
                         }
                     },
-                    "description": "Property. The maximum stress the wood can withstand before breaking when subjected to a bending force. "
+                    "description": "Property. Unit: MPa. TThe maximum stress the wood can withstand before breaking when subjected to a bending force. "
                 },
                 "modulusOfElasticity": {
                     "type": "object",
                     "properties": {
                         "value": {
                             "type": "number",
-                            "description": "Property. https://schema.org/Number.  Default: 0.0"
+                            "description": "Property. https://schema.org/Number."
                         }
                     },
-                    "description": "Property. The measure of the wood's stiffness, indicating how much it will deform under stress. "
+                    "description": "Property. Unit: MPa. The measure of the wood's stiffness, indicating how much it will deform under stress. "
                 },
                 "hardness": {
                     "type": "object",
                     "properties": {
                         "value": {
                             "type": "number",
-                            "description": "Property. https://schema.org/Number.  Default: 0.0"
+                            "description": "Property. https://schema.org/Number."
                         }
                     },
-                    "description": "Property.  The resistance of the wood to indentation or scratching, important for wear and durability. "
+                    "description": "Property. Unit: N (Janka). The resistance of the wood to indentation or scratching, important for wear and durability. "
                 },
                 "thermalConductivity": {
                     "type": "object",
                     "properties": {
                         "value": {
                             "type": "number",
-                            "description": "Property. https://schema.org/Number.  Default: 0.0"
+                            "description": "Property. https://schema.org/Number."
                         }
                     },
-                    "description": "Property. The rate at which heat passes through the wood, important for thermal insulation applications. "
+                    "description": "Property. Unit: W/(m·K). The rate at which heat passes through the wood, important for thermal insulation applications. "
                 },
                 "thermalExpansionCoefficient": {
                     "type": "object",
                     "properties": {
                         "value": {
                             "type": "number",
-                            "description": "Property. https://schema.org/Number.  Default: 0.0"
+                            "description": "Property. https://schema.org/Number."
                         }
                     },
-                    "description": "Property. The rate at which the wood expands with temperature, critical in applications involving temperature changes. "
+                    "description": "Property. Unit: 1/K. The rate at which the wood expands with temperature, critical in applications involving temperature changes. "
                 },
                 "waterAbsorption": {
                     "type": "object",
                     "properties": {
                         "value": {
                             "type": "number",
-                            "description": "Property. https://schema.org/Number.  Default: 0.0"
+                            "description": "Property. https://schema.org/Number."
                         }
                     },
-                    "description": "Property. The amount of water absorbed by the wood over a specified period, influencing dimensional stability and strength. "
+                    "description": "Property. Unit: %. The amount of water absorbed by the wood over a specified period, influencing dimensional stability and strength. "
                 },
                 "flameSpreadIndex": {
                     "type": "object",
                     "properties": {
                         "value": {
                             "type": "number",
-                            "description": "Property. https://schema.org/Number.  Default: 0.0"
+                            "description": "Property. https://schema.org/Number."
                         }
                     },
-                    "description": "Property. A measure of the material’s propensity to burn and spread flames, important for fire safety considerations. ASTM E84 "
+                    "description": "Property. Unit: dimensionless (ASTM E84). A measure of the material’s propensity to burn and spread flames, important for fire safety considerations. "
                 },
-                "opticalProperties-color": {
+                "color": {
+                    "type": "string",
+                    "description": "Property. The color of the wood, e.g. Light Brown."
+                },
+                "grainPattern": {
+                    "type": "string",
+                    "description": "Property. The grain pattern of the wood, e.g. Straight, Interlocked, Wavy."
+                },
+                "productForm": {
+                    "type": "string",
+                    "enum": [
+                        "solidTimber",
+                        "glulam",
+                        "CLT",
+                        "plywood",
+                        "OSB",
+                        "particleboard",
+                        "MDF",
+                        "chips",
+                        "sawdust",
+                        "other"
+                    ],
+                    "description": "Property. Form of the wood. Solid timber and engineered panels have different reuse and recycling routes."
+                },
+                "previousUse": {
+                    "type": "string",
+                    "enum": [
+                        "none",
+                        "structuralBeam",
+                        "pallet",
+                        "packaging",
+                        "furniture",
+                        "flooring",
+                        "formwork",
+                        "other"
+                    ],
+                    "description": "Property. What the wood was used for before; none for unused wood."
+                },
+                "chemicalTreatment": {
+                    "type": "string",
+                    "enum": [
+                        "untreated",
+                        "coated",
+                        "glued",
+                        "preservativeTreated",
+                        "CCA",
+                        "creosote"
+                    ],
+                    "description": "Property. Treatment applied to the wood. CCA and creosote treated wood is hazardous waste."
+                },
+                "wasteWoodClass": {
+                    "type": "string",
+                    "enum": [
+                        "AI",
+                        "AII",
+                        "AIII",
+                        "AIV"
+                    ],
+                    "description": "Property. Waste wood class under the German Waste Wood Ordinance (AltholzV): AI untreated, AII glued/coated without halogens or preservatives, AIII with halogenated coatings, AIV preservative treated."
+                },
+                "fastenersPresent": {
+                    "type": "boolean",
+                    "description": "Property. Whether nails, screws or other metal fasteners are still in the wood."
+                },
+                "length": {
                     "type": "object",
                     "properties": {
                         "value": {
-                            "type": "string",
-                            "description": "Property. https://schema.org/Number.  Default: 0.0"
+                            "type": "number",
+                            "description": "Property. https://schema.org/Number.",
+                            "minimum": 0
                         }
                     },
-                    "description": "Property. Characteristics related to appearance. "
+                    "description": "Property. Unit: mm. Length of the piece. "
                 },
-                "opticalProperties-grainPattern": {
+                "width": {
                     "type": "object",
                     "properties": {
                         "value": {
-                            "type": "string",
-                            "description": "Property. https://schema.org/Number.  Default: 0.0"
+                            "type": "number",
+                            "description": "Property. https://schema.org/Number.",
+                            "minimum": 0
                         }
                     },
-                    "description": "Property. Characteristics related to appearance. "
+                    "description": "Property. Unit: mm. Width of the piece. "
+                },
+                "thickness": {
+                    "type": "object",
+                    "properties": {
+                        "value": {
+                            "type": "number",
+                            "description": "Property. https://schema.org/Number.",
+                            "minimum": 0
+                        }
+                    },
+                    "description": "Property. Unit: mm. Thickness of the piece. "
+                },
+                "strengthClass": {
+                    "type": "string",
+                    "description": "Property. Strength class under EN 338 (e.g. C24, D30) or EN 14080 for glulam (e.g. GL24h), as graded or regraded under EN 14081."
+                },
+                "harvestCountry": {
+                    "type": "string",
+                    "description": "Property. ISO 3166-1 alpha-2 code of the country where the wood was harvested. Virgin wood only."
+                },
+                "eudrReference": {
+                    "type": "string",
+                    "description": "Property. Reference number of the due diligence statement under the EU Deforestation Regulation (EU) 2023/1115. Virgin wood only; wood made entirely from waste is exempt."
                 }
             }
         }

@@ -72,6 +72,11 @@
     "value": "RM2001",
     "observedAt": "2026-02-16T14:20:46.719Z"
   },
+  "refMaterial": {
+    "type": "Relationship",
+    "object": "urn:ngsi-ld:plastic:PPR2044",
+    "observedAt": "2026-02-16T14:20:46.719Z"
+  },
   "CountryCode": {
     "type": "Property",
     "value": "Greece",
