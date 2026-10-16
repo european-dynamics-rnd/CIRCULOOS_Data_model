@@ -23,6 +23,13 @@ Usage:
     python3 build_data_model.py ../material/leather --steps yaml,context
     python3 build_data_model.py ../material/leather --base-url https://raw.githubusercontent.com/<org>/<repo>/main/material/leather/
     python3 build_data_model.py --all ../openCallSpecific/esp_islopol
+    python3 build_data_model.py ../material/plastic --own-namespace
+
+--own-namespace maps the model's own context terms to its schema.json $id
+instead of the shared intra-communication namespace (material/ models use
+this). Terms pulled in from a CIRCULOOS schema via allOf $ref (e.g.
+material/circularity-commons.json) always map to that schema's $id. Such a
+$ref must already be published at its URL for the yaml step to resolve it.
 
 Run from the utils directory (the scripts resolve ./credentials.json and
 ./datamodels_to_publish.json relative to the working directory).
@@ -43,6 +50,8 @@ import threading
 
 UTILS = os.path.dirname(os.path.abspath(__file__))
 PUBLISH_CONFIG = os.path.join(UTILS, "datamodels_to_publish.json")
+REPO = os.path.dirname(UTILS)
+REPO_RAW = "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/"
 
 # script -> (filename, regex matching the hardcoded line, replacement template)
 # The regex is anchored at line start so the commented-out example URLs above
@@ -134,7 +143,7 @@ def patch_script(name, base_url):
     return tmp
 
 
-def run_step(name, base_url, model_dir, dry_run):
+def run_step(name, base_url, model_dir, dry_run, args=()):
     step = STEPS[name]
     produced = os.path.join(UTILS, step["produces"])
     if os.path.exists(produced):
@@ -159,10 +168,10 @@ def run_step(name, base_url, model_dir, dry_run):
     try:
         if dry_run:
             line = [l for l in open(tmp) if l.startswith(("schemaUrl", "customRepository"))]
-            print(f"  [{name}] would run {step['script']} with {''.join(line).strip() or '(no URL to patch)'}")
+            print(f"  [{name}] would run {step['script']} with {''.join(line).strip() or '(no URL to patch)'} {' '.join(args)}")
             return True
 
-        proc = subprocess.run([sys.executable, os.path.basename(tmp)],
+        proc = subprocess.run([sys.executable, os.path.basename(tmp), *args],
                               cwd=UTILS, capture_output=True, text=True)
         if proc.returncode != 0:
             tail = (proc.stderr or proc.stdout).strip().splitlines()[-4:]
@@ -204,6 +213,17 @@ def entity_name(model_dir):
     if enum:
         return enum[0]
     return os.path.basename(model_dir)
+
+
+def urls_args(model_dir, own_namespace):
+    """Arguments for update_urls_to_show_smart_data_model.py."""
+    schema = json.load(open(os.path.join(model_dir, "schema.json")))
+    args = [schema["$id"]] if own_namespace else []
+    for branch in schema.get("allOf", []):
+        ref = branch.get("$ref", "")
+        if ref.startswith(REPO_RAW):
+            args += ["--shared", os.path.join(REPO, ref[len(REPO_RAW):].split("#")[0])]
+    return args
 
 
 class publish_config:
@@ -255,6 +275,8 @@ def main():
     ap.add_argument("--base-url", help="published URL of the model folder; default serves it locally")
     ap.add_argument("--port", type=int, default=8085, help="local server port (default 8085, as in docker-compose.yml)")
     ap.add_argument("--dry-run", action="store_true", help="show what would run, change nothing")
+    ap.add_argument("--own-namespace", action="store_true",
+                    help="map the model's own context terms to its schema $id, not intra-communication")
     args = ap.parse_args()
 
     steps = [s.strip() for s in args.steps.split(",") if s.strip()]
@@ -285,14 +307,15 @@ def main():
 
         entity = entity_name(model_dir)
         print(f"  entity name: {entity}")
+        step_args = {"urls": urls_args(model_dir, args.own_namespace)}
         try:
             if args.dry_run:
                 for name in steps:
-                    run_step(name, base, model_dir, True)
+                    run_step(name, base, model_dir, True, step_args.get(name, ()))
             else:
                 with publish_config(entity):
                     for name in steps:
-                        if not run_step(name, base, model_dir, False):
+                        if not run_step(name, base, model_dir, False, step_args.get(name, ())):
                             failures.append(f"{rel}:{name}")
         finally:
             if httpd:

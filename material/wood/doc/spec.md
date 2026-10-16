@@ -1,34 +1,19 @@
-<!-- 10-Header -->
-  
-Entity: leather  
-===============
-<!-- /10-Header -->
-  
-<!-- 15-License -->
-  
+<!-- 10-Header -->  
+Entity: wood  
+============<!-- /10-Header -->  
+<!-- 15-License -->  
+[Open License](https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/refs/heads/main/LICENSE)  
+<!-- /15-License -->  
+<!-- 20-Description -->  
+Global description: **CIRCULOOS data model for wood**  
+version: 0.0.1  
+<!-- /20-Description -->  
+<!-- 30-PropertiesList -->  
 
-[Open License](https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/refs/heads/main/LICENSE)
+## List of properties  
 
-<!-- /15-License -->
-  
-<!-- 20-Description -->
-  
-
-Global description: **CIRCULOOS data model for wood**  
-
-version: 0.0.1  
-<!-- /20-Description -->
-  
-<!-- 30-PropertiesList -->
-  
-
-
-## List of properties  
-
-
-<sup><sub>[*] If there is not a type in an attribute is because it could have several types or different formats/patterns</sub></sup>  
-- `address[object]`: The mailing address  . Model: [https://schema.org/address](https://schema.org/address)
-	- `addressCountry[string]`: Property. The country. For example, Spain. Model:'https://schema.org/addressCountry'    
+<sup><sub>[*] If there is not a type in an attribute is because it could have several types or different formats/patterns</sub></sup>  
+- `address[object]`: The mailing address  . Model: [https://schema.org/address](https://schema.org/address)	- `addressCountry[string]`: Property. The country. For example, Spain. Model:'https://schema.org/addressCountry'    
 	- `addressLocality[string]`: Property. The locality in which the street address is, and which is in the region. Model:'https://schema.org/addressLocality'    
 	- `addressRegion[string]`: Property. The region in which the locality is, and which is in the country. Model:'https://schema.org/addressRegion'    
 	- `district[string]`: Property. A district is a type of administrative division that, in some countries, is managed by the local government    
@@ -36,87 +21,58 @@ version: 0.0.1
 	- `postalCode[string]`: Property. The postal code. For example, 24004. Model:'https://schema.org/https://schema.org/postalCode'    
 	- `streetAddress[string]`: Property. The street address. Model:'https://schema.org/streetAddress'    
 	- `streetNr[string]`: Property. Number identifying a specific property on a public street    
-- `alternateName[string]`: An alternative name for this item  
-- `areaServed[string]`: The geographic area where a service or offered item is provided  . Model: [https://schema.org/Text](https://schema.org/Text)
-- `bendingStrength[object]`: The maximum stress the wood can withstand before breaking when subjected to a bending force.   
-	  
-	- `value[number]`: Property. https://schema.org/Number.  Default: 0.0    
-- `compressiveStrength[object]`: The maximum compressive force that wood can withstand.   
-	  
-	- `value[number]`: Property. https://schema.org/Number.  Default: 0.0    
-- `dataProvider[string]`: A sequence of characters identifying the provider of the harmonised data entity  
-- `dateCreated[date-time]`: Entity creation timestamp. This will usually be allocated by the storage platform  
-- `dateModified[date-time]`: Timestamp of the last modification of the entity. This will usually be allocated by the storage platform  
-- `density[object]`: The mass per unit volume of the wood, critical for calculating weight and structural integrity.   
-	  
-	- `value[number]`: Property. https://schema.org/Number.  Default: 0.0    
-- `description[string]`: A description of this item  
-- `flameSpreadIndex[object]`: A measure of the material’s propensity to burn and spread flames, important for fire safety considerations. ASTM E84   
-	  
-	- `value[number]`: Property. https://schema.org/Number.  Default: 0.0    
-- `hardness[object]`:  The resistance of the wood to indentation or scratching, important for wear and durability.   
-	  
-	- `value[number]`: Property. https://schema.org/Number.  Default: 0.0    
-- `id[*]`: Unique identifier of the entity  
-- `location[*]`: GeoProperty. Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon  
-- `modulusOfElasticity[object]`: The measure of the wood's stiffness, indicating how much it will deform under stress.   
-	  
-	- `value[number]`: Property. https://schema.org/Number.  Default: 0.0    
-- `moistureContent[object]`: The amount of moisture in the wood, affecting its dimensional stability and strength.   
-	  
-	- `value[number]`: Property. https://schema.org/Number.  Default: 0.0    
-- `name[string]`: The name of this item  
-- `opticalProperties-color[object]`: Characteristics related to appearance.   
-	  
-	- `value[string]`: Property. https://schema.org/Number.  Default: 0.0    
-- `opticalProperties-grainPattern[object]`: Characteristics related to appearance.   
-	  
-	- `value[string]`: Property. https://schema.org/Number.  Default: 0.0    
-- `owner[array]`: A List containing a JSON encoded sequence of characters referencing the unique Ids of the owner(s)  
-- `seeAlso[*]`: list of uri pointing to additional resources about the item  
-- `source[string]`: A sequence of characters giving the original source of the entity data as a URL. Recommended to be the fully qualified domain name of the source provider, or the URL to the source object  
-- `species[string]`: The type of wood (e.g., Oak, Pine, Birch).   
-- `tensileStrength[object]`: he maximum stress that the wood can withstand while being stretched before breaking.   
-	  
-	- `value[number]`: Property. https://schema.org/Number.  Default: 0.0    
-- `thermalConductivity[object]`: The rate at which heat passes through the wood, important for thermal insulation applications.   
-	  
-	- `value[number]`: Property. https://schema.org/Number.  Default: 0.0    
-- `thermalExpansionCoefficient[object]`: The rate at which the wood expands with temperature, critical in applications involving temperature changes.   
-	  
-	- `value[number]`: Property. https://schema.org/Number.  Default: 0.0    
-- `type[*]`: NGSI Entity type. It has to be wood  
-- `waterAbsorption[object]`: The amount of water absorbed by the wood over a specified period, influencing dimensional stability and strength.   
-	  
-	- `value[number]`: Property. https://schema.org/Number.  Default: 0.0    
-<!-- /30-PropertiesList -->
-  
-<!-- 35-RequiredProperties -->
-  
-
-Required properties  
-- `id`  
-- `type`  
-<!-- /35-RequiredProperties -->
-  
-<!-- 40-RequiredProperties -->
-  
-<!-- /40-RequiredProperties -->
-  
-<!-- 50-DataModelHeader -->
-  
-
-## Data Model description of properties  
-
-Sorted alphabetically (click for details)  
-<!-- /50-DataModelHeader -->
-  
-<!-- 60-ModelYaml -->
-  
+- `alternateName[string]`: An alternative name for this item  - `areaServed[string]`: The geographic area where a service or offered item is provided  . Model: [https://schema.org/Text](https://schema.org/Text)- `batchNumber[string]`: Lot/batch number of this quantity of material, for traceability back to its source.  - `bendingStrength[object]`: Unit: MPa. TThe maximum stress the wood can withstand before breaking when subjected to a bending force.   	  
+	- `value[number]`: Property. https://schema.org/Number.    
+- `biobasedContent[object]`: Unit: %. Share of the material derived from biomass (EN 16785-1).  	  
+	- `value[number]`: Property. https://schema.org/Number.    
+- `certifications[array]`: Certificates covering this material.  - `chainOfCustodyModel[string]`: Chain of custody model (ISO 22095) behind the recycled or bio-based content claims of this material.  - `chemicalTreatment[string]`: Treatment applied to the wood. CCA and creosote treated wood is hazardous waste.  - `color[string]`: The color of the wood, e.g. Light Brown.  - `composition[array]`: Main components of the material and their mass shares.  - `compressiveStrength[object]`: Unit: MPa. TThe maximum compressive force that wood can withstand.   	  
+	- `value[number]`: Property. https://schema.org/Number.    
+- `contaminationLevel[string]`: Overall contamination level of the lot (foreign materials, dirt, labels, etc.).  - `dataProvider[string]`: A sequence of characters identifying the provider of the harmonised data entity  - `dateCreated[date-time]`: Entity creation timestamp. This will usually be allocated by the storage platform  - `dateModified[date-time]`: Timestamp of the last modification of the entity. This will usually be allocated by the storage platform  - `density[object]`: Unit: g/cm3. The mass per unit volume of the wood, critical for calculating weight and structural integrity.   	  
+	- `value[number]`: Property. https://schema.org/Number.    
+- `description[string]`: A description of this item  - `endOfWasteReference[string]`: The end-of-waste criteria (EU or national regulation, permit) under which the material stopped being waste.  - `eudrReference[string]`: Reference number of the due diligence statement under the EU Deforestation Regulation (EU) 2023/1115. Virgin wood only; wood made entirely from waste is exempt.  - `fastenersPresent[boolean]`: Whether nails, screws or other metal fasteners are still in the wood.  - `flameSpreadIndex[object]`: Unit: dimensionless (ASTM E84). A measure of the material’s propensity to burn and spread flames, important for fire safety considerations.   	  
+	- `value[number]`: Property. https://schema.org/Number.    
+- `grainPattern[string]`: The grain pattern of the wood, e.g. Straight, Interlocked, Wavy.  - `hardness[object]`: Unit: N (Janka). The resistance of the wood to indentation or scratching, important for wear and durability.   	  
+	- `value[number]`: Property. https://schema.org/Number.    
+- `harvestCountry[string]`: ISO 3166-1 alpha-2 code of the country where the wood was harvested. Virgin wood only.  - `hazardous[boolean]`: Whether the material is classified as hazardous.  - `id[*]`: Unique identifier of the entity  - `length[object]`: Unit: mm. Length of the piece.   	  
+	- `value[number]`: Property. https://schema.org/Number.    
+- `location[*]`: GeoProperty. Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon  - `materialStatus[string]`: Legal status of the material under the EU Waste Framework Directive 2008/98/EC: primary (virgin) material, by-product (Art. 5), waste, or material that has reached end-of-waste status (Art. 6). Receiving waste needs a waste permit.  - `modulusOfElasticity[object]`: Unit: MPa. The measure of the wood's stiffness, indicating how much it will deform under stress.   	  
+	- `value[number]`: Property. https://schema.org/Number.    
+- `moistureContent[object]`: Unit: %. The amount of moisture in the wood, affecting its dimensional stability and strength.   	  
+	- `value[number]`: Property. https://schema.org/Number.    
+- `name[string]`: The name of this item  - `owner[array]`: A List containing a JSON encoded sequence of characters referencing the unique Ids of the owner(s)  - `postConsumerRecycledContent[object]`: Unit: %. Share of recycled material recovered from products after their use (ISO 14021). The share counted by recycled content targets such as the PPWR, Regulation (EU) 2025/40.  	  
+	- `value[number]`: Property. https://schema.org/Number.    
+- `preConsumerRecycledContent[object]`: Unit: %. Share of recycled material recovered from manufacturing scrap, before reaching a consumer (ISO 14021).  	  
+	- `value[number]`: Property. https://schema.org/Number.    
+- `previousUse[string]`: What the wood was used for before; none for unused wood.  - `productForm[string]`: Form of the wood. Solid timber and engineered panels have different reuse and recycling routes.  - `qualityStandard[string]`: Standard the material is characterised or traced against, e.g. EN 15343 (traceability of recycled plastics) or EN 15345 (PP recyclates).  - `quantity[object]`: Unit: given by unitCode, e.g. KGM (kg), TNE (t), MTQ (m3), MTK (m2), C62 (pieces). Quantity of material in this lot.  	  
+	- `value[number]`: Property. https://schema.org/Number.    
+- `recycledContent[object]`: Unit: %. Total share of recycled material (ISO 14021).  	  
+	- `value[number]`: Property. https://schema.org/Number.    
+- `recycledTimes[integer]`: The number of times this material has already been through a recycling loop.  - `refDigitalProductPassport[uri]`: Digital Product Passport (EU ESPR, Regulation (EU) 2024/1781) of the product this material comes from or belongs to.  - `refEnvironmentalFootprint[uri]`: environmental_footprint_indicator entity holding the environmental footprint (LCA indicators) of this material.  - `refParentMaterial[array]`: Material entities (lots) this material was produced from. Following the links back gives the material loop history.  - `refProcess[uri]`: Process or process event entity that produced this material.  - `seeAlso[*]`: list of uri pointing to additional resources about the item  - `source[string]`: A sequence of characters giving the original source of the entity data as a URL. Recommended to be the fully qualified domain name of the source provider, or the URL to the source object  - `species[string]`: The type of wood (e.g., Oak, Pine, Birch).   - `strengthClass[string]`: Strength class under EN 338 (e.g. C24, D30) or EN 14080 for glulam (e.g. GL24h), as graded or regraded under EN 14081.  - `substancesOfConcern[array]`: Substances of concern present in the material, as required by the EU ESPR Digital Product Passport.  - `suitableRecoveryRoutes[array]`: Circular strategies (R-ladder) the material is suitable for. Used to match offers with demand.  - `tensileStrength[object]`: Unit: MPa. The maximum stress that the wood can withstand while being stretched before breaking.   	  
+	- `value[number]`: Property. https://schema.org/Number.    
+- `thermalConductivity[object]`: Unit: W/(m·K). The rate at which heat passes through the wood, important for thermal insulation applications.   	  
+	- `value[number]`: Property. https://schema.org/Number.    
+- `thermalExpansionCoefficient[object]`: Unit: 1/K. The rate at which the wood expands with temperature, critical in applications involving temperature changes.   	  
+	- `value[number]`: Property. https://schema.org/Number.    
+- `thickness[object]`: Unit: mm. Thickness of the piece.   	  
+	- `value[number]`: Property. https://schema.org/Number.    
+- `type[*]`: NGSI Entity type. It has to be wood  - `wasteCode[string]`: European List of Waste code (Commission Decision 2000/532/EC), e.g. 07 02 13 for waste plastic. A trailing * marks hazardous waste. Only when materialStatus is waste.  - `wasteWoodClass[string]`: Waste wood class under the German Waste Wood Ordinance (AltholzV): AI untreated, AII glued/coated without halogens or preservatives, AIII with halogenated coatings, AIV preservative treated.  - `waterAbsorption[object]`: Unit: %. The amount of water absorbed by the wood over a specified period, influencing dimensional stability and strength.   	  
+	- `value[number]`: Property. https://schema.org/Number.    
+- `width[object]`: Unit: mm. Width of the piece.   	  
+	- `value[number]`: Property. https://schema.org/Number.    
+<!-- /30-PropertiesList -->  
+<!-- 35-RequiredProperties -->  
+Required properties  
+- `id`  - `type`  <!-- /35-RequiredProperties -->  
+<!-- 40-RequiredProperties -->  
+<!-- /40-RequiredProperties -->  
+<!-- 50-DataModelHeader -->  
+## Data Model description of properties  
+Sorted alphabetically (click for details)  
+<!-- /50-DataModelHeader -->  
+<!-- 60-ModelYaml -->  
 <details><summary><strong>full yaml details</strong></summary>    
-
-```yaml  
-leather:    
+```yaml  
+wood:    
   description: CIRCULOOS data model for wood    
   properties:    
     address:    
@@ -161,22 +117,119 @@ leather:
       x-ngsi:    
         model: https://schema.org/Text    
         type: Property    
+    batchNumber:    
+      description: Lot/batch number of this quantity of material, for traceability back to its source.    
+      type: string    
+      x-ngsi:    
+        type: Property    
     bendingStrength:    
-      description: 'The maximum stress the wood can withstand before breaking when subjected to a bending force. '    
+      description: 'Unit: MPa. TThe maximum stress the wood can withstand before breaking when subjected to a bending force. '    
       properties:    
         value:    
-          description: 'Property. https://schema.org/Number.  Default: 0.0'    
+          description: Property. https://schema.org/Number.    
           type: number    
       type: object    
       x-ngsi:    
         type: Property    
-    compressiveStrength:    
-      description: 'The maximum compressive force that wood can withstand. '    
+    biobasedContent:    
+      description: 'Unit: %. Share of the material derived from biomass (EN 16785-1).'    
       properties:    
         value:    
-          description: 'Property. https://schema.org/Number.  Default: 0.0'    
+          description: Property. https://schema.org/Number.    
+          maximum: 100    
+          minimum: 0    
           type: number    
       type: object    
+      x-ngsi:    
+        type: Property    
+    certifications:    
+      description: Certificates covering this material.    
+      items:    
+        properties:    
+          certificateId:    
+            description: Property. Certificate number.    
+            type: string    
+          issuer:    
+            description: Property. Certification body that issued the certificate.    
+            type: string    
+          scheme:    
+            description: Property. Certification scheme, e.g. ISCC PLUS, EuCertPlast, RecyClass, GRS, FSC, PEFC, LWG.    
+            type: string    
+          validUntil:    
+            description: Property. Expiry date of the certificate.    
+            format: date    
+            type: string    
+        required:    
+          - scheme    
+        type: object    
+      type: array    
+      x-ngsi:    
+        type: Property    
+    chainOfCustodyModel:    
+      description: Chain of custody model (ISO 22095) behind the recycled or bio-based content claims of this material.    
+      enum:    
+        - identityPreserved    
+        - segregated    
+        - controlledBlending    
+        - massBalance    
+        - bookAndClaim    
+      type: string    
+      x-ngsi:    
+        type: Property    
+    chemicalTreatment:    
+      description: Treatment applied to the wood. CCA and creosote treated wood is hazardous waste.    
+      enum:    
+        - untreated    
+        - coated    
+        - glued    
+        - preservativeTreated    
+        - CCA    
+        - creosote    
+      type: string    
+      x-ngsi:    
+        type: Property    
+    color:    
+      description: The color of the wood, e.g. Light Brown.    
+      type: string    
+      x-ngsi:    
+        type: Property    
+    composition:    
+      description: Main components of the material and their mass shares.    
+      items:    
+        properties:    
+          casNumber:    
+            description: Property. CAS registry number of the component, when it has one.    
+            type: string    
+          name:    
+            description: Property. Name of the component.    
+            type: string    
+          share:    
+            description: 'Property. Unit: %. Mass share of the component in the material.'    
+            maximum: 100    
+            minimum: 0    
+            type: number    
+        required:    
+          - name    
+        type: object    
+      type: array    
+      x-ngsi:    
+        type: Property    
+    compressiveStrength:    
+      description: 'Unit: MPa. TThe maximum compressive force that wood can withstand. '    
+      properties:    
+        value:    
+          description: Property. https://schema.org/Number.    
+          type: number    
+      type: object    
+      x-ngsi:    
+        type: Property    
+    contaminationLevel:    
+      description: Overall contamination level of the lot (foreign materials, dirt, labels, etc.).    
+      enum:    
+        - low    
+        - medium    
+        - high    
+      type: string    
       x-ngsi:    
         type: Property    
     dataProvider:    
@@ -197,10 +250,10 @@ leather:
       x-ngsi:    
         type: Property    
     density:    
-      description: 'The mass per unit volume of the wood, critical for calculating weight and structural integrity. '    
+      description: 'Unit: g/cm3. The mass per unit volume of the wood, critical for calculating weight and structural integrity. '    
       properties:    
         value:    
-          description: 'Property. https://schema.org/Number.  Default: 0.0'    
+          description: Property. https://schema.org/Number.    
           type: number    
       type: object    
       x-ngsi:    
@@ -210,22 +263,52 @@ leather:
       type: string    
       x-ngsi:    
         type: Property    
+    endOfWasteReference:    
+      description: The end-of-waste criteria (EU or national regulation, permit) under which the material stopped being waste.    
+      type: string    
+      x-ngsi:    
+        type: Property    
+    eudrReference:    
+      description: Reference number of the due diligence statement under the EU Deforestation Regulation (EU) 2023/1115. Virgin wood only; wood made entirely from waste is exempt.    
+      type: string    
+      x-ngsi:    
+        type: Property    
+    fastenersPresent:    
+      description: Whether nails, screws or other metal fasteners are still in the wood.    
+      type: boolean    
+      x-ngsi:    
+        type: Property    
     flameSpreadIndex:    
-      description: 'A measure of the material’s propensity to burn and spread flames, important for fire safety considerations. ASTM E84 '    
+      description: 'Unit: dimensionless (ASTM E84). A measure of the material’s propensity to burn and spread flames, important for fire safety considerations. '    
       properties:    
         value:    
-          description: 'Property. https://schema.org/Number.  Default: 0.0'    
+          description: Property. https://schema.org/Number.    
           type: number    
       type: object    
       x-ngsi:    
         type: Property    
+    grainPattern:    
+      description: The grain pattern of the wood, e.g. Straight, Interlocked, Wavy.    
+      type: string    
+      x-ngsi:    
+        type: Property    
     hardness:    
-      description: ' The resistance of the wood to indentation or scratching, important for wear and durability. '    
+      description: 'Unit: N (Janka). The resistance of the wood to indentation or scratching, important for wear and durability. '    
       properties:    
         value:    
-          description: 'Property. https://schema.org/Number.  Default: 0.0'    
+          description: Property. https://schema.org/Number.    
           type: number    
       type: object    
+      x-ngsi:    
+        type: Property    
+    harvestCountry:    
+      description: ISO 3166-1 alpha-2 code of the country where the wood was harvested. Virgin wood only.    
+      type: string    
+      x-ngsi:    
+        type: Property    
+    hazardous:    
+      description: Whether the material is classified as hazardous.    
+      type: boolean    
       x-ngsi:    
         type: Property    
     id:    
@@ -240,6 +323,16 @@ leather:
           type: string    
       description: Unique identifier of the entity    
       x-ngsi:    
+        type: Relationship    
+    length:    
+      description: 'Unit: mm. Length of the piece. '    
+      properties:    
+        value:    
+          description: Property. https://schema.org/Number.    
+          minimum: 0    
+          type: number    
+      type: object    
+      x-ngsi:    
         type: Property    
     location:    
       description: GeoProperty. Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon    
@@ -247,11 +340,13 @@ leather:
         - description: GeoProperty. Geojson reference to the item. Point    
           properties:    
             bbox:    
+              description: Property. BBox of the  Point    
               items:    
                 type: number    
               minItems: 4    
               type: array    
             coordinates:    
+              description: Property. Coordinates of the Point    
               items:    
                 type: number    
               minItems: 2    
@@ -268,11 +363,13 @@ leather:
         - description: GeoProperty. Geojson reference to the item. LineString    
           properties:    
             bbox:    
+              description: Property. BBox coordinates of the LineString    
               items:    
                 type: number    
               minItems: 4    
               type: array    
             coordinates:    
+              description: Property. Coordinates of the LineString    
               items:    
                 items:    
                   type: number    
@@ -292,11 +389,13 @@ leather:
         - description: GeoProperty. Geojson reference to the item. Polygon    
           properties:    
             bbox:    
+              description: Property. BBox coordinates of the Polygon    
               items:    
                 type: number    
               minItems: 4    
               type: array    
             coordinates:    
+              description: Property. Coordinates of the Polygon    
               items:    
                 items:    
                   items:    
@@ -318,11 +417,13 @@ leather:
         - description: GeoProperty. Geojson reference to the item. MultiPoint    
           properties:    
             bbox:    
+              description: Property. BBox coordinates of the LineString    
               items:    
                 type: number    
               minItems: 4    
               type: array    
             coordinates:    
+              description: Property. Coordinates of the MulitPoint    
               items:    
                 items:    
                   type: number    
@@ -341,11 +442,13 @@ leather:
         - description: GeoProperty. Geojson reference to the item. MultiLineString    
           properties:    
             bbox:    
+              description: Property. BBox coordinates of the LineString    
               items:    
                 type: number    
               minItems: 4    
               type: array    
             coordinates:    
+              description: Property. Coordinates of the MultiLineString    
               items:    
                 items:    
                   items:    
@@ -372,6 +475,7 @@ leather:
               minItems: 4    
               type: array    
             coordinates:    
+              description: Property. Coordinates of the MultiPolygon    
               items:    
                 items:    
                   items:    
@@ -392,20 +496,30 @@ leather:
             - coordinates    
           title: GeoJSON MultiPolygon    
           type: object    
+    materialStatus:    
+      description: 'Legal status of the material under the EU Waste Framework Directive 2008/98/EC: primary (virgin) material, by-product (Art. 5), waste, or material that has reached end-of-waste status (Art. 6). Receiving waste needs a waste permit.'    
+      enum:    
+        - primary    
+        - byProduct    
+        - waste    
+        - endOfWaste    
+      type: string    
+      x-ngsi:    
+        type: Property    
     modulusOfElasticity:    
-      description: 'The measure of the wood''s stiffness, indicating how much it will deform under stress. '    
+      description: 'Unit: MPa. The measure of the wood''s stiffness, indicating how much it will deform under stress. '    
       properties:    
         value:    
-          description: 'Property. https://schema.org/Number.  Default: 0.0'    
+          description: Property. https://schema.org/Number.    
           type: number    
       type: object    
       x-ngsi:    
         type: Property    
     moistureContent:    
-      description: 'The amount of moisture in the wood, affecting its dimensional stability and strength. '    
+      description: 'Unit: %. The amount of moisture in the wood, affecting its dimensional stability and strength. '    
       properties:    
         value:    
-          description: 'Property. https://schema.org/Number.  Default: 0.0'    
+          description: Property. https://schema.org/Number.    
           type: number    
       type: object    
       x-ngsi:    
@@ -413,24 +527,6 @@ leather:
     name:    
       description: The name of this item    
       type: string    
-      x-ngsi:    
-        type: Property    
-    opticalProperties-color:    
-      description: 'Characteristics related to appearance. '    
-      properties:    
-        value:    
-          description: 'Property. https://schema.org/Number.  Default: 0.0'    
-          type: string    
-      type: object    
-      x-ngsi:    
-        type: Property    
-    opticalProperties-grainPattern:    
-      description: 'Characteristics related to appearance. '    
-      properties:    
-        value:    
-          description: 'Property. https://schema.org/Number.  Default: 0.0'    
-          type: string    
-      type: object    
       x-ngsi:    
         type: Property    
     owner:    
@@ -445,10 +541,120 @@ leather:
           - description: Property. Identifier format of any NGSI entity    
             format: uri    
             type: string    
-        description: Property. Unique identifier of the entity    
+        description: Relationship. Unique identifier of the entity    
       type: array    
       x-ngsi:    
         type: Property    
+    postConsumerRecycledContent:    
+      description: 'Unit: %. Share of recycled material recovered from products after their use (ISO 14021). The share counted by recycled content targets such as the PPWR, Regulation (EU) 2025/40.'    
+      properties:    
+        value:    
+          description: Property. https://schema.org/Number.    
+          maximum: 100    
+          minimum: 0    
+          type: number    
+      type: object    
+      x-ngsi:    
+        type: Property    
+    preConsumerRecycledContent:    
+      description: 'Unit: %. Share of recycled material recovered from manufacturing scrap, before reaching a consumer (ISO 14021).'    
+      properties:    
+        value:    
+          description: Property. https://schema.org/Number.    
+          maximum: 100    
+          minimum: 0    
+          type: number    
+      type: object    
+      x-ngsi:    
+        type: Property    
+    previousUse:    
+      description: What the wood was used for before; none for unused wood.    
+      enum:    
+        - none    
+        - structuralBeam    
+        - pallet    
+        - packaging    
+        - furniture    
+        - flooring    
+        - formwork    
+        - other    
+      type: string    
+      x-ngsi:    
+        type: Property    
+    productForm:    
+      description: Form of the wood. Solid timber and engineered panels have different reuse and recycling routes.    
+      enum:    
+        - solidTimber    
+        - glulam    
+        - CLT    
+        - plywood    
+        - OSB    
+        - particleboard    
+        - MDF    
+        - chips    
+        - sawdust    
+        - other    
+      type: string    
+      x-ngsi:    
+        type: Property    
+    qualityStandard:    
+      description: Standard the material is characterised or traced against, e.g. EN 15343 (traceability of recycled plastics) or EN 15345 (PP recyclates).    
+      type: string    
+      x-ngsi:    
+        type: Property    
+    quantity:    
+      description: 'Unit: given by unitCode, e.g. KGM (kg), TNE (t), MTQ (m3), MTK (m2), C62 (pieces). Quantity of material in this lot.'    
+      properties:    
+        value:    
+          description: Property. https://schema.org/Number.    
+          minimum: 0    
+          type: number    
+      type: object    
+      x-ngsi:    
+        type: Property    
+    recycledContent:    
+      description: 'Unit: %. Total share of recycled material (ISO 14021).'    
+      properties:    
+        value:    
+          description: Property. https://schema.org/Number.    
+          maximum: 100    
+          minimum: 0    
+          type: number    
+      type: object    
+      x-ngsi:    
+        type: Property    
+    recycledTimes:    
+      description: The number of times this material has already been through a recycling loop.    
+      minimum: 0    
+      type: integer    
+      x-ngsi:    
+        type: Property    
+    refDigitalProductPassport:    
+      description: Digital Product Passport (EU ESPR, Regulation (EU) 2024/1781) of the product this material comes from or belongs to.    
+      format: uri    
+      type: string    
+      x-ngsi:    
+        type: Relationship    
+    refEnvironmentalFootprint:    
+      description: environmental_footprint_indicator entity holding the environmental footprint (LCA indicators) of this material.    
+      format: uri    
+      type: string    
+      x-ngsi:    
+        type: Relationship    
+    refParentMaterial:    
+      description: Material entities (lots) this material was produced from. Following the links back gives the material loop history.    
+      items:    
+        format: uri    
+        type: string    
+      type: array    
+      x-ngsi:    
+        type: Relationship    
+    refProcess:    
+      description: Process or process event entity that produced this material.    
+      format: uri    
+      type: string    
+      x-ngsi:    
+        type: Relationship    
     seeAlso:    
       description: list of uri pointing to additional resources about the item    
       oneOf:    
@@ -471,29 +677,90 @@ leather:
       type: string    
       x-ngsi:    
         type: Property    
+    strengthClass:    
+      description: Strength class under EN 338 (e.g. C24, D30) or EN 14080 for glulam (e.g. GL24h), as graded or regraded under EN 14081.    
+      type: string    
+      x-ngsi:    
+        type: Property    
+    substancesOfConcern:    
+      description: Substances of concern present in the material, as required by the EU ESPR Digital Product Passport.    
+      items:    
+        properties:    
+          casNumber:    
+            description: Property. CAS registry number of the substance.    
+            type: string    
+          concentration:    
+            description: 'Property. Unit: mg/kg. Measured concentration of the substance in the material.'    
+            minimum: 0    
+            type: number    
+          ecNumber:    
+            description: Property. EC number of the substance.    
+            type: string    
+          name:    
+            description: Property. Name of the substance.    
+            type: string    
+          regulation:    
+            description: 'Property. Regulation listing the substance: REACH candidate list (SVHC), REACH Annex XVII restriction (e.g. Cr(VI) in leather), EU POPs Regulation 2019/1021 (e.g. brominated flame retardants), or other.'    
+            enum:    
+              - REACH-SVHC    
+              - REACH-AnnexXVII    
+              - POP    
+              - other    
+            type: string    
+        required:    
+          - name    
+        type: object    
+      type: array    
+      x-ngsi:    
+        type: Property    
+    suitableRecoveryRoutes:    
+      description: Circular strategies (R-ladder) the material is suitable for. Used to match offers with demand.    
+      items:    
+        enum:    
+          - reuse    
+          - repair    
+          - refurbish    
+          - remanufacture    
+          - repurpose    
+          - recycle    
+          - energyRecovery    
+        type: string    
+      type: array    
+      x-ngsi:    
+        type: Property    
     tensileStrength:    
-      description: 'he maximum stress that the wood can withstand while being stretched before breaking. '    
+      description: 'Unit: MPa. The maximum stress that the wood can withstand while being stretched before breaking. '    
       properties:    
         value:    
-          description: 'Property. https://schema.org/Number.  Default: 0.0'    
+          description: Property. https://schema.org/Number.    
           type: number    
       type: object    
       x-ngsi:    
         type: Property    
     thermalConductivity:    
-      description: 'The rate at which heat passes through the wood, important for thermal insulation applications. '    
+      description: 'Unit: W/(m·K). The rate at which heat passes through the wood, important for thermal insulation applications. '    
       properties:    
         value:    
-          description: 'Property. https://schema.org/Number.  Default: 0.0'    
+          description: Property. https://schema.org/Number.    
           type: number    
       type: object    
       x-ngsi:    
         type: Property    
     thermalExpansionCoefficient:    
-      description: 'The rate at which the wood expands with temperature, critical in applications involving temperature changes. '    
+      description: 'Unit: 1/K. The rate at which the wood expands with temperature, critical in applications involving temperature changes. '    
       properties:    
         value:    
-          description: 'Property. https://schema.org/Number.  Default: 0.0'    
+          description: Property. https://schema.org/Number.    
+          type: number    
+      type: object    
+      x-ngsi:    
+        type: Property    
+    thickness:    
+      description: 'Unit: mm. Thickness of the piece. '    
+      properties:    
+        value:    
+          description: Property. https://schema.org/Number.    
+          minimum: 0    
           type: number    
       type: object    
       x-ngsi:    
@@ -504,11 +771,37 @@ leather:
         - wood    
       x-ngsi:    
         type: Property    
+    wasteCode:    
+      description: European List of Waste code (Commission Decision 2000/532/EC), e.g. 07 02 13 for waste plastic. A trailing * marks hazardous waste. Only when materialStatus is waste.    
+      pattern: ^[0-9]{2} [0-9]{2} [0-9]{2}\*?$    
+      type: string    
+      x-ngsi:    
+        type: Property    
+    wasteWoodClass:    
+      description: 'Waste wood class under the German Waste Wood Ordinance (AltholzV): AI untreated, AII glued/coated without halogens or preservatives, AIII with halogenated coatings, AIV preservative treated.'    
+      enum:    
+        - AI    
+        - AII    
+        - AIII    
+        - AIV    
+      type: string    
+      x-ngsi:    
+        type: Property    
     waterAbsorption:    
-      description: 'The amount of water absorbed by the wood over a specified period, influencing dimensional stability and strength. '    
+      description: 'Unit: %. The amount of water absorbed by the wood over a specified period, influencing dimensional stability and strength. '    
       properties:    
         value:    
-          description: 'Property. https://schema.org/Number.  Default: 0.0'    
+          description: Property. https://schema.org/Number.    
+          type: number    
+      type: object    
+      x-ngsi:    
+        type: Property    
+    width:    
+      description: 'Unit: mm. Width of the piece. '    
+      properties:    
+        value:    
+          description: Property. https://schema.org/Number.    
+          minimum: 0    
           type: number    
       type: object    
       x-ngsi:    
@@ -519,99 +812,174 @@ leather:
   type: object    
   x-derived-from: ''    
   x-disclaimer: Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program    
-  x-license-url: https://github.com/smart-data-models/circuloos_data_model/blob/master/leather/LICENSE.md    
-  x-model-schema: https://raw.githubusercontent.com/TO_ADD_LATER/schema.json    
+  x-license-url: https://github.com/smart-data-models/circuloos_data_model/blob/master/wood/LICENSE.md    
+  x-model-schema: https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/material/wood/schema.json    
   x-model-tags: ''    
   x-version: 0.0.1    
 ```  
 </details>    
-<!-- /60-ModelYaml -->
-  
-<!-- 70-MiddleNotes -->
-  
-<!-- /70-MiddleNotes -->
-  
-<!-- 80-Examples -->
-  
-
-## Example payloads    
-
-Not available the example of a leather in JSON-LD format as key-values. This is compatible with NGSI-LD when  using `options=keyValues` and returns the context data of an individual entity.  
-
-#### leather NGSI-LD normalized Example    
-
-Here is an example of a leather in JSON-LD format as normalized. This is compatible with NGSI-LD when not using options and returns the context data of an individual entity.  
+<!-- /60-ModelYaml -->  
+<!-- 70-MiddleNotes -->  
+<!-- /70-MiddleNotes -->  
+<!-- 80-Examples -->  
+## Example payloads    
+Not available the example of a wood in JSON-LD format as key-values. This is compatible with NGSI-LD when  using `options=keyValues` and returns the context data of an individual entity.  
+#### wood NGSI-LD normalized Example    
+Here is an example of a wood in JSON-LD format as normalized. This is compatible with NGSI-LD when not using options and returns the context data of an individual entity.  
 <details><summary><strong>show/hide example</strong></summary>    
-
-```json  
-
-{  
-    "id": "ngsi-ld:wood:wood1",  
+```json  
+{  
+    "id": "urn:ngsi-ld:wood:wood1",  
     "type": "wood",  
-    "species": "Oak",  
+    "species": {  
+        "type": "Property",  
+        "value": "Oak"  
+    },  
     "density": {  
-        "type": "Number",  
-        "value": "0.75",  
+        "type": "Property",  
+        "value": 0.75,  
         "unitCode": "23"  
     },  
     "moistureContent": {  
-        "type": "Number",  
-        "value": "12",  
+        "type": "Property",  
+        "value": 12,  
         "unitCode": "P1"  
     },  
     "tensileStrength": {  
-        "type": "Number",  
-        "value": "90",  
+        "type": "Property",  
+        "value": 90,  
         "unitCode": "MPA"  
     },  
     "compressiveStrength": {  
-        "type": "Number",  
-        "value": "50",  
+        "type": "Property",  
+        "value": 50,  
         "unitCode": "MPA"  
     },  
     "bendingStrength": {  
-        "type": "Number",  
-        "value": "120",  
+        "type": "Property",  
+        "value": 120,  
         "unitCode": "MPA"  
     },  
     "modulusOfElasticity": {  
-        "type": "Number",  
-        "value": "11000",  
+        "type": "Property",  
+        "value": 11000,  
         "unitCode": "MPA"  
     },  
     "hardness": {  
-        "type": "Number",  
-        "value": "670",  
+        "type": "Property",  
+        "value": 670,  
         "unitCode": "NEW"  
     },  
     "thermalConductivity": {  
-        "type": "Number",  
-        "value": "0.16",  
+        "type": "Property",  
+        "value": 0.16,  
         "unitCode": "D53"  
     },  
     "thermalExpansionCoefficient": {  
-        "type": "Number",  
-        "value": "3.5",  
+        "type": "Property",  
+        "value": 3.5,  
         "unitCode": "F51"  
     },  
     "waterAbsorption": {  
-        "type": "Number",  
-        "value": "40",  
+        "type": "Property",  
+        "value": 40,  
         "unitCode": "P1"  
     },  
     "flameSpreadIndex": {  
-        "type": "Number",  
-        "value": "100"  
+        "type": "Property",  
+        "value": 100  
     },  
-    "opticalProperties-color": {  
-        "type": "String",  
+    "color": {  
+        "type": "Property",  
         "value": "Light Brown"  
     },  
-    "opticalProperties-grainPattern": {  
-        "type": "String",  
+    "grainPattern": {  
+        "type": "Property",  
         "value": "Straight"  
-    }  
+    },  
+    "productForm": {  
+        "type": "Property",  
+        "value": "solidTimber"  
+    },  
+    "previousUse": {  
+        "type": "Property",  
+        "value": "structuralBeam"  
+    },  
+    "chemicalTreatment": {  
+        "type": "Property",  
+        "value": "untreated"  
+    },  
+    "wasteWoodClass": {  
+        "type": "Property",  
+        "value": "AI"  
+    },  
+    "fastenersPresent": {  
+        "type": "Property",  
+        "value": true  
+    },  
+    "length": {  
+        "type": "Property",  
+        "value": 4200,  
+        "unitCode": "MMT"  
+    },  
+    "width": {  
+        "type": "Property",  
+        "value": 200,  
+        "unitCode": "MMT"  
+    },  
+    "thickness": {  
+        "type": "Property",  
+        "value": 100,  
+        "unitCode": "MMT"  
+    },  
+    "strengthClass": {  
+        "type": "Property",  
+        "value": "D30"  
+    },  
+    "materialStatus": {  
+        "type": "Property",  
+        "value": "waste"  
+    },  
+    "wasteCode": {  
+        "type": "Property",  
+        "value": "17 02 01"  
+    },  
+    "hazardous": {  
+        "type": "Property",  
+        "value": false  
+    },  
+    "quantity": {  
+        "type": "Property",  
+        "value": 24,  
+        "unitCode": "C62"  
+    },  
+    "recycledTimes": {  
+        "type": "Property",  
+        "value": 0  
+    },  
+    "suitableRecoveryRoutes": {  
+        "type": "Property",  
+        "value": [  
+            "reuse",  
+            "repurpose",  
+            "recycle"  
+        ]  
+    },  
+    "certifications": {  
+        "type": "Property",  
+        "value": [  
+            {  
+                "scheme": "FSC",  
+                "certificateId": "FSC-C123456",  
+                "issuer": "Soil Association",  
+                "validUntil": "2028-03-31"  
+            }  
+        ]  
+    },  
+    "@context": [  
+        "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/material/wood/context.jsonld",  
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"  
+    ]  
 }  
 ```  
-</details><!-- /80-Examples -->
-  
+</details><!-- /80-Examples -->  

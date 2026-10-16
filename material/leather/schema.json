@@ -1,14 +1,20 @@
 {
     "$schema": "http://json-schema.org/schema#",
     "modelTags": "",
-    "$id": "https://github.com/konstantinosGombakis/CIRCULOOS_Data_model/blob/main/material/leather/schema.json",
+    "$id": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/material/leather/schema.json",
     "$schemaVersion": "0.0.1",
     "title": "Data model for representing leather material",
-    "description": "Representing leather material for the CIRCILOOS project",
+    "description": "Representing leather material for the CIRCULOOS project",
     "type": "object",
     "allOf": [
         {
             "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
+        },
+        {
+            "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
+        },
+        {
+            "$ref": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/material/circularity-commons.json#/definitions/Circularity-Commons"
         },
         {
             "properties": {
@@ -17,10 +23,10 @@
                     "enum": [
                         "leather"
                     ],
-                    "description": "Property. NGSI Entity type. It has to be Storey, leather"
-                }, 
+                    "description": "Property. NGSI Entity type. It has to be leather"
+                },
                 "origin": {
-                    "type": "string", 
+                    "type": "string",
                     "description": "Property. The source that the leather was originated",
                     "enum": [
                         "cow",
@@ -28,40 +34,72 @@
                         "horse",
                         "other animals",
                         "vegan"
-                        ]
+                    ]
                 },
-                "color":{
+                "materialSource": {
                     "type": "string",
-                    "description": "Property. The final color of the leather",
                     "enum": [
-                        "brown",
-                        "black",
-                        "....",
-                        "rainbow"
-                    ]
+                        "preConsumerOffcut",
+                        "productionScrap",
+                        "postConsumer",
+                        "deadstock"
+                    ],
+                    "description": "Property. Where the leather comes from in the value chain: cutting offcuts, tannery production scrap (shavings, trimmings), used products, or unsold stock."
                 },
-                "surfaceSize":{
-                    "type": "integer",
-                    "description": "Property. The surface size of the leather. Unit palm ie humman palm",
-                    "minimum":0
+                "color": {
+                    "type": "string",
+                    "description": "Property. The final color of the leather."
                 },
-                "thickness":{
-                    "type":"float",
-                    "description":"Property. The thickness of the leather",
-                    "minimum":0
+                "area": {
+                    "type": "object",
+                    "properties": {
+                        "value": {
+                            "type": "number",
+                            "description": "Property. https://schema.org/Number.",
+                            "minimum": 0
+                        }
+                    },
+                    "description": "Property. Unit: given by unitCode, MTK (m2) or FTK (ft2, the usual leather trade unit). Usable surface area of the leather. "
                 },
-                "tannedProcess":{
-                    "type":"string",
-                    "description":"Property. The tanned used",
-                    "enum":[
+                "thickness": {
+                    "type": "object",
+                    "properties": {
+                        "value": {
+                            "type": "number",
+                            "description": "Property. https://schema.org/Number.",
+                            "minimum": 0
+                        }
+                    },
+                    "description": "Property. Unit: mm. The thickness of the leather. "
+                },
+                "pieceFormat": {
+                    "type": "string",
+                    "enum": [
+                        "fullHide",
+                        "side",
+                        "bend",
+                        "shoulder",
+                        "belly",
+                        "offcut"
+                    ],
+                    "description": "Property. Shape of the piece: a full hide, a standard cut of it, or an irregular offcut."
+                },
+                "tannedProcess": {
+                    "type": "string",
+                    "description": "Property. The tanning process used. chromeFree covers wet-white leather.",
+                    "enum": [
                         "chrome",
-                        "vegetable"
+                        "vegetable",
+                        "chromeFree",
+                        "aldehyde",
+                        "synthetic",
+                        "mixed"
                     ]
                 },
-                "type1":{
-                    "type":"string",
-                    "description":"Property. The treatment used",
-                    "enum":[
+                "leatherCut": {
+                    "type": "string",
+                    "description": "Property. The cut or surface of the leather: grain side, split, nubuck, suede or fur.",
+                    "enum": [
                         "grainside",
                         "split",
                         "nubuck",
@@ -69,24 +107,19 @@
                         "furs"
                     ]
                 },
-                "surfaceFinishWithCovering":{
-                    "type":"boolean",
-                    "description":"Property. Leather finished (with covering) or not finished"
+                "surfaceFinishWithCovering": {
+                    "type": "boolean",
+                    "description": "Property. Leather finished (with covering) or not finished"
                 },
-                "hardness":{
-                    "type":"string",
-                    "description":"Property. Overall hardness of the leather",
-                    "enum":[
+                "hardness": {
+                    "type": "string",
+                    "description": "Property. Overall hardness of the leather",
+                    "enum": [
                         "soft",
                         "medium",
                         "hard"
                     ]
-                },
-                "recycledTimes":{
-                    "type": "integer",
-                    "description": "Property. The number of times that the leather have been recycled",
-                    "minimum":0
-                }        
+                }
             }
         }
     ],
@@ -94,6 +127,7 @@
         "id",
         "type",
         "color",
-        "surfaceSize"
-    ]
+        "area"
+    ],
+    "license": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/refs/heads/main/LICENSE"
 }

@@ -1,38 +1,22 @@
-<!-- 10-Header -->
-  
-Entity: leather  
-===============
-<!-- /10-Header -->
-  
-<!-- 15-License -->
-  
+<!-- 10-Header -->  
+Entity: intra-communication  
+===========================<!-- /10-Header -->  
+<!-- 15-License -->  
+[Open License](https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/refs/heads/main/LICENSE)  
+<!-- /15-License -->  
+<!-- 20-Description -->  
+Global description: **CIRCULOOS data model for intra-communication example-normalized.json**  
+version: 0.0.1  
+<!-- /20-Description -->  
+<!-- 30-PropertiesList -->  
 
-[Open License](https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/refs/heads/main/LICENSE)
+## List of properties  
 
-<!-- /15-License -->
-  
-<!-- 20-Description -->
-  
-
-Global description: **CIRCULOOS data model for intra-communication example-normalized.json**  
-
-version: 0.0.1  
-<!-- /20-Description -->
-  
-<!-- 30-PropertiesList -->
-  
-
-
-## List of properties  
-
-
-<sup><sub>[*] If there is not a type in an attribute is because it could have several types or different formats/patterns</sub></sup>  
-- `CountryCode[object]`: Country code.  
-	- `observedAt`:     
+<sup><sub>[*] If there is not a type in an attribute is because it could have several types or different formats/patterns</sub></sup>  
+- `CountryCode[object]`: Country code.  	- `observedAt`:     
 	- `type`:     
 	- `value`:     
-- `address[object]`: The mailing address  . Model: [https://schema.org/address](https://schema.org/address)
-	- `addressCountry[string]`: Property. The country. For example, Spain. Model:'https://schema.org/addressCountry'    
+- `address[object]`: The mailing address  . Model: [https://schema.org/address](https://schema.org/address)	- `addressCountry[string]`: Property. The country. For example, Spain. Model:'https://schema.org/addressCountry'    
 	- `addressLocality[string]`: Property. The locality in which the street address is, and which is in the region. Model:'https://schema.org/addressLocality'    
 	- `addressRegion[string]`: Property. The region in which the locality is, and which is in the country. Model:'https://schema.org/addressRegion'    
 	- `district[string]`: Property. A district is a type of administrative division that, in some countries, is managed by the local government    
@@ -40,119 +24,66 @@ version: 0.0.1
 	- `postalCode[string]`: Property. The postal code. For example, 24004. Model:'https://schema.org/https://schema.org/postalCode'    
 	- `streetAddress[string]`: Property. The street address. Model:'https://schema.org/streetAddress'    
 	- `streetNr[string]`: Property. Number identifying a specific property on a public street    
-- `alternateName[string]`: An alternative name for this item  
-- `areaServed[string]`: The geographic area where a service or offered item is provided  . Model: [https://schema.org/Text](https://schema.org/Text)
-- `availableFrom[object]`: Date from which the material is available.  
-	- `observedAt`:     
+- `alternateName[string]`: An alternative name for this item  - `areaServed[string]`: The geographic area where a service or offered item is provided  . Model: [https://schema.org/Text](https://schema.org/Text)- `availableFrom[object]`: Date from which the material is available.  	- `observedAt`:     
 	- `type`:     
 	- `value`:     
-- `dataProvider[string]`: A sequence of characters identifying the provider of the harmonised data entity  
-- `dateCreated[date-time]`: Entity creation timestamp. This will usually be allocated by the storage platform  
-- `dateModified[date-time]`: Timestamp of the last modification of the entity. This will usually be allocated by the storage platform  
-- `description[string]`: A description of this item  
-- `id[string]`: Unique identifier for the entity.  
-- `imageURL[object]`: URL of the material image.  
-	- `observedAt`:     
+- `dataProvider[string]`: A sequence of characters identifying the provider of the harmonised data entity  - `dateCreated[date-time]`: Entity creation timestamp. This will usually be allocated by the storage platform  - `dateModified[date-time]`: Timestamp of the last modification of the entity. This will usually be allocated by the storage platform  - `description[string]`: A description of this item  - `id[string]`: Unique identifier for the entity.  - `imageURL[object]`: URL of the material image.  	- `observedAt`:     
 	- `type`:     
 	- `value`:     
-- `location[*]`: GeoProperty. Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon  
-- `materialAdStatus[object]`: Status of the advertisement.  
-	- `observedAt`:     
+- `location[*]`: GeoProperty. Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon  - `materialAdStatus[object]`: Status of the advertisement.  	- `observedAt`:     
 	- `type`:     
 	- `value`:     
-- `materialAdTitle[object]`: Title of the material advertisement.  
-	- `observedAt`:     
+- `materialAdTitle[object]`: Title of the material advertisement.  	- `observedAt`:     
 	- `type`:     
 	- `value`:     
-- `materialAdType[object]`: Type of advertisement: Sell or Buy.  
-	- `observedAt`:     
+- `materialAdType[object]`: Type of advertisement: Sell or Buy.  	- `observedAt`:     
 	- `type`:     
 	- `value[string]`: Type of advertisement: Sell or Buy.    
-- `materialDescription[object]`: Description of the material.  
-	- `observedAt`:     
+- `materialDescription[object]`: Description of the material.  	- `observedAt`:     
 	- `type`:     
 	- `value`:     
-- `materialPrice[object]`: Price of the material.  
-	- `observedAt`:     
+- `materialPrice[object]`: Price of the material.  	- `observedAt`:     
 	- `type`:     
 	- `value`:     
-- `materialQuantity[object]`: Quantity of the material.  
-	- `observedAt`:     
+- `materialQuantity[object]`: Quantity of the material.  	- `observedAt`:     
 	- `type`:     
 	- `unitCode`:     
 	- `value`:     
-- `materialToSellOrBuy[object]`: Material to sell or buy.  
-	- `observedAt`:     
+- `materialToSellOrBuy[object]`: Material to sell or buy.  	- `observedAt`:     
 	- `type`:     
 	- `value`:     
-- `materialTypeL0[object]`: Facility Input Categories, Level 0 material type.  
-	- `observedAt`:     
+- `materialTypeL0[object]`: Facility Input Categories, Level 0 material type.  	- `observedAt`:     
 	- `type`:     
 	- `value`:     
-- `materialTypeL1[object]`: Facility Output Categories, Level 1 material type.  
-	- `observedAt`:     
+- `materialTypeL1[object]`: Facility Output Categories, Level 1 material type.  	- `observedAt`:     
 	- `type`:     
 	- `value`:     
-- `name[string]`: The name of this item  
-- `ownedBy[object]`: Reference relationship: owner of the material.  
-	- `object`:     
+- `name[string]`: The name of this item  - `ownedBy[object]`: Reference relationship: owner of the material.  	- `object`:     
 	- `observedAt`:     
 	- `type`:     
-- `owner[array]`: A List containing a JSON encoded sequence of characters referencing the unique Ids of the owner(s)  
-- `physicalFormCategory[object]`: To categorize materials based on their physical form: byWeight, byDimensions, bySurface.  
-	- `observedAt`:     
+- `owner[array]`: A List containing a JSON encoded sequence of characters referencing the unique Ids of the owner(s)  - `physicalFormCategory[object]`: To categorize materials based on their physical form: byWeight, byDimensions, bySurface.  	- `observedAt`:     
 	- `type`:     
 	- `value[string]`: Categorizes materials based on their physical form: byWeight, byDimensions, or bySurface.    
-- `productionFacility[object]`: Reference relationship: production facility related to the material.  
-	- `object`:     
+- `productionFacility[object]`: Reference relationship: production facility related to the material.  	- `object`:     
 	- `observedAt`:     
 	- `type`:     
-- `seeAlso[*]`: list of uri pointing to additional resources about the item  
-- `source[string]`: A sequence of characters giving the original source of the entity data as a URL. Recommended to be the fully qualified domain name of the source provider, or the URL to the source object  
-- `type[string]`: NGSI Entity type.  
-<!-- /30-PropertiesList -->
-  
-<!-- 35-RequiredProperties -->
-  
-
-Required properties  
-- `CountryCode`  
-- `availableFrom`  
-- `id`  
-- `imageURL`  
-- `materialAdStatus`  
-- `materialAdTitle`  
-- `materialAdType`  
-- `materialDescription`  
-- `materialPrice`  
-- `materialQuantity`  
-- `materialToSellOrBuy`  
-- `materialTypeL0`  
-- `materialTypeL1`  
-- `ownedBy`  
-- `physicalFormCategory`  
-- `productionFacility`  
-- `type`  
-<!-- /35-RequiredProperties -->
-  
-<!-- 40-RequiredProperties -->
-  
-<!-- /40-RequiredProperties -->
-  
-<!-- 50-DataModelHeader -->
-  
-
-## Data Model description of properties  
-
-Sorted alphabetically (click for details)  
-<!-- /50-DataModelHeader -->
-  
-<!-- 60-ModelYaml -->
-  
+- `refMaterial[object]`: Reference relationship: material entity (e.g. plastic, wood, leather) describing the offered or requested lot, with its circularity data.  	- `object`:     
+	- `observedAt`:     
+	- `type`:     
+- `seeAlso[*]`: list of uri pointing to additional resources about the item  - `source[string]`: A sequence of characters giving the original source of the entity data as a URL. Recommended to be the fully qualified domain name of the source provider, or the URL to the source object  - `type[string]`: NGSI Entity type.  <!-- /30-PropertiesList -->  
+<!-- 35-RequiredProperties -->  
+Required properties  
+- `CountryCode`  - `availableFrom`  - `id`  - `imageURL`  - `materialAdStatus`  - `materialAdTitle`  - `materialAdType`  - `materialDescription`  - `materialPrice`  - `materialQuantity`  - `materialToSellOrBuy`  - `materialTypeL0`  - `materialTypeL1`  - `ownedBy`  - `physicalFormCategory`  - `productionFacility`  - `type`  <!-- /35-RequiredProperties -->  
+<!-- 40-RequiredProperties -->  
+<!-- /40-RequiredProperties -->  
+<!-- 50-DataModelHeader -->  
+## Data Model description of properties  
+Sorted alphabetically (click for details)  
+<!-- /50-DataModelHeader -->  
+<!-- 60-ModelYaml -->  
 <details><summary><strong>full yaml details</strong></summary>    
-
-```yaml  
-leather:    
+```yaml  
+intra-communication:    
   description: CIRCULOOS data model for intra-communication example-normalized.json    
   properties:    
     CountryCode:    
@@ -582,6 +513,20 @@ leather:
         type:    
           type: string    
       type: object    
+    refMaterial:    
+      description: 'Reference relationship: material entity (e.g. plastic, wood, leather) describing the offered or requested lot, with its circularity data.'    
+      properties:    
+        object:    
+          format: uri    
+          type: string    
+        observedAt:    
+          format: date-time    
+          type: string    
+        type:    
+          enum:    
+            - Relationship    
+          type: string    
+      type: object    
     seeAlso:    
       description: list of uri pointing to additional resources about the item    
       oneOf:    
@@ -623,25 +568,17 @@ leather:
   type: object    
   x-derived-from: ''    
   x-disclaimer: Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program    
-  x-license-url: https://github.com/smart-data-models/circuloos_data_model/blob/master/leather/LICENSE.md    
+  x-license-url: https://github.com/smart-data-models/circuloos_data_model/blob/master/intra-communication/LICENSE.md    
   x-model-schema: https://raw.githubusercontent.com/TO_ADD_LATER/intra-communication/example/schema.json    
   x-model-tags: ''    
   x-version: 0.0.1    
 ```  
 </details>    
-<!-- /60-ModelYaml -->
-  
-<!-- 70-MiddleNotes -->
-  
-<!-- /70-MiddleNotes -->
-  
-<!-- 80-Examples -->
-  
-
-## Example payloads    
-
-Not available the example of a leather in JSON-LD format as key-values. This is compatible with NGSI-LD when  using `options=keyValues` and returns the context data of an individual entity.  
-
-Not available the example of a leather in JSON-LD format as normalized. This is compatible with NGSI-LD when not using options and returns the context data of an individual entity.  
-<!-- /80-Examples -->
-  
+<!-- /60-ModelYaml -->  
+<!-- 70-MiddleNotes -->  
+<!-- /70-MiddleNotes -->  
+<!-- 80-Examples -->  
+## Example payloads    
+Not available the example of a intra-communication in JSON-LD format as key-values. This is compatible with NGSI-LD when  using `options=keyValues` and returns the context data of an individual entity.  
+Not available the example of a intra-communication in JSON-LD format as normalized. This is compatible with NGSI-LD when not using options and returns the context data of an individual entity.  
+<!-- /80-Examples -->  
