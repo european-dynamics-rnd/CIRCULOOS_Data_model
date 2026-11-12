@@ -2,131 +2,157 @@
   "id": "urn:ngsi-ld:efi:entity-001",
   "type": "environmental_footprint_indicator",
   "acidificationAccumulatedExceedanceAE": {
+    "type": "Property",
     "value": "345.67",
     "unitCode": "XMHQ",
     "observedAt": "2024-09-25T10:20:30Z"
   },
   "climateChangeGlobalWarmingPotentialGWP": {
+    "type": "Property",
     "value": "1234.56",
     "unitCode": "XCO2",
     "observedAt": "2024-09-25T12:34:56Z"
   },
   "climateChangeBiogenicGWP100": {
+    "type": "Property",
     "value": "98.76",
     "unitCode": "XCO2",
     "observedAt": "2024-09-24T15:45:00Z"
   },
   "climateChangeFossilGWP100": {
+    "type": "Property",
     "value": "567.89",
     "unitCode": "XCO2",
     "observedAt": "2024-09-23T10:45:00Z"
   },
   "climateChangeLandUseAndLULUCGWP": {
+    "type": "Property",
     "value": "432.1",
     "unitCode": "XCO2",
     "observedAt": "2024-09-22T11:30:00Z"
   },
   "ecotoxicityFreshwaterComparativeToxicCTU": {
+    "type": "Property",
     "value": "876.54",
     "unitCode": "CTUe",
     "observedAt": "2024-09-22T08:15:00Z"
   },
   "ecotoxicityFreshwaterInorganicsCTUe": {
+    "type": "Property",
     "value": "543.21",
     "unitCode": "CTUe",
     "observedAt": "2024-09-21T09:30:00Z"
   },
   "ecotoxicityFreshwaterOrganicsCTUe": {
+    "type": "Property",
     "value": "321.09",
     "unitCode": "CTUe",
     "observedAt": "2024-09-20T12:00:00Z"
   },
   "energyResourcesAbioticDepletionFossils": {
+    "type": "Property",
     "value": "987.65",
     "unitCode": "MJ",
     "observedAt": "2024-09-19T14:30:00Z"
   },
   "eutrophicationFreshwaterNutrientsP": {
+    "type": "Property",
     "value": "0.987",
     "unitCode": "kg P-Eq",
     "observedAt": "2024-09-18T16:30:00Z"
   },
   "eutrophicationMarineNutrientsN": {
+    "type": "Property",
     "value": "0.123",
     "unitCode": "kg N-Eq",
     "observedAt": "2024-09-17T08:30:00Z"
   },
   "eutrophicationTerrestrialAccumExceedance": {
+    "type": "Property",
     "value": "765.43",
     "unitCode": "mol N-Eq",
     "observedAt": "2024-09-16T10:30:00Z"
   },
   "humanToxicityCarcinogenicCTUh": {
+    "type": "Property",
     "value": "56.78",
     "unitCode": "CTUh",
     "observedAt": "2024-09-15T14:45:00Z"
   },
   "humanToxicityCarcinogenicInorganicsCTU": {
+    "type": "Property",
     "value": "12.34",
     "unitCode": "CTUh",
     "observedAt": "2024-09-14T16:15:00Z"
   },
   "humanToxicityCarcinogenicOrganicsCTU": {
+    "type": "Property",
     "value": "34.56",
     "unitCode": "CTUh",
     "observedAt": "2024-09-13T18:30:00Z"
   },
   "humanToxicityNonCarcinogenicCTUh": {
+    "type": "Property",
     "value": "78.90",
     "unitCode": "CTUh",
     "observedAt": "2024-09-12T08:15:00Z"
   },
   "humanToxicityNonCarcinogenicInorganicsCTU": {
+    "type": "Property",
     "value": "65.43",
     "unitCode": "CTUh",
     "observedAt": "2024-09-11T12:45:00Z"
   },
   "humanToxicityNonCarcinogenicOrganicsCTU": {
+    "type": "Property",
     "value": "90.12",
     "unitCode": "CTUh",
     "observedAt": "2024-09-10T10:45:00Z"
   },
   "ionisingRadiationHumanHealthU235": {
+    "type": "Property",
     "value": "76.54",
     "unitCode": "BQU",
     "observedAt": "2024-09-09T09:15:00Z"
   },
   "landUseSoilQualityIndex": {
+    "type": "Property",
     "value": "5.43",
     "unitCode": "M2AQ",
     "observedAt": "2024-09-08T07:45:00Z"
   },
   "materialResourcesAbioticDepletionElements": {
+    "type": "Property",
     "value": "543.21",
     "unitCode": "kg Sb-Eq",
     "observedAt": "2024-09-07T16:00:00Z"
   },
   "ozoneDepletionPotentialODP": {
+    "type": "Property",
     "value": "0.0123",
     "unitCode": "kg CFC-11-Eq",
     "observedAt": "2024-09-06T14:30:00Z"
   },
   "particulateMatterFormationHealth": {
+    "type": "Property",
     "value": "432.10",
     "unitCode": "kg PM10-Eq",
     "observedAt": "2024-09-05T13:30:00Z"
   },
   "photochemicalOxidantFormationHealth": {
+    "type": "Property",
     "value": "321.98",
     "unitCode": "kg NMVOC-Eq",
     "observedAt": "2024-09-04T15:15:00Z"
   },
   "waterUseUserDeprivationPotential": {
+    "type": "Property",
     "value": "543.12",
     "unitCode": "m3 H2O-Eq",
     "observedAt": "2024-09-03T18:00:00Z"
   },
-     "@context": [
-        "https://TOBELater/context.jsonld"
-    ]
+  "@context": [
+    "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/utils/circuloos_data_platform.jsonld",
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"
+  ]
 }

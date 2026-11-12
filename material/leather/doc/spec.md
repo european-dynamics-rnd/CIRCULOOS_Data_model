@@ -21,7 +21,7 @@ Entity: leather
 	- `postalCode[string]`: Property. The postal code. For example, 24004. Model:'https://schema.org/https://schema.org/postalCode'    
 	- `streetAddress[string]`: Property. The street address. Model:'https://schema.org/streetAddress'    
 	- `streetNr[string]`: Property. Number identifying a specific property on a public street    
-- `alternateName[string]`: An alternative name for this item  - `area[object]`: Unit: given by unitCode, MTK (m2) or FTK (ft2, the usual leather trade unit). Usable surface area of the leather.   	  
+- `alternateName[string]`: An alternative name for this item  - `area[object]`: Unit: given by unitCode, MTK (m2) or FTK (ft2, the usual leather trade unit). Usable surface area of the leather.   	- `unitCode[string]`: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
 	- `value[number]`: Property. https://schema.org/Number.    
 - `areaServed[string]`: The geographic area where a service or offered item is provided  . Model: [https://schema.org/Text](https://schema.org/Text)- `batchNumber[string]`: Lot/batch number of this quantity of material, for traceability back to its source.  - `biobasedContent[object]`: Unit: %. Share of the material derived from biomass (EN 16785-1).  	  
 	- `value[number]`: Property. https://schema.org/Number.    
@@ -33,7 +33,7 @@ Entity: leather
 	- `value[number]`: Property. https://schema.org/Number.    
 - `recycledContent[object]`: Unit: %. Total share of recycled material (ISO 14021).  	  
 	- `value[number]`: Property. https://schema.org/Number.    
-- `recycledTimes[integer]`: The number of times this material has already been through a recycling loop.  - `refDigitalProductPassport[uri]`: Digital Product Passport (EU ESPR, Regulation (EU) 2024/1781) of the product this material comes from or belongs to.  - `refEnvironmentalFootprint[uri]`: environmental_footprint_indicator entity holding the environmental footprint (LCA indicators) of this material.  - `refParentMaterial[array]`: Material entities (lots) this material was produced from. Following the links back gives the material loop history.  - `refProcess[uri]`: Process or process event entity that produced this material.  - `seeAlso[*]`: list of uri pointing to additional resources about the item  - `source[string]`: A sequence of characters giving the original source of the entity data as a URL. Recommended to be the fully qualified domain name of the source provider, or the URL to the source object  - `substancesOfConcern[array]`: Substances of concern present in the material, as required by the EU ESPR Digital Product Passport.  - `suitableRecoveryRoutes[array]`: Circular strategies (R-ladder) the material is suitable for. Used to match offers with demand.  - `surfaceFinishWithCovering[boolean]`: Leather finished (with covering) or not finished  - `tannedProcess[string]`: The tanning process used. chromeFree covers wet-white leather.  - `thickness[object]`: Unit: mm. The thickness of the leather.   	  
+- `recycledTimes[integer]`: The number of times this material has already been through a recycling loop.  - `refDigitalProductPassport[uri]`: Digital Product Passport (EU ESPR, Regulation (EU) 2024/1781) of the product this material comes from or belongs to.  - `refEnvironmentalFootprint[uri]`: environmental_footprint_indicator entity holding the environmental footprint (LCA indicators) of this material.  - `refParentMaterial[array]`: Material entities (lots) this material was produced from. Following the links back gives the material loop history.  - `refProcess[uri]`: Process or process event entity that produced this material.  - `seeAlso[*]`: list of uri pointing to additional resources about the item  - `source[string]`: A sequence of characters giving the original source of the entity data as a URL. Recommended to be the fully qualified domain name of the source provider, or the URL to the source object  - `substancesOfConcern[array]`: Substances of concern present in the material, as required by the EU ESPR Digital Product Passport.  - `suitableRecoveryRoutes[array]`: Circular strategies (R-ladder) the material is suitable for. Used to match offers with demand.  - `surfaceFinishWithCovering[boolean]`: Leather finished (with covering) or not finished  - `tannedProcess[string]`: The tanning process used. chromeFree covers wet-white leather.  - `thickness[object]`: Unit: mm. The thickness of the leather.   	- `unitCode[string]`: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
 	- `value[number]`: Property. https://schema.org/Number.    
 - `type[string]`: NGSI Entity type. It has to be leather  - `wasteCode[string]`: European List of Waste code (Commission Decision 2000/532/EC), e.g. 07 02 13 for waste plastic. A trailing * marks hazardous waste. Only when materialStatus is waste.  <!-- /30-PropertiesList -->  
 <!-- 35-RequiredProperties -->  
@@ -90,6 +90,9 @@ leather:
     area:    
       description: 'Unit: given by unitCode, MTK (m2) or FTK (ft2, the usual leather trade unit). Usable surface area of the leather. '    
       properties:    
+        unitCode:    
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
+          type: string    
         value:    
           description: Property. https://schema.org/Number.    
           minimum: 0    
@@ -642,6 +645,9 @@ leather:
     thickness:    
       description: 'Unit: mm. The thickness of the leather. '    
       properties:    
+        unitCode:    
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
+          type: string    
         value:    
           description: Property. https://schema.org/Number.    
           minimum: 0    
@@ -681,7 +687,82 @@ leather:
 <!-- /70-MiddleNotes -->  
 <!-- 80-Examples -->  
 ## Example payloads    
-Not available the example of a leather in JSON-LD format as key-values. This is compatible with NGSI-LD when  using `options=keyValues` and returns the context data of an individual entity.  
+#### leather NGSI-LD key-values Example    
+Here is an example of a leather in JSON-LD format as key-values. This is compatible with NGSI-LD when  using `options=keyValues` and returns the context data of an individual entity.  
+<details><summary><strong>show/hide example</strong></summary>    
+```json  
+{  
+  "id": "urn:ngsi-ld:leather:IDAS1313",  
+  "type": "leather",  
+  "origin": "cow",  
+  "color": "black",  
+  "thickness": {  
+    "value": 0.3,  
+    "unitCode": "MMT"  
+  },  
+  "tannedProcess": "chrome",  
+  "surfaceFinishWithCovering": true,  
+  "hardness": "medium",  
+  "recycledTimes": 2,  
+  "materialSource": "preConsumerOffcut",  
+  "area": {  
+    "value": 0.35,  
+    "unitCode": "MTK"  
+  },  
+  "pieceFormat": "offcut",  
+  "leatherCut": "split",  
+  "materialStatus": "waste",  
+  "wasteCode": "04 01 08",  
+  "hazardous": false,  
+  "quantity": {  
+    "value": 85,  
+    "unitCode": "KGM"  
+  },  
+  "substancesOfConcern": [  
+    {  
+      "name": "Chromium(VI)",  
+      "casNumber": "18540-29-9",  
+      "concentration": 1.2,  
+      "regulation": "REACH-AnnexXVII"  
+    }  
+  ],  
+  "composition": [  
+    {  
+      "name": "Collagen",  
+      "share": 80  
+    },  
+    {  
+      "name": "Chromium(III) oxide",  
+      "casNumber": "1308-38-9",  
+      "share": 4  
+    }  
+  ],  
+  "suitableRecoveryRoutes": [  
+    "repurpose",  
+    "recycle"  
+  ],  
+  "certifications": [  
+    {  
+      "scheme": "LWG",  
+      "certificateId": "LWG-GR-0042",  
+      "issuer": "Leather Working Group",  
+      "validUntil": "2027-01-31"  
+    }  
+  ],  
+  "location": {  
+    "type": "Point",  
+    "coordinates": [  
+      23.7275,  
+      37.9838  
+    ]  
+  },  
+  "@context": [  
+    "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/material/leather/context.jsonld",  
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"  
+  ]  
+}  
+```  
+</details>  
 #### leather NGSI-LD normalized Example    
 Here is an example of a leather in JSON-LD format as normalized. This is compatible with NGSI-LD when not using options and returns the context data of an individual entity.  
 <details><summary><strong>show/hide example</strong></summary>    

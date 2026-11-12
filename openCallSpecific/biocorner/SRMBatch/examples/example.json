@@ -1,0 +1,13 @@
+{
+  "id": "urn:ngsi-ld:SRMBatch:RH-CONF01-2025",
+  "type": "SRMBatch",
+  "batchCode": "RH-CONF01-2025",
+  "derivedFromSRM": "urn:ngsi-ld:SRM:RiceHusk",
+  "density": 115,
+  "region": "Emilia-Romagna",
+  "harvestSeason": "Autumn 2025",
+  "suppliedBy": "urn:ngsi-ld:Supplier:Confidential01-Rice",
+  "description": "Autumn 2025 harvest, rice husk",
+  "arrivalDate": "2024-11-01",
+  "country": "Italy"
+}

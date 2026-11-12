@@ -1,0 +1,104 @@
+{
+  "id": "urn:ngsi-ld:MortarProcess:DryMixing-Mortar1",
+  "type": "MortarProcess",
+  "name": {
+    "type": "Text",
+    "value": "Industrial Dry Mixing Process - MORTAR 1 Posidonia",
+    "metadata": {
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-15T15:16:02.000Z"
+      }
+    }
+  },
+  "energyConsumption": {
+    "type": "Number",
+    "value": 60,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "KWH/TNE"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-15T15:16:02.000Z"
+      }
+    }
+  },
+  "CO2emission": {
+    "type": "Number",
+    "value": 70,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "KGM/TNE"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-15T15:16:02.000Z"
+      }
+    }
+  },
+  "dateCreated": {
+    "type": "DateTime",
+    "value": "2018-01-06T00:00:00Z",
+    "metadata": {
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-15T15:16:02.000Z"
+      }
+    }
+  },
+  "waterConsumption": {
+    "type": "StructuredValue",
+    "value": {
+      "maxValue": 100
+    },
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "LTR/TNE"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-15T15:16:02.000Z"
+      }
+    }
+  },
+  "wasteGeneration": {
+    "type": "StructuredValue",
+    "value": {
+      "maxValue": 10
+    },
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "KGM/TNE"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-15T15:16:02.000Z"
+      }
+    }
+  },
+  "description": {
+    "type": "Text",
+    "value": "Automated powder mixing system with controlled temperature and humidity",
+    "metadata": {
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-15T15:16:02.000Z"
+      }
+    }
+  },
+  "recyclingProcess": {
+    "type": "Text",
+    "value": "100% powders produced recyclable",
+    "metadata": {
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-15T15:16:02.000Z"
+      }
+    }
+  }
+}

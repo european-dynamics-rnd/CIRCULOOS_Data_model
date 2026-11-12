@@ -1,0 +1,144 @@
+{
+  "id": "urn:ngsi-ld:ElectrospindleObservation:Reclaim:iot-001",
+  "type": "ElectrospindleObservation",
+  "spindleMotorTemperature": {
+    "type": "Number",
+    "value": 46.172063,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "CEL"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-30T17:50:00.000Z"
+      }
+    }
+  },
+  "spindleBearingTemperature": {
+    "type": "Number",
+    "value": 43.234649,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "CEL"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-30T17:50:00.000Z"
+      }
+    }
+  },
+  "xAxisMotorCurrent": {
+    "type": "Number",
+    "value": 1.435287,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "AMP"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-30T17:50:00.000Z"
+      }
+    }
+  },
+  "yAxisMotorCurrent": {
+    "type": "Number",
+    "value": 1.706294,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "AMP"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-30T17:50:00.000Z"
+      }
+    }
+  },
+  "zAxisMotorCurrent": {
+    "type": "Number",
+    "value": 2.208068,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "AMP"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-30T17:50:00.000Z"
+      }
+    }
+  },
+  "spindleMotorCurrent": {
+    "type": "Number",
+    "value": 3.677316,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "AMP"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-30T17:50:00.000Z"
+      }
+    }
+  },
+  "xAxisMotorSpeed": {
+    "type": "Number",
+    "value": 10.542505,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "RPM"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-30T17:50:00.000Z"
+      }
+    }
+  },
+  "yAxisMotorSpeed": {
+    "type": "Number",
+    "value": 1.117344,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "RPM"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-30T17:50:00.000Z"
+      }
+    }
+  },
+  "zAxisMotorSpeed": {
+    "type": "Number",
+    "value": 40.608215,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "RPM"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-30T17:50:00.000Z"
+      }
+    }
+  },
+  "spindleSpeed": {
+    "type": "Number",
+    "value": 10254,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "RPM"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-30T17:50:00.000Z"
+      }
+    }
+  }
+}

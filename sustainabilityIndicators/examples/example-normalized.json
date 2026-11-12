@@ -1,0 +1,354 @@
+{
+  "id": "urn:ngsi-ld:efi:entity-001",
+  "type": "environmental_footprint_indicator",
+  "acidificationAccumulatedExceedanceAE": {
+    "type": "Text",
+    "value": "345.67",
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "XMHQ"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2024-09-25T10:20:30Z"
+      }
+    }
+  },
+  "climateChangeGlobalWarmingPotentialGWP": {
+    "type": "Text",
+    "value": "1234.56",
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "XCO2"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2024-09-25T12:34:56Z"
+      }
+    }
+  },
+  "climateChangeBiogenicGWP100": {
+    "type": "Text",
+    "value": "98.76",
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "XCO2"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2024-09-24T15:45:00Z"
+      }
+    }
+  },
+  "climateChangeFossilGWP100": {
+    "type": "Text",
+    "value": "567.89",
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "XCO2"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2024-09-23T10:45:00Z"
+      }
+    }
+  },
+  "climateChangeLandUseAndLULUCGWP": {
+    "type": "Text",
+    "value": "432.1",
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "XCO2"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2024-09-22T11:30:00Z"
+      }
+    }
+  },
+  "ecotoxicityFreshwaterComparativeToxicCTU": {
+    "type": "Text",
+    "value": "876.54",
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "CTUe"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2024-09-22T08:15:00Z"
+      }
+    }
+  },
+  "ecotoxicityFreshwaterInorganicsCTUe": {
+    "type": "Text",
+    "value": "543.21",
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "CTUe"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2024-09-21T09:30:00Z"
+      }
+    }
+  },
+  "ecotoxicityFreshwaterOrganicsCTUe": {
+    "type": "Text",
+    "value": "321.09",
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "CTUe"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2024-09-20T12:00:00Z"
+      }
+    }
+  },
+  "energyResourcesAbioticDepletionFossils": {
+    "type": "Text",
+    "value": "987.65",
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "MJ"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2024-09-19T14:30:00Z"
+      }
+    }
+  },
+  "eutrophicationFreshwaterNutrientsP": {
+    "type": "Text",
+    "value": "0.987",
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "kg P-Eq"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2024-09-18T16:30:00Z"
+      }
+    }
+  },
+  "eutrophicationMarineNutrientsN": {
+    "type": "Text",
+    "value": "0.123",
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "kg N-Eq"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2024-09-17T08:30:00Z"
+      }
+    }
+  },
+  "eutrophicationTerrestrialAccumExceedance": {
+    "type": "Text",
+    "value": "765.43",
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "mol N-Eq"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2024-09-16T10:30:00Z"
+      }
+    }
+  },
+  "humanToxicityCarcinogenicCTUh": {
+    "type": "Text",
+    "value": "56.78",
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "CTUh"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2024-09-15T14:45:00Z"
+      }
+    }
+  },
+  "humanToxicityCarcinogenicInorganicsCTU": {
+    "type": "Text",
+    "value": "12.34",
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "CTUh"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2024-09-14T16:15:00Z"
+      }
+    }
+  },
+  "humanToxicityCarcinogenicOrganicsCTU": {
+    "type": "Text",
+    "value": "34.56",
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "CTUh"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2024-09-13T18:30:00Z"
+      }
+    }
+  },
+  "humanToxicityNonCarcinogenicCTUh": {
+    "type": "Text",
+    "value": "78.90",
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "CTUh"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2024-09-12T08:15:00Z"
+      }
+    }
+  },
+  "humanToxicityNonCarcinogenicInorganicsCTU": {
+    "type": "Text",
+    "value": "65.43",
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "CTUh"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2024-09-11T12:45:00Z"
+      }
+    }
+  },
+  "humanToxicityNonCarcinogenicOrganicsCTU": {
+    "type": "Text",
+    "value": "90.12",
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "CTUh"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2024-09-10T10:45:00Z"
+      }
+    }
+  },
+  "ionisingRadiationHumanHealthU235": {
+    "type": "Text",
+    "value": "76.54",
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "BQU"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2024-09-09T09:15:00Z"
+      }
+    }
+  },
+  "landUseSoilQualityIndex": {
+    "type": "Text",
+    "value": "5.43",
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "M2AQ"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2024-09-08T07:45:00Z"
+      }
+    }
+  },
+  "materialResourcesAbioticDepletionElements": {
+    "type": "Text",
+    "value": "543.21",
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "kg Sb-Eq"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2024-09-07T16:00:00Z"
+      }
+    }
+  },
+  "ozoneDepletionPotentialODP": {
+    "type": "Text",
+    "value": "0.0123",
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "kg CFC-11-Eq"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2024-09-06T14:30:00Z"
+      }
+    }
+  },
+  "particulateMatterFormationHealth": {
+    "type": "Text",
+    "value": "432.10",
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "kg PM10-Eq"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2024-09-05T13:30:00Z"
+      }
+    }
+  },
+  "photochemicalOxidantFormationHealth": {
+    "type": "Text",
+    "value": "321.98",
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "kg NMVOC-Eq"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2024-09-04T15:15:00Z"
+      }
+    }
+  },
+  "waterUseUserDeprivationPotential": {
+    "type": "Text",
+    "value": "543.12",
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "m3 H2O-Eq"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2024-09-03T18:00:00Z"
+      }
+    }
+  }
+}

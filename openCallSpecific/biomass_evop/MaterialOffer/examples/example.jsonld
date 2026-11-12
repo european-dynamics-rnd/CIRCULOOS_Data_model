@@ -1,0 +1,17 @@
+{
+  "id": "urn:ngsi-ld:evop:material-offer:olive-pits",
+  "type": "MaterialOffer",
+  "material": "olive-pits",
+  "availableForOthers": true,
+  "availableQuantityKg": 4500,
+  "quantityUnit": "kg",
+  "offerPercentage": 100,
+  "safetyMarginPercent": 10,
+  "status": "available",
+  "sourceInventory": "urn:ngsi-ld:evop:biomass-inventory:olive-pits",
+  "updatedAt": "2026-09-17T06:57:32.026Z",
+  "@context": [
+    "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/utils/circuloos_data_platform.jsonld",
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"
+  ]
+}

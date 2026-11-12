@@ -1,5 +1,5 @@
 {
-    "$schema": "http://json-schema.org/schema#",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
     "modelTags": "",
     "$id": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/material/leather/schema.json",
     "$schemaVersion": "0.0.1",
@@ -57,6 +57,10 @@
                             "type": "number",
                             "description": "Property. https://schema.org/Number.",
                             "minimum": 0
+                        },
+                        "unitCode": {
+                            "type": "string",
+                            "description": "Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg)."
                         }
                     },
                     "description": "Property. Unit: given by unitCode, MTK (m2) or FTK (ft2, the usual leather trade unit). Usable surface area of the leather. "
@@ -68,6 +72,10 @@
                             "type": "number",
                             "description": "Property. https://schema.org/Number.",
                             "minimum": 0
+                        },
+                        "unitCode": {
+                            "type": "string",
+                            "description": "Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg)."
                         }
                     },
                     "description": "Property. Unit: mm. The thickness of the leather. "

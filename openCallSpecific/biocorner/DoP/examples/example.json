@@ -1,0 +1,9 @@
+{
+  "id": "urn:ngsi-ld:DoP:DoP-CementFreeMortar",
+  "type": "DoP",
+  "certificationBody": "CETMA",
+  "name": "DoP Cement free-Mortar",
+  "dateCreated": "2026-04-12T00:00:00Z",
+  "performanceSummary": "Compressive strength: 27 MPa",
+  "functionalUnit": 1
+}

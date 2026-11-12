@@ -31,63 +31,71 @@ MortarBatch:
   properties:    
     batchCode:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+        - anyOf:    
+            - type: string    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Internal production batch identifier assigned by the manufacturer for traceability. Follows a structured naming convention including product code, year, and sequence number.    
       x-ngsi:    
         type: Property    
     dateCreated:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              format: date-time    
+        - anyOf:    
+            - format: date-time    
               pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$    
               type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  format: date-time    
+                  pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Date at which the entity was created.    
       x-ngsi:    
         type: Property    
     description:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+        - anyOf:    
+            - type: string    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Free-text description of the production batch including production scale, total quantity produced, and any notable quality observations.    
       x-ngsi:    
         type: Property    
@@ -98,67 +106,79 @@ MortarBatch:
         type: Property    
     instanceOf:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            object:    
-              description: URN of the referenced entity, with the format urn:ngsi-ld:<type>:<id>.    
+        - anyOf:    
+            - description: URN of the referenced entity, with the format urn:ngsi-ld:<type>:<id>.    
               pattern: ^urn:ngsi-ld:[A-Za-z0-9_]+:.+$    
               type: string    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Relationship    
-              type: string    
-          required:    
-            - type    
-            - object    
-          type: object    
+            - additionalProperties: no    
+              properties:    
+                object:    
+                  description: URN of the referenced entity, with the format urn:ngsi-ld:<type>:<id>.    
+                  pattern: ^urn:ngsi-ld:[A-Za-z0-9_]+:.+$    
+                  type: string    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Relationship    
+                  type: string    
+              required:    
+                - type    
+                - object    
+              type: object    
       description: Relationship linking this production batch to its parent MortarProduct entity. Establishes which product line this specific batch belongs to.    
       x-ngsi:    
         type: Relationship    
     producedBy:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            object:    
-              description: URN of the referenced entity, with the format urn:ngsi-ld:<type>:<id>.    
+        - anyOf:    
+            - description: URN of the referenced entity, with the format urn:ngsi-ld:<type>:<id>.    
               pattern: ^urn:ngsi-ld:[A-Za-z0-9_]+:.+$    
               type: string    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Relationship    
-              type: string    
-          required:    
-            - type    
-            - object    
-          type: object    
+            - additionalProperties: no    
+              properties:    
+                object:    
+                  description: URN of the referenced entity, with the format urn:ngsi-ld:<type>:<id>.    
+                  pattern: ^urn:ngsi-ld:[A-Za-z0-9_]+:.+$    
+                  type: string    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Relationship    
+                  type: string    
+              required:    
+                - type    
+                - object    
+              type: object    
       description: Relationship to the Organization entity responsible for manufacturing this batch. Identifies the production facility and legal entity.    
       x-ngsi:    
         type: Relationship    
     producedFromRecipe:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            object:    
-              description: URN of the referenced entity, with the format urn:ngsi-ld:<type>:<id>.    
+        - anyOf:    
+            - description: URN of the referenced entity, with the format urn:ngsi-ld:<type>:<id>.    
               pattern: ^urn:ngsi-ld:[A-Za-z0-9_]+:.+$    
               type: string    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Relationship    
-              type: string    
-          required:    
-            - type    
-            - object    
-          type: object    
+            - additionalProperties: no    
+              properties:    
+                object:    
+                  description: URN of the referenced entity, with the format urn:ngsi-ld:<type>:<id>.    
+                  pattern: ^urn:ngsi-ld:[A-Za-z0-9_]+:.+$    
+                  type: string    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Relationship    
+                  type: string    
+              required:    
+                - type    
+                - object    
+              type: object    
       description: Relationship to the Recipe entity whose formulation was followed during production. Enables traceability from final product back to formulation specifications.    
       x-ngsi:    
         type: Relationship    
@@ -171,48 +191,59 @@ MortarBatch:
         type: Property    
     usedProcess:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            object:    
-              description: URN of the referenced entity, with the format urn:ngsi-ld:<type>:<id>.    
+        - anyOf:    
+            - description: URN of the referenced entity, with the format urn:ngsi-ld:<type>:<id>.    
               pattern: ^urn:ngsi-ld:[A-Za-z0-9_]+:.+$    
               type: string    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Relationship    
-              type: string    
-          required:    
-            - type    
-            - object    
-          type: object    
+            - additionalProperties: no    
+              properties:    
+                object:    
+                  description: URN of the referenced entity, with the format urn:ngsi-ld:<type>:<id>.    
+                  pattern: ^urn:ngsi-ld:[A-Za-z0-9_]+:.+$    
+                  type: string    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Relationship    
+                  type: string    
+              required:    
+                - type    
+                - object    
+              type: object    
       description: Relationship to the MortarProcess entity describing the manufacturing procedure applied. Links the batch to specific energy, water, and waste generation data.    
       x-ngsi:    
         type: Relationship    
     usedSRMBatches:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            object:    
-              description: URNs of the referenced entities, each with the format urn:ngsi-ld:<type>:<id>.    
+        - anyOf:    
+            - description: URNs of the referenced entities, each with the format urn:ngsi-ld:<type>:<id>.    
               items:    
                 pattern: ^urn:ngsi-ld:[A-Za-z0-9_]+:.+$    
                 type: string    
               minItems: 1    
               type: array    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Relationship    
-              type: string    
-          required:    
-            - type    
-            - object    
-          type: object    
+            - additionalProperties: no    
+              properties:    
+                object:    
+                  description: URNs of the referenced entities, each with the format urn:ngsi-ld:<type>:<id>.    
+                  items:    
+                    pattern: ^urn:ngsi-ld:[A-Za-z0-9_]+:.+$    
+                    type: string    
+                  minItems: 1    
+                  type: array    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Relationship    
+                  type: string    
+              required:    
+                - type    
+                - object    
+              type: object    
       description: SRMBatch entities used as input material, listed with the batch of the primary SRM first. Enables full upstream traceability to raw material origin and supplier.    
       x-ngsi:    
         type: Relationship    
@@ -239,14 +270,37 @@ MortarBatch:
 <!-- /70-MiddleNotes -->  
 <!-- 80-Examples -->  
 ## Example payloads    
-Not available the example of a MortarBatch in JSON-LD format as key-values. This is compatible with NGSI-LD when  using `options=keyValues` and returns the context data of an individual entity.  
+#### MortarBatch NGSI-LD key-values Example    
+Here is an example of a MortarBatch in JSON-LD format as key-values. This is compatible with NGSI-LD when  using `options=keyValues` and returns the context data of an individual entity.  
+<details><summary><strong>show/hide example</strong></summary>    
+```json  
+{  
+  "id": "urn:ngsi-ld:MortarBatch:MB-M1-2026-001",  
+  "type": "MortarBatch",  
+  "instanceOf": "urn:ngsi-ld:MortarProduct:SuperThermoblock",  
+  "batchCode": "MB-M1-2026-001",  
+  "usedProcess": "urn:ngsi-ld:MortarProcess:DryMixing-Mortar1",  
+  "producedFromRecipe": "urn:ngsi-ld:Recipe:MortarSuperThermoblock",  
+  "producedBy": "urn:ngsi-ld:Organization:LITOKOL",  
+  "usedSRMBatches": [  
+    "urn:ngsi-ld:SRMBatch:POS-2025-DEC"  
+  ],  
+  "dateCreated": "2026-04-15T00:00:00Z",  
+  "description": "First production batch MORTAR 1, pilot scale 25 litres",  
+  "@context": [  
+    "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/utils/circuloos_data_platform.jsonld",  
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"  
+  ]  
+}  
+```  
+</details>  
 #### MortarBatch NGSI-LD normalized Example    
 Here is an example of a MortarBatch in JSON-LD format as normalized. This is compatible with NGSI-LD when not using options and returns the context data of an individual entity.  
 <details><summary><strong>show/hide example</strong></summary>    
 ```json  
 {  
   "@context": [  
-    "http://circuloos-ld-context/circuloos-context.jsonld",  
+    "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/utils/circuloos_data_platform.jsonld",  
     "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"  
   ],  
   "id": "urn:ngsi-ld:MortarBatch:MB-M1-2026-001",  

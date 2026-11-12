@@ -1,0 +1,16 @@
+{
+  "id": "urn:ngsi-ld:Product:ARM:paper-cardboard-stream-waste:20260903",
+  "type": "Product",
+  "refProcessEvent": "urn:ngsi-ld:ProcessEvent:ARM:blue-waste-stream-processing:20260903",
+  "refProductModel": "urn:ngsi-ld:ProductModel:paper-cardboard-stream-waste",
+  "supplier": [
+    "ARM Collection"
+  ],
+  "destination": [
+    "ARM ETZL/ET"
+  ],
+  "quantity": 6396.748215,
+  "length": 0,
+  "width": 0,
+  "thickness": 0
+}

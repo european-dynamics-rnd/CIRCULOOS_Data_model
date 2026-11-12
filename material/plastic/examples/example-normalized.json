@@ -1,0 +1,289 @@
+{
+  "id": "urn:ngsi-ld:plastic:PPR2044",
+  "type": "plastic",
+  "polymerType": {
+    "type": "Text",
+    "value": "PP"
+  },
+  "materialForm": {
+    "type": "Text",
+    "value": "pellet"
+  },
+  "origin": {
+    "type": "Text",
+    "value": "post-industrial recycled"
+  },
+  "recycledContent": {
+    "type": "Number",
+    "value": 85,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "P1"
+      }
+    }
+  },
+  "recycledTimes": {
+    "type": "Number",
+    "value": 2
+  },
+  "color": {
+    "type": "Text",
+    "value": "natural"
+  },
+  "density": {
+    "type": "Number",
+    "value": 0.91,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "23"
+      }
+    }
+  },
+  "bulkDensity": {
+    "type": "Number",
+    "value": 550,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "KMQ"
+      }
+    }
+  },
+  "meltFlowIndex": {
+    "type": "Number",
+    "value": 12
+  },
+  "moistureContent": {
+    "type": "Number",
+    "value": 0.08,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "P1"
+      }
+    }
+  },
+  "dryingRequired": {
+    "type": "Boolean",
+    "value": true
+  },
+  "recommendedDryingTemperature": {
+    "type": "Number",
+    "value": 80,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "CEL"
+      }
+    }
+  },
+  "recommendedDryingTime": {
+    "type": "Number",
+    "value": 2,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "HUR"
+      }
+    }
+  },
+  "meltingTemperature": {
+    "type": "Number",
+    "value": 165,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "CEL"
+      }
+    }
+  },
+  "recommendedBarrelTemperature": {
+    "type": "Number",
+    "value": 220,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "CEL"
+      }
+    }
+  },
+  "recommendedMoldTemperature": {
+    "type": "Number",
+    "value": 40,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "CEL"
+      }
+    }
+  },
+  "shrinkageRate": {
+    "type": "Number",
+    "value": 1.5,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "P1"
+      }
+    }
+  },
+  "tensileStrength": {
+    "type": "Number",
+    "value": 28,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "MPA"
+      }
+    }
+  },
+  "flexuralModulus": {
+    "type": "Number",
+    "value": 1350,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "MPA"
+      }
+    }
+  },
+  "impactStrength": {
+    "type": "Number",
+    "value": 5.5
+  },
+  "heatDeflectionTemperature": {
+    "type": "Number",
+    "value": 85,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "CEL"
+      }
+    }
+  },
+  "ashContent": {
+    "type": "Number",
+    "value": 0.4,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "P1"
+      }
+    }
+  },
+  "contaminationLevel": {
+    "type": "Text",
+    "value": "low"
+  },
+  "additives": {
+    "type": "Text",
+    "value": "UV stabilizer, antioxidant masterbatch"
+  },
+  "batchNumber": {
+    "type": "Text",
+    "value": "LOT-2026-0417"
+  },
+  "polymerPurity": {
+    "type": "Number",
+    "value": 97,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "P1"
+      }
+    }
+  },
+  "meltFlowIndexTestCondition": {
+    "type": "Text",
+    "value": "230 °C / 2.16 kg"
+  },
+  "wasteSource": {
+    "type": "Text",
+    "value": "industrialScrap"
+  },
+  "foodContactSuitable": {
+    "type": "Boolean",
+    "value": false
+  },
+  "materialStatus": {
+    "type": "Text",
+    "value": "endOfWaste"
+  },
+  "endOfWasteReference": {
+    "type": "Text",
+    "value": "Permit EL-ATT-2025-118, Attica regional authority"
+  },
+  "quantity": {
+    "type": "Number",
+    "value": 1200,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "KGM"
+      }
+    }
+  },
+  "preConsumerRecycledContent": {
+    "type": "Number",
+    "value": 85,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "P1"
+      }
+    }
+  },
+  "postConsumerRecycledContent": {
+    "type": "Number",
+    "value": 0,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "P1"
+      }
+    }
+  },
+  "chainOfCustodyModel": {
+    "type": "Text",
+    "value": "segregated"
+  },
+  "refParentMaterial": {
+    "type": "StructuredValue",
+    "value": [
+      "urn:ngsi-ld:plastic:PPR1990"
+    ]
+  },
+  "owner": {
+    "type": "StructuredValue",
+    "value": [
+      "urn:ngsi-ld:Organization:plasticRecycler01"
+    ]
+  },
+  "suitableRecoveryRoutes": {
+    "type": "StructuredValue",
+    "value": [
+      "recycle"
+    ]
+  },
+  "qualityStandard": {
+    "type": "Text",
+    "value": "EN 15345"
+  },
+  "certifications": {
+    "type": "StructuredValue",
+    "value": [
+      {
+        "scheme": "EuCertPlast",
+        "certificateId": "ECP-2026-0412",
+        "issuer": "EuCertPlast",
+        "validUntil": "2027-06-30"
+      }
+    ]
+  },
+  "refEnvironmentalFootprint": {
+    "type": "Text",
+    "value": "urn:ngsi-ld:efi:entity-001"
+  }
+}

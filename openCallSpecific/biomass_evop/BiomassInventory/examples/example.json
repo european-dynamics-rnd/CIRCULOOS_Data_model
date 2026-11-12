@@ -1,0 +1,14 @@
+{
+  "id": "urn:ngsi-ld:evop:biomass-inventory:olives",
+  "type": "BiomassInventory",
+  "material": "olives",
+  "physicalStockKg": 0,
+  "freeStockKg": 0,
+  "safeAvailableKg": 0,
+  "advertisedQuantityKg": 0,
+  "reserveKg": 0,
+  "safetyMarginPercent": 10,
+  "offerPercentage": 100,
+  "movementCount": 0,
+  "calculatedAt": "2026-09-17T06:57:32.026Z"
+}

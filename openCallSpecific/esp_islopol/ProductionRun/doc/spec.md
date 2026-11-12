@@ -31,43 +31,49 @@ ProductionRun:
   properties:    
     description:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+        - anyOf:    
+            - type: string    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Human-readable description of the production run or operator notes.    
       x-ngsi:    
         type: Property    
     endDate:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              format: date-time    
+        - anyOf:    
+            - format: date-time    
               pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$    
               type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  format: date-time    
+                  pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Date and time when the production run actually ended, expressed as an ISO 8601 timestamp. Together with startDate, it defines the recorded duration of the run.    
       x-ngsi:    
         type: Property    
@@ -78,10 +84,8 @@ ProductionRun:
         type: Property    
     refInputProducts:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            object:    
-              description: URN of the referenced entity, or a list of URNs.    
+        - anyOf:    
+            - description: URN of the referenced entity, or a list of URNs.    
               oneOf:    
                 - pattern: ^urn:ngsi-ld:.+$    
                   type: string    
@@ -90,46 +94,58 @@ ProductionRun:
                     type: string    
                   minItems: 1    
                   type: array    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Relationship    
-              type: string    
-          required:    
-            - type    
-            - object    
-          type: object    
+            - additionalProperties: no    
+              properties:    
+                object:    
+                  description: URN of the referenced entity, or a list of URNs.    
+                  oneOf:    
+                    - pattern: ^urn:ngsi-ld:.+$    
+                      type: string    
+                    - items:    
+                        pattern: ^urn:ngsi-ld:.+$    
+                        type: string    
+                      minItems: 1    
+                      type: array    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Relationship    
+                  type: string    
+              required:    
+                - type    
+                - object    
+              type: object    
       description: Identifiers of the Product entities used during the production run. The referenced Product records specify input quantities and units.    
       x-ngsi:    
         type: Relationship    
     refLcaId:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+        - anyOf:    
+            - type: string    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Reference identifier used for LCA traceability.    
       x-ngsi:    
         type: Property    
     refOutputProducts:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            object:    
-              description: URN of the referenced entity, or a list of URNs.    
+        - anyOf:    
+            - description: URN of the referenced entity, or a list of URNs.    
               oneOf:    
                 - pattern: ^urn:ngsi-ld:.+$    
                   type: string    
@@ -138,61 +154,81 @@ ProductionRun:
                     type: string    
                   minItems: 1    
                   type: array    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Relationship    
-              type: string    
-          required:    
-            - type    
-            - object    
-          type: object    
+            - additionalProperties: no    
+              properties:    
+                object:    
+                  description: URN of the referenced entity, or a list of URNs.    
+                  oneOf:    
+                    - pattern: ^urn:ngsi-ld:.+$    
+                      type: string    
+                    - items:    
+                        pattern: ^urn:ngsi-ld:.+$    
+                        type: string    
+                      minItems: 1    
+                      type: array    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Relationship    
+                  type: string    
+              required:    
+                - type    
+                - object    
+              type: object    
       description: Identifiers of the Product entities produced by the run. The referenced Product records specify output quantities and units.    
       x-ngsi:    
         type: Relationship    
     refProcess:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            object:    
-              description: URN of the referenced entity.    
+        - anyOf:    
+            - description: URN of the referenced entity.    
               pattern: ^urn:ngsi-ld:.+$    
               type: string    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Relationship    
-              type: string    
-          required:    
-            - type    
-            - object    
-          type: object    
+            - additionalProperties: no    
+              properties:    
+                object:    
+                  description: URN of the referenced entity.    
+                  pattern: ^urn:ngsi-ld:.+$    
+                  type: string    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Relationship    
+                  type: string    
+              required:    
+                - type    
+                - object    
+              type: object    
       description: Identifier of the Process entity defining the production or transformation operation performed during the run.    
       x-ngsi:    
         type: Relationship    
     startDate:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              format: date-time    
+        - anyOf:    
+            - format: date-time    
               pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$    
               type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  format: date-time    
+                  pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Date and time when the production run actually started, expressed as an ISO 8601 timestamp. This can differ from the date embedded in the record identifier.    
       x-ngsi:    
         type: Property    
@@ -222,14 +258,38 @@ ProductionRun:
 <!-- /70-MiddleNotes -->  
 <!-- 80-Examples -->  
 ## Example payloads    
-Not available the example of a ProductionRun in JSON-LD format as key-values. This is compatible with NGSI-LD when  using `options=keyValues` and returns the context data of an individual entity.  
+#### ProductionRun NGSI-LD key-values Example    
+Here is an example of a ProductionRun in JSON-LD format as key-values. This is compatible with NGSI-LD when  using `options=keyValues` and returns the context data of an individual entity.  
+<details><summary><strong>show/hide example</strong></summary>    
+```json  
+{  
+  "id": "urn:ngsi-ld:ProductionRun:Esferolight:EPSShredding:20260916T095306Z",  
+  "type": "ProductionRun",  
+  "startDate": "2026-08-19T10:00:00.000Z",  
+  "endDate": "2026-08-19T10:35:00.000Z",  
+  "refProcess": "urn:ngsi-ld:Process:Esferolight:EPSShredding",  
+  "refInputProducts": [  
+    "urn:ngsi-ld:Product:Esferolight:electricity:20260916T095306Z",  
+    "urn:ngsi-ld:Product:Esferolight:PlasticBag:20260916T095306Z",  
+    "urn:ngsi-ld:Product:Esferolight:UnprocessedRecycledEPS:20260916T083416Z"  
+  ],  
+  "refOutputProducts": [  
+    "urn:ngsi-ld:Product:Esferolight:ShreddedEPS:20260916T095306Z"  
+  ],  
+  "@context": [  
+    "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/utils/circuloos_data_platform.jsonld",  
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"  
+  ]  
+}  
+```  
+</details>  
 #### ProductionRun NGSI-LD normalized Example    
 Here is an example of a ProductionRun in JSON-LD format as normalized. This is compatible with NGSI-LD when not using options and returns the context data of an individual entity.  
 <details><summary><strong>show/hide example</strong></summary>    
 ```json  
 {  
   "@context": [  
-    "http://circuloos-ld-context/circuloos-context.jsonld",  
+    "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/utils/circuloos_data_platform.jsonld",  
     "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"  
   ],  
   "id": "urn:ngsi-ld:ProductionRun:Esferolight:EPSShredding:20260916T095306Z",  

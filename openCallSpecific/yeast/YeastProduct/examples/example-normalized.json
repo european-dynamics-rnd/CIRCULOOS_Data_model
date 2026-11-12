@@ -1,0 +1,54 @@
+{
+  "id": "urn:ngsi-ld:circuloos-yeast2value:product:prewmix",
+  "type": "YeastProduct",
+  "productName": {
+    "type": "Text",
+    "value": "Prew®mix"
+  },
+  "processStream": {
+    "type": "Text",
+    "value": "Blends"
+  },
+  "goToMarketStage": {
+    "type": "Text",
+    "value": "MVPs in validation stage"
+  },
+  "description": {
+    "type": "Text",
+    "value": "Whole solutions bringing texturizing systems and versatile handling for different applications such as vegan scarmbled eggs or cheese blends."
+  },
+  "priceRange": {
+    "type": "StructuredValue",
+    "value": {
+      "minValue": 13.0,
+      "maxValue": 15.0
+    },
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "EUR/KGM"
+      }
+    }
+  },
+  "potentialCustomers": {
+    "type": "StructuredValue",
+    "value": [
+      "Pacifico Biolabs (meatballs using mycoprotein)",
+      "M Food Group (nuggets using mycoprotein)"
+    ]
+  },
+  "keyCollaborations": {
+    "type": "StructuredValue",
+    "value": [
+      "Naplasol (applications using mycoprotein"
+    ]
+  },
+  "mainMarketOpportunities": {
+    "type": "Text",
+    "value": "Provides a clean-label option for texturizing systems that is versatile in terms of applications, and flavour profiles."
+  },
+  "valueChain": {
+    "type": "Text",
+    "value": "yeast2value"
+  }
+}

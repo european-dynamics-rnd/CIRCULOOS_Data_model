@@ -31,45 +31,53 @@ EPSBatch:
   properties:    
     avgContaminationScore:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              maximum: 1    
+        - anyOf:    
+            - maximum: 1    
               minimum: 0    
               type: number    
-          required:    
-            - type    
-            - value    
-          type: object    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  maximum: 1    
+                  minimum: 0    
+                  type: number    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Average contamination score associated with the batch, expressed from 0 to 1, where higher values indicate greater contamination. (Multiply by 100 to obtain the Contamination Score percentage.)    
       x-ngsi:    
         type: Property    
     dateCreated:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              format: date-time    
+        - anyOf:    
+            - format: date-time    
               pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$    
               type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  format: date-time    
+                  pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Date and time when the EPSBatch record was created, expressed as an ISO 8601 timestamp. This is the record creation time, which can differ from the time of the physical operation.    
       x-ngsi:    
         type: Property    
@@ -80,10 +88,8 @@ EPSBatch:
         type: Property    
     refEPSObservations:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            object:    
-              description: URN of the referenced entity, or a list of URNs.    
+        - anyOf:    
+            - description: URN of the referenced entity, or a list of URNs.    
               oneOf:    
                 - pattern: ^urn:ngsi-ld:.+$    
                   type: string    
@@ -92,81 +98,103 @@ EPSBatch:
                     type: string    
                   minItems: 1    
                   type: array    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Relationship    
-              type: string    
-          required:    
-            - type    
-            - object    
-          type: object    
+            - additionalProperties: no    
+              properties:    
+                object:    
+                  description: URN of the referenced entity, or a list of URNs.    
+                  oneOf:    
+                    - pattern: ^urn:ngsi-ld:.+$    
+                      type: string    
+                    - items:    
+                        pattern: ^urn:ngsi-ld:.+$    
+                        type: string    
+                      minItems: 1    
+                      type: array    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Relationship    
+                  type: string    
+              required:    
+                - type    
+                - object    
+              type: object    
       description: Identifiers of the EPSObservation entities associated with this batch. These records provide the automated contamination assessments used to characterise it.    
       x-ngsi:    
         type: Relationship    
     refProduct:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            object:    
-              description: URN of the referenced entity.    
+        - anyOf:    
+            - description: URN of the referenced entity.    
               pattern: ^urn:ngsi-ld:.+$    
               type: string    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Relationship    
-              type: string    
-          required:    
-            - type    
-            - object    
-          type: object    
+            - additionalProperties: no    
+              properties:    
+                object:    
+                  description: URN of the referenced entity.    
+                  pattern: ^urn:ngsi-ld:.+$    
+                  type: string    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Relationship    
+                  type: string    
+              required:    
+                - type    
+                - object    
+              type: object    
       description: Identifier of the Product entity representing the EPS material in this batch, including its recorded quantity and unit of measurement.    
       x-ngsi:    
         type: Relationship    
     rejectionRate:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              maximum: 1    
+        - anyOf:    
+            - maximum: 1    
               minimum: 0    
               type: number    
-          required:    
-            - type    
-            - value    
-          type: object    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  maximum: 1    
+                  minimum: 0    
+                  type: number    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Fraction of material in the batch that was rejected, expressed on a scale from 0 to 1. (Multiply by 100 to obtain the rejection percentage.)    
       x-ngsi:    
         type: Property    
     status:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+        - anyOf:    
+            - type: string    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Current stage of the batch in the operational workflow, such as awaiting transport. It describes the batch's handling status rather than its contamination level.    
       x-ngsi:    
         type: Property    
@@ -196,14 +224,35 @@ EPSBatch:
 <!-- /70-MiddleNotes -->  
 <!-- 80-Examples -->  
 ## Example payloads    
-Not available the example of a EPSBatch in JSON-LD format as key-values. This is compatible with NGSI-LD when  using `options=keyValues` and returns the context data of an individual entity.  
+#### EPSBatch NGSI-LD key-values Example    
+Here is an example of a EPSBatch in JSON-LD format as key-values. This is compatible with NGSI-LD when  using `options=keyValues` and returns the context data of an individual entity.  
+<details><summary><strong>show/hide example</strong></summary>    
+```json  
+{  
+  "id": "urn:ngsi-ld:EPSBatch:ARM:20260903",  
+  "type": "EPSBatch",  
+  "refProduct": "urn:ngsi-ld:Product:ARM:reciclable-eps:20260903",  
+  "rejectionRate": 0.369382,  
+  "status": "Aguarda transporte",  
+  "avgContaminationScore": 0.107308,  
+  "refEPSObservations": [  
+    "urn:ngsi-ld:EPSObservation:ARM:reciclable-eps:20260903"  
+  ],  
+  "dateCreated": "2026-09-03T22:00:21.000Z",  
+  "@context": [  
+    "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/utils/circuloos_data_platform.jsonld",  
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"  
+  ]  
+}  
+```  
+</details>  
 #### EPSBatch NGSI-LD normalized Example    
 Here is an example of a EPSBatch in JSON-LD format as normalized. This is compatible with NGSI-LD when not using options and returns the context data of an individual entity.  
 <details><summary><strong>show/hide example</strong></summary>    
 ```json  
 {  
   "@context": [  
-    "http://circuloos-ld-context/circuloos-context.jsonld",  
+    "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/utils/circuloos_data_platform.jsonld",  
     "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"  
   ],  
   "id": "urn:ngsi-ld:EPSBatch:ARM:20260903",  

@@ -6,21 +6,23 @@ Process:
 
     description:
       allOf:
-        - additionalProperties: no
-          properties:
-            observedAt:
-              format: date-time
-              type: string
-            type:
-              enum:
-                - Property
-              type: string
-            value:
-              type: string
-          required:
-            - type
-            - value
-          type: object
+        - anyOf:
+            - type: string
+            - additionalProperties: no
+              properties:
+                observedAt:
+                  format: date-time
+                  type: string
+                type:
+                  enum:
+                    - Property
+                  type: string
+                value:
+                  type: string
+              required:
+                - type
+                - value
+              type: object
       description: Human-readable explanation of the process, including its purpose and the main input materials, resources and outputs.
       x-ngsi:
         type: Property
@@ -33,42 +35,46 @@ Process:
 
     name:
       allOf:
-        - additionalProperties: no
-          properties:
-            observedAt:
-              format: date-time
-              type: string
-            type:
-              enum:
-                - Property
-              type: string
-            value:
-              type: string
-          required:
-            - type
-            - value
-          type: object
+        - anyOf:
+            - type: string
+            - additionalProperties: no
+              properties:
+                observedAt:
+                  format: date-time
+                  type: string
+                type:
+                  enum:
+                    - Property
+                  type: string
+                value:
+                  type: string
+              required:
+                - type
+                - value
+              type: object
       description: Human-readable name of the process. Given in the source as https://schema.org/name.
       x-ngsi:
         type: Property
 
     triggeringCondition:
       allOf:
-        - additionalProperties: no
-          properties:
-            observedAt:
-              format: date-time
-              type: string
-            type:
-              enum:
-                - Property
-              type: string
-            value:
-              type: string
-          required:
-            - type
-            - value
-          type: object
+        - anyOf:
+            - type: string
+            - additionalProperties: no
+              properties:
+                observedAt:
+                  format: date-time
+                  type: string
+                type:
+                  enum:
+                    - Property
+                  type: string
+                value:
+                  type: string
+              required:
+                - type
+                - value
+              type: object
       description: Condition or operational requirement that causes the process to be started, such as the need to process accumulated waste. Given in the source as https://context.dataspace-arditi.com/islopol/terms/v2/triggeringCondition.
       x-ngsi:
         type: Property

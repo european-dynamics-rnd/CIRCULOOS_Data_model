@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -c \"import openpyxl\")",
+      "Bash(python3 -c \"import pandas\")",
+      "Bash(python3)",
+      "Bash(mkdir -p /home/kgombakis/project/CIRCULOOS/CIRCULOOS_Data_model/openCallSpecific/biocorner/sustainabilityIndicators)",
+      "Bash(mkdir -p /home/kgombakis/project/CIRCULOOS/CIRCULOOS_Data_model/openCallSpecific/loop_e/sustainabilityIndicators)",
+      "Bash(mkdir -p /home/kgombakis/project/CIRCULOOS/CIRCULOOS_Data_model/openCallSpecific/ReCLAIM/sustainabilityIndicators)",
+      "Bash(python3 -c \"import jsonschema\")",
+      "Bash(pip install *)",
+      "Bash(grep -nE '\\\\$ref|RefResolver|jsonref|resolve|urlopen|requests.get' 10_model.yaml_v10.py)",
+      "Bash(python3 /tmp/claude-1000/-home-kgombakis-project-CIRCULOOS-CIRCULOOS-Data-model/d21ccbfd-cb04-4f20-82c7-b5914f791e62/scratchpad/gen_biocorner.py)",
+      "Bash(timeout 90 python3 -W ignore)",
+      "Bash(timeout 120 python3 -W ignore)",
+      "Bash(mkdir -p DoP/examples SRMBatch/examples)",
+      "Bash(mv dop.json DoP/examples/example-normalized.jsonld)",
+      "Bash(mv SRMBatch.json SRMBatch/examples/example-normalized.jsonld)",
+      "Bash(python3 /tmp/claude-1000/-home-kgombakis-project-CIRCULOOS-CIRCULOOS-Data-model/d21ccbfd-cb04-4f20-82c7-b5914f791e62/scratchpad/fix_biocorner_samples.py)"
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "id": "urn:ngsi-ld:ProductModel:EPSThermalBoards",
+  "type": "ProductModel",
+  "name": "Placas termicas de EPS",
+  "description": "Placas termicas de EPS",
+  "constituents": [
+    "EPS"
+  ],
+  "availableCategories": [
+    "EPS150",
+    "EPS100",
+    "NEO80",
+    "EPS60"
+  ],
+  "material": "EPS",
+  "quantityUnit": "EA",
+  "@context": [
+    "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/utils/circuloos_data_platform.jsonld",
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"
+  ]
+}

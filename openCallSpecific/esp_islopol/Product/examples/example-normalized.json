@@ -1,0 +1,64 @@
+{
+  "id": "urn:ngsi-ld:Product:ARM:paper-cardboard-stream-waste:20260903",
+  "type": "Product",
+  "refProcessEvent": {
+    "type": "Text",
+    "value": "urn:ngsi-ld:ProcessEvent:ARM:blue-waste-stream-processing:20260903"
+  },
+  "refProductModel": {
+    "type": "Text",
+    "value": "urn:ngsi-ld:ProductModel:paper-cardboard-stream-waste"
+  },
+  "supplier": {
+    "type": "StructuredValue",
+    "value": [
+      "ARM Collection"
+    ]
+  },
+  "destination": {
+    "type": "StructuredValue",
+    "value": [
+      "ARM ETZL/ET"
+    ]
+  },
+  "quantity": {
+    "type": "Number",
+    "value": 6396.748215,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "KGM"
+      }
+    }
+  },
+  "length": {
+    "type": "Number",
+    "value": 0,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "CMT"
+      }
+    }
+  },
+  "width": {
+    "type": "Number",
+    "value": 0,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "CMT"
+      }
+    }
+  },
+  "thickness": {
+    "type": "Number",
+    "value": 0,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "CMT"
+      }
+    }
+  }
+}

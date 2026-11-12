@@ -1,0 +1,30 @@
+{
+  "id": "urn:ngsi-ld:EPSBatch:ARM:20260903",
+  "type": "EPSBatch",
+  "refProduct": {
+    "type": "Text",
+    "value": "urn:ngsi-ld:Product:ARM:reciclable-eps:20260903"
+  },
+  "rejectionRate": {
+    "type": "Number",
+    "value": 0.369382
+  },
+  "status": {
+    "type": "Text",
+    "value": "Aguarda transporte"
+  },
+  "avgContaminationScore": {
+    "type": "Number",
+    "value": 0.107308
+  },
+  "refEPSObservations": {
+    "type": "StructuredValue",
+    "value": [
+      "urn:ngsi-ld:EPSObservation:ARM:reciclable-eps:20260903"
+    ]
+  },
+  "dateCreated": {
+    "type": "DateTime",
+    "value": "2026-09-03T22:00:21.000Z"
+  }
+}

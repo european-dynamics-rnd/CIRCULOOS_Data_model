@@ -45,6 +45,9 @@ leather:
     area:
       description: 'Unit: given by unitCode, MTK (m2) or FTK (ft2, the usual leather trade unit). Usable surface area of the leather. '
       properties:
+        unitCode:
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).
+          type: string
         value:
           description: Property. https://schema.org/Number.
           minimum: 0
@@ -646,6 +649,9 @@ leather:
     thickness:
       description: 'Unit: mm. The thickness of the leather. '
       properties:
+        unitCode:
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).
+          type: string
         value:
           description: Property. https://schema.org/Number.
           minimum: 0

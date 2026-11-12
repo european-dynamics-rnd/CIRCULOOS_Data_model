@@ -1,0 +1,15 @@
+{
+  "id": "urn:ngsi-ld:EPSVisualInspection:Esferolight:20260702T145010Z",
+  "type": "EPSVisualInspection",
+  "startDate": "2026-06-02T13:00:00.000Z",
+  "endDate": "2026-06-02T16:00:00.000Z",
+  "rejections": 10,
+  "refOutputProducts": [
+    "urn:ngsi-ld:Product:Esferolight:ShreddedEPS:20260702T153321Z"
+  ],
+  "refEPSTransport": "urn:ngsi-ld:EPSTransport:13082026",
+  "@context": [
+    "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/utils/circuloos_data_platform.jsonld",
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"
+  ]
+}

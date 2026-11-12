@@ -1,0 +1,32 @@
+{
+  "id": "urn:ngsi-ld:EPSVisualInspection:Esferolight:20260702T145010Z",
+  "type": "EPSVisualInspection",
+  "startDate": {
+    "type": "DateTime",
+    "value": "2026-06-02T13:00:00.000Z"
+  },
+  "endDate": {
+    "type": "DateTime",
+    "value": "2026-06-02T16:00:00.000Z"
+  },
+  "rejections": {
+    "type": "Number",
+    "value": 10,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "KGM"
+      }
+    }
+  },
+  "refOutputProducts": {
+    "type": "StructuredValue",
+    "value": [
+      "urn:ngsi-ld:Product:Esferolight:ShreddedEPS:20260702T153321Z"
+    ]
+  },
+  "refEPSTransport": {
+    "type": "Text",
+    "value": "urn:ngsi-ld:EPSTransport:13082026"
+  }
+}

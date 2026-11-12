@@ -1,12 +1,12 @@
 {
-    "$schema": "http://json-schema.org/schema#",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$schemaVersion": "0.0.1",
     "modelTags": "",
     "derivedFrom": "",
     "license": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/refs/heads/main/LICENSE",
     "$id": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/material/wood/schema.json",
     "title": "Data model for wood",
-    "description": "CIRCULOOS data model for wood",
+    "description": "CIRCULOOS data model for a lot of secondary wood, covering its species, form, physical and mechanical properties, treatments and circularity information.",
     "type": "object",
     "allOf": [
         {
@@ -36,6 +36,10 @@
                         "value": {
                             "type": "number",
                             "description": "Property. https://schema.org/Number."
+                        },
+                        "unitCode": {
+                            "type": "string",
+                            "description": "Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg)."
                         }
                     },
                     "description": "Property. Unit: g/cm3. The mass per unit volume of the wood, critical for calculating weight and structural integrity. "
@@ -46,6 +50,10 @@
                         "value": {
                             "type": "number",
                             "description": "Property. https://schema.org/Number."
+                        },
+                        "unitCode": {
+                            "type": "string",
+                            "description": "Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg)."
                         }
                     },
                     "description": "Property. Unit: %. The amount of moisture in the wood, affecting its dimensional stability and strength. "
@@ -56,6 +64,10 @@
                         "value": {
                             "type": "number",
                             "description": "Property. https://schema.org/Number."
+                        },
+                        "unitCode": {
+                            "type": "string",
+                            "description": "Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg)."
                         }
                     },
                     "description": "Property. Unit: MPa. The maximum stress that the wood can withstand while being stretched before breaking. "
@@ -66,6 +78,10 @@
                         "value": {
                             "type": "number",
                             "description": "Property. https://schema.org/Number."
+                        },
+                        "unitCode": {
+                            "type": "string",
+                            "description": "Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg)."
                         }
                     },
                     "description": "Property. Unit: MPa. TThe maximum compressive force that wood can withstand. "
@@ -76,6 +92,10 @@
                         "value": {
                             "type": "number",
                             "description": "Property. https://schema.org/Number."
+                        },
+                        "unitCode": {
+                            "type": "string",
+                            "description": "Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg)."
                         }
                     },
                     "description": "Property. Unit: MPa. TThe maximum stress the wood can withstand before breaking when subjected to a bending force. "
@@ -86,6 +106,10 @@
                         "value": {
                             "type": "number",
                             "description": "Property. https://schema.org/Number."
+                        },
+                        "unitCode": {
+                            "type": "string",
+                            "description": "Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg)."
                         }
                     },
                     "description": "Property. Unit: MPa. The measure of the wood's stiffness, indicating how much it will deform under stress. "
@@ -96,6 +120,10 @@
                         "value": {
                             "type": "number",
                             "description": "Property. https://schema.org/Number."
+                        },
+                        "unitCode": {
+                            "type": "string",
+                            "description": "Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg)."
                         }
                     },
                     "description": "Property. Unit: N (Janka). The resistance of the wood to indentation or scratching, important for wear and durability. "
@@ -106,6 +134,10 @@
                         "value": {
                             "type": "number",
                             "description": "Property. https://schema.org/Number."
+                        },
+                        "unitCode": {
+                            "type": "string",
+                            "description": "Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg)."
                         }
                     },
                     "description": "Property. Unit: W/(m·K). The rate at which heat passes through the wood, important for thermal insulation applications. "
@@ -116,6 +148,10 @@
                         "value": {
                             "type": "number",
                             "description": "Property. https://schema.org/Number."
+                        },
+                        "unitCode": {
+                            "type": "string",
+                            "description": "Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg)."
                         }
                     },
                     "description": "Property. Unit: 1/K. The rate at which the wood expands with temperature, critical in applications involving temperature changes. "
@@ -126,6 +162,10 @@
                         "value": {
                             "type": "number",
                             "description": "Property. https://schema.org/Number."
+                        },
+                        "unitCode": {
+                            "type": "string",
+                            "description": "Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg)."
                         }
                     },
                     "description": "Property. Unit: %. The amount of water absorbed by the wood over a specified period, influencing dimensional stability and strength. "
@@ -136,6 +176,10 @@
                         "value": {
                             "type": "number",
                             "description": "Property. https://schema.org/Number."
+                        },
+                        "unitCode": {
+                            "type": "string",
+                            "description": "Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg)."
                         }
                     },
                     "description": "Property. Unit: dimensionless (ASTM E84). A measure of the material’s propensity to burn and spread flames, important for fire safety considerations. "
@@ -211,6 +255,10 @@
                             "type": "number",
                             "description": "Property. https://schema.org/Number.",
                             "minimum": 0
+                        },
+                        "unitCode": {
+                            "type": "string",
+                            "description": "Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg)."
                         }
                     },
                     "description": "Property. Unit: mm. Length of the piece. "
@@ -222,6 +270,10 @@
                             "type": "number",
                             "description": "Property. https://schema.org/Number.",
                             "minimum": 0
+                        },
+                        "unitCode": {
+                            "type": "string",
+                            "description": "Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg)."
                         }
                     },
                     "description": "Property. Unit: mm. Width of the piece. "
@@ -233,6 +285,10 @@
                             "type": "number",
                             "description": "Property. https://schema.org/Number.",
                             "minimum": 0
+                        },
+                        "unitCode": {
+                            "type": "string",
+                            "description": "Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg)."
                         }
                     },
                     "description": "Property. Unit: mm. Thickness of the piece. "

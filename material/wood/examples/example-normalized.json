@@ -1,0 +1,219 @@
+{
+  "id": "urn:ngsi-ld:wood:wood1",
+  "type": "wood",
+  "species": {
+    "type": "Text",
+    "value": "Oak"
+  },
+  "density": {
+    "type": "Number",
+    "value": 0.75,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "23"
+      }
+    }
+  },
+  "moistureContent": {
+    "type": "Number",
+    "value": 12,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "P1"
+      }
+    }
+  },
+  "tensileStrength": {
+    "type": "Number",
+    "value": 90,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "MPA"
+      }
+    }
+  },
+  "compressiveStrength": {
+    "type": "Number",
+    "value": 50,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "MPA"
+      }
+    }
+  },
+  "bendingStrength": {
+    "type": "Number",
+    "value": 120,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "MPA"
+      }
+    }
+  },
+  "modulusOfElasticity": {
+    "type": "Number",
+    "value": 11000,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "MPA"
+      }
+    }
+  },
+  "hardness": {
+    "type": "Number",
+    "value": 670,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "NEW"
+      }
+    }
+  },
+  "thermalConductivity": {
+    "type": "Number",
+    "value": 0.16,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "D53"
+      }
+    }
+  },
+  "thermalExpansionCoefficient": {
+    "type": "Number",
+    "value": 3.5,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "F51"
+      }
+    }
+  },
+  "waterAbsorption": {
+    "type": "Number",
+    "value": 40,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "P1"
+      }
+    }
+  },
+  "flameSpreadIndex": {
+    "type": "Number",
+    "value": 100
+  },
+  "color": {
+    "type": "Text",
+    "value": "Light Brown"
+  },
+  "grainPattern": {
+    "type": "Text",
+    "value": "Straight"
+  },
+  "productForm": {
+    "type": "Text",
+    "value": "solidTimber"
+  },
+  "previousUse": {
+    "type": "Text",
+    "value": "structuralBeam"
+  },
+  "chemicalTreatment": {
+    "type": "Text",
+    "value": "untreated"
+  },
+  "wasteWoodClass": {
+    "type": "Text",
+    "value": "AI"
+  },
+  "fastenersPresent": {
+    "type": "Boolean",
+    "value": true
+  },
+  "length": {
+    "type": "Number",
+    "value": 4200,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "MMT"
+      }
+    }
+  },
+  "width": {
+    "type": "Number",
+    "value": 200,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "MMT"
+      }
+    }
+  },
+  "thickness": {
+    "type": "Number",
+    "value": 100,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "MMT"
+      }
+    }
+  },
+  "strengthClass": {
+    "type": "Text",
+    "value": "D30"
+  },
+  "materialStatus": {
+    "type": "Text",
+    "value": "waste"
+  },
+  "wasteCode": {
+    "type": "Text",
+    "value": "17 02 01"
+  },
+  "hazardous": {
+    "type": "Boolean",
+    "value": false
+  },
+  "quantity": {
+    "type": "Number",
+    "value": 24,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "C62"
+      }
+    }
+  },
+  "recycledTimes": {
+    "type": "Number",
+    "value": 0
+  },
+  "suitableRecoveryRoutes": {
+    "type": "StructuredValue",
+    "value": [
+      "reuse",
+      "repurpose",
+      "recycle"
+    ]
+  },
+  "certifications": {
+    "type": "StructuredValue",
+    "value": [
+      {
+        "scheme": "FSC",
+        "certificateId": "FSC-C123456",
+        "issuer": "Soil Association",
+        "validUntil": "2028-03-31"
+      }
+    ]
+  }
+}

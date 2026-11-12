@@ -1,0 +1,372 @@
+{
+  "id": "urn:ngsi-ld:evop:boiler-session:hueso-certificado-10-humedad",
+  "type": "BoilerTestSession",
+  "scenarioName": {
+    "type": "Text",
+    "value": "HUESO CERTIFICADO (10% HUMEDAD)"
+  },
+  "boilerType": {
+    "type": "Text",
+    "value": "EVOP Biomasa"
+  },
+  "biomassBatch": {
+    "type": "Text",
+    "value": "urn:ngsi-ld:evop:biomass-batch:olive-pits-receipt:v6-hueso-certificado-10-humedad"
+  },
+  "startDate": {
+    "type": "Text",
+    "value": "2026-06-18"
+  },
+  "readingIndex": {
+    "type": "Number",
+    "value": 4
+  },
+  "sourceWorkbookFileName": {
+    "type": "Text",
+    "value": "Datos de medicion hueso certificado TOMA 1_v6.xlsx"
+  },
+  "targetTemperature": {
+    "type": "Number",
+    "value": 80,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "CEL"
+      }
+    }
+  },
+  "humidity": {
+    "type": "Number",
+    "value": 10,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "P1"
+      }
+    }
+  },
+  "consumption7days": {
+    "type": "Number",
+    "value": 469,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "KGM"
+      }
+    }
+  },
+  "pci": {
+    "type": "Number",
+    "value": 4.41,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "KWH/KGM"
+      }
+    }
+  },
+  "thermalEnergy": {
+    "type": "Number",
+    "value": 2068,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "KWH"
+      }
+    }
+  },
+  "electricConsumption": {
+    "type": "Number",
+    "value": 14,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "KWH"
+      }
+    }
+  },
+  "biomassConsumption": {
+    "type": "Number",
+    "value": 10,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "KGM"
+      }
+    }
+  },
+  "actualConsumptionKg": {
+    "type": "Number",
+    "value": 10,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "KGM"
+      }
+    }
+  },
+  "ashPercent": {
+    "type": "Number",
+    "value": 0.9,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "P1"
+      }
+    }
+  },
+  "efficiency": {
+    "type": "Number",
+    "value": 84.9,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "P1"
+      }
+    }
+  },
+  "density": {
+    "type": "Number",
+    "value": 650,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "KMQ"
+      }
+    }
+  },
+  "airTemperature": {
+    "type": "Number",
+    "value": 28.1,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "CEL"
+      }
+    }
+  },
+  "waterTemperature": {
+    "type": "Number",
+    "value": 80,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "CEL"
+      }
+    }
+  },
+  "pufferTemperature": {
+    "type": "Number",
+    "value": 29,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "CEL"
+      }
+    }
+  },
+  "deltaT": {
+    "type": "Number",
+    "value": 125.2,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "KEL"
+      }
+    }
+  },
+  "flueGasTemperature": {
+    "type": "Number",
+    "value": 164,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "CEL"
+      }
+    }
+  },
+  "flueGasTempAnalyzer": {
+    "type": "Number",
+    "value": 153.3,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "CEL"
+      }
+    }
+  },
+  "flueGasDepression": {
+    "type": "Number",
+    "value": 27,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "PAL"
+      }
+    }
+  },
+  "gasPressure": {
+    "type": "Number",
+    "value": -0.04,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "MBR"
+      }
+    }
+  },
+  "pressure": {
+    "type": "Number",
+    "value": 2099,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "PAL"
+      }
+    }
+  },
+  "tiro": {
+    "type": "Number",
+    "value": 0.122,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "MBR"
+      }
+    }
+  },
+  "lambda": {
+    "type": "Number",
+    "value": 3.31
+  },
+  "co": {
+    "type": "Number",
+    "value": 541,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "59"
+      }
+    }
+  },
+  "coCorrected": {
+    "type": "Number",
+    "value": 678,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "59"
+      }
+    }
+  },
+  "co2": {
+    "type": "Number",
+    "value": 5.8,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "P1"
+      }
+    }
+  },
+  "no": {
+    "type": "Number",
+    "value": 58,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "59"
+      }
+    }
+  },
+  "noCorrected": {
+    "type": "Number",
+    "value": 73,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "59"
+      }
+    }
+  },
+  "nox": {
+    "type": "Number",
+    "value": 61,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "59"
+      }
+    }
+  },
+  "noxCorrected": {
+    "type": "Number",
+    "value": 76,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "59"
+      }
+    }
+  },
+  "o2": {
+    "type": "Number",
+    "value": 14.6,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "P1"
+      }
+    }
+  },
+  "o2Reference": {
+    "type": "Number",
+    "value": 13,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "P1"
+      }
+    }
+  },
+  "etaC": {
+    "type": "Number",
+    "value": 0,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "P1"
+      }
+    }
+  },
+  "etaS": {
+    "type": "Number",
+    "value": 84.4,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "P1"
+      }
+    }
+  },
+  "etaT": {
+    "type": "Number",
+    "value": 84.4,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "P1"
+      }
+    }
+  },
+  "qs": {
+    "type": "Number",
+    "value": 15.6,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "P1"
+      }
+    }
+  }
+}

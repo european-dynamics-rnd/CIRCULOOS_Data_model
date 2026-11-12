@@ -31,17 +31,8 @@ Organization:
   properties:    
     address:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              additionalProperties: no    
+        - anyOf:    
+            - additionalProperties: no    
               properties:    
                 addressCountry:    
                   description: The country. Model:'https://schema.org/addressCountry'    
@@ -59,50 +50,82 @@ Organization:
                   description: The street address. Model:'https://schema.org/streetAddress'    
                   type: string    
               type: object    
-          required:    
-            - type    
-            - value    
-          type: object    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  additionalProperties: no    
+                  properties:    
+                    addressCountry:    
+                      description: The country. Model:'https://schema.org/addressCountry'    
+                      type: string    
+                    addressLocality:    
+                      description: The locality in which the street address is. Model:'https://schema.org/addressLocality'    
+                      type: string    
+                    addressRegion:    
+                      description: The region in which the locality is. Model:'https://schema.org/addressRegion'    
+                      type: string    
+                    postalCode:    
+                      description: The postal code. Model:'https://schema.org/postalCode'    
+                      type: string    
+                    streetAddress:    
+                      description: The street address. Model:'https://schema.org/streetAddress'    
+                      type: string    
+                  type: object    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Postal address of the organization as a structured object (street, locality, region, country, postal code), following the schema.org PostalAddress format. addressRegion holds the administrative region where the organization is headquartered, used for regional supply chain mapping and geographic analysis.    
       x-ngsi:    
         type: Property    
     contactEmail:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+        - anyOf:    
+            - type: string    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Email address of the organization.    
       x-ngsi:    
         type: Property    
     contactPhone:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+        - anyOf:    
+            - type: string    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Telephone number of the organization.    
       x-ngsi:    
         type: Property    
@@ -113,101 +136,111 @@ Organization:
         type: Property    
     legalForm:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+        - anyOf:    
+            - type: string    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Legal entity classification (e.g. Limited Liability Company, Research Center, Public University). Relevant for consortium agreements and contractual arrangements.    
       x-ngsi:    
         type: Property    
     name:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+        - anyOf:    
+            - type: string    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Full official name of the organization as registered in public records, including legal suffix where applicable.    
       x-ngsi:    
         type: Property    
     role:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+        - anyOf:    
+            - type: string    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Functional role of the organization within the project supply chain (e.g. RTO, Manufacturer, Contract Manufacturer, SRM Supplier).    
       x-ngsi:    
         type: Property    
     supplyChainRole:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+        - anyOf:    
+            - type: string    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: 'High-level classification of the organization function: RTO for research and development, Manufacturer for production, or SRM Supplier for material sourcing.'    
       x-ngsi:    
         type: Property    
     tier:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+        - anyOf:    
+            - type: string    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: 'Supply chain tier relative to final product: Tier 0 for entities directly involved in product development or manufacturing, Tier 1 for raw material suppliers.'    
       x-ngsi:    
         type: Property    
@@ -220,21 +253,23 @@ Organization:
         type: Property    
     website:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+        - anyOf:    
+            - type: string    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Website of the organization.    
       x-ngsi:    
         type: Property    
@@ -258,14 +293,38 @@ Organization:
 <!-- /70-MiddleNotes -->  
 <!-- 80-Examples -->  
 ## Example payloads    
-Not available the example of a Organization in JSON-LD format as key-values. This is compatible with NGSI-LD when  using `options=keyValues` and returns the context data of an individual entity.  
+#### Organization NGSI-LD key-values Example    
+Here is an example of a Organization in JSON-LD format as key-values. This is compatible with NGSI-LD when  using `options=keyValues` and returns the context data of an individual entity.  
+<details><summary><strong>show/hide example</strong></summary>    
+```json  
+{  
+  "id": "urn:ngsi-ld:Organization:CESTHA",  
+  "type": "Organization",  
+  "name": "CESTHA - Centro Sperimentale per la Tutela degli Habitat",  
+  "address": {  
+    "addressLocality": "Cesenatico",  
+    "addressRegion": "Emilia-Romagna",  
+    "postalCode": "47042",  
+    "addressCountry": "Italy"  
+  },  
+  "supplyChainRole": "SRM Supplier",  
+  "legalForm": "Research Center",  
+  "role": "SRM Supplier - Marine Biomass",  
+  "tier": "Tier 1",  
+  "@context": [  
+    "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/utils/circuloos_data_platform.jsonld",  
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"  
+  ]  
+}  
+```  
+</details>  
 #### Organization NGSI-LD normalized Example    
 Here is an example of a Organization in JSON-LD format as normalized. This is compatible with NGSI-LD when not using options and returns the context data of an individual entity.  
 <details><summary><strong>show/hide example</strong></summary>    
 ```json  
 {  
   "@context": [  
-    "http://circuloos-ld-context/circuloos-context.jsonld",  
+    "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/utils/circuloos_data_platform.jsonld",  
     "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"  
   ],  
   "id": "urn:ngsi-ld:Organization:CESTHA",  

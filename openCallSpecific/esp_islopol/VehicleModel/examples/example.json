@@ -1,0 +1,10 @@
+{
+  "id": "urn:ngsi-ld:VehicleModel:daf_85-cf-380",
+  "type": "VehicleModel",
+  "name": "DAF 85 CF 380",
+  "brandName": "DAF",
+  "modelName": "85 CF 380",
+  "fuelType": "diesel",
+  "cargoVolume": 12000,
+  "weight": 26000
+}

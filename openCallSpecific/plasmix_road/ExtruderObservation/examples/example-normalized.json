@@ -1,0 +1,318 @@
+{
+  "id": "urn:ngsi-ld:extruder:observation:20260131T234401",
+  "type": "ExtruderObservation",
+  "zone1ActualTemperature": {
+    "type": "Number",
+    "value": 189.609,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "CEL"
+      }
+    }
+  },
+  "zone1SetTemperature": {
+    "type": "Number",
+    "value": 0.0019,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "CEL"
+      }
+    }
+  },
+  "zone2ActualTemperature": {
+    "type": "Number",
+    "value": 220.1775,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "CEL"
+      }
+    }
+  },
+  "zone2SetTemperature": {
+    "type": "Number",
+    "value": 0.0022,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "CEL"
+      }
+    }
+  },
+  "zone3ActualTemperature": {
+    "type": "Number",
+    "value": 219.7894,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "CEL"
+      }
+    }
+  },
+  "zone3SetTemperature": {
+    "type": "Number",
+    "value": 0.0022,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "CEL"
+      }
+    }
+  },
+  "zone4ActualTemperature": {
+    "type": "Number",
+    "value": 22.00941,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "CEL"
+      }
+    }
+  },
+  "zone4SetTemperature": {
+    "type": "Number",
+    "value": 220,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "CEL"
+      }
+    }
+  },
+  "zone5ActualTemperature": {
+    "type": "Number",
+    "value": 22.93826,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "CEL"
+      }
+    }
+  },
+  "zone5SetTemperature": {
+    "type": "Number",
+    "value": 0.0023,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "CEL"
+      }
+    }
+  },
+  "zone6ActualTemperature": {
+    "type": "Number",
+    "value": 24.51125,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "CEL"
+      }
+    }
+  },
+  "zone6SetTemperature": {
+    "type": "Number",
+    "value": 245,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "CEL"
+      }
+    }
+  },
+  "zone7ActualTemperature": {
+    "type": "Number",
+    "value": 22.50941,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "CEL"
+      }
+    }
+  },
+  "zone7SetTemperature": {
+    "type": "Number",
+    "value": 0.00225,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "CEL"
+      }
+    }
+  },
+  "zone8ActualTemperature": {
+    "type": "Number",
+    "value": 22.49059,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "CEL"
+      }
+    }
+  },
+  "zone8SetTemperature": {
+    "type": "Number",
+    "value": 0.00225,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "CEL"
+      }
+    }
+  },
+  "zone9ActualTemperature": {
+    "type": "Number",
+    "value": 22.99925,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "CEL"
+      }
+    }
+  },
+  "zone9SetTemperature": {
+    "type": "Number",
+    "value": 230,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "CEL"
+      }
+    }
+  },
+  "zone10ActualTemperature": {
+    "type": "Number",
+    "value": 24.00941,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "CEL"
+      }
+    }
+  },
+  "zone10SetTemperature": {
+    "type": "Number",
+    "value": 0.0024,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "CEL"
+      }
+    }
+  },
+  "extruderId": {
+    "type": "Text",
+    "value": "extruder_1"
+  },
+  "cuttingZoneActualTemperature": {
+    "type": "Number",
+    "value": 24.08102,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "CEL"
+      }
+    }
+  },
+  "cuttingZoneSetTemperature": {
+    "type": "Number",
+    "value": 0.0024,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "CEL"
+      }
+    }
+  },
+  "extruderWorkingSpeed": {
+    "type": "Number",
+    "value": 0,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "P1"
+      }
+    }
+  },
+  "extruderCurrent": {
+    "type": "Number",
+    "value": 0,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "AMP"
+      }
+    }
+  },
+  "cuttingSpeedCurrent": {
+    "type": "Number",
+    "value": 0,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "AMP"
+      }
+    }
+  },
+  "cuttingSpeed": {
+    "type": "Number",
+    "value": 0,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "RPM"
+      }
+    }
+  },
+  "feedSpeedWorking": {
+    "type": "Number",
+    "value": 0,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "P1"
+      }
+    }
+  },
+  "screwFeedCurrent": {
+    "type": "Number",
+    "value": 0,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "AMP"
+      }
+    }
+  },
+  "crusherTemperature": {
+    "type": "Number",
+    "value": 14.90131,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "CEL"
+      }
+    }
+  },
+  "crusherCurrent": {
+    "type": "Number",
+    "value": 0,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "AMP"
+      }
+    }
+  },
+  "crusherRotationSpeed": {
+    "type": "Number",
+    "value": 0,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "RPM"
+      }
+    }
+  }
+}

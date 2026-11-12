@@ -1,5 +1,5 @@
 {
-    "$schema": "http://json-schema.org/schema#",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$schemaVersion": "0.0.1",
     "modelTags": "",
     "derivedFrom": "",
@@ -80,6 +80,10 @@
                         "value": {
                             "type": "number",
                             "description": "Property. https://schema.org/Number.  Default: 0.0"
+                        },
+                        "unitCode": {
+                            "type": "string",
+                            "description": "Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg)."
                         }
                     },
                     "description": "Property. Unit: g/cm3. The mass per unit volume of the solid resin. "
@@ -90,6 +94,10 @@
                         "value": {
                             "type": "number",
                             "description": "Property. https://schema.org/Number.  Default: 0.0"
+                        },
+                        "unitCode": {
+                            "type": "string",
+                            "description": "Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg)."
                         }
                     },
                     "description": "Property. Unit: kg/m3. The density of the loose pellets/flakes as poured, needed to size the hopper and dosing. "
@@ -100,6 +108,10 @@
                         "value": {
                             "type": "number",
                             "description": "Property. https://schema.org/Number.  Default: 0.0"
+                        },
+                        "unitCode": {
+                            "type": "string",
+                            "description": "Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg)."
                         }
                     },
                     "description": "Property. Unit: g/10min. Melt flow index (MFI/MFR), the key indicator of how easily the material flows into the mold cavity. "
@@ -110,6 +122,10 @@
                         "value": {
                             "type": "number",
                             "description": "Property. https://schema.org/Number.  Default: 0.0"
+                        },
+                        "unitCode": {
+                            "type": "string",
+                            "description": "Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg)."
                         }
                     },
                     "description": "Property. Unit: %. Residual moisture in the material; too high a value causes hydrolysis and surface defects if not dried before molding. "
@@ -124,6 +140,10 @@
                         "value": {
                             "type": "number",
                             "description": "Property. https://schema.org/Number.  Default: 0.0"
+                        },
+                        "unitCode": {
+                            "type": "string",
+                            "description": "Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg)."
                         }
                     },
                     "description": "Property. Unit: °C. Recommended drying temperature before processing. "
@@ -134,6 +154,10 @@
                         "value": {
                             "type": "number",
                             "description": "Property. https://schema.org/Number.  Default: 0.0"
+                        },
+                        "unitCode": {
+                            "type": "string",
+                            "description": "Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg)."
                         }
                     },
                     "description": "Property. Unit: h. Recommended drying duration before processing. "
@@ -144,6 +168,10 @@
                         "value": {
                             "type": "number",
                             "description": "Property. https://schema.org/Number.  Default: 0.0"
+                        },
+                        "unitCode": {
+                            "type": "string",
+                            "description": "Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg)."
                         }
                     },
                     "description": "Property. Unit: °C. Melting (or processing) temperature of the resin. "
@@ -154,6 +182,10 @@
                         "value": {
                             "type": "number",
                             "description": "Property. https://schema.org/Number.  Default: 0.0"
+                        },
+                        "unitCode": {
+                            "type": "string",
+                            "description": "Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg)."
                         }
                     },
                     "description": "Property. Unit: °C. Recommended injection molding barrel temperature for this material. "
@@ -164,6 +196,10 @@
                         "value": {
                             "type": "number",
                             "description": "Property. https://schema.org/Number.  Default: 0.0"
+                        },
+                        "unitCode": {
+                            "type": "string",
+                            "description": "Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg)."
                         }
                     },
                     "description": "Property. Unit: °C. Recommended mold (tool) temperature for this material. "
@@ -174,6 +210,10 @@
                         "value": {
                             "type": "number",
                             "description": "Property. https://schema.org/Number.  Default: 0.0"
+                        },
+                        "unitCode": {
+                            "type": "string",
+                            "description": "Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg)."
                         }
                     },
                     "description": "Property. Unit: %. Mold shrinkage of the material after cooling, needed to size the mold cavity. "
@@ -184,6 +224,10 @@
                         "value": {
                             "type": "number",
                             "description": "Property. https://schema.org/Number.  Default: 0.0"
+                        },
+                        "unitCode": {
+                            "type": "string",
+                            "description": "Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg)."
                         }
                     },
                     "description": "Property. Unit: MPa. The maximum stress the molded material can withstand while being stretched before breaking. "
@@ -194,6 +238,10 @@
                         "value": {
                             "type": "number",
                             "description": "Property. https://schema.org/Number.  Default: 0.0"
+                        },
+                        "unitCode": {
+                            "type": "string",
+                            "description": "Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg)."
                         }
                     },
                     "description": "Property. Unit: MPa. Stiffness of the molded material under bending. "
@@ -204,6 +252,10 @@
                         "value": {
                             "type": "number",
                             "description": "Property. https://schema.org/Number.  Default: 0.0"
+                        },
+                        "unitCode": {
+                            "type": "string",
+                            "description": "Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg)."
                         }
                     },
                     "description": "Property. Unit: kJ/m2. Notched Izod impact strength of the molded material. "
@@ -214,6 +266,10 @@
                         "value": {
                             "type": "number",
                             "description": "Property. https://schema.org/Number.  Default: 0.0"
+                        },
+                        "unitCode": {
+                            "type": "string",
+                            "description": "Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg)."
                         }
                     },
                     "description": "Property. Unit: °C. Temperature at which the molded material deforms under a given load (HDT). "
@@ -224,6 +280,10 @@
                         "value": {
                             "type": "number",
                             "description": "Property. https://schema.org/Number.  Default: 0.0"
+                        },
+                        "unitCode": {
+                            "type": "string",
+                            "description": "Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg)."
                         }
                     },
                     "description": "Property. Unit: %. Inorganic filler/ash content left after incineration, an indicator of filler load and purity. "
@@ -253,6 +313,10 @@
                             "description": "Property. https://schema.org/Number.",
                             "minimum": 0,
                             "maximum": 100
+                        },
+                        "unitCode": {
+                            "type": "string",
+                            "description": "Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg)."
                         }
                     },
                     "description": "Property. Unit: %. Share of the target polymer in the material; the rest is other polymers and contaminants. "

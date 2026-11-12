@@ -31,17 +31,8 @@ Company:
   properties:    
     address:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              additionalProperties: no    
+        - anyOf:    
+            - additionalProperties: no    
               properties:    
                 addressCountry:    
                   description: The country. Model:'https://schema.org/addressCountry'    
@@ -59,53 +50,88 @@ Company:
                   description: The street address. Model:'https://schema.org/streetAddress'    
                   type: string    
               type: object    
-          required:    
-            - type    
-            - value    
-          type: object    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  additionalProperties: no    
+                  properties:    
+                    addressCountry:    
+                      description: The country. Model:'https://schema.org/addressCountry'    
+                      type: string    
+                    addressLocality:    
+                      description: The locality in which the street address is. Model:'https://schema.org/addressLocality'    
+                      type: string    
+                    addressRegion:    
+                      description: The region in which the locality is. Model:'https://schema.org/addressRegion'    
+                      type: string    
+                    postalCode:    
+                      description: The postal code. Model:'https://schema.org/postalCode'    
+                      type: string    
+                    streetAddress:    
+                      description: The street address. Model:'https://schema.org/streetAddress'    
+                      type: string    
+                  type: object    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Postal address of the company as a structured object (street, locality, region, country, postal code), following the schema.org PostalAddress format.    
       x-ngsi:    
         type: Property    
     category:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              items:    
+        - anyOf:    
+            - items:    
                 type: string    
               minItems: 1    
               type: array    
-          required:    
-            - type    
-            - value    
-          type: object    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  items:    
+                    type: string    
+                  minItems: 1    
+                  type: array    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: List of sectors or industry categories the company operates in.    
       x-ngsi:    
         type: Property    
     description:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+        - anyOf:    
+            - type: string    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Short description of the company's activities and its role in valorising brewer's spent yeast.    
       x-ngsi:    
         type: Property    
@@ -116,21 +142,23 @@ Company:
         type: Property    
     name:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+        - anyOf:    
+            - type: string    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Legal or trading name of the company.    
       x-ngsi:    
         type: Property    
@@ -143,21 +171,23 @@ Company:
         type: Property    
     valueChainRole:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+        - anyOf:    
+            - type: string    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Role of the company in the Yeast2Value value chain (e.g. feedstock supplier, processor, customer/off-taker).    
       x-ngsi:    
         type: Property    
@@ -180,14 +210,41 @@ Company:
 <!-- /70-MiddleNotes -->  
 <!-- 80-Examples -->  
 ## Example payloads    
-Not available the example of a Company in JSON-LD format as key-values. This is compatible with NGSI-LD when  using `options=keyValues` and returns the context data of an individual entity.  
+#### Company NGSI-LD key-values Example    
+Here is an example of a Company in JSON-LD format as key-values. This is compatible with NGSI-LD when  using `options=keyValues` and returns the context data of an individual entity.  
+<details><summary><strong>show/hide example</strong></summary>    
+```json  
+{  
+  "id": "urn:ngsi-ld:circuloos-yeast2value:Company:proteindistillery",  
+  "type": "Company",  
+  "name": "ProteinDistillery",  
+  "description": "Converts brewer's spent yeast into food-grade protein, cell-wall fractions and low-molecular fractions.",  
+  "address": {  
+    "streetAddress": "Ostpreussenstrasse 2/2",  
+    "addressLocality": "Ostfildern",  
+    "addressRegion": "Baden-Wuerttemberg",  
+    "addressCountry": "Germany",  
+    "postalCode": "73760"  
+  },  
+  "category": [  
+    "Food ingredients",  
+    "Biotechnology"  
+  ],  
+  "valueChainRole": "Processor",  
+  "@context": [  
+    "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/utils/circuloos_data_platform.jsonld",  
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"  
+  ]  
+}  
+```  
+</details>  
 #### Company NGSI-LD normalized Example    
 Here is an example of a Company in JSON-LD format as normalized. This is compatible with NGSI-LD when not using options and returns the context data of an individual entity.  
 <details><summary><strong>show/hide example</strong></summary>    
 ```json  
 {  
   "@context": [  
-    "http://circuloos-ld-context/circuloos-context.jsonld",  
+    "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/utils/circuloos_data_platform.jsonld",  
     "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"  
   ],  
   "id": "urn:ngsi-ld:circuloos-yeast2value:Company:proteindistillery",  

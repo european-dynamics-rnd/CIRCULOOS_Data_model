@@ -1,0 +1,32 @@
+{
+  "id": "urn:ngsi-ld:Vehicle:ARM:13-57-OR",
+  "type": "Vehicle",
+  "name": {
+    "type": "Text",
+    "value": "13-57-OR"
+  },
+  "description": {
+    "type": "Text",
+    "value": "Mitsubishi Fuso Canter FE649C6SL-R; gross weight 6300 kg."
+  },
+  "vehiclePlateIdentifier": {
+    "type": "Text",
+    "value": "13-57-OR"
+  },
+  "dateVehicleFirstRegistered": {
+    "type": "Text",
+    "value": "1999-12-01"
+  },
+  "vehicleConfiguration": {
+    "type": "Text",
+    "value": "5 m3"
+  },
+  "refVehicleModel": {
+    "type": "Text",
+    "value": "urn:ngsi-ld:VehicleModel:mitsubishi_fuso-canter-fe649c6sl-r"
+  },
+  "fuelType": {
+    "type": "Text",
+    "value": "diesel"
+  }
+}

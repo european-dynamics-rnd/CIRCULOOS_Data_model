@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json-schema.org/schema#",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$schemaVersion": "0.0.1",
   "modelTags": "biocorner",
   "derivedFrom": "",
@@ -10,107 +10,149 @@
   "type": "object",
   "definitions": {
     "QuantityProperty": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "type": "string",
-          "enum": [
-            "Property"
-          ]
-        },
-        "value": {
-          "type": "number",
-          "description": "Exact measured value, when a single figure is known."
-        },
-        "minValue": {
-          "type": "number",
-          "description": "Lower bound of the value, when the source declares a range or a minimum."
-        },
-        "maxValue": {
-          "type": "number",
-          "description": "Upper bound of the value, when the source declares a range or a maximum."
-        },
-        "unitCode": {
-          "type": "string",
-          "description": "UN/CEFACT code of the unit of measurement of the value."
-        },
-        "observedAt": {
-          "type": "string",
-          "format": "date-time"
-        }
-      },
-      "required": [
-        "type",
-        "unitCode"
-      ],
       "anyOf": [
         {
+          "description": "Exact value as a number, or a range as an object with minValue and/or maxValue.",
+          "anyOf": [
+            {
+              "type": "number",
+              "description": "Exact measured value, when a single figure is known."
+            },
+            {
+              "type": "object",
+              "properties": {
+                "minValue": {
+                  "type": "number",
+                  "description": "Lower bound of the value, when the source declares a range or a minimum."
+                },
+                "maxValue": {
+                  "type": "number",
+                  "description": "Upper bound of the value, when the source declares a range or a maximum."
+                }
+              },
+              "minProperties": 1,
+              "additionalProperties": false
+            }
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "Property"
+              ]
+            },
+            "value": {
+              "description": "Exact value as a number, or a range as an object with minValue and/or maxValue.",
+              "anyOf": [
+                {
+                  "type": "number",
+                  "description": "Exact measured value, when a single figure is known."
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "minValue": {
+                      "type": "number",
+                      "description": "Lower bound of the value, when the source declares a range or a minimum."
+                    },
+                    "maxValue": {
+                      "type": "number",
+                      "description": "Upper bound of the value, when the source declares a range or a maximum."
+                    }
+                  },
+                  "minProperties": 1,
+                  "additionalProperties": false
+                }
+              ]
+            },
+            "unitCode": {
+              "type": "string",
+              "description": "UN/CEFACT code of the unit of measurement of the value."
+            },
+            "observedAt": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
           "required": [
+            "type",
+            "unitCode",
             "value"
-          ]
-        },
-        {
-          "required": [
-            "minValue"
-          ]
-        },
-        {
-          "required": [
-            "maxValue"
-          ]
+          ],
+          "additionalProperties": false
         }
-      ],
-      "additionalProperties": false
+      ]
     },
     "StringArrayProperty": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "type": "string",
-          "enum": [
-            "Property"
-          ]
-        },
-        "value": {
+      "anyOf": [
+        {
           "type": "array",
           "items": {
             "type": "string"
           },
           "minItems": 1
         },
-        "observedAt": {
-          "type": "string",
-          "format": "date-time"
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "Property"
+              ]
+            },
+            "value": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "minItems": 1
+            },
+            "observedAt": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "additionalProperties": false
         }
-      },
-      "required": [
-        "type",
-        "value"
-      ],
-      "additionalProperties": false
+      ]
     },
     "StringProperty": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "type": "string",
-          "enum": [
-            "Property"
-          ]
-        },
-        "value": {
+      "anyOf": [
+        {
           "type": "string"
         },
-        "observedAt": {
-          "type": "string",
-          "format": "date-time"
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "Property"
+              ]
+            },
+            "value": {
+              "type": "string"
+            },
+            "observedAt": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "additionalProperties": false
         }
-      },
-      "required": [
-        "type",
-        "value"
-      ],
-      "additionalProperties": false
+      ]
     }
   },
   "allOf": [
