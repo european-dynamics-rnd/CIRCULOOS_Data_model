@@ -1,0 +1,346 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "$schemaVersion": "0.0.1",
+  "modelTags": "ecoffee",
+  "derivedFrom": "",
+  "license": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/refs/heads/main/LICENSE",
+  "$id": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/openCallSpecific/ecoffee/ECoffeeObservation/schema.json",
+  "title": "Data model for the eCoffee spent coffee grain valorisation value chain",
+  "description": "CIRCULOOS data model for the life-cycle inventory of the eCoffee value chain. It covers the AS-IS disposal route of spent coffee grains, their collection by EUSKOVAZZA, drying, and their valorisation into a biocide product at FUMIHOGAR and a sheep feed at AZTI, recording the material masses, transport distances and energy consumptions of each step for digital product and LCA models.",
+  "type": "object",
+  "definitions": {
+    "NumericProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Property"
+          ]
+        },
+        "value": {
+          "type": "number"
+        },
+        "unitCode": {
+          "type": "string"
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Property. Unique entity identifier of the eCoffee value chain record, with the format urn:ngsi-ld:ECoffeeObservation:<recordId>."
+        },
+        "type": {
+          "type": "string",
+          "description": "Property. NGSI Entity type. It has to be ECoffeeObservation",
+          "enum": [
+            "ECoffeeObservation"
+          ]
+        },
+        "spentCoffeeGrainInputMass": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/NumericProperty"
+            }
+          ],
+          "description": "Property. Expected unitCode: TNE. Mass of spent coffee grains generated within the AS-IS process boundary. It is used to quantify the main organic waste stream before any valorisation or alternative treatment."
+        },
+        "disposalTransportDistance": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/NumericProperty"
+            }
+          ],
+          "description": "Property. Expected unitCode: KMT. Distance travelled from spent coffee grain generation points to the final disposal destination. It is used to model logistics activity and transport-related environmental impacts in the current scenario."
+        },
+        "fossilIncinerationHeatConsumption": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/NumericProperty"
+            }
+          ],
+          "description": "Property. Expected unitCode: 3B. Heat energy required for incineration supplied from fossil fuels. It is used to quantify thermal energy demand and fossil-energy contribution in the AS-IS end-of-life treatment route."
+        },
+        "collectionTransportDistance": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/NumericProperty"
+            }
+          ],
+          "description": "Property. Expected unitCode: KMT. Distance travelled from coffee-ground generation points to the processing facility using a van or small truck. It is used to model logistics activity and transport-related environmental impacts."
+        },
+        "collectedSpentCoffeeGrainMass": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/NumericProperty"
+            }
+          ],
+          "description": "Property. Expected unitCode: KGM. Mass of spent coffee grain successfully collected as an output from EUSKOVAZZA. It indicates the recoverable material transferred to the next partner or process step."
+        },
+        "collectedSpentCoffeeGrainInputMass": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/NumericProperty"
+            }
+          ],
+          "description": "Property. Expected unitCode: KGM. Mass of spent coffee grain entering the EUSKOVAZZA collection/process boundary. It is used to quantify the main recovered organic input available for subsequent valorisation steps."
+        },
+        "renewableDryingElectricityConsumption": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/NumericProperty"
+            }
+          ],
+          "description": "Property. Expected unitCode: KWH. Electricity consumed for drying operations, supplied from renewable sources. It is used to quantify process energy demand and distinguish renewable electricity from fossil-based energy."
+        },
+        "biomassHeatConsumption": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/NumericProperty"
+            }
+          ],
+          "description": "Property. Expected unitCode: KWH. Heat energy supplied from biomass for the AZTI drying process. It is used to model thermal energy demand and renewable heat contribution in the lifecycle inventory."
+        },
+        "driedCoffeeGrainOutputMass": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/NumericProperty"
+            }
+          ],
+          "description": "Property. Expected unitCode: KGM. Mass of dried coffee grains produced after the drying process. It is used to track moisture-reduced material available for downstream product formulation."
+        },
+        "driedCoffeeGrainInputMass1": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/NumericProperty"
+            }
+          ],
+          "description": "Property. Expected unitCode: KGM. Mass of dried coffee grains received by FUMIHOGAR as an input material. It is used to track incorporation of recovered coffee-derived material into the biocide product process."
+        },
+        "processingToFumihogarTransportDistance": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/NumericProperty"
+            }
+          ],
+          "description": "Property. Expected unitCode: KMT. Transport distance from the processing facility to FUMIHOGAR by light truck. It is used to calculate logistics activity associated with moving dried coffee grains to the manufacturing site."
+        },
+        "potassiumNitrateInputMass": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/NumericProperty"
+            }
+          ],
+          "description": "Property. Expected unitCode: KGM. Mass of potassium nitrate used as a formulation ingredient in the biocide process. It is used to identify and quantify a key chemical input in the product recipe."
+        },
+        "potsassiumsupplierToFumihogarTransportDistance": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/NumericProperty"
+            }
+          ],
+          "description": "Property. Expected unitCode: KMT. Transport distance from the supplier facility to FUMIHOGAR by light truck. It is used to model inbound logistics for supplied formulation materials."
+        },
+        "aluminiumPackagingMass": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/NumericProperty"
+            }
+          ],
+          "description": "Property. Expected unitCode: GRM. Mass of aluminium packaging used per product or batch. It is used to quantify packaging material demand and related lifecycle impacts."
+        },
+        "packagingTransportDistance": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/NumericProperty"
+            }
+          ],
+          "description": "Property. Expected unitCode: KMT. Transport distance for packaging materials to the production site by light truck. It is used to account for logistics impacts linked to packaging supply."
+        },
+        "renewableBiocidesProcessElectricityCompumption": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/NumericProperty"
+            }
+          ],
+          "description": "Property. Expected unitCode: KWH. Represents renewable electricity consumed per unit of product. It is used to normalize manufacturing energy demand at product-unit level for digital product and LCA models."
+        },
+        "biocideOutputMass": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/NumericProperty"
+            }
+          ],
+          "description": "Property. Expected unitCode: KGM. Mass of biocide product produced by FUMIHOGAR. It is used to define the final product output containing recovered dried spent coffee grains."
+        },
+        "driedCoffeeGrainFeedInputMass2": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/NumericProperty"
+            }
+          ],
+          "description": "Property. Expected unitCode: KGM. Mass of dried coffee grains received by AZTI used as an input in the sheep feed formulation. It is used to track recovered coffee-derived biomass replacing or complementing conventional feed ingredients."
+        },
+        "processingToAztiTransportDistance": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/NumericProperty"
+            }
+          ],
+          "description": "Property. Expected unitCode: KMT. Distance from the processing facility to AZTI for dried coffee grain transfer. A value of zero indicates no transport distance is assigned within the defined process boundary."
+        },
+        "barleyInputMass": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/NumericProperty"
+            }
+          ],
+          "description": "Property. Expected unitCode: KGM. Mass of barley sourced from Spain for the sheep feed formulation. It is used to quantify a conventional agricultural ingredient in the feed recipe."
+        },
+        "barleyTransportDistance": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/NumericProperty"
+            }
+          ],
+          "description": "Property. Expected unitCode: KMT. Truck transport distance from the milling company to AZTI for barley. It is used to model inbound logistics for this feed ingredient."
+        },
+        "oatsInputMass": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/NumericProperty"
+            }
+          ],
+          "description": "Property. Expected unitCode: KGM. Mass of oats sourced from Spain for the sheep feed formulation. It is used to quantify a conventional cereal ingredient in the digital feed recipe."
+        },
+        "oatsTransportDistance": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/NumericProperty"
+            }
+          ],
+          "description": "Property. Expected unitCode: KMT. Truck transport distance from the milling company to AZTI for oats. It is used to calculate logistics activity for this ingredient."
+        },
+        "maizeInputMass": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/NumericProperty"
+            }
+          ],
+          "description": "Property. Expected unitCode: KGM. Mass of maize sourced from Brazil for the sheep feed formulation. It is used to quantify an imported agricultural ingredient in the feed product model."
+        },
+        "maizeBoatTransportDistance": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/NumericProperty"
+            }
+          ],
+          "description": "Property. Expected unitCode: SMI. Sea transport distance for maize from the milling company or origin route to AZTI. It is used to model overseas logistics and transport-related impacts."
+        },
+        "distillersDriedGrainsInputMass": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/NumericProperty"
+            }
+          ],
+          "description": "Property. Expected unitCode: KGM. Mass of distillers dried grains included as an average-market feed ingredient. It is used to quantify co-product feed material within the formulation."
+        },
+        "distillersDriedGrainsTransportDistance": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/NumericProperty"
+            }
+          ],
+          "description": "Property. Expected unitCode: KMT. Truck transport distance from the milling company to AZTI for distillers dried grains. It is used to model inbound logistics for this feed ingredient."
+        },
+        "rapeseedMealInputMass": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/NumericProperty"
+            }
+          ],
+          "description": "Property. Expected unitCode: KGM. Mass of rapeseed meal sourced from France for the sheep feed formulation. It is used to quantify protein-rich feed material in the product recipe."
+        },
+        "rapeseedMealTransportDistance": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/NumericProperty"
+            }
+          ],
+          "description": "Property. Expected unitCode: KMT. Truck transport distance from the milling company to AZTI for rapeseed meal. It is used to calculate transport activity for this ingredient."
+        },
+        "rapeseedOilInputMass": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/NumericProperty"
+            }
+          ],
+          "description": "Property. Expected unitCode: KGM. Mass of rapeseed oil sourced from France for the sheep feed formulation. It is used to quantify oil-based nutritional input in the feed recipe."
+        },
+        "rapeseedOilTransportDistance": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/NumericProperty"
+            }
+          ],
+          "description": "Property. Expected unitCode: KMT. Truck transport distance from the milling company to AZTI for rapeseed oil. It is used to model inbound logistics for this ingredient."
+        },
+        "molassesInputMass": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/NumericProperty"
+            }
+          ],
+          "description": "Property. Expected unitCode: KGM. Mass of molasses sourced from Spain for the sheep feed formulation. It is used to quantify a carbohydrate-rich binding or energy ingredient in the feed recipe."
+        },
+        "molassesTransportDistance": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/NumericProperty"
+            }
+          ],
+          "description": "Property. Expected unitCode: KMT. Truck transport distance from the milling company to AZTI for molasses. It is used to model logistics activity for this supplied ingredient."
+        },
+        "renewableFeedProcessElectricityConsumption": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/NumericProperty"
+            }
+          ],
+          "description": "Property. Expected unitCode: KWH. Renewable electricity consumed in the sheep feed production process at AZTI. It is used to quantify process energy demand associated with feed preparation."
+        },
+        "sheepFeedOutputMass": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/NumericProperty"
+            }
+          ],
+          "description": "Property. Expected unitCode: KGM. Mass of sheep feed produced, including dried spent coffee grains. It is used to define the final feed product output in the digital lifecycle model."
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type"
+  ]
+}

@@ -1,0 +1,218 @@
+{
+  "@context": [
+    "http://circuloos-ld-context/circuloos-context.jsonld",
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"
+  ],
+  "id": "urn:ngsi-ld:ECoffeeObservation:ecoffee-001",
+  "type": "ECoffeeObservation",
+  "spentCoffeeGrainInputMass": {
+    "type": "Property",
+    "value": 1000,
+    "unitCode": "TNE",
+    "observedAt": "2026-06-11T10:15:07.446Z"
+  },
+  "disposalTransportDistance": {
+    "type": "Property",
+    "value": 100,
+    "unitCode": "KMT",
+    "observedAt": "2026-06-11T10:15:07.446Z"
+  },
+  "fossilIncinerationHeatConsumption": {
+    "type": "Property",
+    "value": 100000,
+    "unitCode": "3B",
+    "observedAt": "2026-06-11T10:15:07.446Z"
+  },
+  "collectionTransportDistance": {
+    "type": "Property",
+    "value": 100,
+    "unitCode": "KMT",
+    "observedAt": "2026-06-11T10:15:07.446Z"
+  },
+  "collectedSpentCoffeeGrainMass": {
+    "type": "Property",
+    "value": 1000,
+    "unitCode": "KGM",
+    "observedAt": "2026-06-11T10:15:07.446Z"
+  },
+  "collectedSpentCoffeeGrainInputMass": {
+    "type": "Property",
+    "value": 1000,
+    "unitCode": "KGM",
+    "observedAt": "2026-06-11T10:15:07.446Z"
+  },
+  "renewableDryingElectricityConsumption": {
+    "type": "Property",
+    "value": 53.58,
+    "unitCode": "KWH",
+    "observedAt": "2026-06-11T10:15:07.446Z"
+  },
+  "biomassHeatConsumption": {
+    "type": "Property",
+    "value": 659.99,
+    "unitCode": "KWH",
+    "observedAt": "2026-06-11T10:15:07.446Z"
+  },
+  "driedCoffeeGrainOutputMass": {
+    "type": "Property",
+    "value": 401,
+    "unitCode": "KGM",
+    "observedAt": "2026-06-11T10:15:07.446Z"
+  },
+  "driedCoffeeGrainInputMass1": {
+    "type": "Property",
+    "value": 75,
+    "unitCode": "KGM",
+    "observedAt": "2026-06-11T10:15:07.446Z"
+  },
+  "processingToFumihogarTransportDistance": {
+    "type": "Property",
+    "value": 100,
+    "unitCode": "KMT",
+    "observedAt": "2026-06-11T10:15:07.446Z"
+  },
+  "potassiumNitrateInputMass": {
+    "type": "Property",
+    "value": 25,
+    "unitCode": "KGM",
+    "observedAt": "2026-06-11T10:15:07.446Z"
+  },
+  "potsassiumsupplierToFumihogarTransportDistance": {
+    "type": "Property",
+    "value": 100,
+    "unitCode": "KMT",
+    "observedAt": "2026-06-11T10:15:07.446Z"
+  },
+  "aluminiumPackagingMass": {
+    "type": "Property",
+    "value": 4,
+    "unitCode": "GRM",
+    "observedAt": "2026-06-11T10:15:07.446Z"
+  },
+  "packagingTransportDistance": {
+    "type": "Property",
+    "value": 100,
+    "unitCode": "KMT",
+    "observedAt": "2026-06-11T10:15:07.446Z"
+  },
+  "renewableBiocidesProcessElectricityCompumption": {
+    "type": "Property",
+    "value": 0.015,
+    "unitCode": "KWH",
+    "observedAt": "2026-06-11T10:15:07.446Z"
+  },
+  "biocideOutputMass": {
+    "type": "Property",
+    "value": 100,
+    "unitCode": "KGM",
+    "observedAt": "2026-06-11T10:15:07.446Z"
+  },
+  "driedCoffeeGrainFeedInputMass2": {
+    "type": "Property",
+    "value": 100,
+    "unitCode": "KGM",
+    "observedAt": "2026-06-11T10:15:07.446Z"
+  },
+  "processingToAztiTransportDistance": {
+    "type": "Property",
+    "value": 0,
+    "unitCode": "KMT",
+    "observedAt": "2026-06-11T10:15:07.446Z"
+  },
+  "barleyInputMass": {
+    "type": "Property",
+    "value": 190,
+    "unitCode": "KGM",
+    "observedAt": "2026-06-11T10:15:07.446Z"
+  },
+  "barleyTransportDistance": {
+    "type": "Property",
+    "value": 500,
+    "unitCode": "KMT",
+    "observedAt": "2026-06-11T10:15:07.446Z"
+  },
+  "oatsInputMass": {
+    "type": "Property",
+    "value": 240,
+    "unitCode": "KGM",
+    "observedAt": "2026-06-11T10:15:07.446Z"
+  },
+  "oatsTransportDistance": {
+    "type": "Property",
+    "value": 500,
+    "unitCode": "KMT",
+    "observedAt": "2026-06-11T10:15:07.446Z"
+  },
+  "maizeInputMass": {
+    "type": "Property",
+    "value": 150,
+    "unitCode": "KGM",
+    "observedAt": "2026-06-11T10:15:07.446Z"
+  },
+  "maizeBoatTransportDistance": {
+    "type": "Property",
+    "value": 700,
+    "unitCode": "SMI",
+    "observedAt": "2026-06-11T10:15:07.446Z"
+  },
+  "distillersDriedGrainsInputMass": {
+    "type": "Property",
+    "value": 50,
+    "unitCode": "KGM",
+    "observedAt": "2026-06-11T10:15:07.446Z"
+  },
+  "distillersDriedGrainsTransportDistance": {
+    "type": "Property",
+    "value": 200,
+    "unitCode": "KMT",
+    "observedAt": "2026-06-11T10:15:07.446Z"
+  },
+  "rapeseedMealInputMass": {
+    "type": "Property",
+    "value": 160,
+    "unitCode": "KGM",
+    "observedAt": "2026-06-11T10:15:07.446Z"
+  },
+  "rapeseedMealTransportDistance": {
+    "type": "Property",
+    "value": 1500,
+    "unitCode": "KMT",
+    "observedAt": "2026-06-11T10:15:07.446Z"
+  },
+  "rapeseedOilInputMass": {
+    "type": "Property",
+    "value": 50,
+    "unitCode": "KGM",
+    "observedAt": "2026-06-11T10:15:07.446Z"
+  },
+  "rapeseedOilTransportDistance": {
+    "type": "Property",
+    "value": 1500,
+    "unitCode": "KMT",
+    "observedAt": "2026-06-11T10:15:07.446Z"
+  },
+  "molassesInputMass": {
+    "type": "Property",
+    "value": 30,
+    "unitCode": "KGM",
+    "observedAt": "2026-06-11T10:15:07.446Z"
+  },
+  "molassesTransportDistance": {
+    "type": "Property",
+    "value": 500,
+    "unitCode": "KMT",
+    "observedAt": "2026-06-11T10:15:07.446Z"
+  },
+  "renewableFeedProcessElectricityConsumption": {
+    "type": "Property",
+    "value": 18,
+    "unitCode": "KWH",
+    "observedAt": "2026-06-11T10:15:07.446Z"
+  },
+  "sheepFeedOutputMass": {
+    "type": "Property",
+    "value": 1000,
+    "unitCode": "KGM",
+    "observedAt": "2026-06-11T10:15:07.446Z"
+  }
+}
