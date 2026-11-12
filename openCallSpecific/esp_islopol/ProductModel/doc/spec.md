@@ -31,67 +31,79 @@ ProductModel:
   properties:    
     availableCategories:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              items:    
+        - anyOf:    
+            - items:    
                 type: string    
               minItems: 1    
               type: array    
-          required:    
-            - type    
-            - value    
-          type: object    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  items:    
+                    type: string    
+                  minItems: 1    
+                  type: array    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: List of product categories or grades available for the model. Simple hierarchies are allowed, e.g. 'Waste > EPS'.    
       x-ngsi:    
         type: Property    
     constituents:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              items:    
+        - anyOf:    
+            - items:    
                 type: string    
               minItems: 1    
               type: array    
-          required:    
-            - type    
-            - value    
-          type: object    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  items:    
+                    type: string    
+                  minItems: 1    
+                  type: array    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Materials or components making up the product model.    
       x-ngsi:    
         type: Property    
     description:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+        - anyOf:    
+            - type: string    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Human-readable description of the product or material represented by the model.    
       x-ngsi:    
         type: Property    
@@ -103,81 +115,89 @@ ProductModel:
         type: Property    
     material:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+        - anyOf:    
+            - type: string    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Main material or composition associated with the product model. Given in the source as https://schema.org/material.    
       x-ngsi:    
         type: Property    
     name:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+        - anyOf:    
+            - type: string    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Human-readable name of the product model, used to label products. Given in the source as https://schema.org/name.    
       x-ngsi:    
         type: Property    
     quantityUnit:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+        - anyOf:    
+            - type: string    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: UN/CEFACT code of the default unit of measurement for products of this model, e.g. KGM (kilogram), KWH (kilowatt hour) or EA (each).    
       x-ngsi:    
         type: Property    
     refLcaId:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+        - anyOf:    
+            - type: string    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Reference identifier used for LCA traceability.    
       x-ngsi:    
         type: Property    
@@ -208,14 +228,40 @@ ProductModel:
 <!-- /70-MiddleNotes -->  
 <!-- 80-Examples -->  
 ## Example payloads    
-Not available the example of a ProductModel in JSON-LD format as key-values. This is compatible with NGSI-LD when  using `options=keyValues` and returns the context data of an individual entity.  
+#### ProductModel NGSI-LD key-values Example    
+Here is an example of a ProductModel in JSON-LD format as key-values. This is compatible with NGSI-LD when  using `options=keyValues` and returns the context data of an individual entity.  
+<details><summary><strong>show/hide example</strong></summary>    
+```json  
+{  
+  "id": "urn:ngsi-ld:ProductModel:EPSThermalBoards",  
+  "type": "ProductModel",  
+  "name": "Placas termicas de EPS",  
+  "description": "Placas termicas de EPS",  
+  "constituents": [  
+    "EPS"  
+  ],  
+  "availableCategories": [  
+    "EPS150",  
+    "EPS100",  
+    "NEO80",  
+    "EPS60"  
+  ],  
+  "material": "EPS",  
+  "quantityUnit": "EA",  
+  "@context": [  
+    "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/utils/circuloos_data_platform.jsonld",  
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"  
+  ]  
+}  
+```  
+</details>  
 #### ProductModel NGSI-LD normalized Example    
 Here is an example of a ProductModel in JSON-LD format as normalized. This is compatible with NGSI-LD when not using options and returns the context data of an individual entity.  
 <details><summary><strong>show/hide example</strong></summary>    
 ```json  
 {  
   "@context": [  
-    "http://circuloos-ld-context/circuloos-context.jsonld",  
+    "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/utils/circuloos_data_platform.jsonld",  
     "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"  
   ],  
   "id": "urn:ngsi-ld:ProductModel:EPSThermalBoards",  

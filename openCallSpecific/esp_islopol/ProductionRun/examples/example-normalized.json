@@ -1,0 +1,30 @@
+{
+  "id": "urn:ngsi-ld:ProductionRun:Esferolight:EPSShredding:20260916T095306Z",
+  "type": "ProductionRun",
+  "startDate": {
+    "type": "DateTime",
+    "value": "2026-08-19T10:00:00.000Z"
+  },
+  "endDate": {
+    "type": "DateTime",
+    "value": "2026-08-19T10:35:00.000Z"
+  },
+  "refProcess": {
+    "type": "Text",
+    "value": "urn:ngsi-ld:Process:Esferolight:EPSShredding"
+  },
+  "refInputProducts": {
+    "type": "StructuredValue",
+    "value": [
+      "urn:ngsi-ld:Product:Esferolight:electricity:20260916T095306Z",
+      "urn:ngsi-ld:Product:Esferolight:PlasticBag:20260916T095306Z",
+      "urn:ngsi-ld:Product:Esferolight:UnprocessedRecycledEPS:20260916T083416Z"
+    ]
+  },
+  "refOutputProducts": {
+    "type": "StructuredValue",
+    "value": [
+      "urn:ngsi-ld:Product:Esferolight:ShreddedEPS:20260916T095306Z"
+    ]
+  }
+}

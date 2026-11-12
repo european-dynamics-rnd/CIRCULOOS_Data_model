@@ -1,0 +1,16 @@
+{
+  "id": "urn:ngsi-ld:MortarProcess:DryMixing-Mortar1",
+  "type": "MortarProcess",
+  "name": "Industrial Dry Mixing Process - MORTAR 1 Posidonia",
+  "energyConsumption": 60,
+  "CO2emission": 70,
+  "dateCreated": "2018-01-06T00:00:00Z",
+  "waterConsumption": {
+    "maxValue": 100
+  },
+  "wasteGeneration": {
+    "maxValue": 10
+  },
+  "description": "Automated powder mixing system with controlled temperature and humidity",
+  "recyclingProcess": "100% powders produced recyclable"
+}

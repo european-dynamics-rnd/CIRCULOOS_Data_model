@@ -31,23 +31,27 @@ ProcessEvent:
   properties:    
     endDate:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              format: date-time    
+        - anyOf:    
+            - format: date-time    
               pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$    
               type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  format: date-time    
+                  pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Date and time when the process execution ended, expressed as an ISO 8601 timestamp.    
       x-ngsi:    
         type: Property    
@@ -58,10 +62,8 @@ ProcessEvent:
         type: Property    
     refInputProducts:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            object:    
-              description: URN of the referenced entity, or a list of URNs.    
+        - anyOf:    
+            - description: URN of the referenced entity, or a list of URNs.    
               oneOf:    
                 - pattern: ^urn:ngsi-ld:.+$    
                   type: string    
@@ -70,46 +72,58 @@ ProcessEvent:
                     type: string    
                   minItems: 1    
                   type: array    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Relationship    
-              type: string    
-          required:    
-            - type    
-            - object    
-          type: object    
+            - additionalProperties: no    
+              properties:    
+                object:    
+                  description: URN of the referenced entity, or a list of URNs.    
+                  oneOf:    
+                    - pattern: ^urn:ngsi-ld:.+$    
+                      type: string    
+                    - items:    
+                        pattern: ^urn:ngsi-ld:.+$    
+                        type: string    
+                      minItems: 1    
+                      type: array    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Relationship    
+                  type: string    
+              required:    
+                - type    
+                - object    
+              type: object    
       description: Identifiers of the Product entities consumed or processed during the event.    
       x-ngsi:    
         type: Relationship    
     refLcaId:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+        - anyOf:    
+            - type: string    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Reference identifier linking the process event to a life-cycle assessment (LCA) record or dataset.    
       x-ngsi:    
         type: Property    
     refOutputProducts:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            object:    
-              description: URN of the referenced entity, or a list of URNs.    
+        - anyOf:    
+            - description: URN of the referenced entity, or a list of URNs.    
               oneOf:    
                 - pattern: ^urn:ngsi-ld:.+$    
                   type: string    
@@ -118,138 +132,177 @@ ProcessEvent:
                     type: string    
                   minItems: 1    
                   type: array    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Relationship    
-              type: string    
-          required:    
-            - type    
-            - object    
-          type: object    
+            - additionalProperties: no    
+              properties:    
+                object:    
+                  description: URN of the referenced entity, or a list of URNs.    
+                  oneOf:    
+                    - pattern: ^urn:ngsi-ld:.+$    
+                      type: string    
+                    - items:    
+                        pattern: ^urn:ngsi-ld:.+$    
+                        type: string    
+                      minItems: 1    
+                      type: array    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Relationship    
+                  type: string    
+              required:    
+                - type    
+                - object    
+              type: object    
       description: Identifiers of the Product entities produced by the event. Their quantities and units are stored in the referenced Product records.    
       x-ngsi:    
         type: Relationship    
     refProcess:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            object:    
-              description: URN of the referenced entity.    
+        - anyOf:    
+            - description: URN of the referenced entity.    
               pattern: ^urn:ngsi-ld:.+$    
               type: string    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Relationship    
-              type: string    
-          required:    
-            - type    
-            - object    
-          type: object    
+            - additionalProperties: no    
+              properties:    
+                object:    
+                  description: URN of the referenced entity.    
+                  pattern: ^urn:ngsi-ld:.+$    
+                  type: string    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Relationship    
+                  type: string    
+              required:    
+                - type    
+                - object    
+              type: object    
       description: Identifier of the Process entity that defines the operation executed by this event, linking the recorded execution to its process description.    
       x-ngsi:    
         type: Relationship    
     sortingLine:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+        - anyOf:    
+            - type: string    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Name or identifier of the physical sorting line used for the event, such as ARM's paper and cardboard sorting line.    
       x-ngsi:    
         type: Property    
     sortingStream:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+        - anyOf:    
+            - type: string    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Name or classification of the waste stream being processed, such as the blue-bin paper and cardboard stream. It describes the overall input stream, which may also contain recoverable EPS.    
       x-ngsi:    
         type: Property    
     startDate:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              format: date-time    
+        - anyOf:    
+            - format: date-time    
               pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$    
               type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  format: date-time    
+                  pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Date and time when the process execution started, expressed as an ISO 8601 timestamp. Together with endDate, it defines the recorded execution period.    
       x-ngsi:    
         type: Property    
     throughput:    
       allOf:    
-        - additionalProperties: no    
-          anyOf:    
-            - required:    
+        - anyOf:    
+            - anyOf:    
+                - description: Exact measured value, when a single figure is known.    
+                  type: number    
+                - additionalProperties: no    
+                  minProperties: 1    
+                  properties:    
+                    maxValue:    
+                      description: Upper bound of the value, when the source declares a range or a maximum.    
+                      type: number    
+                    minValue:    
+                      description: Lower bound of the value, when the source declares a range or a minimum.    
+                      type: number    
+                  type: object    
+              description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                unitCode:    
+                  description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
+                  type: string    
+                value:    
+                  anyOf:    
+                    - description: Exact measured value, when a single figure is known.    
+                      type: number    
+                    - additionalProperties: no    
+                      minProperties: 1    
+                      properties:    
+                        maxValue:    
+                          description: Upper bound of the value, when the source declares a range or a maximum.    
+                          type: number    
+                        minValue:    
+                          description: Lower bound of the value, when the source declares a range or a minimum.    
+                          type: number    
+                      type: object    
+                  description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+              required:    
+                - type    
+                - unitCode    
                 - value    
-            - required:    
-                - minValue    
-            - required:    
-                - maxValue    
-          properties:    
-            maxValue:    
-              description: Upper bound of the value, when the source declares a range or a maximum.    
-              type: number    
-            minValue:    
-              description: Lower bound of the value, when the source declares a range or a minimum.    
-              type: number    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            unitCode:    
-              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
-              type: string    
-            value:    
-              description: Exact measured value, when a single figure is known.    
-              type: number    
-          required:    
-            - type    
-            - unitCode    
-          type: object    
+              type: object    
       description: 'Expected unitCode: KGM. Processing throughput for the event.'    
       x-ngsi:    
         type: Property    
@@ -280,14 +333,44 @@ ProcessEvent:
 <!-- /70-MiddleNotes -->  
 <!-- 80-Examples -->  
 ## Example payloads    
-Not available the example of a ProcessEvent in JSON-LD format as key-values. This is compatible with NGSI-LD when  using `options=keyValues` and returns the context data of an individual entity.  
+#### ProcessEvent NGSI-LD key-values Example    
+Here is an example of a ProcessEvent in JSON-LD format as key-values. This is compatible with NGSI-LD when  using `options=keyValues` and returns the context data of an individual entity.  
+<details><summary><strong>show/hide example</strong></summary>    
+```json  
+{  
+  "id": "urn:ngsi-ld:ProcessEvent:ARM:blue-waste-stream-processing:20260903",  
+  "type": "ProcessEvent",  
+  "refProcess": "urn:ngsi-ld:Process:ARM:blue-waste-stream-processing",  
+  "refInputProducts": [  
+    "urn:ngsi-ld:Product:ARM:paper-cardboard-stream-waste:20260903",  
+    "urn:ngsi-ld:Product:ARM:electricity:20260903",  
+    "urn:ngsi-ld:Product:ARM:baling-wire:20260903"  
+  ],  
+  "refOutputProducts": [  
+    "urn:ngsi-ld:Product:ARM:paper-cardboard-bales:20260903",  
+    "urn:ngsi-ld:Product:ARM:rejected-waste:20260903",  
+    "urn:ngsi-ld:Product:ARM:reciclable-eps:20260903",  
+    "urn:ngsi-ld:Product:ARM:rejected-eps:20260903"  
+  ],  
+  "sortingLine": "Linha de triagem de Papel e Cartao da ARM",  
+  "sortingStream": "Ecoponto Azul",  
+  "throughput": 6396.748215,  
+  "startDate": "2026-09-02T07:05:17.000Z",  
+  "endDate": "2026-09-03T20:44:12.000Z",  
+  "@context": [  
+    "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/utils/circuloos_data_platform.jsonld",  
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"  
+  ]  
+}  
+```  
+</details>  
 #### ProcessEvent NGSI-LD normalized Example    
 Here is an example of a ProcessEvent in JSON-LD format as normalized. This is compatible with NGSI-LD when not using options and returns the context data of an individual entity.  
 <details><summary><strong>show/hide example</strong></summary>    
 ```json  
 {  
   "@context": [  
-    "http://circuloos-ld-context/circuloos-context.jsonld",  
+    "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/utils/circuloos_data_platform.jsonld",  
     "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"  
   ],  
   "id": "urn:ngsi-ld:ProcessEvent:ARM:blue-waste-stream-processing:20260903",  

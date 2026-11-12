@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json-schema.org/schema#",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$schemaVersion": "0.0.1",
   "modelTags": "stainless_steel_dpp",
   "derivedFrom": "",
@@ -10,40 +10,42 @@
   "type": "object",
   "definitions": {
     "DateTimeProperty": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "type": "string",
-          "enum": [
-            "Property"
-          ]
-        },
-        "value": {
+      "anyOf": [
+        {
           "type": "string",
           "format": "date-time",
           "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$"
         },
-        "observedAt": {
-          "type": "string",
-          "format": "date-time"
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "Property"
+              ]
+            },
+            "value": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$"
+            },
+            "observedAt": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "additionalProperties": false
         }
-      },
-      "required": [
-        "type",
-        "value"
-      ],
-      "additionalProperties": false
+      ]
     },
     "RouteProperty": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "type": "string",
-          "enum": [
-            "Property"
-          ]
-        },
-        "value": {
+      "anyOf": [
+        {
           "type": "array",
           "minItems": 1,
           "items": {
@@ -51,16 +53,35 @@
           },
           "description": "Property. Ordered list of the manufacturing operations the product goes through."
         },
-        "observedAt": {
-          "type": "string",
-          "format": "date-time"
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "Property"
+              ]
+            },
+            "value": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/definitions/RouteStep"
+              },
+              "description": "Property. Ordered list of the manufacturing operations the product goes through."
+            },
+            "observedAt": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "additionalProperties": false
         }
-      },
-      "required": [
-        "type",
-        "value"
-      ],
-      "additionalProperties": false
+      ]
     },
     "RouteStep": {
       "type": "object",
@@ -107,27 +128,34 @@
       "additionalProperties": false
     },
     "StringProperty": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "type": "string",
-          "enum": [
-            "Property"
-          ]
-        },
-        "value": {
+      "anyOf": [
+        {
           "type": "string"
         },
-        "observedAt": {
-          "type": "string",
-          "format": "date-time"
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "Property"
+              ]
+            },
+            "value": {
+              "type": "string"
+            },
+            "observedAt": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "additionalProperties": false
         }
-      },
-      "required": [
-        "type",
-        "value"
-      ],
-      "additionalProperties": false
+      ]
     }
   },
   "allOf": [

@@ -308,89 +308,97 @@ ElectrospindleObservation:
         type: Property    
     spindleBearingTemperature:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            unitCode:    
-              type: string    
-            value:    
-              type: number    
-          required:    
-            - type    
-            - value    
-          type: object    
+        - anyOf:    
+            - type: number    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                unitCode:    
+                  type: string    
+                value:    
+                  type: number    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: 'Expected unitCode: CEL. Temperature of the spindle bearings. This parameter is used to monitor the thermal load affecting the spindle bearing system and contributes to the definition of the bearing duty cycle. It supports the calculation of the residual lifetime of the spindle bearings and the prediction of suitable end-of-life R-strategies. Source field: T1.'    
       x-ngsi:    
         type: Property    
     spindleMotorCurrent:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            unitCode:    
-              type: string    
-            value:    
-              type: number    
-          required:    
-            - type    
-            - value    
-          type: object    
+        - anyOf:    
+            - type: number    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                unitCode:    
+                  type: string    
+                value:    
+                  type: number    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: 'Expected unitCode: AMP. Motor current of the spindle drive. This attribute is used to estimate the spindle motor torque and, consequently, the mechanical loads acting on the spindle bearings. These data contribute to the duty-cycle calculation of the spindle bearing system, supporting residual lifetime estimation and the prediction of suitable end-of-life R-strategies. Source field: IS.'    
       x-ngsi:    
         type: Property    
     spindleMotorTemperature:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            unitCode:    
-              type: string    
-            value:    
-              type: number    
-          required:    
-            - type    
-            - value    
-          type: object    
+        - anyOf:    
+            - type: number    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                unitCode:    
+                  type: string    
+                value:    
+                  type: number    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: 'Expected unitCode: CEL. Temperature of the electrospindle motor. This parameter is used to characterise the thermal operating conditions of the electrospindle and contributes to the definition of the component duty cycle. It supports the estimation of the residual lifetime of the electrospindle motor and the prediction of suitable end-of-life R-strategies. Source field: Te.'    
       x-ngsi:    
         type: Property    
     spindleSpeed:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            unitCode:    
-              type: string    
-            value:    
-              type: number    
-          required:    
-            - type    
-            - value    
-          type: object    
+        - anyOf:    
+            - type: number    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                unitCode:    
+                  type: string    
+                value:    
+                  type: number    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: 'Expected unitCode: RPM. Electrospindle rotational speed. This attribute is used to characterise the operating profile of the spindle and to determine the duty cycle of the spindle bearing system. Together with load-related and thermal information, it supports residual lifetime calculation and the prediction of suitable end-of-life R-strategies. Source field: VS.'    
       x-ngsi:    
         type: Property    
@@ -403,133 +411,145 @@ ElectrospindleObservation:
         type: Property    
     xAxisMotorCurrent:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            unitCode:    
-              type: string    
-            value:    
-              type: number    
-          required:    
-            - type    
-            - value    
-          type: object    
+        - anyOf:    
+            - type: number    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                unitCode:    
+                  type: string    
+                value:    
+                  type: number    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: 'Expected unitCode: AMP. Motor current of the X-axis drive. This attribute is used to estimate the motor torque of the X-axis and, consequently, the mechanical forces transmitted to the X-axis ballscrew/nut system. These data contribute to the duty-cycle calculation of the X-axis ballscrew/nut assembly, supporting residual lifetime estimation and the prediction of suitable end-of-life R-strategies. Source field: IX.'    
       x-ngsi:    
         type: Property    
     xAxisMotorSpeed:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            unitCode:    
-              type: string    
-            value:    
-              type: number    
-          required:    
-            - type    
-            - value    
-          type: object    
+        - anyOf:    
+            - type: number    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                unitCode:    
+                  type: string    
+                value:    
+                  type: number    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: 'Expected unitCode: RPM. Motor rotational speed of the X-axis drive. This attribute is used to characterise the operating profile of the X-axis and to determine the duty cycle of the X-axis ballscrew/nut system. Together with load-related information, it supports residual lifetime calculation and the prediction of suitable end-of-life R-strategies. Source field: VX.'    
       x-ngsi:    
         type: Property    
     yAxisMotorCurrent:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            unitCode:    
-              type: string    
-            value:    
-              type: number    
-          required:    
-            - type    
-            - value    
-          type: object    
+        - anyOf:    
+            - type: number    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                unitCode:    
+                  type: string    
+                value:    
+                  type: number    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: 'Expected unitCode: AMP. Motor current of the Y-axis drive. This attribute is used to estimate the motor torque of the Y-axis and, consequently, the mechanical forces transmitted to the Y-axis ballscrew/nut system. These data contribute to the duty-cycle calculation of the Y-axis ballscrew/nut assembly, supporting residual lifetime estimation and the prediction of suitable end-of-life R-strategies. Source field: IY.'    
       x-ngsi:    
         type: Property    
     yAxisMotorSpeed:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            unitCode:    
-              type: string    
-            value:    
-              type: number    
-          required:    
-            - type    
-            - value    
-          type: object    
+        - anyOf:    
+            - type: number    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                unitCode:    
+                  type: string    
+                value:    
+                  type: number    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: 'Expected unitCode: RPM. Motor rotational speed of the Y-axis drive. This attribute is used to characterise the operating profile of the Y-axis and to determine the duty cycle of the Y-axis ballscrew/nut system. Together with load-related information, it supports residual lifetime calculation and the prediction of suitable end-of-life R-strategies. Source field: VY.'    
       x-ngsi:    
         type: Property    
     zAxisMotorCurrent:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            unitCode:    
-              type: string    
-            value:    
-              type: number    
-          required:    
-            - type    
-            - value    
-          type: object    
+        - anyOf:    
+            - type: number    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                unitCode:    
+                  type: string    
+                value:    
+                  type: number    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: 'Expected unitCode: AMP. Motor current of the Z-axis drive. This attribute is used to estimate the motor torque of the Z-axis and, consequently, the mechanical forces transmitted to the Z-axis ballscrew/nut system. These data contribute to the duty-cycle calculation of the Z-axis ballscrew/nut assembly, supporting residual lifetime estimation and the prediction of suitable end-of-life R-strategies. Source field: IZ.'    
       x-ngsi:    
         type: Property    
     zAxisMotorSpeed:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            unitCode:    
-              type: string    
-            value:    
-              type: number    
-          required:    
-            - type    
-            - value    
-          type: object    
+        - anyOf:    
+            - type: number    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                unitCode:    
+                  type: string    
+                value:    
+                  type: number    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: 'Expected unitCode: RPM. Motor rotational speed of the Z-axis drive. This attribute is used to characterise the operating profile of the Z-axis and to determine the duty cycle of the Z-axis ballscrew/nut system. Together with load-related information, it supports residual lifetime calculation and the prediction of suitable end-of-life R-strategies. Source field: VZ.'    
       x-ngsi:    
         type: Property    
@@ -550,14 +570,37 @@ ElectrospindleObservation:
 <!-- /70-MiddleNotes -->  
 <!-- 80-Examples -->  
 ## Example payloads    
-Not available the example of a ElectrospindleObservation in JSON-LD format as key-values. This is compatible with NGSI-LD when  using `options=keyValues` and returns the context data of an individual entity.  
+#### ElectrospindleObservation NGSI-LD key-values Example    
+Here is an example of a ElectrospindleObservation in JSON-LD format as key-values. This is compatible with NGSI-LD when  using `options=keyValues` and returns the context data of an individual entity.  
+<details><summary><strong>show/hide example</strong></summary>    
+```json  
+{  
+  "id": "urn:ngsi-ld:ElectrospindleObservation:Reclaim:iot-001",  
+  "type": "ElectrospindleObservation",  
+  "spindleMotorTemperature": 46.172063,  
+  "spindleBearingTemperature": 43.234649,  
+  "xAxisMotorCurrent": 1.435287,  
+  "yAxisMotorCurrent": 1.706294,  
+  "zAxisMotorCurrent": 2.208068,  
+  "spindleMotorCurrent": 3.677316,  
+  "xAxisMotorSpeed": 10.542505,  
+  "yAxisMotorSpeed": 1.117344,  
+  "zAxisMotorSpeed": 40.608215,  
+  "spindleSpeed": 10254,  
+  "@context": [  
+    "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/utils/circuloos_data_platform.jsonld",  
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"  
+  ]  
+}  
+```  
+</details>  
 #### ElectrospindleObservation NGSI-LD normalized Example    
 Here is an example of a ElectrospindleObservation in JSON-LD format as normalized. This is compatible with NGSI-LD when not using options and returns the context data of an individual entity.  
 <details><summary><strong>show/hide example</strong></summary>    
 ```json  
 {  
   "@context": [  
-    "http://circuloos-ld-context/circuloos-context.jsonld",  
+    "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/utils/circuloos_data_platform.jsonld",  
     "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"  
   ],  
   "id": "urn:ngsi-ld:ElectrospindleObservation:Reclaim:iot-001",  

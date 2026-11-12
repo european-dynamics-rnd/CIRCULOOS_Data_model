@@ -1,0 +1,36 @@
+{
+  "id": "urn:ngsi-ld:Factory:ARM:ETRS",
+  "type": "Factory",
+  "name": {
+    "type": "Text",
+    "value": "ETRS - Estacao de Tratamento de Residuos Solidos da Meia Serra"
+  },
+  "factoryType": {
+    "type": "Text",
+    "value": "Tratamento, valorizacao e eliminacao de residuos solidos urbanos."
+  },
+  "operatedBy": {
+    "type": "Text",
+    "value": "ARM - Aguas e Residuos da Madeira S.A."
+  },
+  "address": {
+    "type": "StructuredValue",
+    "value": {
+      "streetAddress": "Meia Serra",
+      "postalCode": "9135-080",
+      "addressLocality": "Camacha",
+      "addressRegion": "Madeira",
+      "addressCountry": "Portugal"
+    }
+  },
+  "location": {
+    "type": "geo:json",
+    "value": {
+      "type": "Point",
+      "coordinates": [
+        -16.869608,
+        32.703529
+      ]
+    }
+  }
+}

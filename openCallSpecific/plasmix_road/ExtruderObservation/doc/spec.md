@@ -31,391 +31,543 @@ ExtruderObservation:
   properties:    
     crusherCurrent:    
       allOf:    
-        - additionalProperties: no    
-          anyOf:    
-            - required:    
+        - anyOf:    
+            - anyOf:    
+                - description: Exact measured value, when a single figure is known.    
+                  type: number    
+                - additionalProperties: no    
+                  minProperties: 1    
+                  properties:    
+                    maxValue:    
+                      description: Upper bound of the value, when the source declares a range or a maximum.    
+                      type: number    
+                    minValue:    
+                      description: Lower bound of the value, when the source declares a range or a minimum.    
+                      type: number    
+                  type: object    
+              description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                unitCode:    
+                  description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
+                  type: string    
+                value:    
+                  anyOf:    
+                    - description: Exact measured value, when a single figure is known.    
+                      type: number    
+                    - additionalProperties: no    
+                      minProperties: 1    
+                      properties:    
+                        maxValue:    
+                          description: Upper bound of the value, when the source declares a range or a maximum.    
+                          type: number    
+                        minValue:    
+                          description: Lower bound of the value, when the source declares a range or a minimum.    
+                          type: number    
+                      type: object    
+                  description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+              required:    
+                - type    
+                - unitCode    
                 - value    
-            - required:    
-                - minValue    
-            - required:    
-                - maxValue    
-          properties:    
-            maxValue:    
-              description: Upper bound of the value, when the source declares a range or a maximum.    
-              type: number    
-            minValue:    
-              description: Lower bound of the value, when the source declares a range or a minimum.    
-              type: number    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            unitCode:    
-              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
-              type: string    
-            value:    
-              description: Exact measured value, when a single figure is known.    
-              type: number    
-          required:    
-            - type    
-            - unitCode    
-          type: object    
+              type: object    
       description: 'Expected unitCode: AMP. Shredder current.'    
       x-ngsi:    
         type: Property    
     crusherRotationSpeed:    
       allOf:    
-        - additionalProperties: no    
-          anyOf:    
-            - required:    
+        - anyOf:    
+            - anyOf:    
+                - description: Exact measured value, when a single figure is known.    
+                  type: number    
+                - additionalProperties: no    
+                  minProperties: 1    
+                  properties:    
+                    maxValue:    
+                      description: Upper bound of the value, when the source declares a range or a maximum.    
+                      type: number    
+                    minValue:    
+                      description: Lower bound of the value, when the source declares a range or a minimum.    
+                      type: number    
+                  type: object    
+              description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                unitCode:    
+                  description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
+                  type: string    
+                value:    
+                  anyOf:    
+                    - description: Exact measured value, when a single figure is known.    
+                      type: number    
+                    - additionalProperties: no    
+                      minProperties: 1    
+                      properties:    
+                        maxValue:    
+                          description: Upper bound of the value, when the source declares a range or a maximum.    
+                          type: number    
+                        minValue:    
+                          description: Lower bound of the value, when the source declares a range or a minimum.    
+                          type: number    
+                      type: object    
+                  description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+              required:    
+                - type    
+                - unitCode    
                 - value    
-            - required:    
-                - minValue    
-            - required:    
-                - maxValue    
-          properties:    
-            maxValue:    
-              description: Upper bound of the value, when the source declares a range or a maximum.    
-              type: number    
-            minValue:    
-              description: Lower bound of the value, when the source declares a range or a minimum.    
-              type: number    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            unitCode:    
-              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
-              type: string    
-            value:    
-              description: Exact measured value, when a single figure is known.    
-              type: number    
-          required:    
-            - type    
-            - unitCode    
-          type: object    
+              type: object    
       description: 'Expected unitCode: RPM. Speed of the shredder motor.'    
       x-ngsi:    
         type: Property    
     crusherTemperature:    
       allOf:    
-        - additionalProperties: no    
-          anyOf:    
-            - required:    
+        - anyOf:    
+            - anyOf:    
+                - description: Exact measured value, when a single figure is known.    
+                  type: number    
+                - additionalProperties: no    
+                  minProperties: 1    
+                  properties:    
+                    maxValue:    
+                      description: Upper bound of the value, when the source declares a range or a maximum.    
+                      type: number    
+                    minValue:    
+                      description: Lower bound of the value, when the source declares a range or a minimum.    
+                      type: number    
+                  type: object    
+              description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                unitCode:    
+                  description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
+                  type: string    
+                value:    
+                  anyOf:    
+                    - description: Exact measured value, when a single figure is known.    
+                      type: number    
+                    - additionalProperties: no    
+                      minProperties: 1    
+                      properties:    
+                        maxValue:    
+                          description: Upper bound of the value, when the source declares a range or a maximum.    
+                          type: number    
+                        minValue:    
+                          description: Lower bound of the value, when the source declares a range or a minimum.    
+                          type: number    
+                      type: object    
+                  description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+              required:    
+                - type    
+                - unitCode    
                 - value    
-            - required:    
-                - minValue    
-            - required:    
-                - maxValue    
-          properties:    
-            maxValue:    
-              description: Upper bound of the value, when the source declares a range or a maximum.    
-              type: number    
-            minValue:    
-              description: Lower bound of the value, when the source declares a range or a minimum.    
-              type: number    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            unitCode:    
-              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
-              type: string    
-            value:    
-              description: Exact measured value, when a single figure is known.    
-              type: number    
-          required:    
-            - type    
-            - unitCode    
-          type: object    
+              type: object    
       description: 'Expected unitCode: CEL. Shredder temperature.'    
       x-ngsi:    
         type: Property    
     cuttingSpeed:    
       allOf:    
-        - additionalProperties: no    
-          anyOf:    
-            - required:    
+        - anyOf:    
+            - anyOf:    
+                - description: Exact measured value, when a single figure is known.    
+                  type: number    
+                - additionalProperties: no    
+                  minProperties: 1    
+                  properties:    
+                    maxValue:    
+                      description: Upper bound of the value, when the source declares a range or a maximum.    
+                      type: number    
+                    minValue:    
+                      description: Lower bound of the value, when the source declares a range or a minimum.    
+                      type: number    
+                  type: object    
+              description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                unitCode:    
+                  description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
+                  type: string    
+                value:    
+                  anyOf:    
+                    - description: Exact measured value, when a single figure is known.    
+                      type: number    
+                    - additionalProperties: no    
+                      minProperties: 1    
+                      properties:    
+                        maxValue:    
+                          description: Upper bound of the value, when the source declares a range or a maximum.    
+                          type: number    
+                        minValue:    
+                          description: Lower bound of the value, when the source declares a range or a minimum.    
+                          type: number    
+                      type: object    
+                  description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+              required:    
+                - type    
+                - unitCode    
                 - value    
-            - required:    
-                - minValue    
-            - required:    
-                - maxValue    
-          properties:    
-            maxValue:    
-              description: Upper bound of the value, when the source declares a range or a maximum.    
-              type: number    
-            minValue:    
-              description: Lower bound of the value, when the source declares a range or a minimum.    
-              type: number    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            unitCode:    
-              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
-              type: string    
-            value:    
-              description: Exact measured value, when a single figure is known.    
-              type: number    
-          required:    
-            - type    
-            - unitCode    
-          type: object    
+              type: object    
       description: 'Expected unitCode: RPM. Cutting motor speed. Source tag: cut_speed_rpm.'    
       x-ngsi:    
         type: Property    
     cuttingSpeedCurrent:    
       allOf:    
-        - additionalProperties: no    
-          anyOf:    
-            - required:    
+        - anyOf:    
+            - anyOf:    
+                - description: Exact measured value, when a single figure is known.    
+                  type: number    
+                - additionalProperties: no    
+                  minProperties: 1    
+                  properties:    
+                    maxValue:    
+                      description: Upper bound of the value, when the source declares a range or a maximum.    
+                      type: number    
+                    minValue:    
+                      description: Lower bound of the value, when the source declares a range or a minimum.    
+                      type: number    
+                  type: object    
+              description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                unitCode:    
+                  description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
+                  type: string    
+                value:    
+                  anyOf:    
+                    - description: Exact measured value, when a single figure is known.    
+                      type: number    
+                    - additionalProperties: no    
+                      minProperties: 1    
+                      properties:    
+                        maxValue:    
+                          description: Upper bound of the value, when the source declares a range or a maximum.    
+                          type: number    
+                        minValue:    
+                          description: Lower bound of the value, when the source declares a range or a minimum.    
+                          type: number    
+                      type: object    
+                  description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+              required:    
+                - type    
+                - unitCode    
                 - value    
-            - required:    
-                - minValue    
-            - required:    
-                - maxValue    
-          properties:    
-            maxValue:    
-              description: Upper bound of the value, when the source declares a range or a maximum.    
-              type: number    
-            minValue:    
-              description: Lower bound of the value, when the source declares a range or a minimum.    
-              type: number    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            unitCode:    
-              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
-              type: string    
-            value:    
-              description: Exact measured value, when a single figure is known.    
-              type: number    
-          required:    
-            - type    
-            - unitCode    
-          type: object    
+              type: object    
       description: 'Expected unitCode: AMP. Cutting motor amperage. Source tag: cutting_speed_amp.'    
       x-ngsi:    
         type: Property    
     cuttingZoneActualTemperature:    
       allOf:    
-        - additionalProperties: no    
-          anyOf:    
-            - required:    
+        - anyOf:    
+            - anyOf:    
+                - description: Exact measured value, when a single figure is known.    
+                  type: number    
+                - additionalProperties: no    
+                  minProperties: 1    
+                  properties:    
+                    maxValue:    
+                      description: Upper bound of the value, when the source declares a range or a maximum.    
+                      type: number    
+                    minValue:    
+                      description: Lower bound of the value, when the source declares a range or a minimum.    
+                      type: number    
+                  type: object    
+              description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                unitCode:    
+                  description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
+                  type: string    
+                value:    
+                  anyOf:    
+                    - description: Exact measured value, when a single figure is known.    
+                      type: number    
+                    - additionalProperties: no    
+                      minProperties: 1    
+                      properties:    
+                        maxValue:    
+                          description: Upper bound of the value, when the source declares a range or a maximum.    
+                          type: number    
+                        minValue:    
+                          description: Lower bound of the value, when the source declares a range or a minimum.    
+                          type: number    
+                      type: object    
+                  description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+              required:    
+                - type    
+                - unitCode    
                 - value    
-            - required:    
-                - minValue    
-            - required:    
-                - maxValue    
-          properties:    
-            maxValue:    
-              description: Upper bound of the value, when the source declares a range or a maximum.    
-              type: number    
-            minValue:    
-              description: Lower bound of the value, when the source declares a range or a minimum.    
-              type: number    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            unitCode:    
-              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
-              type: string    
-            value:    
-              description: Exact measured value, when a single figure is known.    
-              type: number    
-          required:    
-            - type    
-            - unitCode    
-          type: object    
+              type: object    
       description: 'Expected unitCode: CEL. Cutting zone temperature (current value). Source tag: t_cutting_zone_act_c.'    
       x-ngsi:    
         type: Property    
     cuttingZoneSetTemperature:    
       allOf:    
-        - additionalProperties: no    
-          anyOf:    
-            - required:    
+        - anyOf:    
+            - anyOf:    
+                - description: Exact measured value, when a single figure is known.    
+                  type: number    
+                - additionalProperties: no    
+                  minProperties: 1    
+                  properties:    
+                    maxValue:    
+                      description: Upper bound of the value, when the source declares a range or a maximum.    
+                      type: number    
+                    minValue:    
+                      description: Lower bound of the value, when the source declares a range or a minimum.    
+                      type: number    
+                  type: object    
+              description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                unitCode:    
+                  description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
+                  type: string    
+                value:    
+                  anyOf:    
+                    - description: Exact measured value, when a single figure is known.    
+                      type: number    
+                    - additionalProperties: no    
+                      minProperties: 1    
+                      properties:    
+                        maxValue:    
+                          description: Upper bound of the value, when the source declares a range or a maximum.    
+                          type: number    
+                        minValue:    
+                          description: Lower bound of the value, when the source declares a range or a minimum.    
+                          type: number    
+                      type: object    
+                  description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+              required:    
+                - type    
+                - unitCode    
                 - value    
-            - required:    
-                - minValue    
-            - required:    
-                - maxValue    
-          properties:    
-            maxValue:    
-              description: Upper bound of the value, when the source declares a range or a maximum.    
-              type: number    
-            minValue:    
-              description: Lower bound of the value, when the source declares a range or a minimum.    
-              type: number    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            unitCode:    
-              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
-              type: string    
-            value:    
-              description: Exact measured value, when a single figure is known.    
-              type: number    
-          required:    
-            - type    
-            - unitCode    
-          type: object    
+              type: object    
       description: 'Expected unitCode: CEL. Cutting zone temperature (target value). Source tag: t_cutting_zone_sp_c.'    
       x-ngsi:    
         type: Property    
     extruderCurrent:    
       allOf:    
-        - additionalProperties: no    
-          anyOf:    
-            - required:    
+        - anyOf:    
+            - anyOf:    
+                - description: Exact measured value, when a single figure is known.    
+                  type: number    
+                - additionalProperties: no    
+                  minProperties: 1    
+                  properties:    
+                    maxValue:    
+                      description: Upper bound of the value, when the source declares a range or a maximum.    
+                      type: number    
+                    minValue:    
+                      description: Lower bound of the value, when the source declares a range or a minimum.    
+                      type: number    
+                  type: object    
+              description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                unitCode:    
+                  description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
+                  type: string    
+                value:    
+                  anyOf:    
+                    - description: Exact measured value, when a single figure is known.    
+                      type: number    
+                    - additionalProperties: no    
+                      minProperties: 1    
+                      properties:    
+                        maxValue:    
+                          description: Upper bound of the value, when the source declares a range or a maximum.    
+                          type: number    
+                        minValue:    
+                          description: Lower bound of the value, when the source declares a range or a minimum.    
+                          type: number    
+                      type: object    
+                  description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+              required:    
+                - type    
+                - unitCode    
                 - value    
-            - required:    
-                - minValue    
-            - required:    
-                - maxValue    
-          properties:    
-            maxValue:    
-              description: Upper bound of the value, when the source declares a range or a maximum.    
-              type: number    
-            minValue:    
-              description: Lower bound of the value, when the source declares a range or a minimum.    
-              type: number    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            unitCode:    
-              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
-              type: string    
-            value:    
-              description: Exact measured value, when a single figure is known.    
-              type: number    
-          required:    
-            - type    
-            - unitCode    
-          type: object    
+              type: object    
       description: 'Expected unitCode: AMP. Extruder motor current. Source tag: extr_corr_amp.'    
       x-ngsi:    
         type: Property    
     extruderId:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+        - anyOf:    
+            - type: string    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Identifier of the extruder the observation belongs to (recorded in the source as the user session).    
       x-ngsi:    
         type: Property    
     extruderWorkingSpeed:    
       allOf:    
-        - additionalProperties: no    
-          anyOf:    
-            - required:    
+        - anyOf:    
+            - anyOf:    
+                - description: Exact measured value, when a single figure is known.    
+                  type: number    
+                - additionalProperties: no    
+                  minProperties: 1    
+                  properties:    
+                    maxValue:    
+                      description: Upper bound of the value, when the source declares a range or a maximum.    
+                      type: number    
+                    minValue:    
+                      description: Lower bound of the value, when the source declares a range or a minimum.    
+                      type: number    
+                  type: object    
+              description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                unitCode:    
+                  description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
+                  type: string    
+                value:    
+                  anyOf:    
+                    - description: Exact measured value, when a single figure is known.    
+                      type: number    
+                    - additionalProperties: no    
+                      minProperties: 1    
+                      properties:    
+                        maxValue:    
+                          description: Upper bound of the value, when the source declares a range or a maximum.    
+                          type: number    
+                        minValue:    
+                          description: Lower bound of the value, when the source declares a range or a minimum.    
+                          type: number    
+                      type: object    
+                  description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+              required:    
+                - type    
+                - unitCode    
                 - value    
-            - required:    
-                - minValue    
-            - required:    
-                - maxValue    
-          properties:    
-            maxValue:    
-              description: Upper bound of the value, when the source declares a range or a maximum.    
-              type: number    
-            minValue:    
-              description: Lower bound of the value, when the source declares a range or a minimum.    
-              type: number    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            unitCode:    
-              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
-              type: string    
-            value:    
-              description: Exact measured value, when a single figure is known.    
-              type: number    
-          required:    
-            - type    
-            - unitCode    
-          type: object    
+              type: object    
       description: 'Expected unitCode: P1. Extruder speed, as a percentage of its maximum.'    
       x-ngsi:    
         type: Property    
     feedSpeedWorking:    
       allOf:    
-        - additionalProperties: no    
-          anyOf:    
-            - required:    
+        - anyOf:    
+            - anyOf:    
+                - description: Exact measured value, when a single figure is known.    
+                  type: number    
+                - additionalProperties: no    
+                  minProperties: 1    
+                  properties:    
+                    maxValue:    
+                      description: Upper bound of the value, when the source declares a range or a maximum.    
+                      type: number    
+                    minValue:    
+                      description: Lower bound of the value, when the source declares a range or a minimum.    
+                      type: number    
+                  type: object    
+              description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                unitCode:    
+                  description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
+                  type: string    
+                value:    
+                  anyOf:    
+                    - description: Exact measured value, when a single figure is known.    
+                      type: number    
+                    - additionalProperties: no    
+                      minProperties: 1    
+                      properties:    
+                        maxValue:    
+                          description: Upper bound of the value, when the source declares a range or a maximum.    
+                          type: number    
+                        minValue:    
+                          description: Lower bound of the value, when the source declares a range or a minimum.    
+                          type: number    
+                      type: object    
+                  description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+              required:    
+                - type    
+                - unitCode    
                 - value    
-            - required:    
-                - minValue    
-            - required:    
-                - maxValue    
-          properties:    
-            maxValue:    
-              description: Upper bound of the value, when the source declares a range or a maximum.    
-              type: number    
-            minValue:    
-              description: Lower bound of the value, when the source declares a range or a minimum.    
-              type: number    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            unitCode:    
-              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
-              type: string    
-            value:    
-              description: Exact measured value, when a single figure is known.    
-              type: number    
-          required:    
-            - type    
-            - unitCode    
-          type: object    
+              type: object    
       description: 'Expected unitCode: P1. Feeder auger speed, as a percentage of its maximum.'    
       x-ngsi:    
         type: Property    
@@ -426,38 +578,53 @@ ExtruderObservation:
         type: Property    
     screwFeedCurrent:    
       allOf:    
-        - additionalProperties: no    
-          anyOf:    
-            - required:    
+        - anyOf:    
+            - anyOf:    
+                - description: Exact measured value, when a single figure is known.    
+                  type: number    
+                - additionalProperties: no    
+                  minProperties: 1    
+                  properties:    
+                    maxValue:    
+                      description: Upper bound of the value, when the source declares a range or a maximum.    
+                      type: number    
+                    minValue:    
+                      description: Lower bound of the value, when the source declares a range or a minimum.    
+                      type: number    
+                  type: object    
+              description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                unitCode:    
+                  description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
+                  type: string    
+                value:    
+                  anyOf:    
+                    - description: Exact measured value, when a single figure is known.    
+                      type: number    
+                    - additionalProperties: no    
+                      minProperties: 1    
+                      properties:    
+                        maxValue:    
+                          description: Upper bound of the value, when the source declares a range or a maximum.    
+                          type: number    
+                        minValue:    
+                          description: Lower bound of the value, when the source declares a range or a minimum.    
+                          type: number    
+                      type: object    
+                  description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+              required:    
+                - type    
+                - unitCode    
                 - value    
-            - required:    
-                - minValue    
-            - required:    
-                - maxValue    
-          properties:    
-            maxValue:    
-              description: Upper bound of the value, when the source declares a range or a maximum.    
-              type: number    
-            minValue:    
-              description: Lower bound of the value, when the source declares a range or a minimum.    
-              type: number    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            unitCode:    
-              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
-              type: string    
-            value:    
-              description: Exact measured value, when a single figure is known.    
-              type: number    
-          required:    
-            - type    
-            - unitCode    
-          type: object    
+              type: object    
       description: 'Expected unitCode: AMP. Feeder screw amperage.'    
       x-ngsi:    
         type: Property    
@@ -470,741 +637,1041 @@ ExtruderObservation:
         type: Property    
     zone10ActualTemperature:    
       allOf:    
-        - additionalProperties: no    
-          anyOf:    
-            - required:    
+        - anyOf:    
+            - anyOf:    
+                - description: Exact measured value, when a single figure is known.    
+                  type: number    
+                - additionalProperties: no    
+                  minProperties: 1    
+                  properties:    
+                    maxValue:    
+                      description: Upper bound of the value, when the source declares a range or a maximum.    
+                      type: number    
+                    minValue:    
+                      description: Lower bound of the value, when the source declares a range or a minimum.    
+                      type: number    
+                  type: object    
+              description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                unitCode:    
+                  description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
+                  type: string    
+                value:    
+                  anyOf:    
+                    - description: Exact measured value, when a single figure is known.    
+                      type: number    
+                    - additionalProperties: no    
+                      minProperties: 1    
+                      properties:    
+                        maxValue:    
+                          description: Upper bound of the value, when the source declares a range or a maximum.    
+                          type: number    
+                        minValue:    
+                          description: Lower bound of the value, when the source declares a range or a minimum.    
+                          type: number    
+                      type: object    
+                  description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+              required:    
+                - type    
+                - unitCode    
                 - value    
-            - required:    
-                - minValue    
-            - required:    
-                - maxValue    
-          properties:    
-            maxValue:    
-              description: Upper bound of the value, when the source declares a range or a maximum.    
-              type: number    
-            minValue:    
-              description: Lower bound of the value, when the source declares a range or a minimum.    
-              type: number    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            unitCode:    
-              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
-              type: string    
-            value:    
-              description: Exact measured value, when a single figure is known.    
-              type: number    
-          required:    
-            - type    
-            - unitCode    
-          type: object    
+              type: object    
       description: 'Expected unitCode: CEL. Extruder Zone 10 temperature (current value). Source tag: t_zone10_extr_act_c.'    
       x-ngsi:    
         type: Property    
     zone10SetTemperature:    
       allOf:    
-        - additionalProperties: no    
-          anyOf:    
-            - required:    
+        - anyOf:    
+            - anyOf:    
+                - description: Exact measured value, when a single figure is known.    
+                  type: number    
+                - additionalProperties: no    
+                  minProperties: 1    
+                  properties:    
+                    maxValue:    
+                      description: Upper bound of the value, when the source declares a range or a maximum.    
+                      type: number    
+                    minValue:    
+                      description: Lower bound of the value, when the source declares a range or a minimum.    
+                      type: number    
+                  type: object    
+              description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                unitCode:    
+                  description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
+                  type: string    
+                value:    
+                  anyOf:    
+                    - description: Exact measured value, when a single figure is known.    
+                      type: number    
+                    - additionalProperties: no    
+                      minProperties: 1    
+                      properties:    
+                        maxValue:    
+                          description: Upper bound of the value, when the source declares a range or a maximum.    
+                          type: number    
+                        minValue:    
+                          description: Lower bound of the value, when the source declares a range or a minimum.    
+                          type: number    
+                      type: object    
+                  description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+              required:    
+                - type    
+                - unitCode    
                 - value    
-            - required:    
-                - minValue    
-            - required:    
-                - maxValue    
-          properties:    
-            maxValue:    
-              description: Upper bound of the value, when the source declares a range or a maximum.    
-              type: number    
-            minValue:    
-              description: Lower bound of the value, when the source declares a range or a minimum.    
-              type: number    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            unitCode:    
-              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
-              type: string    
-            value:    
-              description: Exact measured value, when a single figure is known.    
-              type: number    
-          required:    
-            - type    
-            - unitCode    
-          type: object    
+              type: object    
       description: 'Expected unitCode: CEL. Extruder Zone 10 set temperature (target value). Source tag: t_zone10_extr_sp_c.'    
       x-ngsi:    
         type: Property    
     zone1ActualTemperature:    
       allOf:    
-        - additionalProperties: no    
-          anyOf:    
-            - required:    
+        - anyOf:    
+            - anyOf:    
+                - description: Exact measured value, when a single figure is known.    
+                  type: number    
+                - additionalProperties: no    
+                  minProperties: 1    
+                  properties:    
+                    maxValue:    
+                      description: Upper bound of the value, when the source declares a range or a maximum.    
+                      type: number    
+                    minValue:    
+                      description: Lower bound of the value, when the source declares a range or a minimum.    
+                      type: number    
+                  type: object    
+              description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                unitCode:    
+                  description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
+                  type: string    
+                value:    
+                  anyOf:    
+                    - description: Exact measured value, when a single figure is known.    
+                      type: number    
+                    - additionalProperties: no    
+                      minProperties: 1    
+                      properties:    
+                        maxValue:    
+                          description: Upper bound of the value, when the source declares a range or a maximum.    
+                          type: number    
+                        minValue:    
+                          description: Lower bound of the value, when the source declares a range or a minimum.    
+                          type: number    
+                      type: object    
+                  description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+              required:    
+                - type    
+                - unitCode    
                 - value    
-            - required:    
-                - minValue    
-            - required:    
-                - maxValue    
-          properties:    
-            maxValue:    
-              description: Upper bound of the value, when the source declares a range or a maximum.    
-              type: number    
-            minValue:    
-              description: Lower bound of the value, when the source declares a range or a minimum.    
-              type: number    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            unitCode:    
-              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
-              type: string    
-            value:    
-              description: Exact measured value, when a single figure is known.    
-              type: number    
-          required:    
-            - type    
-            - unitCode    
-          type: object    
+              type: object    
       description: 'Expected unitCode: CEL. Extruder Zone 1 temperature (current value). Source tag: t_zone1_extr_act_c.'    
       x-ngsi:    
         type: Property    
     zone1SetTemperature:    
       allOf:    
-        - additionalProperties: no    
-          anyOf:    
-            - required:    
+        - anyOf:    
+            - anyOf:    
+                - description: Exact measured value, when a single figure is known.    
+                  type: number    
+                - additionalProperties: no    
+                  minProperties: 1    
+                  properties:    
+                    maxValue:    
+                      description: Upper bound of the value, when the source declares a range or a maximum.    
+                      type: number    
+                    minValue:    
+                      description: Lower bound of the value, when the source declares a range or a minimum.    
+                      type: number    
+                  type: object    
+              description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                unitCode:    
+                  description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
+                  type: string    
+                value:    
+                  anyOf:    
+                    - description: Exact measured value, when a single figure is known.    
+                      type: number    
+                    - additionalProperties: no    
+                      minProperties: 1    
+                      properties:    
+                        maxValue:    
+                          description: Upper bound of the value, when the source declares a range or a maximum.    
+                          type: number    
+                        minValue:    
+                          description: Lower bound of the value, when the source declares a range or a minimum.    
+                          type: number    
+                      type: object    
+                  description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+              required:    
+                - type    
+                - unitCode    
                 - value    
-            - required:    
-                - minValue    
-            - required:    
-                - maxValue    
-          properties:    
-            maxValue:    
-              description: Upper bound of the value, when the source declares a range or a maximum.    
-              type: number    
-            minValue:    
-              description: Lower bound of the value, when the source declares a range or a minimum.    
-              type: number    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            unitCode:    
-              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
-              type: string    
-            value:    
-              description: Exact measured value, when a single figure is known.    
-              type: number    
-          required:    
-            - type    
-            - unitCode    
-          type: object    
+              type: object    
       description: 'Expected unitCode: CEL. Extruder Zone 1 set temperature (target value). Source tag: t_zone1_extr_sp_c.'    
       x-ngsi:    
         type: Property    
     zone2ActualTemperature:    
       allOf:    
-        - additionalProperties: no    
-          anyOf:    
-            - required:    
+        - anyOf:    
+            - anyOf:    
+                - description: Exact measured value, when a single figure is known.    
+                  type: number    
+                - additionalProperties: no    
+                  minProperties: 1    
+                  properties:    
+                    maxValue:    
+                      description: Upper bound of the value, when the source declares a range or a maximum.    
+                      type: number    
+                    minValue:    
+                      description: Lower bound of the value, when the source declares a range or a minimum.    
+                      type: number    
+                  type: object    
+              description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                unitCode:    
+                  description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
+                  type: string    
+                value:    
+                  anyOf:    
+                    - description: Exact measured value, when a single figure is known.    
+                      type: number    
+                    - additionalProperties: no    
+                      minProperties: 1    
+                      properties:    
+                        maxValue:    
+                          description: Upper bound of the value, when the source declares a range or a maximum.    
+                          type: number    
+                        minValue:    
+                          description: Lower bound of the value, when the source declares a range or a minimum.    
+                          type: number    
+                      type: object    
+                  description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+              required:    
+                - type    
+                - unitCode    
                 - value    
-            - required:    
-                - minValue    
-            - required:    
-                - maxValue    
-          properties:    
-            maxValue:    
-              description: Upper bound of the value, when the source declares a range or a maximum.    
-              type: number    
-            minValue:    
-              description: Lower bound of the value, when the source declares a range or a minimum.    
-              type: number    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            unitCode:    
-              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
-              type: string    
-            value:    
-              description: Exact measured value, when a single figure is known.    
-              type: number    
-          required:    
-            - type    
-            - unitCode    
-          type: object    
+              type: object    
       description: 'Expected unitCode: CEL. Extruder Zone 2 temperature (current value). Source tag: t_zone2_extr_act_c.'    
       x-ngsi:    
         type: Property    
     zone2SetTemperature:    
       allOf:    
-        - additionalProperties: no    
-          anyOf:    
-            - required:    
+        - anyOf:    
+            - anyOf:    
+                - description: Exact measured value, when a single figure is known.    
+                  type: number    
+                - additionalProperties: no    
+                  minProperties: 1    
+                  properties:    
+                    maxValue:    
+                      description: Upper bound of the value, when the source declares a range or a maximum.    
+                      type: number    
+                    minValue:    
+                      description: Lower bound of the value, when the source declares a range or a minimum.    
+                      type: number    
+                  type: object    
+              description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                unitCode:    
+                  description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
+                  type: string    
+                value:    
+                  anyOf:    
+                    - description: Exact measured value, when a single figure is known.    
+                      type: number    
+                    - additionalProperties: no    
+                      minProperties: 1    
+                      properties:    
+                        maxValue:    
+                          description: Upper bound of the value, when the source declares a range or a maximum.    
+                          type: number    
+                        minValue:    
+                          description: Lower bound of the value, when the source declares a range or a minimum.    
+                          type: number    
+                      type: object    
+                  description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+              required:    
+                - type    
+                - unitCode    
                 - value    
-            - required:    
-                - minValue    
-            - required:    
-                - maxValue    
-          properties:    
-            maxValue:    
-              description: Upper bound of the value, when the source declares a range or a maximum.    
-              type: number    
-            minValue:    
-              description: Lower bound of the value, when the source declares a range or a minimum.    
-              type: number    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            unitCode:    
-              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
-              type: string    
-            value:    
-              description: Exact measured value, when a single figure is known.    
-              type: number    
-          required:    
-            - type    
-            - unitCode    
-          type: object    
+              type: object    
       description: 'Expected unitCode: CEL. Extruder Zone 2 set temperature (target value). Source tag: t_zone2_extr_sp_c.'    
       x-ngsi:    
         type: Property    
     zone3ActualTemperature:    
       allOf:    
-        - additionalProperties: no    
-          anyOf:    
-            - required:    
+        - anyOf:    
+            - anyOf:    
+                - description: Exact measured value, when a single figure is known.    
+                  type: number    
+                - additionalProperties: no    
+                  minProperties: 1    
+                  properties:    
+                    maxValue:    
+                      description: Upper bound of the value, when the source declares a range or a maximum.    
+                      type: number    
+                    minValue:    
+                      description: Lower bound of the value, when the source declares a range or a minimum.    
+                      type: number    
+                  type: object    
+              description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                unitCode:    
+                  description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
+                  type: string    
+                value:    
+                  anyOf:    
+                    - description: Exact measured value, when a single figure is known.    
+                      type: number    
+                    - additionalProperties: no    
+                      minProperties: 1    
+                      properties:    
+                        maxValue:    
+                          description: Upper bound of the value, when the source declares a range or a maximum.    
+                          type: number    
+                        minValue:    
+                          description: Lower bound of the value, when the source declares a range or a minimum.    
+                          type: number    
+                      type: object    
+                  description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+              required:    
+                - type    
+                - unitCode    
                 - value    
-            - required:    
-                - minValue    
-            - required:    
-                - maxValue    
-          properties:    
-            maxValue:    
-              description: Upper bound of the value, when the source declares a range or a maximum.    
-              type: number    
-            minValue:    
-              description: Lower bound of the value, when the source declares a range or a minimum.    
-              type: number    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            unitCode:    
-              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
-              type: string    
-            value:    
-              description: Exact measured value, when a single figure is known.    
-              type: number    
-          required:    
-            - type    
-            - unitCode    
-          type: object    
+              type: object    
       description: 'Expected unitCode: CEL. Extruder Zone 3 temperature (current value). Source tag: t_zone3_extr_act_c.'    
       x-ngsi:    
         type: Property    
     zone3SetTemperature:    
       allOf:    
-        - additionalProperties: no    
-          anyOf:    
-            - required:    
+        - anyOf:    
+            - anyOf:    
+                - description: Exact measured value, when a single figure is known.    
+                  type: number    
+                - additionalProperties: no    
+                  minProperties: 1    
+                  properties:    
+                    maxValue:    
+                      description: Upper bound of the value, when the source declares a range or a maximum.    
+                      type: number    
+                    minValue:    
+                      description: Lower bound of the value, when the source declares a range or a minimum.    
+                      type: number    
+                  type: object    
+              description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                unitCode:    
+                  description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
+                  type: string    
+                value:    
+                  anyOf:    
+                    - description: Exact measured value, when a single figure is known.    
+                      type: number    
+                    - additionalProperties: no    
+                      minProperties: 1    
+                      properties:    
+                        maxValue:    
+                          description: Upper bound of the value, when the source declares a range or a maximum.    
+                          type: number    
+                        minValue:    
+                          description: Lower bound of the value, when the source declares a range or a minimum.    
+                          type: number    
+                      type: object    
+                  description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+              required:    
+                - type    
+                - unitCode    
                 - value    
-            - required:    
-                - minValue    
-            - required:    
-                - maxValue    
-          properties:    
-            maxValue:    
-              description: Upper bound of the value, when the source declares a range or a maximum.    
-              type: number    
-            minValue:    
-              description: Lower bound of the value, when the source declares a range or a minimum.    
-              type: number    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            unitCode:    
-              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
-              type: string    
-            value:    
-              description: Exact measured value, when a single figure is known.    
-              type: number    
-          required:    
-            - type    
-            - unitCode    
-          type: object    
+              type: object    
       description: 'Expected unitCode: CEL. Extruder Zone 3 set temperature (target value). Source tag: t_zone3_extr_sp_c.'    
       x-ngsi:    
         type: Property    
     zone4ActualTemperature:    
       allOf:    
-        - additionalProperties: no    
-          anyOf:    
-            - required:    
+        - anyOf:    
+            - anyOf:    
+                - description: Exact measured value, when a single figure is known.    
+                  type: number    
+                - additionalProperties: no    
+                  minProperties: 1    
+                  properties:    
+                    maxValue:    
+                      description: Upper bound of the value, when the source declares a range or a maximum.    
+                      type: number    
+                    minValue:    
+                      description: Lower bound of the value, when the source declares a range or a minimum.    
+                      type: number    
+                  type: object    
+              description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                unitCode:    
+                  description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
+                  type: string    
+                value:    
+                  anyOf:    
+                    - description: Exact measured value, when a single figure is known.    
+                      type: number    
+                    - additionalProperties: no    
+                      minProperties: 1    
+                      properties:    
+                        maxValue:    
+                          description: Upper bound of the value, when the source declares a range or a maximum.    
+                          type: number    
+                        minValue:    
+                          description: Lower bound of the value, when the source declares a range or a minimum.    
+                          type: number    
+                      type: object    
+                  description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+              required:    
+                - type    
+                - unitCode    
                 - value    
-            - required:    
-                - minValue    
-            - required:    
-                - maxValue    
-          properties:    
-            maxValue:    
-              description: Upper bound of the value, when the source declares a range or a maximum.    
-              type: number    
-            minValue:    
-              description: Lower bound of the value, when the source declares a range or a minimum.    
-              type: number    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            unitCode:    
-              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
-              type: string    
-            value:    
-              description: Exact measured value, when a single figure is known.    
-              type: number    
-          required:    
-            - type    
-            - unitCode    
-          type: object    
+              type: object    
       description: 'Expected unitCode: CEL. Extruder Zone 4 temperature (current value). Source tag: t_zone4_extr_act_c.'    
       x-ngsi:    
         type: Property    
     zone4SetTemperature:    
       allOf:    
-        - additionalProperties: no    
-          anyOf:    
-            - required:    
+        - anyOf:    
+            - anyOf:    
+                - description: Exact measured value, when a single figure is known.    
+                  type: number    
+                - additionalProperties: no    
+                  minProperties: 1    
+                  properties:    
+                    maxValue:    
+                      description: Upper bound of the value, when the source declares a range or a maximum.    
+                      type: number    
+                    minValue:    
+                      description: Lower bound of the value, when the source declares a range or a minimum.    
+                      type: number    
+                  type: object    
+              description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                unitCode:    
+                  description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
+                  type: string    
+                value:    
+                  anyOf:    
+                    - description: Exact measured value, when a single figure is known.    
+                      type: number    
+                    - additionalProperties: no    
+                      minProperties: 1    
+                      properties:    
+                        maxValue:    
+                          description: Upper bound of the value, when the source declares a range or a maximum.    
+                          type: number    
+                        minValue:    
+                          description: Lower bound of the value, when the source declares a range or a minimum.    
+                          type: number    
+                      type: object    
+                  description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+              required:    
+                - type    
+                - unitCode    
                 - value    
-            - required:    
-                - minValue    
-            - required:    
-                - maxValue    
-          properties:    
-            maxValue:    
-              description: Upper bound of the value, when the source declares a range or a maximum.    
-              type: number    
-            minValue:    
-              description: Lower bound of the value, when the source declares a range or a minimum.    
-              type: number    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            unitCode:    
-              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
-              type: string    
-            value:    
-              description: Exact measured value, when a single figure is known.    
-              type: number    
-          required:    
-            - type    
-            - unitCode    
-          type: object    
+              type: object    
       description: 'Expected unitCode: CEL. Extruder Zone 4 set temperature (target value). Source tag: t_zone4_extr_sp_c.'    
       x-ngsi:    
         type: Property    
     zone5ActualTemperature:    
       allOf:    
-        - additionalProperties: no    
-          anyOf:    
-            - required:    
+        - anyOf:    
+            - anyOf:    
+                - description: Exact measured value, when a single figure is known.    
+                  type: number    
+                - additionalProperties: no    
+                  minProperties: 1    
+                  properties:    
+                    maxValue:    
+                      description: Upper bound of the value, when the source declares a range or a maximum.    
+                      type: number    
+                    minValue:    
+                      description: Lower bound of the value, when the source declares a range or a minimum.    
+                      type: number    
+                  type: object    
+              description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                unitCode:    
+                  description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
+                  type: string    
+                value:    
+                  anyOf:    
+                    - description: Exact measured value, when a single figure is known.    
+                      type: number    
+                    - additionalProperties: no    
+                      minProperties: 1    
+                      properties:    
+                        maxValue:    
+                          description: Upper bound of the value, when the source declares a range or a maximum.    
+                          type: number    
+                        minValue:    
+                          description: Lower bound of the value, when the source declares a range or a minimum.    
+                          type: number    
+                      type: object    
+                  description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+              required:    
+                - type    
+                - unitCode    
                 - value    
-            - required:    
-                - minValue    
-            - required:    
-                - maxValue    
-          properties:    
-            maxValue:    
-              description: Upper bound of the value, when the source declares a range or a maximum.    
-              type: number    
-            minValue:    
-              description: Lower bound of the value, when the source declares a range or a minimum.    
-              type: number    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            unitCode:    
-              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
-              type: string    
-            value:    
-              description: Exact measured value, when a single figure is known.    
-              type: number    
-          required:    
-            - type    
-            - unitCode    
-          type: object    
+              type: object    
       description: 'Expected unitCode: CEL. Extruder Zone 5 temperature (current value). Source tag: t_zone5_extr_act_c.'    
       x-ngsi:    
         type: Property    
     zone5SetTemperature:    
       allOf:    
-        - additionalProperties: no    
-          anyOf:    
-            - required:    
+        - anyOf:    
+            - anyOf:    
+                - description: Exact measured value, when a single figure is known.    
+                  type: number    
+                - additionalProperties: no    
+                  minProperties: 1    
+                  properties:    
+                    maxValue:    
+                      description: Upper bound of the value, when the source declares a range or a maximum.    
+                      type: number    
+                    minValue:    
+                      description: Lower bound of the value, when the source declares a range or a minimum.    
+                      type: number    
+                  type: object    
+              description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                unitCode:    
+                  description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
+                  type: string    
+                value:    
+                  anyOf:    
+                    - description: Exact measured value, when a single figure is known.    
+                      type: number    
+                    - additionalProperties: no    
+                      minProperties: 1    
+                      properties:    
+                        maxValue:    
+                          description: Upper bound of the value, when the source declares a range or a maximum.    
+                          type: number    
+                        minValue:    
+                          description: Lower bound of the value, when the source declares a range or a minimum.    
+                          type: number    
+                      type: object    
+                  description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+              required:    
+                - type    
+                - unitCode    
                 - value    
-            - required:    
-                - minValue    
-            - required:    
-                - maxValue    
-          properties:    
-            maxValue:    
-              description: Upper bound of the value, when the source declares a range or a maximum.    
-              type: number    
-            minValue:    
-              description: Lower bound of the value, when the source declares a range or a minimum.    
-              type: number    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            unitCode:    
-              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
-              type: string    
-            value:    
-              description: Exact measured value, when a single figure is known.    
-              type: number    
-          required:    
-            - type    
-            - unitCode    
-          type: object    
+              type: object    
       description: 'Expected unitCode: CEL. Extruder Zone 5 set temperature (target value). Source tag: t_zone5_extr_sp_c.'    
       x-ngsi:    
         type: Property    
     zone6ActualTemperature:    
       allOf:    
-        - additionalProperties: no    
-          anyOf:    
-            - required:    
+        - anyOf:    
+            - anyOf:    
+                - description: Exact measured value, when a single figure is known.    
+                  type: number    
+                - additionalProperties: no    
+                  minProperties: 1    
+                  properties:    
+                    maxValue:    
+                      description: Upper bound of the value, when the source declares a range or a maximum.    
+                      type: number    
+                    minValue:    
+                      description: Lower bound of the value, when the source declares a range or a minimum.    
+                      type: number    
+                  type: object    
+              description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                unitCode:    
+                  description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
+                  type: string    
+                value:    
+                  anyOf:    
+                    - description: Exact measured value, when a single figure is known.    
+                      type: number    
+                    - additionalProperties: no    
+                      minProperties: 1    
+                      properties:    
+                        maxValue:    
+                          description: Upper bound of the value, when the source declares a range or a maximum.    
+                          type: number    
+                        minValue:    
+                          description: Lower bound of the value, when the source declares a range or a minimum.    
+                          type: number    
+                      type: object    
+                  description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+              required:    
+                - type    
+                - unitCode    
                 - value    
-            - required:    
-                - minValue    
-            - required:    
-                - maxValue    
-          properties:    
-            maxValue:    
-              description: Upper bound of the value, when the source declares a range or a maximum.    
-              type: number    
-            minValue:    
-              description: Lower bound of the value, when the source declares a range or a minimum.    
-              type: number    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            unitCode:    
-              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
-              type: string    
-            value:    
-              description: Exact measured value, when a single figure is known.    
-              type: number    
-          required:    
-            - type    
-            - unitCode    
-          type: object    
+              type: object    
       description: 'Expected unitCode: CEL. Extruder Zone 6 temperature (current value). Source tag: t_zone6_extr_act_c.'    
       x-ngsi:    
         type: Property    
     zone6SetTemperature:    
       allOf:    
-        - additionalProperties: no    
-          anyOf:    
-            - required:    
+        - anyOf:    
+            - anyOf:    
+                - description: Exact measured value, when a single figure is known.    
+                  type: number    
+                - additionalProperties: no    
+                  minProperties: 1    
+                  properties:    
+                    maxValue:    
+                      description: Upper bound of the value, when the source declares a range or a maximum.    
+                      type: number    
+                    minValue:    
+                      description: Lower bound of the value, when the source declares a range or a minimum.    
+                      type: number    
+                  type: object    
+              description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                unitCode:    
+                  description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
+                  type: string    
+                value:    
+                  anyOf:    
+                    - description: Exact measured value, when a single figure is known.    
+                      type: number    
+                    - additionalProperties: no    
+                      minProperties: 1    
+                      properties:    
+                        maxValue:    
+                          description: Upper bound of the value, when the source declares a range or a maximum.    
+                          type: number    
+                        minValue:    
+                          description: Lower bound of the value, when the source declares a range or a minimum.    
+                          type: number    
+                      type: object    
+                  description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+              required:    
+                - type    
+                - unitCode    
                 - value    
-            - required:    
-                - minValue    
-            - required:    
-                - maxValue    
-          properties:    
-            maxValue:    
-              description: Upper bound of the value, when the source declares a range or a maximum.    
-              type: number    
-            minValue:    
-              description: Lower bound of the value, when the source declares a range or a minimum.    
-              type: number    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            unitCode:    
-              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
-              type: string    
-            value:    
-              description: Exact measured value, when a single figure is known.    
-              type: number    
-          required:    
-            - type    
-            - unitCode    
-          type: object    
+              type: object    
       description: 'Expected unitCode: CEL. Extruder Zone 6 set temperature (target value). Source tag: t_zone6_extr_sp_c.'    
       x-ngsi:    
         type: Property    
     zone7ActualTemperature:    
       allOf:    
-        - additionalProperties: no    
-          anyOf:    
-            - required:    
+        - anyOf:    
+            - anyOf:    
+                - description: Exact measured value, when a single figure is known.    
+                  type: number    
+                - additionalProperties: no    
+                  minProperties: 1    
+                  properties:    
+                    maxValue:    
+                      description: Upper bound of the value, when the source declares a range or a maximum.    
+                      type: number    
+                    minValue:    
+                      description: Lower bound of the value, when the source declares a range or a minimum.    
+                      type: number    
+                  type: object    
+              description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                unitCode:    
+                  description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
+                  type: string    
+                value:    
+                  anyOf:    
+                    - description: Exact measured value, when a single figure is known.    
+                      type: number    
+                    - additionalProperties: no    
+                      minProperties: 1    
+                      properties:    
+                        maxValue:    
+                          description: Upper bound of the value, when the source declares a range or a maximum.    
+                          type: number    
+                        minValue:    
+                          description: Lower bound of the value, when the source declares a range or a minimum.    
+                          type: number    
+                      type: object    
+                  description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+              required:    
+                - type    
+                - unitCode    
                 - value    
-            - required:    
-                - minValue    
-            - required:    
-                - maxValue    
-          properties:    
-            maxValue:    
-              description: Upper bound of the value, when the source declares a range or a maximum.    
-              type: number    
-            minValue:    
-              description: Lower bound of the value, when the source declares a range or a minimum.    
-              type: number    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            unitCode:    
-              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
-              type: string    
-            value:    
-              description: Exact measured value, when a single figure is known.    
-              type: number    
-          required:    
-            - type    
-            - unitCode    
-          type: object    
+              type: object    
       description: 'Expected unitCode: CEL. Extruder Zone 7 temperature (current value). Source tag: t_zone7_extr_act_c.'    
       x-ngsi:    
         type: Property    
     zone7SetTemperature:    
       allOf:    
-        - additionalProperties: no    
-          anyOf:    
-            - required:    
+        - anyOf:    
+            - anyOf:    
+                - description: Exact measured value, when a single figure is known.    
+                  type: number    
+                - additionalProperties: no    
+                  minProperties: 1    
+                  properties:    
+                    maxValue:    
+                      description: Upper bound of the value, when the source declares a range or a maximum.    
+                      type: number    
+                    minValue:    
+                      description: Lower bound of the value, when the source declares a range or a minimum.    
+                      type: number    
+                  type: object    
+              description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                unitCode:    
+                  description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
+                  type: string    
+                value:    
+                  anyOf:    
+                    - description: Exact measured value, when a single figure is known.    
+                      type: number    
+                    - additionalProperties: no    
+                      minProperties: 1    
+                      properties:    
+                        maxValue:    
+                          description: Upper bound of the value, when the source declares a range or a maximum.    
+                          type: number    
+                        minValue:    
+                          description: Lower bound of the value, when the source declares a range or a minimum.    
+                          type: number    
+                      type: object    
+                  description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+              required:    
+                - type    
+                - unitCode    
                 - value    
-            - required:    
-                - minValue    
-            - required:    
-                - maxValue    
-          properties:    
-            maxValue:    
-              description: Upper bound of the value, when the source declares a range or a maximum.    
-              type: number    
-            minValue:    
-              description: Lower bound of the value, when the source declares a range or a minimum.    
-              type: number    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            unitCode:    
-              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
-              type: string    
-            value:    
-              description: Exact measured value, when a single figure is known.    
-              type: number    
-          required:    
-            - type    
-            - unitCode    
-          type: object    
+              type: object    
       description: 'Expected unitCode: CEL. Extruder Zone 7 set temperature (target value). Source tag: t_zone7_extr_sp_c.'    
       x-ngsi:    
         type: Property    
     zone8ActualTemperature:    
       allOf:    
-        - additionalProperties: no    
-          anyOf:    
-            - required:    
+        - anyOf:    
+            - anyOf:    
+                - description: Exact measured value, when a single figure is known.    
+                  type: number    
+                - additionalProperties: no    
+                  minProperties: 1    
+                  properties:    
+                    maxValue:    
+                      description: Upper bound of the value, when the source declares a range or a maximum.    
+                      type: number    
+                    minValue:    
+                      description: Lower bound of the value, when the source declares a range or a minimum.    
+                      type: number    
+                  type: object    
+              description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                unitCode:    
+                  description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
+                  type: string    
+                value:    
+                  anyOf:    
+                    - description: Exact measured value, when a single figure is known.    
+                      type: number    
+                    - additionalProperties: no    
+                      minProperties: 1    
+                      properties:    
+                        maxValue:    
+                          description: Upper bound of the value, when the source declares a range or a maximum.    
+                          type: number    
+                        minValue:    
+                          description: Lower bound of the value, when the source declares a range or a minimum.    
+                          type: number    
+                      type: object    
+                  description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+              required:    
+                - type    
+                - unitCode    
                 - value    
-            - required:    
-                - minValue    
-            - required:    
-                - maxValue    
-          properties:    
-            maxValue:    
-              description: Upper bound of the value, when the source declares a range or a maximum.    
-              type: number    
-            minValue:    
-              description: Lower bound of the value, when the source declares a range or a minimum.    
-              type: number    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            unitCode:    
-              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
-              type: string    
-            value:    
-              description: Exact measured value, when a single figure is known.    
-              type: number    
-          required:    
-            - type    
-            - unitCode    
-          type: object    
+              type: object    
       description: 'Expected unitCode: CEL. Extruder Zone 8 temperature (current value). Source tag: t_zone8_extr_act_c.'    
       x-ngsi:    
         type: Property    
     zone8SetTemperature:    
       allOf:    
-        - additionalProperties: no    
-          anyOf:    
-            - required:    
+        - anyOf:    
+            - anyOf:    
+                - description: Exact measured value, when a single figure is known.    
+                  type: number    
+                - additionalProperties: no    
+                  minProperties: 1    
+                  properties:    
+                    maxValue:    
+                      description: Upper bound of the value, when the source declares a range or a maximum.    
+                      type: number    
+                    minValue:    
+                      description: Lower bound of the value, when the source declares a range or a minimum.    
+                      type: number    
+                  type: object    
+              description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                unitCode:    
+                  description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
+                  type: string    
+                value:    
+                  anyOf:    
+                    - description: Exact measured value, when a single figure is known.    
+                      type: number    
+                    - additionalProperties: no    
+                      minProperties: 1    
+                      properties:    
+                        maxValue:    
+                          description: Upper bound of the value, when the source declares a range or a maximum.    
+                          type: number    
+                        minValue:    
+                          description: Lower bound of the value, when the source declares a range or a minimum.    
+                          type: number    
+                      type: object    
+                  description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+              required:    
+                - type    
+                - unitCode    
                 - value    
-            - required:    
-                - minValue    
-            - required:    
-                - maxValue    
-          properties:    
-            maxValue:    
-              description: Upper bound of the value, when the source declares a range or a maximum.    
-              type: number    
-            minValue:    
-              description: Lower bound of the value, when the source declares a range or a minimum.    
-              type: number    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            unitCode:    
-              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
-              type: string    
-            value:    
-              description: Exact measured value, when a single figure is known.    
-              type: number    
-          required:    
-            - type    
-            - unitCode    
-          type: object    
+              type: object    
       description: 'Expected unitCode: CEL. Extruder Zone 8 set temperature (target value). Source tag: t_zone8_extr_sp_c.'    
       x-ngsi:    
         type: Property    
     zone9ActualTemperature:    
       allOf:    
-        - additionalProperties: no    
-          anyOf:    
-            - required:    
+        - anyOf:    
+            - anyOf:    
+                - description: Exact measured value, when a single figure is known.    
+                  type: number    
+                - additionalProperties: no    
+                  minProperties: 1    
+                  properties:    
+                    maxValue:    
+                      description: Upper bound of the value, when the source declares a range or a maximum.    
+                      type: number    
+                    minValue:    
+                      description: Lower bound of the value, when the source declares a range or a minimum.    
+                      type: number    
+                  type: object    
+              description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                unitCode:    
+                  description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
+                  type: string    
+                value:    
+                  anyOf:    
+                    - description: Exact measured value, when a single figure is known.    
+                      type: number    
+                    - additionalProperties: no    
+                      minProperties: 1    
+                      properties:    
+                        maxValue:    
+                          description: Upper bound of the value, when the source declares a range or a maximum.    
+                          type: number    
+                        minValue:    
+                          description: Lower bound of the value, when the source declares a range or a minimum.    
+                          type: number    
+                      type: object    
+                  description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+              required:    
+                - type    
+                - unitCode    
                 - value    
-            - required:    
-                - minValue    
-            - required:    
-                - maxValue    
-          properties:    
-            maxValue:    
-              description: Upper bound of the value, when the source declares a range or a maximum.    
-              type: number    
-            minValue:    
-              description: Lower bound of the value, when the source declares a range or a minimum.    
-              type: number    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            unitCode:    
-              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
-              type: string    
-            value:    
-              description: Exact measured value, when a single figure is known.    
-              type: number    
-          required:    
-            - type    
-            - unitCode    
-          type: object    
+              type: object    
       description: 'Expected unitCode: CEL. Extruder Zone 9 temperature (current value). Source tag: t_zone9_extr_act_c.'    
       x-ngsi:    
         type: Property    
     zone9SetTemperature:    
       allOf:    
-        - additionalProperties: no    
-          anyOf:    
-            - required:    
+        - anyOf:    
+            - anyOf:    
+                - description: Exact measured value, when a single figure is known.    
+                  type: number    
+                - additionalProperties: no    
+                  minProperties: 1    
+                  properties:    
+                    maxValue:    
+                      description: Upper bound of the value, when the source declares a range or a maximum.    
+                      type: number    
+                    minValue:    
+                      description: Lower bound of the value, when the source declares a range or a minimum.    
+                      type: number    
+                  type: object    
+              description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                unitCode:    
+                  description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
+                  type: string    
+                value:    
+                  anyOf:    
+                    - description: Exact measured value, when a single figure is known.    
+                      type: number    
+                    - additionalProperties: no    
+                      minProperties: 1    
+                      properties:    
+                        maxValue:    
+                          description: Upper bound of the value, when the source declares a range or a maximum.    
+                          type: number    
+                        minValue:    
+                          description: Lower bound of the value, when the source declares a range or a minimum.    
+                          type: number    
+                      type: object    
+                  description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+              required:    
+                - type    
+                - unitCode    
                 - value    
-            - required:    
-                - minValue    
-            - required:    
-                - maxValue    
-          properties:    
-            maxValue:    
-              description: Upper bound of the value, when the source declares a range or a maximum.    
-              type: number    
-            minValue:    
-              description: Lower bound of the value, when the source declares a range or a minimum.    
-              type: number    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            unitCode:    
-              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
-              type: string    
-            value:    
-              description: Exact measured value, when a single figure is known.    
-              type: number    
-          required:    
-            - type    
-            - unitCode    
-          type: object    
+              type: object    
       description: 'Expected unitCode: CEL. Extruder Zone 9 set temperature (target value). Source tag: t_zone9_extr_sp_c.'    
       x-ngsi:    
         type: Property    
@@ -1226,14 +1693,59 @@ ExtruderObservation:
 <!-- /70-MiddleNotes -->  
 <!-- 80-Examples -->  
 ## Example payloads    
-Not available the example of a ExtruderObservation in JSON-LD format as key-values. This is compatible with NGSI-LD when  using `options=keyValues` and returns the context data of an individual entity.  
+#### ExtruderObservation NGSI-LD key-values Example    
+Here is an example of a ExtruderObservation in JSON-LD format as key-values. This is compatible with NGSI-LD when  using `options=keyValues` and returns the context data of an individual entity.  
+<details><summary><strong>show/hide example</strong></summary>    
+```json  
+{  
+  "id": "urn:ngsi-ld:extruder:observation:20260131T234401",  
+  "type": "ExtruderObservation",  
+  "zone1ActualTemperature": 189.609,  
+  "zone1SetTemperature": 0.0019,  
+  "zone2ActualTemperature": 220.1775,  
+  "zone2SetTemperature": 0.0022,  
+  "zone3ActualTemperature": 219.7894,  
+  "zone3SetTemperature": 0.0022,  
+  "zone4ActualTemperature": 22.00941,  
+  "zone4SetTemperature": 220,  
+  "zone5ActualTemperature": 22.93826,  
+  "zone5SetTemperature": 0.0023,  
+  "zone6ActualTemperature": 24.51125,  
+  "zone6SetTemperature": 245,  
+  "zone7ActualTemperature": 22.50941,  
+  "zone7SetTemperature": 0.00225,  
+  "zone8ActualTemperature": 22.49059,  
+  "zone8SetTemperature": 0.00225,  
+  "zone9ActualTemperature": 22.99925,  
+  "zone9SetTemperature": 230,  
+  "zone10ActualTemperature": 24.00941,  
+  "zone10SetTemperature": 0.0024,  
+  "extruderId": "extruder_1",  
+  "cuttingZoneActualTemperature": 24.08102,  
+  "cuttingZoneSetTemperature": 0.0024,  
+  "extruderWorkingSpeed": 0,  
+  "extruderCurrent": 0,  
+  "cuttingSpeedCurrent": 0,  
+  "cuttingSpeed": 0,  
+  "feedSpeedWorking": 0,  
+  "screwFeedCurrent": 0,  
+  "crusherTemperature": 14.90131,  
+  "crusherCurrent": 0,  
+  "crusherRotationSpeed": 0,  
+  "@context": [  
+    "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/utils/circuloos_data_platform.jsonld",  
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"  
+  ]  
+}  
+```  
+</details>  
 #### ExtruderObservation NGSI-LD normalized Example    
 Here is an example of a ExtruderObservation in JSON-LD format as normalized. This is compatible with NGSI-LD when not using options and returns the context data of an individual entity.  
 <details><summary><strong>show/hide example</strong></summary>    
 ```json  
 {  
   "@context": [  
-    "http://circuloos-ld-context/circuloos-context.jsonld",  
+    "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/utils/circuloos_data_platform.jsonld",  
     "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"  
   ],  
   "id": "urn:ngsi-ld:extruder:observation:20260131T234401",  

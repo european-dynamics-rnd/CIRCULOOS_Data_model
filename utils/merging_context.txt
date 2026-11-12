@@ -1,7 +1,10 @@
-# One context source per line (URL or local .json/.jsonld path)
+# One context source per line (URL, local .json/.jsonld path, or glob pattern)
 # Lines starting with # and blank lines are ignored
+# Later sources win when two define the same term. A source matched by a glob
+# and also listed explicitly is loaded at its explicit (later) position.
 
 combined_subjects_context.jsonld
+../**/context.jsonld
 ../material/wood/context.jsonld
 ../material/leather/context.jsonld
 ../intra-communication/context.jsonld

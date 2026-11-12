@@ -1,0 +1,16 @@
+{
+  "id": "urn:ngsi-ld:SRM:RiceHusk",
+  "type": "SRM",
+  "name": "Rice Husk",
+  "chemicalComposition": "Lignocellulosic matrix with silica-rich ash; mainly cellulose, hemicellulose, lignin and SiO2",
+  "pretreatmentRequired": "Drying, grinding and sieving depending on target particle size",
+  "storageConditions": "Dry, covered, ventilated storage; protect from moisture and contamination",
+  "category": [
+    "Agricultural Biomass"
+  ],
+  "density": {
+    "minValue": 90,
+    "maxValue": 150
+  },
+  "description": "Rice milling by-product used as lightweight bio-based aggregate/filler"
+}

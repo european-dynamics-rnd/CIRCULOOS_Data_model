@@ -1,0 +1,40 @@
+{
+  "id": "urn:ngsi-ld:VehicleModel:daf_85-cf-380",
+  "type": "VehicleModel",
+  "name": {
+    "type": "Text",
+    "value": "DAF 85 CF 380"
+  },
+  "brandName": {
+    "type": "Text",
+    "value": "DAF"
+  },
+  "modelName": {
+    "type": "Text",
+    "value": "85 CF 380"
+  },
+  "fuelType": {
+    "type": "Text",
+    "value": "diesel"
+  },
+  "cargoVolume": {
+    "type": "Number",
+    "value": 12000,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "LTR"
+      }
+    }
+  },
+  "weight": {
+    "type": "Number",
+    "value": 26000,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "KGM"
+      }
+    }
+  }
+}

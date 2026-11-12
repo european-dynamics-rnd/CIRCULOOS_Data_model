@@ -31,17 +31,8 @@ Factory:
   properties:    
     address:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              additionalProperties: no    
+        - anyOf:    
+            - additionalProperties: no    
               properties:    
                 addressCountry:    
                   description: The country. Model:'https://schema.org/addressCountry'    
@@ -59,30 +50,60 @@ Factory:
                   description: The street address. Model:'https://schema.org/streetAddress'    
                   type: string    
               type: object    
-          required:    
-            - type    
-            - value    
-          type: object    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  additionalProperties: no    
+                  properties:    
+                    addressCountry:    
+                      description: The country. Model:'https://schema.org/addressCountry'    
+                      type: string    
+                    addressLocality:    
+                      description: The locality in which the street address is. Model:'https://schema.org/addressLocality'    
+                      type: string    
+                    addressRegion:    
+                      description: The region in which the locality is. Model:'https://schema.org/addressRegion'    
+                      type: string    
+                    postalCode:    
+                      description: The postal code. Model:'https://schema.org/postalCode'    
+                      type: string    
+                    streetAddress:    
+                      description: The street address. Model:'https://schema.org/streetAddress'    
+                      type: string    
+                  type: object    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Postal address of the facility, as a structured object containing fields such as street, postal code, locality, region and country.    
       x-ngsi:    
         type: Property    
     factoryType:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+        - anyOf:    
+            - type: string    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Type or category of the facility, or a description of its principal activities (e.g. sorting, recycling, production).    
       x-ngsi:    
         type: Property    
@@ -93,17 +114,8 @@ Factory:
         type: Property    
     location:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - GeoProperty    
-              type: string    
-            value:    
-              additionalProperties: no    
+        - anyOf:    
+            - additionalProperties: no    
               properties:    
                 coordinates:    
                   description: GeoJSON coordinates ordered as longitude followed by latitude.    
@@ -120,48 +132,79 @@ Factory:
                 - type    
                 - coordinates    
               type: object    
-          required:    
-            - type    
-            - value    
-          type: object    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - GeoProperty    
+                  type: string    
+                value:    
+                  additionalProperties: no    
+                  properties:    
+                    coordinates:    
+                      description: GeoJSON coordinates ordered as longitude followed by latitude.    
+                      items:    
+                        type: number    
+                      maxItems: 2    
+                      minItems: 2    
+                      type: array    
+                    type:    
+                      enum:    
+                        - Point    
+                      type: string    
+                  required:    
+                    - type    
+                    - coordinates    
+                  type: object    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: GeoProperty. Geographical position of the facility, represented as a GeoJSON Point. Coordinates are ordered as longitude followed by latitude.    
     name:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+        - anyOf:    
+            - type: string    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Human-readable name of the facility, used to identify it in maps, forms and reports. Given in the source as https://schema.org/name.    
       x-ngsi:    
         type: Property    
     operatedBy:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+        - anyOf:    
+            - type: string    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Name of the organisation that operates the facility.    
       x-ngsi:    
         type: Property    
@@ -189,14 +232,44 @@ Factory:
 <!-- /70-MiddleNotes -->  
 <!-- 80-Examples -->  
 ## Example payloads    
-Not available the example of a Factory in JSON-LD format as key-values. This is compatible with NGSI-LD when  using `options=keyValues` and returns the context data of an individual entity.  
+#### Factory NGSI-LD key-values Example    
+Here is an example of a Factory in JSON-LD format as key-values. This is compatible with NGSI-LD when  using `options=keyValues` and returns the context data of an individual entity.  
+<details><summary><strong>show/hide example</strong></summary>    
+```json  
+{  
+  "id": "urn:ngsi-ld:Factory:ARM:ETRS",  
+  "type": "Factory",  
+  "name": "ETRS - Estacao de Tratamento de Residuos Solidos da Meia Serra",  
+  "factoryType": "Tratamento, valorizacao e eliminacao de residuos solidos urbanos.",  
+  "operatedBy": "ARM - Aguas e Residuos da Madeira S.A.",  
+  "address": {  
+    "streetAddress": "Meia Serra",  
+    "postalCode": "9135-080",  
+    "addressLocality": "Camacha",  
+    "addressRegion": "Madeira",  
+    "addressCountry": "Portugal"  
+  },  
+  "location": {  
+    "type": "Point",  
+    "coordinates": [  
+      -16.869608,  
+      32.703529  
+    ]  
+  },  
+  "@context": [  
+    "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/utils/circuloos_data_platform.jsonld",  
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"  
+  ]  
+}  
+```  
+</details>  
 #### Factory NGSI-LD normalized Example    
 Here is an example of a Factory in JSON-LD format as normalized. This is compatible with NGSI-LD when not using options and returns the context data of an individual entity.  
 <details><summary><strong>show/hide example</strong></summary>    
 ```json  
 {  
   "@context": [  
-    "http://circuloos-ld-context/circuloos-context.jsonld",  
+    "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/utils/circuloos_data_platform.jsonld",  
     "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"  
   ],  
   "id": "urn:ngsi-ld:Factory:ARM:ETRS",  

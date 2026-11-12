@@ -1,0 +1,16 @@
+{
+  "id": "urn:ngsi-ld:MortarProduct:M16BioThermalMortar",
+  "type": "MortarProduct",
+  "productionRegion": "Puglia",
+  "name": "M16 Bio-Thermal Mortar",
+  "classification": "Rice-based",
+  "applicationGuidelines": "Suitable for interior/exterior insulation, thickness 15-40mm, apply at 10-30C ambient temperature",
+  "dateCreated": "2026-04-13T00:00:00Z",
+  "certifiedBy": "urn:ngsi-ld:DoP:DoP-CementFreeMortar",
+  "description": "Lightweight thermal bio-mortar based on rice husk and straw with GGBS binder",
+  "country": "Italy",
+  "@context": [
+    "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/utils/circuloos_data_platform.jsonld",
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "urn:ngsi-ld:Process:ARM:blue-waste-stream-processing",
+  "type": "Process",
+  "name": {
+    "type": "Text",
+    "value": "Processamento da reciclagem da linha azul"
+  },
+  "description": {
+    "type": "Text",
+    "value": "Processamento da reciclagem proveniente da linha azul da ARM. Inputs: Energia, Arame para enfardamento, Residuos da linha azul. Outputs: fardos de papel e cartao, residuos rejeitados, EPS reciclavel e EPS rejeitado."
+  },
+  "triggeringCondition": {
+    "type": "Text",
+    "value": "Quando necessario processar os residuos provenientes da linha azul da ARM."
+  }
+}

@@ -31,30 +31,60 @@
   "realTimeCoordinates": {
     "type": "Property",
     "value": {
-      "x": [0.0, 0.2, 0.4, 0.6],
-      "y": [0.0, 0.1, 0.1, 0.2],
-      "z": [0.0, 0.05, 0.1, 0.15]
+      "x": [
+        0.0,
+        0.2,
+        0.4,
+        0.6
+      ],
+      "y": [
+        0.0,
+        0.1,
+        0.1,
+        0.2
+      ],
+      "z": [
+        0.0,
+        0.05,
+        0.1,
+        0.15
+      ]
     },
     "unitCode": "MTR"
   },
   "realTimePressureSensorData": {
     "type": "Property",
     "value": {
-      "values": [2.1, 2.2, 2.0, 2.3]
+      "values": [
+        2.1,
+        2.2,
+        2.0,
+        2.3
+      ]
     },
     "unitCode": "BAR"
   },
   "realTimeTemperatureSensorData": {
     "type": "Property",
     "value": {
-      "values": [23.5, 23.8, 24.0, 24.1]
+      "values": [
+        23.5,
+        23.8,
+        24.0,
+        24.1
+      ]
     },
     "unitCode": "CEL"
   },
   "torqueData": {
     "type": "Property",
     "value": {
-      "values": [14.1, 14.3, 14.0, 14.2]
+      "values": [
+        14.1,
+        14.3,
+        14.0,
+        14.2
+      ]
     },
     "unitCode": "NU"
   },
@@ -93,6 +123,7 @@
     "value": "light grey"
   },
   "@context": [
-    "https://TOBELater/context.jsonld"
+    "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/utils/circuloos_data_platform.jsonld",
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"
   ]
 }

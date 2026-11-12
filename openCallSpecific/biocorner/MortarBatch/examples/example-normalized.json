@@ -1,0 +1,86 @@
+{
+  "id": "urn:ngsi-ld:MortarBatch:MB-M1-2026-001",
+  "type": "MortarBatch",
+  "instanceOf": {
+    "type": "Text",
+    "value": "urn:ngsi-ld:MortarProduct:SuperThermoblock",
+    "metadata": {
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-16T08:06:08.000Z"
+      }
+    }
+  },
+  "batchCode": {
+    "type": "Text",
+    "value": "MB-M1-2026-001",
+    "metadata": {
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-16T08:06:08.000Z"
+      }
+    }
+  },
+  "usedProcess": {
+    "type": "Text",
+    "value": "urn:ngsi-ld:MortarProcess:DryMixing-Mortar1",
+    "metadata": {
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-16T08:06:08.000Z"
+      }
+    }
+  },
+  "producedFromRecipe": {
+    "type": "Text",
+    "value": "urn:ngsi-ld:Recipe:MortarSuperThermoblock",
+    "metadata": {
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-16T08:06:08.000Z"
+      }
+    }
+  },
+  "producedBy": {
+    "type": "Text",
+    "value": "urn:ngsi-ld:Organization:LITOKOL",
+    "metadata": {
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-16T08:06:08.000Z"
+      }
+    }
+  },
+  "usedSRMBatches": {
+    "type": "StructuredValue",
+    "value": [
+      "urn:ngsi-ld:SRMBatch:POS-2025-DEC"
+    ],
+    "metadata": {
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-16T08:06:08.000Z"
+      }
+    }
+  },
+  "dateCreated": {
+    "type": "DateTime",
+    "value": "2026-04-15T00:00:00Z",
+    "metadata": {
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-16T08:06:08.000Z"
+      }
+    }
+  },
+  "description": {
+    "type": "Text",
+    "value": "First production batch MORTAR 1, pilot scale 25 litres",
+    "metadata": {
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-16T08:06:08.000Z"
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "urn:ngsi-ld:circuloos-yeast2value:batch:PT_0149",
+  "type": "YeastBatch",
+  "runId": 5,
+  "batchId": "PT_0149",
+  "brewery": "Heineken Yeast 2",
+  "pickUpDate": "2026-01-30",
+  "storageDateBeforePickUp": "2026-01-30",
+  "storageTemperatureBeforePickUp": {
+    "maxValue": 4
+  },
+  "phValueRawYeast": 5.8,
+  "dryMassUnfiltered": 18.3,
+  "volumetricFraction": 58.72,
+  "totalCellCount": 933000000,
+  "livingCellsCount": 830000000,
+  "livingCellsPercent": 88.96,
+  "feedstockSource": "Brewer's spent yeast",
+  "valueChain": "yeast2value",
+  "dataSource": "Yeast_Log (1).xlsx",
+  "@context": [
+    "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/utils/circuloos_data_platform.jsonld",
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"
+  ]
+}

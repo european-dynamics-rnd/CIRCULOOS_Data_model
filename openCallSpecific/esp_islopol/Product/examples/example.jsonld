@@ -1,0 +1,20 @@
+{
+  "id": "urn:ngsi-ld:Product:ARM:paper-cardboard-stream-waste:20260903",
+  "type": "Product",
+  "refProcessEvent": "urn:ngsi-ld:ProcessEvent:ARM:blue-waste-stream-processing:20260903",
+  "refProductModel": "urn:ngsi-ld:ProductModel:paper-cardboard-stream-waste",
+  "supplier": [
+    "ARM Collection"
+  ],
+  "destination": [
+    "ARM ETZL/ET"
+  ],
+  "quantity": 6396.748215,
+  "length": 0,
+  "width": 0,
+  "thickness": 0,
+  "@context": [
+    "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/utils/circuloos_data_platform.jsonld",
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"
+  ]
+}

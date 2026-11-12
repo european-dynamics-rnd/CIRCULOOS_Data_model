@@ -103,63 +103,71 @@ StainlessSteelDPP:
         type: Property    
     dppId:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+        - anyOf:    
+            - type: string    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Unique UUID of the Digital Product Passport of this product.    
       x-ngsi:    
         type: Property    
     endTime:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              format: date-time    
+        - anyOf:    
+            - format: date-time    
               pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$    
               type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  format: date-time    
+                  pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: End time of the Digital Product Passport (ISO 8601 date-time, UTC).    
       x-ngsi:    
         type: Property    
     factoryInternalBarcode:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+        - anyOf:    
+            - type: string    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Product unique identifier (barcode) assigned at the factory.    
       x-ngsi:    
         type: Property    
@@ -353,37 +361,30 @@ StainlessSteelDPP:
         type: Property    
     productName:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+        - anyOf:    
+            - type: string    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Commercial product name.    
       x-ngsi:    
         type: Property    
     route:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              description: Property. Ordered list of the manufacturing operations the product goes through.    
+        - anyOf:    
+            - description: Property. Ordered list of the manufacturing operations the product goes through.    
               items:    
                 additionalProperties: no    
                 properties:    
@@ -419,10 +420,56 @@ StainlessSteelDPP:
                 type: object    
               minItems: 1    
               type: array    
-          required:    
-            - type    
-            - value    
-          type: object    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  description: Property. Ordered list of the manufacturing operations the product goes through.    
+                  items:    
+                    additionalProperties: no    
+                    properties:    
+                      date:    
+                        description: Property. Date and time (ISO 8601, UTC) at which the operation was performed.    
+                        format: date-time    
+                        type: string    
+                      energyConsumption:    
+                        additionalProperties: no    
+                        description: Property. Energy consumed for this route step.    
+                        properties:    
+                          unitCode:    
+                            description: Property. UN/CEFACT code of the unit of the consumed energy, for example WHR (watt hour).    
+                            type: string    
+                          value:    
+                            description: Property. Energy consumed by this route step.    
+                            minimum: 0    
+                            type: number    
+                        required:    
+                          - value    
+                          - unitCode    
+                        type: object    
+                      operation:    
+                        description: Property. Name of the manufacturing operation performed in this route step, for example Plastic Injection Molding, Metal Cutting or Assembly.    
+                        type: string    
+                      productionStatus:    
+                        description: Property. Outcome of the operation as reported by the production line, for example OK.    
+                        type: string    
+                    required:    
+                      - operation    
+                      - date    
+                      - productionStatus    
+                    type: object    
+                  minItems: 1    
+                  type: array    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: The processes the product goes through, each with its operation name, date, production status and energy consumption.    
       x-ngsi:    
         type: Property    
@@ -445,23 +492,27 @@ StainlessSteelDPP:
         type: Property    
     startTime:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              format: date-time    
+        - anyOf:    
+            - format: date-time    
               pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$    
               type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  format: date-time    
+                  pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Start time of the Digital Product Passport (ISO 8601 date-time, UTC).    
       x-ngsi:    
         type: Property    
@@ -494,14 +545,61 @@ StainlessSteelDPP:
 <!-- /70-MiddleNotes -->  
 <!-- 80-Examples -->  
 ## Example payloads    
-Not available the example of a StainlessSteelDPP in JSON-LD format as key-values. This is compatible with NGSI-LD when  using `options=keyValues` and returns the context data of an individual entity.  
+#### StainlessSteelDPP NGSI-LD key-values Example    
+Here is an example of a StainlessSteelDPP in JSON-LD format as key-values. This is compatible with NGSI-LD when  using `options=keyValues` and returns the context data of an individual entity.  
+<details><summary><strong>show/hide example</strong></summary>    
+```json  
+{  
+  "id": "urn:ngsi-ld:StainlessSteelDPP:6705c58b-dd1d-4087-b520-4ee3c3f71dc7",  
+  "type": "StainlessSteelDPP",  
+  "dppId": "6705c58b-dd1d-4087-b520-4ee3c3f71dc7",  
+  "factoryInternalBarcode": "100023659",  
+  "productName": "MICRO VR N/A - 12(4) (90 CN) T150",  
+  "startTime": "2025-03-13T14:50:00Z",  
+  "endTime": "2025-03-13T14:55:00Z",  
+  "route": [  
+    {  
+      "operation": "Plastic Injection Molding",  
+      "date": "2025-03-13T14:50:00Z",  
+      "productionStatus": "OK",  
+      "energyConsumption": {  
+        "value": 18.76,  
+        "unitCode": "WHR"  
+      }  
+    },  
+    {  
+      "operation": "Metal Cutting",  
+      "date": "2025-03-13T14:55:00Z",  
+      "productionStatus": "OK",  
+      "energyConsumption": {  
+        "value": 1.87,  
+        "unitCode": "WHR"  
+      }  
+    },  
+    {  
+      "operation": "Assembly",  
+      "date": "2025-03-13T15:00:00Z",  
+      "productionStatus": "OK",  
+      "energyConsumption": {  
+        "value": 0.93,  
+        "unitCode": "WHR"  
+      }  
+    }  
+  ],  
+  "@context": [  
+    "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/utils/circuloos_data_platform.jsonld",  
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"  
+  ]  
+}  
+```  
+</details>  
 #### StainlessSteelDPP NGSI-LD normalized Example    
 Here is an example of a StainlessSteelDPP in JSON-LD format as normalized. This is compatible with NGSI-LD when not using options and returns the context data of an individual entity.  
 <details><summary><strong>show/hide example</strong></summary>    
 ```json  
 {  
   "@context": [  
-    "http://circuloos-ld-context/circuloos-context.jsonld",  
+    "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/utils/circuloos_data_platform.jsonld",  
     "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"  
   ],  
   "id": "urn:ngsi-ld:StainlessSteelDPP:6705c58b-dd1d-4087-b520-4ee3c3f71dc7",  

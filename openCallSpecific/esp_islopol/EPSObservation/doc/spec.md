@@ -31,92 +31,111 @@ EPSObservation:
   properties:    
     confidence:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              maximum: 1    
+        - anyOf:    
+            - maximum: 1    
               minimum: 0    
               type: number    
-          required:    
-            - type    
-            - value    
-          type: object    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  maximum: 1    
+                  minimum: 0    
+                  type: number    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Confidence score reported by the model for the observation, expressed from 0 to 1. It describes confidence in the prediction, not the amount of contamination. (Multiply by 100 to obtain the Confidence percentage.)    
       x-ngsi:    
         type: Property    
     contaminationLevel:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              enum:    
+        - anyOf:    
+            - enum:    
                 - none    
                 - low    
                 - medium    
                 - high    
               type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  enum:    
+                    - none    
+                    - low    
+                    - medium    
+                    - high    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Contamination category assigned from the score using the thresholds recorded for the observation. The schema supports none, low, medium and high.    
       x-ngsi:    
         type: Property    
     contaminationScore:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              maximum: 1    
+        - anyOf:    
+            - maximum: 1    
               minimum: 0    
               type: number    
-          required:    
-            - type    
-            - value    
-          type: object    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  maximum: 1    
+                  minimum: 0    
+                  type: number    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Estimated contamination expressed as a fraction from 0 to 1, with higher values indicating more contamination. (Multiply by 100 to obtain the Contamination Score percentage.)    
       x-ngsi:    
         type: Property    
     eventTime:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              format: date-time    
+        - anyOf:    
+            - format: date-time    
               pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$    
               type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  format: date-time    
+                  pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Date and time when the EPS observation took place, expressed as an ISO 8601 timestamp.    
       x-ngsi:    
         type: Property    
@@ -127,123 +146,130 @@ EPSObservation:
         type: Property    
     modelUsed:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+        - anyOf:    
+            - type: string    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Name or identifier of the machine-learning model or inference method used to analyse the EPS observation.    
       x-ngsi:    
         type: Property    
     modelVersion:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+        - anyOf:    
+            - type: string    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Version or deployed model artefact used to produce the observation, allowing predictions to be traced to a specific model release.    
       x-ngsi:    
         type: Property    
     refDevice:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            object:    
-              description: URN of the referenced entity.    
+        - anyOf:    
+            - description: URN of the referenced entity.    
               pattern: ^urn:ngsi-ld:.+$    
               type: string    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Relationship    
-              type: string    
-          required:    
-            - type    
-            - object    
-          type: object    
+            - additionalProperties: no    
+              properties:    
+                object:    
+                  description: URN of the referenced entity.    
+                  pattern: ^urn:ngsi-ld:.+$    
+                  type: string    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Relationship    
+                  type: string    
+              required:    
+                - type    
+                - object    
+              type: object    
       description: Identifier of the Device entity representing the equipment that generated the observation, such as the camera and inference device installed at ARM.    
       x-ngsi:    
         type: Relationship    
     refEPSBatch:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            object:    
-              description: URN of the referenced entity.    
+        - anyOf:    
+            - description: URN of the referenced entity.    
               pattern: ^urn:ngsi-ld:.+$    
               type: string    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Relationship    
-              type: string    
-          required:    
-            - type    
-            - object    
-          type: object    
+            - additionalProperties: no    
+              properties:    
+                object:    
+                  description: URN of the referenced entity.    
+                  pattern: ^urn:ngsi-ld:.+$    
+                  type: string    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Relationship    
+                  type: string    
+              required:    
+                - type    
+                - object    
+              type: object    
       description: Identifier of the EPSBatch assessed by this observation, linking the model result to the tracked batch of material.    
       x-ngsi:    
         type: Relationship    
     refProcessEvent:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            object:    
-              description: URN of the referenced entity.    
+        - anyOf:    
+            - description: URN of the referenced entity.    
               pattern: ^urn:ngsi-ld:.+$    
               type: string    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Relationship    
-              type: string    
-          required:    
-            - type    
-            - object    
-          type: object    
+            - additionalProperties: no    
+              properties:    
+                object:    
+                  description: URN of the referenced entity.    
+                  pattern: ^urn:ngsi-ld:.+$    
+                  type: string    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Relationship    
+                  type: string    
+              required:    
+                - type    
+                - object    
+              type: object    
       description: Identifier of the ProcessEvent during which the observation was generated, linking the assessment to the corresponding sorting operation.    
       x-ngsi:    
         type: Relationship    
     thresholds:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              additionalProperties: no    
+        - anyOf:    
+            - additionalProperties: no    
               properties:    
                 contaminationScoreFormula:    
                   description: Formula used to calculate the contamination score.    
@@ -268,10 +294,45 @@ EPSObservation:
                 - medMax    
                 - highMax    
               type: object    
-          required:    
-            - type    
-            - value    
-          type: object    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  additionalProperties: no    
+                  properties:    
+                    contaminationScoreFormula:    
+                      description: Formula used to calculate the contamination score.    
+                      type: string    
+                    highMax:    
+                      description: Upper limit of the high contamination category.    
+                      maximum: 1    
+                      minimum: 0    
+                      type: number    
+                    lowMax:    
+                      description: Upper limit of the low contamination category.    
+                      maximum: 1    
+                      minimum: 0    
+                      type: number    
+                    medMax:    
+                      description: Upper limit of the medium contamination category.    
+                      maximum: 1    
+                      minimum: 0    
+                      type: number    
+                  required:    
+                    - lowMax    
+                    - medMax    
+                    - highMax    
+                  type: object    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Configuration used to convert contamination scores into categories, including the lowMax, medMax and highMax upper limits. The object may also record the formula used to calculate the score.    
       x-ngsi:    
         type: Property    
@@ -306,14 +367,42 @@ EPSObservation:
 <!-- /70-MiddleNotes -->  
 <!-- 80-Examples -->  
 ## Example payloads    
-Not available the example of a EPSObservation in JSON-LD format as key-values. This is compatible with NGSI-LD when  using `options=keyValues` and returns the context data of an individual entity.  
+#### EPSObservation NGSI-LD key-values Example    
+Here is an example of a EPSObservation in JSON-LD format as key-values. This is compatible with NGSI-LD when  using `options=keyValues` and returns the context data of an individual entity.  
+<details><summary><strong>show/hide example</strong></summary>    
+```json  
+{  
+  "id": "urn:ngsi-ld:EPSObservation:ARM:reciclable-eps:20260903",  
+  "type": "EPSObservation",  
+  "eventTime": "2026-09-03T20:44:12.000Z",  
+  "contaminationScore": 0.107308,  
+  "contaminationLevel": "high",  
+  "confidence": 0.397136,  
+  "modelUsed": "YOLO segmentation NCNN",  
+  "modelVersion": "best_ncnn_model",  
+  "thresholds": {  
+    "lowMax": 0.03,  
+    "medMax": 0.1,  
+    "highMax": 1,  
+    "contaminationScoreFormula": "contamination_pct / 100"  
+  },  
+  "refDevice": "urn:ngsi-ld:Device:ARM:Mounted01",  
+  "refProcessEvent": "urn:ngsi-ld:ProcessEvent:ARM:blue-waste-stream-processing:20260903",  
+  "refEPSBatch": "urn:ngsi-ld:EPSBatch:ARM:20260903",  
+  "@context": [  
+    "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/utils/circuloos_data_platform.jsonld",  
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"  
+  ]  
+}  
+```  
+</details>  
 #### EPSObservation NGSI-LD normalized Example    
 Here is an example of a EPSObservation in JSON-LD format as normalized. This is compatible with NGSI-LD when not using options and returns the context data of an individual entity.  
 <details><summary><strong>show/hide example</strong></summary>    
 ```json  
 {  
   "@context": [  
-    "http://circuloos-ld-context/circuloos-context.jsonld",  
+    "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/utils/circuloos_data_platform.jsonld",  
     "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"  
   ],  
   "id": "urn:ngsi-ld:EPSObservation:ARM:reciclable-eps:20260903",  

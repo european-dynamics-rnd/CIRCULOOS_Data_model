@@ -1,5 +1,5 @@
 {
-    "$schema": "http://json-schema.org/schema#",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
     "modelTags": "",
     "$id": "https://raw.githubusercontent.com/TO_ADD_LATER/schema.json",
     "$schemaVersion": "0.0.1",
@@ -22,12 +22,12 @@
                         "Room"
                     ],
                     "description": "Property. NGSI Entity type. It has to be Storey, Room"
-                }, 
+                },
                 "ceilingHeight": {
-                    "type": "number", 
+                    "type": "number",
                     "description": "Property. Unit: m",
                     "minimum": 0
-                }         
+                }
             }
         }
     ],

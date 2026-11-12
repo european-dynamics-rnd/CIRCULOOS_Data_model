@@ -31,17 +31,8 @@ Supplier:
   properties:    
     address:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              additionalProperties: no    
+        - anyOf:    
+            - additionalProperties: no    
               properties:    
                 addressCountry:    
                   description: The country. Model:'https://schema.org/addressCountry'    
@@ -59,87 +50,134 @@ Supplier:
                   description: The street address. Model:'https://schema.org/streetAddress'    
                   type: string    
               type: object    
-          required:    
-            - type    
-            - value    
-          type: object    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  additionalProperties: no    
+                  properties:    
+                    addressCountry:    
+                      description: The country. Model:'https://schema.org/addressCountry'    
+                      type: string    
+                    addressLocality:    
+                      description: The locality in which the street address is. Model:'https://schema.org/addressLocality'    
+                      type: string    
+                    addressRegion:    
+                      description: The region in which the locality is. Model:'https://schema.org/addressRegion'    
+                      type: string    
+                    postalCode:    
+                      description: The postal code. Model:'https://schema.org/postalCode'    
+                      type: string    
+                    streetAddress:    
+                      description: The street address. Model:'https://schema.org/streetAddress'    
+                      type: string    
+                  type: object    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Postal address of the supplier facility as a structured object (street, locality, region, country, postal code), following the schema.org PostalAddress format. addressRegion holds the administrative region where the facility is located, a key parameter for regional circular economy indicators.    
       x-ngsi:    
         type: Property    
     contactEmail:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+        - anyOf:    
+            - type: string    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Email address of the primary contact person at the supplier facility. Used for supply chain communication and batch tracing inquiries.    
       x-ngsi:    
         type: Property    
     contactPerson:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+        - anyOf:    
+            - type: string    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Name of the designated contact person responsible for material supply coordination at this facility.    
       x-ngsi:    
         type: Property    
     distanceToManufacturer:    
       allOf:    
-        - additionalProperties: no    
-          anyOf:    
-            - required:    
+        - anyOf:    
+            - anyOf:    
+                - description: Exact measured value, when a single figure is known.    
+                  type: number    
+                - additionalProperties: no    
+                  minProperties: 1    
+                  properties:    
+                    maxValue:    
+                      description: Upper bound of the value, when the source declares a range or a maximum.    
+                      type: number    
+                    minValue:    
+                      description: Lower bound of the value, when the source declares a range or a minimum.    
+                      type: number    
+                  type: object    
+              description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                unitCode:    
+                  description: UN/CEFACT code of the unit of measurement of the value.    
+                  type: string    
+                value:    
+                  anyOf:    
+                    - description: Exact measured value, when a single figure is known.    
+                      type: number    
+                    - additionalProperties: no    
+                      minProperties: 1    
+                      properties:    
+                        maxValue:    
+                          description: Upper bound of the value, when the source declares a range or a maximum.    
+                          type: number    
+                        minValue:    
+                          description: Lower bound of the value, when the source declares a range or a minimum.    
+                          type: number    
+                      type: object    
+                  description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+              required:    
+                - type    
+                - unitCode    
                 - value    
-            - required:    
-                - minValue    
-            - required:    
-                - maxValue    
-          properties:    
-            maxValue:    
-              description: Upper bound of the value, when the source declares a range or a maximum.    
-              type: number    
-            minValue:    
-              description: Lower bound of the value, when the source declares a range or a minimum.    
-              type: number    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            unitCode:    
-              description: UN/CEFACT code of the unit of measurement of the value.    
-              type: string    
-            value:    
-              description: Exact measured value, when a single figure is known.    
-              type: number    
-          required:    
-            - type    
-            - unitCode    
-          type: object    
+              type: object    
       description: 'Expected unitCode: KMT. Road distance from the supplier facility to the manufacturer. Used for transport emission estimation and regional sourcing analysis.'    
       x-ngsi:    
         type: Property    
@@ -150,88 +188,103 @@ Supplier:
         type: Property    
     name:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+        - anyOf:    
+            - type: string    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Name of the supplier facility or collection point. May differ from the parent organization name when multiple supply facilities exist.    
       x-ngsi:    
         type: Property    
     operatedBy:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            object:    
-              description: URN of the referenced entity, with the format urn:ngsi-ld:<type>:<id>.    
+        - anyOf:    
+            - description: URN of the referenced entity, with the format urn:ngsi-ld:<type>:<id>.    
               pattern: ^urn:ngsi-ld:[A-Za-z0-9_]+:.+$    
               type: string    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Relationship    
-              type: string    
-          required:    
-            - type    
-            - object    
-          type: object    
+            - additionalProperties: no    
+              properties:    
+                object:    
+                  description: URN of the referenced entity, with the format urn:ngsi-ld:<type>:<id>.    
+                  pattern: ^urn:ngsi-ld:[A-Za-z0-9_]+:.+$    
+                  type: string    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Relationship    
+                  type: string    
+              required:    
+                - type    
+                - object    
+              type: object    
       description: Relationship to the Organization entity that operates this supplier facility.    
       x-ngsi:    
         type: Relationship    
     suppliesSRM:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            object:    
-              description: URNs of the referenced entities, each with the format urn:ngsi-ld:<type>:<id>.    
+        - anyOf:    
+            - description: URNs of the referenced entities, each with the format urn:ngsi-ld:<type>:<id>.    
               items:    
                 pattern: ^urn:ngsi-ld:[A-Za-z0-9_]+:.+$    
                 type: string    
               minItems: 1    
               type: array    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Relationship    
-              type: string    
-          required:    
-            - type    
-            - object    
-          type: object    
+            - additionalProperties: no    
+              properties:    
+                object:    
+                  description: URNs of the referenced entities, each with the format urn:ngsi-ld:<type>:<id>.    
+                  items:    
+                    pattern: ^urn:ngsi-ld:[A-Za-z0-9_]+:.+$    
+                    type: string    
+                  minItems: 1    
+                  type: array    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Relationship    
+                  type: string    
+              required:    
+                - type    
+                - object    
+              type: object    
       description: SRM entity types supplied by this facility. Establishes which secondary raw materials originate from this point in the supply chain.    
       x-ngsi:    
         type: Relationship    
     transportationMode:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+        - anyOf:    
+            - type: string    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Primary transport method and vehicle type used for material delivery, including emission standard classification where applicable.    
       x-ngsi:    
         type: Property    
@@ -262,14 +315,39 @@ Supplier:
 <!-- /70-MiddleNotes -->  
 <!-- 80-Examples -->  
 ## Example payloads    
-Not available the example of a Supplier in JSON-LD format as key-values. This is compatible with NGSI-LD when  using `options=keyValues` and returns the context data of an individual entity.  
+#### Supplier NGSI-LD key-values Example    
+Here is an example of a Supplier in JSON-LD format as key-values. This is compatible with NGSI-LD when  using `options=keyValues` and returns the context data of an individual entity.  
+<details><summary><strong>show/hide example</strong></summary>    
+```json  
+{  
+  "id": "urn:ngsi-ld:Supplier:Confidential01-Rice",  
+  "type": "Supplier",  
+  "operatedBy": "urn:ngsi-ld:Organization:LITOKOL",  
+  "address": {  
+    "addressRegion": "Emilia-Romagna",  
+    "addressCountry": "Italy"  
+  },  
+  "suppliesSRM": [  
+    "urn:ngsi-ld:SRM:RiceHusk",  
+    "urn:ngsi-ld:SRM:RiceStraw"  
+  ],  
+  "name": "Confidential Supplier 01",  
+  "transportationMode": "Road transport - Truck Euro 6",  
+  "distanceToManufacturer": 50,  
+  "@context": [  
+    "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/utils/circuloos_data_platform.jsonld",  
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"  
+  ]  
+}  
+```  
+</details>  
 #### Supplier NGSI-LD normalized Example    
 Here is an example of a Supplier in JSON-LD format as normalized. This is compatible with NGSI-LD when not using options and returns the context data of an individual entity.  
 <details><summary><strong>show/hide example</strong></summary>    
 ```json  
 {  
   "@context": [  
-    "http://circuloos-ld-context/circuloos-context.jsonld",  
+    "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/utils/circuloos_data_platform.jsonld",  
     "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"  
   ],  
   "id": "urn:ngsi-ld:Supplier:Confidential01-Rice",  

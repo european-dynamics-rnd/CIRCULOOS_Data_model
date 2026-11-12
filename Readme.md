@@ -32,6 +32,7 @@ See files under folder custom_data_model.
 6. Copy generated file to custom_data_model/doc
 7. For generating the context.jsonld Edit and run 25_create_subject_context_V7.py, L323: customRepository="" to point to the repository or webserver of the custom_data_model folder
 8. For updating the url for each properties with the SmartDataModel webpage. Run update_urls_to_show_smart_data_model.py.
+9. For passing the [Smart Data Models validator](https://github.com/smart-data-models/data-models/tree/master/test_data_model), run `python3 utils/sdm_align.py <model folder>`. It derives example.json, example.jsonld and example-normalized.json from examples/example-normalized.jsonld, adds notes.yaml and ADOPTERS.yaml stubs, and lets schema.json accept both keyValues and normalized payloads. Then rerun steps 3-6 so model.yaml and spec.md follow the schema.
 
 You can use the docker-compose.yml file located on the utils folder for a local webserver based on NGINX 
 

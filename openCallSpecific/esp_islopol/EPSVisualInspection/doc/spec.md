@@ -31,23 +31,27 @@ EPSVisualInspection:
   properties:    
     endDate:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              format: date-time    
+        - anyOf:    
+            - format: date-time    
               pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$    
               type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  format: date-time    
+                  pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Date and time when the visual inspection ended, expressed as an ISO 8601 timestamp.    
       x-ngsi:    
         type: Property    
@@ -58,32 +62,34 @@ EPSVisualInspection:
         type: Property    
     refEPSTransport:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            object:    
-              description: URN of the referenced entity.    
+        - anyOf:    
+            - description: URN of the referenced entity.    
               pattern: ^urn:ngsi-ld:.+$    
               type: string    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Relationship    
-              type: string    
-          required:    
-            - type    
-            - object    
-          type: object    
+            - additionalProperties: no    
+              properties:    
+                object:    
+                  description: URN of the referenced entity.    
+                  pattern: ^urn:ngsi-ld:.+$    
+                  type: string    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Relationship    
+                  type: string    
+              required:    
+                - type    
+                - object    
+              type: object    
       description: Identifier of the EPSTransport operation that delivered the EPS being inspected, linking the inspection to the shipment and its batches.    
       x-ngsi:    
         type: Relationship    
     refOutputProducts:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            object:    
-              description: URN of the referenced entity, or a list of URNs.    
+        - anyOf:    
+            - description: URN of the referenced entity, or a list of URNs.    
               oneOf:    
                 - pattern: ^urn:ngsi-ld:.+$    
                   type: string    
@@ -92,76 +98,107 @@ EPSVisualInspection:
                     type: string    
                   minItems: 1    
                   type: array    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Relationship    
-              type: string    
-          required:    
-            - type    
-            - object    
-          type: object    
+            - additionalProperties: no    
+              properties:    
+                object:    
+                  description: URN of the referenced entity, or a list of URNs.    
+                  oneOf:    
+                    - pattern: ^urn:ngsi-ld:.+$    
+                      type: string    
+                    - items:    
+                        pattern: ^urn:ngsi-ld:.+$    
+                        type: string    
+                      minItems: 1    
+                      type: array    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Relationship    
+                  type: string    
+              required:    
+                - type    
+                - object    
+              type: object    
       description: Identifiers of Product entities linked as outputs of the inspection, providing traceability to the material that proceeds through the recycling workflow.    
       x-ngsi:    
         type: Relationship    
     rejections:    
       allOf:    
-        - additionalProperties: no    
-          anyOf:    
-            - required:    
+        - anyOf:    
+            - anyOf:    
+                - description: Exact measured value, when a single figure is known.    
+                  type: number    
+                - additionalProperties: no    
+                  minProperties: 1    
+                  properties:    
+                    maxValue:    
+                      description: Upper bound of the value, when the source declares a range or a maximum.    
+                      type: number    
+                    minValue:    
+                      description: Lower bound of the value, when the source declares a range or a minimum.    
+                      type: number    
+                  type: object    
+              description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                unitCode:    
+                  description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
+                  type: string    
+                value:    
+                  anyOf:    
+                    - description: Exact measured value, when a single figure is known.    
+                      type: number    
+                    - additionalProperties: no    
+                      minProperties: 1    
+                      properties:    
+                        maxValue:    
+                          description: Upper bound of the value, when the source declares a range or a maximum.    
+                          type: number    
+                        minValue:    
+                          description: Lower bound of the value, when the source declares a range or a minimum.    
+                          type: number    
+                      type: object    
+                  description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+              required:    
+                - type    
+                - unitCode    
                 - value    
-            - required:    
-                - minValue    
-            - required:    
-                - maxValue    
-          properties:    
-            maxValue:    
-              description: Upper bound of the value, when the source declares a range or a maximum.    
-              type: number    
-            minValue:    
-              description: Lower bound of the value, when the source declares a range or a minimum.    
-              type: number    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            unitCode:    
-              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
-              type: string    
-            value:    
-              description: Exact measured value, when a single figure is known.    
-              type: number    
-          required:    
-            - type    
-            - unitCode    
-          type: object    
+              type: object    
       description: 'Expected unitCode: KGM. Mass of material rejected during the visual inspection. This is an absolute mass, not a rejection percentage.'    
       x-ngsi:    
         type: Property    
     startDate:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              format: date-time    
+        - anyOf:    
+            - format: date-time    
               pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$    
               type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  format: date-time    
+                  pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Date and time when the visual inspection started, expressed as an ISO 8601 timestamp.    
       x-ngsi:    
         type: Property    
@@ -192,14 +229,34 @@ EPSVisualInspection:
 <!-- /70-MiddleNotes -->  
 <!-- 80-Examples -->  
 ## Example payloads    
-Not available the example of a EPSVisualInspection in JSON-LD format as key-values. This is compatible with NGSI-LD when  using `options=keyValues` and returns the context data of an individual entity.  
+#### EPSVisualInspection NGSI-LD key-values Example    
+Here is an example of a EPSVisualInspection in JSON-LD format as key-values. This is compatible with NGSI-LD when  using `options=keyValues` and returns the context data of an individual entity.  
+<details><summary><strong>show/hide example</strong></summary>    
+```json  
+{  
+  "id": "urn:ngsi-ld:EPSVisualInspection:Esferolight:20260702T145010Z",  
+  "type": "EPSVisualInspection",  
+  "startDate": "2026-06-02T13:00:00.000Z",  
+  "endDate": "2026-06-02T16:00:00.000Z",  
+  "rejections": 10,  
+  "refOutputProducts": [  
+    "urn:ngsi-ld:Product:Esferolight:ShreddedEPS:20260702T153321Z"  
+  ],  
+  "refEPSTransport": "urn:ngsi-ld:EPSTransport:13082026",  
+  "@context": [  
+    "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/utils/circuloos_data_platform.jsonld",  
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"  
+  ]  
+}  
+```  
+</details>  
 #### EPSVisualInspection NGSI-LD normalized Example    
 Here is an example of a EPSVisualInspection in JSON-LD format as normalized. This is compatible with NGSI-LD when not using options and returns the context data of an individual entity.  
 <details><summary><strong>show/hide example</strong></summary>    
 ```json  
 {  
   "@context": [  
-    "http://circuloos-ld-context/circuloos-context.jsonld",  
+    "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/utils/circuloos_data_platform.jsonld",  
     "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"  
   ],  
   "id": "urn:ngsi-ld:EPSVisualInspection:Esferolight:20260702T145010Z",  

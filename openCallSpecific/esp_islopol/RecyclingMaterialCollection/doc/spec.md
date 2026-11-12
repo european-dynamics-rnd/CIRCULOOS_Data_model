@@ -31,98 +31,119 @@ RecyclingMaterialCollection:
   properties:    
     client:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+        - anyOf:    
+            - type: string    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Name of the client associated with the material movement.    
       x-ngsi:    
         type: Property    
     clientType:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+        - anyOf:    
+            - type: string    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Client classification code.    
       x-ngsi:    
         type: Property    
     destination:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+        - anyOf:    
+            - type: string    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Receiving site, treatment route or sorting destination recorded for the material movement.    
       x-ngsi:    
         type: Property    
     distance:    
       allOf:    
-        - additionalProperties: no    
-          anyOf:    
-            - required:    
+        - anyOf:    
+            - anyOf:    
+                - description: Exact measured value, when a single figure is known.    
+                  type: number    
+                - additionalProperties: no    
+                  minProperties: 1    
+                  properties:    
+                    maxValue:    
+                      description: Upper bound of the value, when the source declares a range or a maximum.    
+                      type: number    
+                    minValue:    
+                      description: Lower bound of the value, when the source declares a range or a minimum.    
+                      type: number    
+                  type: object    
+              description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                unitCode:    
+                  description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
+                  type: string    
+                value:    
+                  anyOf:    
+                    - description: Exact measured value, when a single figure is known.    
+                      type: number    
+                    - additionalProperties: no    
+                      minProperties: 1    
+                      properties:    
+                        maxValue:    
+                          description: Upper bound of the value, when the source declares a range or a maximum.    
+                          type: number    
+                        minValue:    
+                          description: Lower bound of the value, when the source declares a range or a minimum.    
+                          type: number    
+                      type: object    
+                  description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+              required:    
+                - type    
+                - unitCode    
                 - value    
-            - required:    
-                - minValue    
-            - required:    
-                - maxValue    
-          properties:    
-            maxValue:    
-              description: Upper bound of the value, when the source declares a range or a maximum.    
-              type: number    
-            minValue:    
-              description: Lower bound of the value, when the source declares a range or a minimum.    
-              type: number    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            unitCode:    
-              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
-              type: string    
-            value:    
-              description: Exact measured value, when a single figure is known.    
-              type: number    
-          required:    
-            - type    
-            - unitCode    
-          type: object    
+              type: object    
       description: 'Expected unitCode: KMT. Distance travelled by the collection movement.'    
       x-ngsi:    
         type: Property    
@@ -133,211 +154,241 @@ RecyclingMaterialCollection:
         type: Property    
     lerCode:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+        - anyOf:    
+            - type: string    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: European List of Waste code.    
       x-ngsi:    
         type: Property    
     movementKind:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+        - anyOf:    
+            - type: string    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Type of material movement or operation.    
       x-ngsi:    
         type: Property    
     origin:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+        - anyOf:    
+            - type: string    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Place, municipality or source site from which the collected material originated.    
       x-ngsi:    
         type: Property    
     product:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+        - anyOf:    
+            - type: string    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Material or waste description.    
       x-ngsi:    
         type: Property    
     refFactoryDestination:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            object:    
-              description: URN of the referenced entity.    
+        - anyOf:    
+            - description: URN of the referenced entity.    
               pattern: ^urn:ngsi-ld:.+$    
               type: string    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Relationship    
-              type: string    
-          required:    
-            - type    
-            - object    
-          type: object    
+            - additionalProperties: no    
+              properties:    
+                object:    
+                  description: URN of the referenced entity.    
+                  pattern: ^urn:ngsi-ld:.+$    
+                  type: string    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Relationship    
+                  type: string    
+              required:    
+                - type    
+                - object    
+              type: object    
       description: ARM Factory the collection movement arrives at, when it arrives at an ARM facility.    
       x-ngsi:    
         type: Relationship    
     refFactoryOrigin:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            object:    
-              description: URN of the referenced entity.    
+        - anyOf:    
+            - description: URN of the referenced entity.    
               pattern: ^urn:ngsi-ld:.+$    
               type: string    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Relationship    
-              type: string    
-          required:    
-            - type    
-            - object    
-          type: object    
+            - additionalProperties: no    
+              properties:    
+                object:    
+                  description: URN of the referenced entity.    
+                  pattern: ^urn:ngsi-ld:.+$    
+                  type: string    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Relationship    
+                  type: string    
+              required:    
+                - type    
+                - object    
+              type: object    
       description: ARM Factory the collection movement departs from, when it departs from an ARM facility.    
       x-ngsi:    
         type: Relationship    
     refVehicle:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            object:    
-              description: URN of the referenced entity.    
+        - anyOf:    
+            - description: URN of the referenced entity.    
               pattern: ^urn:ngsi-ld:.+$    
               type: string    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Relationship    
-              type: string    
-          required:    
-            - type    
-            - object    
-          type: object    
+            - additionalProperties: no    
+              properties:    
+                object:    
+                  description: URN of the referenced entity.    
+                  pattern: ^urn:ngsi-ld:.+$    
+                  type: string    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Relationship    
+                  type: string    
+              required:    
+                - type    
+                - object    
+              type: object    
       description: Identifier of the Vehicle entity associated with the material movement.    
       x-ngsi:    
         type: Relationship    
     timestampArrival:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              format: date-time    
+        - anyOf:    
+            - format: date-time    
               pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$    
               type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  format: date-time    
+                  pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Date and time of the recorded arrival or reception of the material, expressed as an ISO 8601 timestamp.    
       x-ngsi:    
         type: Property    
     timestampDeparture:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              format: date-time    
+        - anyOf:    
+            - format: date-time    
               pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$    
               type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  format: date-time    
+                  pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Date and time when the material movement departed, expressed as an ISO 8601 timestamp.    
       x-ngsi:    
         type: Property    
     transporter:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+        - anyOf:    
+            - type: string    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Name of the organisation responsible for transporting the material in the recorded movement.    
       x-ngsi:    
         type: Property    
@@ -350,37 +401,30 @@ RecyclingMaterialCollection:
         type: Property    
     vehiclePlateIdentifier:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+        - anyOf:    
+            - type: string    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Vehicle registration plate or other vehicle identifier recorded in the source document.    
       x-ngsi:    
         type: Property    
     wasteStream:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              enum:    
+        - anyOf:    
+            - enum:    
                 - Blue Stream    
                 - Yellow Stream    
                 - EPS Stream    
@@ -388,47 +432,80 @@ RecyclingMaterialCollection:
                 - Paper/Cardboard Stream    
                 - Other    
               type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  enum:    
+                    - Blue Stream    
+                    - Yellow Stream    
+                    - EPS Stream    
+                    - Rejected EPS Stream    
+                    - Paper/Cardboard Stream    
+                    - Other    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: 'Classification of the collected material stream: Blue Stream, Yellow Stream, EPS Stream, Rejected EPS Stream, Paper/Cardboard Stream, Other.'    
       x-ngsi:    
         type: Property    
     weight:    
       allOf:    
-        - additionalProperties: no    
-          anyOf:    
-            - required:    
+        - anyOf:    
+            - anyOf:    
+                - description: Exact measured value, when a single figure is known.    
+                  type: number    
+                - additionalProperties: no    
+                  minProperties: 1    
+                  properties:    
+                    maxValue:    
+                      description: Upper bound of the value, when the source declares a range or a maximum.    
+                      type: number    
+                    minValue:    
+                      description: Lower bound of the value, when the source declares a range or a minimum.    
+                      type: number    
+                  type: object    
+              description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                unitCode:    
+                  description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
+                  type: string    
+                value:    
+                  anyOf:    
+                    - description: Exact measured value, when a single figure is known.    
+                      type: number    
+                    - additionalProperties: no    
+                      minProperties: 1    
+                      properties:    
+                        maxValue:    
+                          description: Upper bound of the value, when the source declares a range or a maximum.    
+                          type: number    
+                        minValue:    
+                          description: Lower bound of the value, when the source declares a range or a minimum.    
+                          type: number    
+                      type: object    
+                  description: Exact value as a number, or a range as an object with minValue and/or maxValue.    
+              required:    
+                - type    
+                - unitCode    
                 - value    
-            - required:    
-                - minValue    
-            - required:    
-                - maxValue    
-          properties:    
-            maxValue:    
-              description: Upper bound of the value, when the source declares a range or a maximum.    
-              type: number    
-            minValue:    
-              description: Lower bound of the value, when the source declares a range or a minimum.    
-              type: number    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            unitCode:    
-              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.    
-              type: string    
-            value:    
-              description: Exact measured value, when a single figure is known.    
-              type: number    
-          required:    
-            - type    
-            - unitCode    
-          type: object    
+              type: object    
       description: 'Expected unitCode: KGM. Mass of material recorded for the movement.'    
       x-ngsi:    
         type: Property    
@@ -450,14 +527,40 @@ RecyclingMaterialCollection:
 <!-- /70-MiddleNotes -->  
 <!-- 80-Examples -->  
 ## Example payloads    
-Not available the example of a RecyclingMaterialCollection in JSON-LD format as key-values. This is compatible with NGSI-LD when  using `options=keyValues` and returns the context data of an individual entity.  
+#### RecyclingMaterialCollection NGSI-LD key-values Example    
+Here is an example of a RecyclingMaterialCollection in JSON-LD format as key-values. This is compatible with NGSI-LD when  using `options=keyValues` and returns the context data of an individual entity.  
+<details><summary><strong>show/hide example</strong></summary>    
+```json  
+{  
+  "id": "urn:ngsi-ld:RecyclingMaterialCollection:ARM:Import:20260827T102839Z",  
+  "type": "RecyclingMaterialCollection",  
+  "movementKind": "D - Entrada",  
+  "client": "C.M. de Santa Cruz",  
+  "clientType": "AUT",  
+  "transporter": "C.M. de Santa Cruz",  
+  "vehiclePlateIdentifier": "BZ-21-JT",  
+  "refVehicle": "urn:ngsi-ld:Vehicle:external:BZ-21-JT",  
+  "lerCode": "LER150101",  
+  "product": "EMBALAGENS PAPEL/CARTAO",  
+  "origin": "Santa Cruz",  
+  "destination": "TPC - TRIAGEM PAPEL/CARTAO",  
+  "timestampArrival": "2026-08-27T10:28:39.000Z",  
+  "weight": 740,  
+  "wasteStream": "Paper/Cardboard Stream",  
+  "@context": [  
+    "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/utils/circuloos_data_platform.jsonld",  
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"  
+  ]  
+}  
+```  
+</details>  
 #### RecyclingMaterialCollection NGSI-LD normalized Example    
 Here is an example of a RecyclingMaterialCollection in JSON-LD format as normalized. This is compatible with NGSI-LD when not using options and returns the context data of an individual entity.  
 <details><summary><strong>show/hide example</strong></summary>    
 ```json  
 {  
   "@context": [  
-    "http://circuloos-ld-context/circuloos-context.jsonld",  
+    "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/utils/circuloos_data_platform.jsonld",  
     "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"  
   ],  
   "id": "urn:ngsi-ld:RecyclingMaterialCollection:ARM:Import:20260827T102839Z",  

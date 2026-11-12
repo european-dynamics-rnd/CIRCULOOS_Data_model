@@ -1,0 +1,18 @@
+{
+  "id": "urn:ngsi-ld:MortarBatch:MB-M1-2026-001",
+  "type": "MortarBatch",
+  "instanceOf": "urn:ngsi-ld:MortarProduct:SuperThermoblock",
+  "batchCode": "MB-M1-2026-001",
+  "usedProcess": "urn:ngsi-ld:MortarProcess:DryMixing-Mortar1",
+  "producedFromRecipe": "urn:ngsi-ld:Recipe:MortarSuperThermoblock",
+  "producedBy": "urn:ngsi-ld:Organization:LITOKOL",
+  "usedSRMBatches": [
+    "urn:ngsi-ld:SRMBatch:POS-2025-DEC"
+  ],
+  "dateCreated": "2026-04-15T00:00:00Z",
+  "description": "First production batch MORTAR 1, pilot scale 25 litres",
+  "@context": [
+    "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/utils/circuloos_data_platform.jsonld",
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"
+  ]
+}

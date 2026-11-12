@@ -1,6 +1,6 @@
 {
   "@context": [
-    "http://circuloos-ld-context/circuloos-context.jsonld",
+    "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/utils/circuloos_data_platform.jsonld",
     "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"
   ],
   "id": "urn:ngsi-ld:MortarProcess:DryMixing-Mortar1",
@@ -29,13 +29,17 @@
   },
   "waterConsumption": {
     "type": "Property",
-    "maxValue": 100,
+    "value": {
+      "maxValue": 100
+    },
     "unitCode": "LTR/TNE",
     "observedAt": "2026-06-15T15:16:02.000Z"
   },
   "wasteGeneration": {
     "type": "Property",
-    "maxValue": 10,
+    "value": {
+      "maxValue": 10
+    },
     "unitCode": "KGM/TNE",
     "observedAt": "2026-06-15T15:16:02.000Z"
   },

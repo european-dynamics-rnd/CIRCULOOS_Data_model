@@ -1,0 +1,64 @@
+{
+  "id": "urn:ngsi-ld:reConcretePart:sicurta-001",
+  "type": "reConcretePart",
+  "partId": "sicurta-001",
+  "fabricationTimestamp": "2026-05-20T10:30:00Z",
+  "density": 2150,
+  "weight": 135.0,
+  "overallDimensions": {
+    "length": 0.8,
+    "width": 1.2,
+    "height": 0.6
+  },
+  "realTimeCoordinates": {
+    "x": [
+      0.0,
+      0.2,
+      0.4,
+      0.6
+    ],
+    "y": [
+      0.0,
+      0.1,
+      0.1,
+      0.2
+    ],
+    "z": [
+      0.0,
+      0.05,
+      0.1,
+      0.15
+    ]
+  },
+  "realTimePressureSensorData": {
+    "values": [
+      2.1,
+      2.2,
+      2.0,
+      2.3
+    ]
+  },
+  "realTimeTemperatureSensorData": {
+    "values": [
+      23.5,
+      23.8,
+      24.0,
+      24.1
+    ]
+  },
+  "torqueData": {
+    "values": [
+      14.1,
+      14.3,
+      14.0,
+      14.2
+    ]
+  },
+  "printSpeed": 100,
+  "energyUsage": 4.0,
+  "waterUsage": 9.4,
+  "compressiveStrength": 38.2,
+  "cementContent": 20.0,
+  "recycledContent": 46.5,
+  "color": "light grey"
+}

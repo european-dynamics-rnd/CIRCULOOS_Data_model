@@ -1,0 +1,38 @@
+{
+  "id": "urn:ngsi-ld:StainlessSteelDPP:6705c58b-dd1d-4087-b520-4ee3c3f71dc7",
+  "type": "StainlessSteelDPP",
+  "dppId": "6705c58b-dd1d-4087-b520-4ee3c3f71dc7",
+  "factoryInternalBarcode": "100023659",
+  "productName": "MICRO VR N/A - 12(4) (90 CN) T150",
+  "startTime": "2025-03-13T14:50:00Z",
+  "endTime": "2025-03-13T14:55:00Z",
+  "route": [
+    {
+      "operation": "Plastic Injection Molding",
+      "date": "2025-03-13T14:50:00Z",
+      "productionStatus": "OK",
+      "energyConsumption": {
+        "value": 18.76,
+        "unitCode": "WHR"
+      }
+    },
+    {
+      "operation": "Metal Cutting",
+      "date": "2025-03-13T14:55:00Z",
+      "productionStatus": "OK",
+      "energyConsumption": {
+        "value": 1.87,
+        "unitCode": "WHR"
+      }
+    },
+    {
+      "operation": "Assembly",
+      "date": "2025-03-13T15:00:00Z",
+      "productionStatus": "OK",
+      "energyConsumption": {
+        "value": 0.93,
+        "unitCode": "WHR"
+      }
+    }
+  ]
+}

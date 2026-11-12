@@ -1,0 +1,44 @@
+# Regenerates utils/circuloos_data_platform.jsonld, the single @context used by
+# the platform, from the Smart Data Models base context and every
+# context.jsonld in the repository (see utils/merging_context.txt).
+name: Build platform @context
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**/context.jsonld'
+      - 'utils/combined_subjects_context.jsonld'
+      - 'utils/merging_context.txt'
+      - 'utils/combine_contexts.py'
+      - '.github/workflows/build-context.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-context
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Combine contexts
+        working-directory: utils
+        run: python3 combine_contexts.py circuloos_data_platform.jsonld
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add utils/circuloos_data_platform.jsonld
+          if git diff --cached --quiet; then
+            echo "Platform @context unchanged"
+          else
+            git commit -m "chore: regenerate circuloos_data_platform.jsonld"
+            git push
+          fi

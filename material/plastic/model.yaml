@@ -58,6 +58,9 @@ plastic:
     ashContent:
       description: 'Unit: %. Inorganic filler/ash content left after incineration, an indicator of filler load and purity. '
       properties:
+        unitCode:
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).
+          type: string
         value:
           description: 'Property. https://schema.org/Number.  Default: 0.0'
           type: number
@@ -86,6 +89,9 @@ plastic:
     bulkDensity:
       description: 'Unit: kg/m3. The density of the loose pellets/flakes as poured, needed to size the hopper and dosing. '
       properties:
+        unitCode:
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).
+          type: string
         value:
           description: 'Property. https://schema.org/Number.  Default: 0.0'
           type: number
@@ -190,6 +196,9 @@ plastic:
     density:
       description: 'Unit: g/cm3. The mass per unit volume of the solid resin. '
       properties:
+        unitCode:
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).
+          type: string
         value:
           description: 'Property. https://schema.org/Number.  Default: 0.0'
           type: number
@@ -218,6 +227,9 @@ plastic:
     flexuralModulus:
       description: 'Unit: MPa. Stiffness of the molded material under bending. '
       properties:
+        unitCode:
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).
+          type: string
         value:
           description: 'Property. https://schema.org/Number.  Default: 0.0'
           type: number
@@ -246,6 +258,9 @@ plastic:
     heatDeflectionTemperature:
       description: 'Unit: °C. Temperature at which the molded material deforms under a given load (HDT). '
       properties:
+        unitCode:
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).
+          type: string
         value:
           description: 'Property. https://schema.org/Number.  Default: 0.0'
           type: number
@@ -270,6 +285,9 @@ plastic:
     impactStrength:
       description: 'Unit: kJ/m2. Notched Izod impact strength of the molded material. '
       properties:
+        unitCode:
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).
+          type: string
         value:
           description: 'Property. https://schema.org/Number.  Default: 0.0'
           type: number
@@ -474,6 +492,9 @@ plastic:
     meltFlowIndex:
       description: 'Unit: g/10min. Melt flow index (MFI/MFR), the key indicator of how easily the material flows into the mold cavity. '
       properties:
+        unitCode:
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).
+          type: string
         value:
           description: 'Property. https://schema.org/Number.  Default: 0.0'
           type: number
@@ -490,6 +511,9 @@ plastic:
     meltingTemperature:
       description: 'Unit: °C. Melting (or processing) temperature of the resin. '
       properties:
+        unitCode:
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).
+          type: string
         value:
           description: 'Property. https://schema.org/Number.  Default: 0.0'
           type: number
@@ -500,6 +524,9 @@ plastic:
     moistureContent:
       description: 'Unit: %. Residual moisture in the material; too high a value causes hydrolysis and surface defects if not dried before molding. '
       properties:
+        unitCode:
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).
+          type: string
         value:
           description: 'Property. https://schema.org/Number.  Default: 0.0'
           type: number
@@ -544,6 +571,9 @@ plastic:
     polymerPurity:
       description: 'Unit: %. Share of the target polymer in the material; the rest is other polymers and contaminants. '
       properties:
+        unitCode:
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).
+          type: string
         value:
           description: Property. https://schema.org/Number.
           maximum: 100
@@ -621,6 +651,9 @@ plastic:
     recommendedBarrelTemperature:
       description: 'Unit: °C. Recommended injection molding barrel temperature for this material. '
       properties:
+        unitCode:
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).
+          type: string
         value:
           description: 'Property. https://schema.org/Number.  Default: 0.0'
           type: number
@@ -631,6 +664,9 @@ plastic:
     recommendedDryingTemperature:
       description: 'Unit: °C. Recommended drying temperature before processing. '
       properties:
+        unitCode:
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).
+          type: string
         value:
           description: 'Property. https://schema.org/Number.  Default: 0.0'
           type: number
@@ -641,6 +677,9 @@ plastic:
     recommendedDryingTime:
       description: 'Unit: h. Recommended drying duration before processing. '
       properties:
+        unitCode:
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).
+          type: string
         value:
           description: 'Property. https://schema.org/Number.  Default: 0.0'
           type: number
@@ -651,6 +690,9 @@ plastic:
     recommendedMoldTemperature:
       description: 'Unit: °C. Recommended mold (tool) temperature for this material. '
       properties:
+        unitCode:
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).
+          type: string
         value:
           description: 'Property. https://schema.org/Number.  Default: 0.0'
           type: number
@@ -735,6 +777,9 @@ plastic:
     shrinkageRate:
       description: 'Unit: %. Mold shrinkage of the material after cooling, needed to size the mold cavity. '
       properties:
+        unitCode:
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).
+          type: string
         value:
           description: 'Property. https://schema.org/Number.  Default: 0.0'
           type: number
@@ -799,6 +844,9 @@ plastic:
     tensileStrength:
       description: 'Unit: MPa. The maximum stress the molded material can withstand while being stretched before breaking. '
       properties:
+        unitCode:
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).
+          type: string
         value:
           description: 'Property. https://schema.org/Number.  Default: 0.0'
           type: number

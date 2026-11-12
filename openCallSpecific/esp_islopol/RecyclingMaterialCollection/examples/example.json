@@ -1,0 +1,17 @@
+{
+  "id": "urn:ngsi-ld:RecyclingMaterialCollection:ARM:Import:20260827T102839Z",
+  "type": "RecyclingMaterialCollection",
+  "movementKind": "D - Entrada",
+  "client": "C.M. de Santa Cruz",
+  "clientType": "AUT",
+  "transporter": "C.M. de Santa Cruz",
+  "vehiclePlateIdentifier": "BZ-21-JT",
+  "refVehicle": "urn:ngsi-ld:Vehicle:external:BZ-21-JT",
+  "lerCode": "LER150101",
+  "product": "EMBALAGENS PAPEL/CARTAO",
+  "origin": "Santa Cruz",
+  "destination": "TPC - TRIAGEM PAPEL/CARTAO",
+  "timestampArrival": "2026-08-27T10:28:39.000Z",
+  "weight": 740,
+  "wasteStream": "Paper/Cardboard Stream"
+}
