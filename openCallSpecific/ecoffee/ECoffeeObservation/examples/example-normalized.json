@@ -1,0 +1,494 @@
+{
+  "id": "urn:ngsi-ld:ECoffeeObservation:ecoffee-001",
+  "type": "ECoffeeObservation",
+  "spentCoffeeGrainInputMass": {
+    "type": "Number",
+    "value": 1000,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "TNE"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-11T10:15:07.446Z"
+      }
+    }
+  },
+  "disposalTransportDistance": {
+    "type": "Number",
+    "value": 100,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "KMT"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-11T10:15:07.446Z"
+      }
+    }
+  },
+  "fossilIncinerationHeatConsumption": {
+    "type": "Number",
+    "value": 100000,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "3B"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-11T10:15:07.446Z"
+      }
+    }
+  },
+  "collectionTransportDistance": {
+    "type": "Number",
+    "value": 100,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "KMT"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-11T10:15:07.446Z"
+      }
+    }
+  },
+  "collectedSpentCoffeeGrainMass": {
+    "type": "Number",
+    "value": 1000,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "KGM"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-11T10:15:07.446Z"
+      }
+    }
+  },
+  "collectedSpentCoffeeGrainInputMass": {
+    "type": "Number",
+    "value": 1000,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "KGM"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-11T10:15:07.446Z"
+      }
+    }
+  },
+  "renewableDryingElectricityConsumption": {
+    "type": "Number",
+    "value": 53.58,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "KWH"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-11T10:15:07.446Z"
+      }
+    }
+  },
+  "biomassHeatConsumption": {
+    "type": "Number",
+    "value": 659.99,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "KWH"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-11T10:15:07.446Z"
+      }
+    }
+  },
+  "driedCoffeeGrainOutputMass": {
+    "type": "Number",
+    "value": 401,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "KGM"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-11T10:15:07.446Z"
+      }
+    }
+  },
+  "driedCoffeeGrainInputMass1": {
+    "type": "Number",
+    "value": 75,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "KGM"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-11T10:15:07.446Z"
+      }
+    }
+  },
+  "processingToFumihogarTransportDistance": {
+    "type": "Number",
+    "value": 100,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "KMT"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-11T10:15:07.446Z"
+      }
+    }
+  },
+  "potassiumNitrateInputMass": {
+    "type": "Number",
+    "value": 25,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "KGM"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-11T10:15:07.446Z"
+      }
+    }
+  },
+  "potsassiumsupplierToFumihogarTransportDistance": {
+    "type": "Number",
+    "value": 100,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "KMT"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-11T10:15:07.446Z"
+      }
+    }
+  },
+  "aluminiumPackagingMass": {
+    "type": "Number",
+    "value": 4,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "GRM"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-11T10:15:07.446Z"
+      }
+    }
+  },
+  "packagingTransportDistance": {
+    "type": "Number",
+    "value": 100,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "KMT"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-11T10:15:07.446Z"
+      }
+    }
+  },
+  "renewableBiocidesProcessElectricityCompumption": {
+    "type": "Number",
+    "value": 0.015,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "KWH"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-11T10:15:07.446Z"
+      }
+    }
+  },
+  "biocideOutputMass": {
+    "type": "Number",
+    "value": 100,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "KGM"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-11T10:15:07.446Z"
+      }
+    }
+  },
+  "driedCoffeeGrainFeedInputMass2": {
+    "type": "Number",
+    "value": 100,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "KGM"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-11T10:15:07.446Z"
+      }
+    }
+  },
+  "processingToAztiTransportDistance": {
+    "type": "Number",
+    "value": 0,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "KMT"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-11T10:15:07.446Z"
+      }
+    }
+  },
+  "barleyInputMass": {
+    "type": "Number",
+    "value": 190,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "KGM"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-11T10:15:07.446Z"
+      }
+    }
+  },
+  "barleyTransportDistance": {
+    "type": "Number",
+    "value": 500,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "KMT"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-11T10:15:07.446Z"
+      }
+    }
+  },
+  "oatsInputMass": {
+    "type": "Number",
+    "value": 240,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "KGM"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-11T10:15:07.446Z"
+      }
+    }
+  },
+  "oatsTransportDistance": {
+    "type": "Number",
+    "value": 500,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "KMT"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-11T10:15:07.446Z"
+      }
+    }
+  },
+  "maizeInputMass": {
+    "type": "Number",
+    "value": 150,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "KGM"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-11T10:15:07.446Z"
+      }
+    }
+  },
+  "maizeBoatTransportDistance": {
+    "type": "Number",
+    "value": 700,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "SMI"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-11T10:15:07.446Z"
+      }
+    }
+  },
+  "distillersDriedGrainsInputMass": {
+    "type": "Number",
+    "value": 50,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "KGM"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-11T10:15:07.446Z"
+      }
+    }
+  },
+  "distillersDriedGrainsTransportDistance": {
+    "type": "Number",
+    "value": 200,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "KMT"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-11T10:15:07.446Z"
+      }
+    }
+  },
+  "rapeseedMealInputMass": {
+    "type": "Number",
+    "value": 160,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "KGM"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-11T10:15:07.446Z"
+      }
+    }
+  },
+  "rapeseedMealTransportDistance": {
+    "type": "Number",
+    "value": 1500,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "KMT"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-11T10:15:07.446Z"
+      }
+    }
+  },
+  "rapeseedOilInputMass": {
+    "type": "Number",
+    "value": 50,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "KGM"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-11T10:15:07.446Z"
+      }
+    }
+  },
+  "rapeseedOilTransportDistance": {
+    "type": "Number",
+    "value": 1500,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "KMT"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-11T10:15:07.446Z"
+      }
+    }
+  },
+  "molassesInputMass": {
+    "type": "Number",
+    "value": 30,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "KGM"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-11T10:15:07.446Z"
+      }
+    }
+  },
+  "molassesTransportDistance": {
+    "type": "Number",
+    "value": 500,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "KMT"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-11T10:15:07.446Z"
+      }
+    }
+  },
+  "renewableFeedProcessElectricityConsumption": {
+    "type": "Number",
+    "value": 18,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "KWH"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-11T10:15:07.446Z"
+      }
+    }
+  },
+  "sheepFeedOutputMass": {
+    "type": "Number",
+    "value": 1000,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "KGM"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-11T10:15:07.446Z"
+      }
+    }
+  }
+}
