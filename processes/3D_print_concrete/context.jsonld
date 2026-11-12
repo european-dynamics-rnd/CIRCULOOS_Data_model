@@ -57,8 +57,8 @@
         "waterUsage": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/intra-communication/schema.json#/waterUsage",
         "weight": "https://smartdatamodels.org/dataModel.Transportation/weight",
         "width": "https://smartdatamodels.org/dataModel.Transportation/width",
-        "x": "https:/raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/processes/3D_print_concrete/schema.json#/x",
-        "y": "https:/raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/processes/3D_print_concrete/schema.json#/y",
-        "z": "https:/raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/processes/3D_print_concrete/schema.json#/z"
+        "x": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/processes/3D_print_concrete/schema.json#/x",
+        "y": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/processes/3D_print_concrete/schema.json#/y",
+        "z": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/processes/3D_print_concrete/schema.json#/z"
     }
 }
