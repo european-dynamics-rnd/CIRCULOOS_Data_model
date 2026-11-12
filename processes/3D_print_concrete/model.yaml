@@ -1,4 +1,4 @@
-leather:
+reConcretePart:
 
   description: CIRCULOOS data model for 3D printed concrete parts.
 
@@ -50,61 +50,81 @@ leather:
         type: Property
 
     cementContent:
-      additionalProperties: no
-      properties:
-        observedAt:
-          format: date-time
-          type: string
-        type:
-          enum:
-            - Property
-          type: string
-        unitCode:
-          type: string
-        value:
-          minimum: 0
-          type: number
-      required:
-        - type
-        - value
-      type: object
+      allOf:
+        - anyOf:
+            - minimum: 0
+              type: number
+            - additionalProperties: no
+              properties:
+                observedAt:
+                  format: date-time
+                  type: string
+                type:
+                  enum:
+                    - Property
+                  type: string
+                unitCode:
+                  type: string
+                value:
+                  minimum: 0
+                  type: number
+              required:
+                - type
+                - value
+              type: object
+      description: Cement content percentage of the material.
+      x-ngsi:
+        type: Property
 
     color:
-      additionalProperties: no
-      properties:
-        observedAt:
-          format: date-time
-          type: string
-        type:
-          enum:
-            - Property
-          type: string
-        value:
-          type: string
-      required:
-        - type
-        - value
-      type: object
+      allOf:
+        - anyOf:
+            - type: string
+            - additionalProperties: no
+              properties:
+                observedAt:
+                  format: date-time
+                  type: string
+                type:
+                  enum:
+                    - Property
+                  type: string
+                value:
+                  type: string
+              required:
+                - type
+                - value
+              type: object
+      description: The final color of the printed concrete part.
+      x-ngsi:
+        type: Property
 
     compressiveStrength:
-      additionalProperties: no
-      properties:
-        observedAt:
-          format: date-time
-          type: string
-        type:
-          enum:
-            - Property
-          type: string
-        unitCode:
-          type: string
-        value:
-          minimum: 0
-          type: number
-      required:
-        - type
-        - value
-      type: object
+      allOf:
+        - anyOf:
+            - minimum: 0
+              type: number
+            - additionalProperties: no
+              properties:
+                observedAt:
+                  format: date-time
+                  type: string
+                type:
+                  enum:
+                    - Property
+                  type: string
+                unitCode:
+                  type: string
+                value:
+                  minimum: 0
+                  type: number
+              required:
+                - type
+                - value
+              type: object
+      description: Compressive strength of the printed concrete part.
+      x-ngsi:
+        type: Property
 
     dataProvider:
       description: A sequence of characters identifying the provider of the harmonised data entity
@@ -127,24 +147,31 @@ leather:
         type: Property
 
     density:
-      additionalProperties: no
-      properties:
-        observedAt:
-          format: date-time
-          type: string
-        type:
-          enum:
-            - Property
-          type: string
-        unitCode:
-          type: string
-        value:
-          minimum: 0
-          type: number
-      required:
-        - type
-        - value
-      type: object
+      allOf:
+        - anyOf:
+            - minimum: 0
+              type: number
+            - additionalProperties: no
+              properties:
+                observedAt:
+                  format: date-time
+                  type: string
+                type:
+                  enum:
+                    - Property
+                  type: string
+                unitCode:
+                  type: string
+                value:
+                  minimum: 0
+                  type: number
+              required:
+                - type
+                - value
+              type: object
+      description: Density of the printed concrete part.
+      x-ngsi:
+        type: Property
 
     description:
       description: A description of this item
@@ -153,42 +180,56 @@ leather:
         type: Property
 
     energyUsage:
-      additionalProperties: no
-      properties:
-        observedAt:
-          format: date-time
-          type: string
-        type:
-          enum:
-            - Property
-          type: string
-        unitCode:
-          type: string
-        value:
-          minimum: 0
-          type: number
-      required:
-        - type
-        - value
-      type: object
+      allOf:
+        - anyOf:
+            - minimum: 0
+              type: number
+            - additionalProperties: no
+              properties:
+                observedAt:
+                  format: date-time
+                  type: string
+                type:
+                  enum:
+                    - Property
+                  type: string
+                unitCode:
+                  type: string
+                value:
+                  minimum: 0
+                  type: number
+              required:
+                - type
+                - value
+              type: object
+      description: Energy usage associated with the fabrication of the part.
+      x-ngsi:
+        type: Property
 
     fabricationTimestamp:
-      additionalProperties: no
-      properties:
-        observedAt:
-          format: date-time
-          type: string
-        type:
-          enum:
-            - Property
-          type: string
-        value:
-          format: date-time
-          type: string
-      required:
-        - type
-        - value
-      type: object
+      allOf:
+        - anyOf:
+            - format: date-time
+              type: string
+            - additionalProperties: no
+              properties:
+                observedAt:
+                  format: date-time
+                  type: string
+                type:
+                  enum:
+                    - Property
+                  type: string
+                value:
+                  format: date-time
+                  type: string
+              required:
+                - type
+                - value
+              type: object
+      description: Timestamp when fabrication of the part was completed.
+      x-ngsi:
+        type: Property
 
     id:
       anyOf:
@@ -382,41 +423,70 @@ leather:
         type: Property
 
     overallDimensions:
-      additionalProperties: no
-      properties:
-        observedAt:
-          format: date-time
-          type: string
-        type:
-          enum:
-            - Property
-          type: string
-        unitCode:
-          type: string
-        value:
-          additionalProperties: no
-          properties:
-            height:
-              description: Property. Overall height of the part.
-              minimum: 0
-              type: number
-            length:
-              description: Property. Overall length of the part.
-              minimum: 0
-              type: number
-            width:
-              description: Property. Overall width of the part.
-              minimum: 0
-              type: number
-          required:
-            - length
-            - width
-            - height
-          type: object
-      required:
-        - type
-        - value
-      type: object
+
+      allOf:
+        - anyOf:
+
+            - additionalProperties: no
+              properties:
+                height:
+                  description: Property. Overall height of the part.
+                  minimum: 0
+                  type: number
+                length:
+                  description: Property. Overall length of the part.
+                  minimum: 0
+                  type: number
+                width:
+                  description: Property. Overall width of the part.
+                  minimum: 0
+                  type: number
+              required:
+                - length
+                - width
+                - height
+              type: object
+
+            - additionalProperties: no
+              properties:
+                observedAt:
+                  format: date-time
+                  type: string
+                type:
+                  enum:
+                    - Property
+                  type: string
+                unitCode:
+                  type: string
+                value:
+                  additionalProperties: no
+                  properties:
+                    height:
+                      description: Property. Overall height of the part.
+                      minimum: 0
+                      type: number
+                    length:
+                      description: Property. Overall length of the part.
+                      minimum: 0
+                      type: number
+                    width:
+                      description: Property. Overall width of the part.
+                      minimum: 0
+                      type: number
+                  required:
+                    - length
+                    - width
+                    - height
+                  type: object
+              required:
+                - type
+                - value
+              type: object
+
+      description: Overall dimensions of the printed concrete part.
+
+      x-ngsi:
+        type: Property
 
     owner:
       description: A List containing a JSON encoded sequence of characters referencing the unique Ids of the owner(s)
@@ -436,166 +506,255 @@ leather:
         type: Property
 
     partId:
-      additionalProperties: no
-      properties:
-        observedAt:
-          format: date-time
-          type: string
-        type:
-          enum:
-            - Property
-          type: string
-        value:
-          type: string
-      required:
-        - type
-        - value
-      type: object
+      allOf:
+        - anyOf:
+            - type: string
+            - additionalProperties: no
+              properties:
+                observedAt:
+                  format: date-time
+                  type: string
+                type:
+                  enum:
+                    - Property
+                  type: string
+                value:
+                  type: string
+              required:
+                - type
+                - value
+              type: object
+      description: Identifier of the printed concrete part within the manufacturing domain.
+      x-ngsi:
+        type: Property
 
     printSpeed:
-      additionalProperties: no
-      properties:
-        observedAt:
-          format: date-time
-          type: string
-        type:
-          enum:
-            - Property
-          type: string
-        unitCode:
-          type: string
-        value:
-          minimum: 0
-          type: number
-      required:
-        - type
-        - value
-      type: object
+      allOf:
+        - anyOf:
+            - minimum: 0
+              type: number
+            - additionalProperties: no
+              properties:
+                observedAt:
+                  format: date-time
+                  type: string
+                type:
+                  enum:
+                    - Property
+                  type: string
+                unitCode:
+                  type: string
+                value:
+                  minimum: 0
+                  type: number
+              required:
+                - type
+                - value
+              type: object
+      description: Average print speed used during manufacturing.
+      x-ngsi:
+        type: Property
 
     realTimeCoordinates:
 
-      additionalProperties: no
+      allOf:
+        - anyOf:
 
-      properties:
-        observedAt:
-          format: date-time
-          type: string
-        type:
-          enum:
-            - Property
-          type: string
-        unitCode:
-          type: string
-        value:
-          additionalProperties: no
-          properties:
-            x:
-              description: Property. X-axis coordinates captured during manufacturing.
-              items:
-                type: number
-              minItems: 1
-              type: array
-            y:
-              description: Property. Y-axis coordinates captured during manufacturing.
-              items:
-                type: number
-              minItems: 1
-              type: array
-            z:
-              description: Property. Z-axis coordinates captured during manufacturing.
-              items:
-                type: number
-              minItems: 1
-              type: array
-          required:
-            - x
-            - y
-            - z
-          type: object
+            - additionalProperties: no
+              properties:
+                x:
+                  description: Property. X-axis coordinates captured during manufacturing.
+                  items:
+                    type: number
+                  minItems: 1
+                  type: array
+                y:
+                  description: Property. Y-axis coordinates captured during manufacturing.
+                  items:
+                    type: number
+                  minItems: 1
+                  type: array
+                z:
+                  description: Property. Z-axis coordinates captured during manufacturing.
+                  items:
+                    type: number
+                  minItems: 1
+                  type: array
+              required:
+                - x
+                - y
+                - z
+              type: object
 
-      required:
-        - type
-        - value
+            - additionalProperties: no
+              properties:
+                observedAt:
+                  format: date-time
+                  type: string
+                type:
+                  enum:
+                    - Property
+                  type: string
+                unitCode:
+                  type: string
+                value:
+                  additionalProperties: no
+                  properties:
+                    x:
+                      description: Property. X-axis coordinates captured during manufacturing.
+                      items:
+                        type: number
+                      minItems: 1
+                      type: array
+                    y:
+                      description: Property. Y-axis coordinates captured during manufacturing.
+                      items:
+                        type: number
+                      minItems: 1
+                      type: array
+                    z:
+                      description: Property. Z-axis coordinates captured during manufacturing.
+                      items:
+                        type: number
+                      minItems: 1
+                      type: array
+                  required:
+                    - x
+                    - y
+                    - z
+                  type: object
+              required:
+                - type
+                - value
+              type: object
 
-      type: object
+      description: Real time position coordinates recorded during printing.
+
+      x-ngsi:
+        type: Property
 
     realTimePressureSensorData:
-      additionalProperties: no
-      properties:
-        observedAt:
-          format: date-time
-          type: string
-        type:
-          enum:
-            - Property
-          type: string
-        unitCode:
-          type: string
-        value:
-          additionalProperties: no
-          properties:
-            values:
-              description: Property. Sensor values captured during manufacturing.
-              items:
-                type: number
-              minItems: 1
-              type: array
-          required:
-            - values
-          type: object
-      required:
-        - type
-        - value
-      type: object
+
+      allOf:
+        - anyOf:
+            - additionalProperties: no
+              properties:
+                values:
+                  description: Property. Sensor values captured during manufacturing.
+                  items:
+                    type: number
+                  minItems: 1
+                  type: array
+              required:
+                - values
+              type: object
+            - additionalProperties: no
+              properties:
+                observedAt:
+                  format: date-time
+                  type: string
+                type:
+                  enum:
+                    - Property
+                  type: string
+                unitCode:
+                  type: string
+                value:
+                  additionalProperties: no
+                  properties:
+                    values:
+                      description: Property. Sensor values captured during manufacturing.
+                      items:
+                        type: number
+                      minItems: 1
+                      type: array
+                  required:
+                    - values
+                  type: object
+              required:
+                - type
+                - value
+              type: object
+
+      description: Real time pressure sensor data collected during printing.
+
+      x-ngsi:
+        type: Property
 
     realTimeTemperatureSensorData:
-      additionalProperties: no
-      properties:
-        observedAt:
-          format: date-time
-          type: string
-        type:
-          enum:
-            - Property
-          type: string
-        unitCode:
-          type: string
-        value:
-          additionalProperties: no
-          properties:
-            values:
-              description: Property. Sensor values captured during manufacturing.
-              items:
-                type: number
-              minItems: 1
-              type: array
-          required:
-            - values
-          type: object
-      required:
-        - type
-        - value
-      type: object
+
+      allOf:
+        - anyOf:
+            - additionalProperties: no
+              properties:
+                values:
+                  description: Property. Sensor values captured during manufacturing.
+                  items:
+                    type: number
+                  minItems: 1
+                  type: array
+              required:
+                - values
+              type: object
+            - additionalProperties: no
+              properties:
+                observedAt:
+                  format: date-time
+                  type: string
+                type:
+                  enum:
+                    - Property
+                  type: string
+                unitCode:
+                  type: string
+                value:
+                  additionalProperties: no
+                  properties:
+                    values:
+                      description: Property. Sensor values captured during manufacturing.
+                      items:
+                        type: number
+                      minItems: 1
+                      type: array
+                  required:
+                    - values
+                  type: object
+              required:
+                - type
+                - value
+              type: object
+
+      description: Real time temperature sensor data collected during printing.
+
+      x-ngsi:
+        type: Property
 
     recycledContent:
-      additionalProperties: no
-      properties:
-        observedAt:
-          format: date-time
-          type: string
-        type:
-          enum:
-            - Property
-          type: string
-        unitCode:
-          type: string
-        value:
-          minimum: 0
-          type: number
-      required:
-        - type
-        - value
-      type: object
+      allOf:
+        - anyOf:
+            - minimum: 0
+              type: number
+            - additionalProperties: no
+              properties:
+                observedAt:
+                  format: date-time
+                  type: string
+                type:
+                  enum:
+                    - Property
+                  type: string
+                unitCode:
+                  type: string
+                value:
+                  minimum: 0
+                  type: number
+              required:
+                - type
+                - value
+              type: object
+      description: Recycled content percentage of the material.
+      x-ngsi:
+        type: Property
 
     seeAlso:
       description: list of uri pointing to additional resources about the item
@@ -617,33 +776,52 @@ leather:
         type: Property
 
     torqueData:
-      additionalProperties: no
-      properties:
-        observedAt:
-          format: date-time
-          type: string
-        type:
-          enum:
-            - Property
-          type: string
-        unitCode:
-          type: string
-        value:
-          additionalProperties: no
-          properties:
-            values:
-              description: Property. Sensor values captured during manufacturing.
-              items:
-                type: number
-              minItems: 1
-              type: array
-          required:
-            - values
-          type: object
-      required:
-        - type
-        - value
-      type: object
+
+      allOf:
+        - anyOf:
+            - additionalProperties: no
+              properties:
+                values:
+                  description: Property. Sensor values captured during manufacturing.
+                  items:
+                    type: number
+                  minItems: 1
+                  type: array
+              required:
+                - values
+              type: object
+            - additionalProperties: no
+              properties:
+                observedAt:
+                  format: date-time
+                  type: string
+                type:
+                  enum:
+                    - Property
+                  type: string
+                unitCode:
+                  type: string
+                value:
+                  additionalProperties: no
+                  properties:
+                    values:
+                      description: Property. Sensor values captured during manufacturing.
+                      items:
+                        type: number
+                      minItems: 1
+                      type: array
+                  required:
+                    - values
+                  type: object
+              required:
+                - type
+                - value
+              type: object
+
+      description: Real time torque data collected during printing.
+
+      x-ngsi:
+        type: Property
 
     type:
       description: NGSI Entity type. It has to be reConcretePart
@@ -654,44 +832,58 @@ leather:
         type: Property
 
     waterUsage:
-      additionalProperties: no
-      properties:
-        observedAt:
-          format: date-time
-          type: string
-        type:
-          enum:
-            - Property
-          type: string
-        unitCode:
-          type: string
-        value:
-          minimum: 0
-          type: number
-      required:
-        - type
-        - value
-      type: object
+      allOf:
+        - anyOf:
+            - minimum: 0
+              type: number
+            - additionalProperties: no
+              properties:
+                observedAt:
+                  format: date-time
+                  type: string
+                type:
+                  enum:
+                    - Property
+                  type: string
+                unitCode:
+                  type: string
+                value:
+                  minimum: 0
+                  type: number
+              required:
+                - type
+                - value
+              type: object
+      description: Water usage associated with the fabrication of the part.
+      x-ngsi:
+        type: Property
 
     weight:
-      additionalProperties: no
-      properties:
-        observedAt:
-          format: date-time
-          type: string
-        type:
-          enum:
-            - Property
-          type: string
-        unitCode:
-          type: string
-        value:
-          minimum: 0
-          type: number
-      required:
-        - type
-        - value
-      type: object
+      allOf:
+        - anyOf:
+            - minimum: 0
+              type: number
+            - additionalProperties: no
+              properties:
+                observedAt:
+                  format: date-time
+                  type: string
+                type:
+                  enum:
+                    - Property
+                  type: string
+                unitCode:
+                  type: string
+                value:
+                  minimum: 0
+                  type: number
+              required:
+                - type
+                - value
+              type: object
+      description: Weight of the printed concrete part.
+      x-ngsi:
+        type: Property
 
   required:
     - id
@@ -707,7 +899,7 @@ leather:
 
   x-disclaimer: Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program
 
-  x-license-url: https://github.com/smart-data-models/circuloos_data_model/blob/master/leather/LICENSE.md
+  x-license-url: https://github.com/smart-data-models/circuloos_data_model/blob/master/reConcretePart/LICENSE.md
 
   x-model-schema: https://raw.githubusercontent.com/TO_ADD_LATER/schema.json
 

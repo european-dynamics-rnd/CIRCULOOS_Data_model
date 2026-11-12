@@ -1,0 +1,56 @@
+{
+  "id": "urn:ngsi-ld:MaterialRecord:ShineAgain:029",
+  "type": "MaterialRecord",
+  "processStep": {
+    "type": "Text",
+    "value": "Shredding"
+  },
+  "date": {
+    "type": "Text",
+    "value": "2026-03-11"
+  },
+  "materialLoop": {
+    "type": "Number",
+    "value": 1,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "C62"
+      }
+    }
+  },
+  "materialIn": {
+    "type": "Number",
+    "value": 7.25,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "KGM"
+      }
+    }
+  },
+  "materialOut": {
+    "type": "Number",
+    "value": 7.1,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "KGM"
+      }
+    }
+  },
+  "energyConsumption": {
+    "type": "Number",
+    "value": 0.33,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "KWH"
+      }
+    }
+  },
+  "partner": {
+    "type": "Text",
+    "value": "Better_Future_Factory"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "id": "urn:ngsi-ld:Organization:CESTHA",
+  "type": "Organization",
+  "name": "CESTHA - Centro Sperimentale per la Tutela degli Habitat",
+  "address": {
+    "addressLocality": "Cesenatico",
+    "addressRegion": "Emilia-Romagna",
+    "postalCode": "47042",
+    "addressCountry": "Italy"
+  },
+  "supplyChainRole": "SRM Supplier",
+  "legalForm": "Research Center",
+  "role": "SRM Supplier - Marine Biomass",
+  "tier": "Tier 1"
+}

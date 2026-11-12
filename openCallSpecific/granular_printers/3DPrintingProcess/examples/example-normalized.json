@@ -1,0 +1,94 @@
+{
+  "id": "urn:ngsi-ld:3DPrintingProcess:cartesian-printer:print-2026-02-18-001:data-1",
+  "type": "3DPrintingProcess",
+  "temperatureInput": {
+    "type": "Number",
+    "value": 17.556424,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "CEL"
+      }
+    }
+  },
+  "temperatureOutput": {
+    "type": "Number",
+    "value": 17.158565,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "CEL"
+      }
+    }
+  },
+  "additiveFlowRateSetPoint": {
+    "type": "Number",
+    "value": 0.075,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "P1"
+      }
+    }
+  },
+  "additiveFlowRate": {
+    "type": "Number",
+    "value": 0.006944,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "LTR/HUR"
+      }
+    }
+  },
+  "slurryFlowRate": {
+    "type": "Number",
+    "value": 3.0,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "LTR/HUR"
+      }
+    }
+  },
+  "motorIntensity": {
+    "type": "Number",
+    "value": 0.011574,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "AMP"
+      }
+    }
+  },
+  "rotationSpeed": {
+    "type": "Number",
+    "value": 100.0,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "RPM"
+      }
+    }
+  },
+  "pressure": {
+    "type": "Number",
+    "value": 5.753038,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "BAR"
+      }
+    }
+  },
+  "printingTime": {
+    "type": "Number",
+    "value": 0.016667,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "MIN"
+      }
+    }
+  }
+}

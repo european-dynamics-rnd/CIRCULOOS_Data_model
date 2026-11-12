@@ -1,0 +1,74 @@
+{
+  "id": "urn:ngsi-ld:Supplier:Confidential01-Rice",
+  "type": "Supplier",
+  "operatedBy": {
+    "type": "Text",
+    "value": "urn:ngsi-ld:Organization:LITOKOL",
+    "metadata": {
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-16T08:04:49.000Z"
+      }
+    }
+  },
+  "address": {
+    "type": "StructuredValue",
+    "value": {
+      "addressRegion": "Emilia-Romagna",
+      "addressCountry": "Italy"
+    },
+    "metadata": {
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-16T08:04:49.000Z"
+      }
+    }
+  },
+  "suppliesSRM": {
+    "type": "StructuredValue",
+    "value": [
+      "urn:ngsi-ld:SRM:RiceHusk",
+      "urn:ngsi-ld:SRM:RiceStraw"
+    ],
+    "metadata": {
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-16T08:04:49.000Z"
+      }
+    }
+  },
+  "name": {
+    "type": "Text",
+    "value": "Confidential Supplier 01",
+    "metadata": {
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-16T08:04:49.000Z"
+      }
+    }
+  },
+  "transportationMode": {
+    "type": "Text",
+    "value": "Road transport - Truck Euro 6",
+    "metadata": {
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-16T08:04:49.000Z"
+      }
+    }
+  },
+  "distanceToManufacturer": {
+    "type": "Number",
+    "value": 50,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "KMT"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-16T08:04:49.000Z"
+      }
+    }
+  }
+}

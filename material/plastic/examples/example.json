@@ -1,0 +1,116 @@
+{
+  "id": "urn:ngsi-ld:plastic:PPR2044",
+  "type": "plastic",
+  "polymerType": "PP",
+  "materialForm": "pellet",
+  "origin": "post-industrial recycled",
+  "recycledContent": {
+    "value": 85,
+    "unitCode": "P1"
+  },
+  "recycledTimes": 2,
+  "color": "natural",
+  "density": {
+    "value": 0.91,
+    "unitCode": "23"
+  },
+  "bulkDensity": {
+    "value": 550,
+    "unitCode": "KMQ"
+  },
+  "meltFlowIndex": {
+    "value": 12
+  },
+  "moistureContent": {
+    "value": 0.08,
+    "unitCode": "P1"
+  },
+  "dryingRequired": true,
+  "recommendedDryingTemperature": {
+    "value": 80,
+    "unitCode": "CEL"
+  },
+  "recommendedDryingTime": {
+    "value": 2,
+    "unitCode": "HUR"
+  },
+  "meltingTemperature": {
+    "value": 165,
+    "unitCode": "CEL"
+  },
+  "recommendedBarrelTemperature": {
+    "value": 220,
+    "unitCode": "CEL"
+  },
+  "recommendedMoldTemperature": {
+    "value": 40,
+    "unitCode": "CEL"
+  },
+  "shrinkageRate": {
+    "value": 1.5,
+    "unitCode": "P1"
+  },
+  "tensileStrength": {
+    "value": 28,
+    "unitCode": "MPA"
+  },
+  "flexuralModulus": {
+    "value": 1350,
+    "unitCode": "MPA"
+  },
+  "impactStrength": {
+    "value": 5.5
+  },
+  "heatDeflectionTemperature": {
+    "value": 85,
+    "unitCode": "CEL"
+  },
+  "ashContent": {
+    "value": 0.4,
+    "unitCode": "P1"
+  },
+  "contaminationLevel": "low",
+  "additives": "UV stabilizer, antioxidant masterbatch",
+  "batchNumber": "LOT-2026-0417",
+  "polymerPurity": {
+    "value": 97,
+    "unitCode": "P1"
+  },
+  "meltFlowIndexTestCondition": "230 °C / 2.16 kg",
+  "wasteSource": "industrialScrap",
+  "foodContactSuitable": false,
+  "materialStatus": "endOfWaste",
+  "endOfWasteReference": "Permit EL-ATT-2025-118, Attica regional authority",
+  "quantity": {
+    "value": 1200,
+    "unitCode": "KGM"
+  },
+  "preConsumerRecycledContent": {
+    "value": 85,
+    "unitCode": "P1"
+  },
+  "postConsumerRecycledContent": {
+    "value": 0,
+    "unitCode": "P1"
+  },
+  "chainOfCustodyModel": "segregated",
+  "refParentMaterial": [
+    "urn:ngsi-ld:plastic:PPR1990"
+  ],
+  "owner": [
+    "urn:ngsi-ld:Organization:plasticRecycler01"
+  ],
+  "suitableRecoveryRoutes": [
+    "recycle"
+  ],
+  "qualityStandard": "EN 15345",
+  "certifications": [
+    {
+      "scheme": "EuCertPlast",
+      "certificateId": "ECP-2026-0412",
+      "issuer": "EuCertPlast",
+      "validUntil": "2027-06-30"
+    }
+  ],
+  "refEnvironmentalFootprint": "urn:ngsi-ld:efi:entity-001"
+}

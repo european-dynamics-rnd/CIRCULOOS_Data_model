@@ -1,0 +1,33 @@
+{
+  "id": "urn:ngsi-ld:efi:entity-001",
+  "type": "environmental_footprint_indicator",
+  "acidificationAccumulatedExceedanceAE": "345.67",
+  "climateChangeGlobalWarmingPotentialGWP": "1234.56",
+  "climateChangeBiogenicGWP100": "98.76",
+  "climateChangeFossilGWP100": "567.89",
+  "climateChangeLandUseAndLULUCGWP": "432.1",
+  "ecotoxicityFreshwaterComparativeToxicCTU": "876.54",
+  "ecotoxicityFreshwaterInorganicsCTUe": "543.21",
+  "ecotoxicityFreshwaterOrganicsCTUe": "321.09",
+  "energyResourcesAbioticDepletionFossils": "987.65",
+  "eutrophicationFreshwaterNutrientsP": "0.987",
+  "eutrophicationMarineNutrientsN": "0.123",
+  "eutrophicationTerrestrialAccumExceedance": "765.43",
+  "humanToxicityCarcinogenicCTUh": "56.78",
+  "humanToxicityCarcinogenicInorganicsCTU": "12.34",
+  "humanToxicityCarcinogenicOrganicsCTU": "34.56",
+  "humanToxicityNonCarcinogenicCTUh": "78.90",
+  "humanToxicityNonCarcinogenicInorganicsCTU": "65.43",
+  "humanToxicityNonCarcinogenicOrganicsCTU": "90.12",
+  "ionisingRadiationHumanHealthU235": "76.54",
+  "landUseSoilQualityIndex": "5.43",
+  "materialResourcesAbioticDepletionElements": "543.21",
+  "ozoneDepletionPotentialODP": "0.0123",
+  "particulateMatterFormationHealth": "432.10",
+  "photochemicalOxidantFormationHealth": "321.98",
+  "waterUseUserDeprivationPotential": "543.12",
+  "@context": [
+    "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/utils/circuloos_data_platform.jsonld",
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"
+  ]
+}

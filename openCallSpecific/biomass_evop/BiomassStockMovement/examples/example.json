@@ -1,0 +1,11 @@
+{
+  "id": "urn:ngsi-ld:evop:biomass-stock-movement:receipt-olive-pits-v6-hueso-certificado-10-humedad",
+  "type": "BiomassStockMovement",
+  "material": "olive-pits",
+  "movementType": "receipt",
+  "quantityKg": 10,
+  "occurredAt": "2026-05-03T22:00:00.000Z",
+  "sourceRef": "initial-stock:olive-pits:V6-HUESO-CERTIFICADO-10-HUMEDAD",
+  "relatedEntityId": "urn:ngsi-ld:evop:biomass-batch:olive-pits-receipt:v6-hueso-certificado-10-humedad",
+  "description": "Entrada directa de hueso para prueba original v6: HUESO CERTIFICADO (10% HUMEDAD)"
+}

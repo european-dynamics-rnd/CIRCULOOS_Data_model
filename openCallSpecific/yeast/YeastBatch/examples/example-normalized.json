@@ -1,0 +1,102 @@
+{
+  "id": "urn:ngsi-ld:circuloos-yeast2value:batch:PT_0149",
+  "type": "YeastBatch",
+  "runId": {
+    "type": "Number",
+    "value": 5
+  },
+  "batchId": {
+    "type": "Text",
+    "value": "PT_0149"
+  },
+  "brewery": {
+    "type": "Text",
+    "value": "Heineken Yeast 2"
+  },
+  "pickUpDate": {
+    "type": "Text",
+    "value": "2026-01-30"
+  },
+  "storageDateBeforePickUp": {
+    "type": "Text",
+    "value": "2026-01-30"
+  },
+  "storageTemperatureBeforePickUp": {
+    "type": "StructuredValue",
+    "value": {
+      "maxValue": 4
+    },
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "CEL"
+      }
+    }
+  },
+  "phValueRawYeast": {
+    "type": "Number",
+    "value": 5.8
+  },
+  "dryMassUnfiltered": {
+    "type": "Number",
+    "value": 18.3,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "P1"
+      }
+    }
+  },
+  "volumetricFraction": {
+    "type": "Number",
+    "value": 58.72,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "P1"
+      }
+    }
+  },
+  "totalCellCount": {
+    "type": "Number",
+    "value": 933000000,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "cells/mL"
+      }
+    }
+  },
+  "livingCellsCount": {
+    "type": "Number",
+    "value": 830000000,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "cells/mL"
+      }
+    }
+  },
+  "livingCellsPercent": {
+    "type": "Number",
+    "value": 88.96,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "P1"
+      }
+    }
+  },
+  "feedstockSource": {
+    "type": "Text",
+    "value": "Brewer's spent yeast"
+  },
+  "valueChain": {
+    "type": "Text",
+    "value": "yeast2value"
+  },
+  "dataSource": {
+    "type": "Text",
+    "value": "Yeast_Log (1).xlsx"
+  }
+}

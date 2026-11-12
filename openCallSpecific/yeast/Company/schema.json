@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json-schema.org/schema#",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$schemaVersion": "0.0.1",
   "modelTags": "yeast",
   "derivedFrom": "",
@@ -10,15 +10,8 @@
   "type": "object",
   "definitions": {
     "AddressProperty": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "type": "string",
-          "enum": [
-            "Property"
-          ]
-        },
-        "value": {
+      "anyOf": [
+        {
           "type": "object",
           "properties": {
             "streetAddress": {
@@ -44,66 +37,121 @@
           },
           "additionalProperties": false
         },
-        "observedAt": {
-          "type": "string",
-          "format": "date-time"
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "Property"
+              ]
+            },
+            "value": {
+              "type": "object",
+              "properties": {
+                "streetAddress": {
+                  "type": "string",
+                  "description": "The street address. Model:'https://schema.org/streetAddress'"
+                },
+                "addressLocality": {
+                  "type": "string",
+                  "description": "The locality in which the street address is. Model:'https://schema.org/addressLocality'"
+                },
+                "addressRegion": {
+                  "type": "string",
+                  "description": "The region in which the locality is. Model:'https://schema.org/addressRegion'"
+                },
+                "addressCountry": {
+                  "type": "string",
+                  "description": "The country. Model:'https://schema.org/addressCountry'"
+                },
+                "postalCode": {
+                  "type": "string",
+                  "description": "The postal code. Model:'https://schema.org/postalCode'"
+                }
+              },
+              "additionalProperties": false
+            },
+            "observedAt": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "additionalProperties": false
         }
-      },
-      "required": [
-        "type",
-        "value"
-      ],
-      "additionalProperties": false
+      ]
     },
     "StringArrayProperty": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "type": "string",
-          "enum": [
-            "Property"
-          ]
-        },
-        "value": {
+      "anyOf": [
+        {
           "type": "array",
           "items": {
             "type": "string"
           },
           "minItems": 1
         },
-        "observedAt": {
-          "type": "string",
-          "format": "date-time"
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "Property"
+              ]
+            },
+            "value": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "minItems": 1
+            },
+            "observedAt": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "additionalProperties": false
         }
-      },
-      "required": [
-        "type",
-        "value"
-      ],
-      "additionalProperties": false
+      ]
     },
     "StringProperty": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "type": "string",
-          "enum": [
-            "Property"
-          ]
-        },
-        "value": {
+      "anyOf": [
+        {
           "type": "string"
         },
-        "observedAt": {
-          "type": "string",
-          "format": "date-time"
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "Property"
+              ]
+            },
+            "value": {
+              "type": "string"
+            },
+            "observedAt": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "additionalProperties": false
         }
-      },
-      "required": [
-        "type",
-        "value"
-      ],
-      "additionalProperties": false
+      ]
     }
   },
   "allOf": [

@@ -1,0 +1,70 @@
+{
+  "id": "urn:ngsi-ld:leather:IDAS1313",
+  "type": "leather",
+  "origin": "cow",
+  "color": "black",
+  "thickness": {
+    "value": 0.3,
+    "unitCode": "MMT"
+  },
+  "tannedProcess": "chrome",
+  "surfaceFinishWithCovering": true,
+  "hardness": "medium",
+  "recycledTimes": 2,
+  "materialSource": "preConsumerOffcut",
+  "area": {
+    "value": 0.35,
+    "unitCode": "MTK"
+  },
+  "pieceFormat": "offcut",
+  "leatherCut": "split",
+  "materialStatus": "waste",
+  "wasteCode": "04 01 08",
+  "hazardous": false,
+  "quantity": {
+    "value": 85,
+    "unitCode": "KGM"
+  },
+  "substancesOfConcern": [
+    {
+      "name": "Chromium(VI)",
+      "casNumber": "18540-29-9",
+      "concentration": 1.2,
+      "regulation": "REACH-AnnexXVII"
+    }
+  ],
+  "composition": [
+    {
+      "name": "Collagen",
+      "share": 80
+    },
+    {
+      "name": "Chromium(III) oxide",
+      "casNumber": "1308-38-9",
+      "share": 4
+    }
+  ],
+  "suitableRecoveryRoutes": [
+    "repurpose",
+    "recycle"
+  ],
+  "certifications": [
+    {
+      "scheme": "LWG",
+      "certificateId": "LWG-GR-0042",
+      "issuer": "Leather Working Group",
+      "validUntil": "2027-01-31"
+    }
+  ],
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      23.7275,
+      37.9838
+    ]
+  },
+  "@context": [
+    "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/material/leather/context.jsonld",
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"
+  ]
+}

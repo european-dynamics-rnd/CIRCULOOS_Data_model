@@ -1,6 +1,6 @@
 {
   "@context": [
-    "http://circuloos-ld-context/circuloos-context.jsonld",
+    "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/utils/circuloos_data_platform.jsonld",
     "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"
   ],
   "id": "urn:ngsi-ld:circuloos-yeast2value:product:prewmix",
@@ -23,8 +23,10 @@
   },
   "priceRange": {
     "type": "Property",
-    "minValue": 13.0,
-    "maxValue": 15.0,
+    "value": {
+      "minValue": 13.0,
+      "maxValue": 15.0
+    },
     "unitCode": "EUR/KGM"
   },
   "potentialCustomers": {

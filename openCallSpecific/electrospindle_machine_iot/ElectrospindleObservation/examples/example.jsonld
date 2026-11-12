@@ -1,0 +1,18 @@
+{
+  "id": "urn:ngsi-ld:ElectrospindleObservation:Reclaim:iot-001",
+  "type": "ElectrospindleObservation",
+  "spindleMotorTemperature": 46.172063,
+  "spindleBearingTemperature": 43.234649,
+  "xAxisMotorCurrent": 1.435287,
+  "yAxisMotorCurrent": 1.706294,
+  "zAxisMotorCurrent": 2.208068,
+  "spindleMotorCurrent": 3.677316,
+  "xAxisMotorSpeed": 10.542505,
+  "yAxisMotorSpeed": 1.117344,
+  "zAxisMotorSpeed": 40.608215,
+  "spindleSpeed": 10254,
+  "@context": [
+    "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/utils/circuloos_data_platform.jsonld",
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"
+  ]
+}

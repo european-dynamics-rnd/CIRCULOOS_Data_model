@@ -1,0 +1,26 @@
+{
+  "id": "urn:ngsi-ld:EPSTransport:1789374097444",
+  "type": "EPSTransport",
+  "departureTime": "2026-08-18T09:50:00.000Z",
+  "arrivalTime": "2026-08-18T10:15:00.000Z",
+  "origin": "urn:ngsi-ld:Factory:ARM:TrasferStation",
+  "destination": "urn:ngsi-ld:Factory:Esferolight:Canical",
+  "refVehicle": "urn:ngsi-ld:Vehicle:ARM:86-NI-59",
+  "refEPSBatch": [
+    "urn:ngsi-ld:EPSBatch:ARM:20260810",
+    "urn:ngsi-ld:EPSBatch:ARM:20260808",
+    "urn:ngsi-ld:EPSBatch:ARM:20260807",
+    "urn:ngsi-ld:EPSBatch:ARM:20260806",
+    "urn:ngsi-ld:EPSBatch:ARM:20260805",
+    "urn:ngsi-ld:EPSBatch:ARM:20260804",
+    "urn:ngsi-ld:EPSBatch:ARM:20260731",
+    "urn:ngsi-ld:EPSBatch:ARM:20260730",
+    "urn:ngsi-ld:EPSBatch:ARM:20260729",
+    "urn:ngsi-ld:EPSBatch:ARM:20260728",
+    "urn:ngsi-ld:EPSBatch:ARM:20260727",
+    "urn:ngsi-ld:EPSBatch:ARM:20260725",
+    "urn:ngsi-ld:EPSBatch:ARM:20260724",
+    "urn:ngsi-ld:EPSBatch:ARM:20260723",
+    "urn:ngsi-ld:EPSBatch:ARM:20260722"
+  ]
+}

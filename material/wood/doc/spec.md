@@ -5,7 +5,7 @@ Entity: wood
 [Open License](https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/refs/heads/main/LICENSE)  
 <!-- /15-License -->  
 <!-- 20-Description -->  
-Global description: **CIRCULOOS data model for wood**  
+Global description: **CIRCULOOS data model for a lot of secondary wood, covering its species, form, physical and mechanical properties, treatments and circularity information.**  
 version: 0.0.1  
 <!-- /20-Description -->  
 <!-- 30-PropertiesList -->  
@@ -21,23 +21,23 @@ Entity: wood
 	- `postalCode[string]`: Property. The postal code. For example, 24004. Model:'https://schema.org/https://schema.org/postalCode'    
 	- `streetAddress[string]`: Property. The street address. Model:'https://schema.org/streetAddress'    
 	- `streetNr[string]`: Property. Number identifying a specific property on a public street    
-- `alternateName[string]`: An alternative name for this item  - `areaServed[string]`: The geographic area where a service or offered item is provided  . Model: [https://schema.org/Text](https://schema.org/Text)- `batchNumber[string]`: Lot/batch number of this quantity of material, for traceability back to its source.  - `bendingStrength[object]`: Unit: MPa. TThe maximum stress the wood can withstand before breaking when subjected to a bending force.   	  
+- `alternateName[string]`: An alternative name for this item  - `areaServed[string]`: The geographic area where a service or offered item is provided  . Model: [https://schema.org/Text](https://schema.org/Text)- `batchNumber[string]`: Lot/batch number of this quantity of material, for traceability back to its source.  - `bendingStrength[object]`: Unit: MPa. TThe maximum stress the wood can withstand before breaking when subjected to a bending force.   	- `unitCode[string]`: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
 	- `value[number]`: Property. https://schema.org/Number.    
 - `biobasedContent[object]`: Unit: %. Share of the material derived from biomass (EN 16785-1).  	  
 	- `value[number]`: Property. https://schema.org/Number.    
-- `certifications[array]`: Certificates covering this material.  - `chainOfCustodyModel[string]`: Chain of custody model (ISO 22095) behind the recycled or bio-based content claims of this material.  - `chemicalTreatment[string]`: Treatment applied to the wood. CCA and creosote treated wood is hazardous waste.  - `color[string]`: The color of the wood, e.g. Light Brown.  - `composition[array]`: Main components of the material and their mass shares.  - `compressiveStrength[object]`: Unit: MPa. TThe maximum compressive force that wood can withstand.   	  
+- `certifications[array]`: Certificates covering this material.  - `chainOfCustodyModel[string]`: Chain of custody model (ISO 22095) behind the recycled or bio-based content claims of this material.  - `chemicalTreatment[string]`: Treatment applied to the wood. CCA and creosote treated wood is hazardous waste.  - `color[string]`: The color of the wood, e.g. Light Brown.  - `composition[array]`: Main components of the material and their mass shares.  - `compressiveStrength[object]`: Unit: MPa. TThe maximum compressive force that wood can withstand.   	- `unitCode[string]`: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
 	- `value[number]`: Property. https://schema.org/Number.    
-- `contaminationLevel[string]`: Overall contamination level of the lot (foreign materials, dirt, labels, etc.).  - `dataProvider[string]`: A sequence of characters identifying the provider of the harmonised data entity  - `dateCreated[date-time]`: Entity creation timestamp. This will usually be allocated by the storage platform  - `dateModified[date-time]`: Timestamp of the last modification of the entity. This will usually be allocated by the storage platform  - `density[object]`: Unit: g/cm3. The mass per unit volume of the wood, critical for calculating weight and structural integrity.   	  
+- `contaminationLevel[string]`: Overall contamination level of the lot (foreign materials, dirt, labels, etc.).  - `dataProvider[string]`: A sequence of characters identifying the provider of the harmonised data entity  - `dateCreated[date-time]`: Entity creation timestamp. This will usually be allocated by the storage platform  - `dateModified[date-time]`: Timestamp of the last modification of the entity. This will usually be allocated by the storage platform  - `density[object]`: Unit: g/cm3. The mass per unit volume of the wood, critical for calculating weight and structural integrity.   	- `unitCode[string]`: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
 	- `value[number]`: Property. https://schema.org/Number.    
-- `description[string]`: A description of this item  - `endOfWasteReference[string]`: The end-of-waste criteria (EU or national regulation, permit) under which the material stopped being waste.  - `eudrReference[string]`: Reference number of the due diligence statement under the EU Deforestation Regulation (EU) 2023/1115. Virgin wood only; wood made entirely from waste is exempt.  - `fastenersPresent[boolean]`: Whether nails, screws or other metal fasteners are still in the wood.  - `flameSpreadIndex[object]`: Unit: dimensionless (ASTM E84). A measure of the material’s propensity to burn and spread flames, important for fire safety considerations.   	  
+- `description[string]`: A description of this item  - `endOfWasteReference[string]`: The end-of-waste criteria (EU or national regulation, permit) under which the material stopped being waste.  - `eudrReference[string]`: Reference number of the due diligence statement under the EU Deforestation Regulation (EU) 2023/1115. Virgin wood only; wood made entirely from waste is exempt.  - `fastenersPresent[boolean]`: Whether nails, screws or other metal fasteners are still in the wood.  - `flameSpreadIndex[object]`: Unit: dimensionless (ASTM E84). A measure of the material’s propensity to burn and spread flames, important for fire safety considerations.   	- `unitCode[string]`: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
 	- `value[number]`: Property. https://schema.org/Number.    
-- `grainPattern[string]`: The grain pattern of the wood, e.g. Straight, Interlocked, Wavy.  - `hardness[object]`: Unit: N (Janka). The resistance of the wood to indentation or scratching, important for wear and durability.   	  
+- `grainPattern[string]`: The grain pattern of the wood, e.g. Straight, Interlocked, Wavy.  - `hardness[object]`: Unit: N (Janka). The resistance of the wood to indentation or scratching, important for wear and durability.   	- `unitCode[string]`: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
 	- `value[number]`: Property. https://schema.org/Number.    
-- `harvestCountry[string]`: ISO 3166-1 alpha-2 code of the country where the wood was harvested. Virgin wood only.  - `hazardous[boolean]`: Whether the material is classified as hazardous.  - `id[*]`: Unique identifier of the entity  - `length[object]`: Unit: mm. Length of the piece.   	  
+- `harvestCountry[string]`: ISO 3166-1 alpha-2 code of the country where the wood was harvested. Virgin wood only.  - `hazardous[boolean]`: Whether the material is classified as hazardous.  - `id[*]`: Unique identifier of the entity  - `length[object]`: Unit: mm. Length of the piece.   	- `unitCode[string]`: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
 	- `value[number]`: Property. https://schema.org/Number.    
-- `location[*]`: GeoProperty. Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon  - `materialStatus[string]`: Legal status of the material under the EU Waste Framework Directive 2008/98/EC: primary (virgin) material, by-product (Art. 5), waste, or material that has reached end-of-waste status (Art. 6). Receiving waste needs a waste permit.  - `modulusOfElasticity[object]`: Unit: MPa. The measure of the wood's stiffness, indicating how much it will deform under stress.   	  
+- `location[*]`: GeoProperty. Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon  - `materialStatus[string]`: Legal status of the material under the EU Waste Framework Directive 2008/98/EC: primary (virgin) material, by-product (Art. 5), waste, or material that has reached end-of-waste status (Art. 6). Receiving waste needs a waste permit.  - `modulusOfElasticity[object]`: Unit: MPa. The measure of the wood's stiffness, indicating how much it will deform under stress.   	- `unitCode[string]`: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
 	- `value[number]`: Property. https://schema.org/Number.    
-- `moistureContent[object]`: Unit: %. The amount of moisture in the wood, affecting its dimensional stability and strength.   	  
+- `moistureContent[object]`: Unit: %. The amount of moisture in the wood, affecting its dimensional stability and strength.   	- `unitCode[string]`: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
 	- `value[number]`: Property. https://schema.org/Number.    
 - `name[string]`: The name of this item  - `owner[array]`: A List containing a JSON encoded sequence of characters referencing the unique Ids of the owner(s)  - `postConsumerRecycledContent[object]`: Unit: %. Share of recycled material recovered from products after their use (ISO 14021). The share counted by recycled content targets such as the PPWR, Regulation (EU) 2025/40.  	  
 	- `value[number]`: Property. https://schema.org/Number.    
@@ -47,17 +47,17 @@ Entity: wood
 	- `value[number]`: Property. https://schema.org/Number.    
 - `recycledContent[object]`: Unit: %. Total share of recycled material (ISO 14021).  	  
 	- `value[number]`: Property. https://schema.org/Number.    
-- `recycledTimes[integer]`: The number of times this material has already been through a recycling loop.  - `refDigitalProductPassport[uri]`: Digital Product Passport (EU ESPR, Regulation (EU) 2024/1781) of the product this material comes from or belongs to.  - `refEnvironmentalFootprint[uri]`: environmental_footprint_indicator entity holding the environmental footprint (LCA indicators) of this material.  - `refParentMaterial[array]`: Material entities (lots) this material was produced from. Following the links back gives the material loop history.  - `refProcess[uri]`: Process or process event entity that produced this material.  - `seeAlso[*]`: list of uri pointing to additional resources about the item  - `source[string]`: A sequence of characters giving the original source of the entity data as a URL. Recommended to be the fully qualified domain name of the source provider, or the URL to the source object  - `species[string]`: The type of wood (e.g., Oak, Pine, Birch).   - `strengthClass[string]`: Strength class under EN 338 (e.g. C24, D30) or EN 14080 for glulam (e.g. GL24h), as graded or regraded under EN 14081.  - `substancesOfConcern[array]`: Substances of concern present in the material, as required by the EU ESPR Digital Product Passport.  - `suitableRecoveryRoutes[array]`: Circular strategies (R-ladder) the material is suitable for. Used to match offers with demand.  - `tensileStrength[object]`: Unit: MPa. The maximum stress that the wood can withstand while being stretched before breaking.   	  
+- `recycledTimes[integer]`: The number of times this material has already been through a recycling loop.  - `refDigitalProductPassport[uri]`: Digital Product Passport (EU ESPR, Regulation (EU) 2024/1781) of the product this material comes from or belongs to.  - `refEnvironmentalFootprint[uri]`: environmental_footprint_indicator entity holding the environmental footprint (LCA indicators) of this material.  - `refParentMaterial[array]`: Material entities (lots) this material was produced from. Following the links back gives the material loop history.  - `refProcess[uri]`: Process or process event entity that produced this material.  - `seeAlso[*]`: list of uri pointing to additional resources about the item  - `source[string]`: A sequence of characters giving the original source of the entity data as a URL. Recommended to be the fully qualified domain name of the source provider, or the URL to the source object  - `species[string]`: The type of wood (e.g., Oak, Pine, Birch).   - `strengthClass[string]`: Strength class under EN 338 (e.g. C24, D30) or EN 14080 for glulam (e.g. GL24h), as graded or regraded under EN 14081.  - `substancesOfConcern[array]`: Substances of concern present in the material, as required by the EU ESPR Digital Product Passport.  - `suitableRecoveryRoutes[array]`: Circular strategies (R-ladder) the material is suitable for. Used to match offers with demand.  - `tensileStrength[object]`: Unit: MPa. The maximum stress that the wood can withstand while being stretched before breaking.   	- `unitCode[string]`: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
 	- `value[number]`: Property. https://schema.org/Number.    
-- `thermalConductivity[object]`: Unit: W/(m·K). The rate at which heat passes through the wood, important for thermal insulation applications.   	  
+- `thermalConductivity[object]`: Unit: W/(m·K). The rate at which heat passes through the wood, important for thermal insulation applications.   	- `unitCode[string]`: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
 	- `value[number]`: Property. https://schema.org/Number.    
-- `thermalExpansionCoefficient[object]`: Unit: 1/K. The rate at which the wood expands with temperature, critical in applications involving temperature changes.   	  
+- `thermalExpansionCoefficient[object]`: Unit: 1/K. The rate at which the wood expands with temperature, critical in applications involving temperature changes.   	- `unitCode[string]`: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
 	- `value[number]`: Property. https://schema.org/Number.    
-- `thickness[object]`: Unit: mm. Thickness of the piece.   	  
+- `thickness[object]`: Unit: mm. Thickness of the piece.   	- `unitCode[string]`: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
 	- `value[number]`: Property. https://schema.org/Number.    
-- `type[*]`: NGSI Entity type. It has to be wood  - `wasteCode[string]`: European List of Waste code (Commission Decision 2000/532/EC), e.g. 07 02 13 for waste plastic. A trailing * marks hazardous waste. Only when materialStatus is waste.  - `wasteWoodClass[string]`: Waste wood class under the German Waste Wood Ordinance (AltholzV): AI untreated, AII glued/coated without halogens or preservatives, AIII with halogenated coatings, AIV preservative treated.  - `waterAbsorption[object]`: Unit: %. The amount of water absorbed by the wood over a specified period, influencing dimensional stability and strength.   	  
+- `type[*]`: NGSI Entity type. It has to be wood  - `wasteCode[string]`: European List of Waste code (Commission Decision 2000/532/EC), e.g. 07 02 13 for waste plastic. A trailing * marks hazardous waste. Only when materialStatus is waste.  - `wasteWoodClass[string]`: Waste wood class under the German Waste Wood Ordinance (AltholzV): AI untreated, AII glued/coated without halogens or preservatives, AIII with halogenated coatings, AIV preservative treated.  - `waterAbsorption[object]`: Unit: %. The amount of water absorbed by the wood over a specified period, influencing dimensional stability and strength.   	- `unitCode[string]`: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
 	- `value[number]`: Property. https://schema.org/Number.    
-- `width[object]`: Unit: mm. Width of the piece.   	  
+- `width[object]`: Unit: mm. Width of the piece.   	- `unitCode[string]`: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
 	- `value[number]`: Property. https://schema.org/Number.    
 <!-- /30-PropertiesList -->  
 <!-- 35-RequiredProperties -->  
@@ -73,7 +73,7 @@ Entity: wood
 <details><summary><strong>full yaml details</strong></summary>    
 ```yaml  
 wood:    
-  description: CIRCULOOS data model for wood    
+  description: CIRCULOOS data model for a lot of secondary wood, covering its species, form, physical and mechanical properties, treatments and circularity information.    
   properties:    
     address:    
       description: The mailing address    
@@ -125,6 +125,9 @@ wood:
     bendingStrength:    
       description: 'Unit: MPa. TThe maximum stress the wood can withstand before breaking when subjected to a bending force. '    
       properties:    
+        unitCode:    
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
+          type: string    
         value:    
           description: Property. https://schema.org/Number.    
           type: number    
@@ -217,6 +220,9 @@ wood:
     compressiveStrength:    
       description: 'Unit: MPa. TThe maximum compressive force that wood can withstand. '    
       properties:    
+        unitCode:    
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
+          type: string    
         value:    
           description: Property. https://schema.org/Number.    
           type: number    
@@ -252,6 +258,9 @@ wood:
     density:    
       description: 'Unit: g/cm3. The mass per unit volume of the wood, critical for calculating weight and structural integrity. '    
       properties:    
+        unitCode:    
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
+          type: string    
         value:    
           description: Property. https://schema.org/Number.    
           type: number    
@@ -281,6 +290,9 @@ wood:
     flameSpreadIndex:    
       description: 'Unit: dimensionless (ASTM E84). A measure of the material’s propensity to burn and spread flames, important for fire safety considerations. '    
       properties:    
+        unitCode:    
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
+          type: string    
         value:    
           description: Property. https://schema.org/Number.    
           type: number    
@@ -295,6 +307,9 @@ wood:
     hardness:    
       description: 'Unit: N (Janka). The resistance of the wood to indentation or scratching, important for wear and durability. '    
       properties:    
+        unitCode:    
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
+          type: string    
         value:    
           description: Property. https://schema.org/Number.    
           type: number    
@@ -327,6 +342,9 @@ wood:
     length:    
       description: 'Unit: mm. Length of the piece. '    
       properties:    
+        unitCode:    
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
+          type: string    
         value:    
           description: Property. https://schema.org/Number.    
           minimum: 0    
@@ -509,6 +527,9 @@ wood:
     modulusOfElasticity:    
       description: 'Unit: MPa. The measure of the wood''s stiffness, indicating how much it will deform under stress. '    
       properties:    
+        unitCode:    
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
+          type: string    
         value:    
           description: Property. https://schema.org/Number.    
           type: number    
@@ -518,6 +539,9 @@ wood:
     moistureContent:    
       description: 'Unit: %. The amount of moisture in the wood, affecting its dimensional stability and strength. '    
       properties:    
+        unitCode:    
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
+          type: string    
         value:    
           description: Property. https://schema.org/Number.    
           type: number    
@@ -731,6 +755,9 @@ wood:
     tensileStrength:    
       description: 'Unit: MPa. The maximum stress that the wood can withstand while being stretched before breaking. '    
       properties:    
+        unitCode:    
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
+          type: string    
         value:    
           description: Property. https://schema.org/Number.    
           type: number    
@@ -740,6 +767,9 @@ wood:
     thermalConductivity:    
       description: 'Unit: W/(m·K). The rate at which heat passes through the wood, important for thermal insulation applications. '    
       properties:    
+        unitCode:    
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
+          type: string    
         value:    
           description: Property. https://schema.org/Number.    
           type: number    
@@ -749,6 +779,9 @@ wood:
     thermalExpansionCoefficient:    
       description: 'Unit: 1/K. The rate at which the wood expands with temperature, critical in applications involving temperature changes. '    
       properties:    
+        unitCode:    
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
+          type: string    
         value:    
           description: Property. https://schema.org/Number.    
           type: number    
@@ -758,6 +791,9 @@ wood:
     thickness:    
       description: 'Unit: mm. Thickness of the piece. '    
       properties:    
+        unitCode:    
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
+          type: string    
         value:    
           description: Property. https://schema.org/Number.    
           minimum: 0    
@@ -790,6 +826,9 @@ wood:
     waterAbsorption:    
       description: 'Unit: %. The amount of water absorbed by the wood over a specified period, influencing dimensional stability and strength. '    
       properties:    
+        unitCode:    
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
+          type: string    
         value:    
           description: Property. https://schema.org/Number.    
           type: number    
@@ -799,6 +838,9 @@ wood:
     width:    
       description: 'Unit: mm. Width of the piece. '    
       properties:    
+        unitCode:    
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
+          type: string    
         value:    
           description: Property. https://schema.org/Number.    
           minimum: 0    
@@ -823,7 +865,105 @@ wood:
 <!-- /70-MiddleNotes -->  
 <!-- 80-Examples -->  
 ## Example payloads    
-Not available the example of a wood in JSON-LD format as key-values. This is compatible with NGSI-LD when  using `options=keyValues` and returns the context data of an individual entity.  
+#### wood NGSI-LD key-values Example    
+Here is an example of a wood in JSON-LD format as key-values. This is compatible with NGSI-LD when  using `options=keyValues` and returns the context data of an individual entity.  
+<details><summary><strong>show/hide example</strong></summary>    
+```json  
+{  
+  "id": "urn:ngsi-ld:wood:wood1",  
+  "type": "wood",  
+  "species": "Oak",  
+  "density": {  
+    "value": 0.75,  
+    "unitCode": "23"  
+  },  
+  "moistureContent": {  
+    "value": 12,  
+    "unitCode": "P1"  
+  },  
+  "tensileStrength": {  
+    "value": 90,  
+    "unitCode": "MPA"  
+  },  
+  "compressiveStrength": {  
+    "value": 50,  
+    "unitCode": "MPA"  
+  },  
+  "bendingStrength": {  
+    "value": 120,  
+    "unitCode": "MPA"  
+  },  
+  "modulusOfElasticity": {  
+    "value": 11000,  
+    "unitCode": "MPA"  
+  },  
+  "hardness": {  
+    "value": 670,  
+    "unitCode": "NEW"  
+  },  
+  "thermalConductivity": {  
+    "value": 0.16,  
+    "unitCode": "D53"  
+  },  
+  "thermalExpansionCoefficient": {  
+    "value": 3.5,  
+    "unitCode": "F51"  
+  },  
+  "waterAbsorption": {  
+    "value": 40,  
+    "unitCode": "P1"  
+  },  
+  "flameSpreadIndex": {  
+    "value": 100  
+  },  
+  "color": "Light Brown",  
+  "grainPattern": "Straight",  
+  "productForm": "solidTimber",  
+  "previousUse": "structuralBeam",  
+  "chemicalTreatment": "untreated",  
+  "wasteWoodClass": "AI",  
+  "fastenersPresent": true,  
+  "length": {  
+    "value": 4200,  
+    "unitCode": "MMT"  
+  },  
+  "width": {  
+    "value": 200,  
+    "unitCode": "MMT"  
+  },  
+  "thickness": {  
+    "value": 100,  
+    "unitCode": "MMT"  
+  },  
+  "strengthClass": "D30",  
+  "materialStatus": "waste",  
+  "wasteCode": "17 02 01",  
+  "hazardous": false,  
+  "quantity": {  
+    "value": 24,  
+    "unitCode": "C62"  
+  },  
+  "recycledTimes": 0,  
+  "suitableRecoveryRoutes": [  
+    "reuse",  
+    "repurpose",  
+    "recycle"  
+  ],  
+  "certifications": [  
+    {  
+      "scheme": "FSC",  
+      "certificateId": "FSC-C123456",  
+      "issuer": "Soil Association",  
+      "validUntil": "2028-03-31"  
+    }  
+  ],  
+  "@context": [  
+    "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/material/wood/context.jsonld",  
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"  
+  ]  
+}  
+```  
+</details>  
 #### wood NGSI-LD normalized Example    
 Here is an example of a wood in JSON-LD format as normalized. This is compatible with NGSI-LD when not using options and returns the context data of an individual entity.  
 <details><summary><strong>show/hide example</strong></summary>    

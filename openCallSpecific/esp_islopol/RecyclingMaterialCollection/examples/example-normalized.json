@@ -1,0 +1,62 @@
+{
+  "id": "urn:ngsi-ld:RecyclingMaterialCollection:ARM:Import:20260827T102839Z",
+  "type": "RecyclingMaterialCollection",
+  "movementKind": {
+    "type": "Text",
+    "value": "D - Entrada"
+  },
+  "client": {
+    "type": "Text",
+    "value": "C.M. de Santa Cruz"
+  },
+  "clientType": {
+    "type": "Text",
+    "value": "AUT"
+  },
+  "transporter": {
+    "type": "Text",
+    "value": "C.M. de Santa Cruz"
+  },
+  "vehiclePlateIdentifier": {
+    "type": "Text",
+    "value": "BZ-21-JT"
+  },
+  "refVehicle": {
+    "type": "Text",
+    "value": "urn:ngsi-ld:Vehicle:external:BZ-21-JT"
+  },
+  "lerCode": {
+    "type": "Text",
+    "value": "LER150101"
+  },
+  "product": {
+    "type": "Text",
+    "value": "EMBALAGENS PAPEL/CARTAO"
+  },
+  "origin": {
+    "type": "Text",
+    "value": "Santa Cruz"
+  },
+  "destination": {
+    "type": "Text",
+    "value": "TPC - TRIAGEM PAPEL/CARTAO"
+  },
+  "timestampArrival": {
+    "type": "DateTime",
+    "value": "2026-08-27T10:28:39.000Z"
+  },
+  "weight": {
+    "type": "Number",
+    "value": 740,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "KGM"
+      }
+    }
+  },
+  "wasteStream": {
+    "type": "Text",
+    "value": "Paper/Cardboard Stream"
+  }
+}

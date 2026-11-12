@@ -1,0 +1,20 @@
+{
+  "id": "urn:ngsi-ld:Supplier:Confidential01-Rice",
+  "type": "Supplier",
+  "operatedBy": "urn:ngsi-ld:Organization:LITOKOL",
+  "address": {
+    "addressRegion": "Emilia-Romagna",
+    "addressCountry": "Italy"
+  },
+  "suppliesSRM": [
+    "urn:ngsi-ld:SRM:RiceHusk",
+    "urn:ngsi-ld:SRM:RiceStraw"
+  ],
+  "name": "Confidential Supplier 01",
+  "transportationMode": "Road transport - Truck Euro 6",
+  "distanceToManufacturer": 50,
+  "@context": [
+    "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/utils/circuloos_data_platform.jsonld",
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"
+  ]
+}

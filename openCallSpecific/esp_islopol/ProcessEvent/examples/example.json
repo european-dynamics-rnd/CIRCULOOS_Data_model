@@ -1,0 +1,21 @@
+{
+  "id": "urn:ngsi-ld:ProcessEvent:ARM:blue-waste-stream-processing:20260903",
+  "type": "ProcessEvent",
+  "refProcess": "urn:ngsi-ld:Process:ARM:blue-waste-stream-processing",
+  "refInputProducts": [
+    "urn:ngsi-ld:Product:ARM:paper-cardboard-stream-waste:20260903",
+    "urn:ngsi-ld:Product:ARM:electricity:20260903",
+    "urn:ngsi-ld:Product:ARM:baling-wire:20260903"
+  ],
+  "refOutputProducts": [
+    "urn:ngsi-ld:Product:ARM:paper-cardboard-bales:20260903",
+    "urn:ngsi-ld:Product:ARM:rejected-waste:20260903",
+    "urn:ngsi-ld:Product:ARM:reciclable-eps:20260903",
+    "urn:ngsi-ld:Product:ARM:rejected-eps:20260903"
+  ],
+  "sortingLine": "Linha de triagem de Papel e Cartao da ARM",
+  "sortingStream": "Ecoponto Azul",
+  "throughput": 6396.748215,
+  "startDate": "2026-09-02T07:05:17.000Z",
+  "endDate": "2026-09-03T20:44:12.000Z"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "urn:ngsi-ld:circuloos_searcle:sem:20260717-KTRL65",
+  "type": "SEMImage",
+  "equipment": "FEG Quanta450",
+  "magnification": "x250",
+  "imageUrl": "https://api.searcle.cloud/files/urn%3Angsi-ld%3Acirculoos_searcle%3Asample%3A20260717-6U2HBA/20260717-KTRL65__008.tif",
+  "acceleratingVoltage": 15
+}

@@ -1,5 +1,5 @@
 {
-    "$schema": "http://json-schema.org/schema#",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$schemaVersion": "0.0.1",
     "modelTags": "",
     "license": "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/refs/heads/main/LICENSE",
@@ -21,6 +21,10 @@
                             "type": "number",
                             "minimum": 0,
                             "description": "Property. https://schema.org/Number."
+                        },
+                        "unitCode": {
+                            "type": "string",
+                            "description": "Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg)."
                         }
                     },
                     "description": "Property. Unit: given by unitCode, e.g. KGM (kg), TNE (t), MTQ (m3), MTK (m2), C62 (pieces). Quantity of material in this lot."
@@ -29,7 +33,8 @@
                     "type": "array",
                     "items": {
                         "type": "string",
-                        "format": "uri"
+                        "format": "uri",
+                        "description": "Relationship. URN of a parent material entity (lot)."
                     },
                     "description": "Relationship. Material entities (lots) this material was produced from. Following the links back gives the material loop history."
                 },
@@ -90,6 +95,10 @@
                             "minimum": 0,
                             "maximum": 100,
                             "description": "Property. https://schema.org/Number."
+                        },
+                        "unitCode": {
+                            "type": "string",
+                            "description": "Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg)."
                         }
                     },
                     "description": "Property. Unit: %. Total share of recycled material (ISO 14021)."
@@ -102,6 +111,10 @@
                             "minimum": 0,
                             "maximum": 100,
                             "description": "Property. https://schema.org/Number."
+                        },
+                        "unitCode": {
+                            "type": "string",
+                            "description": "Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg)."
                         }
                     },
                     "description": "Property. Unit: %. Share of recycled material recovered from manufacturing scrap, before reaching a consumer (ISO 14021)."
@@ -114,6 +127,10 @@
                             "minimum": 0,
                             "maximum": 100,
                             "description": "Property. https://schema.org/Number."
+                        },
+                        "unitCode": {
+                            "type": "string",
+                            "description": "Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg)."
                         }
                     },
                     "description": "Property. Unit: %. Share of recycled material recovered from products after their use (ISO 14021). The share counted by recycled content targets such as the PPWR, Regulation (EU) 2025/40."
@@ -126,6 +143,10 @@
                             "minimum": 0,
                             "maximum": 100,
                             "description": "Property. https://schema.org/Number."
+                        },
+                        "unitCode": {
+                            "type": "string",
+                            "description": "Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg)."
                         }
                     },
                     "description": "Property. Unit: %. Share of the material derived from biomass (EN 16785-1)."
@@ -225,7 +246,8 @@
                             "repurpose",
                             "recycle",
                             "energyRecovery"
-                        ]
+                        ],
+                        "description": "Property. One circular strategy (R-ladder step)."
                     },
                     "description": "Property. Circular strategies (R-ladder) the material is suitable for. Used to match offers with demand."
                 },

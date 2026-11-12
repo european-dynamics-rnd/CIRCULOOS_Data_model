@@ -1,6 +1,6 @@
 {
   "@context": [
-    "http://circuloos-ld-context/circuloos-context.jsonld",
+    "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/utils/circuloos_data_platform.jsonld",
     "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"
   ],
   "id": "urn:ngsi-ld:StainlessSteelDPP:6705c58b-dd1d-4087-b520-4ee3c3f71dc7",

@@ -1,6 +1,6 @@
 wood:
 
-  description: CIRCULOOS data model for wood
+  description: CIRCULOOS data model for a lot of secondary wood, covering its species, form, physical and mechanical properties, treatments and circularity information.
 
   properties:
 
@@ -58,6 +58,9 @@ wood:
     bendingStrength:
       description: 'Unit: MPa. TThe maximum stress the wood can withstand before breaking when subjected to a bending force. '
       properties:
+        unitCode:
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).
+          type: string
         value:
           description: Property. https://schema.org/Number.
           type: number
@@ -157,6 +160,9 @@ wood:
     compressiveStrength:
       description: 'Unit: MPa. TThe maximum compressive force that wood can withstand. '
       properties:
+        unitCode:
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).
+          type: string
         value:
           description: Property. https://schema.org/Number.
           type: number
@@ -197,6 +203,9 @@ wood:
     density:
       description: 'Unit: g/cm3. The mass per unit volume of the wood, critical for calculating weight and structural integrity. '
       properties:
+        unitCode:
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).
+          type: string
         value:
           description: Property. https://schema.org/Number.
           type: number
@@ -231,6 +240,9 @@ wood:
     flameSpreadIndex:
       description: 'Unit: dimensionless (ASTM E84). A measure of the material’s propensity to burn and spread flames, important for fire safety considerations. '
       properties:
+        unitCode:
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).
+          type: string
         value:
           description: Property. https://schema.org/Number.
           type: number
@@ -247,6 +259,9 @@ wood:
     hardness:
       description: 'Unit: N (Janka). The resistance of the wood to indentation or scratching, important for wear and durability. '
       properties:
+        unitCode:
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).
+          type: string
         value:
           description: Property. https://schema.org/Number.
           type: number
@@ -283,6 +298,9 @@ wood:
     length:
       description: 'Unit: mm. Length of the piece. '
       properties:
+        unitCode:
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).
+          type: string
         value:
           description: Property. https://schema.org/Number.
           minimum: 0
@@ -476,6 +494,9 @@ wood:
     modulusOfElasticity:
       description: 'Unit: MPa. The measure of the wood''s stiffness, indicating how much it will deform under stress. '
       properties:
+        unitCode:
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).
+          type: string
         value:
           description: Property. https://schema.org/Number.
           type: number
@@ -486,6 +507,9 @@ wood:
     moistureContent:
       description: 'Unit: %. The amount of moisture in the wood, affecting its dimensional stability and strength. '
       properties:
+        unitCode:
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).
+          type: string
         value:
           description: Property. https://schema.org/Number.
           type: number
@@ -720,6 +744,9 @@ wood:
     tensileStrength:
       description: 'Unit: MPa. The maximum stress that the wood can withstand while being stretched before breaking. '
       properties:
+        unitCode:
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).
+          type: string
         value:
           description: Property. https://schema.org/Number.
           type: number
@@ -730,6 +757,9 @@ wood:
     thermalConductivity:
       description: 'Unit: W/(m·K). The rate at which heat passes through the wood, important for thermal insulation applications. '
       properties:
+        unitCode:
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).
+          type: string
         value:
           description: Property. https://schema.org/Number.
           type: number
@@ -740,6 +770,9 @@ wood:
     thermalExpansionCoefficient:
       description: 'Unit: 1/K. The rate at which the wood expands with temperature, critical in applications involving temperature changes. '
       properties:
+        unitCode:
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).
+          type: string
         value:
           description: Property. https://schema.org/Number.
           type: number
@@ -750,6 +783,9 @@ wood:
     thickness:
       description: 'Unit: mm. Thickness of the piece. '
       properties:
+        unitCode:
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).
+          type: string
         value:
           description: Property. https://schema.org/Number.
           minimum: 0
@@ -786,6 +822,9 @@ wood:
     waterAbsorption:
       description: 'Unit: %. The amount of water absorbed by the wood over a specified period, influencing dimensional stability and strength. '
       properties:
+        unitCode:
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).
+          type: string
         value:
           description: Property. https://schema.org/Number.
           type: number
@@ -796,6 +835,9 @@ wood:
     width:
       description: 'Unit: mm. Width of the piece. '
       properties:
+        unitCode:
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).
+          type: string
         value:
           description: Property. https://schema.org/Number.
           minimum: 0

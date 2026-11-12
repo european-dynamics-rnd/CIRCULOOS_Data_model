@@ -1,0 +1,23 @@
+{
+  "id": "urn:ngsi-ld:EPSObservation:ARM:reciclable-eps:20260903",
+  "type": "EPSObservation",
+  "eventTime": "2026-09-03T20:44:12.000Z",
+  "contaminationScore": 0.107308,
+  "contaminationLevel": "high",
+  "confidence": 0.397136,
+  "modelUsed": "YOLO segmentation NCNN",
+  "modelVersion": "best_ncnn_model",
+  "thresholds": {
+    "lowMax": 0.03,
+    "medMax": 0.1,
+    "highMax": 1,
+    "contaminationScoreFormula": "contamination_pct / 100"
+  },
+  "refDevice": "urn:ngsi-ld:Device:ARM:Mounted01",
+  "refProcessEvent": "urn:ngsi-ld:ProcessEvent:ARM:blue-waste-stream-processing:20260903",
+  "refEPSBatch": "urn:ngsi-ld:EPSBatch:ARM:20260903",
+  "@context": [
+    "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/utils/circuloos_data_platform.jsonld",
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"
+  ]
+}

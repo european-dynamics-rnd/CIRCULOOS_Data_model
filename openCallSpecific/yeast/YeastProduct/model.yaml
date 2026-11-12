@@ -6,42 +6,46 @@ YeastProduct:
 
     description:
       allOf:
-        - additionalProperties: no
-          properties:
-            observedAt:
-              format: date-time
-              type: string
-            type:
-              enum:
-                - Property
-              type: string
-            value:
-              type: string
-          required:
-            - type
-            - value
-          type: object
+        - anyOf:
+            - type: string
+            - additionalProperties: no
+              properties:
+                observedAt:
+                  format: date-time
+                  type: string
+                type:
+                  enum:
+                    - Property
+                  type: string
+                value:
+                  type: string
+              required:
+                - type
+                - value
+              type: object
       description: Short description of the product, its composition and functional properties, and its target applications.
       x-ngsi:
         type: Property
 
     goToMarketStage:
       allOf:
-        - additionalProperties: no
-          properties:
-            observedAt:
-              format: date-time
-              type: string
-            type:
-              enum:
-                - Property
-              type: string
-            value:
-              type: string
-          required:
-            - type
-            - value
-          type: object
+        - anyOf:
+            - type: string
+            - additionalProperties: no
+              properties:
+                observedAt:
+                  format: date-time
+                  type: string
+                type:
+                  enum:
+                    - Property
+                  type: string
+                value:
+                  type: string
+              required:
+                - type
+                - value
+              type: object
       description: Current commercial maturity of the product, from development through validation to an MVP ready for commercialisation.
       x-ngsi:
         type: Property
@@ -54,170 +58,208 @@ YeastProduct:
 
     keyCollaborations:
       allOf:
-        - additionalProperties: no
-          properties:
-            observedAt:
-              format: date-time
-              type: string
-            type:
-              enum:
-                - Property
-              type: string
-            value:
-              items:
+        - anyOf:
+            - items:
                 type: string
               minItems: 1
               type: array
-          required:
-            - type
-            - value
-          type: object
+            - additionalProperties: no
+              properties:
+                observedAt:
+                  format: date-time
+                  type: string
+                type:
+                  enum:
+                    - Property
+                  type: string
+                value:
+                  items:
+                    type: string
+                  minItems: 1
+                  type: array
+              required:
+                - type
+                - value
+              type: object
       description: Research or industry partners involved in developing, testing or validating the product.
       x-ngsi:
         type: Property
 
     mainMarketOpportunities:
       allOf:
-        - additionalProperties: no
-          properties:
-            observedAt:
-              format: date-time
-              type: string
-            type:
-              enum:
-                - Property
-              type: string
-            value:
-              type: string
-          required:
-            - type
-            - value
-          type: object
+        - anyOf:
+            - type: string
+            - additionalProperties: no
+              properties:
+                observedAt:
+                  format: date-time
+                  type: string
+                type:
+                  enum:
+                    - Property
+                  type: string
+                value:
+                  type: string
+              required:
+                - type
+                - value
+              type: object
       description: Main market needs the product addresses, i.e. its value proposition for customers.
       x-ngsi:
         type: Property
 
     potentialCustomers:
       allOf:
-        - additionalProperties: no
-          properties:
-            observedAt:
-              format: date-time
-              type: string
-            type:
-              enum:
-                - Property
-              type: string
-            value:
-              items:
+        - anyOf:
+            - items:
                 type: string
               minItems: 1
               type: array
-          required:
-            - type
-            - value
-          type: object
+            - additionalProperties: no
+              properties:
+                observedAt:
+                  format: date-time
+                  type: string
+                type:
+                  enum:
+                    - Property
+                  type: string
+                value:
+                  items:
+                    type: string
+                  minItems: 1
+                  type: array
+              required:
+                - type
+                - value
+              type: object
       description: Companies identified as potential buyers or application partners for the product, with the intended application.
       x-ngsi:
         type: Property
 
     priceRange:
+
       allOf:
-        - additionalProperties: no
-          anyOf:
-            - required:
+        - anyOf:
+
+            - anyOf:
+                - description: Exact measured value, when a single figure is known.
+                  type: number
+                - additionalProperties: no
+                  minProperties: 1
+                  properties:
+                    maxValue:
+                      description: Upper bound of the value, when the source declares a range or a maximum.
+                      type: number
+                    minValue:
+                      description: Lower bound of the value, when the source declares a range or a minimum.
+                      type: number
+                  type: object
+              description: Exact value as a number, or a range as an object with minValue and/or maxValue.
+
+            - additionalProperties: no
+              properties:
+                observedAt:
+                  format: date-time
+                  type: string
+                type:
+                  enum:
+                    - Property
+                  type: string
+                unitCode:
+                  description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.
+                  type: string
+                value:
+                  anyOf:
+                    - description: Exact measured value, when a single figure is known.
+                      type: number
+                    - additionalProperties: no
+                      minProperties: 1
+                      properties:
+                        maxValue:
+                          description: Upper bound of the value, when the source declares a range or a maximum.
+                          type: number
+                        minValue:
+                          description: Lower bound of the value, when the source declares a range or a minimum.
+                          type: number
+                      type: object
+                  description: Exact value as a number, or a range as an object with minValue and/or maxValue.
+              required:
+                - type
+                - unitCode
                 - value
-            - required:
-                - minValue
-            - required:
-                - maxValue
-          properties:
-            maxValue:
-              description: Upper bound of the value, when the source declares a range or a maximum.
-              type: number
-            minValue:
-              description: Lower bound of the value, when the source declares a range or a minimum.
-              type: number
-            observedAt:
-              format: date-time
-              type: string
-            type:
-              enum:
-                - Property
-              type: string
-            unitCode:
-              description: Unit of measurement of the value, given as a UN/CEFACT code where one exists.
-              type: string
-            value:
-              description: Exact measured value, when a single figure is known.
-              type: number
-          required:
-            - type
-            - unitCode
-          type: object
+              type: object
+
       description: 'Expected unitCode: EUR/KGM. Indicative selling price range of the product. Use minValue and maxValue for a range, or value for a single price.'
+
       x-ngsi:
         type: Property
 
     processStream:
       allOf:
-        - additionalProperties: no
-          properties:
-            observedAt:
-              format: date-time
-              type: string
-            type:
-              enum:
-                - Property
-              type: string
-            value:
-              type: string
-          required:
-            - type
-            - value
-          type: object
+        - anyOf:
+            - type: string
+            - additionalProperties: no
+              properties:
+                observedAt:
+                  format: date-time
+                  type: string
+                type:
+                  enum:
+                    - Property
+                  type: string
+                value:
+                  type: string
+              required:
+                - type
+                - value
+              type: object
       description: Yeast fraction or process stream the product comes from (e.g. yeast protein, cell walls, low-molecular fractions, or blends).
       x-ngsi:
         type: Property
 
     productName:
       allOf:
-        - additionalProperties: no
-          properties:
-            observedAt:
-              format: date-time
-              type: string
-            type:
-              enum:
-                - Property
-              type: string
-            value:
-              type: string
-          required:
-            - type
-            - value
-          type: object
+        - anyOf:
+            - type: string
+            - additionalProperties: no
+              properties:
+                observedAt:
+                  format: date-time
+                  type: string
+                type:
+                  enum:
+                    - Property
+                  type: string
+                value:
+                  type: string
+              required:
+                - type
+                - value
+              type: object
       description: Commercial name of the product derived from brewer's spent yeast.
       x-ngsi:
         type: Property
 
     specifications:
       allOf:
-        - additionalProperties: no
-          properties:
-            observedAt:
-              format: date-time
-              type: string
-            type:
-              enum:
-                - Property
-              type: string
-            value:
-              type: string
-          required:
-            - type
-            - value
-          type: object
+        - anyOf:
+            - type: string
+            - additionalProperties: no
+              properties:
+                observedAt:
+                  format: date-time
+                  type: string
+                type:
+                  enum:
+                    - Property
+                  type: string
+                value:
+                  type: string
+              required:
+                - type
+                - value
+              type: object
       description: Technical specifications or datasheet information for the product (e.g. composition).
       x-ngsi:
         type: Property
@@ -232,21 +274,23 @@ YeastProduct:
 
     valueChain:
       allOf:
-        - additionalProperties: no
-          properties:
-            observedAt:
-              format: date-time
-              type: string
-            type:
-              enum:
-                - Property
-              type: string
-            value:
-              type: string
-          required:
-            - type
-            - value
-          type: object
+        - anyOf:
+            - type: string
+            - additionalProperties: no
+              properties:
+                observedAt:
+                  format: date-time
+                  type: string
+                type:
+                  enum:
+                    - Property
+                  type: string
+                value:
+                  type: string
+              required:
+                - type
+                - value
+              type: object
       description: Identifier of the CIRCULOOS value chain the record belongs to (here "yeast2value").
       x-ngsi:
         type: Property

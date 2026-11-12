@@ -21,27 +21,27 @@ Entity: plastic
 	- `postalCode[string]`: Property. The postal code. For example, 24004. Model:'https://schema.org/https://schema.org/postalCode'    
 	- `streetAddress[string]`: Property. The street address. Model:'https://schema.org/streetAddress'    
 	- `streetNr[string]`: Property. Number identifying a specific property on a public street    
-- `alternateName[string]`: An alternative name for this item  - `areaServed[string]`: The geographic area where a service or offered item is provided  . Model: [https://schema.org/Text](https://schema.org/Text)- `ashContent[object]`: Unit: %. Inorganic filler/ash content left after incineration, an indicator of filler load and purity.   	  
+- `alternateName[string]`: An alternative name for this item  - `areaServed[string]`: The geographic area where a service or offered item is provided  . Model: [https://schema.org/Text](https://schema.org/Text)- `ashContent[object]`: Unit: %. Inorganic filler/ash content left after incineration, an indicator of filler load and purity.   	- `unitCode[string]`: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
 	- `value[number]`: Property. https://schema.org/Number.  Default: 0.0    
 - `batchNumber[string]`: Lot/batch number of this quantity of material, for traceability back to its source.  - `biobasedContent[object]`: Unit: %. Share of the material derived from biomass (EN 16785-1).  	  
 	- `value[number]`: Property. https://schema.org/Number.    
-- `bulkDensity[object]`: Unit: kg/m3. The density of the loose pellets/flakes as poured, needed to size the hopper and dosing.   	  
+- `bulkDensity[object]`: Unit: kg/m3. The density of the loose pellets/flakes as poured, needed to size the hopper and dosing.   	- `unitCode[string]`: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
 	- `value[number]`: Property. https://schema.org/Number.  Default: 0.0    
-- `certifications[array]`: Certificates covering this material.  - `chainOfCustodyModel[string]`: Chain of custody model (ISO 22095) behind the recycled or bio-based content claims of this material.  - `color[string]`: The color of the raw material.  - `composition[array]`: Main components of the material and their mass shares.  - `contaminationLevel[string]`: Overall contamination level of the lot (foreign materials, dirt, labels, etc.).  - `dataProvider[string]`: A sequence of characters identifying the provider of the harmonised data entity  - `dateCreated[date-time]`: Entity creation timestamp. This will usually be allocated by the storage platform  - `dateModified[date-time]`: Timestamp of the last modification of the entity. This will usually be allocated by the storage platform  - `density[object]`: Unit: g/cm3. The mass per unit volume of the solid resin.   	  
+- `certifications[array]`: Certificates covering this material.  - `chainOfCustodyModel[string]`: Chain of custody model (ISO 22095) behind the recycled or bio-based content claims of this material.  - `color[string]`: The color of the raw material.  - `composition[array]`: Main components of the material and their mass shares.  - `contaminationLevel[string]`: Overall contamination level of the lot (foreign materials, dirt, labels, etc.).  - `dataProvider[string]`: A sequence of characters identifying the provider of the harmonised data entity  - `dateCreated[date-time]`: Entity creation timestamp. This will usually be allocated by the storage platform  - `dateModified[date-time]`: Timestamp of the last modification of the entity. This will usually be allocated by the storage platform  - `density[object]`: Unit: g/cm3. The mass per unit volume of the solid resin.   	- `unitCode[string]`: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
 	- `value[number]`: Property. https://schema.org/Number.  Default: 0.0    
-- `description[string]`: A description of this item  - `dryingRequired[boolean]`: Whether the material must be pre-dried before injection molding.  - `endOfWasteReference[string]`: The end-of-waste criteria (EU or national regulation, permit) under which the material stopped being waste.  - `flexuralModulus[object]`: Unit: MPa. Stiffness of the molded material under bending.   	  
+- `description[string]`: A description of this item  - `dryingRequired[boolean]`: Whether the material must be pre-dried before injection molding.  - `endOfWasteReference[string]`: The end-of-waste criteria (EU or national regulation, permit) under which the material stopped being waste.  - `flexuralModulus[object]`: Unit: MPa. Stiffness of the molded material under bending.   	- `unitCode[string]`: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
 	- `value[number]`: Property. https://schema.org/Number.  Default: 0.0    
-- `foodContactAuthorisation[string]`: Registration number of the recycling process or decontamination technology authorised under Regulation (EU) 2022/1616.  - `foodContactSuitable[boolean]`: Whether the recycled material may be used in food contact articles under Regulation (EU) 2022/1616.  - `hazardous[boolean]`: Whether the material is classified as hazardous.  - `heatDeflectionTemperature[object]`: Unit: °C. Temperature at which the molded material deforms under a given load (HDT).   	  
+- `foodContactAuthorisation[string]`: Registration number of the recycling process or decontamination technology authorised under Regulation (EU) 2022/1616.  - `foodContactSuitable[boolean]`: Whether the recycled material may be used in food contact articles under Regulation (EU) 2022/1616.  - `hazardous[boolean]`: Whether the material is classified as hazardous.  - `heatDeflectionTemperature[object]`: Unit: °C. Temperature at which the molded material deforms under a given load (HDT).   	- `unitCode[string]`: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
 	- `value[number]`: Property. https://schema.org/Number.  Default: 0.0    
-- `id[*]`: Unique identifier of the entity  - `impactStrength[object]`: Unit: kJ/m2. Notched Izod impact strength of the molded material.   	  
+- `id[*]`: Unique identifier of the entity  - `impactStrength[object]`: Unit: kJ/m2. Notched Izod impact strength of the molded material.   	- `unitCode[string]`: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
 	- `value[number]`: Property. https://schema.org/Number.  Default: 0.0    
-- `location[*]`: GeoProperty. Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon  - `materialForm[string]`: The physical form the raw material is delivered in, which determines how it can be fed into the hopper.  - `materialStatus[string]`: Legal status of the material under the EU Waste Framework Directive 2008/98/EC: primary (virgin) material, by-product (Art. 5), waste, or material that has reached end-of-waste status (Art. 6). Receiving waste needs a waste permit.  - `meltFlowIndex[object]`: Unit: g/10min. Melt flow index (MFI/MFR), the key indicator of how easily the material flows into the mold cavity.   	  
+- `location[*]`: GeoProperty. Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon  - `materialForm[string]`: The physical form the raw material is delivered in, which determines how it can be fed into the hopper.  - `materialStatus[string]`: Legal status of the material under the EU Waste Framework Directive 2008/98/EC: primary (virgin) material, by-product (Art. 5), waste, or material that has reached end-of-waste status (Art. 6). Receiving waste needs a waste permit.  - `meltFlowIndex[object]`: Unit: g/10min. Melt flow index (MFI/MFR), the key indicator of how easily the material flows into the mold cavity.   	- `unitCode[string]`: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
 	- `value[number]`: Property. https://schema.org/Number.  Default: 0.0    
-- `meltFlowIndexTestCondition[string]`: Test temperature and load the meltFlowIndex was measured at (ISO 1133), e.g. 230 °C / 2.16 kg. MFI values are not comparable without it.  - `meltingTemperature[object]`: Unit: °C. Melting (or processing) temperature of the resin.   	  
+- `meltFlowIndexTestCondition[string]`: Test temperature and load the meltFlowIndex was measured at (ISO 1133), e.g. 230 °C / 2.16 kg. MFI values are not comparable without it.  - `meltingTemperature[object]`: Unit: °C. Melting (or processing) temperature of the resin.   	- `unitCode[string]`: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
 	- `value[number]`: Property. https://schema.org/Number.  Default: 0.0    
-- `moistureContent[object]`: Unit: %. Residual moisture in the material; too high a value causes hydrolysis and surface defects if not dried before molding.   	  
+- `moistureContent[object]`: Unit: %. Residual moisture in the material; too high a value causes hydrolysis and surface defects if not dried before molding.   	- `unitCode[string]`: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
 	- `value[number]`: Property. https://schema.org/Number.  Default: 0.0    
-- `name[string]`: The name of this item  - `origin[string]`: The source of the resin.  - `owner[array]`: A List containing a JSON encoded sequence of characters referencing the unique Ids of the owner(s)  - `polymerPurity[object]`: Unit: %. Share of the target polymer in the material; the rest is other polymers and contaminants.   	  
+- `name[string]`: The name of this item  - `origin[string]`: The source of the resin.  - `owner[array]`: A List containing a JSON encoded sequence of characters referencing the unique Ids of the owner(s)  - `polymerPurity[object]`: Unit: %. Share of the target polymer in the material; the rest is other polymers and contaminants.   	- `unitCode[string]`: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
 	- `value[number]`: Property. https://schema.org/Number.    
 - `polymerType[string]`: The polymer resin the material is made of. PO is a mixed polyolefin (PE/PP) fraction.  - `postConsumerRecycledContent[object]`: Unit: %. Share of recycled material recovered from products after their use (ISO 14021). The share counted by recycled content targets such as the PPWR, Regulation (EU) 2025/40.  	  
 	- `value[number]`: Property. https://schema.org/Number.    
@@ -49,19 +49,19 @@ Entity: plastic
 	- `value[number]`: Property. https://schema.org/Number.    
 - `qualityStandard[string]`: Standard the material is characterised or traced against, e.g. EN 15343 (traceability of recycled plastics) or EN 15345 (PP recyclates).  - `quantity[object]`: Unit: given by unitCode, e.g. KGM (kg), TNE (t), MTQ (m3), MTK (m2), C62 (pieces). Quantity of material in this lot.  	  
 	- `value[number]`: Property. https://schema.org/Number.    
-- `recommendedBarrelTemperature[object]`: Unit: °C. Recommended injection molding barrel temperature for this material.   	  
+- `recommendedBarrelTemperature[object]`: Unit: °C. Recommended injection molding barrel temperature for this material.   	- `unitCode[string]`: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
 	- `value[number]`: Property. https://schema.org/Number.  Default: 0.0    
-- `recommendedDryingTemperature[object]`: Unit: °C. Recommended drying temperature before processing.   	  
+- `recommendedDryingTemperature[object]`: Unit: °C. Recommended drying temperature before processing.   	- `unitCode[string]`: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
 	- `value[number]`: Property. https://schema.org/Number.  Default: 0.0    
-- `recommendedDryingTime[object]`: Unit: h. Recommended drying duration before processing.   	  
+- `recommendedDryingTime[object]`: Unit: h. Recommended drying duration before processing.   	- `unitCode[string]`: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
 	- `value[number]`: Property. https://schema.org/Number.  Default: 0.0    
-- `recommendedMoldTemperature[object]`: Unit: °C. Recommended mold (tool) temperature for this material.   	  
+- `recommendedMoldTemperature[object]`: Unit: °C. Recommended mold (tool) temperature for this material.   	- `unitCode[string]`: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
 	- `value[number]`: Property. https://schema.org/Number.  Default: 0.0    
 - `recyclabilityGrade[string]`: Design-for-recycling performance grade of the packaging the material comes from or goes into, PPWR, Regulation (EU) 2025/40.  - `recycledContent[object]`: Unit: %. Total share of recycled material (ISO 14021).  	  
 	- `value[number]`: Property. https://schema.org/Number.    
-- `recycledTimes[integer]`: The number of times this material has already been through a recycling loop.  - `refDigitalProductPassport[uri]`: Digital Product Passport (EU ESPR, Regulation (EU) 2024/1781) of the product this material comes from or belongs to.  - `refEnvironmentalFootprint[uri]`: environmental_footprint_indicator entity holding the environmental footprint (LCA indicators) of this material.  - `refParentMaterial[array]`: Material entities (lots) this material was produced from. Following the links back gives the material loop history.  - `refProcess[uri]`: Process or process event entity that produced this material.  - `seeAlso[*]`: list of uri pointing to additional resources about the item  - `shrinkageRate[object]`: Unit: %. Mold shrinkage of the material after cooling, needed to size the mold cavity.   	  
+- `recycledTimes[integer]`: The number of times this material has already been through a recycling loop.  - `refDigitalProductPassport[uri]`: Digital Product Passport (EU ESPR, Regulation (EU) 2024/1781) of the product this material comes from or belongs to.  - `refEnvironmentalFootprint[uri]`: environmental_footprint_indicator entity holding the environmental footprint (LCA indicators) of this material.  - `refParentMaterial[array]`: Material entities (lots) this material was produced from. Following the links back gives the material loop history.  - `refProcess[uri]`: Process or process event entity that produced this material.  - `seeAlso[*]`: list of uri pointing to additional resources about the item  - `shrinkageRate[object]`: Unit: %. Mold shrinkage of the material after cooling, needed to size the mold cavity.   	- `unitCode[string]`: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
 	- `value[number]`: Property. https://schema.org/Number.  Default: 0.0    
-- `source[string]`: A sequence of characters giving the original source of the entity data as a URL. Recommended to be the fully qualified domain name of the source provider, or the URL to the source object  - `substancesOfConcern[array]`: Substances of concern present in the material, as required by the EU ESPR Digital Product Passport.  - `suitableRecoveryRoutes[array]`: Circular strategies (R-ladder) the material is suitable for. Used to match offers with demand.  - `tensileStrength[object]`: Unit: MPa. The maximum stress the molded material can withstand while being stretched before breaking.   	  
+- `source[string]`: A sequence of characters giving the original source of the entity data as a URL. Recommended to be the fully qualified domain name of the source provider, or the URL to the source object  - `substancesOfConcern[array]`: Substances of concern present in the material, as required by the EU ESPR Digital Product Passport.  - `suitableRecoveryRoutes[array]`: Circular strategies (R-ladder) the material is suitable for. Used to match offers with demand.  - `tensileStrength[object]`: Unit: MPa. The maximum stress the molded material can withstand while being stretched before breaking.   	- `unitCode[string]`: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
 	- `value[number]`: Property. https://schema.org/Number.  Default: 0.0    
 - `type[*]`: NGSI Entity type. It has to be plastic  - `wasteCode[string]`: European List of Waste code (Commission Decision 2000/532/EC), e.g. 07 02 13 for waste plastic. A trailing * marks hazardous waste. Only when materialStatus is waste.  - `wasteSource[string]`: Waste stream the recycled material was collected from. WEEE (electronics) and ELV (end-of-life vehicles) streams may carry legacy brominated flame retardants.  <!-- /30-PropertiesList -->  
 <!-- 35-RequiredProperties -->  
@@ -129,6 +129,9 @@ plastic:
     ashContent:    
       description: 'Unit: %. Inorganic filler/ash content left after incineration, an indicator of filler load and purity. '    
       properties:    
+        unitCode:    
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
+          type: string    
         value:    
           description: 'Property. https://schema.org/Number.  Default: 0.0'    
           type: number    
@@ -154,6 +157,9 @@ plastic:
     bulkDensity:    
       description: 'Unit: kg/m3. The density of the loose pellets/flakes as poured, needed to size the hopper and dosing. '    
       properties:    
+        unitCode:    
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
+          type: string    
         value:    
           description: 'Property. https://schema.org/Number.  Default: 0.0'    
           type: number    
@@ -249,6 +255,9 @@ plastic:
     density:    
       description: 'Unit: g/cm3. The mass per unit volume of the solid resin. '    
       properties:    
+        unitCode:    
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
+          type: string    
         value:    
           description: 'Property. https://schema.org/Number.  Default: 0.0'    
           type: number    
@@ -273,6 +282,9 @@ plastic:
     flexuralModulus:    
       description: 'Unit: MPa. Stiffness of the molded material under bending. '    
       properties:    
+        unitCode:    
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
+          type: string    
         value:    
           description: 'Property. https://schema.org/Number.  Default: 0.0'    
           type: number    
@@ -297,6 +309,9 @@ plastic:
     heatDeflectionTemperature:    
       description: 'Unit: °C. Temperature at which the molded material deforms under a given load (HDT). '    
       properties:    
+        unitCode:    
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
+          type: string    
         value:    
           description: 'Property. https://schema.org/Number.  Default: 0.0'    
           type: number    
@@ -319,6 +334,9 @@ plastic:
     impactStrength:    
       description: 'Unit: kJ/m2. Notched Izod impact strength of the molded material. '    
       properties:    
+        unitCode:    
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
+          type: string    
         value:    
           description: 'Property. https://schema.org/Number.  Default: 0.0'    
           type: number    
@@ -511,6 +529,9 @@ plastic:
     meltFlowIndex:    
       description: 'Unit: g/10min. Melt flow index (MFI/MFR), the key indicator of how easily the material flows into the mold cavity. '    
       properties:    
+        unitCode:    
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
+          type: string    
         value:    
           description: 'Property. https://schema.org/Number.  Default: 0.0'    
           type: number    
@@ -525,6 +546,9 @@ plastic:
     meltingTemperature:    
       description: 'Unit: °C. Melting (or processing) temperature of the resin. '    
       properties:    
+        unitCode:    
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
+          type: string    
         value:    
           description: 'Property. https://schema.org/Number.  Default: 0.0'    
           type: number    
@@ -534,6 +558,9 @@ plastic:
     moistureContent:    
       description: 'Unit: %. Residual moisture in the material; too high a value causes hydrolysis and surface defects if not dried before molding. '    
       properties:    
+        unitCode:    
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
+          type: string    
         value:    
           description: 'Property. https://schema.org/Number.  Default: 0.0'    
           type: number    
@@ -574,6 +601,9 @@ plastic:
     polymerPurity:    
       description: 'Unit: %. Share of the target polymer in the material; the rest is other polymers and contaminants. '    
       properties:    
+        unitCode:    
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
+          type: string    
         value:    
           description: Property. https://schema.org/Number.    
           maximum: 100    
@@ -645,6 +675,9 @@ plastic:
     recommendedBarrelTemperature:    
       description: 'Unit: °C. Recommended injection molding barrel temperature for this material. '    
       properties:    
+        unitCode:    
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
+          type: string    
         value:    
           description: 'Property. https://schema.org/Number.  Default: 0.0'    
           type: number    
@@ -654,6 +687,9 @@ plastic:
     recommendedDryingTemperature:    
       description: 'Unit: °C. Recommended drying temperature before processing. '    
       properties:    
+        unitCode:    
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
+          type: string    
         value:    
           description: 'Property. https://schema.org/Number.  Default: 0.0'    
           type: number    
@@ -663,6 +699,9 @@ plastic:
     recommendedDryingTime:    
       description: 'Unit: h. Recommended drying duration before processing. '    
       properties:    
+        unitCode:    
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
+          type: string    
         value:    
           description: 'Property. https://schema.org/Number.  Default: 0.0'    
           type: number    
@@ -672,6 +711,9 @@ plastic:
     recommendedMoldTemperature:    
       description: 'Unit: °C. Recommended mold (tool) temperature for this material. '    
       properties:    
+        unitCode:    
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
+          type: string    
         value:    
           description: 'Property. https://schema.org/Number.  Default: 0.0'    
           type: number    
@@ -747,6 +789,9 @@ plastic:
     shrinkageRate:    
       description: 'Unit: %. Mold shrinkage of the material after cooling, needed to size the mold cavity. '    
       properties:    
+        unitCode:    
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
+          type: string    
         value:    
           description: 'Property. https://schema.org/Number.  Default: 0.0'    
           type: number    
@@ -807,6 +852,9 @@ plastic:
     tensileStrength:    
       description: 'Unit: MPa. The maximum stress the molded material can withstand while being stretched before breaking. '    
       properties:    
+        unitCode:    
+          description: Property. UN/CEFACT code of the unit of the value, e.g. KGM (kg).    
+          type: string    
         value:    
           description: 'Property. https://schema.org/Number.  Default: 0.0'    
           type: number    
@@ -857,7 +905,132 @@ plastic:
 <!-- /70-MiddleNotes -->  
 <!-- 80-Examples -->  
 ## Example payloads    
-Not available the example of a plastic in JSON-LD format as key-values. This is compatible with NGSI-LD when  using `options=keyValues` and returns the context data of an individual entity.  
+#### plastic NGSI-LD key-values Example    
+Here is an example of a plastic in JSON-LD format as key-values. This is compatible with NGSI-LD when  using `options=keyValues` and returns the context data of an individual entity.  
+<details><summary><strong>show/hide example</strong></summary>    
+```json  
+{  
+  "id": "urn:ngsi-ld:plastic:PPR2044",  
+  "type": "plastic",  
+  "polymerType": "PP",  
+  "materialForm": "pellet",  
+  "origin": "post-industrial recycled",  
+  "recycledContent": {  
+    "value": 85,  
+    "unitCode": "P1"  
+  },  
+  "recycledTimes": 2,  
+  "color": "natural",  
+  "density": {  
+    "value": 0.91,  
+    "unitCode": "23"  
+  },  
+  "bulkDensity": {  
+    "value": 550,  
+    "unitCode": "KMQ"  
+  },  
+  "meltFlowIndex": {  
+    "value": 12  
+  },  
+  "moistureContent": {  
+    "value": 0.08,  
+    "unitCode": "P1"  
+  },  
+  "dryingRequired": true,  
+  "recommendedDryingTemperature": {  
+    "value": 80,  
+    "unitCode": "CEL"  
+  },  
+  "recommendedDryingTime": {  
+    "value": 2,  
+    "unitCode": "HUR"  
+  },  
+  "meltingTemperature": {  
+    "value": 165,  
+    "unitCode": "CEL"  
+  },  
+  "recommendedBarrelTemperature": {  
+    "value": 220,  
+    "unitCode": "CEL"  
+  },  
+  "recommendedMoldTemperature": {  
+    "value": 40,  
+    "unitCode": "CEL"  
+  },  
+  "shrinkageRate": {  
+    "value": 1.5,  
+    "unitCode": "P1"  
+  },  
+  "tensileStrength": {  
+    "value": 28,  
+    "unitCode": "MPA"  
+  },  
+  "flexuralModulus": {  
+    "value": 1350,  
+    "unitCode": "MPA"  
+  },  
+  "impactStrength": {  
+    "value": 5.5  
+  },  
+  "heatDeflectionTemperature": {  
+    "value": 85,  
+    "unitCode": "CEL"  
+  },  
+  "ashContent": {  
+    "value": 0.4,  
+    "unitCode": "P1"  
+  },  
+  "contaminationLevel": "low",  
+  "additives": "UV stabilizer, antioxidant masterbatch",  
+  "batchNumber": "LOT-2026-0417",  
+  "polymerPurity": {  
+    "value": 97,  
+    "unitCode": "P1"  
+  },  
+  "meltFlowIndexTestCondition": "230 Â°C / 2.16 kg",  
+  "wasteSource": "industrialScrap",  
+  "foodContactSuitable": false,  
+  "materialStatus": "endOfWaste",  
+  "endOfWasteReference": "Permit EL-ATT-2025-118, Attica regional authority",  
+  "quantity": {  
+    "value": 1200,  
+    "unitCode": "KGM"  
+  },  
+  "preConsumerRecycledContent": {  
+    "value": 85,  
+    "unitCode": "P1"  
+  },  
+  "postConsumerRecycledContent": {  
+    "value": 0,  
+    "unitCode": "P1"  
+  },  
+  "chainOfCustodyModel": "segregated",  
+  "refParentMaterial": [  
+    "urn:ngsi-ld:plastic:PPR1990"  
+  ],  
+  "owner": [  
+    "urn:ngsi-ld:Organization:plasticRecycler01"  
+  ],  
+  "suitableRecoveryRoutes": [  
+    "recycle"  
+  ],  
+  "qualityStandard": "EN 15345",  
+  "certifications": [  
+    {  
+      "scheme": "EuCertPlast",  
+      "certificateId": "ECP-2026-0412",  
+      "issuer": "EuCertPlast",  
+      "validUntil": "2027-06-30"  
+    }  
+  ],  
+  "refEnvironmentalFootprint": "urn:ngsi-ld:efi:entity-001",  
+  "@context": [  
+    "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/material/plastic/context.jsonld",  
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"  
+  ]  
+}  
+```  
+</details>  
 #### plastic NGSI-LD normalized Example    
 Here is an example of a plastic in JSON-LD format as normalized. This is compatible with NGSI-LD when not using options and returns the context data of an individual entity.  
 <details><summary><strong>show/hide example</strong></summary>    

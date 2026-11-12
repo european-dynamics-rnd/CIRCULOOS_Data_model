@@ -1,0 +1,83 @@
+{
+  "id": "urn:ngsi-ld:SRM:RiceHusk",
+  "type": "SRM",
+  "name": {
+    "type": "Text",
+    "value": "Rice Husk",
+    "metadata": {
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-16T08:03:53.000Z"
+      }
+    }
+  },
+  "chemicalComposition": {
+    "type": "Text",
+    "value": "Lignocellulosic matrix with silica-rich ash; mainly cellulose, hemicellulose, lignin and SiO2",
+    "metadata": {
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-16T08:03:53.000Z"
+      }
+    }
+  },
+  "pretreatmentRequired": {
+    "type": "Text",
+    "value": "Drying, grinding and sieving depending on target particle size",
+    "metadata": {
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-16T08:03:53.000Z"
+      }
+    }
+  },
+  "storageConditions": {
+    "type": "Text",
+    "value": "Dry, covered, ventilated storage; protect from moisture and contamination",
+    "metadata": {
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-16T08:03:53.000Z"
+      }
+    }
+  },
+  "category": {
+    "type": "StructuredValue",
+    "value": [
+      "Agricultural Biomass"
+    ],
+    "metadata": {
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-16T08:03:53.000Z"
+      }
+    }
+  },
+  "density": {
+    "type": "StructuredValue",
+    "value": {
+      "minValue": 90,
+      "maxValue": 150
+    },
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "KMQ"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-16T08:03:53.000Z"
+      }
+    }
+  },
+  "description": {
+    "type": "Text",
+    "value": "Rice milling by-product used as lightweight bio-based aggregate/filler",
+    "metadata": {
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-16T08:03:53.000Z"
+      }
+    }
+  }
+}

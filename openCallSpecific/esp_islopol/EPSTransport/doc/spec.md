@@ -31,67 +31,79 @@ EPSTransport:
   properties:    
     arrivalTime:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              format: date-time    
+        - anyOf:    
+            - format: date-time    
               pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$    
               type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  format: date-time    
+                  pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Date and time when the EPS shipment arrived at the destination facility, expressed as an ISO 8601 timestamp.    
       x-ngsi:    
         type: Property    
     departureTime:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Property    
-              type: string    
-            value:    
-              format: date-time    
+        - anyOf:    
+            - format: date-time    
               pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$    
               type: string    
-          required:    
-            - type    
-            - value    
-          type: object    
+            - additionalProperties: no    
+              properties:    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Property    
+                  type: string    
+                value:    
+                  format: date-time    
+                  pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$    
+                  type: string    
+              required:    
+                - type    
+                - value    
+              type: object    
       description: Date and time when the EPS shipment departed from the origin facility, expressed as an ISO 8601 timestamp.    
       x-ngsi:    
         type: Property    
     destination:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            object:    
-              description: URN of the referenced entity.    
+        - anyOf:    
+            - description: URN of the referenced entity.    
               pattern: ^urn:ngsi-ld:.+$    
               type: string    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Relationship    
-              type: string    
-          required:    
-            - type    
-            - object    
-          type: object    
+            - additionalProperties: no    
+              properties:    
+                object:    
+                  description: URN of the referenced entity.    
+                  pattern: ^urn:ngsi-ld:.+$    
+                  type: string    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Relationship    
+                  type: string    
+              required:    
+                - type    
+                - object    
+              type: object    
       description: Identifier of the Factory entity representing the facility receiving the EPS shipment, such as Esferolight.    
       x-ngsi:    
         type: Relationship    
@@ -102,32 +114,34 @@ EPSTransport:
         type: Property    
     origin:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            object:    
-              description: URN of the referenced entity.    
+        - anyOf:    
+            - description: URN of the referenced entity.    
               pattern: ^urn:ngsi-ld:.+$    
               type: string    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Relationship    
-              type: string    
-          required:    
-            - type    
-            - object    
-          type: object    
+            - additionalProperties: no    
+              properties:    
+                object:    
+                  description: URN of the referenced entity.    
+                  pattern: ^urn:ngsi-ld:.+$    
+                  type: string    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Relationship    
+                  type: string    
+              required:    
+                - type    
+                - object    
+              type: object    
       description: Identifier of the Factory entity representing the facility from which the EPS shipment departs.    
       x-ngsi:    
         type: Relationship    
     refEPSBatch:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            object:    
-              description: URN of the referenced entity, or a list of URNs.    
+        - anyOf:    
+            - description: URN of the referenced entity, or a list of URNs.    
               oneOf:    
                 - pattern: ^urn:ngsi-ld:.+$    
                   type: string    
@@ -136,39 +150,55 @@ EPSTransport:
                     type: string    
                   minItems: 1    
                   type: array    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Relationship    
-              type: string    
-          required:    
-            - type    
-            - object    
-          type: object    
+            - additionalProperties: no    
+              properties:    
+                object:    
+                  description: URN of the referenced entity, or a list of URNs.    
+                  oneOf:    
+                    - pattern: ^urn:ngsi-ld:.+$    
+                      type: string    
+                    - items:    
+                        pattern: ^urn:ngsi-ld:.+$    
+                        type: string    
+                      minItems: 1    
+                      type: array    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Relationship    
+                  type: string    
+              required:    
+                - type    
+                - object    
+              type: object    
       description: Identifiers of the EPSBatch entities included in the shipment. A single transport operation can therefore carry material from several batches.    
       x-ngsi:    
         type: Relationship    
     refVehicle:    
       allOf:    
-        - additionalProperties: no    
-          properties:    
-            object:    
-              description: URN of the referenced entity.    
+        - anyOf:    
+            - description: URN of the referenced entity.    
               pattern: ^urn:ngsi-ld:.+$    
               type: string    
-            observedAt:    
-              format: date-time    
-              type: string    
-            type:    
-              enum:    
-                - Relationship    
-              type: string    
-          required:    
-            - type    
-            - object    
-          type: object    
+            - additionalProperties: no    
+              properties:    
+                object:    
+                  description: URN of the referenced entity.    
+                  pattern: ^urn:ngsi-ld:.+$    
+                  type: string    
+                observedAt:    
+                  format: date-time    
+                  type: string    
+                type:    
+                  enum:    
+                    - Relationship    
+                  type: string    
+              required:    
+                - type    
+                - object    
+              type: object    
       description: Identifier of the Vehicle entity used to carry the EPS shipment.    
       x-ngsi:    
         type: Relationship    
@@ -199,14 +229,49 @@ EPSTransport:
 <!-- /70-MiddleNotes -->  
 <!-- 80-Examples -->  
 ## Example payloads    
-Not available the example of a EPSTransport in JSON-LD format as key-values. This is compatible with NGSI-LD when  using `options=keyValues` and returns the context data of an individual entity.  
+#### EPSTransport NGSI-LD key-values Example    
+Here is an example of a EPSTransport in JSON-LD format as key-values. This is compatible with NGSI-LD when  using `options=keyValues` and returns the context data of an individual entity.  
+<details><summary><strong>show/hide example</strong></summary>    
+```json  
+{  
+  "id": "urn:ngsi-ld:EPSTransport:1789374097444",  
+  "type": "EPSTransport",  
+  "departureTime": "2026-08-18T09:50:00.000Z",  
+  "arrivalTime": "2026-08-18T10:15:00.000Z",  
+  "origin": "urn:ngsi-ld:Factory:ARM:TrasferStation",  
+  "destination": "urn:ngsi-ld:Factory:Esferolight:Canical",  
+  "refVehicle": "urn:ngsi-ld:Vehicle:ARM:86-NI-59",  
+  "refEPSBatch": [  
+    "urn:ngsi-ld:EPSBatch:ARM:20260810",  
+    "urn:ngsi-ld:EPSBatch:ARM:20260808",  
+    "urn:ngsi-ld:EPSBatch:ARM:20260807",  
+    "urn:ngsi-ld:EPSBatch:ARM:20260806",  
+    "urn:ngsi-ld:EPSBatch:ARM:20260805",  
+    "urn:ngsi-ld:EPSBatch:ARM:20260804",  
+    "urn:ngsi-ld:EPSBatch:ARM:20260731",  
+    "urn:ngsi-ld:EPSBatch:ARM:20260730",  
+    "urn:ngsi-ld:EPSBatch:ARM:20260729",  
+    "urn:ngsi-ld:EPSBatch:ARM:20260728",  
+    "urn:ngsi-ld:EPSBatch:ARM:20260727",  
+    "urn:ngsi-ld:EPSBatch:ARM:20260725",  
+    "urn:ngsi-ld:EPSBatch:ARM:20260724",  
+    "urn:ngsi-ld:EPSBatch:ARM:20260723",  
+    "urn:ngsi-ld:EPSBatch:ARM:20260722"  
+  ],  
+  "@context": [  
+    "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/utils/circuloos_data_platform.jsonld",  
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"  
+  ]  
+}  
+```  
+</details>  
 #### EPSTransport NGSI-LD normalized Example    
 Here is an example of a EPSTransport in JSON-LD format as normalized. This is compatible with NGSI-LD when not using options and returns the context data of an individual entity.  
 <details><summary><strong>show/hide example</strong></summary>    
 ```json  
 {  
   "@context": [  
-    "http://circuloos-ld-context/circuloos-context.jsonld",  
+    "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/utils/circuloos_data_platform.jsonld",  
     "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"  
   ],  
   "id": "urn:ngsi-ld:EPSTransport:1789374097444",  

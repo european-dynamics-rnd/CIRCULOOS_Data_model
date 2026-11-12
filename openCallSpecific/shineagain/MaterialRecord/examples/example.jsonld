@@ -1,0 +1,15 @@
+{
+  "id": "urn:ngsi-ld:MaterialRecord:ShineAgain:029",
+  "type": "MaterialRecord",
+  "processStep": "Shredding",
+  "date": "2026-03-11",
+  "materialLoop": 1,
+  "materialIn": 7.25,
+  "materialOut": 7.1,
+  "energyConsumption": 0.33,
+  "partner": "Better_Future_Factory",
+  "@context": [
+    "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/utils/circuloos_data_platform.jsonld",
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"
+  ]
+}

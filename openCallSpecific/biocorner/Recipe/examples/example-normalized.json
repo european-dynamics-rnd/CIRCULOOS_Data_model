@@ -1,0 +1,97 @@
+{
+  "id": "urn:ngsi-ld:Recipe:CementFreeMortar",
+  "type": "Recipe",
+  "containsSRM": {
+    "type": "StructuredValue",
+    "value": [
+      "urn:ngsi-ld:SRM:RiceHusk",
+      "urn:ngsi-ld:SRM:RiceStraw",
+      "urn:ngsi-ld:SRM:RiceHuskAsh",
+      "urn:ngsi-ld:SRM:GGBS"
+    ],
+    "metadata": {
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-16T08:05:08.000Z"
+      }
+    }
+  },
+  "name": {
+    "type": "Text",
+    "value": "Cement free-Mortar",
+    "metadata": {
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-16T08:05:08.000Z"
+      }
+    }
+  },
+  "mixingTime": {
+    "type": "Number",
+    "value": 20,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "MIN"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-16T08:05:08.000Z"
+      }
+    }
+  },
+  "curingDuration": {
+    "type": "Number",
+    "value": 28,
+    "metadata": {
+      "unitCode": {
+        "type": "Text",
+        "value": "DAY"
+      },
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-16T08:05:08.000Z"
+      }
+    }
+  },
+  "developedBy": {
+    "type": "Text",
+    "value": "urn:ngsi-ld:Organization:CETMA",
+    "metadata": {
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-16T08:05:08.000Z"
+      }
+    }
+  },
+  "processingInstructions": {
+    "type": "Text",
+    "value": "Binder preparation in concrete mixer until homogeneous consistency reached",
+    "metadata": {
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-16T08:05:08.000Z"
+      }
+    }
+  },
+  "formulation": {
+    "type": "Text",
+    "value": "80% GGBS, 20% Rice Husk, alkaline activators, natural additives",
+    "metadata": {
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-16T08:05:08.000Z"
+      }
+    }
+  },
+  "waterBinderRatio": {
+    "type": "Number",
+    "value": 0.32,
+    "metadata": {
+      "observedAt": {
+        "type": "DateTime",
+        "value": "2026-06-16T08:05:08.000Z"
+      }
+    }
+  }
+}

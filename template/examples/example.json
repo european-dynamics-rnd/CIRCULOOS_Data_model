@@ -1,0 +1,5 @@
+{
+  "id": "urn:ngsi-ld:Room:RoomAB1",
+  "type": "Room",
+  "ceilingHeight": 1.0
+}

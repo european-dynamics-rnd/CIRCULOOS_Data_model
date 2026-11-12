@@ -6,104 +6,133 @@ SRM:
 
     category:
       allOf:
-        - additionalProperties: no
-          properties:
-            observedAt:
-              format: date-time
-              type: string
-            type:
-              enum:
-                - Property
-              type: string
-            value:
-              items:
+        - anyOf:
+            - items:
                 type: string
               minItems: 1
               type: array
-          required:
-            - type
-            - value
-          type: object
+            - additionalProperties: no
+              properties:
+                observedAt:
+                  format: date-time
+                  type: string
+                type:
+                  enum:
+                    - Property
+                  type: string
+                value:
+                  items:
+                    type: string
+                  minItems: 1
+                  type: array
+              required:
+                - type
+                - value
+              type: object
       description: 'Classification of the secondary raw material by origin: Marine Biomass, Agricultural Biomass, or Industrial By-product. Enables supply chain analysis by waste stream type.'
       x-ngsi:
         type: Property
 
     chemicalComposition:
       allOf:
-        - additionalProperties: no
-          properties:
-            observedAt:
-              format: date-time
-              type: string
-            type:
-              enum:
-                - Property
-              type: string
-            value:
-              type: string
-          required:
-            - type
-            - value
-          type: object
+        - anyOf:
+            - type: string
+            - additionalProperties: no
+              properties:
+                observedAt:
+                  format: date-time
+                  type: string
+                type:
+                  enum:
+                    - Property
+                  type: string
+                value:
+                  type: string
+              required:
+                - type
+                - value
+              type: object
       description: Primary chemical constituents and their typical percentage ranges. Includes key oxides, organic fractions, and trace elements relevant to product performance.
       x-ngsi:
         type: Property
 
     density:
+
       allOf:
-        - additionalProperties: no
-          anyOf:
-            - required:
+        - anyOf:
+
+            - anyOf:
+                - description: Exact measured value, when a single figure is known.
+                  type: number
+                - additionalProperties: no
+                  minProperties: 1
+                  properties:
+                    maxValue:
+                      description: Upper bound of the value, when the source declares a range or a maximum.
+                      type: number
+                    minValue:
+                      description: Lower bound of the value, when the source declares a range or a minimum.
+                      type: number
+                  type: object
+              description: Exact value as a number, or a range as an object with minValue and/or maxValue.
+
+            - additionalProperties: no
+              properties:
+                observedAt:
+                  format: date-time
+                  type: string
+                type:
+                  enum:
+                    - Property
+                  type: string
+                unitCode:
+                  description: UN/CEFACT code of the unit of measurement of the value.
+                  type: string
+                value:
+                  anyOf:
+                    - description: Exact measured value, when a single figure is known.
+                      type: number
+                    - additionalProperties: no
+                      minProperties: 1
+                      properties:
+                        maxValue:
+                          description: Upper bound of the value, when the source declares a range or a maximum.
+                          type: number
+                        minValue:
+                          description: Lower bound of the value, when the source declares a range or a minimum.
+                          type: number
+                      type: object
+                  description: Exact value as a number, or a range as an object with minValue and/or maxValue.
+              required:
+                - type
+                - unitCode
                 - value
-            - required:
-                - minValue
-            - required:
-                - maxValue
-          properties:
-            maxValue:
-              description: Upper bound of the value, when the source declares a range or a maximum.
-              type: number
-            minValue:
-              description: Lower bound of the value, when the source declares a range or a minimum.
-              type: number
-            observedAt:
-              format: date-time
-              type: string
-            type:
-              enum:
-                - Property
-              type: string
-            unitCode:
-              description: UN/CEFACT code of the unit of measurement of the value.
-              type: string
-            value:
-              description: Exact measured value, when a single figure is known.
-              type: number
-          required:
-            - type
-            - unitCode
-          type: object
+              type: object
+
       description: 'Expected unitCode: KMQ. Bulk density of the material in its delivery condition. Critical parameter for mix design calculations and storage dimensioning.'
+
       x-ngsi:
         type: Property
 
     description:
       allOf:
-        - additionalProperties: no
-          properties:
-            observedAt:
-              format: date-time
-              type: string
-            type:
-              enum:
-                - Property
-              type: string
-            value:
-              type: string
-          required:
-            - type
-            - value
-          type: object
+        - anyOf:
+            - type: string
+            - additionalProperties: no
+              properties:
+                observedAt:
+                  format: date-time
+                  type: string
+                type:
+                  enum:
+                    - Property
+                  type: string
+                value:
+                  type: string
+              required:
+                - type
+                - value
+              type: object
       description: General description of the material including biological or industrial origin, geographic provenance, and primary intended use in construction applications.
       x-ngsi:
         type: Property
@@ -116,63 +145,69 @@ SRM:
 
     name:
       allOf:
-        - additionalProperties: no
-          properties:
-            observedAt:
-              format: date-time
-              type: string
-            type:
-              enum:
-                - Property
-              type: string
-            value:
-              type: string
-          required:
-            - type
-            - value
-          type: object
+        - anyOf:
+            - type: string
+            - additionalProperties: no
+              properties:
+                observedAt:
+                  format: date-time
+                  type: string
+                type:
+                  enum:
+                    - Property
+                  type: string
+                value:
+                  type: string
+              required:
+                - type
+                - value
+              type: object
       description: Common name of the secondary raw material as used in the construction and bio-materials research community.
       x-ngsi:
         type: Property
 
     pretreatmentRequired:
       allOf:
-        - additionalProperties: no
-          properties:
-            observedAt:
-              format: date-time
-              type: string
-            type:
-              enum:
-                - Property
-              type: string
-            value:
-              type: string
-          required:
-            - type
-            - value
-          type: object
+        - anyOf:
+            - type: string
+            - additionalProperties: no
+              properties:
+                observedAt:
+                  format: date-time
+                  type: string
+                type:
+                  enum:
+                    - Property
+                  type: string
+                value:
+                  type: string
+              required:
+                - type
+                - value
+              type: object
       description: Physical, thermal, or chemical processing steps required before the material can be incorporated into a product formulation. Includes target parameters for each step.
       x-ngsi:
         type: Property
 
     storageConditions:
       allOf:
-        - additionalProperties: no
-          properties:
-            observedAt:
-              format: date-time
-              type: string
-            type:
-              enum:
-                - Property
-              type: string
-            value:
-              type: string
-          required:
-            - type
-            - value
-          type: object
+        - anyOf:
+            - type: string
+            - additionalProperties: no
+              properties:
+                observedAt:
+                  format: date-time
+                  type: string
+                type:
+                  enum:
+                    - Property
+                  type: string
+                value:
+                  type: string
+              required:
+                - type
+                - value
+              type: object
       description: Required storage environment to preserve material quality, including temperature, humidity, ventilation, and contamination prevention requirements.
       x-ngsi:
         type: Property

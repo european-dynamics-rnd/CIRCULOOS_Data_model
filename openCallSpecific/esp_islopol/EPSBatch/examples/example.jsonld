@@ -1,0 +1,16 @@
+{
+  "id": "urn:ngsi-ld:EPSBatch:ARM:20260903",
+  "type": "EPSBatch",
+  "refProduct": "urn:ngsi-ld:Product:ARM:reciclable-eps:20260903",
+  "rejectionRate": 0.369382,
+  "status": "Aguarda transporte",
+  "avgContaminationScore": 0.107308,
+  "refEPSObservations": [
+    "urn:ngsi-ld:EPSObservation:ARM:reciclable-eps:20260903"
+  ],
+  "dateCreated": "2026-09-03T22:00:21.000Z",
+  "@context": [
+    "https://raw.githubusercontent.com/european-dynamics-rnd/CIRCULOOS_Data_model/main/utils/circuloos_data_platform.jsonld",
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld"
+  ]
+}

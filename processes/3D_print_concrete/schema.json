@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json-schema.org/schema#",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$schemaVersion": "0.0.1",
   "modelTags": "",
   "derivedFrom": "",
@@ -10,89 +10,105 @@
   "type": "object",
   "definitions": {
     "NumericProperty": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "type": "string",
-          "enum": [
-            "Property"
-          ]
-        },
-        "value": {
+      "anyOf": [
+        {
           "type": "number",
           "minimum": 0
         },
-        "unitCode": {
-          "type": "string"
-        },
-        "observedAt": {
-          "type": "string",
-          "format": "date-time"
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "Property"
+              ]
+            },
+            "value": {
+              "type": "number",
+              "minimum": 0
+            },
+            "unitCode": {
+              "type": "string"
+            },
+            "observedAt": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "additionalProperties": false
         }
-      },
-      "required": [
-        "type",
-        "value"
-      ],
-      "additionalProperties": false
+      ]
     },
     "StringProperty": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "type": "string",
-          "enum": [
-            "Property"
-          ]
-        },
-        "value": {
+      "anyOf": [
+        {
           "type": "string"
         },
-        "observedAt": {
-          "type": "string",
-          "format": "date-time"
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "Property"
+              ]
+            },
+            "value": {
+              "type": "string"
+            },
+            "observedAt": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "additionalProperties": false
         }
-      },
-      "required": [
-        "type",
-        "value"
-      ],
-      "additionalProperties": false
+      ]
     },
     "DateTimeProperty": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "type": "string",
-          "enum": [
-            "Property"
-          ]
-        },
-        "value": {
+      "anyOf": [
+        {
           "type": "string",
           "format": "date-time"
         },
-        "observedAt": {
-          "type": "string",
-          "format": "date-time"
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "Property"
+              ]
+            },
+            "value": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "observedAt": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "additionalProperties": false
         }
-      },
-      "required": [
-        "type",
-        "value"
-      ],
-      "additionalProperties": false
+      ]
     },
     "DimensionsProperty": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "type": "string",
-          "enum": [
-            "Property"
-          ]
-        },
-        "value": {
+      "anyOf": [
+        {
           "type": "object",
           "properties": {
             "length": {
@@ -118,30 +134,60 @@
           ],
           "additionalProperties": false
         },
-        "unitCode": {
-          "type": "string"
-        },
-        "observedAt": {
-          "type": "string",
-          "format": "date-time"
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "Property"
+              ]
+            },
+            "value": {
+              "type": "object",
+              "properties": {
+                "length": {
+                  "type": "number",
+                  "minimum": 0,
+                  "description": "Property. Overall length of the part."
+                },
+                "width": {
+                  "type": "number",
+                  "minimum": 0,
+                  "description": "Property. Overall width of the part."
+                },
+                "height": {
+                  "type": "number",
+                  "minimum": 0,
+                  "description": "Property. Overall height of the part."
+                }
+              },
+              "required": [
+                "length",
+                "width",
+                "height"
+              ],
+              "additionalProperties": false
+            },
+            "unitCode": {
+              "type": "string"
+            },
+            "observedAt": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "additionalProperties": false
         }
-      },
-      "required": [
-        "type",
-        "value"
-      ],
-      "additionalProperties": false
+      ]
     },
     "CoordinatesProperty": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "type": "string",
-          "enum": [
-            "Property"
-          ]
-        },
-        "value": {
+      "anyOf": [
+        {
           "type": "object",
           "properties": {
             "x": {
@@ -176,30 +222,69 @@
           ],
           "additionalProperties": false
         },
-        "unitCode": {
-          "type": "string"
-        },
-        "observedAt": {
-          "type": "string",
-          "format": "date-time"
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "Property"
+              ]
+            },
+            "value": {
+              "type": "object",
+              "properties": {
+                "x": {
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  },
+                  "minItems": 1,
+                  "description": "Property. X-axis coordinates captured during manufacturing."
+                },
+                "y": {
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  },
+                  "minItems": 1,
+                  "description": "Property. Y-axis coordinates captured during manufacturing."
+                },
+                "z": {
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  },
+                  "minItems": 1,
+                  "description": "Property. Z-axis coordinates captured during manufacturing."
+                }
+              },
+              "required": [
+                "x",
+                "y",
+                "z"
+              ],
+              "additionalProperties": false
+            },
+            "unitCode": {
+              "type": "string"
+            },
+            "observedAt": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "additionalProperties": false
         }
-      },
-      "required": [
-        "type",
-        "value"
-      ],
-      "additionalProperties": false
+      ]
     },
     "NumericArrayValuesProperty": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "type": "string",
-          "enum": [
-            "Property"
-          ]
-        },
-        "value": {
+      "anyOf": [
+        {
           "type": "object",
           "properties": {
             "values": {
@@ -216,19 +301,47 @@
           ],
           "additionalProperties": false
         },
-        "unitCode": {
-          "type": "string"
-        },
-        "observedAt": {
-          "type": "string",
-          "format": "date-time"
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "Property"
+              ]
+            },
+            "value": {
+              "type": "object",
+              "properties": {
+                "values": {
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  },
+                  "minItems": 1,
+                  "description": "Property. Sensor values captured during manufacturing."
+                }
+              },
+              "required": [
+                "values"
+              ],
+              "additionalProperties": false
+            },
+            "unitCode": {
+              "type": "string"
+            },
+            "observedAt": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "additionalProperties": false
         }
-      },
-      "required": [
-        "type",
-        "value"
-      ],
-      "additionalProperties": false
+      ]
     }
   },
   "allOf": [

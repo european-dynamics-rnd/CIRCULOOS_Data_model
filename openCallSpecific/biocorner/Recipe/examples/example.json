@@ -1,0 +1,17 @@
+{
+  "id": "urn:ngsi-ld:Recipe:CementFreeMortar",
+  "type": "Recipe",
+  "containsSRM": [
+    "urn:ngsi-ld:SRM:RiceHusk",
+    "urn:ngsi-ld:SRM:RiceStraw",
+    "urn:ngsi-ld:SRM:RiceHuskAsh",
+    "urn:ngsi-ld:SRM:GGBS"
+  ],
+  "name": "Cement free-Mortar",
+  "mixingTime": 20,
+  "curingDuration": 28,
+  "developedBy": "urn:ngsi-ld:Organization:CETMA",
+  "processingInstructions": "Binder preparation in concrete mixer until homogeneous consistency reached",
+  "formulation": "80% GGBS, 20% Rice Husk, alkaline activators, natural additives",
+  "waterBinderRatio": 0.32
+}
